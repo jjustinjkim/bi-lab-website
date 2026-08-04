@@ -47,8 +47,8 @@ export default async function FeaturedPublicationPage({
       <Image
         src={pub.image}
         alt={`First page of "${pub.title}" in ${pub.journal}`}
-        width={767}
-        height={1024}
+        width={pub.imageWidth}
+        height={pub.imageHeight}
         className="w-full h-auto max-w-xs mx-auto rounded"
         style={{ border: "1px solid var(--hairline)" }}
         priority

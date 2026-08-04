@@ -16,20 +16,27 @@ export default function PublicationsPage() {
       <section>
         <div className="grid sm:grid-cols-3 gap-5">
           {FEATURED_PUBLICATIONS.map((pub) => (
-            <Link key={pub.slug} href={`/publications/${pub.slug}`} className="panel block overflow-hidden hover:opacity-90 transition-opacity">
+            <Link
+              key={pub.slug}
+              href={`/publications/${pub.slug}`}
+              className="group relative block overflow-hidden"
+            >
               <Image
                 src={pub.image}
                 alt={`First page of "${pub.title}" in ${pub.journal}`}
-                width={767}
-                height={1024}
+                width={pub.imageWidth}
+                height={pub.imageHeight}
                 className="w-full h-auto"
-                style={{ borderBottom: "1px solid var(--hairline)" }}
               />
-              <div className="p-5">
-                <h3 className="text-subtitle" style={{ fontSize: "1rem", color: "var(--accent-ink)" }}>
+              <div
+                className="absolute inset-0 flex flex-col justify-center p-6 opacity-0 transition-opacity duration-200 group-hover:opacity-100 group-focus-visible:opacity-100"
+                style={{ background: "var(--paper)" }}
+              >
+                <h3 className="font-bold" style={{ fontSize: "1.375rem", lineHeight: 1.25, color: "var(--ink)" }}>
                   {pub.title}
                 </h3>
-                <p className="text-sm mt-2" style={{ color: "var(--ink-muted)" }}>
+                <div style={{ width: "3rem", height: "2px", background: "var(--ink)", margin: "1rem 0" }} />
+                <p className="text-sm" style={{ color: "var(--ink-muted)" }}>
                   {pub.excerpt}
                 </p>
               </div>
