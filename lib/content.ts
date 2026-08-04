@@ -46,7 +46,7 @@ export const RESEARCH_AREAS: ResearchArea[] = [
       "Ongoing studies focus on the impact of operative technique, perioperative routine, and adjuvant therapy regimens on outcomes of meningiomas, pituitary tumors, schwannomas, brain metastases, and tumors in challenging anatomical locations, in retrospective and prospective fashion.",
     image: "/research/outcomes.jpg",
     imageSide: "right",
-    extraLink: { label: "Glioma Outcome Risk Calculators", href: "https://skullbase.bwh.harvard.edu/glioma-outcomes/" },
+    extraLink: { label: "Glioma Outcome Risk Calculators", href: "/research/glioma-outcomes" },
     extraImages: [
       { src: "/research/outcome-meningioma.jpg", label: "Meningioma" },
       { src: "/research/outcome-pituitary.jpg", label: "Pituitary Tumors" },
@@ -106,7 +106,7 @@ export const ALUMNI: TeamMember[] = [
   { name: "Joseph Driver, MD", role: "Post-doctoral Fellow / Neurosurgery Resident", image: "/team/joseph-driver.jpg" },
   { name: "Xian Marie Boles, BFA", role: "MFA Candidate", image: "/team/xian-marie-boles.png" },
   { name: "Lilin Tong, MD", role: "Medical Intern", image: "/team/lilin-tong.jpg" },
-  { name: "Hia Ghosh, BS", role: "Research Assistant" },
+  { name: "Hia Ghosh, BS", role: "Research Assistant", image: "/team/hia-ghosh.jpg" },
 ];
 
 export interface FeaturedPublication {

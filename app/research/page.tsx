@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { RESEARCH_AREAS } from "@/lib/content";
 
 export const metadata: Metadata = {
@@ -32,9 +33,9 @@ export default function ResearchPage() {
                 {area.description}
               </p>
               {area.extraLink && (
-                <a href={area.extraLink.href} target="_blank" rel="noopener noreferrer" className="link-accent inline-block mt-4" style={{ fontSize: "1.125rem" }}>
+                <Link href={area.extraLink.href} className="link-accent inline-block mt-4" style={{ fontSize: "1.125rem" }}>
                   {area.extraLink.label}
-                </a>
+                </Link>
               )}
             </div>
           </div>

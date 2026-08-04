@@ -71,7 +71,7 @@ export default function Header() {
       <div className="relative w-full" style={{ borderBottom: "1px solid var(--hairline)" }}>
         <div className="max-w-6xl mx-auto px-4 sm:px-6 py-4 flex items-center gap-x-10">
           <Link href="/" className="flex items-center">
-            <Image src="/brand/bwh-logo-header.png" alt="Bi Lab" width={280} height={32} priority style={{ height: "32px", width: "auto" }} />
+            <Image src="/brand/bwh-logo-header.png" alt="Bi Lab" width={280} height={32} priority />
           </Link>
 
           <nav className="hidden xl:flex flex-wrap items-center gap-x-5 gap-y-2 ml-auto">
