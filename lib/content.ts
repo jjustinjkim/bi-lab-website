@@ -110,30 +110,50 @@ export const ALUMNI: TeamMember[] = [
 ];
 
 export interface FeaturedPublication {
+  slug: string;
   title: string;
   excerpt: string;
-  href: string;
+  body: string;
+  journal: string;
+  journalUrl: string;
+  date: string;
 }
 
 // The 3 currently featured studies on the real site's Publications page.
+// body/journal/journalUrl/date sourced from each study's real article page.
 export const FEATURED_PUBLICATIONS: FeaturedPublication[] = [
   {
+    slug: "ki-67-in-meningioma-distribution-and-implications",
     title: "Ki-67 in meningioma: distribution and implications",
     excerpt:
-      "In a groundbreaking study published in the Journal of Neurosurgery, we unraveled the true biological meaning of Ki-67, one of the most widely used markers of tumor proliferation in meningioma. Using single-cell mass cytometry and RNA sequencing across more than 100 tumors, we found that Ki-67 marks a distinct, biologically active tumor cell state rather than simply counting dividing cells.",
-    href: "https://skullbase.bwh.harvard.edu/ki-67-in-meningioma-distribution-and-implications/",
+      "In a groundbreaking study published in the Journal of Neurosurgery, we unraveled the true biological meaning of Ki-67, one of the most widely used markers of tumor proliferation in meningioma.",
+    body:
+      "In a groundbreaking study published in the Journal of Neurosurgery, we unraveled the true biological meaning of Ki-67, one of the most widely used markers of tumor proliferation in meningioma. Using single-cell mass cytometry and RNA sequencing across more than 120,000 cells, our team discovered that Ki-67 is not expressed solely by tumor cells, as long assumed, but also by immune populations, particularly myeloid cells in low-grade tumors. We further showed that the cellular sources of Ki-67 shift with tumor grade, radiation exposure, and patient age, revealing how immune activity can confound traditional proliferation indices. By integrating molecular data from nearly 500 additional meningiomas, we established dynamic Ki-67 thresholds that more accurately predict recurrence over time. Together, these findings redefine how proliferation is measured in meningioma and lay the groundwork for a new, microenvironment-aware framework for interpreting tumor biology and guiding clinical decisions.",
+    journal: "Journal of Neurosurgery",
+    journalUrl: "https://thejns.org/view/journals/j-neurosurg/aop/article-10.3171-2025.4.JNS25438/article-10.3171-2025.4.JNS25438.xml",
+    date: "2025-10-23",
   },
   {
+    slug: "a-molecularly-integrated-grade-for-meningioma",
     title: "A Molecularly Integrated Grade for Meningioma",
     excerpt:
-      "Published in Neuro-Oncology, our team developed a molecularly integrated grading system that redefines how meningiomas, the most common primary brain tumors, are classified and managed. By combining traditional histopathologic features with chromosomal copy-number alterations (CNAs) across more than 700 tumors, we discovered a more accurate way to predict recurrence risk.",
-    href: "https://skullbase.bwh.harvard.edu/a-molecularly-integrated-grade-for-meningioma/",
+      "Published in Neuro-Oncology, our team developed a molecularly integrated grading system that redefines how meningiomas, the most common primary brain tumors, are classified and managed.",
+    body:
+      "Published in Neuro-Oncology, our team developed a molecularly integrated grading system that redefines how meningiomas, the most common primary brain tumors, are classified and managed. By combining traditional histopathologic features with chromosomal copy-number alterations (CNAs) across more than 700 tumors, we discovered that genomic instability, particularly loss of 1p, 3p, 4, 6, 10, 14q, 18, 19, or CDKN2A, drives recurrence risk far more precisely than the current WHO system. This new three-tier \"Integrated Grade\" reclassified nearly one-third of meningiomas, uncovering hidden high-risk biology in tumors that appeared benign and identifying lower-risk tumors previously labeled aggressive. The Integrated Grade achieved markedly stronger predictive performance than WHO grade (5-year AUC = 0.82 vs 0.63) and was validated across independent cohorts and genomic platforms. Because CNAs can be profiled using widely available technologies, this framework is immediately applicable in both academic and community settings. Together, these findings establish a simple, scalable, and genomically informed grading model that advances precision diagnostics and enables more personalized surveillance, treatment, and clinical trial design for patients with meningioma.",
+    journal: "Neuro-Oncology",
+    journalUrl: "https://academic.oup.com/neuro-oncology/article/24/5/796/6368844",
+    date: "2025-10-23",
   },
   {
+    slug: "new-study-reveals-how-genomic-thresholds-shape-meningioma-classification-and-recurrence-risk",
     title: "New Study Reveals How Genomic Thresholds Shape Meningioma Classification and Recurrence Risk",
     excerpt:
-      "In a landmark study published in Nature Communications, we mapped chromosomal copy number alterations (CNAs) across more than 1,000 meningiomas, the most common primary brain tumor in adults. The team found that the threshold used to define when a chromosomal change counts materially shapes classification and recurrence prediction.",
-    href: "https://skullbase.bwh.harvard.edu/new-study-reveals-how-genomic-thresholds-shape-meningioma-classification-and-recurrence-risk/",
+      "In a landmark study published in Nature Communications, we mapped chromosomal copy number alterations (CNAs) across more than 1,000 meningiomas, the most common primary brain tumor in adults.",
+    body:
+      "In a landmark study published in Nature Communications, we mapped chromosomal copy number alterations (CNAs) across more than 1,000 meningiomas, the most common primary brain tumor in adults. The team found that the threshold used to define when a chromosomal arm is \"lost\" or \"gained\" dramatically influences how tumors are molecularly graded and how well recurrence can be predicted. By systematically varying these thresholds, the study showed that up to 21% of meningiomas shift between low- and high-grade classifications, with optimal predictive accuracy emerging around a 40% arm-length threshold. We also discovered that CNAs tend to cluster into distinct \"small\" and \"large\" genomic events, and that recurrent meningiomas acquire progressively larger alterations over time. Together, these findings highlight the critical importance of standardizing genomic thresholds to ensure robust, reproducible molecular classification, a necessary step toward precision diagnostics, better prognostication, and ultimately more tailored therapies for patients with meningioma.",
+    journal: "Nature Communications",
+    journalUrl: "https://pmc.ncbi.nlm.nih.gov/articles/PMC12222709/pdf/41467_2025_Article_60734.pdf",
+    date: "2025-10-23",
   },
 ];
 

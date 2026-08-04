@@ -43,7 +43,7 @@ export default async function SearchPage({
       )
     : [];
 
-  const featuredResults = query ? FEATURED_PUBLICATIONS.filter((p) => matches(query, p.title, p.excerpt)) : [];
+  const featuredResults = query ? FEATURED_PUBLICATIONS.filter((p) => matches(query, p.title, p.excerpt, p.body)) : [];
 
   const publicationResults = query
     ? PUBLICATIONS_BY_YEAR.flatMap((group) =>
@@ -117,8 +117,8 @@ export default async function SearchPage({
           <h2 className="text-caption uppercase tracking-wide font-semibold mb-3">Publications</h2>
           <ul className="space-y-2">
             {featuredResults.map((p) => (
-              <li key={p.title}>
-                <Link href="/publications" className="link-accent">
+              <li key={p.slug}>
+                <Link href={`/publications/${p.slug}`} className="link-accent">
                   {p.title}
                 </Link>
               </li>
