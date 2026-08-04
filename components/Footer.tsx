@@ -1,19 +1,134 @@
+import Image from "next/image";
+import Link from "next/link";
+import { CONTACT, RESEARCH_AREAS } from "@/lib/content";
+
+const BROWSE = [
+  { href: "/", label: "Home" },
+  { href: "/team", label: "Team" },
+  { href: "/publications", label: "Publications" },
+  { href: "/contact", label: "Contact" },
+];
+
+const PARTNERS = [
+  { href: "https://www.brighamandwomens.org/neurosurgery", src: "/brand/bwh-logo.png", alt: "Brigham and Women's Hospital Neurosurgery", w: 200, h: 23 },
+  { href: "https://www.dana-farber.org/center-for-neuro-oncology/", src: "/brand/dfci-logo.png", alt: "Dana-Farber Cancer Institute", w: 130, h: 33 },
+  { href: "http://www.childrenshospital.org/centers-and-services/departments/neurosurgery", src: "/brand/bch-logo.png", alt: "Boston Children's Hospital", w: 150, h: 30 },
+  { href: "https://hms.harvard.edu/research", src: "/brand/hms-logo.png", alt: "Harvard Medical School", w: 180, h: 47 },
+];
+
+function MapPinIcon() {
+  return (
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+      <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+      <circle cx="12" cy="10" r="3" />
+    </svg>
+  );
+}
+
+function PhoneIcon() {
+  return (
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.3 11.3 0 003.55.57 1 1 0 011 1V20a1 1 0 01-1 1C10.61 21 3 13.39 3 4a1 1 0 011-1h3.5a1 1 0 011 1 11.3 11.3 0 00.57 3.55 1 1 0 01-.25 1.01l-2.2 2.23z" />
+    </svg>
+  );
+}
+
+function FaxIcon() {
+  return (
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+      <path d="M6 3h9l3 3v4H6z" />
+      <path d="M6 10H4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2" />
+      <path d="M18 10h2a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1h-2" />
+      <rect x="6" y="14" width="12" height="7" />
+    </svg>
+  );
+}
+
+function MailIcon() {
+  return (
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+      <rect x="2" y="4" width="20" height="16" rx="2" />
+      <path d="m22 6-10 7L2 6" />
+    </svg>
+  );
+}
+
 export default function Footer() {
   return (
-    <footer className="w-full mt-16" style={{ borderTop: "1px solid var(--hairline)" }}>
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-6 flex flex-wrap justify-between gap-4 text-caption">
+    <footer className="site-footer w-full mt-20">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-12 grid sm:grid-cols-3 gap-10">
         <div>
-          <div className="font-semibold" style={{ color: "var(--foreground)" }}>
-            Bi Lab, Skull Base Tumor Laboratory
+          <div className="text-xs font-semibold uppercase tracking-wide mb-4" style={{ color: "white" }}>
+            Browse
           </div>
-          <div>60 Fenwood Road, Boston, MA 02115</div>
+          <ul className="text-sm">
+            <li className="footer-list-item">
+              <Link href="/" className="uppercase">
+                Home
+              </Link>
+            </li>
+            <li className="footer-list-item">
+              <Link href="/research" className="uppercase">
+                Research
+              </Link>
+              <ul className="mt-2 ml-4 space-y-2 mb-2">
+                {RESEARCH_AREAS.map((area) => (
+                  <li key={area.anchor}>
+                    <a href={`/research#${area.anchor}`} className="uppercase text-xs">
+                      {area.name}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </li>
+            {BROWSE.slice(1).map((item) => (
+              <li key={item.href} className="footer-list-item">
+                <Link href={item.href} className="uppercase">
+                  {item.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
-        <div className="flex flex-col sm:items-end gap-0.5">
-          <a href="mailto:wbi@bwh.harvard.edu" className="link-accent">
-            wbi@bwh.harvard.edu
-          </a>
-          <span>617-525-8319</span>
+
+        <div>
+          <div className="mb-4 font-bold" style={{ color: "white", fontSize: "1.125rem" }}>
+            {CONTACT.labName}
+          </div>
+          <ul className="text-sm space-y-3">
+            <li className="flex items-start gap-2.5">
+              <span className="mt-0.5"><MapPinIcon /></span>
+              <span>
+                {CONTACT.address[0]}
+                <br />
+                {CONTACT.address[1]}
+              </span>
+            </li>
+            <li className="flex items-center gap-2.5">
+              <PhoneIcon />
+              {CONTACT.phone}
+            </li>
+            <li className="flex items-center gap-2.5">
+              <FaxIcon />
+              {CONTACT.fax}
+            </li>
+            <li className="flex items-center gap-2.5">
+              <MailIcon />
+              <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>
+            </li>
+          </ul>
         </div>
+
+        <div className="flex flex-col gap-5 sm:items-end">
+          {PARTNERS.map((p) => (
+            <a key={p.src} href={p.href} target="_blank" rel="noopener noreferrer">
+              <Image src={p.src} alt={p.alt} width={p.w} height={p.h} style={{ height: "auto", width: `${p.w}px`, maxWidth: "100%" }} />
+            </a>
+          ))}
+        </div>
+      </div>
+      <div className="py-3 text-center text-xs" style={{ background: "var(--accent)", color: "white" }}>
+        Copyright <strong>SKULL BASE LAB</strong> {new Date().getFullYear()} &ndash; All Rights Reserved | PRIVACY POLICY
       </div>
     </footer>
   );

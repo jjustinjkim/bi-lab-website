@@ -1,27 +1,32 @@
 @import "tailwindcss";
 
 /* ============================================================
-   Bi Lab design system: a clean academic read, navy and white,
-   in the spirit of the lab's existing BWH-hosted site. Navy is
-   the single interactive color (links, active nav, buttons); a
-   muted gold marks the one deliberate accent (status/deadline
-   flags) so it stays meaningful rather than decorative. Neutrals
-   are plain slate, not tinted. Type is Geist (sans and mono),
-   matching this lab's other tools.
+   Bi Lab design system, matched to the lab's existing BWH-hosted
+   site (skullbase.bwh.harvard.edu, a WordPress "Total" theme
+   build): white background, near-black headings, mid-gray body
+   text, and a single blue accent (#1e73be, the real site's link
+   and button color) for every interactive element. System font
+   stack, matching the real site exactly (no custom webfont).
+   Dark mode is an addition this site has that the original
+   doesn't; it's derived from the same palette, not a separate
+   design.
    ============================================================ */
 
 :root {
   --paper: #ffffff;
   --paper-raised: #f8fafc;
-  --ink: #0f172a;
-  --ink-muted: #475569;
-  --ink-faint: #64748b;
-  --hairline: #e2e8f0;
-  --hairline-strong: #cbd5e1;
-  --accent: #1e3a5f;
-  --accent-ink: #14293e;
+  --ink: #222222;
+  --ink-muted: #616161;
+  --ink-faint: #7d7d7d;
+  --hairline: #e2e2e2;
+  --hairline-strong: #d8d8d8;
+  --accent: #1e73be;
+  --accent-ink: #17588f;
   --accent-2: #92702a;
   --accent-2-ink: #74591f;
+  --footer-bg: #161616;
+  --footer-bg-bottom: #101010;
+  --footer-ink: #b3b3b3;
 
   --background: var(--paper);
   --foreground: var(--ink);
@@ -30,43 +35,30 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --paper: #0b1220;
-    --paper-raised: #141d30;
-    --ink: #f1f5f9;
-    --ink-muted: #94a3b8;
-    --ink-faint: #7c8aa0;
-    --hairline: #263449;
-    --hairline-strong: #33455e;
-    --accent: #6f97c4;
-    --accent-ink: #8fb0d6;
-    --accent-2: #d3ac5f;
-    --accent-2-ink: #e0bd77;
-
-    --background: var(--paper);
-    --foreground: var(--ink);
-  }
-}
-
-/* The theme toggle stamps data-theme on <html>, which must win over the
-   prefers-color-scheme media query in both directions. */
+/* Deliberately no `@media (prefers-color-scheme: dark)` block: this site
+   mirrors skullbase.bwh.harvard.edu, which is always light, so the page
+   must render light by default regardless of OS theme. Dark mode exists
+   only as an explicit opt-in via the toggle, which stamps data-theme on
+   <html> -- see :root[data-theme="dark"] below. */
 :root[data-theme="light"] {
   --paper: #ffffff;
   --paper-raised: #f8fafc;
-  --ink: #0f172a;
-  --ink-muted: #475569;
-  --ink-faint: #64748b;
-  --hairline: #e2e8f0;
-  --hairline-strong: #cbd5e1;
-  --accent: #1e3a5f;
-  --accent-ink: #14293e;
+  --ink: #222222;
+  --ink-muted: #616161;
+  --ink-faint: #7d7d7d;
+  --hairline: #e2e2e2;
+  --hairline-strong: #d8d8d8;
+  --accent: #1e73be;
+  --accent-ink: #17588f;
   --accent-2: #92702a;
   --accent-2-ink: #74591f;
+  --footer-bg: #161616;
+  --footer-bg-bottom: #101010;
+  --footer-ink: #b3b3b3;
 
   --background: var(--paper);
   --foreground: var(--ink);
@@ -80,10 +72,13 @@
   --ink-faint: #7c8aa0;
   --hairline: #263449;
   --hairline-strong: #33455e;
-  --accent: #6f97c4;
+  --accent: #6f9fd8;
   --accent-ink: #8fb0d6;
   --accent-2: #d3ac5f;
   --accent-2-ink: #e0bd77;
+  --footer-bg: #0a0e17;
+  --footer-bg-bottom: #060810;
+  --footer-ink: #94a3b8;
 
   --background: var(--paper);
   --foreground: var(--ink);
@@ -94,7 +89,10 @@
 }
 
 html {
-  color-scheme: light dark;
+  color-scheme: light;
+}
+html[data-theme="dark"] {
+  color-scheme: dark;
 }
 
 body {
@@ -264,4 +262,52 @@ textarea:focus-visible,
   color: var(--accent-ink);
   font-weight: 600;
   flex-shrink: 0;
+}
+
+/* ---------- Public-site primitives (mirroring skullbase.bwh.harvard.edu) ---------- */
+
+.site-nav-link {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+.site-nav-link:hover,
+.site-nav-link[data-active="true"] {
+  color: var(--accent);
+}
+
+.section-heading {
+  display: inline-block;
+  color: var(--accent);
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 0.5rem;
+}
+
+.site-footer {
+  background: var(--footer-bg);
+  color: var(--footer-ink);
+}
+.site-footer a {
+  color: var(--footer-ink);
+}
+.site-footer a:hover {
+  color: white;
+}
+.site-footer-bottom {
+  background: var(--footer-bg-bottom);
+  color: var(--ink-faint);
+}
+
+.footer-list-item {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.footer-list-item:first-child {
+  padding-top: 0;
 }

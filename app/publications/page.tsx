@@ -1,35 +1,47 @@
-import { PUBLICATIONS, PUBMED_URL } from "@/lib/content";
+import { FEATURED_PUBLICATIONS, PUBLICATIONS_BY_YEAR, PUBMED_URL } from "@/lib/content";
 
 export default function PublicationsPage() {
   return (
-    <div className="max-w-3xl mx-auto px-4 sm:px-6 py-14 space-y-8">
-      <div>
-        <h1 className="text-display">Publications</h1>
-        <p className="mt-4" style={{ color: "var(--ink-muted)" }}>
-          A selection of the lab&rsquo;s publications. For the complete, up to date list, see{" "}
-          <a href={PUBMED_URL} target="_blank" rel="noopener noreferrer" className="link-accent">
-            Dr. Bi&rsquo;s full list on PubMed
-          </a>
-          .
-        </p>
+    <div className="max-w-4xl mx-auto px-4 sm:px-6 py-14 space-y-14">
+      <h1 className="text-display">Publications</h1>
+
+      <section>
+        <div className="grid sm:grid-cols-3 gap-5">
+          {FEATURED_PUBLICATIONS.map((pub) => (
+            <a key={pub.title} href={pub.href} target="_blank" rel="noopener noreferrer" className="panel p-5 block hover:opacity-90 transition-opacity">
+              <h3 className="text-subtitle" style={{ fontSize: "1rem", color: "var(--accent-ink)" }}>
+                {pub.title}
+              </h3>
+              <p className="text-sm mt-2" style={{ color: "var(--ink-muted)" }}>
+                {pub.excerpt}
+              </p>
+            </a>
+          ))}
+        </div>
+      </section>
+
+      <div className="text-center">
+        <a href={PUBMED_URL} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
+          Full List of Publications in PubMed
+        </a>
       </div>
 
-      <ul className="space-y-5">
-        {PUBLICATIONS.map((pub) => (
-          <li key={pub.title} className="panel p-5">
-            <div className="text-subtitle" style={{ fontSize: "1rem" }}>
-              {pub.title}
-            </div>
-            <div className="text-sm mt-1" style={{ color: "var(--ink-muted)" }}>
-              {pub.authors}
-            </div>
-            <div className="text-sm mt-1" style={{ color: "var(--ink-faint)" }}>
-              {pub.journal}, {pub.date}
-              {pub.pmid ? ` · PMID: ${pub.pmid}` : ""}
-            </div>
-          </li>
-        ))}
-      </ul>
+      {PUBLICATIONS_BY_YEAR.map((group) => (
+        <section key={group.year}>
+          <h2 className="section-heading mb-6">{group.year}</h2>
+          <ul className="space-y-4 list-disc pl-5">
+            {group.entries.map((entry) => (
+              <li key={entry.title} className="text-sm" style={{ color: "var(--ink-muted)" }}>
+                <div className="font-semibold" style={{ color: "var(--ink)" }}>
+                  {entry.title}
+                </div>
+                <div>{entry.authors}.</div>
+                <div className="italic">{entry.citation}</div>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ))}
     </div>
   );
 }
