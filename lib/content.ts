@@ -181,9 +181,203 @@ export interface PublicationYear {
 }
 
 
-// Full year-by-year list currently on the real site (2014 through 2021).
-// Anything older is on PubMed only, matching the real site's own approach.
+// 2014-2021 matches the year-by-year list on the real site (which hasn't
+// been updated since). 2022-present was pulled directly from PubMed
+// (Bi WL[Author], first/senior/sole-author papers only, matching the
+// selectivity of the pre-2022 list rather than every co-authored paper)
+// since the real site's own archive is stale. Anything older/more complete
+// is on PubMed only, matching the real site's own approach.
 export const PUBLICATIONS_BY_YEAR: PublicationYear[] = [
+  {
+    year: "2026",
+    entries: [
+      {
+        title: "Corticobulbar Motor Evoked Potentials: A Systematic Review of Technical Variations.",
+        authors: "Jarvis CA, Toczylowski M, Bose M, Patel RV, Wang J, McMahon JT, Bi WL",
+        citation: "Neurosurg Pract. 2026 Jun;7(3):e000237. PMID: 42100545; PMC13148752.",
+      },
+      {
+        title: "Meningioma microenvironment harbors a rich immune landscape that evolves with biological state.",
+        authors: "Guo X, Moynihan ZA, Driver J, Patel RV, Bhave VM, Maury EA, Knelson EH, Guo H, Lin JR, Coy SM, Wang A, Gupta S, Hoffman SE, Dunn IF, Dunn GP, Petti A, Choi BD, Choudhury A, Raleigh DR, Wei K, Reardon DA, Barbie D, Lederer JA, Santagata S, Bi WL",
+        citation: "Neuro Oncol. 2026 May 01;28(5):1193-1208. PMID: 41630100; PMC13186497.",
+      },
+      {
+        title: "In Reply: Predictive Value of Neurosurgery Applicant Metrics on Resident Academic Productivity.",
+        authors: "Banko L, Bi WL",
+        citation: "Neurosurgery. 2026 Jan 01;98(1):e20. PMID: 41201250.",
+      },
+    ],
+  },
+  {
+    year: "2025",
+    entries: [
+      {
+        title: "The effect of TERT promoter mutation on predicting meningioma outcomes: a multi-institutional cohort analysis.",
+        authors: "Groff KJ, Patel RV, Feng Y, Ghosh HS, Millares Chavez MA, O'Brien J, Chen WC, Nitturi V, Save AV, Youngblood MW, Horbinski CM, Chandler JP, Ehret F, Gui C, Wang JZ, Park K, Ajmera S, Rosenblum M, Suwala AK, Kresbach C, Mount CW, Schüller U, Santagata S, Sahm F, Bale TA, Jackson C, Richardson TE, Cai C, Nassiri F, Zadeh G, Kaul D, Capper D, Magill ST, Golfinos JG, Sen C, Patel AJ, Raleigh DR, Moliterno J, Pacione D, Snuderl M, Bi WL",
+        citation: "Lancet Oncol. 2025 Sep;26(9):1178-1190. PMID: 40907515; PMC13090858.",
+      },
+      {
+        title: "Nuances in visual rehabilitation after pituitary surgery.",
+        authors: "Gupta S, Bi WL",
+        citation: "Neurooncol Adv. 2025 Jul;7(Suppl 1):i40-i47. PMID: 40718391; PMC12288131.",
+      },
+      {
+        title: "Ki-67 in meningioma: distribution and implications.",
+        authors: "Guo X, Patel RV, Lederer JA, Meredith DM, Bi WL",
+        citation: "J Neurosurg. 2025 Nov 01;143(5):1325-1335. PMID: 40712166.",
+      },
+      {
+        title: "Distribution of copy number alterations and impact of chromosome arm call thresholds for meningioma.",
+        authors: "Patel RV, Ghosh HS, Meredith DM, Ryall S, Claus EB, Beroukhim R, Ligon AH, Santagata S, Bi WL",
+        citation: "Nat Commun. 2025 Jul 02;16(1):6025. PMID: 40603304; PMC12222709.",
+      },
+      {
+        title: "Interpretation and Strategy to Resolve Neuromonitoring Changes Associated With Brain Sag.",
+        authors: "Bose M, Toczylowski M, Guo X, Liu DD, Epplin-Zapf T, Wilent WB, Bi WL",
+        citation: "Oper Neurosurg. 2025 Jun 01;28(6):841-854. PMID: 40372119; PMC12068778.",
+      },
+      {
+        title: "In Reply: Interpretation and Strategy to Resolve Neuromonitoring Changes Associated With Brain Sag.",
+        authors: "Bi WL, Toczylowski M, Guo X, Bose M",
+        citation: "Oper Neurosurg. 2025 Jun 01;28(6):911. PMID: 40168524.",
+      },
+      {
+        title: "Interhemispheric Transcallosal Approach for Resection of a Pineal Region Third Ventricular to Brainstem Tumor: 2-Dimensional Operative Video.",
+        authors: "Guo X, Bose M, Toczylowski M, Fonseca A, Bi WL",
+        citation: "Oper Neurosurg. 2025 Dec 01;29(6):907-908. PMID: 39982058; PMC12607916.",
+      },
+      {
+        title: "Motor mapping-guided resection of a brainstem recurrent pilocytic astrocytoma.",
+        authors: "Guo X, Bose M, Galvin CP, Bi WL",
+        citation: "Neurosurg Focus Video. 2025 Jan;12(1):V2. PMID: 39845304; PMC11748952.",
+      },
+      {
+        title: "Canonical amplifications and CDKN2A/B loss refine IDH1/2-mutant astrocytoma prognosis.",
+        authors: "Ghosh HS, Patel RV, Claus EB, Gonzalez Castro LN, Wen PY, Ligon KL, Meredith DM, Bi WL",
+        citation: "Neuro Oncol. 2025 May 15;27(4):993-1003. PMID: 39584448; PMC12083226.",
+      },
+      {
+        title: "Predictive Value of Neurosurgery Applicant Metrics on Resident Academic Productivity.",
+        authors: "Banko L, Riesenburger N, Patel RV, Gilligan C, Cosgrove GR, Chiocca EA, Proctor MR, Patel AJ, Bi WL",
+        citation: "Neurosurgery. 2025 Jun 01;96(6):1206-1216. PMID: 39526786.",
+      },
+      {
+        title: "Spatial Distribution of Meningiomas: A Magnetic Resonance Image Atlas.",
+        authors: "Patel RV, Yao S, Aguilar Murillo E, Huang RY, Bi WL",
+        citation: "Neurosurgery. 2025 Apr 01;96(4):769-778. PMID: 39194267.",
+      },
+      {
+        title: "Contemporary prognostic signatures and refined risk stratification of gliomas: An analysis of 4400 tumors.",
+        authors: "Ghosh HS, Patel RV, Woodward E, Greenwald NF, Bhave VM, Maury EA, Cello G, Hoffman SE, Li Y, Gupta H, Youssef G, Spurr LF, Vogelzang J, Touat M, Dubois F, Cherniack AD, Guo X, Tavakol S, Cioffi G, Lindeman NI, Ligon AH, Chiocca EA, Reardon DA, Wen PY, Meredith DM, Santagata S, Barnholtz-Sloan JS, Ligon KL, Beroukhim R, Bi WL",
+        citation: "Neuro Oncol. 2025 Jan 12;27(1):195-208. PMID: 39164213; PMC11726335.",
+      },
+    ],
+  },
+  {
+    year: "2024",
+    entries: [
+      {
+        title: "Multimodal-Assisted Resection of Right Insular Glioblastoma: A 2-Dimensional Operative Video.",
+        authors: "Guo X, Torio E, Bose M, Golby AJ, Bi WL",
+        citation: "Oper Neurosurg. 2024 Dec 03;29(3):451. PMID: 39625292; PMC12333727.",
+      },
+      {
+        title: "Applications and Integration of Radiomics for Skull Base Oncology.",
+        authors: "Patel RV, Groff KJ, Bi WL",
+        citation: "Adv Exp Med Biol. 2024;1462:285-305. PMID: 39523272.",
+      },
+      {
+        title: "Role of Hospital Connectedness in Brain Metastasis Outcomes.",
+        authors: "Tong L, Patel RV, Aizer AA, Dhand A, Bi WL",
+        citation: "JAMA Netw Open. 2024 Sep 03;7(9):e2435051. PMID: 39312234; PMC11420690.",
+      },
+      {
+        title: "Interhospital transfer dynamics for patients with intracranial hemorrhage in Massachusetts.",
+        authors: "Patel RV, Tong L, Molyneaux BJ, Patel NJ, Aziz-Sultan MA, Dhand A, Bi WL",
+        citation: "Front Neurol. 2024;15:1409713. PMID: 39144707; PMC11322084.",
+      },
+      {
+        title: "Improved optic nerve visualization and treatment planning through a dedicated optic nerve MRI protocol.",
+        authors: "Wu KC, Guenette JP, Huang RY, Al-Mefty O, Dunn IF, Bi WL",
+        citation: "Neurosurg Focus. 2024 Apr;56(4):E9. PMID: 38560937.",
+      },
+      {
+        title: "Comparing Surgery with Stereotactic Radiation Alone for Newly Diagnosed Brain Metastases.",
+        authors: "Bhave VM, Bi WL",
+        citation: "World Neurosurg. 2024 Jan;181:184-185. PMID: 37838534.",
+      },
+      {
+        title: "Reduced Mortality and Radiation Necrosis After Surgery With Postoperative Stereotactic Radiation in Patients With Multiple Brain Metastases.",
+        authors: "Bhave VM, Lamba N, Tjong MC, Aizer AA, Bi WL",
+        citation: "Neurosurgery. 2024 Jan 01;94(1):117-128. PMID: 37489905.",
+      },
+      {
+        title: "Dissecting patterns and predictors of interhospital transfers for patients with brain metastasis.",
+        authors: "Tong L, Medeiros L, Moen EL, Dhand A, Bi WL",
+        citation: "J Neurosurg. 2024 Jan 01;140(1):27-37. PMID: 37486906; PMC10787816.",
+      },
+    ],
+  },
+  {
+    year: "2023",
+    entries: [
+      {
+        title: "Strategies to improve surgical technical competency: a systematic review.",
+        authors: "Banko L, Patel RV, Nawabi N, Altshuler M, Medeiros L, Cosgrove GR, Bi WL",
+        citation: "Acta Neurochir (Wien). 2023 Dec;165(12):3565-3572. PMID: 37945995.",
+      },
+      {
+        title: "Impact of H3K27 trimethylation loss in meningiomas: a meta-analysis.",
+        authors: "Cello G, Patel RV, McMahon JT, Santagata S, Bi WL",
+        citation: "Acta Neuropathol Commun. 2023 Jul 25;11(1):122. PMID: 37491289; PMC10369842.",
+      },
+      {
+        title: "Minimizing Intracranial Disease Before Stereotactic Radiation in Single or Solitary Brain Metastases.",
+        authors: "Bhave VM, Lamba N, Aizer AA, Bi WL",
+        citation: "Neurosurgery. 2023 Oct 01;93(4):782-793. PMID: 37036442.",
+      },
+      {
+        title: "Integrated molecular and clinical analysis of BRAF-mutant glioma in adults.",
+        authors: "Schreck KC, Langat P, Bhave VM, Li T, Woodward E, Pratilas CA, Eberhart CG, Bi WL",
+        citation: "NPJ Precis Oncol. 2023 Feb 28;7(1):23. PMID: 36854806; PMC9975216.",
+      },
+      {
+        title: "Imaging of Skull Base Tumors.",
+        authors: "Bi WL",
+        citation: "Continuum (Minneap Minn). 2023 Feb 01;29(1):156-170. PMID: 36795876.",
+      },
+      {
+        title: "Application of radiomics to meningiomas: A systematic review.",
+        authors: "Patel RV, Yao S, Huang RY, Bi WL",
+        citation: "Neuro Oncol. 2023 Jun 02;25(6):1166-1176. PMID: 36723606; PMC10237421.",
+      },
+    ],
+  },
+  {
+    year: "2022",
+    entries: [
+      {
+        title: "Salvage brachytherapy for multiply recurrent metastatic brain tumors: A matched case analysis.",
+        authors: "Wu KC, Cantalino JM, Dee EC, Hsu L, Harris TC, Rawal B, Juvekar PR, Mooney MA, Dunn IF, Aizer AA, Devlin PM, Bi WL",
+        citation: "Neurooncol Adv. 2022;4(1):vdac039. PMID: 35571989; PMC9092639.",
+      },
+      {
+        title: "Biology and Treatment of Meningiomas: A Reappraisal.",
+        authors: "McFaline-Figueroa JR, Kaley TJ, Dunn IF, Bi WL",
+        citation: "Hematol Oncol Clin North Am. 2022 Feb;36(1):133-146. PMID: 34801160.",
+      },
+      {
+        title: "A molecularly integrated grade for meningioma.",
+        authors: "Driver J, Hoffman SE, Tavakol S, Woodward E, Maury EA, Bhave V, Greenwald NF, Nassiri F, Aldape K, Zadeh G, Choudhury A, Vasudevan HN, Magill ST, Raleigh DR, Abedalthagafi M, Aizer AA, Alexander BM, Ligon KL, Reardon DA, Wen PY, Al-Mefty O, Ligon AH, Dubuc AM, Beroukhim R, Claus EB, Dunn IF, Santagata S, Bi WL",
+        citation: "Neuro Oncol. 2022 May 04;24(5):796-808. PMID: 34508644; PMC9071299.",
+      },
+      {
+        title: "Activity of PD-1 blockade with nivolumab among patients with recurrent atypical/anaplastic meningioma: phase II trial results.",
+        authors: "Bi WL, Nayak L, Meredith DM, Driver J, Du Z, Hoffman S, Li Y, Lee EQ, Beroukhim R, Rinne M, McFaline-Figueroa R, Chukwueke U, McCluskey C, Gaffey S, Cherniack AD, Stefanik J, Doherty L, Taubert C, Cifrino M, LaFrankie D, Graillon T, Wen PY, Ligon KL, Al-Mefty O, Huang RY, Muzikansky A, Chiocca EA, Santagata S, Dunn IF, Reardon DA",
+        citation: "Neuro Oncol. 2022 Jan 05;24(1):101-113. PMID: 34015129; PMC8730772.",
+      },
+    ],
+  },
   {
     year: "2021",
     entries: [
@@ -710,7 +904,13 @@ export const PUBLICATIONS_BY_YEAR: PublicationYear[] = [
     ],
   },
 ];
-export const PUBMED_URL = "https://pubmed.ncbi.nlm.nih.gov/?term=bi+wl+AND+Skull&sort=pubdate&size=200";
+// Author-disambiguated: "Bi WL[Author]" alone also matches unrelated authors
+// who happen to share the same surname/initials (confirmed via PubMed's own
+// API -- rice chemistry, materials science, and plant pathology papers all
+// surfaced). Restricting to her Brigham/Harvard affiliation filters those out
+// without needing an ORCID, which she doesn't have listed on PubMed.
+export const PUBMED_URL =
+  "https://pubmed.ncbi.nlm.nih.gov/?term=Bi+WL%5BAuthor%5D+AND+%28Brigham%5BAffiliation%5D+OR+Harvard%5BAffiliation%5D%29&sort=pubdate&size=200";
 
 export const CONTACT = {
   labName: "The Skull Base Tumor Laboratory",
