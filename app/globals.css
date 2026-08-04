@@ -1,0 +1,267 @@
+@import "tailwindcss";
+
+/* ============================================================
+   Bi Lab design system: a clean academic read, navy and white,
+   in the spirit of the lab's existing BWH-hosted site. Navy is
+   the single interactive color (links, active nav, buttons); a
+   muted gold marks the one deliberate accent (status/deadline
+   flags) so it stays meaningful rather than decorative. Neutrals
+   are plain slate, not tinted. Type is Geist (sans and mono),
+   matching this lab's other tools.
+   ============================================================ */
+
+:root {
+  --paper: #ffffff;
+  --paper-raised: #f8fafc;
+  --ink: #0f172a;
+  --ink-muted: #475569;
+  --ink-faint: #64748b;
+  --hairline: #e2e8f0;
+  --hairline-strong: #cbd5e1;
+  --accent: #1e3a5f;
+  --accent-ink: #14293e;
+  --accent-2: #92702a;
+  --accent-2-ink: #74591f;
+
+  --background: var(--paper);
+  --foreground: var(--ink);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #0b1220;
+    --paper-raised: #141d30;
+    --ink: #f1f5f9;
+    --ink-muted: #94a3b8;
+    --ink-faint: #7c8aa0;
+    --hairline: #263449;
+    --hairline-strong: #33455e;
+    --accent: #6f97c4;
+    --accent-ink: #8fb0d6;
+    --accent-2: #d3ac5f;
+    --accent-2-ink: #e0bd77;
+
+    --background: var(--paper);
+    --foreground: var(--ink);
+  }
+}
+
+/* The theme toggle stamps data-theme on <html>, which must win over the
+   prefers-color-scheme media query in both directions. */
+:root[data-theme="light"] {
+  --paper: #ffffff;
+  --paper-raised: #f8fafc;
+  --ink: #0f172a;
+  --ink-muted: #475569;
+  --ink-faint: #64748b;
+  --hairline: #e2e8f0;
+  --hairline-strong: #cbd5e1;
+  --accent: #1e3a5f;
+  --accent-ink: #14293e;
+  --accent-2: #92702a;
+  --accent-2-ink: #74591f;
+
+  --background: var(--paper);
+  --foreground: var(--ink);
+}
+
+:root[data-theme="dark"] {
+  --paper: #0b1220;
+  --paper-raised: #141d30;
+  --ink: #f1f5f9;
+  --ink-muted: #94a3b8;
+  --ink-faint: #7c8aa0;
+  --hairline: #263449;
+  --hairline-strong: #33455e;
+  --accent: #6f97c4;
+  --accent-ink: #8fb0d6;
+  --accent-2: #d3ac5f;
+  --accent-2-ink: #e0bd77;
+
+  --background: var(--paper);
+  --foreground: var(--ink);
+}
+
+* {
+  border-color: var(--hairline);
+}
+
+html {
+  color-scheme: light dark;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--accent) 25%, transparent);
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ---------- Type scale ---------- */
+.text-display {
+  font-family: var(--font-sans);
+  font-size: 2.75rem;
+  line-height: 1.1;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+}
+.text-title {
+  font-family: var(--font-sans);
+  font-size: 1.625rem;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.008em;
+  text-wrap: balance;
+}
+.text-subtitle {
+  font-size: 1.0625rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+.text-caption {
+  font-size: 0.8125rem;
+  color: var(--ink-muted);
+}
+.text-mono {
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- Primitives ---------- */
+.panel {
+  border: 1px solid var(--hairline);
+  border-radius: 8px;
+  background: var(--paper-raised);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04), 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.6rem 1.1rem;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: opacity 0.15s, background 0.15s;
+  cursor: pointer;
+}
+.btn-primary {
+  background: var(--accent);
+  color: white;
+}
+.btn-primary:hover {
+  opacity: 0.9;
+}
+.btn-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.btn-secondary {
+  background: transparent;
+  border: 1px solid var(--hairline-strong);
+  color: var(--foreground);
+}
+.btn-secondary:hover {
+  border-color: var(--accent);
+  color: var(--accent-ink);
+}
+
+.field-label {
+  display: block;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--ink-muted);
+  margin-bottom: 0.35rem;
+}
+.field-input {
+  width: 100%;
+  padding: 0.55rem 0.75rem;
+  font-size: 0.9375rem;
+  border: 1px solid var(--hairline-strong);
+  border-radius: 6px;
+  background: var(--paper);
+  color: var(--foreground);
+}
+.field-input:focus {
+  border-color: var(--accent);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  border: 1px solid var(--hairline-strong);
+  color: var(--ink-muted);
+  white-space: nowrap;
+}
+.badge-accent {
+  color: var(--accent-ink);
+  border-color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 10%, transparent);
+}
+.badge-flag {
+  color: var(--accent-2-ink);
+  border-color: var(--accent-2);
+  background: color-mix(in srgb, var(--accent-2) 12%, transparent);
+}
+
+.link-accent {
+  color: var(--accent-ink);
+  text-decoration-color: color-mix(in srgb, var(--accent-ink) 40%, transparent);
+  text-underline-offset: 2px;
+}
+.link-accent:hover {
+  text-decoration-color: var(--accent-ink);
+}
+
+.avatar-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--accent) 14%, var(--paper-raised));
+  color: var(--accent-ink);
+  font-weight: 600;
+  flex-shrink: 0;
+}
