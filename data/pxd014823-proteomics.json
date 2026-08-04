@@ -1,0 +1,105 @@
+{
+  "id": "pxd014823-proteomics",
+  "title": "Global proteomic profiling of meningioma cohort",
+  "accessions": [
+    "PXD014823"
+  ],
+  "related_accessions": [],
+  "source_repositories": [
+    "PRIDE"
+  ],
+  "publications": [
+    {
+      "title": "Comprehending Meningioma Signaling Cascades Using Multipronged Proteomics Approaches & Targeted Validation of Potential Markers.",
+      "authors": ["Mukherjee S", "Biswas D", "Gadre R", "Jain P", "Syed N", "Stylianou J"],
+      "venue": "Frontiers in Oncology",
+      "year": 2020,
+      "doi": "10.3389/fonc.2020.01600",
+      "pmid": "32974197",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Sanjeeva Srivastava",
+  "institution": "IIT Bombay",
+  "date_deposited": "2019-07-30",
+  "date_updated": "2020-08-27",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-10",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-10",
+  "verification_tier": 2,
+  "found_via": [
+    "keyword_api"
+  ],
+  "modality": [
+    "proteomics_bulk_ms"
+  ],
+  "platform": "Q Exactive",
+  "reference_genome": "Not applicable",
+  "pipeline": "Proteome Discoverer 2.2",
+  "patient_count": "Not reported",
+  "sample_count": "Not reported",
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": null,
+    "grade_2": null,
+    "grade_3": null
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": false,
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "Not reported"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "Not reported",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "Not reported",
+  "age_distribution": "Not reported",
+  "has_outcome_data": false,
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": []
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": true,
+  "processed_data_available": true,
+  "processed_data_format": "Proteome Discoverer .msf search-result files",
+  "license": "Creative Commons Public Domain (CC0)",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "modality": "High",
+    "publications": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "Re-verified 2026-07-10 directly against the live PRIDE record: no publication is linked in the PRIDE project record itself (references field is empty), confirming the prior note. pipeline/platform/license/date_deposited/date_updated filled in from the live PRIDE record. No sample count or clinical breakdown is stated in the project-level description. FOLLOW-UP PUBLICATION SEARCH (2026-07-13), match found and directly confirmed: a Europe PMC full-text search for PXD014823 returned exactly one hit, Mukherjee et al. 2020 (PMID 32974197, Frontiers in Oncology, 'Comprehending Meningioma Signaling Cascades Using Multipronged Proteomics Approaches & Targeted Validation of Potential Markers'), whose Data Availability Statement (fetched directly) states verbatim: 'The mass spectrometry proteomics datasets have been deposited to the ProteomeXchange Consortium via the PRIDE partner repository with the dataset identifier PXD014852, PXD014853, PXD014855, and PXD014823.' Last author Srivastava S matches this record's corresponding_author exactly (IIT Bombay). This same paper is also the confirmed originating publication for two sibling records in this inventory, pxd014852-proteomics and pxd014853-meningioma-anxa2-ipms (see each record's own note); a fourth accession named in the same statement, PXD014855, was not part of this 36-record review batch and is not yet checked as of this pass. Publication added; publication_status normal so tags.peer_reviewed set true.",
+  "source_urls": [
+    "https://www.ebi.ac.uk/pride/archive/projects/PXD014823"
+  ],
+  "tags": {
+    "grade_comparable": false,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": false,
+    "large_cohort": false,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": false,
+    "has_outcome_data": false,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

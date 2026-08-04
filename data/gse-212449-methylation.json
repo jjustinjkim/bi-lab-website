@@ -1,0 +1,129 @@
+{
+  "id": "gse-212449-methylation",
+  "title": "Genetic and epigenetic profiling identifies two distinct classes of spinal meningiomas",
+  "accessions": [
+    "GSE212449"
+  ],
+  "related_accessions": [],
+  "source_repositories": [
+    "GEO"
+  ],
+  "publications": [
+    {
+      "title": "Genetic and epigenetic profiling identifies two distinct classes of spinal meningiomas.",
+      "authors": [
+        "Ricklefs FL",
+        "Fita KD",
+        "Mohme M",
+        "Mawrin C",
+        "Rahmanzade R",
+        "Sahm F",
+        "D\u00fchrsen L",
+        "G\u00f6bel C",
+        "Lamszus K",
+        "Westphal M",
+        "Sch\u00fcller U",
+        "Eicker SO"
+      ],
+      "venue": "Acta neuropathologica",
+      "year": 2022,
+      "doi": "10.1007/s00401-022-02504-6",
+      "pmid": "36163595",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Ulrich Sch\u00fcller, Sven O Eicker",
+  "institution": "University Medical Center Hamburg-Eppendorf",
+  "date_deposited": "2022-08-31",
+  "date_updated": "2022-10-13",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-14",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-10",
+  "verification_tier": 1,
+  "found_via": [
+    "keyword_api",
+    "citation_chain"
+  ],
+  "modality": [
+    "dna_methylation_array"
+  ],
+  "platform": "GPL13534, GPL21145",
+  "reference_genome": "Not reported",
+  "pipeline": "Not reported",
+  "patient_count": 63,
+  "sample_count": 65,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": 52,
+    "grade_2": 11,
+    "grade_3": 1
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": true,
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "primary",
+    "recurrent"
+  ],
+  "anatomic_location_breakdown": "spinal",
+  "tissue_preservation": "Not reported",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "42 female, 23 male (per-sample across 65 samples; from GEO GSM 'Sex' field)",
+  "age_distribution": "8-88 years (per-sample; from GEO GSM 'age' field, reported for 64 of 65 samples)",
+  "has_outcome_data": true,
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": []
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": "Not reported",
+  "processed_data_available": true,
+  "processed_data_format": "GSE212449_RAW.tar",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High",
+    "publications": "High",
+    "patient_count": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "Series-level GEO metadata verified directly against the live source (2026-07-10): live GEO overall_design explicitly states '65 tumor samples of spinal meningiomas from 63 patients...3 samples from recurrent spinal meningiomas,' confirming patient_count=63 and a primary/recurrent split (62 primary + 3 recurrent), now reflected in the record. Remaining per-sample clinical/pathology fields (brain invasion status, and the specific GSM IDs of the recurrent-tumor samples) have not yet been extracted from individual GSM records or supplementary tables; grade, sex, and age were extracted in the 2026-07-12 re-audit noted below. TAG CORRECTION (2026-07-11 re-verification pass): tags.recurrence_annotated was false despite the live overall_design giving an explicit dataset-level count distinguishing primary from recurrent samples ('3 samples from recurrent spinal meningiomas' out of 65 total, i.e. 62 primary / 3 recurrent), which satisfies the docs/schema.md definition of recurrence_annotated ('explicitly distinguishes primary vs. recurrent samples with counts'). Corrected to true. This is a series-level count, not a per-GSM breakdown; which specific GSM IDs are the 3 recurrent samples has still not been extracted. PER-GSM VERIFICATION (2026-07-12 re-audit): individual GSM characteristics for all 65 samples were fetched and confirm the record's grade_breakdown (who_grade field: 52 grade 1, 11 grade 2, 1 grade 3 across 64 of 65 samples, one sample lacks a who_grade value) and reveal additional per-sample fields not previously captured. sex_distribution filled from the GSM 'Sex' field (42 female, 23 male across all 65 samples), age_distribution filled from the GSM 'age' field (range 8-88 years, present for 64 of 65 samples). has_outcome_data corrected from 'Not reported' to true because GSMs carry per-sample follow-up data (fup_months, present for 64 samples) plus a recurrence yes/no outcome field (7 yes, 33 no, 40 with a value), which is recurrence-free-survival outcome data per the schema definition; tags.has_outcome_data updated to true accordingly. Note this per-sample recurrence outcome flag (did the patient's tumor recur) is distinct from the overall_design's '3 samples from recurrent spinal meningiomas' sample-type count that drives treatment_timepoint_status and recurrence_annotated. tags.grade_comparable corrected false to true (the record carries an explicit per-grade breakdown 52/11/1, matching the schema definition and consistent with sibling records that populate grade_breakdown). tags.molecular_subtype_annotated corrected false to true to match the already-true top-level molecular_subtype_annotated field, supported by the GSM 'meth.subclass(heidelbergclassifier)' values (ben-1/ben-2/ben-3/int-A/int-B/mal), a named DNA methylation subclass system, and the series title 'two distinct classes of spinal meningiomas'. AUTHOR-LIST TRUNCATION FIX (2026-07-14): fetched the full author list for PMID 36163595 from both PubMed efetch XML and Europe PMC core record (both agree exactly). The paper actually has 12 authors, not the 6 previously listed (Ricklefs FL, Fita KD, Mohme M, Mawrin C, Rahmanzade R, Sahm F) -- added the missing 6 (D\u00fchrsen L, G\u00f6bel C, Lamszus K, Westphal M, Sch\u00fcller U, Eicker SO). More importantly, the paper's own correspondence footnote designates Ulrich Sch\u00fcller (u.schueller@uke.de, Institute of Neuropathology, University Medical Center Hamburg-Eppendorf) and Sven O Eicker (s.eicker@uke.de, Department of Neurosurgery, same institution) as the two corresponding authors (both marked as equal-contribution corresponding authors) -- NOT Ricklefs/Fita, who are simply the first two listed authors. corresponding_author corrected from 'Franz L Ricklefs, Krystian D Fita' to 'Ulrich Sch\u00fcller, Sven O Eicker' to match the actual designation; this was exactly the 'never assume corresponding author from list position' error the audit is meant to catch. FULL-TEXT AND PER-GSM RE-VERIFICATION (2026-07-14): fetched the open-access PMC full text (PMC9547788) -- confirms the paper's own prose does NOT present per-sample recurrence/outcome data or a single named subtype system in the narrative text (it discusses two unsupervised clusters and matches most of cluster 1 to the existing 'benign-2' Heidelberberg class, with several cases not clearly matching either cluster); the paper's introduction only cites population-level recurrence-rate statistics (not this cohort's own outcomes) as background. This confirms the per-sample recurrence_annotated/has_outcome_data/molecular_subtype_annotated evidence supporting this record rests on the DEPOSITED GEO per-sample metadata, not the paper's own text -- exactly as the existing 2026-07-12 note already documented. Re-fetched two individual GSM records live (GSM6532942, GSM6533000) as a spot check and confirmed all previously-reported per-sample fields are genuinely present and accurate: who_grade, sex, age, histology, extent of resection, fup_months, a recurrence yes/no outcome field (distinct from the specimen-type primary/recurrent count), meth.subclass (Heidelberg classifier, e.g. int-A/ben-2), MSC score, 22q loss, and even per-sample NF2/AKT1 mutation calls. No corrections needed to sample_count, patient_count, grade_breakdown, or the three tags under review (recurrence_annotated, molecular_subtype_annotated, has_outcome_data) -- all independently reconfirmed correct on this live re-check. ONTOLOGY ADDED (2026-07-14): disease_id=MONDO:0001275, tissue_ids=['UBERON:0003292'], both verified live against the EBI Ontology Lookup Service (ols4/api/search) before use, not guessed. All 65 samples are spinal meningiomas per the series' own overall_design ('65 tumor samples of spinal meningiomas from 63 patients') -- MONDO's specific spinal-meningioma term and UBERON's meninx-of-spinal-cord term both apply cleanly, unlike the generic intracranial default.",
+  "source_urls": [
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE212449",
+    "https://pubmed.ncbi.nlm.nih.gov/36163595/"
+  ],
+  "tags": {
+    "grade_comparable": true,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": false,
+    "large_cohort": false,
+    "recurrence_annotated": true,
+    "molecular_subtype_annotated": true,
+    "has_outcome_data": true,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null,
+  "ontology": {
+    "disease_id": "MONDO:0001275",
+    "tissue_ids": [
+      "UBERON:0003292"
+    ]
+  }
+}

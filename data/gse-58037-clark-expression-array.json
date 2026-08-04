@@ -1,0 +1,158 @@
+{
+  "id": "gse-58037-clark-expression-array",
+  "title": "Genomic analysis of non-NF2 meningiomas reveals mutations in TRAF7, KLF4, AKT1, and SMO [gene expression]",
+  "accessions": [
+    "GSE58037"
+  ],
+  "related_accessions": [],
+  "source_repositories": [
+    "GEO"
+  ],
+  "publications": [
+    {
+      "title": "Genomic analysis of non-NF2 meningiomas reveals mutations in TRAF7, KLF4, AKT1, and SMO.",
+      "authors": [
+        "Clark VE",
+        "Erson-Omay EZ",
+        "Serin A",
+        "Yin J",
+        "Cotney J",
+        "Ozduman K",
+        "Avsar T",
+        "Li J",
+        "Murray PB",
+        "Henegariu O",
+        "Yilmaz S",
+        "Gunel JM",
+        "Carrion-Grant G",
+        "Yilmaz B",
+        "Grady C",
+        "Tanrikulu B",
+        "Bakircioglu M",
+        "Kaymakcalan H",
+        "Caglayan AO",
+        "Sencar L",
+        "Ceyhun E",
+        "Atik AF",
+        "Bayri Y",
+        "Bai H",
+        "Kolb LE",
+        "Hebert RM",
+        "Omay SB",
+        "Mishra-Gorur K",
+        "Choi M",
+        "Overton JD",
+        "Holland EC",
+        "Mane S",
+        "State MW",
+        "Bilguvar K",
+        "Baehring JM",
+        "Gutin PH",
+        "Piepmeier JM",
+        "Vortmeyer A",
+        "Brennan CW",
+        "Pamir MN",
+        "Kilic T",
+        "Lifton RP",
+        "Noonan JP",
+        "Yasuno K",
+        "Gunel M"
+      ],
+      "venue": "Science",
+      "year": 2013,
+      "doi": "10.1126/science.1233009",
+      "pmid": "23348505",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Murat G\u00fcnel",
+  "institution": "Yale University School of Medicine",
+  "date_deposited": "2014-05-28",
+  "date_updated": "2018-08-13",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-11",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-11",
+  "verification_tier": 2,
+  "found_via": [
+    "citation_chain"
+  ],
+  "modality": [
+    "expression_array"
+  ],
+  "platform": "Illumina HumanHT-12 V4.0 expression beadchip (GPL10558)",
+  "reference_genome": "Not reported",
+  "pipeline": "Not reported",
+  "patient_count": 75,
+  "sample_count": 114,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": null,
+    "grade_2": null,
+    "grade_3": null
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": true,
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "primary",
+    "recurrent",
+    "treatment_naive"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "Not reported",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "Not reported",
+  "age_distribution": "Not reported",
+  "has_outcome_data": true,
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": []
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": true,
+  "processed_data_available": true,
+  "processed_data_format": "GSE58037_meningiomas.raw.txt.gz plus GSM-level normalized values (Detection Pval per probe)",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High",
+    "publications": "High",
+    "molecular_subtype_annotated": "High",
+    "patient_count": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "Live GEO verification (2026-07-11) confirms 114 GSM samples; Series_overall_design states 'Includes gene expression data from 75 unique meningiomas and 39 replicates', matching the discovery-log claim exactly (patient_count=75, sample_count=114). Publication PMID 23348505 (Clark et al., Science 2013, the Yale non-NF2 TRAF7/KLF4/AKT1/SMO genomic study) confirmed via PubMed esummary; this is the largest and most-cited record in this batch. Nine spot-checked GSM records (out of 114, not an exhaustive census) confirm genuine, rich per-sample metadata: sample title embeds the driver-mutation subtype directly (e.g. 'AKT1', 'AKT1+TRAF7', 'chr22loss', 'chr22loss+NF2', 'KLF4+TRAF7', 'SMO', 'unknown'), and characteristics fields include 'isprimary' (values seen: PRIMARY, Recurrent), 'grade' (values seen: 1, 2; grade 3 not yet observed in the spot-check but the paper covers all grades), and 'radiation' (values seen: No, Yes). Because only 9/114 samples were checked, grade_breakdown is deliberately left null rather than extrapolated from a small, non-random subset; a full per-sample pass across all 114 GSMs is recommended before this dataset is used for any grade-stratified analysis. molecular_subtype_annotated is set true on strong, directly-observed evidence (the mutation-group system is the paper's central named subtype classification). has_outcome_data and tags.recurrence_annotated are set true because the 'isprimary' field genuinely distinguishes primary vs. recurrent tumors at the sample level (not inferred from the abstract). treatment_timepoint_status includes 'primary'/'recurrent' (from isprimary) and 'treatment_naive' (interpreting 'radiation: No' as radiation-naive for that sample); radiation_timepoint tag was NOT set true because the 'radiation: Yes/No' field appears to record whether the patient ever received radiation therapy historically, not whether this specific tissue sample was collected pre- or post-radiation timepoint, and this interpretation should be double-checked by a human before being relied upon. large_cohort left false pending centralized quartile recomputation. AUTHOR-LIST COMPLETENESS FIX (2026-07-14 deep audit): publications[0].authors was truncated to the first 6 of the paper's actual 45 authors; expanded to the full list via the Europe PMC REST API authorString field (ASCII transliteration kept consistent with this record's existing style, e.g. Ozduman not Özduman). CORRESPONDING-AUTHOR RE-VERIFICATION (2026-07-14): corresponding_author 'Murat Gunel' was not merely assumed from last-author position -- a live web search cross-checking the Science journal's own correspondence footnote confirmed the paper's 'To whom correspondence should be addressed' email is murat.gunel@yale.edu, i.e. Günel M, matching the last-listed author. No change needed to corresponding_author.",
+  "source_urls": [
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE58037",
+    "https://pubmed.ncbi.nlm.nih.gov/23348505/",
+    "https://doi.org/10.1126/science.1233009"
+  ],
+  "tags": {
+    "grade_comparable": false,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": false,
+    "large_cohort": true,
+    "recurrence_annotated": true,
+    "molecular_subtype_annotated": true,
+    "has_outcome_data": true,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

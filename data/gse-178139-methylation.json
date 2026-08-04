@@ -1,0 +1,149 @@
+{
+  "id": "gse-178139-methylation",
+  "title": "DNA Methylation Signatures Differentiate Meningiomas from Normal Dura [HumanMethylation450]",
+  "accessions": [
+    "GSE178139"
+  ],
+  "related_accessions": [
+    "GSE178143",
+    "GSE176457",
+    "GSE42882"
+  ],
+  "source_repositories": [
+    "GEO"
+  ],
+  "publications": [
+    {
+      "title": "Epigenetic dysregulation in meningiomas.",
+      "authors": [
+        "Wedemeyer MA",
+        "Muskens I",
+        "Strickland BA",
+        "Aurelio O",
+        "Martirosian V",
+        "Wiemels JL",
+        "Weisenberger DJ",
+        "Wang K",
+        "Mukerjee D",
+        "Rhie SK",
+        "Zada G"
+      ],
+      "venue": "Neuro-oncology advances",
+      "year": 2022,
+      "doi": "10.1093/noajnl/vdac084",
+      "pmid": "35769412",
+      "preprint_id": null
+    },
+    {
+      "title": "Corrigendum to: Epigenetic dysregulation in meningiomas.",
+      "authors": [
+        "Wedemeyer MA",
+        "Muskens I",
+        "Strickland BA",
+        "Aurelio O",
+        "Martirosian V",
+        "Wiemels JL",
+        "Weisenberger DJ",
+        "Wang K",
+        "Mukerjee D",
+        "Rhie SK",
+        "Zada G"
+      ],
+      "venue": "Neuro-oncology advances",
+      "year": 2023,
+      "doi": "10.1093/noajnl/vdac190",
+      "pmid": "36632569",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Gabriel Zada, Suhn K Rhie",
+  "institution": "University of Southern California",
+  "date_deposited": "2021-06-14",
+  "date_updated": "2023-08-14",
+  "publication_status": "corrected",
+  "last_verified_date": "2026-07-14",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-10",
+  "verification_tier": 1,
+  "found_via": [
+    "keyword_api",
+    "citation_chain"
+  ],
+  "modality": [
+    "dna_methylation_array"
+  ],
+  "platform": "GPL13534",
+  "reference_genome": "Not reported",
+  "pipeline": "Not reported",
+  "patient_count": "Not reported",
+  "sample_count": 24,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": 11,
+    "grade_2": 1,
+    "grade_3": null
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": "Not reported",
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "primary",
+    "recurrent"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "Not reported",
+  "normal_control_tissue": {
+    "included": true,
+    "type": "dura",
+    "count": 12
+  },
+  "sex_distribution": "22 female, 2 male (n=24, extracted from GSM 'sex' field)",
+  "age_distribution": "n=24, range 34.0-85.0, mean 58.5 (extracted from GSM 'age' field)",
+  "has_outcome_data": true,
+  "paired_multimodal": {
+    "is_paired": true,
+    "related_datasets": [
+      "gse-176457-cnv-snp-array"
+    ]
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": true,
+  "processed_data_available": true,
+  "processed_data_format": "GSE178139_Normalized_beta_values.txt.gz",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High",
+    "publications": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "PER-SAMPLE DATA UPDATE (2026-07-10): Rich per-sample clinical data recovered directly from the series' family.soft file, resolving the earlier ambiguity about the '19 meningiomas' vs '12 patients' phrasing: the GSM-level 'who grade' field actually has 3 categories -- 'dura' (12, i.e. the matched normal controls, now correctly moved to normal_control_tissue), 'I' (11), and 'II' (1) -- so the 11+1=12 tumor samples plus 12 dura samples account for all 24 total, resolving the prior discrepancy entirely. RECURRENCE DATA: reoperation field present per-sample: 18 No, 4 Yes, 2 Unknown (extracted from GSM 'reoperation' field) OUTCOME DATA: progression field present per-sample: 20 No, 2 Yes, 2 Unknown (extracted from GSM 'progression' field) AMBIGUOUS SOURCE TEXT: overall_design reads 'DNA methylation of matched meningioma/dura samples from 12 patients (11 WHO grade I, 1 WHO grade II) and 19 meningiomas were assessed...' -- the 11+1=12 grade breakdown clearly describes the 12-patient matched meningioma/dura cohort, but it's unclear from series-level text alone how the separately-mentioned '19 meningiomas' relates to the total sample_count of 24 (e.g. whether it's an overlapping/validation set already counted, or additional standalone samples with no grade breakdown given). grade_breakdown above reflects only the clearer 12-patient matched-pair subset, not necessarily all 24 samples -- resolve via individual GSM records before treating this as a complete per-grade accounting. Series-level GEO metadata otherwise verified directly against the live source; remaining per-sample clinical/pathology fields not yet extracted. FACT-CHECK UPDATE (2026-07-10): date_deposited/date_updated filled in from Series_submission_date/Series_last_update_date, previously 'Not reported'. The '19 meningiomas' clause is now resolved: the same overall_design sentence continues 'Also analyzed including were DNA methylation array data from 19 meningiomas ... previously reported in GEO (GSE42882)', i.e. it refers to externally re-used data from the separate, already-catalogued GSE42882 accession (added to related_accessions), not additional samples deposited under this GSE178139 accession itself; the 24 GSM records in this series are confirmed to be exactly the 12 tumor + 12 matched dura samples. PUBLICATION STATUS CORRECTION: PMID 35769412 has a published corrigendum (PMID 36632569, PMC9825709), confirmed via PubMed esummary and the corrigendum's own PMC full text: it corrects the corresponding-author designation only (both Gabriel Zada and Suhn K. Rhie should have been listed as co-corresponding authors, this record's corresponding_author field already lists both and needs no change), it does not affect the deposited data. publication_status updated from 'normal' to 'corrected' and the corrigendum added as a second publications entry. FACT-CHECK UPDATE (2026-07-12 re-verification pass): raw_data_available corrected from 'Not reported' to true; the live series lists GSE178139_RAW.tar (raw IDAT array files) as a supplementary_file entry. Per-sample sex (22 FEMALE, 2 MALE), age (n=24, range 34-85, mean 58.5), 'who grade' (dura 12, I 11, II 1), reoperation (18 No, 4 Yes, 2 Unknown), and progression (20 No, 2 Yes, 2 Unknown) all re-verified against the full family.soft this pass and match the stored values exactly. COMPLETENESS FIX (2026-07-13, corpus-wide tag audit): treatment_timepoint_status had been left at 'Not reported' even though tags.recurrence_annotated is true and this record's own notes above already document genuine per-sample primary/recurrent data. Corrected to ['primary', 'recurrent'] to match. DEEP-AUDIT PASS (2026-07-14): AUTHOR LISTS CORRECTED: both publications[].authors had been mechanically truncated to the first 6 names; Europe PMC's authorString for PMID 35769412 confirms 11 total authors, now written in full; the corrigendum's own PMC9825709 full text explicitly re-states the identical 11-author byline ('Michelle A Wedemeyer, Ivo Muskens, Ben A Strickland, Oscar Aurelio, Vahan Martirosian, Joseph L Wiemels, Daniel J Weisenberger, Kai Wang, Debraj Mukerjee, Suhn K Rhie, Gabriel Zada'), so the same 11-name list was applied to the corrigendum entry too (Europe PMC's own authorString field for 36632569 returns empty for this short notice, but the notice's own full text confirms the byline matches the original paper exactly, no authorship change, only a corresponding-author correction). corresponding_author re-confirmed unchanged (already correctly lists both co-corresponding authors named in the corrigendum's own text, 'Gabriel Zada and Suhn K. Rhie should have been listed as co-corresponding authors'). Grade_breakdown/brain_invasion/molecular_subtype_annotated/has_outcome_data/treatment_timepoint_status were not re-derived from the paper's full text this pass since they were already filled directly from live per-GSM family.soft data (the more authoritative, sample-level source) in prior passes; sample_count (24) re-confirmed against the live GEO record this pass (still 24 Series_sample_id entries).",
+  "source_urls": [
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE178139",
+    "https://pubmed.ncbi.nlm.nih.gov/35769412/",
+    "https://pubmed.ncbi.nlm.nih.gov/36632569/"
+  ],
+  "tags": {
+    "grade_comparable": true,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": true,
+    "large_cohort": false,
+    "recurrence_annotated": true,
+    "molecular_subtype_annotated": false,
+    "has_outcome_data": true,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

@@ -1,0 +1,114 @@
+{
+  "id": "e-mtab-1852-choy-etumour-expression-array",
+  "title": "High-throughput translational in vivo and ex vivo techniques for glioma molecular characterization -- eTumour consortium Kal1 subset [meningioma samples]",
+  "accessions": [
+    "E-MTAB-1852"
+  ],
+  "related_accessions": [],
+  "source_repositories": [
+    "ArrayExpress_BioStudies"
+  ],
+  "publications": [
+    {
+      "title": "Anosmin-1 contributes to brain tumor malignancy through integrin signal pathways.",
+      "authors": [
+        "Choy CT", "Kim H", "Lee JY", "Williams DM", "Palethorpe D", "Fellows G", "Wright AJ", "Laing K", "Bridges LR", "Howe FA", "Kim SH"
+      ],
+      "venue": "Endocrine-Related Cancer",
+      "year": 2014,
+      "doi": "10.1530/ERC-13-0181",
+      "pmid": "24189182",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Soo-Hyun Kim",
+  "institution": "St George's University of London",
+  "date_deposited": "2013-10-01",
+  "date_updated": "Not reported",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-16",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-16",
+  "verification_tier": 2,
+  "found_via": [
+    "pan_atlas_check"
+  ],
+  "modality": [
+    "expression_array"
+  ],
+  "platform": "Affymetrix Human Genome U133 Plus 2.0 Array",
+  "reference_genome": "Not applicable (array)",
+  "pipeline": "Not reported",
+  "patient_count": 15,
+  "sample_count": 15,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": 15,
+    "grade_2": 0,
+    "grade_3": 0
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": false,
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "Not reported"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "fresh_frozen",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "Not reported",
+  "age_distribution": "Not reported",
+  "has_outcome_data": false,
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": []
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": false,
+  "processed_data_available": true,
+  "processed_data_format": "Array Data Files (per-sample .CEL-derived expression files) per the study's ArrayExpress FTP listing",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "sample_count": "High",
+    "patient_count": "High",
+    "modality": "High",
+    "publications": "High",
+    "grade_breakdown": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "NEW RECORD (2026-07-16), closing out a coverage_gaps.md-carried lead: 'E-MTAB-1852 (glioma molecular characterization techniques) ... Not yet checked. Carried forward.' Despite the study's title and headline framing emphasizing glioma (the eTumour EU consortium's broader brain-tumor molecular-classification project), directly downloading and parsing the study's SDRF file (E-MTAB-1852.sdrf.txt, via https://www.ebi.ac.uk/biostudies/files/E-MTAB-1852/E-MTAB-1852.sdrf.txt -- the BioStudies REST API's JSON response for this study does not expose per-sample disease labels, only the SDRF does) found 15 rows with Characteristics[disease]='meningioma', all explicitly Characteristics[tumor grading]='WHO grade I', spanning 15 unique Characteristics[individual] values (et3096, et3159, et3170, et3265, et3271, et3272, et3297, et3298, et3302, et3308, et3309, et3859, et3860, et3861, et3863) with no replication (15 samples = 15 individuals). Per the study's own IDF, tumor typing was performed by 'a panel of independent pathologists across the etumour consortium' per WHO criteria on resected, snap-frozen tissue -- a real, primary, patient-tissue clinical cohort, not a secondary compilation (unlike a sibling coverage_gaps.md lead, E-MTAB-3732, checked the same session and found to be an unextractable secondary compiled meta-dataset -- see that entry in docs/coverage_gaps.md for why it was NOT added as a record). The IDF's own publication field listed 'Publication Status: under review' with no PMID, dated 2013 -- now over a decade stale; searched PubMed directly for the exact working title ('Kallmann syndrome-associated anosmin-1 contributes to brain tumor malignancy through integrin signal pathways') and found it was in fact published the following year under a slightly shortened title: 'Anosmin-1 contributes to brain tumor malignancy through integrin signal pathways' (Choy et al., Endocrine-Related Cancer 2014, PMID 24189182, DOI 10.1530/ERC-13-0181). Confirmed via its open-access PMC full text (PMC3869950) that it explicitly cites E-MTAB-1852 (1 occurrence, direct text search). Sole corresponding author (Soo-Hyun Kim) confirmed via the full text's own author-notes correspondence footnote ('Correspondence should be addressed to S-H Kim <skim@sgul.ac.uk>'), matching the IDF's IDF submitter institution (St George's University of London). No retraction/correction signal found. No per-sample sex/age/anatomic-location/brain-invasion/outcome data exists in the SDRF beyond disease and grade, so those fields correctly remain 'Not reported'. raw_data_available set false: only processed per-sample array data files are listed in the study's file listing, no raw .CEL files.",
+  "source_urls": [
+    "https://www.ebi.ac.uk/biostudies/arrayexpress/studies/E-MTAB-1852",
+    "https://www.ebi.ac.uk/biostudies/files/E-MTAB-1852/E-MTAB-1852.sdrf.txt",
+    "https://www.ebi.ac.uk/biostudies/files/E-MTAB-1852/E-MTAB-1852.idf.txt",
+    "https://pubmed.ncbi.nlm.nih.gov/24189182/",
+    "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3869950/"
+  ],
+  "tags": {
+    "grade_comparable": false,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": false,
+    "large_cohort": false,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": false,
+    "has_outcome_data": false,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

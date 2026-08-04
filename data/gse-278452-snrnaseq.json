@@ -1,0 +1,135 @@
+{
+  "id": "gse-278452-snrnaseq",
+  "title": "Gene expression profile in meningioma patients at the single cell level",
+  "accessions": [
+    "GSE278452"
+  ],
+  "related_accessions": [],
+  "source_repositories": [
+    "GEO",
+    "SRA"
+  ],
+  "publications": [
+    {
+      "title": "Single-cell analysis reveals a longitudinal trajectory of meningioma evolution and heterogeneity.",
+      "authors": [
+        "Lee JY",
+        "Lee EJ",
+        "Seo BY",
+        "Kim J",
+        "Song Y",
+        "Lee D",
+        "Moon N",
+        "Koo H",
+        "Park CK",
+        "Kim MS",
+        "Park SI",
+        "Nam DH",
+        "Kong DS",
+        "Sa JK"
+      ],
+      "venue": "Nature communications",
+      "year": 2025,
+      "doi": "10.1038/s41467-025-60653-0",
+      "pmid": "40593590",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Jason K Sa",
+  "institution": "Korea university",
+  "date_deposited": "2024-09-30",
+  "date_updated": "2026-02-10",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-17",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-10",
+  "verification_tier": 1,
+  "found_via": [
+    "keyword_api",
+    "citation_chain"
+  ],
+  "modality": [
+    "snrna_seq"
+  ],
+  "platform": "Illumina HiSeq 2500 (GPL16791)",
+  "reference_genome": "Not reported",
+  "pipeline": "Not reported",
+  "patient_count": 7,
+  "sample_count": 14,
+  "cell_count_raw": 100175,
+  "cell_count_post_qc": 74979,
+  "grade_breakdown": {
+    "grade_1": 6,
+    "grade_2": null,
+    "grade_3": null
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": true,
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "primary",
+    "recurrent"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "fresh_frozen",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "Not reported",
+  "age_distribution": "Not reported",
+  "has_outcome_data": "Not reported",
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": []
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": "Not reported",
+  "processed_data_available": true,
+  "processed_data_format": "GSE278452_aggregation.csv.gz",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High",
+    "publications": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "DEEP-AUDIT UPDATE (2026-07-14): publications[0].authors was truncated to exactly 6 names; expanded to the full 14-author Europe PMC authorString for PMID 40593590 (Lee JY ... Kong DS, Sa JK). corresponding_author (Jason K Sa, jasonksa@korea.ac.kr) re-confirmed via the same PMC12217859 <corresp> tag already cited in the prior 2026-07-12 correction; no further change. Full text (PMC12217859) checked for per-sample data not exposed in GEO metadata, per this audit's brief, and several items found: (1) 'we collected 14 matched fresh-frozen primary and recurrence samples from seven meningioma patients' -- tissue_preservation corrected from 'Not reported' to 'fresh_frozen'. (2) 'resulting in a total of 100,175 cells. Of these, 74,979 cells passed the stringent quality control' -- cell_count_raw and cell_count_post_qc corrected from 'Not reported' to 100175 and 74979 respectively. (3) 'Three patients were diagnosed with grade I meningothelial or fibrous meningiomas, and the remaining four were diagnosed with either grade II atypical or grade III anaplastic meningiomas' -- since all 7 patients contribute exactly 2 samples each (14/7), this maps to 6 of the 14 samples being grade I; grade_breakdown.grade_1 corrected from null to 6, grade_2/grade_3 left null since the paper does not split the 4 grade-II/III patients further (mirrors the established precedent in figshare-24217661-halder-mrm-tissue-proteomics for an unsplittable high-grade bucket); tags.grade_comparable corrected from false to true accordingly (low- vs. combined-high-grade comparison supported). Caveat: this assumes each patient's grade stayed the same between their primary and recurrent sample, which the paper does not explicitly confirm or contradict. (4) molecular_subtype_annotated corrected from 'Not reported' to true (tags likewise): the paper applies a pre-existing named 4-group classification ('immunogenic (MG1), NF2 wild-type (MG2), hypermetabolic (MG3), and proliferative (MG4)') to characterize cell/tumor states within this dataset's own 14 samples ('notable transcriptional differences between primary and recurrent meningiomas were observed for the MG3 and MG4 subtypes...higher proportion of immunogenic tumor cells in low-grade tumors, while high-grade meningiomas were marked by enrichments of hypermetabolic and proliferative tumor cells'), matching the schema's 'named molecular subtype system' definition, parallel to the precedent already applied to gse-292325's 'Choudhury class' field. (5) has_outcome_data checked specifically: the paper's own Kaplan-Meier survival analysis (by COL6A3 expression) is explicitly run on 'the bulk RNA sequencing dataset from an external cohort of 110 meningioma patients', NOT on this record's own 7-patient/14-sample snRNA-seq cohort -- so has_outcome_data is correctly left 'Not reported' (no change), since no per-sample outcome/survival data for this dataset's own samples was found. Series-level GEO metadata verified directly against the live source; per-sample clinical/pathology fields (grade, sex/age, anatomic location, brain invasion, treatment timepoint) have not yet been extracted from individual GSM records or supplementary tables -- part of the batch-1 scaling pass, prioritizing breadth of verified accessions over per-sample depth. Publication metadata pulled from PubMed esummary; not yet manually spot-checked against the full text for every record in this batch. FACT-CHECK (2026-07-10): modality corrected from scrna_seq to snrna_seq -- Series_summary explicitly states 'Using snRNA seq'. patient_count (7) and treatment_timepoint_status (primary/recurrent) were 'Not reported' despite Series_overall_design explicitly stating '6 primary samples and 8 recurrent samples obtained from 7 meningioma patients'; filled in. corresponding_author was 'Not reported' despite a Series_contact_name (Ji Yoon Lee) being present on the live record; filled in. Record id and filename renamed from gse-278452-scrnaseq to gse-278452-snrnaseq to match the corrected modality; confirmed no other file in this corpus referenced the old id before renaming. CORRESPONDING-AUTHOR CORRECTION (2026-07-12): corresponding_author changed from 'Ji Yoon,,Lee' to 'Jason,K,Sa'. Ji Yoon Lee is the paper's first author and the GEO Series_contact_name (data submitter), but she is not a corresponding author. The Nature Communications paper's PMC full text (PMID 40593590, PMC12217859) marks a single corresponding author via the contributor corresp attribute and email: Jason K. Sa (jasonksa@korea.ac.kr), the senior/last author. This accession has no Series_contributor list, so the prior extraction had fallen back to the contact name by author-list position; corrected to the email-footnote-verified corresponding author. The 14 GSMs carry only 'patient diagnosis: meningioma' and 'tissue: Brain', so grade/sex/age remain 'Not reported'. MODALITY RE-CONFIRMED (2026-07-17, corpus-wide modality categorization sweep): the record's own title ('Gene expression profile in meningioma patients at the single cell level') uses generic 'single cell' language that doesn't itself distinguish scRNA-seq from snRNA-seq, and no prior verification pass had explicitly checked which one this actually is. Searched the paper's full text (PMC12217859) directly: it states outright 'we perform single-nuclei RNA sequencing (snRNA-seq) of paired primary and recurrent tumors' and the Methods section header itself reads 'Single-nuclei RNA-sequencing data process and analysis' -- modality snrna_seq (not scrna_seq) is now definitively confirmed against the source text, not just inferred from the record's own id/naming convention as before.",
+  "source_urls": [
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE278452",
+    "https://pubmed.ncbi.nlm.nih.gov/40593590/"
+  ],
+  "tags": {
+    "grade_comparable": true,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": true,
+    "spatially_resolved": false,
+    "multi_modal_matched": false,
+    "large_cohort": false,
+    "recurrence_annotated": true,
+    "molecular_subtype_annotated": true,
+    "has_outcome_data": false,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null,
+  "gene_expression_viewer": {
+    "sample_label": "All 14 samples merged (7 patients, primary+recurrent), using the depositors' OWN published cell-type labels and UMAP coordinates",
+    "data_url": "/pilot-data/gse-278452-snrnaseq.json",
+    "cell_count": 74979,
+    "gene_count": 100,
+    "sample_count": 14,
+    "embedding_method": "Unlike this project's other records, this one uses the depositors' OWN processing outputs directly rather than a fresh scanpy re-run: their series-level celltype_annotations.csv and umap_coordinates.csv (both real published outputs, not re-derived here) were joined to the raw aggregated Cell Ranger matrix (100175 raw cellranger-aggr barcodes) by reconstructing each cell's own cell_id convention -- the raw matrix's GEM-group-suffixed barcodes (\"-1\" through \"-14\") were mapped back to sample names via aggregation.csv's row order, confirmed to match 74979 of 74980 published-annotation cell ids. Only the 74979 cells with a published annotation are shown. Gene panel (100 genes: 11 guaranteed meningioma driver genes + top HVGs by dispersion) and pathway scores were computed fresh (normalize_total+log1p+score_genes) since the depositors' files don't include per-cell expression values or pathway scores, only cell type/UMAP/QC metadata.",
+    "pathways": ["Proliferation / cell cycle", "Hypoxia", "Epithelial-mesenchymal transition", "Interferon response"],
+    "integration_note": "Cluster labels here are the depositors' OWN published cell-type calls (Cancer cells, Macrophage, Fibroblasts, etc.), not this project's own marker-gene-based guesses -- higher confidence than the informal per-cluster labels used elsewhere in this viewer, since they come from the original study's own analysis."
+  }
+}

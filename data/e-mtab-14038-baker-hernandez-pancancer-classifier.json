@@ -1,0 +1,113 @@
+{
+  "id": "e-mtab-14038-baker-hernandez-pancancer-classifier",
+  "title": "Comprehensive RNA-Seq Dataset for Pan-Cancer Tumor Classification [pediatric meningioma subset]",
+  "accessions": [
+    "E-MTAB-14038"
+  ],
+  "related_accessions": [],
+  "source_repositories": [
+    "ArrayExpress_BioStudies"
+  ],
+  "publications": [
+    {
+      "title": "M&M: an RNA-seq based pan-cancer classifier for paediatric tumours.",
+      "authors": [
+        "Wallis FSA", "Baker-Hernandez JL", "van Tuil M", "van Hamersveld C", "Koudijs MJ", "Verwiel ETP", "Janse A", "Hiemcke-Jiwa LS", "de Krijger RR", "Kranendonk MEG", "Vermeulen MA", "Wesseling P", "Flucke UE", "de Haas V", "Luesink M", "Hoving EW", "Vormoor JH", "van Noesel MM", "Hehir-Kwa JY", "Tops BBJ", "Kemmeren P", "Kester LA"
+      ],
+      "venue": "EBioMedicine",
+      "year": 2025,
+      "doi": "10.1016/j.ebiom.2024.105506",
+      "pmid": "39709770",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Patrick Kemmeren, Lennart A Kester",
+  "institution": "Princess Máxima Center for Pediatric Oncology, Utrecht",
+  "date_deposited": "2024-06-30",
+  "date_updated": "Not reported",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-16",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-16",
+  "verification_tier": 2,
+  "found_via": [
+    "pan_atlas_check"
+  ],
+  "modality": [
+    "bulk_rna_seq"
+  ],
+  "platform": "KAPA RNA HyperPrep with RiboErase, Illumina NovaSeq 6000 (2x150bp)",
+  "reference_genome": "GRCh38, GENCODE v29",
+  "pipeline": "STAR-Fusion 2.7.0f, GATK 4.0 best-practices workflow, TPM normalization",
+  "patient_count": 7,
+  "sample_count": 7,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": null,
+    "grade_2": null,
+    "grade_3": null
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": false,
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "Not reported"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "fresh_frozen",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "Not reported",
+  "age_distribution": "n=7, all labeled 'Pediatric' in the per-sample developmental-stage field; exact ages not given",
+  "has_outcome_data": false,
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": []
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": false,
+  "processed_data_available": true,
+  "processed_data_format": "Gene-by-sample TPM count matrices (ArrayExpress_GenesvsSamples_Reference_06062024.csv, ArrayExpress_GenesvsSamples_Test_07112024.csv), covering all 1727 samples in the full deposit including these 7",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "sample_count": "High",
+    "patient_count": "High",
+    "modality": "High",
+    "publications": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "NEW RECORD (2026-07-16), closing out a coverage_gaps.md-carried lead: 'E-MTAB-14038 ... Confirmed meningioma subset exists ... Not yet extracted into /data/: would require pulling the study's per-sample metadata/expression-matrix file to identify the specific 7 sample IDs (BioStudies API only exposes the factor-level count, not a per-sample GSM-style listing)'. Resolved this session by downloading the study's actual SDRF file directly (E-MTAB-14038.sdrf.txt, via https://www.ebi.ac.uk/biostudies/files/E-MTAB-14038/E-MTAB-14038.sdrf.txt -- not exposed through the BioStudies REST API's JSON response, which only surfaces the aggregate 'disease' factor-count table) rather than relying on the API alone. Parsed all 1727 rows directly: exactly 7 carry Characteristics[disease]='Meningioma', confirming the previously-uncertain count. Sample (Source Name) IDs: M067AAD_T1, M253AAE_T1, M275AAD_T1, M463AAE_T1, M530AAA_T1, M647AAD_T1, M841AAB_T1 -- all Characteristics[developmental stage]='Pediatric', Characteristics[organism part]='Tissue', library_strategy=RNA-Seq/paired-end. This is a genuinely rare pediatric meningioma transcriptomic cohort; every other meningioma record in this inventory is adult-predominant. The per-sample 'Description' field splits 5 as 'Classifier_reference' and 2 as 'Classifier_test' -- a machine-learning discovery/validation split for the paper's own pan-cancer classifier, not a clinical treatment_timepoint_status category, so deliberately not forced into that controlled-vocab field. No linked publication existed in the raw IDF file (submitter-only deposit, Princess Máxima Center for Pediatric Oncology); found via a targeted PubMed author search on the submitter (Baker-Hernandez JL): 'M&M: an RNA-seq based pan-cancer classifier for paediatric tumours' (EBioMedicine 2025, PMID 39709770), confirmed via its own open-access PMC full text (PMC11784659) to explicitly cite E-MTAB-14038 in its data availability statement (1 occurrence, verified via direct text search), and its stated purpose (an RNA-seq pan-cancer classifier for pediatric tumors, with a reference/test cohort split) matches this deposit's own IDF description and per-sample 'Classifier_reference'/'Classifier_test' labels exactly. Corresponding authors (Patrick Kemmeren, Lennart A Kester) confirmed via the PMC full text's author-notes contrib-group correspondence-footnote xrefs, not assumed from author-list position. No retraction/correction signal found. No per-sample grade/sex/brain-invasion/outcome data exists in the SDRF, so those fields correctly remain 'Not reported'. raw_data_available set false: only the processed gene-by-sample TPM matrices (covering the full 1727-sample deposit, not split per meningioma sample) are listed as Assays-and-Data files; no per-sample FASTQ/BAM files are exposed in the study's file listing.",
+  "source_urls": [
+    "https://www.ebi.ac.uk/biostudies/arrayexpress/studies/E-MTAB-14038",
+    "https://www.ebi.ac.uk/biostudies/files/E-MTAB-14038/E-MTAB-14038.sdrf.txt",
+    "https://www.ebi.ac.uk/biostudies/files/E-MTAB-14038/E-MTAB-14038.idf.txt",
+    "https://pubmed.ncbi.nlm.nih.gov/39709770/",
+    "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11784659/"
+  ],
+  "tags": {
+    "grade_comparable": false,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": false,
+    "large_cohort": false,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": false,
+    "has_outcome_data": false,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

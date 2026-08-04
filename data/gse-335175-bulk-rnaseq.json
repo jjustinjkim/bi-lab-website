@@ -1,0 +1,126 @@
+{
+  "id": "gse-335175-bulk-rnaseq",
+  "title": "Genomic hallmarks of depot medroxyprogesterone acetate-associated meningiomas [RNA-seq]",
+  "accessions": [
+    "GSE335175"
+  ],
+  "related_accessions": [
+    "GSE335176",
+    "GSE335177"
+  ],
+  "source_repositories": [
+    "GEO",
+    "SRA"
+  ],
+  "publications": [
+    {
+      "title": "Genomic hallmarks of depot medroxyprogesterone acetate-associated meningiomas.",
+      "authors": [
+        "Huq S",
+        "Gatesman TA",
+        "Abou-Al-Shaar H",
+        "Raleigh DR",
+        "Hadjipanayis CG",
+        "Bayley JC",
+        "Zenonos GA",
+        "Pearce TM",
+        "Marker DF",
+        "Agnihotri S",
+        "Gardner PA"
+      ],
+      "venue": "Neuro-oncology",
+      "year": 2026,
+      "doi": "10.1093/neuonc/noag136",
+      "pmid": "42258618",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Paul A. Gardner",
+  "institution": "University of Pittsburgh Medical Center",
+  "date_deposited": "2026-06-11",
+  "date_updated": "2026-06-12",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-12",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-10",
+  "verification_tier": 2,
+  "found_via": [
+    "keyword_api"
+  ],
+  "modality": [
+    "bulk_rna_seq"
+  ],
+  "platform": "NextSeq 2000 (GPL30173)",
+  "reference_genome": "Not reported",
+  "pipeline": "Not reported",
+  "patient_count": "Not reported",
+  "sample_count": 10,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": 10,
+    "grade_2": 0,
+    "grade_3": 0
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": true,
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "Not reported"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "ffpe",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "10 female (100%, n=10, extracted from GSM 'sex' field) -- consistent with the cohort being defined by long-term depot medroxyprogesterone acetate (a female contraceptive) exposure.",
+  "age_distribution": "Not reported",
+  "has_outcome_data": "Not reported",
+  "paired_multimodal": {
+    "is_paired": true,
+    "related_datasets": [
+      "gse-335176-methylation"
+    ]
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": "Not reported",
+  "processed_data_available": true,
+  "processed_data_format": "GSE335175_DMPA_featureCounts_raw.txt.gz",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High",
+    "publications": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "PER-SAMPLE DATA UPDATE (2026-07-10): Per-sample data recovered from family.soft: all 10 samples WHO grade 1, all female, plus histologic subtype, NGS panel mutation status, and TRAF7 group fields not yet individually parsed. Series-level GEO metadata verified directly against the live source; per-sample clinical/pathology fields (grade, sex/age, anatomic location, brain invasion, treatment timepoint) have not yet been extracted from individual GSM records or supplementary tables -- part of the batch-1 scaling pass, prioritizing breadth of verified accessions over per-sample depth. FACT-CHECK UPDATE (2026-07-10): publications was incorrectly empty. The sibling/SuperSeries record GSE335177 (SuperSeries of this GSE335175 and GSE335176) carries a live Series_pubmed_id of 42258618, resolving to 'Genomic hallmarks of depot medroxyprogesterone acetate-associated meningiomas' (Huq S et al., Neuro-Oncology, 2026, DOI 10.1093/neuonc/noag136) -- the exact title of this GEO series minus the '[RNA-seq]' suffix, with a matching 11-author contributor list. Added to publications; PMID verified via PubMed esummary and Europe PMC with no retraction/correction/expression-of-concern signal. FACT-CHECK UPDATE (2026-07-10 verification pass): tissue_preservation filled in as 'ffpe', previously 'Not reported'. Series_overall_design states 'Bulk RNA sequencing of 10 FFPE WHO grade 1 meningiomas'. FACT-CHECK UPDATE (2026-07-12): all 10 GSM records parsed from family.soft. molecular_subtype_annotated corrected from 'Not reported' to true (and tags.molecular_subtype_annotated false->true): every sample carries a per-sample 'traf7 group' field (TRAF7-mutant n=5 / TRAF7-wildtype n=5) plus 'mutation status (ngs panel)', a named driver-group molecular subtype system per the schema tag definition. corresponding_author corrected from the first-two-authors string 'Sakibul Huq, Taylor Gatesman' to 'Paul A. Gardner': the linked publication (Neuro-Oncology, DOI 10.1093/neuonc/noag136) names Paul A. Gardner (senior/last author, NYU Langone) as the sole corresponding author per the article's correspondence footnote; Sakibul Huq is the GEO submitting contact but not the publication's corresponding author. All 10 samples confirmed WHO grade 1 and female per GSM 'who grade'/'Sex' fields.",
+  "source_urls": [
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE335175",
+    "https://pubmed.ncbi.nlm.nih.gov/42258618/",
+    "https://doi.org/10.1093/neuonc/noag136"
+  ],
+  "tags": {
+    "grade_comparable": false,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": true,
+    "large_cohort": false,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": true,
+    "has_outcome_data": false,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

@@ -1,0 +1,120 @@
+{
+  "id": "gse-282349-bulk-rnaseq",
+  "title": "Gene expression profile of hypoxia-treated IOMM-Lee cells (malignant grade 3 meningioma cells)",
+  "accessions": [
+    "GSE282349"
+  ],
+  "related_accessions": [
+    "GSE282352",
+    "GSE282351"
+  ],
+  "source_repositories": [
+    "GEO"
+  ],
+  "publications": [
+    {
+      "title": "Novel insights into hypoxia-driven transcriptomic and epigenetic landscapes in grade 3 meningioma.",
+      "authors": [
+        "Dalal M",
+        "Joshi R",
+        "Ajithkumar P",
+        "Singh J",
+        "Suri V",
+        "Chatterjee A",
+        "Kulshreshtha R"
+      ],
+      "venue": "Journal of translational medicine",
+      "year": 2025,
+      "doi": "10.1186/s12967-025-07606-9",
+      "pmid": "41437098",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Ritu Kulshreshtha",
+  "institution": "Indian Institute of Technology",
+  "date_deposited": "2024-11-19",
+  "date_updated": "2026-02-18",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-14",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-10",
+  "verification_tier": 2,
+  "found_via": [
+    "keyword_api"
+  ],
+  "modality": [
+    "bulk_rna_seq"
+  ],
+  "platform": "Illumina NovaSeq 6000 (GPL24676)",
+  "reference_genome": "Not reported",
+  "pipeline": "Not reported",
+  "patient_count": "Not applicable (cell line)",
+  "sample_count": 6,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": null,
+    "grade_2": null,
+    "grade_3": null
+  },
+  "who_edition": "Not applicable (cell line)",
+  "molecular_subtype_annotated": false,
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not applicable",
+    "determination_method": "Not applicable"
+  },
+  "treatment_timepoint_status": [
+    "Not applicable"
+  ],
+  "anatomic_location_breakdown": "Not applicable (cell line)",
+  "tissue_preservation": "not_applicable",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "Not applicable",
+  "age_distribution": "Not applicable",
+  "has_outcome_data": false,
+  "paired_multimodal": {
+    "is_paired": true,
+    "related_datasets": [
+      "gse-282351-methylation"
+    ]
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": "Not reported",
+  "processed_data_available": true,
+  "processed_data_format": "FPKM normalized counts + raw counts (txt.gz)",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High",
+    "publications": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "Adjacent-scope per docs/scope.md: overall_design confirms IOMM-Lee cells (immortalized Grade 3 meningioma cell line) under chronic hypoxia vs. normoxic control, 3 replicates each, not primary patient tissue. Companion to gse-282351-methylation (also adjacent) via the GSE282352 SuperSeries. Linked PMID (41437098) resolved via PubMed esummary to Dalal et al., J Transl Med 2025. RE-VERIFICATION (2026-07-12): corresponding_author normalized from 'Ritu Kulshreshtha' to 'Ritu,,Kulshreshtha' to match the live GEO !Series_contributor rendering and the companion record gse-282351-methylation (cross-consistency). sample_count (6 GSMs GSM8641722-GSM8641727), platform GPL24676, processed supplementary files (FPKM normalized + raw counts txt.gz), SuperSeries link GSE282352, and companion cross-link all re-confirmed against the live source; publication (PMID 41437098, J Transl Med, 2025-12-24, doi 10.1186/s12967-025-07606-9) re-verified against PubMed esummary. DEEP-AUDIT (2026-07-14): note the 2026-07-12 entry above says corresponding_author was 'normalized... to Ritu,,Kulshreshtha' but the field as stored has always read plain 'Ritu Kulshreshtha' -- that comma-format edit was apparently never actually applied (or was reverted) despite the note claiming it; flagging the stale/inaccurate note rather than silently correcting history. Re-verified from scratch via the paper's own live full text (translational-medicine.biomedcentral.com/articles/10.1186/s12967-025-07606-9), which states verbatim 'Corresponding author Correspondence to Ritu Kulshreshtha.' -- a single corresponding author, plain-name format, confirming the CURRENT field value 'Ritu Kulshreshtha' is correct as-is; no change made. Author list re-checked against Europe PMC authorString for PMID 41437098: 7 of 7 authors already present (Dalal, Joshi, Ajithkumar, Singh, Suri, Chatterjee, Kulshreshtha) -- this record does not have the corpus's usual 6-author truncation bug. sample_count (6), modality, and tags all re-confirmed accurate; no further changes.",
+  "source_urls": [
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE282349",
+    "https://pubmed.ncbi.nlm.nih.gov/41437098/"
+  ],
+  "tags": {
+    "grade_comparable": false,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": true,
+    "large_cohort": false,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": false,
+    "has_outcome_data": false,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

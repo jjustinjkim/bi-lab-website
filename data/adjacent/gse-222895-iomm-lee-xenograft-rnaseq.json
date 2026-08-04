@@ -1,0 +1,126 @@
+{
+  "id": "gse-222895-iomm-lee-xenograft-rnaseq",
+  "title": "Photodynamic oncolytic virus therapy for central nervous system malignancies (IOMM-Lee malignant meningioma xenograft arm only)",
+  "accessions": [
+    "GSE222895"
+  ],
+  "related_accessions": [
+    "PRJNA923791"
+  ],
+  "source_repositories": [
+    "GEO",
+    "SRA"
+  ],
+  "publications": [
+    {
+      "title": "Photodynamic augmentation of oncolytic virus therapy for central nervous system malignancies.",
+      "authors": [
+        "Shimizu K",
+        "Kahramanian A",
+        "Jabbar MADA",
+        "Turna Demir F",
+        "Gokyer D",
+        "Uthamacumaran A",
+        "Rajan A",
+        "Saad MA",
+        "Gorham J",
+        "Wakimoto H",
+        "Martuza RL",
+        "Rabkin SD",
+        "Hasan T",
+        "Wakimoto H"
+      ],
+      "venue": "Cancer Letters",
+      "year": 2023,
+      "doi": "10.1016/j.canlet.2023.216363",
+      "pmid": "37619813",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Hiroaki Wakimoto",
+  "institution": "Massachusetts General Hospital",
+  "date_deposited": "2023-01-14",
+  "date_updated": "2023-01-18",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-11",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-11",
+  "verification_tier": 2,
+  "found_via": [
+    "keyword_api"
+  ],
+  "modality": [
+    "bulk_rna_seq"
+  ],
+  "platform": "Illumina NextSeq 500 (GPL18573)",
+  "reference_genome": "hg38 (human IOMM-Lee/U87 tumor cell reads); mm10 (mouse host reads), reported as separate RPKM matrices per the GSE222895_...hg38.rpkm.xlsx / ...mm10.rpkm.xlsx supplementary files",
+  "pipeline": "Not reported",
+  "patient_count": "Not applicable (cell line xenograft model, not directly patient-derived tissue samples)",
+  "sample_count": 12,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": null,
+    "grade_2": null,
+    "grade_3": null
+  },
+  "who_edition": "Not applicable (cell line)",
+  "molecular_subtype_annotated": false,
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not applicable",
+    "determination_method": "Not applicable"
+  },
+  "treatment_timepoint_status": [
+    "Not applicable"
+  ],
+  "anatomic_location_breakdown": "Not applicable (cell line xenograft in mice, not a patient anatomic site)",
+  "tissue_preservation": "not_applicable",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "Not applicable",
+  "age_distribution": "Not applicable",
+  "has_outcome_data": false,
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": []
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": true,
+  "processed_data_available": true,
+  "processed_data_format": "RPKM expression matrices (GSE222895_220817_Hiro.hg38.rpkm.xlsx, GSE222895_220817_Hiro.mm10.rpkm.xlsx)",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High",
+    "publications": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "MIXED-TUMOR-TYPE SERIES, PER-GSM SEPARATION PERFORMED (required by task instructions): the live GEO record (GSE222895, verified directly via acc.cgi) is a 24-sample series titled 'Photodynamic oncolytic virus therapy for central nervous system malignancies' that mixes TWO different xenograft tumor-type arms under one accession: 12 samples of U87 glioblastoma xenografts (GSM6934701-GSM6934712, Sample_title 'U1'-'U12', Sample_characteristics_ch1 'cell line: U87' / 'cell type: Glioblastoma cells') and 12 samples of IOMM-Lee malignant meningioma xenografts (GSM6934713-GSM6934724, Sample_title 'I1'-'I12', Sample_characteristics_ch1 'cell line: IOMM-Lee' / 'cell type: Malignant meningioma cells'), confirmed by fetching all 24 individual GSM records directly (targ=gsm&view=brief). This record intentionally covers ONLY the 12 IOMM-Lee (meningioma) arm samples; the 12 U87 glioblastoma-arm samples (GSM6934701-GSM6934712) are EXCLUDED from sample_count, patient_count, and all downstream fields in this record because glioblastoma is a non-meningioma CNS tumor and out of scope per docs/scope.md (the pan-atlas exception does not apply here since this is not a meningioma-subset-of-a-pan-tumor-atlas but a two-arm comparative xenograft experiment). Both arms received the same 4 treatments (PBS, laser, G47delta-KillerRed oncolytic virus, and G47delta-KillerRed+laser; 3 replicates each), confirmed via Sample_characteristics_ch1 'treatment' field per GSM. No primary human patient tumor tissue is present in either arm; both are established cell lines (IOMM-Lee, U87) grown as xenografts in mice, RNA-sequenced as bulk tumor RNA (not single-cell; no dissociation/10x protocol mentioned, and Series_type is bulk 'Expression profiling by high throughput sequencing' with GPL18573 Illumina NextSeq 500), so modality is bulk_rna_seq, not scRNA-seq. No Series_pubmed_id field is present on the live GEO record; the linked publication (PMID 37619813, Shimizu et al., Cancer Letters 2023, 'Photodynamic augmentation of oncolytic virus therapy for central nervous system malignancies') was located via a targeted PubMed search on the corresponding author (Wakimoto) and matching title/topic, and its author list (Shimizu K...Wakimoto H, Martuza RL, Rabkin SD, Hasan T, Wakimoto H) strongly overlaps the GEO series contributors (Hiroaki Wakimoto, Kazuhide Shimizu, Joshua Gorham, Hiroko Wakimoto), but this link is inferred rather than explicitly declared in GEO metadata, hence publications confidence_level is Medium and this should be independently confirmed against the paper's methods/data-availability section before being treated as fully verified. DEEP-AUDIT UPDATE (2026-07-14): re-fetched the live GEO series record fresh (acc.cgi, form=text&view=full) and independently re-confirmed the full 24-sample series and the exact 12/12 GSM boundary already documented (spot-checked GSM6934701/GSM6934712 = U87 'Glioblastoma cells' arm and GSM6934713/GSM6934724 = IOMM-Lee 'Malignant meningioma cells' arm via targ=gsm&view=brief on all four boundary GSMs), so the meningioma-only 12-sample scope and the bulk_rna_seq modality correction both still hold exactly as documented. Went further on the previously-Medium-confidence publication link: fetched the full text of the linked paper directly (PMC10529118, via https://pmc.ncbi.nlm.nih.gov/articles/PMC10529118/) and found its Results section states verbatim 'RNA sequencing data has been deposited to NCBI and publicly available as GSE222895' -- an explicit, in-text accession citation, not an inferred author/topic match. confidence_level.publications upgraded from Medium to High accordingly. Separately, cross-checked the paper's full author list via Europe PMC (query EXT_ID:37619813, resultType=core): the record's own authors array had only 6 of the paper's true 14 authors, omitting 'Rajan A', 'Saad MA', 'Gorham J', 'Wakimoto H' (senior/corresponding author, matching this record's own corresponding_author field), 'Martuza RL', 'Rabkin SD', and 'Hasan T' -- corrected, authors array now lists all 14 (including both distinct 'Wakimoto H'-initialed co-authors, Hiroaki and Hiroko Wakimoto, exactly as Europe PMC's own authorString renders them).",
+  "source_urls": [
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE222895",
+    "https://pubmed.ncbi.nlm.nih.gov/37619813/",
+    "https://www.ncbi.nlm.nih.gov/bioproject/PRJNA923791"
+  ],
+  "tags": {
+    "grade_comparable": false,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": false,
+    "large_cohort": false,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": false,
+    "has_outcome_data": false,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

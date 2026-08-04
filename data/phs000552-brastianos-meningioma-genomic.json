@@ -1,0 +1,139 @@
+{
+  "id": "phs000552-brastianos-meningioma-genomic",
+  "title": "Genomic Characterization of Meningiomas",
+  "accessions": [
+    "phs000552.v2.p1"
+  ],
+  "related_accessions": [],
+  "source_repositories": [
+    "dbGaP"
+  ],
+  "publications": [
+    {
+      "title": "Genomic sequencing of meningiomas identifies oncogenic SMO and AKT1 mutations.",
+      "authors": [
+        "Brastianos PK",
+        "Horowitz PM",
+        "Santagata S",
+        "Jones RT",
+        "McKenna A",
+        "Getz G",
+        "Ligon KL",
+        "Palescandolo E",
+        "Van Hummelen P",
+        "Ducar MD",
+        "Raza A",
+        "Sunkavalli A",
+        "Macconaill LE",
+        "Stemmer-Rachamimov AO",
+        "Louis DN",
+        "Hahn WC",
+        "Dunn IF",
+        "Beroukhim R"
+      ],
+      "venue": "Nature Genetics",
+      "year": 2013,
+      "doi": "10.1038/ng.2526",
+      "pmid": "23334667",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Rameen Beroukhim, Ian F Dunn, William C Hahn",
+  "institution": "Massachusetts General Hospital / Dana-Farber Cancer Institute / Broad Institute",
+  "date_deposited": "Not reported",
+  "date_updated": "2014-04-15",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-14",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-11",
+  "verification_tier": 1,
+  "found_via": [
+    "keyword_api",
+    "citation_chain"
+  ],
+  "modality": [
+    "wgs",
+    "wes",
+    "targeted_panel_seq"
+  ],
+  "platform": "Illumina HiSeq 2000",
+  "reference_genome": "Not reported",
+  "pipeline": "Not reported",
+  "patient_count": 65,
+  "sample_count": 65,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": 47,
+    "grade_2": 15,
+    "grade_3": 3
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": true,
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "primary",
+    "recurrent"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "Not reported",
+  "normal_control_tissue": {
+    "included": true,
+    "type": "matched germline blood (normal control used for somatic variant calling)",
+    "count": 65
+  },
+  "sex_distribution": "12 male, 53 female (n=65 subjects)",
+  "age_distribution": "Not reported",
+  "has_outcome_data": "Not reported",
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": []
+  },
+  "access_type": "controlled",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": "Not reported",
+  "processed_data_available": "Not reported",
+  "processed_data_format": "Not reported",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not reported",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High",
+    "publications": "High",
+    "corresponding_author": "High",
+    "grade_breakdown": "High",
+    "sex_distribution": "High",
+    "treatment_timepoint_status": "High",
+    "normal_control_tissue": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "NEW RECORD (2026-07-11), extracted from a discovery search targeting previously-unsearchable databases. dbGaP was documented in docs/methodology.md as having 'no public search API found', but NCBI's own E-utilities actually support db=gap directly and were used to find this study. This record is the landmark Brastianos et al. 2013 Nature Genetics paper's genomic data (the paper that discovered recurrent SMO and AKT1 mutations in meningioma), never previously found by this project's earlier GEO/ArrayExpress/EGA searches. Verified directly: dbGaP esummary confirms study phs000552.v2.p1, 'Genomic Characterization of Meningiomas', 65 participants, molecular data types AMPLICON/SNP-CNV-Genotypes(NGS)/WGS/WXS, disease list 'Meningioma' (primary), study design 'Case Set', released 2014-04-15. A child dataset, 'Meningiomas_Sample_Attributes' (pht003030.v1.p1), confirms per-sample fields for tumor status, histological type, body site, and primary-vs-recurrent status exist at dbGaP but were not extracted here since they require a controlled-access data request, only the public study-level metadata was used, consistent with docs/scope.md's compliance guardrail (no access, download, inference, or reconstruction of controlled-access data). Linked publication PMID 23334667 confirmed via PubMed esummary (title, authors, DOI 10.1038/ng.2526, Nature Genetics, March 2013), no retraction/correction found. corresponding_author is Brastianos PK (first author, and the well-established lead investigator on this specific landmark study per the paper's own framing and this project's prior documentation), but was not independently confirmed via a corresponding-author affiliation footnote (Europe PMC's structured author-affiliation data is not populated for this 2013-era paper), so this field's confidence is marked Medium rather than High. molecular_subtype_annotated set to true since the paper's entire premise is defining a new molecular subtype (SMO/AKT1-mutant) distinct from NF2-driven meningioma. FACT-CHECK UPDATE (2026-07-11): several per-sample clinical fields previously marked 'Not reported' are in fact publicly available: dbGaP publishes aggregate 'variable summary' reports (pheno_variable_summaries, no DAC approval needed, distinct from the controlled-access line-level data itself) for each phenotype dataset. Live-fetched phs000552.v2.pht003027 (Meningiomas_Subject) var_report confirms n=65 subjects, 12 male / 53 female -- filled into sex_distribution. Live-fetched phs000552.v2.pht003030 (Meningiomas_Sample_Attributes) var_report confirms: TUMOR_GRADE enum counts 47=I, 15=II, 3=III (sums to 65) -- filled into grade_breakdown (cross-validated by HISTOLOGICAL_TYPE enum: Atypical=15 matches Grade II=15, Anaplastic=3 matches Grade III=3); IS_RECURRENT enum counts 60='Is a primarily resected tumor', 5='Is a recurrent tumor' (of 65 tumor samples) -- filled into treatment_timepoint_status as ['primary','recurrent'] and tags.recurrence_annotated corrected from false to true (dataset explicitly distinguishes primary vs. recurrent samples with counts, per the tag definition); IS_TUMOR enum shows 65 tumor + 65 non-tumor (germline) DNA samples (130 total SAMPID records) -- normal_control_tissue corrected from included=false to included=true/count=65/type='matched germline blood', consistent with the study description's tumor-normal pair design; sample_count is left at 65 (tumor specimens only, matching patient_count and the paper's own framing) with the 65 matched germline samples tracked separately via normal_control_tissue rather than folded into sample_count. tags.grade_comparable corrected from false to true given the new explicit per-grade breakdown. who_edition is left 'Not reported' since no source explicitly states the WHO classification edition/year (per controlled_vocabulary.md, edition must never be inferred from publication date). has_outcome_data remains false/unconfirmed: primary-vs-recurrent status is not itself survival or recurrence-free-survival time-to-event data, and no such data was found in the public variable summaries. Full per-sample individual-level data (exact identities, dates, additional variables) still requires controlled-access DAC approval and was not accessed. DEEP-AUDIT PASS (2026-07-14): AUTHOR LIST CORRECTED: publications[0].authors had been mechanically truncated to the first 6 names; Europe PMC's authorString for PMID 23334667 confirms 18 total authors, now written in full. CORRESPONDING AUTHOR CORRECTED: 'Priscilla K Brastianos' (first author) had never actually been checked against the paper's own correspondence footnote, only assumed from first-author/lead-investigator framing (already flagged Medium confidence for exactly this reason). Direct check of PMC3739288.xml (Europe PMC fullTextXML) finds a single <corresp> block reading verbatim: 'Correspondence, Rameen Beroukhim (rameen@broadinstitute.org), Ian Dunn (idunn@partners.org), William Hahn (william_hahn@dfci.harvard.edu), Dana-Farber Cancer Institute, 450 Brookline Avenue, Boston, MA 02215.' Brastianos is not listed as a corresponding author on this paper. Corrected corresponding_author from 'Priscilla K Brastianos' to 'Rameen Beroukhim, Ian F Dunn, William C Hahn' and upgraded confidence_level.corresponding_author from Medium to High. Full text checked for hidden per-sample brain-invasion/outcome data per this audit's requirements: one 'WHO grade' hit and one 'overall survival' hit found, both are background/citation text about meningioma grading and recurrence rates in general (referencing other papers), not per-sample data for this specific 65-patient cohort; brain_invasion and has_outcome_data correctly remain false/'Not reported' (grade_breakdown, molecular_subtype_annotated, and treatment_timepoint_status were already correctly filled from the public dbGaP variable-summary reports in a prior pass, a stronger source than the paper's own text for this cohort).",
+  "source_urls": [
+    "https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs000552.v2.p1",
+    "https://pubmed.ncbi.nlm.nih.gov/23334667/",
+    "https://doi.org/10.1038/ng.2526",
+    "https://ftp.ncbi.nlm.nih.gov/dbgap/studies/phs000552/phs000552.v2.p1/GapExchange_phs000552.v2.p1.xml",
+    "https://ftp.ncbi.nlm.nih.gov/dbgap/studies/phs000552/phs000552.v2.p1/pheno_variable_summaries/phs000552.v2.pht003027.v1.p1.Meningiomas_Subject.var_report.xml",
+    "https://ftp.ncbi.nlm.nih.gov/dbgap/studies/phs000552/phs000552.v2.p1/pheno_variable_summaries/phs000552.v2.pht003030.v1.p1.Meningiomas_Sample_Attributes.var_report.xml"
+  ],
+  "tags": {
+    "grade_comparable": true,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": false,
+    "large_cohort": true,
+    "recurrence_annotated": true,
+    "molecular_subtype_annotated": true,
+    "has_outcome_data": false,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

@@ -1,0 +1,153 @@
+{
+  "id": "gse-270371-methylation",
+  "title": "Meningioma methylation data",
+  "accessions": [
+    "GSE270371"
+  ],
+  "related_accessions": [
+    "GSE270375",
+    "GSE270638"
+  ],
+  "source_repositories": [
+    "GEO"
+  ],
+  "publications": [
+    {
+      "title": "Molecular classification to refine surgical and radiotherapeutic decision-making in meningioma.",
+      "authors": [
+        "Wang JZ",
+        "Patil V",
+        "Landry AP",
+        "Gui C",
+        "Ajisebutu A",
+        "Liu J",
+        "Saarela O",
+        "Pugh SL",
+        "Won M",
+        "Patel Z",
+        "Yakubov R",
+        "Kaloti R",
+        "Wilson C",
+        "Cohen-Gadol A",
+        "Zaazoue MA",
+        "Tabatabai G",
+        "Tatagiba M",
+        "Behling F",
+        "Almiron Bonnin DA",
+        "Holland EC",
+        "Kruser TJ",
+        "Barnholtz-Sloan JS",
+        "Sloan AE",
+        "Horbinski C",
+        "Chotai S",
+        "Chambless LB",
+        "Gao A",
+        "Rebchuk AD",
+        "Makarenko S",
+        "Yip S",
+        "Sahm F",
+        "Maas SLN",
+        "Tsang DS",
+        "International Consortium on Meningiomas (ICOM)",
+        "Rogers CL",
+        "Aldape K",
+        "Nassiri F",
+        "Zadeh G"
+      ],
+      "venue": "Nature Medicine",
+      "year": 2024,
+      "doi": "10.1038/s41591-024-03167-4",
+      "pmid": "39169220",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Farshad Nassiri, Gelareh Zadeh",
+  "institution": "Princess Margaret Cancer Center",
+  "date_deposited": "2024-06-20",
+  "date_updated": "2024-08-22",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-14",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-10",
+  "verification_tier": 1,
+  "found_via": [
+    "keyword_api",
+    "citation_chain"
+  ],
+  "modality": [
+    "dna_methylation_array"
+  ],
+  "platform": "GPL23976",
+  "reference_genome": "Not reported",
+  "pipeline": "Not reported",
+  "patient_count": "Not reported",
+  "sample_count": 994,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": null,
+    "grade_2": null,
+    "grade_3": null
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": true,
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "Not reported"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "both",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "Not reported",
+  "age_distribution": "Not reported",
+  "has_outcome_data": true,
+  "paired_multimodal": {
+    "is_paired": true,
+    "related_datasets": [
+      "gse-270638-nassiri-retrospective-rnaseq"
+    ]
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": "Not reported",
+  "processed_data_available": true,
+  "processed_data_format": "GSE270371_Matrix_processed.txt.gz",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High",
+    "publications": "High",
+    "tissue_preservation": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "Series-level GEO metadata verified directly against the live source; per-sample clinical/pathology fields (grade, sex/age, anatomic location, brain invasion, treatment timepoint) have not yet been extracted from individual GSM records or supplementary tables. FACT-CHECK (2026-07-10): date_deposited/date_updated were 'Not reported' despite being stated on the live GEO record; filled in. PUBLICATION RESOLVED (2026-07-11): PMID 39169220 ('Molecular classification to refine surgical and radiotherapeutic decision-making in meningioma,' Nature Medicine 2024) found via a Europe PMC full-text search for the literal accession strings 'GSE270638'/'GSE270375', confirming this paper actually cites the dataset. This record's own corresponding_author field (Wang, Patil) exactly matches the paper's first two listed authors, an independent confirmation beyond the paired RNA-seq record's evidence (see gse-270638-nassiri-retrospective-rnaseq.json for the full resolution history, including the earlier ruled-out candidate PMID 42143623). verification_tier upgraded from 2 to 1 and found_via extended to include citation_chain. FACT-CHECK (2026-07-11): corresponding_author corrected from 'Justin,,Wang, Vikas,,Patil' to 'Farshad,,Nassiri, Gelareh,,Zadeh'. Wang and Patil are this paper's co-first authors, not corresponding authors; fetched the paper's PMC full text (PMC11564112) directly and confirmed the only two author-notes email addresses belong to Farshad Nassiri (farshad.nassiri@uhn.ca) and Gelareh Zadeh (gelareh.zadeh@uhn.ca), the study's senior/corresponding authors. Both are present in the live GSE270371 Series_contributor list (all 4 names: Wang, Patil, Nassiri, Zadeh are listed identically on both this SubSeries and the sibling gse-270638-nassiri-retrospective-rnaseq SubSeries), so this now matches the sibling record's corresponding_author exactly, as it should since both SubSeries share one SuperSeries (GSE270375) and one paper with the same true corresponding authors. PER-SAMPLE EXTRACTION (2026-07-12): tissue_preservation changed from 'Not reported' to 'both'; all 994 GSM extract protocols state 'Genomic DNA was extracted from formalin-fixed paraffin-embedded or fresh-frozen tumor specimens', a mixed FFPE/fresh-frozen cohort, now consistent with the sibling gse-270638-nassiri-retrospective-rnaseq record's 'both'. Per-GSM characteristics otherwise carry only 'sample type: Tumor methylation' (all 994), so grade/sex/age remain 'Not reported'. COMPLETENESS FIX (2026-07-12): source_urls was missing the PubMed link for the resolved publication (PMID 39169220), even though this record's publications array cites it and the reason field extensively documents its verification; added https://pubmed.ncbi.nlm.nih.gov/39169220/. DEEP-AUDIT PASS (2026-07-14): AUTHOR LIST CORRECTED: publications[0].authors had been mechanically truncated to the first 6 names; Europe PMC's authorString for PMID 39169220 confirms 38 total author entries (including the collective 'International Consortium on Meningiomas (ICOM)' credit), now written in full. HIDDEN PER-SAMPLE DATA FOUND IN FULL TEXT (PMC11564112, fetched directly): the paper's Data Availability statement states verbatim 'Unprocessed DNA methylation data from the retrospective meningioma tumors are available under the accession number GSE270371' -- i.e. this GSE270371 series IS explicitly 'the retrospective cohort' analyzed throughout the paper's Results. That retrospective cohort is repeatedly described with WHO-grade breakdowns, a named 'Molecular Group (MG)' methylation classification system (also cross-validated against 'DKFZ methylation subclass'), and Kaplan-Meier progression-free survival (PFS) and overall survival (OS) analyses ('Some of the heterogeneity in overall outcomes were found to be resolved by Molecular Group classification, even for cases within each WHO grade'; e-h panels show 'Kaplan-Meier survival curves showing PFS of meningiomas based on WHO grade... and MG... OS of meningiomas... based on classification by WHO grade... and MG'). Because MG/WHO-grade classification and PFS/OS outcome are demonstrably reported for the exact cohort this accession represents (not merely an abstract-level claim -- this is the paper's central analysis, run directly on 'the retrospective cohort'), molecular_subtype_annotated and has_outcome_data are corrected from 'Not reported' to true (tags updated to match). grade_breakdown is deliberately LEFT NULL rather than guessed: the paper's WHO-grade table figures (e.g. 'WHO grade 1 1,317... 2 638... 3 199...') describe a merged multi-institutional training/test split of the full ~2,824-tumor, 10-institution 'retrospective cohort' reported in aggregate ('A total of 2,824 retrospective meningiomas were assembled, of which 1,686 tumors from 10 institutions had molecular and clinical outcomes data'), not a count specific to this one institution's 994-sample methylation deposit; none of the reported subtotals (2,824; 1,686; 1,317; 638; 199; 322; 588; 453; 282; 477; 428...) equals 994, so no reported number could be safely assigned to grade_breakdown without guessing which subset maps to this accession.",
+  "source_urls": [
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE270371",
+    "https://pubmed.ncbi.nlm.nih.gov/39169220/"
+  ],
+  "tags": {
+    "grade_comparable": false,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": true,
+    "large_cohort": true,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": true,
+    "has_outcome_data": true,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

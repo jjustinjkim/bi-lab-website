@@ -1,0 +1,114 @@
+{
+  "id": "gse-287174-zohdy-meningioma-organoid-tissue",
+  "title": "Patient-Derived Meningioma Organoids: A Reliable Model for Studying Human Tumor Pathophysiology [parental tumor tissue]",
+  "accessions": [
+    "GSE287174"
+  ],
+  "related_accessions": [],
+  "source_repositories": [
+    "GEO",
+    "SRA"
+  ],
+  "publications": [
+    {
+      "title": "Patient-Derived Meningioma Organoids: A Reliable Model for Studying Human Tumor Pathophysiology.",
+      "authors": [
+        "Zohdy YM", "Jahangiri A", "Jacob F", "Aksionau A", "Alawieh AM", "Tong A", "Chern B", "Maldonado J", "Hoang K", "Nduom E", "Howard BM", "Barrow DL", "Neill SG", "Wen Z", "Pradilla G", "Garzon-Muvdi T"
+      ],
+      "venue": "Cancers",
+      "year": 2025,
+      "doi": "10.3390/cancers17030526",
+      "pmid": "39941893",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Tomas Garzon-Muvdi",
+  "institution": "Emory University",
+  "date_deposited": "2025-01-16",
+  "date_updated": "2025-02-11",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-17",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-17",
+  "verification_tier": 2,
+  "found_via": [
+    "citation_chain"
+  ],
+  "modality": [
+    "bulk_rna_seq"
+  ],
+  "platform": "RNA-seq (Illumina), exact chemistry not specified per-sample",
+  "reference_genome": "Not reported",
+  "pipeline": "Not reported",
+  "patient_count": 7,
+  "sample_count": 33,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": null,
+    "grade_2": null,
+    "grade_3": null
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": false,
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "Not reported"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "fresh_frozen",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "Not reported",
+  "age_distribution": "Not reported",
+  "has_outcome_data": false,
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": [
+      "gse-287174-zohdy-meningioma-organoid-model"
+    ]
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": true,
+  "processed_data_available": true,
+  "processed_data_format": "Not reported at the per-sample level",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "sample_count": "High",
+    "patient_count": "High",
+    "modality": "High",
+    "publications": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "NEW RECORD (2026-07-17), resolving a second open thread flagged in sources/query_log.md's Checkpoint 2 triage note (GSE287174 never followed up, disposition undocumented). scripts/extract_gsm_characteristics.py's per-sample fallback found all 65 GSM records fall cleanly into two tissue values: 33 'Patient resected tumor' and 32 'Patient-derived tumor organoid'. Per docs/scope.md, organoid (in vitro model system) data is adjacent scope, not core, so this study was split into two records at the scope boundary: this one covers only the 33 patient-resected-tumor samples (genuine core-scope patient tissue); the matched 32-sample organoid arm is gse-287174-zohdy-meningioma-organoid-model.json in /data/adjacent/. Sample titles use a shared patient-number naming convention ('Patient resected tumor P2-1' / 'Patient-derived tumor organoid PO2-1') that let the two arms be confirmed as genuinely matched: both arms cover the exact same 7 patient numbers (2, 3, 4, 6, 7, 8, 9 -- patients 1 and 5 are absent from both arms, presumably excluded during the study's own QC), with every patient represented in both. paired_multimodal.is_paired is deliberately left false (not true) despite this genuine same-cohort match, matching this corpus's own established precedent on figshare-24217661-halder-mrm-tissue-proteomics/figshare-26620783-halder-mrm-serum-proteomics: multi_modal_matched requires >=2 different MODALITIES per docs/schema.md's own tag definition, and both arms here are bulk_rna_seq, the same modality, just different sample types (tissue vs. organoid model) -- so the cross-reference is carried in paired_multimodal.related_datasets alone, without flipping the multi_modal_matched tag. Publication (PMID 39941893, Cancers 2025, DOI 10.3390/cancers17030526, MDPI open access) verified via PubMed esummary and its own PMC full text (PMC11817449), confirmed citing GSE287174. Sole corresponding author (Tomas Garzon-Muvdi) confirmed via the full text's own author-notes correspondence footnote, matching the live GEO Series_contributor list. No per-sample grade/sex/age/brain-invasion/outcome data exists in the GSM metadata, so those fields correctly remain 'Not reported'. tissue_preservation set to 'fresh_frozen' per the paper's methods (fresh tissue used to both establish organoid cultures and for direct RNA-seq comparison).",
+  "source_urls": [
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE287174",
+    "https://pubmed.ncbi.nlm.nih.gov/39941893/",
+    "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11817449/"
+  ],
+  "tags": {
+    "grade_comparable": false,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": false,
+    "large_cohort": false,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": false,
+    "has_outcome_data": false,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

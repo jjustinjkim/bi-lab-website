@@ -1,0 +1,130 @@
+{
+  "id": "egas00001002317-agnihotri-rim-wes",
+  "title": "Whole Exome Sequencing for Radiation-Induced Meningiomas",
+  "accessions": [
+    "EGAS00001002317",
+    "EGAD00001004358"
+  ],
+  "related_accessions": [
+    "EGAS00001002318",
+    "GSE83933"
+  ],
+  "source_repositories": [
+    "EGA"
+  ],
+  "publications": [
+    {
+      "title": "Therapeutic radiation for childhood cancer drives structural aberrations of NF2 in meningiomas.",
+      "authors": [
+        "Agnihotri S",
+        "Suppiah S",
+        "Tonge PD",
+        "Jalali S",
+        "Danesh A",
+        "Bruce JP"
+      ],
+      "venue": "Nature Communications",
+      "year": 2017,
+      "doi": "10.1038/s41467-017-00174-7",
+      "pmid": "28775249",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Gelareh Zadeh",
+  "institution": "University Health Network / Princess Margaret Cancer Centre",
+  "date_deposited": "Not reported",
+  "date_updated": "2017-02-21",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-11",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-11",
+  "verification_tier": 1,
+  "found_via": [
+    "keyword_api",
+    "author_search"
+  ],
+  "modality": [
+    "wes"
+  ],
+  "platform": "Illumina HiSeq 2000",
+  "reference_genome": "Not reported",
+  "pipeline": "Not reported",
+  "patient_count": 17,
+  "sample_count": 20,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": null,
+    "grade_2": null,
+    "grade_3": null
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": true,
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "Not reported"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "Not reported",
+  "normal_control_tissue": {
+    "included": true,
+    "type": "matched peripheral blood",
+    "count": 15
+  },
+  "sex_distribution": "Not reported",
+  "age_distribution": "Not reported",
+  "has_outcome_data": "Not reported",
+  "paired_multimodal": {
+    "is_paired": true,
+    "related_datasets": [
+      "egas00001002318-agnihotri-rim-rnaseq",
+      "gse-83933-methylation"
+    ]
+  },
+  "access_type": "controlled",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": "Not reported",
+  "processed_data_available": "Not reported",
+  "processed_data_format": "Not reported",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not reported",
+  "confidence_level": {
+    "sample_count": "Medium",
+    "modality": "High",
+    "publications": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "NEW RECORD (2026-07-11), found via an author/lab-based search (Sahm F publication list) and independently corroborated by a separate fresh EGA-wide sweep in the same session. This is whole-exome sequencing data for the same radiation-induced meningioma (RIM) cohort already represented in this inventory via gse-83933-methylation.json (methylation only, 39 samples, same linked publication PMID 28775249), but the WES and RNA-seq data for this cohort had never been cross-referenced from that record. Verified directly via the EGA Metadata API: study EGAS00001002317 ('18 Whole Exome Sequencing for Radiation Induced-Meningiomas'), sharing dataset EGAD00001004358 ('Genomic Landscape of Radiation Induced Meningiomas') with its RNA-seq sibling study EGAS00001002318. The dataset's own description states 'Whole exome sequencing of data of 18 RIMs with matched bloods, median depth of 112x, Illumina HiSeq Platform'; sample_count and patient_count set to 18 (the tumor specimens; each also has a matched-blood normal sample sequenced as part of the same tumor/normal pairing, not counted separately here as this record is about the tumor cohort). The paper's own abstract states a larger overall RIM cohort of 31 samples with 18 as the 'principal' whole-genomic-analysis subset (methylation + WES + RNA-seq all three performed on these 18), consistent with gse-83933-methylation's own 39-sample count representing a broader methylation-only survey beyond just the 18-sample multi-omic subset. treatment_timepoint_status set to post_radiation since radiation-induced meningioma is the entire premise of this cohort (all patients received childhood radiation therapy before developing these tumors). Linked to gse-83933-methylation.json and to the companion RNA-seq record via paired_multimodal; gse-83933-methylation.json's own related_accessions/paired_multimodal updated to reference back. Only public EGA study/dataset-level metadata was used; the controlled-access exome data itself was never accessed, per docs/scope.md's compliance guardrail. FACT-CHECK UPDATE 2026-07-11: sample_count and patient_count were wrong, corrected from patient_count=18/sample_count=18 to patient_count=17/sample_count=20. Prior extraction had taken '18 RIMs with matched bloods' from the dataset-level free-text description at face value without checking the live /datasets/EGAD00001004358/samples endpoint. That endpoint was fetched directly this pass (54 total registered EGAN sample accessions in this shared dataset, which serves both this WES study and the sibling RNA-seq study EGAS00001002318). 35 of the 54 entries carry the description 'Radiation-Induced Meningioma Patient' (the remaining 19 have a null description and were attributable to the RNA-seq sibling instead, see that record); those 35 WES-attributable entries span only 17 unique subject_id values, not 18, and consist of 20 tumor ('Meningioma'-titled) samples plus 15 'Matched-Blood' normal samples, not a clean 18/18 tumor/blood pairing: three patients (subject_id 2, 5, 10) each contributed 2 tumor samples, and two of those three (5, 10) have no matched-blood entry at all. normal_control_tissue was also wrong (previously included=false) and is corrected to included=true/type=matched peripheral blood/count=15. sample_count confidence downgraded from High to Medium because the WES-vs-RNAseq attribution of the shared dataset's 54 samples is inferred from the presence/absence of the description field (corroborated by the technologies field listing both HiSeq 2000 and HiSeq 2500, matching this study's platform vs. the RNA-seq sibling's) rather than an explicit per-sample assay-type field. CORRECTION 2026-07-13: radiation_timepoint had been set true and treatment_timepoint_status set to post_radiation based on the reasoning 'radiation-induced meningioma is the entire premise of this cohort' -- this conflated two different concepts. The paper's own title ('Therapeutic radiation for childhood cancer drives structural aberrations of NF2 in meningiomas') confirms these patients received radiation for an unrelated prior childhood cancer, and the meningioma developed later as a consequence -- this is the tumor's etiology (cause), not a record of this tumor being sampled before/after its own radiotherapy treatment. Split into a new radiation_induced_etiology tag (set true here, correctly capturing this) while radiation_timepoint is set false and treatment_timepoint_status reset to 'Not reported', since no per-sample pre/post-treatment-of-this-tumor timing data exists in this record. ONTOLOGY ADDED (2026-07-14): disease_id=MONDO:0011648, tissue_ids=['UBERON:0003547'], both verified live against the EBI Ontology Lookup Service (ols4/api/search) before use, not guessed. Real-world subtype: all 20 samples are radiation-induced meningiomas per the paper's own title/premise (a distinct clinical entity, MONDO's own term for it), not the generic meningioma term.",
+  "source_urls": [
+    "https://ega-archive.org/studies/EGAS00001002317",
+    "https://ega-archive.org/datasets/EGAD00001004358",
+    "https://pubmed.ncbi.nlm.nih.gov/28775249/",
+    "https://doi.org/10.1038/s41467-017-00174-7"
+  ],
+  "tags": {
+    "grade_comparable": false,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": true,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": true,
+    "large_cohort": false,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": true,
+    "has_outcome_data": false,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null,
+  "ontology": {
+    "disease_id": "MONDO:0011648",
+    "tissue_ids": [
+      "UBERON:0003547"
+    ]
+  }
+}

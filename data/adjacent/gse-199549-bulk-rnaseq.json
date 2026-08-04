@@ -1,0 +1,122 @@
+{
+  "id": "gse-199549-bulk-rnaseq",
+  "title": "Both YAP1-MAML2 and constitutively active YAP1 drive the formation of tumors that resemble NF2 mutant meningiomas in mice [human]",
+  "accessions": [
+    "GSE199549"
+  ],
+  "related_accessions": [
+    "GSE199566"
+  ],
+  "source_repositories": [
+    "GEO",
+    "SRA"
+  ],
+  "publications": [
+    {
+      "title": "Both YAP1-MAML2 and constitutively active YAP1 drive the formation of tumors that resemble NF2 mutant meningiomas in mice.",
+      "authors": [
+        "Szulzewsky F",
+        "Arora S",
+        "Arakaki AKS",
+        "Sievers P",
+        "Almiron Bonnin DA",
+        "Paddison PJ",
+        "Sahm F",
+        "Cimino PJ",
+        "Gujral TS",
+        "Holland EC"
+      ],
+      "venue": "Genes & development",
+      "year": 2022,
+      "doi": "10.1101/gad.349876.122",
+      "pmid": "36008139",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Eric C Holland",
+  "institution": "FHCRC",
+  "date_deposited": "2022-03-28",
+  "date_updated": "2022-09-11",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-10",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-10",
+  "verification_tier": 1,
+  "found_via": [
+    "keyword_api",
+    "citation_chain"
+  ],
+  "modality": [
+    "bulk_rna_seq"
+  ],
+  "platform": "Illumina NovaSeq 6000 (GPL24676)",
+  "reference_genome": "Not reported",
+  "pipeline": "Not reported",
+  "patient_count": "Not reported",
+  "sample_count": 12,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": null,
+    "grade_2": null,
+    "grade_3": null
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": "Not reported",
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "Not reported"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "Not reported",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "Not reported",
+  "age_distribution": "Not reported",
+  "has_outcome_data": "Not reported",
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": []
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": "Not reported",
+  "processed_data_available": true,
+  "processed_data_format": "GSE199549_RAW.tar",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High",
+    "publications": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "Moved to adjacent: despite the [human] title suffix (distinguishing it from a mouse in vivo companion series, GSE199562), the actual deposited samples are HEK293 cells transfected with RCAS plasmids -- an engineered reporter cell line, not meningioma patient tissue or even a meningioma cell line. Series-level GEO metadata verified directly against the live source; per-sample clinical/pathology fields (grade, sex/age, anatomic location, brain invasion, treatment timepoint) have not yet been extracted from individual GSM records or supplementary tables -- part of the batch-1 scaling pass, prioritizing breadth of verified accessions over per-sample depth. Publication metadata pulled from PubMed esummary; not yet manually spot-checked against the full text for every record in this batch. CORRESPONDING-AUTHOR AND AUTHOR-LIST FIX (2026-07-14 deep audit): corresponding_author was 'Frank Szulzewsky, Sonali Arora' (the paper's co-first authors), assumed from their position as the GEO series' listed contributors rather than confirmed from the publication itself. Fetched the paper's open-access full text directly (Europe PMC PMC9480855 fullTextXML): the author-notes/footnote section explicitly marks a single corresponding author with a correspondence symbol, 'Corresponding author: eholland@fredhutch.org', i.e. Eric C. Holland, the paper's last author (senior PI, Fred Hutch), not Szulzewsky or Arora. Corrected corresponding_author to 'Eric C Holland'. Also expanded publications[0].authors from a truncated first-6 to the full 10-author list (Szulzewsky F, Arora S, Arakaki AKS, Sievers P, Almiron Bonnin DA, Paddison PJ, Sahm F, Cimino PJ, Gujral TS, Holland EC) via the Europe PMC REST API authorString field.",
+  "source_urls": [
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE199549",
+    "https://pubmed.ncbi.nlm.nih.gov/36008139/"
+  ],
+  "tags": {
+    "grade_comparable": false,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": false,
+    "large_cohort": false,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": false,
+    "has_outcome_data": false,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

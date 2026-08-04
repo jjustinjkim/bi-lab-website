@@ -1,0 +1,143 @@
+{
+  "id": "gse-85133-polr2a-rnaseq",
+  "title": "Recurrent somatic mutations in POLR2A define a distinct subset of meningiomas [RNA-seq]",
+  "accessions": [
+    "GSE85133"
+  ],
+  "related_accessions": [
+    "GSE85135",
+    "PRJNA336283",
+    "SRP080850",
+    "EGAS00001001916"
+  ],
+  "source_repositories": [
+    "GEO",
+    "SRA"
+  ],
+  "publications": [
+    {
+      "title": "Recurrent somatic mutations in POLR2A define a distinct subset of meningiomas",
+      "authors": [
+        "Clark VE",
+        "Harmanc\u0131 AS",
+        "Bai H",
+        "Youngblood MW",
+        "Lee TI",
+        "Baranoski JF"
+      ],
+      "venue": "Nature Genetics",
+      "year": 2016,
+      "doi": "10.1038/ng.3651",
+      "pmid": "27548314",
+      "preprint_id": null
+    },
+    {
+      "title": "Super-enhancer hijacking drives ectopic expression of hedgehog pathway ligands in meningiomas",
+      "authors": [
+        "Youngblood MW",
+        "Erson-Omay Z",
+        "Li C",
+        "Najem H",
+        "Co\u015fkun S",
+        "Tyrtova E"
+      ],
+      "venue": "Nature Communications",
+      "year": 2023,
+      "doi": "10.1038/s41467-023-41926-y",
+      "pmid": "37805627",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Murat G\u00fcnel",
+  "institution": "Yale University School of Medicine",
+  "date_deposited": "2016-08-03",
+  "date_updated": "2023-10-25",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-10",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-10",
+  "verification_tier": 1,
+  "found_via": [
+    "keyword_api",
+    "citation_chain"
+  ],
+  "modality": [
+    "bulk_rna_seq"
+  ],
+  "platform": "Illumina HiSeq 2500 (GPL16791)",
+  "reference_genome": "Not reported",
+  "pipeline": "Not reported",
+  "patient_count": 19,
+  "sample_count": 19,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": 19,
+    "grade_2": 0,
+    "grade_3": 0
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": true,
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "Not reported"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "Not reported",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "14 female, 5 male (n=19, extracted from GSM 'gender' field)",
+  "age_distribution": "n=18 (1 missing), range 42.0-78.0, mean 59.9 (extracted from GSM 'age' field)",
+  "has_outcome_data": false,
+  "paired_multimodal": {
+    "is_paired": true,
+    "related_datasets": [
+      "egas00001001916-clark-polr2a-wes"
+    ]
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": true,
+  "processed_data_available": "Not reported",
+  "processed_data_format": "Not reported",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "patient_count": "High",
+    "modality": "High",
+    "publications": "High",
+    "grade_breakdown": "Low"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "PER-SAMPLE DATA UPDATE (2026-07-10): Per-sample data recovered from family.soft: WHO grade (all 19 = grade 1), sex, age, histology subtype (meningothelial/psammomatous/secretory/fibrous/unknown), mutation group (AKT1/TRAF7:3, NF2/Chr22_Loss:8, KLF4/TRAF7:4, POLR2A:4 -- matches the paper's stated major mutation groups exactly), and radiation history (14 no, 1 yes, 4 unknown). All 19 samples recorded as WHO grade 1 at the per-sample level. GSE85133 is the RNA-seq SubSeries of the combined GSE85135 SuperSeries (which also includes array data and ChIP-seq); patient-level clinical/pathology fields not yet extracted from individual GSM records or the paper's supplementary tables. Second linked publication (PMID 37805627) is a later reuse of this same RNA-seq data for a different research question (hedgehog pathway ligands); authors (truncated to first 6 of 36) and DOI (10.1038/s41467-023-41926-y) confirmed via PubMed esummary on 2026-07-10 and filled in. CROSS-LINK ADDED (2026-07-11): this same published cohort's whole-exome sequencing data was found on EGA (never previously locatable via GEO/dbGaP keyword search) and added as a new record, egas00001001916-clark-polr2a-wes.json (87 tumor/blood pairs); related_accessions and paired_multimodal.related_datasets updated to cross-reference it.",
+  "source_urls": [
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE85133",
+    "https://pubmed.ncbi.nlm.nih.gov/27548314/",
+    "https://doi.org/10.1038/ng.3651",
+    "https://pubmed.ncbi.nlm.nih.gov/37805627/",
+    "https://www.ncbi.nlm.nih.gov/bioproject/PRJNA336283"
+  ],
+  "tags": {
+    "grade_comparable": false,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": true,
+    "large_cohort": false,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": true,
+    "has_outcome_data": false,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

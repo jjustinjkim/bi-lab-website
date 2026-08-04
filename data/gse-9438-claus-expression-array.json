@@ -1,0 +1,115 @@
+{
+  "id": "gse-9438-claus-expression-array",
+  "title": "Gene Expression is associated with Progesterone Receptor Status in Meningioma",
+  "accessions": [
+    "GSE9438"
+  ],
+  "related_accessions": [],
+  "source_repositories": [
+    "GEO"
+  ],
+  "publications": [
+    {
+      "title": "Specific genes expressed in association with progesterone receptors in meningioma.",
+      "authors": [
+        "Claus EB",
+        "Park PJ",
+        "Carroll R",
+        "Chan J",
+        "Black PM"
+      ],
+      "venue": "Cancer Research",
+      "year": 2008,
+      "doi": "10.1158/0008-5472.CAN-07-1796",
+      "pmid": "18172325",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Elizabeth B. Claus",
+  "institution": "Brigham and Women's Hospital / Harvard Medical School, Center for Biomedical Informatics",
+  "date_deposited": "2007-10-26",
+  "date_updated": "2019-03-25",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-11",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-11",
+  "verification_tier": 1,
+  "found_via": [
+    "author_search",
+    "citation_chain"
+  ],
+  "modality": [
+    "expression_array"
+  ],
+  "platform": "Affymetrix Human Genome U133 Plus 2.0 Array (GPL570)",
+  "reference_genome": "Not reported",
+  "pipeline": "Not reported",
+  "patient_count": 31,
+  "sample_count": 31,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": null,
+    "grade_2": null,
+    "grade_3": null
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": false,
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "Not reported"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "Not reported",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "77% female (n=31), per published abstract (PMID 18172325); exact integer male/female split not stated",
+  "age_distribution": "Mean age 55.7 years (n=31), per published abstract (PMID 18172325)",
+  "has_outcome_data": false,
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": []
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": true,
+  "processed_data_available": true,
+  "processed_data_format": "GSM-level MAS5 VALUE/ABS_CALL data table; no combined series-level processed matrix file",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High",
+    "publications": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "DEEP-AUDIT CORRECTION (2026-07-14): corresponding_author corrected from 'Elizabeth B. Claus / Peter J. Park' to 'Elizabeth B. Claus'. Verified directly against the paper's own correspondence footnote (PMC3256746 full text via NCBI efetch): '<corresp id=\"cor1\"><bold>Requests for reprints:</bold> Elizabeth B. Claus...elizabeth.claus@yale.edu</corresp>' -- the ONLY correspondence contact listed; Park PJ (a biostatistics/bioinformatics co-author) is not marked corresponding anywhere in the article and was removed. sex_distribution and age_distribution filled in from the published abstract (PMID 18172325): 'The sample is 77% female with a mean age of 55.7 years' -- 'Eighty percent were grade 1' was also found but NOT used to populate grade_breakdown, since 80% of 31 does not resolve to an unambiguous integer count (24 vs. 25) without guessing, so grade_breakdown is left unchanged (null/null/null) per this project's anti-fabrication convention; molecular_subtype_annotated and has_outcome_data left unchanged (false) since the abstract describes only ER/PR immunohistochemistry status (already judged not to constitute a named molecular subtype system per the existing note) and no survival/recurrence analysis. Authors array (5 names) already matches the paper's full contrib-group exactly; no truncation found. Live GEO verification (2026-07-11) confirms 31 GSM samples, all 'brain meningioma' surgical specimens from Brigham and Women's Hospital (3/15/2004-5/10/2005 per Series_overall_design), matching the discovery-log claim exactly. One spot-checked GSM (GSM239770) carries only binary ER/PR immunohistochemistry-status characteristics fields ('ER: 1', 'PR: 0'), no WHO grade, sex, age, or outcome field; molecular_subtype_annotated is left false since a single binary hormone-receptor status is not treated as a named molecular subtype system for this project's purposes, though a reviewer may disagree. This is the most strongly corroborated record in this batch per the task brief: it recurred across four independent discovery passes (citation mining tied to Nassiri, Sahm, Bi, and Hanemann lab literature searches) plus a separate Synapse-hosted curated meta-collection cross-reference; found_via records the two controlled-vocabulary categories this maps to (author_search, citation_chain) and verification_tier is set to 1 accordingly. Grade breakdown, sex/age distribution, and tissue preservation were not present in the one GSM checked and were not exhaustively checked across all 31; a full per-sample pass is recommended. large_cohort left false pending centralized quartile recomputation.",
+  "source_urls": [
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE9438",
+    "https://pubmed.ncbi.nlm.nih.gov/18172325/",
+    "https://doi.org/10.1158/0008-5472.CAN-07-1796"
+  ],
+  "tags": {
+    "grade_comparable": false,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": false,
+    "large_cohort": false,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": false,
+    "has_outcome_data": false,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

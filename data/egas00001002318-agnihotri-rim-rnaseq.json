@@ -1,0 +1,143 @@
+{
+  "id": "egas00001002318-agnihotri-rim-rnaseq",
+  "title": "RNA seq on 19 samples of Radiation-Induced Meningiomas",
+  "accessions": [
+    "EGAS00001002318",
+    "EGAD00001004358"
+  ],
+  "related_accessions": [
+    "EGAS00001002317",
+    "GSE83933"
+  ],
+  "source_repositories": [
+    "EGA"
+  ],
+  "publications": [
+    {
+      "title": "Therapeutic radiation for childhood cancer drives structural aberrations of NF2 in meningiomas.",
+      "authors": [
+        "Agnihotri S",
+        "Suppiah S",
+        "Tonge PD",
+        "Jalali S",
+        "Danesh A",
+        "Bruce JP",
+        "Mamatjan Y",
+        "Klironomos G",
+        "Gonen L",
+        "Au K",
+        "Mansouri S",
+        "Karimi S",
+        "Sahm F",
+        "von Deimling A",
+        "Taylor MD",
+        "Laperriere NJ",
+        "Pugh TJ",
+        "Aldape KD",
+        "Zadeh G"
+      ],
+      "venue": "Nature Communications",
+      "year": 2017,
+      "doi": "10.1038/s41467-017-00174-7",
+      "pmid": "28775249",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Kenneth D Aldape, Gelareh Zadeh",
+  "institution": "University Health Network / Princess Margaret Cancer Centre",
+  "date_deposited": "Not reported",
+  "date_updated": "2017-02-21",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-14",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-11",
+  "verification_tier": 1,
+  "found_via": [
+    "keyword_api",
+    "author_search"
+  ],
+  "modality": [
+    "bulk_rna_seq"
+  ],
+  "platform": "Illumina HiSeq 2500",
+  "reference_genome": "Not reported",
+  "pipeline": "Not reported",
+  "patient_count": 17,
+  "sample_count": 19,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": null,
+    "grade_2": null,
+    "grade_3": null
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": true,
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "Not reported"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "Not reported",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "Not reported",
+  "age_distribution": "Not reported",
+  "has_outcome_data": "Not reported",
+  "paired_multimodal": {
+    "is_paired": true,
+    "related_datasets": [
+      "egas00001002317-agnihotri-rim-wes",
+      "gse-83933-methylation"
+    ]
+  },
+  "access_type": "controlled",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": "Not reported",
+  "processed_data_available": "Not reported",
+  "processed_data_format": "Not reported",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not reported",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High",
+    "publications": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "NEW RECORD (2026-07-11), found via an author/lab-based search (Sahm F publication list) and independently corroborated by a separate fresh EGA-wide sweep in the same session. This is the RNA-seq companion to egas00001002317-agnihotri-rim-wes.json, part of the same radiation-induced meningioma (RIM) cohort already represented via gse-83933-methylation.json (methylation, same linked publication PMID 28775249). Verified directly via the EGA Metadata API: study EGAS00001002318 ('RNA seq on 19 samples of Radiation-Induced Meningiomas'), sharing dataset EGAD00001004358 with its WES sibling study. Note the study's own title says '19 samples' but the shared dataset's own description explicitly states 'RNA sequencing data of 18 RIMs', a minor internal inconsistency in EGA's own metadata between the study title and the dataset description; sample_count set to 18 to match the dataset-level description and the paper's own '18 principal RIMs' framing, confidence marked Medium (not High) specifically because of this unresolved title-vs-description discrepancy at the source. treatment_timepoint_status set to post_radiation since radiation-induced meningioma is the entire premise of this cohort. Linked to gse-83933-methylation.json and to the companion WES record via paired_multimodal. Only public EGA study/dataset-level metadata was used; the controlled-access sequencing data itself was never accessed, per docs/scope.md's compliance guardrail. FACT-CHECK UPDATE 2026-07-11: sample_count was wrong, corrected from 18 to 19, and patient_count corrected from 'Not reported' to 17. The live /datasets/EGAD00001004358/samples endpoint was fetched directly this pass: of the shared dataset's 54 total registered EGAN sample accessions, 19 carry a null description field (distinct from the 35 WES-attributable entries that carry description='Radiation-Induced Meningioma Patient', see the sibling WES record egas00001002317-agnihotri-rim-wes.json for that split); all 19 of these null-description entries are tumor-only ('Meningioma'-titled, no matched blood), spanning 17 unique subject_id values (two subjects, '2' and '10', each contributed 2 samples). 19 exactly matches this study's own title ('RNA seq on 19 samples of Radiation-Induced Meningiomas'), confirming the title was right and the dataset-level free-text description's '18 RIMs' figure (used by the prior extraction) was the less reliable of the two source texts for this specific arm. sample_count confidence upgraded from Medium to High now that this is corroborated directly at the per-sample level rather than resolved by picking between two conflicting text descriptions. CORRECTION 2026-07-13: radiation_timepoint had been set true and treatment_timepoint_status set to post_radiation based on the reasoning 'radiation-induced meningioma is the entire premise of this cohort' -- this conflated two different concepts. The paper's own title ('Therapeutic radiation for childhood cancer drives structural aberrations of NF2 in meningiomas') confirms these patients received radiation for an unrelated prior childhood cancer, and the meningioma developed later as a consequence -- this is the tumor's etiology (cause), not a record of this tumor being sampled before/after its own radiotherapy treatment. Split into a new radiation_induced_etiology tag (set true here, correctly capturing this) while radiation_timepoint is set false and treatment_timepoint_status reset to 'Not reported', since no per-sample pre/post-treatment-of-this-tumor timing data exists in this record. DEEP-AUDIT PASS (2026-07-14): radiation_induced_etiology/radiation_timepoint reviewed against the full text of PMID 28775249 (PMC5543118) again per this pass's instructions and left unchanged -- no new evidence found, and no per-sample WHO grade, brain invasion, or outcome/survival data exists anywhere in the paper's full text either (checked directly for 'WHO grade', 'brain invasion', 'recurrence-free survival', 'overall survival', 'progression-free' -- zero hits for all), so grade_breakdown/brain_invasion/has_outcome_data correctly remain null/false/'Not reported'. AUTHOR LIST CORRECTED: publications[0].authors had been mechanically truncated to the first 6 names; Europe PMC's authorString for PMID 28775249 confirms 19 total authors, now written in full (Agnihotri S, Suppiah S, Tonge PD, Jalali S, Danesh A, Bruce JP, Mamatjan Y, Klironomos G, Gonen L, Au K, Mansouri S, Karimi S, Sahm F, von Deimling A, Taylor MD, Laperriere NJ, Pugh TJ, Aldape KD, Zadeh G). CORRESPONDING AUTHOR CORRECTED: verified directly against the paper's own contrib-group xrefs in PMC5543118.xml (Europe PMC fullTextXML author-notes), not assumed from author-list position -- exactly two contributors carry the corresponding-author (\u2709) xref tied to fn id '_fncrsp93pmc__': 'Aldape Kenneth D' and 'Zadeh Gelareh'. corresponding_author corrected from 'Gelareh Zadeh' alone to 'Kenneth D Aldape, Gelareh Zadeh'. ONTOLOGY ADDED (2026-07-14): disease_id=MONDO:0011648, tissue_ids=['UBERON:0003547'], both verified live against the EBI Ontology Lookup Service (ols4/api/search) before use, not guessed. Same as its EGAS00001002317 sibling: all 19 samples are radiation-induced meningiomas.",
+  "source_urls": [
+    "https://ega-archive.org/studies/EGAS00001002318",
+    "https://ega-archive.org/datasets/EGAD00001004358",
+    "https://pubmed.ncbi.nlm.nih.gov/28775249/",
+    "https://doi.org/10.1038/s41467-017-00174-7"
+  ],
+  "tags": {
+    "grade_comparable": false,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": true,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": true,
+    "large_cohort": false,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": true,
+    "has_outcome_data": false,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null,
+  "ontology": {
+    "disease_id": "MONDO:0011648",
+    "tissue_ids": [
+      "UBERON:0003547"
+    ]
+  }
+}

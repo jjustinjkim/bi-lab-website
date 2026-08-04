@@ -1,0 +1,149 @@
+{
+  "id": "gse-289349-scrnaseq",
+  "title": "Meningioma microenvironment harbors a rich immune landscape with therapeutic implications (Single-cell RNA-seq part)",
+  "accessions": [
+    "GSE289349"
+  ],
+  "related_accessions": [
+    "GSE290805"
+  ],
+  "source_repositories": [
+    "GEO",
+    "SRA"
+  ],
+  "publications": [
+    {
+      "title": "Meningioma microenvironment harbors a rich immune landscape that evolves with biological state.",
+      "authors": [
+        "Guo X",
+        "Moynihan ZA",
+        "Driver J",
+        "Patel RV",
+        "Bhave VM",
+        "Maury EA",
+        "Knelson EH",
+        "Guo H",
+        "Lin JR",
+        "Coy SM",
+        "Wang A",
+        "Gupta S",
+        "Hoffman SE",
+        "Dunn IF",
+        "Dunn GP",
+        "Petti A",
+        "Choi BD",
+        "Choudhury A",
+        "Raleigh DR",
+        "Wei K",
+        "Reardon DA",
+        "Barbie D",
+        "Lederer JA",
+        "Santagata S",
+        "Bi WL"
+      ],
+      "venue": "Neuro-oncology",
+      "year": 2026,
+      "doi": "10.1093/neuonc/noag022",
+      "pmid": "41630100",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Wenya Linda Bi",
+  "institution": "Mass General Brigham",
+  "date_deposited": "2025-02-11",
+  "date_updated": "2026-05-21",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-14",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-10",
+  "verification_tier": 1,
+  "found_via": [
+    "keyword_api",
+    "citation_chain"
+  ],
+  "modality": [
+    "scrna_seq"
+  ],
+  "platform": "Illumina NovaSeq 6000 (GPL24676)",
+  "reference_genome": "GRCh38-3.0.0",
+  "pipeline": "Cell Ranger 6.0.1 (7 meningiomas + 1 arachnoid) and Cell Ranger 3.1.0 (1 meningioma)",
+  "patient_count": "Not reported",
+  "sample_count": 9,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": 1,
+    "grade_2": 6,
+    "grade_3": 1
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": "Not reported",
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "Not reported"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "Not reported",
+  "normal_control_tissue": {
+    "included": true,
+    "type": "arachnoid",
+    "count": 1
+  },
+  "sex_distribution": "5 male, 3 female, 1 not provided (n=9, extracted from GSM 'sex' field)",
+  "age_distribution": "n=8 of 9 (range 38-83, median 67; 1 sample age not provided; extracted from GSM 'age' field)",
+  "has_outcome_data": "Not reported",
+  "paired_multimodal": {
+    "is_paired": true,
+    "related_datasets": [
+      "gse-290805-bulk-rnaseq"
+    ]
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": "Not reported",
+  "processed_data_available": true,
+  "processed_data_format": "GSE289349_RAW.tar",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High",
+    "publications": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "PER-SAMPLE DATA UPDATE (2026-07-10): Per-sample grade/sex data recovered from family.soft. 1 of 9 samples has grade recorded as 'na' (likely the arachnoid/normal control sample already noted in this record's overall_design) -- grade_breakdown above covers only the 8 samples with a real grade value. Series-level GEO metadata verified directly against the live source; per-sample clinical/pathology fields (grade, sex/age, anatomic location, brain invasion, treatment timepoint) have not yet been extracted from individual GSM records or supplementary tables -- part of the batch-1 scaling pass, prioritizing breadth of verified accessions over per-sample depth. Publication metadata pulled from PubMed esummary; not yet manually spot-checked against the full text for every record in this batch. TAG CORRECTION (2026-07-10 fact-check pass): tags.grade_comparable was false despite an explicit multi-grade breakdown (1/6/1 across all three WHO grades); corrected to true per the tag definition in docs/schema.md. COMPLETENESS FIX (2026-07-11 fact-check pass): normal_control_tissue was left at included=false/null/null even though this record's own overall_design and the note above both already identify 1 of the 9 samples as arachnoid/normal control tissue (the 'na'-grade sample); corrected to included=true, type='arachnoid', count=1, consistent with this corpus's convention of tracking normal-control samples in this field (e.g. gse-178139-methylation's dura controls) rather than leaving it at its default false value. EXTERNAL RE-VERIFICATION (2026-07-12): reference_genome filled from 'Not reported' to 'GRCh38-3.0.0' and pipeline from 'Not reported' to Cell Ranger 6.0.1/3.1.0; all 9 GSM records' data_processing state 'Assembly: GRCh38-3.0.0 human reference genome' and specify Cell Ranger 6.0.1 for Samples 2-9 and 3.1.0 for Sample 1. age_distribution range parsed (8 numeric values 38-83, median 67; 1 sample 'na'). Re-verified grade (1/6/1 plus 1 'na' arachnoid = 9), sex (5 male, 3 female, 1 not provided), tissue (8 Human meningioma, 1 Human arachnoid), and PMID 41630100 against live GEO/PubMed; no further discrepancy. tissue_preservation left 'Not reported' (no explicit preservation term in GSM metadata; samples FACS-dissociated fresh but not stated as fresh_frozen). DEEP-AUDIT PASS (2026-07-14): AUTHOR LIST CORRECTED: publications[0].authors had been mechanically truncated to the first 6 names; Europe PMC's authorString for PMID 41630100 confirms 25 total authors, now written in full. CORRESPONDING AUTHOR CORRECTED: 'Wenya Linda Bi, Xiaopeng Guo' was not verified against the paper's own correspondence marker. The publisher's own article page (academic.oup.com/neuro-oncology, fetched directly) states verbatim 'Corresponding Author: Wenya Linda Bi, MD, PhD, Department of Neurosurgery, Mass General Brigham, Harvard Medical School, 75 Francis Street, Boston, MA 02115, USA' with email wenya.bi@mgh.harvard.edu -- Guo (first author) is not listed as corresponding. Corrected to 'Wenya Linda Bi' alone. No new grade/brain-invasion/subtype/outcome data found beyond what full-text access allowed to check (PMID 41630100 is not open access via PMC; only the publisher's article metadata page was retrievable, not the full body text), so grade_breakdown/brain_invasion/molecular_subtype_annotated/has_outcome_data left unchanged from the prior GSM-level extraction.",
+  "source_urls": [
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE289349",
+    "https://pubmed.ncbi.nlm.nih.gov/41630100/"
+  ],
+  "tags": {
+    "grade_comparable": true,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": true,
+    "spatially_resolved": false,
+    "multi_modal_matched": true,
+    "large_cohort": false,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": false,
+    "has_outcome_data": false,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null,
+  "gene_expression_viewer": {
+    "sample_label": "All 9 samples merged (unintegrated): 8 tumor + 1 arachnoid (normal control)",
+    "data_url": "/pilot-data/gse-289349-scrnaseq.json",
+    "cell_count": 51011,
+    "gene_count": 150,
+    "sample_count": 9,
+    "embedding_method": "scanpy 1.10.3: read_10x_mtx of all 9 samples' deposited Cell Ranger output (GSM8789637-GSM8789645), QC per sample (min 200 genes/cell, <20% pct_counts_mt), anndata.concat (unintegrated), filter_genes min_cells=3 (24348 genes), normalize_total+log1p, top-2000 HVG, PCA, neighbors, UMAP, Leiden (resolution 0.5, 24 clusters, igraph flavor). Gene panel: 11 guaranteed meningioma driver genes + top HVGs by dispersion to 150 total.",
+    "pathways": ["Proliferation / cell cycle", "Hypoxia", "Epithelial-mesenchymal transition", "Interferon response"],
+    "integration_note": "All 9 samples (including the 1 non-tumor arachnoid control) were merged by raw concatenation, not batch-corrected/integrated (same approach ScPCA documents for its own merged objects) -- use \"color by sample\" to check for patient-driven rather than biological clustering, and note the arachnoid sample is a genuinely different tissue type mixed into the same embedding, not another tumor."
+  }
+}

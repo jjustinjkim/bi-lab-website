@@ -1,0 +1,116 @@
+{
+  "id": "gse-17792-saydam-mirna-array",
+  "title": "microRNA profiles of meningiomas",
+  "accessions": [
+    "GSE17792"
+  ],
+  "related_accessions": [],
+  "source_repositories": [
+    "GEO"
+  ],
+  "publications": [
+    {
+      "title": "Downregulated microRNA-200a in meningiomas promotes tumor growth by reducing E-cadherin and activating the Wnt/beta-catenin signaling pathway.",
+      "authors": [
+        "Saydam O",
+        "Shen Y",
+        "W\u00fcrdinger T",
+        "Senol O",
+        "Boke E",
+        "James MF"
+      ],
+      "venue": "Molecular and Cellular Biology",
+      "year": 2009,
+      "doi": "10.1128/MCB.00332-09",
+      "pmid": "19703993",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Okay Saydam / Anna M. Krichevsky",
+  "institution": "Department of Neurology, Massachusetts General Hospital / Brigham and Women's Hospital, Harvard Medical School",
+  "date_deposited": "2009-08-24",
+  "date_updated": "2012-03-21",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-11",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-11",
+  "verification_tier": 2,
+  "found_via": [
+    "citation_chain"
+  ],
+  "modality": [
+    "mirna_seq"
+  ],
+  "platform": "Wurdinger/Krichevsky miRNA spotted array IV (GPL7436), non-coding RNA profiling by array",
+  "reference_genome": "Not reported",
+  "pipeline": "Not reported",
+  "patient_count": 14,
+  "sample_count": 34,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": null,
+    "grade_2": null,
+    "grade_3": null
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": false,
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "Not reported"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "Not reported",
+  "normal_control_tissue": {
+    "included": true,
+    "type": "arachnoidal tissue (non-neoplastic control specimens, same profiling platform)",
+    "count": 3
+  },
+  "sex_distribution": "Not reported",
+  "age_distribution": "Not reported",
+  "has_outcome_data": false,
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": []
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": "Not reported",
+  "processed_data_available": true,
+  "processed_data_format": "GSM-level quantile-normalized data table (combining technical replicates per Series_overall_design)",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High",
+    "publications": "High",
+    "patient_count": "Medium"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "Live GEO verification (2026-07-11) confirms 34 total deposited GSM records (Series_type = 'Non-coding RNA profiling by array', not literally 'Expression profiling by array'), matching the discovery-log's '14 meningioma + 3 arachnoidal control (34 samples with replicates)': Series_overall_design explicitly states '14 meningioma tumor samples were compared to 3 arachnoidal tissue control samples. Two technical replicates were performed for each sample.' sample_count (34) reflects the literal number of deposited GSM records/array hybridizations; patient_count (14) reflects unique meningioma patients only, with the 3 arachnoidal controls tracked separately in normal_control_tissue (each control likely also has 2 replicate arrays, not independently confirmed). Modality is recorded as 'mirna_seq' per this project's controlled vocabulary, which as of this verification date has a single value covering both array-based and sequencing-based miRNA profiling; the actual platform here (GPL7436, Wurdinger/Krichevsky spotted miRNA array) is array-based, not literally sequencing, this is stated explicitly in the platform field for clarity. Publication (PMID 19703993, Saydam et al., Mol Cell Biol 2009, the miR-200a tumor-suppressor study) confirmed via PubMed esummary, matches the series summary text closely. Grade, sex, age, location, and outcome fields were not present in the series-level summary/design and individual GSM records were not exhaustively checked in this pass; raw_data_available left 'Not reported' since no CEL/raw supplementary file was found at the series level (only a processed quantile-normalized data table appears to be deposited). large_cohort not computed for mirna_seq per current changelog (fewer than 4 records in modality).",
+  "source_urls": [
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE17792",
+    "https://pubmed.ncbi.nlm.nih.gov/19703993/",
+    "https://doi.org/10.1128/MCB.00332-09"
+  ],
+  "tags": {
+    "grade_comparable": false,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": false,
+    "large_cohort": false,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": false,
+    "has_outcome_data": false,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

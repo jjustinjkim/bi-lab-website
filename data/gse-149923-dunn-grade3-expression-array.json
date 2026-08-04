@@ -1,0 +1,122 @@
+{
+  "id": "gse-149923-dunn-grade3-expression-array",
+  "title": "Primary Meningioma WHO grade III",
+  "accessions": [
+    "GSE149923"
+  ],
+  "related_accessions": [
+    "PRJNA630521",
+    "GSE74385"
+  ],
+  "source_repositories": [
+    "GEO"
+  ],
+  "publications": [
+    {
+      "title": "Integration and Comparison of Transcriptomic and Proteomic Data for Meningioma.",
+      "authors": [
+        "Dunn J",
+        "Lenis VP",
+        "Hilton DA",
+        "Warta R",
+        "Herold-Mende C",
+        "Hanemann CO"
+      ],
+      "venue": "Cancers",
+      "year": 2020,
+      "doi": "10.3390/cancers12113270",
+      "pmid": "33167358",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Christel Herold-Mende",
+  "institution": "Department of Neurosurgery, Experimental Neurosurgery, University Hospital Heidelberg",
+  "date_deposited": "2020-05-05",
+  "date_updated": "2020-12-01",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-11",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-11",
+  "verification_tier": 2,
+  "found_via": [
+    "citation_chain"
+  ],
+  "modality": [
+    "expression_array"
+  ],
+  "platform": "Illumina HumanHT-12 V4.0 expression beadchip (GPL10558)",
+  "reference_genome": "Not reported",
+  "pipeline": "Not reported",
+  "patient_count": 10,
+  "sample_count": 10,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": 0,
+    "grade_2": 0,
+    "grade_3": 10
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": false,
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "Not reported"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "Not reported",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "Not reported",
+  "age_distribution": "Not reported",
+  "has_outcome_data": false,
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": [
+      "gse-74385-schmidt-expression-array"
+    ]
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": true,
+  "processed_data_available": true,
+  "processed_data_format": "GSE149923_Non-normalized_data.txt.gz (series-level supplementary file), plus GSM-level normalized values",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High",
+    "publications": "High",
+    "grade_breakdown": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "Live GEO verification (2026-07-11) confirms exactly 10 GSM samples, series title/summary/design all state 'n=10 primary Meningioma WHO grade III', and one spot-checked GSM (GSM4518075) confirms 'who grade: III' in its characteristics field. Linked publication PMID 33167358 (Dunn et al., Cancers 2020) confirmed via PubMed esummary; this same paper also reuses GSE74385 (also in this inventory as gse-74385-schmidt-expression-array) for its transcriptomic/proteomic integration analysis, so related_accessions/paired_multimodal cross-reference that record; the two datasets are not the same cohort (different sample sets, different submitting labs) so this is a shared-publication link, not a multi-omic pairing of the same patients -- tags.multi_modal_matched is left false accordingly, only paired_multimodal.related_datasets notes the shared-publication relationship for a human to review. Sex/age/location/tissue-preservation not present in series-level metadata; not independently checked per-GSM given the small, single-grade nature of this cohort. large_cohort left false pending centralized quartile recomputation.",
+  "source_urls": [
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE149923",
+    "https://pubmed.ncbi.nlm.nih.gov/33167358/",
+    "https://doi.org/10.3390/cancers12113270",
+    "https://www.ncbi.nlm.nih.gov/bioproject/PRJNA630521"
+  ],
+  "tags": {
+    "grade_comparable": false,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": false,
+    "large_cohort": false,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": false,
+    "has_outcome_data": false,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

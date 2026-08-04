@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import Image from "next/image";
 import Link from "next/link";
 import { FEATURED_PUBLICATIONS } from "@/lib/content";
 
@@ -42,6 +43,16 @@ export default async function FeaturedPublicationPage({
         </div>
         <h1 className="text-display">{pub.title}</h1>
       </div>
+
+      <Image
+        src={pub.image}
+        alt={`First page of "${pub.title}" in ${pub.journal}`}
+        width={767}
+        height={1024}
+        className="w-full h-auto max-w-xs mx-auto rounded"
+        style={{ border: "1px solid var(--hairline)" }}
+        priority
+      />
 
       <p className="text-lg" style={{ color: "var(--ink-muted)" }}>
         {pub.body}

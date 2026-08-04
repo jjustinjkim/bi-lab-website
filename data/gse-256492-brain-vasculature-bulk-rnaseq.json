@@ -1,0 +1,118 @@
+{
+  "id": "gse-256492-brain-vasculature-bulk-rnaseq",
+  "title": "Single-cell atlas of the human brain vasculature across development, adulthood and disease [meningioma subset, bulk RNA-seq]",
+  "accessions": [
+    "GSE256492"
+  ],
+  "related_accessions": [
+    "GSE256493",
+    "GSE256491"
+  ],
+  "source_repositories": [
+    "GEO",
+    "SRA"
+  ],
+  "publications": [
+    {
+      "title": "Single-cell atlas of the human brain vasculature across development, adulthood and disease.",
+      "authors": [
+        "Wälchli T", "Ghobrial M", "Schwab M", "Takada S", "Zhong H", "Suntharalingham S", "Vetiska S", "Gonzalez DR", "Wu R", "Rehrauer H", "Dinesh A", "Yu K", "Chen ELY", "Bisschop J", "Farnhammer F", "Mansur A", "Kalucka J", "Tirosh I", "Regli L", "Schaller K", "Frei K", "Ketela T", "Bernstein M", "Kongkham P", "Carmeliet P", "Valiante T", "Dirks PB", "Suva ML", "Zadeh G", "Tabar V", "Schlapbach R", "Jackson HW", "De Bock K", "Fish JE", "Monnier PP", "Bader GD", "Radovanovic I"
+      ],
+      "venue": "Nature",
+      "year": 2024,
+      "doi": "10.1038/s41586-024-07493-y",
+      "pmid": "38987604",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Thomas Wälchli",
+  "institution": "University College London (contact institution per GEO; multi-site collaboration per publication)",
+  "date_deposited": "2024-02-23",
+  "date_updated": "2024-10-24",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-16",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-16",
+  "verification_tier": 2,
+  "found_via": [
+    "pan_atlas_check"
+  ],
+  "modality": [
+    "bulk_rna_seq"
+  ],
+  "platform": "Illumina TruSeq stranded mRNA, single-end 100bp (Illumina NovaSeq 6000, GPL24676)",
+  "reference_genome": "Not reported",
+  "pipeline": "Not reported",
+  "patient_count": 6,
+  "sample_count": 6,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": null,
+    "grade_2": null,
+    "grade_3": null
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": false,
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "Not reported"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "fresh_frozen",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "Not reported",
+  "age_distribution": "Not reported",
+  "has_outcome_data": false,
+  "paired_multimodal": {
+    "is_paired": true,
+    "related_datasets": [
+      "gse-256490-brain-vasculature-scrnaseq"
+    ]
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": true,
+  "processed_data_available": true,
+  "processed_data_format": "Not reported (raw sequencing data via SRA; no series-level processed matrix listed in GEO supplementary files)",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "sample_count": "High",
+    "patient_count": "High",
+    "modality": "High",
+    "publications": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "NEW RECORD (2026-07-16), sibling to gse-256490-brain-vasculature-scrnaseq -- see that record's needs_manual_review_reason for the full pan-atlas/scope-caveat reasoning shared by both, closing out the same coverage_gaps.md-carried lead ('GSE256490-GSE256493 ... Not yet checked'). This is the bulk RNA-seq subseries of the same pan-CNS-vasculature atlas (GSE256493 SuperSeries), FACS-sorted CD31+/CD45- endothelial cells from the same disease categories. scripts/extract_gsm_characteristics.py's per-sample fallback found 6 of 31 samples in GSE256492 labeled 'Meningioma' in the per-GSM 'genotype' field, one sample per patient (MEN_patient1 through MEN_patient6 per each sample's own 'treatment' field/title) -- all FACS-sorted EC-only, no unsorted 'all cells' arm in this bulk subseries. Note this is 6 patients, one more than the scRNA-seq sibling's 5 -- MEN_patient6 has a bulk RNA-seq sample but no corresponding scRNA-seq sample in GSE256490, confirmed by checking GSE256490 has no patient6 entry. Whether patients 1-5 here are the exact same individuals as patients 1-5 in the scRNA-seq arm cannot be confirmed from GEO metadata alone (no shared patient-ID field, only matching sequential naming), so paired_multimodal.is_paired is set true on the strength of same-cohort/same-paper/same-naming-convention evidence, not a confirmed shared patient-ID linkage -- flagged here rather than silently assumed as certain. Publication (PMID 38987604, Nature 2024) verified via PubMed esummary; corresponding author (Thomas Wälchli) confirmed via the same PMC full-text correspondence-footnote check as the scRNA-seq sibling record. No series-level processed expression matrix is listed among this series' GEO supplementary files (only raw FASTQ via SRA per sample), so processed_data_available reflects that the linked publication's own downstream processed outputs, if any, are not deposited at the series level here. No per-sample sex/age/grade/anatomic-location/treatment-timing data exists in the GSM metadata, so those fields correctly remain 'Not reported'.",
+  "source_urls": [
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE256492",
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE256493",
+    "https://pubmed.ncbi.nlm.nih.gov/38987604/",
+    "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11324530/"
+  ],
+  "tags": {
+    "grade_comparable": false,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": true,
+    "large_cohort": false,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": false,
+    "has_outcome_data": false,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

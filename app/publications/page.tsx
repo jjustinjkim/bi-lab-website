@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { FEATURED_PUBLICATIONS, PUBLICATIONS_BY_YEAR, PUBMED_URL } from "@/lib/content";
 
@@ -15,13 +16,23 @@ export default function PublicationsPage() {
       <section>
         <div className="grid sm:grid-cols-3 gap-5">
           {FEATURED_PUBLICATIONS.map((pub) => (
-            <Link key={pub.slug} href={`/publications/${pub.slug}`} className="panel p-5 block hover:opacity-90 transition-opacity">
-              <h3 className="text-subtitle" style={{ fontSize: "1rem", color: "var(--accent-ink)" }}>
-                {pub.title}
-              </h3>
-              <p className="text-sm mt-2" style={{ color: "var(--ink-muted)" }}>
-                {pub.excerpt}
-              </p>
+            <Link key={pub.slug} href={`/publications/${pub.slug}`} className="panel block overflow-hidden hover:opacity-90 transition-opacity">
+              <Image
+                src={pub.image}
+                alt={`First page of "${pub.title}" in ${pub.journal}`}
+                width={767}
+                height={1024}
+                className="w-full h-auto"
+                style={{ borderBottom: "1px solid var(--hairline)" }}
+              />
+              <div className="p-5">
+                <h3 className="text-subtitle" style={{ fontSize: "1rem", color: "var(--accent-ink)" }}>
+                  {pub.title}
+                </h3>
+                <p className="text-sm mt-2" style={{ color: "var(--ink-muted)" }}>
+                  {pub.excerpt}
+                </p>
+              </div>
             </Link>
           ))}
         </div>

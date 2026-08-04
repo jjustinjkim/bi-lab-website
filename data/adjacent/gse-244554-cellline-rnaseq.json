@@ -1,0 +1,118 @@
+{
+  "id": "gse-244554-cellline-rnaseq",
+  "title": "Identification of SLC7A1 as a potential therapeutic target for high-grade meningioma",
+  "accessions": [
+    "GSE244554"
+  ],
+  "related_accessions": [
+    "PRJNA1023554"
+  ],
+  "source_repositories": [
+    "GEO",
+    "SRA"
+  ],
+  "publications": [
+    {
+      "title": "Identification of SLC7A1 as a potential therapeutic target for high-grade meningioma.",
+      "authors": [
+        "Song L",
+        "Li X",
+        "Li D",
+        "Tian K",
+        "Wang K",
+        "Zhang J"
+      ],
+      "venue": "Cell Death Discovery",
+      "year": 2025,
+      "doi": "10.1038/s41420-025-02783-4",
+      "pmid": "41184266",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Lairong Song",
+  "institution": "Beijing Tiantan Hospital",
+  "date_deposited": "2023-10-03",
+  "date_updated": "2026-01-15",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-11",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-11",
+  "verification_tier": 2,
+  "found_via": [
+    "keyword_api"
+  ],
+  "modality": [
+    "bulk_rna_seq"
+  ],
+  "platform": "Illumina HiSeq 4000 (GPL20301)",
+  "reference_genome": "Not reported",
+  "pipeline": "Not reported",
+  "patient_count": "Not applicable (cell line)",
+  "sample_count": 24,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": null,
+    "grade_2": null,
+    "grade_3": null
+  },
+  "who_edition": "Not applicable (cell line)",
+  "molecular_subtype_annotated": false,
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not applicable",
+    "determination_method": "Not applicable"
+  },
+  "treatment_timepoint_status": [
+    "Not applicable"
+  ],
+  "anatomic_location_breakdown": "Not applicable (cell line)",
+  "tissue_preservation": "not_applicable",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "Not applicable",
+  "age_distribution": "Not applicable",
+  "has_outcome_data": false,
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": []
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": true,
+  "processed_data_available": true,
+  "processed_data_format": "Normalized expression CSV per cell-line/treatment arm (GSE244554_IOMM-Lee_cells_AZ628.CSV.gz, GSE244554_IOMM-Lee_cells_KD-SLC7A1.CSV.gz, GSE244554_SZ8511_cells_AZ628.CSV.gz, GSE244554_SZ8511_cells_KD-SLC7A1.CSV.gz)",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High",
+    "publications": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "Adjacent-scope per docs/scope.md: live GEO record (verified directly via acc.cgi) confirms Series_overall_design describes SLC7A1 knockdown and AZ628 small-molecule drug-treatment RNA-seq performed in two established meningioma cell lines (IOMM-Lee, an immortalized grade 3 meningioma line already seen in this corpus's other adjacent records, and SZ8511), with no primary patient tumor tissue submitted to this accession; 24 total Series_sample_id entries (GSM7819031-GSM7819054) across the two cell lines and two experimental arms (SLC7A1 knockdown vs. AZ628 treatment), consistent with the 4 processed supplementary files (one per cell-line/arm combination). Series_pubmed_id (41184266) verified via PubMed esummary as Song et al., Cell Death Discovery 2025, matching the series title verbatim. Note the GEO record shows an unusually late Series_status ('Public on Sep 27 2025') relative to its 2023 submission date, i.e. a long embargo before release; this was verified as-is from the live record, not fabricated. Author list truncated to first 6 per this corpus's existing citation-formatting convention. who_edition/patient_count use the established 'Not applicable (cell line)' convention for non-patient-tissue model systems.",
+  "source_urls": [
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE244554",
+    "https://pubmed.ncbi.nlm.nih.gov/41184266/",
+    "https://www.ncbi.nlm.nih.gov/bioproject/PRJNA1023554"
+  ],
+  "tags": {
+    "grade_comparable": false,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": false,
+    "large_cohort": false,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": false,
+    "has_outcome_data": false,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

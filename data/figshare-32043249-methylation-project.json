@@ -1,0 +1,107 @@
+{
+  "id": "figshare-32043249-methylation-project",
+  "title": "Meningioma_DNA_methylation_project",
+  "accessions": [
+    "10.6084/m9.figshare.32043249"
+  ],
+  "related_accessions": [
+    "GSE304094",
+    "GSE304097"
+  ],
+  "source_repositories": [
+    "Figshare"
+  ],
+  "publications": [],
+  "corresponding_author": "Daniel Merk",
+  "institution": "Not reported",
+  "date_deposited": "Not reported",
+  "date_updated": "Not reported",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-13",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-13",
+  "verification_tier": 2,
+  "found_via": [
+    "keyword_api"
+  ],
+  "modality": [
+    "dna_methylation_array"
+  ],
+  "platform": "Illumina EPIC / EPICv2 (methylation array)",
+  "reference_genome": "Not reported",
+  "pipeline": "Not reported",
+  "patient_count": "Not reported",
+  "sample_count": 231,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": 83,
+    "grade_2": 129,
+    "grade_3": 19
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": true,
+  "brain_invasion": {
+    "status_reported": true,
+    "counts": "86 of 231 discovery-cohort samples 'invasionhisto: yes', 145 'no' (a related but distinct 'invasiongrade' column records 145 no / 56 yes / 30 'BIOB' [biopsy-only, invasion not assessable])",
+    "determination_method": "Histological determination of brain invasion (invasionhisto column in meta_discovery_current.csv), confirmed as a genuine independent covariate (not a sampling-location proxy) in the linked GitHub repository's Cox proportional-hazards survival analysis (06_survival.R: coxph(Surv(...)~cluster1000_new+setting+grading2021_new+EOR+gender+adjuvantRT+age+H3K27+invasionhisto) and a separate single-covariate model reporting c_index_invasion)"
+  },
+  "treatment_timepoint_status": [
+    "primary",
+    "recurrent",
+    "pre_radiation",
+    "post_radiation"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "Not reported",
+  "normal_control_tissue": {
+    "included": true,
+    "type": "normal meninges",
+    "count": null
+  },
+  "sex_distribution": "134 F / 97 M (discovery cohort, n=231; validation/UCSF/longitudinal arms not tallied)",
+  "age_distribution": "Not reported",
+  "has_outcome_data": true,
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": []
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": false,
+  "processed_data_available": true,
+  "processed_data_format": "Processed methylation beta values (.rds/.RDS), CNV calls, RNA-seq count matrices, and clinical metadata CSVs; no raw IDAT files included",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "modality": "High",
+    "sample_count": "Medium",
+    "grade_breakdown": "Medium",
+    "recurrence_annotated": "High",
+    "has_outcome_data": "High",
+    "radiation_timepoint": "High",
+    "brain_invasion_annotated": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "NEW RECORD (2026-07-13), surfaced by the monthly refresh's Figshare keyword_api check, verified directly against the live Figshare API (title, description, and full file listing confirmed). This is a substantial, genuinely new supplementary-data deposit: discovery, validation, UCSF, and longitudinal DNA methylation cohorts, plus CNV calls derived from methylation array data, RNA-seq count matrices (Raleigh_RNAseq.txt, raw_counts_MNG.csv), a normal-meninges comparison set (targets_normal_meninges.csv), and a cell-line subset (targets_discovery_celllines.csv) kept separate from the patient cohorts. CORRECTION (2026-07-13, same session): an initial pass set several tags/fields from file names alone without opening the files, which this project's own precedent (see the has_outcome_data overreach note elsewhere in docs/changelog.md) explicitly warns against -- corrected by actually downloading and reading the underlying CSVs. Confirmed directly: meta_discovery_current.csv contains 231 real per-sample rows with a 'status' column (158 Primary, 73 Recurrence), a 'grading2021' column (grade 1: 83, grade 2: 129, grade 3: 19), a 'gender' column (134 F, 97 M), and named methylation-class columns (MCclass/MCsubtype/MCgroup, e.g. 'Immuneenriched', 'Hypermitotic', 'Merlinintact' -- the Choudhury/Raleigh methylation-group nomenclature already used elsewhere in this inventory). T26_survival_grade1/2/3.csv files contain real per-sample follow-up time ('futime') and event-status columns, confirming genuine outcome/survival data, not just an inferred filename. sample_count/grade_breakdown/sex_distribution above reflect the discovery cohort specifically (n=231); three additional cohort arms were also confirmed real but not tallied into a combined total, since it is unclear whether they contain independent patients or partially overlap with the discovery cohort or with each other: meta_validation.csv (n=55), meta_UCSF_current.csv (n=565), meta_longitudinal_current.csv (n=42). Two file-name prefixes are strongly suggestive of overlap with existing inventory records: 'Raleigh_' (matching corresponding author David R Raleigh) and 'Nassiri_targets.csv' (matching Farshad Nassiri) -- not resolved this session, see duplicate_notes. A live Europe PMC search for a specific companion publication did not turn up a confident match; the description only points to a companion GitHub repository (MerkLab/Meningioma_DNA_methylation_project) for methodology, not a specific paper. Flagged for a follow-up session to (a) determine whether the validation/UCSF/longitudinal arms are independent patients, and (b) identify the specific linked publication. FURTHER CORRECTION (2026-07-13, same session, prompted by a direct question about the radiation-timepoint filter specifically): radiation_timepoint had been left false despite the discovery cohort's own priorRT (56 yes / 175 no) and adjuvantRT (35 yes / 196 no) columns already being visible in data downloaded during the first correction pass -- missed on the first pass despite being in hand. treatment_timepoint_status updated to include pre_radiation/post_radiation alongside primary/recurrent; these two columns are separate binary treatment-history flags (prior radiotherapy before this sample was taken; adjuvant radiotherapy given after), not a single per-sample categorical timepoint, so read them as two independent yes/no annotations, not a four-way mutually exclusive label. IMPORTANT PRECISION NOTE (2026-07-13, same session, prompted by a direct follow-up question): this is NOT a matched pre/post-radiation sample design -- confirmed the discovery cohort's 231 rows are 231 unique patient IDs with zero repeats, i.e. one cross-sectional sample per patient, each merely labeled with whether radiation happened before/after that single sample was taken. There is no tumor in this deposit with both a pre-radiation and a post-radiation sample directly compared. Genuine same-patient repeat sampling does exist here, but it is a different axis: the longitudinal cohort (meta_longitudinal_current.csv) has 42 samples from only 18 unique patients (12 with 2 samples, 6 with 3), tracked via a 'patient' id and a 'Recurrence_level' field (0/1/2 = primary/first recurrence/second recurrence) -- this is real primary-to-recurrence progression sampling, already reflected in recurrence_annotated, but it has no priorRT/adjuvantRT columns at all, so it does not itself demonstrate pre/post-radiation pairing either. Verified via checking the actual GitHub analysis code (06_survival.R): adjuvantRT is used as a time-dependent covariate (tmerge/tdc(adRTtime)) in a Cox survival model, confirming this is genuine radiotherapy-treatment timing for this tumor, not a 'radiation-induced meningioma' etiology flag (a separate, real concept this inventory already tracks elsewhere via the Agnihotri RIM cohort) -- the two should not be conflated. Also confirmed via the GitHub README: raw data for this cohort is archived at GEO accession GSE304097 (not yet a separate record in this inventory), and the validation arm explicitly reuses GSE180061 (Toronto/Nassiri) and GSE183656 (UCSF), both already represented elsewhere in this inventory -- this substantiates, rather than resolves, the possible_duplicate_needs_verification flag below; not acted on further this session. AUDIT 2026-07-14 (external re-verification pass, live-source deep audit): two genuine findings. (1) BRAIN INVASION FIELD MISSED: re-opened meta_discovery_current.csv (fresh download, 231 rows, re-confirmed identical to the figures already in this record) and found an 'invasionhisto' column (86 yes / 145 no) that had not been captured in the first extraction pass despite being in hand -- confirmed via the linked GitHub repository's 06_survival.R that this is used as a genuine independent histological covariate in a Cox proportional-hazards model (not a sampling-location proxy of the kind flagged elsewhere in this corpus), so brain_invasion.status_reported/counts/determination_method and tags.brain_invasion_annotated are corrected from false to true/populated. A related 'invasiongrade' column (145 no / 56 yes / 30 'BIOB') was also found and is noted alongside but not used as the primary count, since invasionhisto is the one actually exercised as a standalone covariate in the survival code. (2) CONFIRMED COMPANION-DATASET RELATIONSHIP WITH gse-304094-methylation: live-fetched GSE304094 (already a separate record in this inventory) and found its title ('DNA methylation profiling identifies long-range epigenetic silencing of clustered protocadherins as a key determinant of meningioma progression [discovery]') is the exact same protocadherin/meningioma-progression project as this Figshare deposit, both from the same corresponding-author group (Merk/Tabatabai, Hertie-Institute), both n=231 discovery-cohort methylation samples. Cross-checked 3 of GSE304094's live GSM sample titles (GSM9143071='T26_0053', GSM9143072='T26_0137', GSM9143080='T26_0019') directly against this Figshare deposit's meta_discovery_current.csv 'ID' column: all 3 matched exactly (3/3), and GSE304094 is confirmed live to be a SubSeries of SuperSeries GSE304097, the exact accession this record's own GitHub README already named as hosting 'raw data for this cohort' (see the 2026-07-13 note above) -- so this is not merely a suspected overlap but a confirmed identical-specimen match between this Figshare deposit and an accession already in the inventory. GSE304094/GSE304097 added to related_accessions. This is a companion/mirror relationship, not a redundant duplicate to merge: GSE304094 hosts the raw/processed array data with only minimal per-GSM metadata ('tissue: meningioma', no grade/sex/age/invasion/outcome fields exposed at the GEO sample level), while this Figshare deposit holds the same specimens' rich clinical/pathology annotation table (grade, sex, invasion, priorRT/adjuvantRT, survival) that GSE304094's own live GEO record does not expose -- so both records remain independently useful and neither record's own fields were overwritten from the other's source; gse-304094-methylation.json was cross-linked in the same pass with a matching note. Left possible_duplicate_needs_verification at true (see duplicate_notes) since the Raleigh_/Nassiri_ file-prefix question from the 2026-07-13 pass remains genuinely unresolved, even though the GSE304094 relationship specifically is now confirmed rather than merely suspected.",
+  "source_urls": [
+    "https://figshare.com/articles/dataset/Meningioma_DNA_methylation_project/32043249",
+    "https://github.com/MerkLab/Meningioma_DNA_methylation_project"
+  ],
+  "tags": {
+    "grade_comparable": true,
+    "radiation_timepoint": true,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": true,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": false,
+    "large_cohort": true,
+    "recurrence_annotated": true,
+    "molecular_subtype_annotated": true,
+    "has_outcome_data": true,
+    "peer_reviewed": false
+  },
+  "possible_duplicate_needs_verification": true,
+  "duplicate_notes": "File names (Raleigh_*, Nassiri_targets.csv) suggest this dataset may substantially overlap with cohorts already represented elsewhere in this inventory under those two corresponding authors. Not resolved this session -- needs the underlying data files opened and compared against existing records' sample identifiers before this flag can be cleared either way."
+}

@@ -1,0 +1,105 @@
+{
+  "id": "pxd009925-proteomics",
+  "title": "HLA-I peptidomics of Meningioma tissues - Peptide length distribution and multiple specificity in naturally presented HLA-I ligands",
+  "accessions": [
+    "PXD009925"
+  ],
+  "related_accessions": [],
+  "source_repositories": [
+    "PRIDE"
+  ],
+  "publications": [
+    {
+      "title": "The Length Distribution and Multiple Specificity of Naturally Presented HLA-I Ligands.",
+      "authors": ["Gfeller D", "Guillaume P", "Michaux J", "Pak HS", "Daniel RT", "Racle J", "Coukos G", "Bassani-Sternberg M"],
+      "venue": "Journal of Immunology",
+      "year": 2018,
+      "doi": "10.4049/jimmunol.1800914",
+      "pmid": "30429286",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Michal Bassani-Sternberg",
+  "institution": "Lausanne University Hospital (CHUV)",
+  "date_deposited": "2018-05-28",
+  "date_updated": "2019-07-31",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-10",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-10",
+  "verification_tier": 2,
+  "found_via": [
+    "keyword_api"
+  ],
+  "modality": [
+    "proteomics_bulk_ms"
+  ],
+  "platform": "Q Exactive",
+  "reference_genome": "Not applicable",
+  "pipeline": "Not reported",
+  "patient_count": "Not reported",
+  "sample_count": "Not reported",
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": null,
+    "grade_2": null,
+    "grade_3": null
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": false,
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "Not reported"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "fresh_frozen",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "Not reported",
+  "age_distribution": "Not reported",
+  "has_outcome_data": false,
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": []
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": true,
+  "processed_data_available": true,
+  "processed_data_format": "MaxQuant search-result output (MaxQuant_Output.zip)",
+  "license": "EBI terms of use",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "modality": "High",
+    "publications": "Medium"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "Re-verified 2026-07-10 directly against the live PRIDE v2 record: no publication is linked in the PRIDE project record itself (references field is empty), confirming the prior note; not yet cross-checked via a separate literature search for this specific dataset. platform/license/date_deposited/date_updated filled in from the live PRIDE record (they were previously blank though available at source). 2026-07-12 RE-VERIFICATION AUDIT: tissue_preservation corrected from 'Not reported' to 'fresh_frozen'; the live PRIDE sampleProcessingProtocol explicitly states 'Snap frozen meningioma tissues from patients were obtained from the Centre hospitalier universitaire vaudois (CHUV, Lausanne, Switzerland)' and 'snap-frozen meningioma tissue samples were placed in tubes', so fresh_frozen is directly supported by the source. sample_count/patient_count left 'Not reported': the abstract says 'ten newly generated HLA peptidomics datasets from meningioma samples' but the raw .raw file listing carries about 14 distinct patient codes, a conflict that makes any single numeric value unsafe to assert. FOLLOW-UP PUBLICATION SEARCH (2026-07-13), match found via author identity (Medium confidence, in-text accession confirmation not possible): an author search for 'Bassani-Sternberg' + meningioma surfaced Gfeller et al. 2018 (PMID 30429286, J Immunol, 'The Length Distribution and Multiple Specificity of Naturally Presented HLA-I Ligands'), whose PubMed abstract (fetched directly via efetch) states verbatim it collected 'recent in-depth HLA peptidomics data, including 12 newly generated HLA peptidomes (31,896 unique peptides) from human meningioma samples' with co-author Daniel RT affiliated to the 'Service of Neurosurgery, University Hospital of Lausanne' -- i.e. CHUV, matching this record's institution exactly, and Bassani-Sternberg M as last/corresponding author, matching this record's corresponding_author exactly. This paper is closed-access with no PMCID, so the exact accession string PXD009925 could not be grepped in a full text (unlike this project's usual accession-in-fulltext standard); the match instead rests on an exact author+institution identity match plus a near-identical topic/title/abstract match (the PRIDE project's own title reuses this paper's exact title verbatim, prefixed with 'HLA-I peptidomics of Meningioma tissues -'). Recorded as Medium confidence per this project's convention for identity-based (non-fulltext-confirmed) matches. Note the abstract's count of 12 meningioma HLA peptidomes vs. PRIDE's own description of 'ten' is an unresolved minor discrepancy, consistent with the sample_count ambiguity already flagged above. Publication added; publication_status normal so tags.peer_reviewed set true. DEEP-AUDIT UPDATE (2026-07-14): re-fetched the live PRIDE v2 project record (https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD009925) and re-confirmed references field is still empty, tissue_preservation/sample-ambiguity notes above still hold, and via the live PRIDE files listing (https://www.ebi.ac.uk/pride/ws/archive/v2/files?projectAccession=PXD009925&pageSize=100) re-counted the raw file listing at exactly 14 distinct patient codes (3779-AMM, 3795-BMT, 3803-RE, 3805-RV, 3808-HMC, 3869-GA, 3911-ME, 3947-GA, 3971-ORA, 3993, 4001, 4021, 4037-DC, 4052-BA), confirming the prior 'about 14' estimate exactly and that sample_count remains correctly 'Not reported' given the 3-way conflict (PRIDE abstract '10', linked paper abstract '12', raw files '14'). Separately, cross-checked the linked publication's authors directly via Europe PMC (query EXT_ID:30429286, resultType=core): the record's own authors array had only 6 of the paper's true 8 authors, omitting 'Coukos G' and 'Bassani-Sternberg M' (the paper's senior/corresponding author, who is also this exact record's own corresponding_author field value) -- corrected, authors array now lists all 8. Also re-ran a Europe PMC full-text search for the literal string 'PXD009925' (https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=PXD009925) and confirmed it still returns 0 hits for PMID 30429286 (only 2 unrelated hits), consistent with the paper being closed-access/no-PMCID and confirming the publications confidence_level should remain Medium (identity-based, not full-text-confirmed), left unchanged.",
+  "source_urls": [
+    "https://www.ebi.ac.uk/pride/archive/projects/PXD009925"
+  ],
+  "tags": {
+    "grade_comparable": false,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": false,
+    "large_cohort": false,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": false,
+    "has_outcome_data": false,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

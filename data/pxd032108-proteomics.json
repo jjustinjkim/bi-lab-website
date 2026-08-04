@@ -1,0 +1,121 @@
+{
+  "id": "pxd032108-proteomics",
+  "title": "Comparison of matched formalin-fixed paraffin embedded and fresh frozen tissue reveals bias in proteomic profiles",
+  "accessions": [
+    "PXD032108"
+  ],
+  "related_accessions": [],
+  "source_repositories": [
+    "PRIDE"
+  ],
+  "publications": [
+    {
+      "title": "Comparison of matched formalin-fixed paraffin embedded and fresh frozen meningioma tissue reveals bias in proteomic profiles.",
+      "authors": [
+        "Schoffman H",
+        "Levin Y",
+        "Itzhaki-Alfia A",
+        "Tselekovits L",
+        "Gonen L",
+        "Vainer GW",
+        "Hout-Siloni G",
+        "Barshack I",
+        "Cohen ZR",
+        "Margalit N",
+        "Shahar T"
+      ],
+      "venue": "Proteomics",
+      "year": 2022,
+      "doi": "10.1002/pmic.202200085",
+      "pmid": "36098096",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Tal Shahar",
+  "institution": "Shaare Zedek Medical Center",
+  "date_deposited": "2022-03-07",
+  "date_updated": "2024-02-12",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-10",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-10",
+  "verification_tier": 1,
+  "found_via": [
+    "keyword_api",
+    "citation_chain"
+  ],
+  "modality": [
+    "proteomics_bulk_ms"
+  ],
+  "platform": "Q Exactive HF",
+  "reference_genome": "Not applicable",
+  "pipeline": "MetaMorpheus v0.0.3.20",
+  "patient_count": 10,
+  "sample_count": 20,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": 20,
+    "grade_2": 0,
+    "grade_3": 0
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": false,
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "Not reported"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "both",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "Not reported",
+  "age_distribution": "Not reported",
+  "has_outcome_data": false,
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": []
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": true,
+  "processed_data_available": true,
+  "processed_data_format": "MetaMorpheus ProteinGroups.tsv and QuantifiedPeaks.tsv per-sample search-result files",
+  "license": "Creative Commons Public Domain (CC0)",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High",
+    "publications": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "N=20 human meningioma FFPE/fresh-frozen specimens (10 distinct surgical cases: 8 with matched FFT/FFPE pairs plus 2 FFPE-only cases, per the sample processing protocol) per project description -- a tissue-preservation methods comparison study, not a discovery cohort, but genuine primary patient tissue, all diagnosed WHO grade I. Corrected 2026-07-10: publication was previously a DOI-only placeholder with no PMID/authors/year; resolved via Crossref + Europe PMC to PMID 36098096 (Schoffman et al., Proteomics 2022) and filled in. institution filled in as Shaare Zedek Medical Center (corresponding author Tal Shahar's affiliation per PRIDE labPI record), though the tissue bank of origin is stated as Sheba Medical Center in the sample processing protocol text -- flagged since these are two different Israeli hospitals and the exact institutional relationship (collaboration vs. transferred biobank) is not spelled out in the abstract-level metadata. sample_count/patient_count/tissue_preservation/grade_breakdown/platform/pipeline/license/dates filled in from the live PRIDE record. AUTHOR-LIST COMPLETENESS FIX (2026-07-14 deep audit): publications[0].authors was truncated to the first 6 of the paper's actual 11 authors; expanded to the full list (ending in Shahar T, the already-confirmed corresponding author per this record's institution note) via the Europe PMC REST API authorString field.",
+  "source_urls": [
+    "https://www.ebi.ac.uk/pride/archive/projects/PXD032108",
+    "https://pubmed.ncbi.nlm.nih.gov/36098096/",
+    "https://doi.org/10.1002/pmic.202200085"
+  ],
+  "tags": {
+    "grade_comparable": false,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": false,
+    "large_cohort": false,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": false,
+    "has_outcome_data": false,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

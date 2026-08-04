@@ -1,0 +1,161 @@
+{
+  "id": "gse-74385-schmidt-expression-array",
+  "title": "Transcriptomic analysis of aggressive meningiomas identifies PTTG1 and LEPR as prognostic biomarkers independent of WHO grade",
+  "accessions": [
+    "GSE74385"
+  ],
+  "related_accessions": [
+    "PRJNA300220",
+    "GSE149923"
+  ],
+  "source_repositories": [
+    "GEO"
+  ],
+  "publications": [
+    {
+      "title": "Transcriptomic analysis of aggressive meningiomas identifies PTTG1 and LEPR as prognostic biomarkers independent of WHO grade.",
+      "authors": [
+        "Schmidt M",
+        "Mock A",
+        "Jungk C",
+        "Sahm F",
+        "Ull AT",
+        "Warta R",
+        "Lamszus K",
+        "Gousias K",
+        "Ketter R",
+        "Roesch S",
+        "Rapp C",
+        "Schefzyk S",
+        "Urbschat S",
+        "Lahrmann B",
+        "Kessler AF",
+        "Löhr M",
+        "Senft C",
+        "Grabe N",
+        "Reuss D",
+        "Beckhove P",
+        "Westphal M",
+        "von Deimling A",
+        "Unterberg A",
+        "Simon M",
+        "Herold-Mende C"
+      ],
+      "venue": "Oncotarget",
+      "year": 2016,
+      "doi": "10.18632/oncotarget.7396",
+      "pmid": "26894859",
+      "preprint_id": null
+    },
+    {
+      "title": "Integration and Comparison of Transcriptomic and Proteomic Data for Meningioma.",
+      "authors": [
+        "Dunn J",
+        "Lenis VP",
+        "Hilton DA",
+        "Warta R",
+        "Herold-Mende C",
+        "Hanemann CO",
+        "Futschik ME"
+      ],
+      "venue": "Cancers",
+      "year": 2020,
+      "doi": "10.3390/cancers12113270",
+      "pmid": "33167358",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Christel Herold-Mende",
+  "institution": "Department of Neurosurgery, Experimental Neurosurgery, Heidelberg University Hospital",
+  "date_deposited": "2015-10-27",
+  "date_updated": "2020-12-01",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-14",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-11",
+  "verification_tier": 2,
+  "found_via": [
+    "citation_chain"
+  ],
+  "modality": [
+    "expression_array"
+  ],
+  "platform": "Illumina HumanHT-12 V4.0 expression beadchip (GPL10558)",
+  "reference_genome": "Not reported",
+  "pipeline": "Not reported",
+  "patient_count": 62,
+  "sample_count": 62,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": 20,
+    "grade_2": 14,
+    "grade_3": 28
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": false,
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "primary",
+    "recurrent"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "Not reported",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "Not reported",
+  "age_distribution": "Not reported",
+  "has_outcome_data": true,
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": [
+      "gse-149923-dunn-grade3-expression-array"
+    ]
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": true,
+  "processed_data_available": true,
+  "processed_data_format": "GSE74385_normalized.txt.gz and GSE74385_non-normalized.txt.gz (series-level supplementary files)",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High",
+    "publications": "High",
+    "grade_breakdown": "High",
+    "has_outcome_data": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "Live GEO verification (2026-07-11) confirms exactly 62 deposited GSM samples matching the discovery-log claim; the paper's abstract states 144 total cases studied, of which only these 62 array-profiled samples are actually deposited here (an independent 82-case validation set was analyzed by other, non-array methods and is not part of this GEO series). grade_breakdown and outcome status were reconstructed by fetching all 62 individual GSM records and decoding each sample's 'subtype' characteristic field, which encodes WHO grade plus clinical category as a single string, e.g. '1NR' = grade I non-recurrent, '2M' = grade II with malignant progression, '3NA' = grade III recurrence-status not applicable/unavailable. Tally: grade 1 n=20 (13 NR, 3 M, 4 R), grade 2 n=14 (6 NR, 6 M, 2 R), grade 3 n=28 (8 NA, 4 NR, 16 R); this is genuine per-sample data (not inferred from the abstract), so has_outcome_data and recurrence_annotated are set true per verification rules. Sex, age, tissue preservation, and anatomic location were not present in any GSM's characteristics fields and could not be recovered without the paper's supplementary tables. Second publication (PMID 33167358, Dunn et al. Cancers 2020) is a later reanalysis that reuses this same series' data alongside GSE149923 (also in this inventory as gse-149923-dunn-grade3-expression-array); this is a shared-publication link, not a multi-omic pairing of the same patients (different sample sets, different submitting labs), so tags.multi_modal_matched is left false, the cross-reference is recorded via related_accessions/paired_multimodal.related_datasets only. large_cohort left false pending centralized per-modality quartile recomputation. COMPLETENESS FIX (2026-07-13, corpus-wide tag audit): treatment_timepoint_status had been left at 'Not reported' even though tags.recurrence_annotated is true and this record's own notes above already document genuine per-sample primary/recurrent data. Corrected to ['primary', 'recurrent'] to match. AUTHOR-TRUNCATION FIX (2026-07-14): both publications entries were hit by this corpus's known author-list-truncation bug. Publication 1 (Schmidt et al., PMID 26894859) was truncated to the first 6 names (Schmidt M through Warta R); the live PubMed efetch and Europe PMC/PMC (PMC4924735) full text confirm the true author list is 25 names, ending in Herold-Mende C, who is also the article's sole confirmed corresponding author (h.mende@med.uni-heidelberg.de, per the PMC correspondence footnote) -- matching this record's existing corresponding_author field, so no change was needed there. Full 25-author list now recorded. Publication 2 (Dunn et al., PMID 33167358) was truncated by exactly one name, dropping the true final author Futschik ME; live PubMed/PMC (PMC7694371) confirm the true author list is 7 names and that this paper actually has two corresponding authors, C Oliver Hanemann (oliver.hanemann@plymouth.ac.uk) and Matthias E Futschik (m.futschik@imperial.ac.uk), neither of whom is Herold-Mende -- this record's top-level corresponding_author field is left as Christel Herold-Mende since it correctly reflects the original data-generating publication (Schmidt et al.) for this GEO series, not the later secondary reanalysis paper. Also re-verified has_outcome_data/recurrence_annotated per this audit's specific concern that a 'prognostic biomarkers' title alone should not be conflated with genuine deposited outcome data: confirmed these remain correctly justified by the per-GSM 'subtype' characteristic field documented earlier in this same reason string (e.g. '1NR'/'2M'/'3R'), which is real per-sample recurrence/outcome-category data actually deposited in GEO, not merely the paper's title framing -- left as true, unchanged.",
+  "source_urls": [
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE74385",
+    "https://pubmed.ncbi.nlm.nih.gov/26894859/",
+    "https://doi.org/10.18632/oncotarget.7396",
+    "https://pubmed.ncbi.nlm.nih.gov/33167358/",
+    "https://www.ncbi.nlm.nih.gov/bioproject/PRJNA300220"
+  ],
+  "tags": {
+    "grade_comparable": true,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": false,
+    "large_cohort": true,
+    "recurrence_annotated": true,
+    "molecular_subtype_annotated": false,
+    "has_outcome_data": true,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

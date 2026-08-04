@@ -1,0 +1,151 @@
+{
+  "id": "gse-284758-methylation",
+  "title": "Molecular signatures define BAP1-altered meningioma as a distinct CNS tumor with deregulation of Polycomb repressive complex target genes",
+  "accessions": [
+    "GSE284758"
+  ],
+  "related_accessions": [
+    "GSE287322"
+  ],
+  "source_repositories": [
+    "GEO"
+  ],
+  "publications": [
+    {
+      "title": "Molecular signatures define BAP1-altered meningioma as a distinct CNS tumor with deregulation of Polycomb repressive complex target genes.",
+      "authors": [
+        "Sievers P",
+        "Arora S",
+        "Hielscher T",
+        "Savran D",
+        "Schrimpf D",
+        "Banan R",
+        "Vonhören D",
+        "Pusch S",
+        "Sill M",
+        "Appay R",
+        "Wirsching HG",
+        "Hortobagyi T",
+        "Dohmen H",
+        "Acker T",
+        "Kohlhof-Meinecke P",
+        "Schweizer L",
+        "Wefers AK",
+        "Harter PN",
+        "Hartmann C",
+        "Beschorner R",
+        "Schittenhelm J",
+        "Behling F",
+        "Tabatabai G",
+        "Mawrin C",
+        "Snuderl M",
+        "Maas SLN",
+        "Wesseling P",
+        "Brandner S",
+        "Korshunov A",
+        "Ratliff M",
+        "Krieg SM",
+        "Wick W",
+        "Jones DTW",
+        "Pfister SM",
+        "Holland EC",
+        "von Deimling A",
+        "Szulzewsky F",
+        "Sahm F"
+      ],
+      "venue": "Neuro-oncology",
+      "year": 2025,
+      "doi": "10.1093/neuonc/noaf105",
+      "pmid": "40249111",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Philipp Sievers, Felix Sahm",
+  "institution": "University Hospital Heidelberg, Intitute of Pathology",
+  "date_deposited": "2024-12-19",
+  "date_updated": "2025-07-17",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-11",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-10",
+  "verification_tier": 1,
+  "found_via": [
+    "keyword_api",
+    "citation_chain"
+  ],
+  "modality": [
+    "dna_methylation_array"
+  ],
+  "platform": "GPL13534, GPL21145, GPL33022",
+  "reference_genome": "Not reported",
+  "pipeline": "Not reported",
+  "patient_count": "Not reported",
+  "sample_count": 42,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": null,
+    "grade_2": null,
+    "grade_3": null
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": "Not reported",
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "Not reported"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "both",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "23 female, 19 male (n=42, extracted from GSM 'Sex' field)",
+  "age_distribution": "n=39 of 42 (range 13-80, median approx. 44; extracted from GSM 'age' field)",
+  "has_outcome_data": true,
+  "paired_multimodal": {
+    "is_paired": true,
+    "related_datasets": [
+      "gse-287322-bulk-rnaseq"
+    ]
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": "Not reported",
+  "processed_data_available": true,
+  "processed_data_format": "GSE284758_GPL13534_matrix_processed.txt.gz",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High",
+    "publications": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "Series-level GEO metadata verified directly against the live source; per-sample clinical/pathology fields (grade, sex/age, anatomic location, brain invasion, treatment timepoint) have not yet been extracted from individual GSM records or supplementary tables. FACT-CHECK (2026-07-10): date_deposited/date_updated were 'Not reported' despite being stated on the live GEO record; filled in. Cross-checked against paired record gse-287322-bulk-rnaseq (same PMID 40249111, live GEO record for GSE287322 also verified) -- consistent, no discrepancy found. PER-SAMPLE DATA RECOVERED (2026-07-11 fact-check pass): fetched all 42 individual GSM records directly (not previously done). Each carries 'material', 'Sex', 'age', 'disease state', and 'outcome' characteristics. material: 41 FFPE + 1 Frozen (tissue_preservation corrected from 'Not reported' to 'both'). Sex: 23 female, 19 male (sex_distribution filled in, previously 'Not reported'). age: present for 39/42 samples, range 13-80, median approx. 44 (age_distribution filled in). outcome: 'alive' (16 samples), 'dead' (5 samples), 'NA' (21 samples) -- a genuine per-sample vital-status/survival field is present for a subset of samples, so has_outcome_data corrected from 'Not reported' to true (and tags.has_outcome_data to true) per the schema definition ('survival...data is present for at least a subset of samples'). A separate 'disease state' field (progressive: 14, stable: 4, NA: 24) was also found but does not map cleanly onto any existing schema field beyond has_outcome_data, noted here rather than force-fit elsewhere. No 'who grade' or equivalent field exists anywhere in this series' per-sample metadata, so grade_breakdown correctly remains null/null/null. DEEP-AUDIT FIX (2026-07-14): publications[0].authors was truncated to the first 6 of 38 real authors; expanded to the complete list, confirmed exact via Europe PMC's authorString for PMID 40249111.",
+  "source_urls": [
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE284758",
+    "https://pubmed.ncbi.nlm.nih.gov/40249111/"
+  ],
+  "tags": {
+    "grade_comparable": false,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": true,
+    "large_cohort": false,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": false,
+    "has_outcome_data": true,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

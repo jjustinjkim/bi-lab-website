@@ -1,0 +1,126 @@
+{
+  "id": "e-mexp-3586-monleon-expression-array",
+  "title": "Meningiomas tumor recurrence and metabolic aggressiveness expression profile",
+  "accessions": [
+    "E-MEXP-3586"
+  ],
+  "related_accessions": [],
+  "source_repositories": [
+    "ArrayExpress_BioStudies"
+  ],
+  "publications": [
+    {
+      "title": "Gene expression profiles of metabolic aggressiveness and tumor recurrence in benign meningioma.",
+      "authors": [
+        "Serna E",
+        "Morales JM",
+        "Mata M",
+        "Gonzalez-Darder J",
+        "San Miguel T",
+        "Gil-Benso R",
+        "Lopez-Gines C",
+        "Cerda-Nicolas M",
+        "Monleon D"
+      ],
+      "venue": "PLoS One",
+      "year": 2013,
+      "doi": "10.1371/journal.pone.0067291",
+      "pmid": "23840654",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Daniel Monleon",
+  "institution": "Department of Neurosurgery, Clinical University Hospital of Valencia / Fundacion Investigacion Hospital Clinico Valencia",
+  "date_deposited": "2012-08-31",
+  "date_updated": "Not reported",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-12",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-11",
+  "verification_tier": 2,
+  "found_via": [
+    "citation_chain"
+  ],
+  "modality": [
+    "expression_array"
+  ],
+  "platform": "Affymetrix microarray (ArrayExpress array design accession A-AFFY-44; exact chip name not independently re-confirmed live this session)",
+  "reference_genome": "Not reported",
+  "pipeline": "Not reported",
+  "patient_count": 19,
+  "sample_count": 19,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": 15,
+    "grade_2": 4,
+    "grade_3": null
+  },
+  "who_edition": "2007",
+  "molecular_subtype_annotated": false,
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "primary",
+    "recurrent"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "fresh_frozen",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "15 female / 4 male (n=19)",
+  "age_distribution": "Not reported",
+  "has_outcome_data": false,
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": []
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": true,
+  "processed_data_available": true,
+  "processed_data_format": "Derived/processed Affymetrix array data archive (E-MEXP-3586.processed.1.zip on the ArrayExpress FTP); raw Affymetrix CEL files (19, one per sample) also available in E-MEXP-3586.raw.1.zip",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High",
+    "publications": "High",
+    "tissue_preservation": "High",
+    "grade_breakdown": "High",
+    "sex_distribution": "High",
+    "treatment_timepoint_status": "High",
+    "raw_data_available": "High",
+    "processed_data_available": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "Live BioStudies/ArrayExpress API verification (2026-07-11, https://www.ebi.ac.uk/biostudies/api/v1/studies/E-MEXP-3586) confirms 19 samples, study type 'transcription profiling by array', and the exact description: '19 human meningiomas biopsies were obtained at the Department of Neurosurgery of the Clinical University Hospital of Valencia... snap-frozen in liquid nitrogen... Tumors were classified according to the 2007 WHO Histological Classification.' UPDATE 2026-07-11 (centralized integration pass): a '2007' who_edition value was added to docs/controlled_vocabulary.md specifically for this source's explicit statement that samples were graded per the '2007 WHO Histological Classification' (the edition in use before 2016), and who_edition above now reflects it directly rather than 'Not reported'. The BioStudies record's own 'Publication' subsection listed status 'submitted' with title 'Gene expression profiles of biochemical aggressiveness and tumor recurrence in benign meningioma' (no PMID); a PubMed search for that near-exact title found the actual published version under a very slightly reworded title ('metabolic' in place of 'biochemical'), PMID 23840654 (Serna et al., PLoS One 2013), confirmed by fetching its full abstract, which states 'Forty benign and fourteen atypical meningioma tissue samples were included in the study... We measured gene expression by oligonucleotide microarray measurements on 19 of them' -- this exactly matches E-MEXP-3586's 19 deposited array samples out of a larger 54-sample parent cohort, so only 19 counts toward sample_count/patient_count here. tissue_preservation set to fresh_frozen per the BioStudies description ('immediately put in cryogenic vials and snap-frozen in liquid nitrogen... stored in a freezer at -80C'). large_cohort left false pending centralized quartile recomputation. UPDATE 2026-07-12 (external re-verification audit): the prior claim that grade, sex, and raw/processed data availability were 'not resolvable from the BioStudies study-level JSON' was WRONG and has been corrected. The live BioStudies study-level JSON (https://www.ebi.ac.uk/biostudies/api/v1/studies/E-MEXP-3586) exposes these in its Samples subsection. Its Factors Table gives the disease-state split (benign meningioma = 15, atypical meningioma = 4, total 19), so grade_breakdown is now grade_1=15 (benign = WHO 2007 grade I) and grade_2=4 (atypical = WHO 2007 grade II); tags.grade_comparable set true accordingly. Its Characteristics Table gives the sex split (female = 15, male = 4), so sex_distribution is now '15 female / 4 male (n=19)'. Its ClinicalHistory factor splits the cohort into 11 non-recurrent (primary) and 8 recurrent samples, so treatment_timepoint_status is now ['primary','recurrent'] and tags.recurrence_annotated is true. The ArrayExpress FTP directory confirms both raw and processed data exist (E-MEXP-3586.raw.1.zip returns HTTP 200 with 19 Affymetrix CEL files, one per sample; E-MEXP-3586.processed.1.zip returns HTTP 200), so raw_data_available and processed_data_available were corrected from 'Not reported' to true and processed_data_format populated. age remains 'Not reported' (no numeric age present in source). patient_count left at 19 (source states 19 meningioma biopsies). Publication PMID 23840654 re-confirmed via PubMed esummary/efetch (title, 9 authors, PLoS One 2013, DOI 10.1371/journal.pone.0067291); Daniel Monleon confirmed as last author and BioStudies submitter.",
+  "source_urls": [
+    "https://www.ebi.ac.uk/biostudies/arrayexpress/studies/E-MEXP-3586",
+    "https://www.ebi.ac.uk/arrayexpress/experiments/E-MEXP-3586/",
+    "https://pubmed.ncbi.nlm.nih.gov/23840654/",
+    "https://doi.org/10.1371/journal.pone.0067291"
+  ],
+  "tags": {
+    "grade_comparable": true,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": false,
+    "large_cohort": false,
+    "recurrence_annotated": true,
+    "molecular_subtype_annotated": false,
+    "has_outcome_data": false,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

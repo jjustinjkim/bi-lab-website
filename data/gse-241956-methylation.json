@@ -1,0 +1,123 @@
+{
+  "id": "gse-241956-methylation",
+  "title": "Epigenetic downregulation of hsa-miR-193b-3p increases Cyclin D1 expression level and cell proliferation in human meningiomas",
+  "accessions": [
+    "GSE241956"
+  ],
+  "related_accessions": [],
+  "source_repositories": [
+    "GEO"
+  ],
+  "publications": [
+    {
+      "title": "Epigenetic Downregulation of Hsa-miR-193b-3p Increases Cyclin D1 Expression Level and Cell Proliferation in Human Meningiomas.",
+      "authors": [
+        "Kober P",
+        "Mossakowska BJ",
+        "Rusetska N",
+        "Baluszek S",
+        "Grecka E",
+        "Konopi\u0144ski R",
+        "Matyja E",
+        "Ozi\u0119b\u0142o A",
+        "Mandat T",
+        "Bujko M"
+      ],
+      "venue": "International journal of molecular sciences",
+      "year": 2023,
+      "doi": "10.3390/ijms241713483",
+      "pmid": "37686289",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Mateusz Bujko",
+  "institution": "Maria Sklodowska-Curie National Research Institute of Oncology",
+  "date_deposited": "2023-08-30",
+  "date_updated": "2023-09-15",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-16",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-10",
+  "verification_tier": 1,
+  "found_via": [
+    "keyword_api",
+    "citation_chain"
+  ],
+  "modality": [
+    "dna_methylation_array"
+  ],
+  "platform": "GPL13534",
+  "reference_genome": "Not reported",
+  "pipeline": "Not reported",
+  "patient_count": "Not reported",
+  "sample_count": 27,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": 9,
+    "grade_2": 8,
+    "grade_3": 5
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": true,
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "Not reported"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "ffpe",
+  "normal_control_tissue": {
+    "included": true,
+    "type": "leptomeninges",
+    "count": 5
+  },
+  "sex_distribution": "Not reported",
+  "age_distribution": "Not reported",
+  "has_outcome_data": "Not reported",
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": []
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": "Not reported",
+  "processed_data_available": true,
+  "processed_data_format": "GSE241956_RAW.tar",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High",
+    "publications": "High",
+    "grade_breakdown": "High",
+    "tissue_preservation": "High",
+    "normal_control_tissue": "High",
+    "molecular_subtype_annotated": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "Series-level GEO metadata verified directly against the live source; per-sample clinical/pathology fields (grade, sex/age, anatomic location, brain invasion, treatment timepoint) have not yet been extracted from individual GSM records or supplementary tables. FACT-CHECK (2026-07-10): date_deposited and date_updated were both 'Not reported' despite the GEO record stating them explicitly (Series_submission_date, Series_last_update_date); filled in from the live source. PER-SAMPLE EXTRACTION AND CORRESPONDING-AUTHOR CORRECTION (2026-07-12): fetched all 27 individual GSM records directly. (1) corresponding_author changed from 'Paulina,,Kober, Beata,J,Mossakowska' (the paper's co-first, equal-contribution authors) to 'Mateusz,,Bujko'; the PMC full text (PMID 37686289, PMC10487813) author-notes name a single corresponding author, Mateusz Bujko (mateusz.bujko@pib-nio.pl), who is present in the live GEO Series_contributor list. (2) grade_breakdown filled from the per-GSM 'grade' characteristic: 9 grade 1, 8 grade 2, 5 grade 3 (22 meningiomas); grade_comparable tag set true. (3) tissue_preservation changed from 'Not reported' to 'ffpe'; all 27 GSM extract protocols state 'DNA was isolated from FFPE tissue'. (4) normal_control_tissue set to included=true, type 'leptomeninges', count 5; the cohort is 22 meningiomas plus 5 leptomeninges samples (histology: leptomeninges) used as normal reference. Sex and age are not present in the GSM characteristics, so they remain 'Not reported'. MOLECULAR SUBTYPE ADDED (2026-07-16): re-fetched all 27 GSM records via scripts/extract_gsm_characteristics.py's per-sample fallback (this series' family.soft.gz is 193.9MB) and found a per-sample 'nf2 mutant status' characteristic not previously captured (15 wildtype '0', 2 LOH '0/LOH', 5 mutant '1' -- 22, matching the 22 meningioma samples exactly, distinct from the 5 leptomeninges controls). This is a named driver-mutation-status field per docs/schema.md's own molecular_subtype_annotated example ('NF2/TRAF7/AKT1 driver groups'); molecular_subtype_annotated corrected from 'Not reported' to true, tags.molecular_subtype_annotated false to true. Re-verified grade (9/8/5), tissue_preservation (ffpe), and normal_control_tissue (leptomeninges, n=5) against the same fetch; unchanged. AUTHOR-LIST TRUNCATION FIX (2026-07-14): re-fetched the full author list directly from PubMed, the article's Oxford/PMC full text, and PMC10487813 (all three consistent) -- the record's publications[0].authors had been truncated to the first 6 of 10 true authors (missing Matyja E, Oziębło A, Mandat T, and Bujko M, the corresponding author who was already correctly captured in the separate top-level corresponding_author field). Author list corrected to the full 10: Kober P, Mossakowska BJ, Rusetska N, Baluszek S, Grecka E, Konopiński R, Matyja E, Oziębło A, Mandat T, Bujko M. corresponding_author ('Mateusz Bujko') re-confirmed correct via the PMC full-text author-notes asterisk/email marker (mateusz.bujko@pib-nio.pl); no change needed there.",
+  "source_urls": [
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE241956",
+    "https://pubmed.ncbi.nlm.nih.gov/37686289/"
+  ],
+  "tags": {
+    "grade_comparable": true,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": false,
+    "large_cohort": false,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": true,
+    "has_outcome_data": false,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

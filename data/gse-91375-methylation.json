@@ -1,0 +1,181 @@
+{
+  "id": "gse-91375-methylation",
+  "title": "Integrated genomic analyses of de novo pathways underlying atypical meningiomas [methylation]",
+  "accessions": [
+    "GSE91375"
+  ],
+  "related_accessions": [
+    "GSE91376",
+    "GSE93519"
+  ],
+  "source_repositories": [
+    "GEO"
+  ],
+  "publications": [
+    {
+      "title": "Integrated genomic analyses of de novo pathways underlying atypical meningiomas.",
+      "authors": [
+        "Harmancı AS",
+        "Youngblood MW",
+        "Clark VE",
+        "Coşkun S",
+        "Henegariu O",
+        "Duran D",
+        "Erson-Omay EZ",
+        "Kaulen LD",
+        "Lee TI",
+        "Abraham BJ",
+        "Simon M",
+        "Krischek B",
+        "Timmer M",
+        "Goldbrunner R",
+        "Omay SB",
+        "Baranoski J",
+        "Baran B",
+        "Carrión-Grant G",
+        "Bai H",
+        "Mishra-Gorur K",
+        "Schramm J",
+        "Moliterno J",
+        "Vortmeyer AO",
+        "Bilgüvar K",
+        "Yasuno K",
+        "Young RA",
+        "Günel M"
+      ],
+      "venue": "Nature communications",
+      "year": 2017,
+      "doi": "10.1038/ncomms14433",
+      "pmid": "28195122",
+      "preprint_id": null
+    },
+    {
+      "title": "Author Correction: Integrated genomic analyses of de novo pathways underlying atypical meningiomas.",
+      "authors": [
+        "Harmancı AS",
+        "Youngblood MW",
+        "Clark VE",
+        "Coşkun S",
+        "Henegariu O",
+        "Duran D",
+        "Erson-Omay EZ",
+        "Kaulen LD",
+        "Lee TI",
+        "Abraham BJ",
+        "Simon M",
+        "Krischek B",
+        "Timmer M",
+        "Goldbrunner R",
+        "Omay SB",
+        "Baranoski J",
+        "Baran B",
+        "Carrión-Grant G",
+        "Bai H",
+        "Mishra-Gorur K",
+        "Schramm J",
+        "Moliterno J",
+        "Vortmeyer AO",
+        "Bilgüvar K",
+        "Yasuno K",
+        "Young RA",
+        "Günel M"
+      ],
+      "venue": "Nature communications",
+      "year": 2018,
+      "doi": "10.1038/ncomms16215",
+      "pmid": "29676392",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Murat Günel",
+  "institution": "Yale University",
+  "date_deposited": "2016-12-09",
+  "date_updated": "2019-03-22",
+  "publication_status": "corrected",
+  "last_verified_date": "2026-07-14",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-10",
+  "verification_tier": 1,
+  "found_via": [
+    "keyword_api",
+    "citation_chain"
+  ],
+  "modality": [
+    "dna_methylation_array"
+  ],
+  "platform": "GPL13534",
+  "reference_genome": "Not reported",
+  "pipeline": "Not reported",
+  "patient_count": "Not reported",
+  "sample_count": 60,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": 46,
+    "grade_2": 11,
+    "grade_3": 0
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": true,
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "Not reported"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "Not reported",
+  "normal_control_tissue": {
+    "included": true,
+    "type": "Not reported",
+    "count": 3
+  },
+  "sex_distribution": "Not reported",
+  "age_distribution": "Not reported",
+  "has_outcome_data": "Not reported",
+  "paired_multimodal": {
+    "is_paired": true,
+    "related_datasets": [
+      "gse-93519-mirna-seq"
+    ]
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": true,
+  "processed_data_available": true,
+  "processed_data_format": "GSE91375_Methylation.raw.txt.gz",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High",
+    "publications": "High",
+    "grade_breakdown": "High",
+    "molecular_subtype_annotated": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "PER-SAMPLE DATA UPDATE (2026-07-12): all 60 GSM records fetched from live family.soft. Each carries a per-sample 'grade' and 'mutation subtype' characteristic. grade_breakdown filled: 46 grade 1, 11 grade 2, 0 grade 3 (the 57 tumors; the 3 controls carry grade NA, consistent with sample_count=60 = 57 tumors + 3 controls). grade_3=0 is a true zero (this is a benign-vs-atypical/grade I-vs-II study; no grade III sample present). molecular_subtype_annotated set true (per-sample 'mutation subtype': NF2/Chr22 26, TRAF7/PIK3 8, Hedgehog 6, TRAF7/KLF4 5, POLR2A 5, NF2/Chr22/SMARCB1 4, TRAF7 3, Control 3), matching sibling record gse-93519-mirna-seq which already carries molecular_subtype_annotated=true; tags.grade_comparable and tags.molecular_subtype_annotated set true accordingly. No per-sample sex/age field exists, so those stay Not reported. CORRESPONDING AUTHOR CORRECTED 2026-07-12: prior value 'Akdes Serin Harmanci / Mark Youngblood / Murat Gunel' listed the GEO submitter (Harmanci) and second author (Youngblood), who are NOT the paper's corresponding author. The sole corresponding author of PMID 28195122 is Murat Gunel (only murat.gunel@yale.edu appears as the correspondence email in the open-access Nature Communications full text, PMC5316884); corrected to 'Murat Günel' (umlaut form, consistent with the other Günel-corresponding records gse-58037 and gse-85133). Series-level GEO metadata re-verified directly against the live source on 2026-07-10: sample_count corrected from 'Not reported' to 60 (57 unique meningiomas plus 3 controls per Series_overall_design, matching the 60 listed GSM records), normal_control_tissue corrected to included=true/count=3, raw_data_available corrected to true (GSE91375_RAW.tar present), date_deposited/date_updated filled in from Series_submission_date/Series_last_update_date, corresponding_author corrected (prior value concatenated two people's names into one malformed string), and publication_status corrected from 'normal' to 'corrected' (linked paper PMID 28195122 has a published Erratum, PMID 29676392, Nat Commun 2018). Per-sample clinical/pathology fields (grade, sex/age, anatomic location, brain invasion, treatment timepoint) have not yet been extracted from individual GSM records or supplementary tables. FACT-CHECK UPDATE (2026-07-11): the erratum (PMID 29676392, confirmed via PubMed CommentsCorrectionsList ErratumFor/ErratumIn cross-reference and Crossref metadata for DOI 10.1038/ncomms16215) was referenced in publication_status/this note but had not actually been added as a second entry in the publications array; added now, matching the corpus convention already used for gse-16583/gse-176457/gse-178139's corrigenda. DEEP-AUDIT PASS (2026-07-14): AUTHOR LISTS CORRECTED: both publications[].authors had been mechanically truncated to the first 6 names; Europe PMC's authorString for both PMID 28195122 and its erratum PMID 29676392 confirms 27 identical total authors, now written in full for both entries. Corresponding author re-confirmed unchanged (already correctly verified against PMC5316884's own corresp footnote, 'murat.gunel@yale.edu', in a prior pass). Full text of PMC5316884 checked again this pass for brain invasion/outcome data per this audit's requirements: the paper's only 'brain invasion' mentions are background/selection-criteria text (the cohort explicitly EXCLUDES grade II cases classified solely on brain invasion, i.e. this is an exclusion criterion, not deposited per-sample brain-invasion data) and no outcome/survival analysis specific to this 60-sample methylation series was found; brain_invasion and has_outcome_data correctly remain false/'Not reported'.",
+  "source_urls": [
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE91375",
+    "https://pubmed.ncbi.nlm.nih.gov/28195122/",
+    "https://pubmed.ncbi.nlm.nih.gov/29676392/"
+  ],
+  "tags": {
+    "grade_comparable": true,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": true,
+    "large_cohort": false,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": true,
+    "has_outcome_data": false,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

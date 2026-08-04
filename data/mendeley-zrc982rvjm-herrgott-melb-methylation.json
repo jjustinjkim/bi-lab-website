@@ -1,0 +1,146 @@
+{
+  "id": "mendeley-zrc982rvjm-herrgott-melb-methylation",
+  "title": "MeLB Raw DNA Methylation Data",
+  "accessions": [
+    "zrc982rvjm"
+  ],
+  "related_accessions": [],
+  "source_repositories": [
+    "Mendeley_Data"
+  ],
+  "publications": [
+    {
+      "title": "Detection of diagnostic and prognostic methylation-based signatures in liquid biopsy specimens from patients with meningiomas.",
+      "authors": [
+        "Herrgott GA",
+        "Snyder JM",
+        "She R",
+        "Malta TM",
+        "Sabedot TS",
+        "Lee IY",
+        "Pawloski J",
+        "Podolsky-Gondim GG",
+        "Asmaro KP",
+        "Zhang J",
+        "Cannella CE",
+        "Nelson K",
+        "Thomas B",
+        "deCarvalho AC",
+        "Hasselbach LA",
+        "Tundo KM",
+        "Newaz R",
+        "Transou A",
+        "Morosini N",
+        "Francisco V",
+        "Poisson LM",
+        "Chitale D",
+        "Mukherjee A",
+        "Mosella MS",
+        "Robin AM",
+        "Walbert T",
+        "Rosenblum M",
+        "Mikkelsen T",
+        "Kalkanis S",
+        "Tirapelli DPC",
+        "Weisenberger DJ",
+        "Carlotti CG Jr",
+        "Rock J",
+        "Castro AV",
+        "Noushmehr H"
+      ],
+      "venue": "Nature Communications",
+      "year": 2023,
+      "doi": "10.1038/s41467-023-41434-z",
+      "pmid": "37704607",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Houtan Noushmehr / Ana Valeria Castro",
+  "institution": "Henry Ford Health / Michigan State University",
+  "date_deposited": "2023-07-26",
+  "date_updated": "2023-08-24",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-11",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-11",
+  "verification_tier": 2,
+  "found_via": [
+    "keyword_api"
+  ],
+  "modality": [
+    "dna_methylation_array",
+    "cfdna_epigenomic"
+  ],
+  "platform": "Not reported",
+  "reference_genome": "Not applicable",
+  "pipeline": "Random forest machine-learning classifiers (d-MeLB and p-MeLB) provided as part of the deposit",
+  "patient_count": "Not reported",
+  "sample_count": 181,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": null,
+    "grade_2": null,
+    "grade_3": null
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": false,
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "Not reported"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "Not reported",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "Not reported",
+  "age_distribution": "Not reported",
+  "has_outcome_data": false,
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": []
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": true,
+  "processed_data_available": true,
+  "processed_data_format": "Raw IDAT files ('LB IDATs' and 'Tissue IDATs' folders), plus Classifiers.zip (d-MeLB and p-MeLB random forest models)",
+  "license": "CC BY 4.0",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High",
+    "publications": "High",
+    "corresponding_author": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "NEW RECORD (2026-07-11), found via a Mendeley Data discovery search never before performed by this project (the project's own documented API had no unauthenticated working method; the real internal endpoint used by Mendeley's own web app was reverse-engineered from its JS bundle to run this search). Verified directly: Mendeley Data record zrc982rvjm (DOI 10.17632/zrc982rvjm), 'MeLB Raw DNA Methylation Data; Herrgott et al., 2023', open access, contributors Grayson Herrgott and Ana Valeria Castro. The record's own description states 'Raw cfDNA methylation data associated with 234 liquid biopsy serum and plasma collections from meningioma (MNG; n=93) and non-MNG (Other CNS diseases, glioma, pituitary tumors; n=141)... Raw DNA methylation data associated with tumor tissue collections from meningioma (MNG; n=88)'. sample_count set to 181 (93 meningioma-patient liquid-biopsy samples plus 88 meningioma tumor-tissue samples; the 141 non-meningioma liquid-biopsy samples are excluded from this count as out of scope for a meningioma-specific record). Linked publication PMID 37704607 ('Detection of diagnostic and prognostic methylation-based signatures in liquid biopsy specimens from patients with meningiomas,' Nature Communications 2023) confirmed via PubMed esummary: first author Herrgott GA matches the Mendeley record's own attribution exactly, and Castro AV appears in the author list, matching the second Mendeley contributor; no retraction/correction found. cfdna_epigenomic added as a second modality alongside dna_methylation_array specifically to distinguish the liquid-biopsy (plasma/serum cfDNA) samples from the tissue-based ones within the same deposit; this is a newly-added controlled-vocabulary value this same session, see docs/controlled_vocabulary.md. corresponding_author (Noushmehr H / Castro AV) and institution were re-verified 2026-07-11 directly via PubMed efetch XML for PMID 37704607: both Castro AV and Noushmehr H are the only two authors (last two of 37) whose Affiliation fields carry an email address (acastro1@hfhs.org and hnoushm1@hfhs.org respectively), confirming them as the paper's corresponding authors; both list their affiliation as Department of Neurosurgery, Omics Laboratory, Hermelin Brain Tumor Center, Henry Ford Health, Detroit, MI, plus Department of Physiology, Michigan State University, East Lansing, MI. INSTITUTION CORRECTED (2026-07-11): the previously recorded institution, 'Henry Ford Health System / University of Sao Paulo', was wrong. University of Sao Paulo (Ribeirao Preto Medical School) is the affiliation of three non-corresponding co-authors (Podolsky-Gondim GG, Tirapelli DPC, Carlotti CG), not of either corresponding author; corrected institution to 'Henry Ford Health / Michigan State University' to match the two actual corresponding authors' stated affiliations, and confidence_level.corresponding_author upgraded from Medium to High accordingly. Only the dataset's public metadata and description were used; the raw IDAT files themselves were not downloaded. CORRECTION DURING EXTRACTION: initially set has_outcome_data to true because the paper's title includes 'prognostic,' but the dataset's own description only mentions raw methylation data and classifier files, no explicit per-sample survival/outcome field is described; corrected to false, consistent with this corpus's established caution against conflating a paper's topic/framing with actual deposited per-sample data. FACT-CHECK UPDATE (2026-07-11): the top-level has_outcome_data field itself had been left as the string 'Not reported' rather than actually being set to the boolean false described just above (a schema violation, has_outcome_data must be boolean per docs/schema.md); corrected to false to match this note and the tags.has_outcome_data value, which was already correctly false. Also corrected verification_tier from 1 to 2: per docs/controlled_vocabulary.md, tier 1 requires 2+ independent found_via paths, but found_via lists only one path (keyword_api), so tier 2 (single-path verified) is the correct value. 2026-07-12 RE-VERIFICATION AUDIT: (a) license corrected from 'Not reported' to 'CC BY 4.0'; the Mendeley Data public API record for zrc982rvjm reports data_licence 'Creative Commons Attribution 4.0 International / CC BY 4.0'. (b) date_deposited corrected from '2023-08-24' to '2023-07-26'; the Mendeley versions API shows two versions, version 1 published 2023-07-26 (the original deposit) and version 2 published 2023-08-24, so 2023-07-26 is the true deposit date while date_updated (2023-08-24, version 2) is unchanged. The dataset name/description counts (234 liquid-biopsy collections: MNG n=93, non-MNG n=141; tumor tissue MNG n=88) and contributors (Grayson Herrgott, Ana Valeria Castro) were re-confirmed verbatim against the live Mendeley public API; sample_count 181 (93+88) unchanged. AUTHOR-LIST COMPLETENESS FIX (2026-07-14 deep audit): publications[0].authors was truncated to the first 6 of the paper's actual 35 authors (this record's own earlier note said 'last two of 37', a slight miscount of the true total; the Europe PMC authorString field lists exactly 35 authors ending in Castro AV, Noushmehr H); expanded to the full 35-name list. This re-confirms, rather than changes, the already-established corresponding-author finding (Castro AV and Noushmehr H are the last two authors and the only two with correspondence emails per the prior PMC efetch XML check).",
+  "source_urls": [
+    "https://data.mendeley.com/datasets/zrc982rvjm",
+    "https://pubmed.ncbi.nlm.nih.gov/37704607/",
+    "https://doi.org/10.1038/s41467-023-41434-z"
+  ],
+  "tags": {
+    "grade_comparable": false,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": false,
+    "large_cohort": true,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": false,
+    "has_outcome_data": false,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

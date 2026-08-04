@@ -1,0 +1,96 @@
+{
+  "id": "gdc-fm-ad-meningioma-targeted-panel",
+  "title": "Foundation Medicine Adult Cancer Clinical Dataset (FM-AD), meningioma subset",
+  "accessions": [
+    "FM-AD"
+  ],
+  "related_accessions": [],
+  "source_repositories": [
+    "GDC_TCGA"
+  ],
+  "publications": [],
+  "corresponding_author": "Not reported",
+  "institution": "Foundation Medicine, Inc. (data source) / National Cancer Institute Genomic Data Commons (data coordination)",
+  "date_deposited": "Not reported",
+  "date_updated": "Not reported",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-11",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-11",
+  "verification_tier": 2,
+  "found_via": [
+    "keyword_api"
+  ],
+  "modality": [
+    "targeted_panel_seq"
+  ],
+  "platform": "Not reported",
+  "reference_genome": "Not reported",
+  "pipeline": "Not reported",
+  "patient_count": 49,
+  "sample_count": 49,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": null,
+    "grade_2": null,
+    "grade_3": null
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": false,
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "Not reported"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "Not reported",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "Not reported",
+  "age_distribution": "Not reported",
+  "has_outcome_data": "Not reported",
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": []
+  },
+  "access_type": "controlled",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": false,
+  "processed_data_available": true,
+  "processed_data_format": "Not reported",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not reported",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High",
+    "publications": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "NEW RECORD (2026-07-11), from a discovery-log LEAD reporting 49 meningioma cases (disease_type 'Meningiomas') out of 18,004 total cases in the FM-AD project, with 149 files. Independently re-verified live via the GDC REST API (not transcribed from the log): filtering cases by project.project_id=FM-AD and disease_type=Meningiomas returns exactly 49 cases, all with diagnoses.primary_diagnosis literally 'Meningioma, NOS' (confirmed via a separate cases query with diagnoses.primary_diagnosis field); the FM-AD project's own summary confirms case_count=18,004 total across the whole program. Filtering files by cases.project.project_id=FM-AD AND cases.disease_type=Meningiomas and faceting by data_category/data_type/experimental_strategy/access confirms exactly 149 total files: 49 Raw Simple Somatic Mutation + 49 Aggregated Somatic Mutation + 49 Annotated Somatic Mutation (all experimental_strategy='Targeted Sequencing', all access='controlled'), plus 1 open-access Biospecimen Supplement and 1 open-access Clinical Supplement. This independently reproduces the discovery log's figures exactly. FM-AD is Foundation Medicine's commercial clinical targeted-panel-sequencing dataset (FoundationOne-style assay), i.e. derived variant-call data from a targeted gene panel, not raw WES/WGS/RNA-seq; modality set to targeted_panel_seq accordingly. All 49 cases queried for diagnoses.tumor_grade returned 'Not Reported' uniformly, and demographic.gender/diagnoses.age_at_diagnosis were not populated (null) for any case via the public API, consistent with this de-identified commercial clinical dataset exposing limited demographic detail at the open API level; sex_distribution/age_distribution/grade_breakdown left 'Not reported'/null accordingly, not fabricated. No corresponding_author or single-PI exists (FM-AD is a data-sharing partnership/consortium resource, not a single-paper study), same pattern as the already-existing gdc-ccdi-mci-pediatric-meningioma.json record in this inventory; no dedicated publication describing this specific meningioma subset was found. Per docs/scope.md, only public GDC case/file summary-level metadata was used (counts, data categories, experimental strategy, access flags); the controlled-access targeted-sequencing variant calls themselves, and the 2 open-access supplement files, were never downloaded or opened in this pass, only their existence/count confirmed via the API. processed_data_available set to true reflecting the aggregated/annotated somatic mutation call files (these are themselves processed/derived data products, distinct from any raw sequencing reads which FM-AD does not appear to expose at all, consistent with a commercial panel product); raw_data_available set to false since no raw sequencing reads (FASTQ/BAM) were found among the 149 files, only variant-call-level products. tags.large_cohort left false pending the centralized post-hoc recomputation across the whole inventory noted in docs/schema.md (targeted_panel_seq is one of the modalities not yet computed, too few records).",
+  "source_urls": [
+    "https://portal.gdc.cancer.gov/projects/FM-AD"
+  ],
+  "tags": {
+    "grade_comparable": false,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": false,
+    "large_cohort": true,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": false,
+    "has_outcome_data": false,
+    "peer_reviewed": false
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

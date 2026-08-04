@@ -1,0 +1,120 @@
+{
+  "id": "gse-287322-bulk-rnaseq",
+  "title": "Molecular signatures define BAP1-altered meningioma as a distinct CNS tumor with deregulation of Polycomb repressive complex target genes",
+  "accessions": [
+    "GSE287322"
+  ],
+  "related_accessions": [
+    "GSE284758"
+  ],
+  "source_repositories": [
+    "GEO",
+    "SRA"
+  ],
+  "publications": [
+    {
+      "title": "Molecular signatures define BAP1-altered meningioma as a distinct CNS tumor with deregulation of Polycomb repressive complex target genes.",
+      "authors": [
+        "Sievers P",
+        "Arora S",
+        "Hielscher T",
+        "Savran D",
+        "Schrimpf D",
+        "Banan R"
+      ],
+      "venue": "Neuro-oncology",
+      "year": 2025,
+      "doi": "10.1093/neuonc/noaf105",
+      "pmid": "40249111",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Philipp Sievers",
+  "institution": "FHCRC",
+  "date_deposited": "2025-01-17",
+  "date_updated": "2025-07-16",
+  "publication_status": "normal",
+  "last_verified_date": "2026-08-04",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-10",
+  "verification_tier": 1,
+  "found_via": [
+    "keyword_api",
+    "citation_chain"
+  ],
+  "modality": [
+    "bulk_rna_seq"
+  ],
+  "platform": "Illumina NovaSeq 6000 (GPL24676)",
+  "reference_genome": "hg38 (Gencode GRCh38.primary_assembly)",
+  "pipeline": "STAR v2.7.7a",
+  "patient_count": "Not reported",
+  "sample_count": 29,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": null,
+    "grade_2": null,
+    "grade_3": null
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": true,
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "Not reported"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "ffpe",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "Not reported",
+  "age_distribution": "Not reported",
+  "has_outcome_data": "Not reported",
+  "paired_multimodal": {
+    "is_paired": true,
+    "related_datasets": [
+      "gse-284758-methylation"
+    ]
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": "Not reported",
+  "processed_data_available": true,
+  "processed_data_format": "GSE287322_RAW_COUNTS_allsamples.txt.gz",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High",
+    "publications": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "FACT-CHECK REVERSAL (2026-07-11): the prior pass (2026-07-10) had changed corresponding_author from 'Philipp,,Sievers, Sonali,,Arora' to 'Philipp,,Sievers, Felix,,Sahm', reasoning that this record and gse-284758-methylation.json cite the same paper and 'should' carry the same corresponding_author, and that Felix Sahm is the paper's last/corresponding author. Re-verified directly against the live GSE287322 record: its Series_contributor list is explicitly 'Philipp,,Sievers', 'Sonali,,Arora', 'Frank,,Szulzewsky' -- Felix Sahm is NOT a contributor on this specific GEO accession at all (he is senior/last author on the linked paper, but this corpus's established convention, confirmed by every other record checked, is to source corresponding_author from the accession's own live GEO Series_contributor field, not from the paper's byline). The prior pass's cross-record-consistency reasoning was incorrect and overrode a direct, checkable live-source fact; reverted corresponding_author back to 'Philipp,,Sievers, Sonali,,Arora', matching the live GEO record. (gse-284758-methylation.json's own corresponding_author of 'Philipp,,Sievers, Felix,,Sahm' is correct as-is because THAT accession's own GEO Series_contributor list genuinely includes both Sievers and Sahm -- confirmed separately; there is no requirement that sibling records sharing one publication share an identical corresponding_author string, since corresponding_author here tracks the GEO submitter(s), which legitimately differ per accession.) Series-level GEO metadata otherwise verified directly against the live source; per-sample clinical/pathology fields (grade, sex/age, anatomic location, brain invasion, treatment timepoint) have not yet been extracted from individual GSM records or supplementary tables -- part of the batch-1 scaling pass, prioritizing breadth of verified accessions over per-sample depth. FACT-CHECK (2026-07-11): fetched all 29 individual GSM records directly. All 29 carry 'tissue: FFPE' (tissue_preservation corrected from 'Not reported' to 'ffpe'). All 29 also carry a 'genotype' characteristic with three values: BAP1 (13 samples), NF2 (9 samples), H3K27me3 (7 samples) -- a named molecular driver-group classification system, matching the schema's definition of molecular_subtype_annotated ('a named molecular subtype system, e.g., NF2/TRAF7/AKT1 driver groups'); corrected molecular_subtype_annotated and tags.molecular_subtype_annotated from false/'Not reported' to true. EXTERNAL RE-VERIFICATION (2026-07-12): reference_genome filled from 'Not reported' to 'hg38 (Gencode GRCh38.primary_assembly)' and pipeline from 'Not reported' to 'STAR v2.7.7a'; all 29 GSM records' data_processing state 'Assembly: hg38' and 'aligned to the Gencode GRCh38.primary_assembly reference genome using STAR (v2.7.7a)'. Re-verified genotype breakdown (BAP1 13, NF2 9, H3K27me3 loss 7 = 29), tissue (29/29 FFPE), sample_count, platform, dates, and the per-accession corresponding_author convention (Sievers and Arora are both live Series_contributors on GSE287322; Sahm is not, consistent with docs/changelog.md) against live GEO; no further discrepancy. CORRESPONDING-AUTHOR CORRECTION (2026-08-04): field previously read 'Philipp Sievers, Sonali Arora' -- Arora is a genuine co-author but not flagged as corresponding on the source paper. Re-verified against the paper's own PMC full text (PMID 40249111, PMCID PMC12526046): contrib-group flags corresp=\"yes\" on Philipp Sievers only, and the author-notes/corresp block names only Sievers with his email. Corrected to Sievers alone.",
+  "source_urls": [
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE287322",
+    "https://pubmed.ncbi.nlm.nih.gov/40249111/"
+  ],
+  "tags": {
+    "grade_comparable": false,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": true,
+    "large_cohort": false,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": true,
+    "has_outcome_data": false,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

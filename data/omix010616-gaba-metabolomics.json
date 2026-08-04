@@ -1,0 +1,116 @@
+{
+  "id": "omix010616-gaba-metabolomics",
+  "title": "GABA promotes the apoptosis of meningioma cells through the EGFR/BCL-2/BAX axis",
+  "accessions": [
+    "OMIX010616",
+    "PRJCA041748"
+  ],
+  "related_accessions": [],
+  "source_repositories": [
+    "NGDC"
+  ],
+  "publications": [
+    {
+      "title": "GABA treatment promoting cell apoptosis in meningioma correlates with EGFR/BCL-2/BAX axis",
+      "authors": [
+        "Yang X",
+        "Wang L",
+        "Wu H",
+        "Li C",
+        "Zhang L"
+      ],
+      "venue": "Journal of Neuro-Oncology",
+      "year": 2025,
+      "doi": "10.1007/s11060-025-05334-0",
+      "pmid": "41217545",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Lijian Zhang",
+  "institution": "Hebei University",
+  "date_deposited": "2025-06-16",
+  "date_updated": "2025-12-01",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-11",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-11",
+  "verification_tier": 2,
+  "found_via": [
+    "keyword_api"
+  ],
+  "modality": [
+    "metabolomics"
+  ],
+  "platform": "Liquid chromatography-mass spectrometry (LC-MS)",
+  "reference_genome": "Not applicable",
+  "pipeline": "Not reported",
+  "patient_count": "Not reported",
+  "sample_count": 16,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": null,
+    "grade_2": null,
+    "grade_3": null
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": false,
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "Not reported"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "Not reported",
+  "normal_control_tissue": {
+    "included": true,
+    "type": "normal brain tissue",
+    "count": null
+  },
+  "sex_distribution": "Not reported",
+  "age_distribution": "Not reported",
+  "has_outcome_data": false,
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": []
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": true,
+  "processed_data_available": "Not reported",
+  "processed_data_format": ".gz compressed archive (1 file, OMIX010616-01, ~30.8 KB)",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High",
+    "publications": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "NEW RECORD (2026-07-11), from a discovery-log LEAD describing this as metabolome mass-spectrometry data comparing normal brain tissue vs. meningioma tumor tissue, open-access, 16 samples, with an apparently already-published companion paper in Journal of Neuro-Oncology 2025-11 (PMID not yet looked up in the lead). Independently verified live via the NGDC OMIX/BioProject APIs: OMIX010616 (BioProject PRJCA041748), 'accessType: Open-access', 16 samples confirmed via the OMIX page's own metadata, description 'we characterized the differentially expressed metabolites between normal brain tissue and meningioma tumor tissues with liquid chromatography mass spectrometry', submitter Lijian Zhang (lijian.zhang@aliyun.com), Hebei University, submitted 2025-06-16, released 2025-12-01. Independently located the companion publication via PubMed esearch (not simply trusting the lead's framing that one existed): 'GABA treatment promoting cell apoptosis in meningioma correlates with EGFR/BCL-2/BAX axis', Yang X et al., Journal of Neuro-Oncology, epub 2025-11-11, PMID 41217545, DOI 10.1007/s11060-025-05334-0, last author Zhang L -- matching both the Hebei University submitter and the '2025-11' timing the lead described; cross-verified via PubMed esummary directly (not just the OMIX page's own citation of it). normal_control_tissue.included set to true ('normal brain tissue' per the project description) since this is explicitly stated as part of the comparison design, but count (how many of the 16 samples are normal vs. tumor) was not resolved from the public metadata fields available (only the total sample count of 16 is exposed), so normal_control_tissue.count is left null and patient_count is left 'Not reported' since the tumor-only patient count within the 16 could not be isolated. Per the recurring-mistake guardrail on this project: has_outcome_data is set to false rather than inferred from the paper's mechanistic apoptosis-signaling title (GABA/EGFR/BCL-2/BAX axis is a bench mechanistic study, not a clinical-outcomes study; no survival/recurrence data is implied or found). Only the 1 open-access data file's existence/format/size was noted (a .gz archive, ~30.8 KB, likely a processed metabolite intensity table); its contents were not opened/parsed in this pass beyond what NGDC's own page metadata exposes. platform recorded as 'Liquid chromatography-mass spectrometry (LC-MS)' per the project description's stated method ('liquid chromatography mass spectrometry'); exact instrument model not stated. reference_genome set to 'Not applicable' since this is a metabolomics (not sequencing) dataset.",
+  "source_urls": [
+    "https://ngdc.cncb.ac.cn/omix/release/OMIX010616",
+    "https://ngdc.cncb.ac.cn/search/api/specific?db=omix&q=OMIX010616",
+    "https://ngdc.cncb.ac.cn/search/api/specific?db=bioproject&q=PRJCA041748",
+    "https://pubmed.ncbi.nlm.nih.gov/41217545/"
+  ],
+  "tags": {
+    "grade_comparable": false,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": false,
+    "large_cohort": false,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": false,
+    "has_outcome_data": false,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

@@ -1,0 +1,124 @@
+{
+  "id": "e-mtab-15-martinez-glez-expression-array",
+  "title": "Transcription profiling of human meningiomas and schwannomas to establish expression patterns of 96 cancer related genes (meningioma subset)",
+  "accessions": [
+    "E-MTAB-15"
+  ],
+  "related_accessions": [],
+  "source_repositories": [
+    "ArrayExpress_BioStudies"
+  ],
+  "publications": [
+    {
+      "title": "Meningiomas and schwannomas: molecular subgroup classification found by expression arrays.",
+      "authors": [
+        "Martinez-Glez V",
+        "Franco-Hernandez C",
+        "Alvarez L",
+        "De Campos JM",
+        "Isla A",
+        "Vaquero J",
+        "Lassaletta L",
+        "Casartelli C",
+        "Rey JA"
+      ],
+      "venue": "International Journal of Oncology",
+      "year": 2009,
+      "doi": "10.3892/ijo_00000174",
+      "pmid": "19148485",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Victor Martinez-Glez",
+  "institution": "Unidad de Investigacion, Hospital Universitario La Paz, Madrid",
+  "date_deposited": "2008-09-01",
+  "date_updated": "Not reported",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-11",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-11",
+  "verification_tier": 2,
+  "found_via": [
+    "keyword_api"
+  ],
+  "modality": [
+    "expression_array"
+  ],
+  "platform": "Custom low-density cDNA microarray, 96 cancer-related genes (SuperArray/GEArray Q Series; ArrayExpress array design A-MEXP-1126)",
+  "reference_genome": "Not applicable",
+  "pipeline": "Not reported",
+  "patient_count": "Not reported",
+  "sample_count": 42,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": 36,
+    "grade_2": 6,
+    "grade_3": null
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": false,
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "primary",
+    "recurrent"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "fresh_frozen",
+  "normal_control_tissue": {
+    "included": true,
+    "type": "normal cerebral meninges (non-tumor control)",
+    "count": 3
+  },
+  "sex_distribution": "29 female / 13 male (n=42, meningioma subset only)",
+  "age_distribution": "Not reported (only DevelopmentalStage='adult' recorded per-sample, no numeric age)",
+  "has_outcome_data": false,
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": []
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": false,
+  "processed_data_available": true,
+  "processed_data_format": "Tab-delimited derived array data matrix file (E-MTAB-15-processed-data-1598451480.txt, ~231KB uncompressed, one combined matrix covering all 71 hybridizations across the full 68-sample cohort)",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High",
+    "publications": "High",
+    "grade_breakdown": "High",
+    "sex_distribution": "High",
+    "raw_data_available": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "SCOPE NARROWED TO MENINGIOMA SUBSET, and DATA FILES CONFIRMED MISSING despite rich sample-level metadata. Never previously fetched; identified only as a plausible candidate in this project's first search session (2026-07-10) and independently verified fresh this session via the live BioStudies API (https://www.ebi.ac.uk/biostudies/api/v1/studies/E-MTAB-15). This is a native ArrayExpress submission (no GEO mirror), release date 2008-09-01, 68 total samples: 42 meningiomas (this record), 23 vestibular schwannomas, and 3 normal cerebral meninges controls, confirmed via BioStudies' own live per-sample Experimental Factors and Source Characteristics tables (DISEASE_STATE/TUMOR_GRADE/Sex breakdown, cross-tabulated: 32 WHO grade I + 4 WHO grade I recurrent + 6 WHO grade II meningioma = 42; 14 male + 9 female schwannoma = 23; 1 female + 2 male normal = 3). The schwannoma arm is excluded from this record's counts as a genuinely different tumor entity, consistent with this project's mixed-cohort scope precedent. grade_1=36 combines the 32 primary + 4 recurrent WHO grade I samples (both are grade I, differing only by recurrence status, which is instead captured in treatment_timepoint_status); grade_3 left null since no grade III meningioma is present or excluded with certainty from the available factor breakdown. patient_count is deliberately left 'Not reported' because the 4 recurrent-tumor samples could plausibly represent the same underlying patients as 4 of the 32 primary samples (i.e. a later recurrence biopsy from an already-counted patient) rather than 4 additional distinct individuals; the per-sample 'Individual' field (values like M18, M40, M01) exists but was not exhaustively cross-referenced across all 68 rows in this pass, so 42 distinct patients cannot be confirmed. Publication match: an author/lab-based PubMed search for 'Martinez-Glez meningioma schwannoma expression' returned 4 candidates; PMID 19148485 (Martinez-Glez et al., Int J Oncol 2009) was confirmed as the exact match by its abstract text, which states verbatim '23 schwannomas, 42 meningiomas and 3 normal cerebral meninges' analyzed by 'low density cDNA microarrays... 96 cancer-related genes', an exact match to this accession's title and sample counts; DOI (10.3892/ijo_00000174) obtained via a CrossRef bibliographic-title search since PubMed's own esummary did not carry it. CRITICAL DATA-AVAILABILITY FINDING (SUPERSEDED, see FACT-CHECK UPDATE below): a prior pass claimed the SDRF's referenced 'Derived Array Data Matrix File' returned HTTP 404 via the BioStudies FIRE mirror and concluded no processed data existed. tags.large_cohort left false pending centralized quartile recomputation. FACT-CHECK UPDATE 2026-07-11: this prior finding was WRONG and has been corrected. Independently re-verified by fetching the SDRF's actual named FTP path directly (https://ftp.ebi.ac.uk/pub/databases/microarray/data/experiment/MTAB/E-MTAB-15/E-MTAB-15.processed.1.zip, the classic ArrayExpress FTP location referenced in the SDRF's 'Comment [Derived ArrayExpress FTP file]' column, distinct from the BioStudies FIRE mirror path that 404'd): this returns HTTP 200 and downloads a genuine, valid 102KB zip archive containing E-MTAB-15-processed-data-1598451480.txt (231KB uncompressed), a real tab-delimited derived expression data matrix, confirmed by direct unzip and inspection, not merely a redirect or error page. processed_data_available corrected from false to true; access_blocked_metadata_incomplete corrected from true to false. raw_data_available remains false since the SDRF names only a single derived/processed matrix file per sample with no separate raw-signal/CEL-equivalent file column. Separately, this same re-check re-parsed the SDRF directly (71 total rows: 42 meningioma + 23 schwannoma + 6 normal-tissue rows) and confirmed the 'normal' disease-state rows collapse to only 3 unique Source Name values (each hybridized in duplicate, 2 rows per sample), so the previously reported normal_control_tissue.count=3 and total-cohort-of-68-unique-samples figure are both independently reconfirmed correct, no change needed there.",
+  "source_urls": [
+    "https://www.ebi.ac.uk/biostudies/arrayexpress/studies/E-MTAB-15",
+    "https://ftp.ebi.ac.uk/biostudies/fire/E-MTAB-/015/E-MTAB-15/Files/E-MTAB-15.sdrf.txt",
+    "https://ftp.ebi.ac.uk/biostudies/fire/E-MTAB-/015/E-MTAB-15/Files/E-MTAB-15.idf.txt",
+    "https://pubmed.ncbi.nlm.nih.gov/19148485/",
+    "https://doi.org/10.3892/ijo_00000174"
+  ],
+  "tags": {
+    "grade_comparable": true,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": false,
+    "large_cohort": false,
+    "recurrence_annotated": true,
+    "molecular_subtype_annotated": false,
+    "has_outcome_data": false,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

@@ -1,0 +1,135 @@
+{
+  "id": "gse-206647-scrnaseq",
+  "title": "Secreted Clusterin Inhibits Tumorigenesis by Modulating Tumor Cell and Macrophage in Human Meningioma",
+  "accessions": [
+    "GSE206647"
+  ],
+  "related_accessions": [],
+  "source_repositories": [
+    "GEO",
+    "SRA"
+  ],
+  "publications": [
+    {
+      "title": "Secreted clusterin inhibits tumorigenesis by modulating tumor cells and macrophages in human meningioma.",
+      "authors": [
+        "Ke C",
+        "Huang B",
+        "Xiang J",
+        "Liang J",
+        "Wu G",
+        "Qiu M",
+        "Cheng K",
+        "Mao L",
+        "Lei W",
+        "Hu Y",
+        "Tang X",
+        "Tian Y",
+        "Chen G",
+        "Luo OJ",
+        "Zhang H"
+      ],
+      "venue": "Neuro-oncology",
+      "year": 2024,
+      "doi": "10.1093/neuonc/noae034",
+      "pmid": "38416702",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Hongyi Zhang, Oscar J Luo",
+  "institution": "Jinan University",
+  "date_deposited": "2022-06-22",
+  "date_updated": "2024-05-20",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-10",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-10",
+  "verification_tier": 1,
+  "found_via": [
+    "keyword_api",
+    "citation_chain"
+  ],
+  "modality": [
+    "scrna_seq"
+  ],
+  "platform": "10x Chromium 3' v3 (Illumina NovaSeq 6000, GPL24676)",
+  "reference_genome": "GRCh38",
+  "pipeline": "Cell Ranger + Seurat",
+  "patient_count": 13,
+  "sample_count": 18,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": 8,
+    "grade_2": 4,
+    "grade_3": 4
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": "Not reported",
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "Not reported"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "Not reported",
+  "normal_control_tissue": {
+    "included": true,
+    "type": "meningeal (non-neoplastic)",
+    "count": 2
+  },
+  "sex_distribution": "Not reported",
+  "age_distribution": "Not reported",
+  "has_outcome_data": "Not reported",
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": []
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": "Not reported",
+  "processed_data_available": true,
+  "processed_data_format": "GSE206647_Expression_matrix.txt.gz",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High",
+    "publications": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "DEEP-AUDIT (2026-07-14): publications[0].authors was truncated to exactly 6 names; expanded to the full 15-author Europe PMC authorString for PMID 38416702 (Ke C ... Luo OJ, Zhang H). corresponding_author re-verified against the paper's own correspondence footnotes (PMC11226886 full text via NCBI efetch): two <corresp> tags, 'Oscar Junhong Luo...(luojh@jnu.edu.cn)' and 'Hongyi Zhang...(hongyizhang@jnu.edu.cn)', confirming the existing 'Hongyi Zhang, Oscar J Luo' value is correct; no change made. Also checked GEO's own Series_overall_design directly ('Single-cell analysis of 18 specimens from 13 patients: 2 with meningeal, 8 with grade I, 4 with grade II and 4 with grade III') against the paper's abstract, which additionally mentions 'lung metastases' as part of a broader malignancy-progression narrative; confirmed this GEO series' own 18 deposited specimens do NOT include any metastasis sample (only meningeal/grade I/II/III, summing exactly to 18), so no scope or grade_breakdown change needed -- the metastasis material referenced in the abstract is not part of this accession. No per-sample molecular-subtype, brain-invasion, or outcome/survival data found describing this specific 18-specimen series in the retrievable portion of the full text; these fields are left as-is. MODALITY AND SCOPE CORRECTION (2026-07-10 fact-check pass): this record was previously classified 'bulk_rna_seq' with sample_count 27. Direct inspection of individual GSM records (e.g. GSM7476436, GSM6259989) shows this is actually 10x Genomics Chromium single-cell RNA-seq data (extract_protocol explicitly states 'single-cell libraries were generated via the Chromium Controller and the Single Cell Reagent Kit 3' v3', data_processing via Cell Ranger + Seurat, supplementary files are per-cell raw gene-count matrices), consistent with the series summary's own description as 'single-cell transcriptomic dataset'. modality corrected to scrna_seq, platform and pipeline updated accordingly. Of the 27 total GSM records, only 18 (GSM7476436-GSM7476453) are genuine primary-tissue specimens (titled 'S1' through 'S18', characteristics confirm grade: 8 grade I, 4 grade II, 4 grade III, 2 non-neoplastic meninges control, from 13 patients per the overall_design text); the other 9 (GSM6259989-GSM6259997) are IOMM-LEE meningioma cell-line samples (wild-type vs CLU-knockout conditions, a mechanistic validation experiment, not patient tissue). Per this corpus's established convention for mixed tissue/cell-line accessions (e.g. gse-174360, gse-42624), sample_count and patient_count have been corrected to reflect only the 18 primary-tissue samples/13 patients; the 9 cell-line samples are excluded from scope. grade_breakdown (8/4/4) and normal_control_tissue (2 meningeal) already reflected the tissue-only subset and needed no further change. Record id and filename renamed from gse-206647-bulk-rnaseq to gse-206647-scrnaseq to match the corrected modality (2026-07-11); confirmed no `related_datasets`/`related_accessions` cross-reference in this corpus pointed to the old id before renaming. Per-sample age/sex/anatomic-location/treatment-timepoint fields beyond grade have not yet been extracted from individual GSM records.",
+  "source_urls": [
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE206647",
+    "https://pubmed.ncbi.nlm.nih.gov/38416702/"
+  ],
+  "tags": {
+    "grade_comparable": true,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": true,
+    "spatially_resolved": false,
+    "multi_modal_matched": false,
+    "large_cohort": true,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": false,
+    "has_outcome_data": false,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null,
+  "gene_expression_viewer": {
+    "sample_label": "All 18 single-cell samples merged (this record's own scope, per GSM inspection -- excludes 9 other GSMs under the same GSE that are unrelated bulk RNA-seq cell-line experiments, not part of this record's sample_count)",
+    "data_url": "/pilot-data/gse-206647-scrnaseq.json",
+    "cell_count": 164181,
+    "gene_count": 50,
+    "sample_count": 18,
+    "embedding_method": "scanpy 1.10.3: read_10x_mtx of all 18 S1-S18 samples' deposited Cell Ranger output (GSM7476436-GSM7476453; the GSE's other 9 GSMs, titled WT/sgC/CLU with _1/_2/_3 replicate suffixes, are a separate bulk RNA-seq cell-line knockdown/overexpression experiment confirmed via live GEO library_strategy/title inspection, not part of this record), QC per sample (min 200 genes/cell, <20% pct_counts_mt), anndata.concat (unintegrated), filter_genes min_cells=3 (28156 genes), normalize_total+log1p, top-2000 HVG, PCA, neighbors, UMAP, Leiden (resolution 0.5, 26 clusters, igraph flavor). Gene panel deliberately trimmed to 50 (11 guaranteed meningioma driver genes + top HVGs by dispersion) from an initial 150-gene/112MB export, to keep the artifact well under GitHub's 50MB file-size warning threshold at this cell count (164,181, the largest single-embedding cohort in this inventory's viewer) -- the gene panel was trimmed post-hoc from the same ranked list, not recomputed, so the retained genes are still the top-ranked ones.",
+    "pathways": ["Proliferation / cell cycle", "Hypoxia", "Epithelial-mesenchymal transition", "Interferon response"],
+    "integration_note": "All 18 samples were merged by raw concatenation, not batch-corrected/integrated (same approach ScPCA documents for its own merged objects) -- use \"color by sample\" to check for patient-driven rather than biological clustering. 26 Leiden clusters at this scale means several likely resolve to the same broad cell type rather than being 26 distinct identities."
+  }
+}

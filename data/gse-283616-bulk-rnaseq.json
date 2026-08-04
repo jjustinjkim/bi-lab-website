@@ -1,0 +1,124 @@
+{
+  "id": "gse-283616-bulk-rnaseq",
+  "title": "GSTM1 null genotype underpins recurrence of NF2 meningiomas",
+  "accessions": [
+    "GSE283616"
+  ],
+  "related_accessions": [],
+  "source_repositories": [
+    "GEO",
+    "SRA"
+  ],
+  "publications": [
+    {
+      "title": "GSTM1 null genotype underpins recurrence of NF2 meningiomas.",
+      "authors": [
+        "Johnson AC",
+        "Tsitsikov EN",
+        "Phan KP",
+        "Zuccato JA",
+        "Bauer AM",
+        "Graffeo CS",
+        "Hameed S",
+        "Stephens TM",
+        "Liu Y",
+        "Dunn GP",
+        "Tsytsykova AV",
+        "Jones PS",
+        "Dunn IF"
+      ],
+      "venue": "Frontiers in oncology",
+      "year": 2024,
+      "doi": "10.3389/fonc.2024.1506708",
+      "pmid": "39726707",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Ian F Dunn",
+  "institution": "University of Oklahoma Health Sciences",
+  "date_deposited": "2024-12-05",
+  "date_updated": "2024-12-11",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-11",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-10",
+  "verification_tier": 1,
+  "found_via": [
+    "keyword_api",
+    "citation_chain"
+  ],
+  "modality": [
+    "bulk_rna_seq"
+  ],
+  "platform": "Illumina NovaSeq 6000 (GPL24676)",
+  "reference_genome": "hg38",
+  "pipeline": "Not reported",
+  "patient_count": "Not reported",
+  "sample_count": 16,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": 9,
+    "grade_2": 6,
+    "grade_3": 1
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": "Not reported",
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "primary",
+    "recurrent"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "Not reported",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "7 female, 9 male (n=16, extracted from GSM 'sex' field)",
+  "age_distribution": "Not reported",
+  "has_outcome_data": "Not reported",
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": []
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": "Not reported",
+  "processed_data_available": true,
+  "processed_data_format": "GSE283616_gene_count.xls.gz",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High",
+    "publications": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "PER-SAMPLE DATA UPDATE (2026-07-10): Per-sample sex data recovered from family.soft. A 'genotype' field is also present (very likely the GSTM1 null-vs-positive genotype central to this paper's title) but not yet individually parsed. Series-level GEO metadata verified directly against the live source; per-sample clinical/pathology fields (grade, sex/age, anatomic location, brain invasion, treatment timepoint) have not yet been extracted from individual GSM records or supplementary tables -- part of the batch-1 scaling pass, prioritizing breadth of verified accessions over per-sample depth. Publication metadata pulled from PubMed esummary; not yet manually spot-checked against the full text for every record in this batch. FACT-CHECK (2026-07-10): treatment_timepoint_status was 'Not reported' despite Series_overall_design explicitly stating 'RNA-seq profiling of human (male and female) primary and recurrent meningioma tumors'; corrected to reflect both are present (exact per-sample counts not yet broken out, so recurrence_annotated tag left false pending that). FACT-CHECK (2026-07-11): publications was empty despite a real, findable match. PubMed search on this series' own distinctive title terms ('GSTM1 null genotype meningioma recurrence') found PMID 39726707, 'GSTM1 null genotype underpins recurrence of NF2 meningiomas' (Frontiers in Oncology, 2024), whose title matches this GEO series title verbatim and whose 13 authors (Johnson AC, Tsitsikov EN, Phan KP, Zuccato JA, Bauer AM, Graffeo CS, Hameed S, Stephens TM, Liu Y, Dunn GP, Tsytsykova AV, Jones PS, Dunn IF) exactly match this record's 13 Series_contributor entries in the same order; not retracted or corrected per PubMed medline record. Added to publications; confidence_level.publications upgraded Low to High; verification_tier upgraded 2 to 1 and found_via extended to include citation_chain; tags.peer_reviewed corrected false to true. corresponding_author corrected from 'Anthony,C,Johnson, Erdyni,N,Tsitsikov' (the paper's first two authors) to 'Ian,F,Dunn': fetched the paper's open-access PMC full text (PMC11669715) directly, which shows exactly one corresponding-author designation, Ian F. Dunn (ian-dunn@ouhsc.edu), the paper's last author and also this GEO series' last-listed Series_contributor. EXTERNAL RE-VERIFICATION (2026-07-12): reference_genome filled from 'Not reported' to 'hg38'; all 16 GSM records' data_processing explicitly state 'Assembly: hg38'. pipeline left 'Not reported' (data_processing only states 'Standard bioinformatics analyses were conducted by Novogene Co., LTD', no named tool/version). Considered the per-sample 'genotype: GSTM1+/GSTM1-' field for molecular_subtype_annotated but deliberately left it 'Not reported': GSTM1-null status is a single-gene biomarker dichotomy, not a named multi-class molecular subtype system per the schema definition. Re-verified sample_count (16 GSM), sex (7 female / 9 male), platform (GPL24676 NovaSeq 6000), dates, and PMID 39726707 (Ian F. Dunn confirmed sole corresponding author via PMC11669715) against live GEO/PubMed; no further discrepancy. HIDDEN PER-SAMPLE DATA FOUND IN FULL TEXT (2026-07-14 deep audit): grade_breakdown and recurrence counts were left null/unset even though the linked paper's own Table 1 ('Clinical and pathological cohort characteristics'), fetched directly from the open-access full text (PMC11669715), enumerates WHO grade and primary/recurrent status for every one of the 16 samples by name (PF1-PF7, PM1-PM5 = 12 primary; RF1, RM1, RM2, RM4 = 4 recurrent). grade_breakdown filled in as grade_1=9 (7 primary + 2 recurrent), grade_2=6 (5 primary + 1 recurrent), grade_3=1 (0 primary + 1 recurrent), summing exactly to sample_count 16; tags.grade_comparable corrected false to true. tags.recurrence_annotated corrected false to true: the paper's Table 1 explicitly distinguishes primary (n=12) vs. recurrent (n=4) samples by name with an exact count, satisfying the schema's recurrence_annotated bar ('explicitly distinguishes primary vs. recurrent samples with counts'), not merely the cohort-level 'RNA-seq profiling of primary and recurrent tumors' design language already captured in treatment_timepoint_status. has_outcome_data left as 'Not reported': Table 1 gives primary/recurrent specimen classification and Ki-67 index, not actual survival/recurrence-free-survival time data, so it does not meet the has_outcome_data bar. Author-list also expanded from a truncated first-6 to the full 13-author list per the already-noted PMC-confirmed set. This is the exact 'per-sample data sitting in a paper's full text, left unreported because only the repository's own GEO metadata was checked' pattern this audit was tasked with finding.",
+  "source_urls": [
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE283616",
+    "https://pubmed.ncbi.nlm.nih.gov/39726707/"
+  ],
+  "tags": {
+    "grade_comparable": true,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": false,
+    "large_cohort": false,
+    "recurrence_annotated": true,
+    "molecular_subtype_annotated": false,
+    "has_outcome_data": false,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

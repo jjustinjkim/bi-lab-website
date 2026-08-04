@@ -1,0 +1,107 @@
+{
+  "id": "gse-156211-bulk-rnaseq",
+  "title": "Functional genomics of Non-NF2 meningioma development and progression [RNA-seq]",
+  "accessions": [
+    "GSE156211"
+  ],
+  "related_accessions": [],
+  "source_repositories": [
+    "GEO",
+    "SRA"
+  ],
+  "publications": [
+    {
+      "title": "Loss-of-Function Mutations in TRAF7 and KLF4 Cooperatively Activate RAS-Like GTPase Signaling and Promote Meningioma Development.",
+      "authors": ["Najm P", "Zhao P", "Steklov M", "Sewduth RN", "Baietti MF", "Pandolfi S", "Criem N", "Lechat B", "Maia TM", "Van Haver D", "Corthout N", "Eyckerman S", "Impens F", "Sablina AA"],
+      "venue": "Cancer Research",
+      "year": 2021,
+      "doi": "10.1158/0008-5472.CAN-20-3669",
+      "pmid": "34215617",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Anna Sablina",
+  "institution": "KU Leuven",
+  "date_deposited": "2020-08-13",
+  "date_updated": "2020-08-16",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-10",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-10",
+  "verification_tier": 2,
+  "found_via": [
+    "keyword_api"
+  ],
+  "modality": [
+    "bulk_rna_seq"
+  ],
+  "platform": "Illumina HiSeq 4000 (GPL20301)",
+  "reference_genome": "Not reported",
+  "pipeline": "Not reported",
+  "patient_count": "Not reported",
+  "sample_count": 24,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": null,
+    "grade_2": null,
+    "grade_3": null
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": "Not reported",
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "Not reported"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "Not reported",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "Not reported",
+  "age_distribution": "Not reported",
+  "has_outcome_data": "Not reported",
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": []
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": "Not reported",
+  "processed_data_available": true,
+  "processed_data_format": "GSE156211_RAW.tar",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High",
+    "publications": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "DEEP-AUDIT CORRECTION (2026-07-14): publications[0].authors was truncated to exactly 6 names; expanded to the full 14-author Europe PMC authorString for PMID 34215617 (Najm P ... Impens F, Sablina AA). corresponding_author corrected from 'Anna Sablina, Paul Najm' to 'Anna Sablina'. Direct fetch of the AACR Cancer Research article (2 attempts, default and Chrome/Windows User-Agent) was blocked by Cloudflare; however Europe PMC's structured per-author affiliation data -- which, for this same journal/style, was independently cross-validated as reliable via the Claus/Cancer Research record in this same corpus (gse-9438), where its single flagged email exactly matched the paper's own correspondence footnote -- shows an email embedded in only ONE of this paper's 14 authors' affiliations: 'Sablina AA -> VIB-KU Leuven Center for Cancer Biology, Leuven, Belgium. anna.sablina@cme.vib-kuleuven.be.'; Najm P (first author) has no email in his affiliation and is not otherwise marked corresponding. Corrected accordingly; flagged as based on structured affiliation data (a genuine attempt at the primary source, blocked twice) rather than a direct read of the article's own corresp tag, per this audit's instructions when full-text access fails after a retry. Moved to adjacent: overall_design confirms this is normal human meningeal cells (HMCs) and the meningioma cell line HBL-52, not primary patient tumor tissue. Series-level GEO metadata verified directly against the live source; per-sample clinical/pathology fields (grade, sex/age, anatomic location, brain invasion, treatment timepoint) have not yet been extracted from individual GSM records or supplementary tables -- part of the batch-1 scaling pass, prioritizing breadth of verified accessions over per-sample depth. Publication metadata pulled from PubMed esummary; not yet manually spot-checked against the full text for every record in this batch. FOLLOW-UP PUBLICATION SEARCH (2026-07-13), match found and directly confirmed: a Europe PMC full-text search for the literal accession string GSE156211 returned exactly one hit, Najm et al. 2021 (PMID 34215617, Cancer Research), whose fullTextXML (fetched directly, PMCID not available for this closed-access paper but the record itself was cross-checked against the live GEO Series_summary) explicitly links this accession in a figure legend describing 'PCA Plot of RNA-seq meta-analysis in HMCs transduced with virus expressing KLF4 or KLF4(K409Q) proteins ([link to GSE156211])'. The live GEO record's own Series_contact_name (Peihua Zhao, KU Leuven) and Series_contributor list (Anna Sablina, Paul Najm, Peihua Zhao) match this paper's author list exactly (Najm P first author, Zhao P second author, Sablina AA last/corresponding author), and the GEO Series_summary text is nearly verbatim identical to the paper's own TRAF7/KLF4/RAS-GTPase abstract, confirming this is the paper's own originating dataset, not merely an external reuse. Publication added; publication_status normal so tags.peer_reviewed set true.",
+  "source_urls": [
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE156211"
+  ],
+  "tags": {
+    "grade_comparable": false,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": false,
+    "large_cohort": false,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": false,
+    "has_outcome_data": false,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

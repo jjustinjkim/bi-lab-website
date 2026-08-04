@@ -1,0 +1,131 @@
+{
+  "id": "gse-297758-multiome",
+  "title": "STING activation induces cytotoxic and immune responses in meningiomas via inflammatory cell death pathways [scMulti-omics]",
+  "accessions": [
+    "GSE297758"
+  ],
+  "related_accessions": [
+    "GSE297764",
+    "GSE297637"
+  ],
+  "source_repositories": [
+    "GEO",
+    "SRA"
+  ],
+  "publications": [
+    {
+      "title": "STING activation induces cytotoxic and immune responses in meningiomas via inflammatory cell death pathways.",
+      "authors": [
+        "Youngblood MW",
+        "Tripathi S",
+        "Najem H",
+        "Congivaram H",
+        "Gomez M",
+        "Sears TK"
+      ],
+      "venue": "Nature communications",
+      "year": 2026,
+      "doi": "10.1038/s41467-026-69296-1",
+      "pmid": "41680157",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Amy B Heimberger",
+  "institution": "Northwestern University",
+  "date_deposited": "2025-05-21",
+  "date_updated": "2026-03-01",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-11",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-10",
+  "verification_tier": 1,
+  "found_via": [
+    "keyword_api",
+    "citation_chain"
+  ],
+  "modality": [
+    "multiome"
+  ],
+  "platform": "Illumina NovaSeq X Plus (GPL34284)",
+  "reference_genome": "Not reported",
+  "pipeline": "Not reported",
+  "patient_count": "Not reported",
+  "sample_count": 8,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": null,
+    "grade_2": null,
+    "grade_3": null
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": "Not reported",
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "Not reported"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "fresh_frozen",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "Not reported",
+  "age_distribution": "Not reported",
+  "has_outcome_data": "Not reported",
+  "paired_multimodal": {
+    "is_paired": true,
+    "related_datasets": [
+      "gse-297637-bulk-rnaseq"
+    ]
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": "Not reported",
+  "processed_data_available": true,
+  "processed_data_format": "GSE297758_NU0821_barcodes.tsv.gz",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High",
+    "publications": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "Series overall_design explicitly describes 'Single nucleus multiome (RNA-seq + ATAC-seq) profiling of frozen meningioma specimens' -- corrected from an initial bulk_rna_seq mislabel (the GEO 'Genome binding/occupancy profiling by high throughput sequencing' series type covers the ATAC-seq component of this multiome assay, not a separate ChIP-seq experiment). A sibling accession in the same SuperSeries (GSE323014) was investigated as a possible related record but excluded entirely: its overall_design shows it is a mouse orthotopic model ('whole mouse brains implanted with MGS1 meningioma cells'), not human patient tissue, so it is out of scope per docs/scope.md and does not appear anywhere in this inventory. Per-sample clinical/pathology fields not yet extracted from individual GSM records. COMPLETENESS UPDATE (2026-07-10 fact-check pass): publications was empty even though the parent SuperSeries GSE297764 carries Series_pubmed_id=41680157 (same publication already correctly linked on the sibling record gse-297637-bulk-rnaseq); added here too. PMID 41680157 (Youngblood et al., Nature Communications, 2026) verified via PubMed esummary: title matches this GEO SuperSeries title exactly, not retracted or corrected. FACT-CHECK (2026-07-11): corresponding_author corrected from 'Mark,W,Youngblood, Shashwat,,Tripathi' to 'Amy,B,Heimberger' only. Fetched the paper's open-access PMC full text (PMC13009160) directly and searched every author entry (47 total): exactly one is marked corresp=\"yes\", Amy B. Heimberger (amy.heimberger@northwestern.edu), the paper's senior/last author; neither Youngblood nor Tripathi carries a corresponding-author designation despite both being GEO Series_contributors. Same correction applied to the sibling record gse-297637-bulk-rnaseq.json. found_via extended to include citation_chain and verification_tier upgraded 2 to 1, since the publication link is now independently corroborated via full-text verification beyond the original keyword_api discovery.",
+  "source_urls": [
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE297758",
+    "https://pubmed.ncbi.nlm.nih.gov/41680157/"
+  ],
+  "tags": {
+    "grade_comparable": false,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": true,
+    "spatially_resolved": false,
+    "multi_modal_matched": true,
+    "large_cohort": false,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": false,
+    "has_outcome_data": false,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null,
+  "gene_expression_viewer": {
+    "sample_label": "RNA arm only, all 4 patients merged (this record's ATAC arm is not part of this viewer)",
+    "data_url": "/pilot-data/gse-297758-multiome.json",
+    "cell_count": 45488,
+    "gene_count": 150,
+    "sample_count": 4,
+    "embedding_method": "scanpy 1.10.3: read_10x_mtx(gex_only=True) of the series-level combined RNA+ATAC Cell Ranger ARC output for all 4 patients (NU0821/NU1142/NU1617/NU1795), which filters the 36601-gene + 72866-peak combined feature matrix down to Gene Expression features only. QC per sample (min 200 genes/cell, <20% pct_counts_mt), anndata.concat (unintegrated), filter_genes min_cells=3 (33689 genes), normalize_total+log1p, top-2000 HVG, PCA, neighbors, UMAP, Leiden (resolution 0.5, 12 clusters, igraph flavor). Gene panel: 11 guaranteed meningioma driver genes + top HVGs by dispersion to 150 total.",
+    "pathways": ["Proliferation / cell cycle", "Hypoxia", "Epithelial-mesenchymal transition", "Interferon response"],
+    "integration_note": "This record's sample_count is 8 (4 patients x GEX+ATAC), but this viewer covers only the 4 GEX/RNA samples -- the ATAC arm (chromatin accessibility) has no equivalent in this project's gene-expression viewer and was not processed here. Samples merged by raw concatenation, not batch-corrected/integrated (same approach ScPCA documents for its own merged objects)."
+  }
+}

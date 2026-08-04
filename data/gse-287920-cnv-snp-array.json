@@ -1,0 +1,115 @@
+{
+  "id": "gse-287920-cnv-snp-array",
+  "title": "Affymetrix SNP array data for meningioma samples",
+  "accessions": [
+    "GSE287920"
+  ],
+  "related_accessions": [],
+  "source_repositories": [
+    "GEO"
+  ],
+  "publications": [
+    {
+      "title": "Distribution of copy number alterations and impact of chromosome arm call thresholds for meningioma.",
+      "authors": [
+        "Patel RV",
+        "Ghosh HS",
+        "Meredith DM",
+        "Ryall S",
+        "Claus EB",
+        "Beroukhim R"
+      ],
+      "venue": "Nature communications",
+      "year": 2025,
+      "doi": "10.1038/s41467-025-60734-0",
+      "pmid": "40603304",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Wenya L Bi",
+  "institution": "Brigham and Women's Hospital",
+  "date_deposited": "2025-01-24",
+  "date_updated": "2025-07-10",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-11",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-10",
+  "verification_tier": 1,
+  "found_via": [
+    "keyword_api",
+    "citation_chain"
+  ],
+  "modality": [
+    "cnv_snp_array"
+  ],
+  "platform": "GPL21558",
+  "reference_genome": "Not reported",
+  "pipeline": "Not reported",
+  "patient_count": "Not reported",
+  "sample_count": 516,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": null,
+    "grade_2": null,
+    "grade_3": null
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": false,
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "Not reported"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "ffpe",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "347 female, 169 male (n=516, extracted from GSM 'Sex' field)",
+  "age_distribution": "n=516 (range 5-93, median 59; extracted from GSM 'age' field)",
+  "has_outcome_data": false,
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": []
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": "Not reported",
+  "processed_data_available": true,
+  "processed_data_format": "GSE287920_RAW.tar",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High",
+    "publications": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "FACT-CHECK UPDATE (2026-07-10): sample_count corrected from 1042 to 516. The live GSE287920 record lists exactly 516 unique Series_sample_id (GSM) entries (GSM8754454 through GSM8754969, counted directly), not 1042. The figure of 1042 (and '12 meningiomas with multifocal sampling') comes from the Series_summary and the linked paper's abstract, which describe the paper's total pooled analytic cohort of 1042 meningiomas with whole-genome microarray data (the paper's abstract independently states '13 meningiomas with multifocal sampling', a minor discrepancy from GEO's '12' not reflected in any JSON field) -- this total evidently combines the 516 new arrays deposited in this specific GEO series with additional previously-published/legacy CNV data reused in the meta-analysis, not all of which is captured under this single accession. Series-level GEO metadata verified directly against the live source; per-sample clinical/pathology fields not yet extracted from individual GSM records. FACT-CHECK UPDATE (2026-07-10 verification pass): date_deposited/date_updated filled in from the live GEO record's Series_submission_date/Series_last_update_date, previously 'Not reported'. FACT-CHECK UPDATE (2026-07-10 verification pass): tissue_preservation filled in as 'ffpe', previously 'Not reported'. Series_overall_design states samples were 'formalin-fixed paraffin embedded (FFPE) brain tumor specimens'. FACT-CHECK (2026-07-11): corresponding_author corrected from 'Wenya,L,Bi, Ruchit,V,Patel' to 'Wenya,L,Bi' only. Fetched the paper's open-access PMC full text (PMC12222709) directly: exactly one author is marked corresp=\"yes\" with a listed email, Wenya Linda Bi (wbi@bwh.harvard.edu); Patel RV is the first author but carries no corresponding designation anywhere in the author list. Bi is the only true corresponding author who is also a live GEO Series_contributor for this accession. EXTERNAL RE-VERIFICATION (2026-07-12): per-sample sex and age recovered from all 516 GSM records (previously 'Not reported'). Sex: 347 female + 169 male = 516. age: numeric for all 516, range 5-93, median 59. sex_distribution and age_distribution filled accordingly. No per-sample WHO grade, molecular subtype, or outcome field exists in this series' GSM characteristics (only Sex, age, tissue: Brain), so grade_breakdown, molecular_subtype_annotated, and has_outcome_data remain unchanged. sample_count re-confirmed at 516 GSM (GSM8754454-GSM8754969); tissue_preservation ffpe and PMID 40603304 (Bi sole corresponding author, PMC12222709) re-verified against live GEO/PubMed.",
+  "source_urls": [
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE287920",
+    "https://pubmed.ncbi.nlm.nih.gov/40603304/"
+  ],
+  "tags": {
+    "grade_comparable": false,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": false,
+    "large_cohort": true,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": false,
+    "has_outcome_data": false,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

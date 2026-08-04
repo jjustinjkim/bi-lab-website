@@ -1,0 +1,97 @@
+{
+  "id": "gse-300855-bulk-rnaseq",
+  "title": "Long-read RNA Sequencing of Human Meningiomas",
+  "accessions": [
+    "GSE300855"
+  ],
+  "related_accessions": [],
+  "source_repositories": [
+    "GEO",
+    "SRA"
+  ],
+  "publications": [],
+  "corresponding_author": "David Raleigh, Martha Dwyer Cady",
+  "institution": "UCSF",
+  "date_deposited": "2025-06-25",
+  "date_updated": "2025-06-25",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-10",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-10",
+  "verification_tier": 2,
+  "found_via": [
+    "keyword_api"
+  ],
+  "modality": [
+    "bulk_rna_seq"
+  ],
+  "platform": "PacBio Sequel IIe, Iso-Seq (long-read) (GPL34678)",
+  "reference_genome": "GRCh38.p14",
+  "pipeline": "bambu isoform quantification; GENCODE v47 annotation",
+  "patient_count": "Not reported",
+  "sample_count": 84,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": null,
+    "grade_2": null,
+    "grade_3": null
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": "Not reported",
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "Not reported"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "Not reported",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "Not reported",
+  "age_distribution": "Not reported",
+  "has_outcome_data": "Not reported",
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": []
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": "Not reported",
+  "processed_data_available": true,
+  "processed_data_format": "GSE300855_bambu_raleigh_isoseq.gencode_v47.GRCh38_p14.counts.for_GEO.csv.gz",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High",
+    "publications": "Low"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "Series-level GEO metadata verified directly against the live source; per-sample clinical/pathology fields (grade, sex/age, anatomic location, brain invasion, treatment timepoint) have not yet been extracted from individual GSM records or supplementary tables -- part of the batch-1 scaling pass, prioritizing breadth of verified accessions over per-sample depth. Publication metadata pulled from PubMed esummary; not yet manually spot-checked against the full text for every record in this batch. EXTERNAL RE-VERIFICATION (2026-07-12): platform expanded from 'PacBio Iso-Seq (long-read)' to include the actual instrument from the linked GEO platform GPL34678 (PacBio Sequel IIe). reference_genome set to 'GRCh38.p14' and pipeline set to 'bambu isoform quantification; GENCODE v47 annotation', both read directly from the Series_supplementary_file name in the live GEO record (GSE300855_bambu_raleigh_isoseq.gencode_v47.GRCh38_p14.counts.for_GEO.csv.gz); previously 'Not reported'. GSM-level check: all 84 GSMs carry only 'tissue: meningioma' as a characteristic, so per-sample grade/sex/age/location remain genuinely unreported in GEO (described only in the paper, not deposited).",
+  "source_urls": [
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE300855"
+  ],
+  "tags": {
+    "grade_comparable": false,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": false,
+    "large_cohort": true,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": false,
+    "has_outcome_data": false,
+    "peer_reviewed": false
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

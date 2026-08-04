@@ -1,0 +1,109 @@
+{
+  "id": "figshare-32386740-tapestri-scdna",
+  "title": "Single-cell DNA (Tapestri) processed data (h5 file)",
+  "accessions": [
+    "10.6084/m9.figshare.32386740.v1"
+  ],
+  "related_accessions": [],
+  "source_repositories": [
+    "Figshare"
+  ],
+  "publications": [],
+  "corresponding_author": "Young-soo Chung",
+  "institution": "Yonsei University College of Medicine",
+  "date_deposited": "2026-05-23",
+  "date_updated": "2026-05-23",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-14",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-11",
+  "verification_tier": 2,
+  "found_via": [
+    "keyword_api"
+  ],
+  "modality": [
+    "scdna_seq"
+  ],
+  "platform": "Mission Bio Tapestri single-cell DNA sequencing platform",
+  "reference_genome": "Not reported",
+  "pipeline": "Mission Bio 'mosaic' downstream analysis pipeline (recommended by depositor for these H5 files)",
+  "patient_count": "Not reported",
+  "sample_count": 3,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": null,
+    "grade_2": null,
+    "grade_3": null
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": false,
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "Not reported"
+  ],
+  "anatomic_location_breakdown": "3 H5 files, filenames indicate dural/falcine origin ('241127_Falx.dna.h5', '230802_Dura.dna.h5', '190426_Dura.dna.h5'); description states nuclei were isolated from the meningeal dura of meningioma patients. Exact per-patient anatomic detail beyond these filename labels is not reported.",
+  "tissue_preservation": "Not reported",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "Not reported",
+  "age_distribution": "Not reported",
+  "has_outcome_data": false,
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": []
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": false,
+  "processed_data_available": true,
+  "processed_data_format": "Mission Bio Tapestri per-cell H5 files (single-nucleus-level read profiles, genotypes, and variant profiles)",
+  "license": "CC BY 4.0",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "modality": "Low",
+    "sample_count": "Medium",
+    "publications": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "UPDATE 2026-07-11 (centralized integration pass): a dedicated 'scdna_seq' modality value was added to docs/controlled_vocabulary.md for single-cell/single-nucleus targeted DNA sequencing (Mission Bio Tapestri and similar droplet-based targeted DNA panels at single-cell resolution), and this record now uses it in place of the closest-fit 'targeted_panel_seq' value used at initial extraction. tags.single_cell_resolved is set to true, now a direct and literal match for the new modality value rather than a judgment call. No linked publication could be found via PubMed author-name or keyword search (Chung Young-soo + meningioma/Tapestri/dura/single-nucleus all returned zero hits) as of live verification 2026-07-11; this appears to be a data-only deposit with no accompanying paper. patient_count left 'Not reported' because it is unclear whether the 3 H5 files (dated 190426, 230802, 241127, i.e. spanning ~2019-2024) represent 3 distinct patients or repeat/re-processed runs on fewer patients; sample_count=3 reflects the 3 distinct H5 files actually deposited. institution inferred from depositor's public ORCID employment record (Yonsei University College of Medicine, Dept. of Biomedical Systems Informatics, listed through 2024-08); current affiliation at time of 2026-05-23 upload not independently confirmed. tags.large_cohort left false pending centralized recomputation across the whole inventory per project instructions (not specific to this record's small n). DEEP-AUDIT (2026-07-14, no field changes): re-fetched the live Figshare API (api.figshare.com/v2/articles/32386740), which confirms author 'Young-soo Chung (ORCID: 0000-0001-8012-2902)' as the sole listed creator, license CC BY 4.0, and no linked publication/DOI beyond the dataset's own -- corresponding_author, license, and 'no publication' status all reconfirmed unchanged. Re-searched for a Young-soo Chung + Tapestri/meningioma/dura publication (web search); still zero matches, consistent with a data-only deposit. sample_count=3 and the three filename-derived anatomic labels reconfirmed against the live record.",
+  "source_urls": [
+    "https://figshare.com/articles/dataset/Single-cell_DNA_Tapestri_processed_data_h5_file_/32386740",
+    "https://doi.org/10.6084/m9.figshare.32386740.v1"
+  ],
+  "tags": {
+    "grade_comparable": false,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": true,
+    "spatially_resolved": false,
+    "multi_modal_matched": false,
+    "large_cohort": false,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": false,
+    "has_outcome_data": false,
+    "peer_reviewed": false
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null,
+  "gene_expression_viewer": {
+    "sample_label": "All 3 samples merged (Falx tumor + 2 Dura), variant genotype not gene expression",
+    "data_url": "/pilot-data/figshare-32386740-tapestri-scdna.json",
+    "cell_count": 386,
+    "gene_count": 100,
+    "sample_count": 3,
+    "feature_noun": "variant",
+    "value_label": "genotype: 0=WT/hom-ref, 1=het, 2=hom-alt (missing calls excluded from the color scale)",
+    "embedding_method": "Mission Bio Tapestri .h5 files (Falx: 76 cells, Dura_230802: 274 cells, Dura_190426: 36 cells; all cells in each file's own dna_variants assay had a valid clone/UMAP position). Used the Tapestri pipeline's OWN precomputed UMAP coordinates and clone-cluster assignments (all_barcodes/dna_read_counts/ra) rather than recomputing an embedding -- appropriate here since Tapestri's own pipeline already clusters cells on read-count profiles across the full amplicon panel, which this project's generic scRNA pipeline has no equivalent for. Variant panel: of 25,643 variants called in all 3 samples, the 100 with the highest non-reference genotype fraction (i.e. the most 'interesting'/variable calls) were kept, analogous to picking highly-variable genes for an expression panel.",
+    "pathways": [],
+    "integration_note": "Unlike the scRNA-seq records, this is genuinely different DATA (per-cell DNA variant genotype from targeted amplicon sequencing, not gene expression), so it deliberately reuses the same UMAP/cluster/\"color by X\" viewer machinery with different labels (see feature_noun/value_label) rather than inventing a separate component. Cluster labels are Mission Bio's own clone calls, not independently derived or verified in this pass."
+  }
+}

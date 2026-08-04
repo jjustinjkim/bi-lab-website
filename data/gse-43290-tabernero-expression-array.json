@@ -1,0 +1,121 @@
+{
+  "id": "gse-43290-tabernero-expression-array",
+  "title": "Expression data from meningiomas and normal meninges",
+  "accessions": [
+    "GSE43290"
+  ],
+  "related_accessions": [],
+  "source_repositories": [
+    "GEO"
+  ],
+  "publications": [
+    {
+      "title": "Gene expression profiles of meningiomas are associated with tumor cytogenetics and patient outcome.",
+      "authors": [
+        "Tabernero MD",
+        "Maillo A",
+        "Gil-Bellosta CJ",
+        "Castrillo A",
+        "Sousa P",
+        "Merino M",
+        "Orfao A"
+      ],
+      "venue": "Brain Pathology",
+      "year": 2009,
+      "doi": "10.1111/j.1750-3639.2008.00191.x",
+      "pmid": "18637901",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Maria D. Tabernero / Alberto Orfao",
+  "institution": "Cancer Research Center (IBMCC), University of Salamanca / Servicio General de Citometria",
+  "date_deposited": "2013-01-04",
+  "date_updated": "2018-08-10",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-12",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-11",
+  "verification_tier": 1,
+  "found_via": [
+    "citation_chain",
+    "author_search"
+  ],
+  "modality": [
+    "expression_array"
+  ],
+  "platform": "Affymetrix Human Genome U133A Array (GPL96)",
+  "reference_genome": "Not reported",
+  "pipeline": "Not reported",
+  "patient_count": 47,
+  "sample_count": 51,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": 33,
+    "grade_2": 12,
+    "grade_3": 2
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": true,
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "Not reported"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "Not reported",
+  "normal_control_tissue": {
+    "included": true,
+    "type": "purified RNA from normal meningeal cells, commercially sourced (BioChain Institute, Hayward CA and US Biological, Swampscott MA), each deposited as its own GSM record",
+    "count": 4
+  },
+  "sex_distribution": "34 female, 13 male (n=47 tumors, per-sample 'gender' field)",
+  "age_distribution": "range 23-84 years (n=47 tumors, per-sample 'age' field)",
+  "has_outcome_data": false,
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": []
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": true,
+  "processed_data_available": true,
+  "processed_data_format": "GSM-level MAS5/normalized values (sample data table); no combined series-level processed matrix file",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High",
+    "publications": "High",
+    "molecular_subtype_annotated": "High",
+    "has_outcome_data": "High",
+    "grade_breakdown": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "Live GEO verification (2026-07-11) confirms 51 total deposited GSM samples: 47 meningioma tumors plus 4 normal-meninges controls (matching the discovery-log claim of '47 tumor + 4 normal'), each with its own individually deposited GSM record (unlike some other records in this batch where controls are only supplementary-file reference data). Independently corroborated via two discovery paths per the task brief: a Synapse-hosted curated meta-collection cross-reference, and a Srivastava-lab author search that surfaced this record via its citation in PMID 28938569 (Gupta et al., Oncotarget 2017, 'Evaluation of autoantibody signatures in meningioma patients using human proteome arrays') -- note that PMID 28938569 is NOT itself a publication generated from this dataset (it is an unrelated proteomic autoantibody study that cites this series only as background/comparison), so it was not added to the publications array; the true linked publication is PMID 18637901 (Tabernero et al., Brain Pathology 2009), confirmed via GEO's own Series_pubmed_id field and matching the series design (cytogenetic-subgroup correlation) exactly. Per rule against overclaiming outcome status: despite that paper's title mentioning 'patient outcome', three spot-checked GSM records (GSM1060065, GSM1060066, GSM1060100, plus control GSM1060112) show only gender/age/cytogenetic-group/who-grade/histology fields, no survival or recurrence field of any kind, so has_outcome_data is correctly left false; the 'patient outcome' association claimed in the paper's title appears to be a downstream survival analysis in the manuscript, not a field deposited in GEO. cytogenetic group (e.g. Diploid, Complex karyotype, presumably also isolated -22/22q- and del(1p36) per the design text) is a genuine named molecular subtype system, so molecular_subtype_annotated is set true; a full per-sample grade tally across all 47 tumors has since been performed (see 2026-07-12 update below). large_cohort left false pending centralized quartile recomputation. FACT-CHECK UPDATE (2026-07-12): full per-sample census of all 51 GSM records (family.soft) performed. grade_breakdown populated from the per-sample 'who grade' field over the 47 tumors (grade I=33, II=12, III=2; the 4 normal-meninge controls carry 'who grade: Not applicable' and are excluded); tags.grade_comparable set true. sex_distribution populated (34 female, 13 male across the 47 tumors) and age_distribution populated (range 23-84 years) from per-sample 'gender'/'age' fields. molecular_subtype_annotated remains true (per-sample 'cytogenetic group': Diploid, Complex karyotype, del22q/Monosomy 22, del 1p/Loss 1p, etc.). has_outcome_data remains false (no survival/recurrence field in any GSM).",
+  "source_urls": [
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE43290",
+    "https://pubmed.ncbi.nlm.nih.gov/18637901/",
+    "https://doi.org/10.1111/j.1750-3639.2008.00191.x",
+    "https://pubmed.ncbi.nlm.nih.gov/28938569/"
+  ],
+  "tags": {
+    "grade_comparable": true,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": false,
+    "large_cohort": true,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": true,
+    "has_outcome_data": false,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

@@ -1,0 +1,104 @@
+{
+  "id": "gse-16181-durso-expression-array",
+  "title": "Human meningioma fixed tumour tissue: training set and validation set",
+  "accessions": [
+    "GSE16153",
+    "GSE16156"
+  ],
+  "related_accessions": [
+    "GSE16181"
+  ],
+  "source_repositories": [
+    "GEO"
+  ],
+  "publications": [],
+  "corresponding_author": "Pietro I. D'Urso / Oscar F. D'Urso",
+  "institution": "Salento University, Department of Biological Science (Molecular Biology and Physiology)",
+  "date_deposited": "2009-05-19",
+  "date_updated": "2012-03-21",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-11",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-11",
+  "verification_tier": 2,
+  "found_via": [
+    "citation_chain"
+  ],
+  "modality": [
+    "expression_array"
+  ],
+  "platform": "Custom 60-mer spotted oligonucleotide array, 912 cancer-related gene probes, two-color (GPL8557 'SU Homo sapiens 912')",
+  "reference_genome": "Not reported",
+  "pipeline": "Not reported",
+  "patient_count": 252,
+  "sample_count": 252,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": null,
+    "grade_2": null,
+    "grade_3": null
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": false,
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "primary",
+    "recurrent"
+  ],
+  "anatomic_location_breakdown": "Not reported at series level; individual GSM records spot-checked do carry a per-sample 'location' field (e.g. 'Posterior fossa', 'Convexity')",
+  "tissue_preservation": "ffpe",
+  "normal_control_tissue": {
+    "included": true,
+    "type": "matched adjacent normal meningeal tissue used as the reference (Cy5) channel in most two-color hybridizations (not deposited as separate GSM records, and at least one spot-checked sample instead used a pooled reference labeled 'Norm_64')",
+    "count": null
+  },
+  "sex_distribution": "Not reported at series level; per-sample 'sex' field confirmed present in spot-checked GSM records",
+  "age_distribution": "Not reported at series level; per-sample 'age' field confirmed present in spot-checked GSM records",
+  "has_outcome_data": true,
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": []
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": true,
+  "processed_data_available": true,
+  "processed_data_format": "GSM-level log-ratio intensity values (sample data table); no combined series-level processed matrix file",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High",
+    "has_outcome_data": "Medium",
+    "publications": "Low"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "COMBINED RECORD: GSE16181 is a SuperSeries composed of two SubSeries from the same D'Urso et al. study design, GSE16153 ('training set', live-verified at 63 GSM samples) and GSE16156 ('validation set', live-verified at 189 GSM samples), 252 total, matching the discovery-log claim exactly. Combined into one record (rather than split by accession) because this is a single training/validation design from one paper/platform, per this project's stated preference; GSE16181 itself (the SuperSeries wrapper) carries no samples of its own and is listed only in related_accessions. SERIOUS METADATA QUALITY ISSUE, flagged explicitly: Series_overall_design text for both SubSeries states patient counts of 79 (training, Bari Medical School, 1990-2001) and 210 (validation, 104 Lecce + 106 Rome, 1992-2000) and cites 'the full text of this article at www.nejm.org' plus 'accession numbers GSE10143 and GPL5474' -- but GSE10143/GPL5474 are an unrelated hepatocellular-carcinoma NEJM SuperSeries (Hoshida et al. 2008, PMID 18923165, 'Gene Expression in Fixed Tissues and Outcome in Hepatocellular Carcinoma'), confirmed by direct comparison of that series' own text. This strongly indicates the D'Urso submission's overall_design field was copy-pasted/adapted from the Hoshida group's GEO submission template (both used the same DASL-family FFPE approach) and was never fully corrected for the actual meningioma cohort; the Series_summary text (63 training / 189 validation) and the actual GSM counts (63 / 189) agree with each other and were used here, NOT the overall_design's 79/210 figures. No PMID is linked to either SubSeries and an extensive PubMed search (author D'Urso, keyword combinations of 'meningioma', 'survival', 'gene expression signature', 'formalin-fixed paraffin-embedded', 'recurrence') found no matching indexed publication; publications is left empty rather than guessed. has_outcome_data and recurrence_annotated were set true based on genuine, directly-verified per-sample GSM characteristics fields found in two spot-checked samples (GSM404770, GSM404955), each carrying 'recurrence (years)' and 'survival (years)' numeric fields alongside grade/type/location/MIB-1 index/sex/age -- this is real deposited per-sample outcome data, not an inference from the abstract, but the aggregate counts/breakdowns across all 252 samples have not been tallied (would require a full per-GSM pass) and grade_breakdown is left null pending that. Given the scale of the metadata problems, an independent human review of this record before it is relied upon for cross-study analysis is strongly recommended. large_cohort left false pending centralized quartile recomputation. COMPLETENESS FIX (2026-07-13, corpus-wide tag audit): treatment_timepoint_status had been left at 'Not reported' even though tags.recurrence_annotated is true and this record's own notes above already document genuine per-sample primary/recurrent data. Corrected to ['primary', 'recurrent'] to match.",
+  "source_urls": [
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE16153",
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE16156",
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE16181",
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE10143"
+  ],
+  "tags": {
+    "grade_comparable": false,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": false,
+    "large_cohort": true,
+    "recurrence_annotated": true,
+    "molecular_subtype_annotated": false,
+    "has_outcome_data": true,
+    "peer_reviewed": false
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

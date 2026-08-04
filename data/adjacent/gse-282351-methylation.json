@@ -1,0 +1,120 @@
+{
+  "id": "gse-282351-methylation",
+  "title": "Decoding hypoxia-induced DNA Methylation patterns in Meningioma tumorigenesis",
+  "accessions": [
+    "GSE282351"
+  ],
+  "related_accessions": [
+    "GSE282352",
+    "GSE282349"
+  ],
+  "source_repositories": [
+    "GEO"
+  ],
+  "publications": [
+    {
+      "title": "Novel insights into hypoxia-driven transcriptomic and epigenetic landscapes in grade 3 meningioma.",
+      "authors": [
+        "Dalal M",
+        "Joshi R",
+        "Ajithkumar P",
+        "Singh J",
+        "Suri V",
+        "Chatterjee A",
+        "Kulshreshtha R"
+      ],
+      "venue": "Journal of translational medicine",
+      "year": 2025,
+      "doi": "10.1186/s12967-025-07606-9",
+      "pmid": "41437098",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Ritu Kulshreshtha, Aniruddha Chatterjee",
+  "institution": "Indian Institute of Technology",
+  "date_deposited": "2024-11-19",
+  "date_updated": "2026-02-19",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-12",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-10",
+  "verification_tier": 2,
+  "found_via": [
+    "keyword_api"
+  ],
+  "modality": [
+    "dna_methylation_array"
+  ],
+  "platform": "Illumina Infinium MethylationEPIC v2.0 array (GPL33022)",
+  "reference_genome": "Not reported",
+  "pipeline": "Not reported",
+  "patient_count": "Not applicable (cell line)",
+  "sample_count": 4,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": null,
+    "grade_2": null,
+    "grade_3": null
+  },
+  "who_edition": "Not applicable (cell line)",
+  "molecular_subtype_annotated": false,
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not applicable",
+    "determination_method": "Not applicable"
+  },
+  "treatment_timepoint_status": [
+    "Not applicable"
+  ],
+  "anatomic_location_breakdown": "Not applicable (cell line)",
+  "tissue_preservation": "not_applicable",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "Not applicable",
+  "age_distribution": "Not applicable",
+  "has_outcome_data": false,
+  "paired_multimodal": {
+    "is_paired": true,
+    "related_datasets": [
+      "gse-282349-bulk-rnaseq"
+    ]
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": "Not reported",
+  "processed_data_available": true,
+  "processed_data_format": "EPIC array signal + processed methylation values (csv.gz)",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High",
+    "publications": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "Adjacent-scope per docs/scope.md: overall_design confirms hypoxia-treated vs. normoxic IOMM-Lee cells (immortalized meningioma cell line), 2 replicates each, not primary patient tissue. Companion to gse-282349-bulk-rnaseq (also cell-line, also in /data/adjacent/) via the GSE282352 SuperSeries. Corresponding_author, institution, dates, and platform were previously recorded as Not reported despite being present in the live GEO record; filled in from !Series_contact_name/!Series_contact_institute/!Series_submission_date/!Series_last_update_date/!Series_platform_id. Linked PMID (41437098) resolved via PubMed esummary to Dalal et al., J Transl Med 2025. RE-VERIFICATION (2026-07-12): live GEO re-fetch shows the series lists processed supplementary files (GSE282351_EPIC_Signal_GEO.csv.gz, GSE282351_EPIC_processed_GEO.csv.gz) plus GSE282351_RAW.tar; processed_data_available corrected from 'Not reported' to true and processed_data_format populated accordingly. sample_count (4 GSMs, GSM8641730-GSM8641733), platform (GPL33022 EPIC v2.0), dates, and SuperSeries link (GSE282352) all re-confirmed against the live source.",
+  "source_urls": [
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE282351",
+    "https://pubmed.ncbi.nlm.nih.gov/41437098/"
+  ],
+  "tags": {
+    "grade_comparable": false,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": true,
+    "large_cohort": false,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": false,
+    "has_outcome_data": false,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

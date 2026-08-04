@@ -1,0 +1,122 @@
+{
+  "id": "pxd014852-proteomics",
+  "title": "Mining the meningioma lanscape to identify biomarkers using LFQ",
+  "accessions": [
+    "PXD014852"
+  ],
+  "related_accessions": [],
+  "source_repositories": [
+    "PRIDE"
+  ],
+  "publications": [
+    {
+      "title": "Comprehending Meningioma Signaling Cascades Using Multipronged Proteomics Approaches & Targeted Validation of Potential Markers.",
+      "authors": [
+        "Mukherjee S",
+        "Biswas D",
+        "Gadre R",
+        "Jain P",
+        "Syed N",
+        "Stylianou J",
+        "Zeng Q",
+        "Mahadevan A",
+        "Epari S",
+        "Shetty P",
+        "Moiyadi A",
+        "Roy Ball G",
+        "Srivastava S"
+      ],
+      "venue": "Frontiers in Oncology",
+      "year": 2020,
+      "doi": "10.3389/fonc.2020.01600",
+      "pmid": "32974197",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Sanjeeva Srivastava",
+  "institution": "IIT Bombay",
+  "date_deposited": "2019-07-31",
+  "date_updated": "2020-08-27",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-14",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-10",
+  "verification_tier": 2,
+  "found_via": [
+    "keyword_api"
+  ],
+  "modality": [
+    "proteomics_bulk_ms"
+  ],
+  "platform": "Q Exactive",
+  "reference_genome": "Not applicable",
+  "pipeline": "Proteome Discoverer 2.2",
+  "patient_count": "Not reported",
+  "sample_count": 31,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": 10,
+    "grade_2": 11,
+    "grade_3": 2
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": false,
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "Not reported"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "fresh_frozen",
+  "normal_control_tissue": {
+    "included": true,
+    "type": "Normal dura mater (n=4) and arachnoid mater (n=4)",
+    "count": 8
+  },
+  "sex_distribution": "Not reported",
+  "age_distribution": "Not reported",
+  "has_outcome_data": false,
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": []
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": true,
+  "processed_data_available": true,
+  "processed_data_format": "Proteome Discoverer .msf search-result files (LFQ.msf)",
+  "license": "Creative Commons Public Domain (CC0)",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "modality": "High",
+    "publications": "High",
+    "sample_count": "Medium",
+    "grade_breakdown": "Medium",
+    "corresponding_author": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "Project description explicitly confirms 'surgically resected meningioma tumor tissue and non-tumor controls' -- clean primary-tissue cohort; normal_control_tissue.included corrected from false to true to match this (count not stated). Tissue preservation corrected to fresh_frozen ('Tumor tissue were snap frozen in liquid nitrogen during surgery'). Pipeline/platform/license/date_deposited/date_updated filled in from the live PRIDE record. RE-VERIFICATION CORRECTION (2026-07-12): title corrected from 'Mining the meningioma landscape...' to 'Mining the meningioma lanscape...' to match the live PRIDE project title verbatim (the source title contains the misspelling 'lanscape'; the record had silently normalized it). FOLLOW-UP PUBLICATION SEARCH (2026-07-13), match found and directly confirmed: a Europe PMC full-text search for PXD014852 returned Mukherjee et al. 2020 (PMID 32974197, Frontiers in Oncology, 'Comprehending Meningioma Signaling Cascades Using Multipronged Proteomics Approaches & Targeted Validation of Potential Markers'); its Data Availability Statement (fetched directly) lists this exact accession alongside PXD014853, PXD014855, and PXD014823 as datasets deposited for this study. A second, later paper (Biswas et al. 2023, PMID 37887327, Cells, 'Integrated Meta-Omics Analysis Unveils the Pathways Modulating Tumorigenesis and Proliferation in High-Grade Meningioma') also cites PXD014852 in its methods, but only as a downloaded/reused external dataset for a meta-analysis ('two proteomic datasets, PXD014852 and PXD007073, were matched with the meta-analysis criteria and downloaded'), so the 2020 Mukherjee paper (the original depositing study, matching this record's corresponding_author Srivastava S as last author) is used here as the originating publication, not the 2023 reuse paper. Publication added; publication_status normal so tags.peer_reviewed set true. DEEP-AUDIT PASS (2026-07-14): AUTHOR LIST CORRECTED: publications[0].authors had been mechanically truncated to the first 6 names; Europe PMC's authorString for PMID 32974197 confirms 13 total authors, now written in full. CORRESPONDING AUTHOR RE-CONFIRMED: direct contrib-group xref check of PMC7482667.xml finds a single corresp block, 'Correspondence: Sanjeeva Srivastava, sanjeeva@iitb.ac.in', matching this record's existing value exactly; no change needed, confidence recorded as High. HIDDEN PER-SAMPLE DATA FOUND IN FULL TEXT, filling previously-'Not reported' sample_count/grade_breakdown: PMC7482667's Methods section states verbatim, under the heading 'Global Proteomic Analysis of Meningioma Patient Cohort' (i.e. the global/label-free-quantification arm matching this accession's own title, 'Mining the meningioma lanscape...using LFQ'): 'Global proteomic profiling/shotgun proteomics was performed across MG1 (n = 10), MG II (n = 11), MGIII (n = 2), Normal dura mater (n = 4), and Arachnoid mater (n = 4)' -- 10+11+2=23 tumor samples plus 8 non-tumor controls = 31 total. sample_count filled to 31 (matching this corpus's convention of including normal-control samples in sample_count, tracked separately via normal_control_tissue); grade_breakdown filled to {grade_1:10, grade_2:11, grade_3:2}; normal_control_tissue.type/count specified as 'Normal dura mater (n=4) and arachnoid mater (n=4)'/8. tags.grade_comparable corrected from false to true. CONFIDENCE FLAGGED MEDIUM, discrepancy documented rather than silently resolved: the same paper's earlier abstract/results narrative separately states 'Label-free based proteomics study was done from peptide samples of 21 patients and 8 non-tumor controls', a different tumor-sample total (21 vs 23) than the Methods-section MG1/MGII/MGIII breakdown used above. The Methods-section figure was preferred because it is explicitly tied to the named 'Global proteomic profiling/shotgun proteomics'/LFQ sub-study that matches this specific PXD014852 accession (this paper also deposited PXD014853/PXD014855/PXD014823 for other proteomic sub-studies, per its Data Availability Statement), whereas the '21 patients' figure is a less-specific narrative summary elsewhere in the paper; patient_count is left 'Not reported' rather than guessing which of 21/23 is the true unique-patient count (some patients may have contributed >1 sample, or this may be an inconsistency in the source paper itself). No brain-invasion or outcome/survival data found in the full text checked (zero hits for 'brain invasion', 'grade II'/'grade III' outside the MG count table, or survival terms); those fields correctly remain false/'Not reported'.",
+  "source_urls": [
+    "https://www.ebi.ac.uk/pride/archive/projects/PXD014852"
+  ],
+  "tags": {
+    "grade_comparable": true,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": false,
+    "large_cohort": false,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": false,
+    "has_outcome_data": false,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

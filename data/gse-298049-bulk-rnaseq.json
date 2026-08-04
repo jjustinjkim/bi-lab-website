@@ -1,0 +1,98 @@
+{
+  "id": "gse-298049-bulk-rnaseq",
+  "title": "NICO Myriad system Improves sample quality for molecular pathology assays",
+  "accessions": [
+    "GSE298049"
+  ],
+  "related_accessions": [],
+  "source_repositories": [
+    "GEO",
+    "SRA"
+  ],
+  "publications": [],
+  "corresponding_author": "Glaucia M de Mendon\u00e7a Fernandes, Daniel Pevedello",
+  "institution": "Florida International University",
+  "date_deposited": "2025-05-23",
+  "date_updated": "2026-06-30",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-10",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-10",
+  "verification_tier": 2,
+  "found_via": [
+    "keyword_api"
+  ],
+  "modality": [
+    "bulk_rna_seq"
+  ],
+  "platform": "Illumina HiSeq 1500 (GPL18460)",
+  "reference_genome": "Not reported",
+  "pipeline": "Not reported",
+  "patient_count": 20,
+  "sample_count": 29,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": 24,
+    "grade_2": 5,
+    "grade_3": 0
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": "Not reported",
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "Not reported"
+  ],
+  "anatomic_location_breakdown": "Skull base (17), frontal lobe (8), frontal and parietal lobe (2), frontal and temporal lobe (2) (n=29, parsed from GSM 'anatomical location' field)",
+  "tissue_preservation": "fresh_frozen",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "19 female, 10 male (n=29, extracted from GSM 'gender' field)",
+  "age_distribution": "Range 39-80 years (n=29, parsed from GSM 'age' field)",
+  "has_outcome_data": "Not reported",
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": []
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": "Not reported",
+  "processed_data_available": true,
+  "processed_data_format": "GSE298049_NICO-all_samples_tpm.csv.gz",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "sample_count": "High",
+    "patient_count": "High",
+    "modality": "High",
+    "publications": "Low"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "PER-SAMPLE DATA UPDATE (2026-07-10): Per-sample grade/sex data recovered from family.soft (29/29 samples, WHO grade I/II counts sum exactly to sample_count). Also has a per-sample Ki-67 proliferation-index field not yet parsed. Series-level GEO metadata verified directly against the live source; per-sample clinical/pathology fields (grade, sex/age, anatomic location, brain invasion, treatment timepoint) have not yet been extracted from individual GSM records or supplementary tables -- part of the batch-1 scaling pass, prioritizing breadth of verified accessions over per-sample depth. Publication metadata pulled from PubMed esummary; not yet manually spot-checked against the full text for every record in this batch. FACT-CHECK UPDATE (2026-07-10 verification pass): tissue_preservation filled in as 'fresh_frozen', previously 'Not reported'. The series summary discusses FFPE only as background motivation (limitations of standard clinical FFPE workflows generally), which initially made the actual preservation method of these specific 29 samples ambiguous between the 'Traditional' and 'NICO' extraction protocols being compared. Resolved by checking individual GSM sample titles directly: both protocols use an 'FF' (fresh frozen) prefix in the sample title (e.g. 'NICO-FF07171890' and 'ST-FF07172307'), confirming all 29 samples across both protocols are fresh-frozen tissue, not FFPE. EXTERNAL RE-VERIFICATION (2026-07-12): patient_count filled in as 20 (Series_summary and overall_design both explicitly state 'in 20 meningioma patients'; 29 samples derive from 20 patients across the Traditional and NICO protocols). anatomic_location_breakdown parsed from all 29 GSM 'anatomical location' fields: skull base 17, frontal lobe 8, frontal and parietal lobe 2, frontal and temporal lobe 2. age_distribution parsed from GSM 'age' field: range 39-80 years. Grade tally (24 WHO I, 5 WHO II) and sex tally (19 female, 10 male) re-confirmed against all 29 live GSM records.",
+  "source_urls": [
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE298049"
+  ],
+  "tags": {
+    "grade_comparable": true,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": false,
+    "large_cohort": false,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": false,
+    "has_outcome_data": false,
+    "peer_reviewed": false
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

@@ -1,0 +1,131 @@
+{
+  "id": "gse-313693-snrnaseq",
+  "title": "Single-nuclei RNA-seq of meningioma",
+  "accessions": [
+    "GSE313693"
+  ],
+  "related_accessions": [
+    "GSE313694"
+  ],
+  "source_repositories": [
+    "GEO"
+  ],
+  "publications": [
+    {
+      "title": "A microenvironment-determined risk continuum refines subtyping in meningioma and reveals determinants of machine learning-based tumor classification",
+      "authors": [
+        "Maas SLN",
+        "Tang Y",
+        "Stutheit-Zhao E",
+        "Rahmanzade R",
+        "Blume C",
+        "Hielscher T"
+      ],
+      "venue": "Nature Genetics",
+      "year": 2026,
+      "doi": "10.1038/s41588-025-02475-w",
+      "pmid": "41663806",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Sybren N. Maas / Felix Sahm",
+  "institution": "Heidelberg University Hospital",
+  "date_deposited": "2025-12-15",
+  "date_updated": "2026-02-18",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-12",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-10",
+  "verification_tier": 1,
+  "found_via": [
+    "keyword_api",
+    "citation_chain"
+  ],
+  "modality": [
+    "snrna_seq"
+  ],
+  "platform": "Illumina NovaSeq 6000 (GPL24676)",
+  "reference_genome": "Not reported",
+  "pipeline": "Not reported",
+  "patient_count": "Not reported (26 samples; patient count not distinguished from sample count in series metadata)",
+  "sample_count": 26,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": null,
+    "grade_2": null,
+    "grade_3": null
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": true,
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "Not reported"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "Not reported",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "Not reported",
+  "age_distribution": "Not reported",
+  "has_outcome_data": false,
+  "paired_multimodal": {
+    "is_paired": true,
+    "related_datasets": [
+      "gse-313694-spatial-transcriptomics"
+    ]
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": true,
+  "processed_data_available": "Not reported",
+  "processed_data_format": "Not reported",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High",
+    "publications": "High",
+    "grade_breakdown": "Low"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "Series states samples span WHO grades and methylation classes per the summary text, but exact per-grade counts and patient vs. sample distinction were not in series-level metadata; needs per-GSM extraction. Note: series description mentions a decrease in myeloid proportion grade 1->3, indicating grade breakdown data exists in the paper's supplementary tables even though not in the GEO series record itself. FACT-CHECK UPDATE (2026-07-10): publications[0].preprint_id was incorrect and has been corrected to null. DOI 10.64898/2026.04.27.26351840 is NOT a preprint of this Maas et al. paper; it is an unrelated, later secondary-analysis preprint by different authors (Piccolo D, Vindigni M, medRxiv 2026) that merely cites this paper (as reference #8). No genuine preprint of the Maas et al. Nature Genetics paper was found via Europe PMC. Also corrected date_deposited/date_updated: the live GEO record's Series_submission_date is Dec 15 2025 and Series_last_update_date is Feb 18 2026 (previously both incorrectly recorded as the 'Public on' date, 2025-12-23).",
+  "source_urls": [
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE313693",
+    "https://pubmed.ncbi.nlm.nih.gov/41663806/",
+    "https://doi.org/10.1038/s41588-025-02475-w"
+  ],
+  "tags": {
+    "grade_comparable": false,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": true,
+    "spatially_resolved": false,
+    "multi_modal_matched": true,
+    "large_cohort": true,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": true,
+    "has_outcome_data": false,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null,
+  "gene_expression_viewer": {
+    "sample_label": "All 26 samples merged (unintegrated)",
+    "data_url": "/pilot-data/gse-313693-snrnaseq.json",
+    "cell_count": 72167,
+    "gene_count": 100,
+    "sample_count": 26,
+    "embedding_method": "scanpy 1.10.3: read_10x_h5 of all 26 samples' deposited raw (unfiltered) Cell Ranger .h5 output (GSM9372517-GSM9372542), QC per sample (min 200 genes/cell, <20% pct_counts_mt), anndata.concat (unintegrated), filter_genes min_cells=3 (27552 genes), normalize_total+log1p, top-2000 HVG, PCA, neighbors, UMAP, Leiden (resolution 0.5, 24 clusters, igraph flavor). Gene panel: 11 guaranteed meningioma driver genes + top HVGs by dispersion to 100 total (started smaller than other records given 26 samples' likely scale).",
+    "pathways": ["Proliferation / cell cycle", "Hypoxia", "Epithelial-mesenchymal transition", "Interferon response"],
+    "integration_note": "All 26 samples were merged by raw concatenation, not batch-corrected/integrated (same approach ScPCA documents for its own merged objects) -- use \"color by sample\" to check for patient-driven rather than biological clustering. 24 Leiden clusters at this scale means several likely resolve to the same broad cell type rather than being 24 distinct identities."
+  }
+}

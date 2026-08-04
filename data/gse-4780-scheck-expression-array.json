@@ -1,0 +1,99 @@
+{
+  "id": "gse-4780-scheck-expression-array",
+  "title": "Gene expression profiling of benign and aggressive meningiomas across WHO grades (Scheck lab, NINDS/NIMH microarray consortium)",
+  "accessions": [
+    "GSE4780"
+  ],
+  "related_accessions": [],
+  "source_repositories": [
+    "GEO"
+  ],
+  "publications": [],
+  "corresponding_author": "Adrienne C. Scheck",
+  "institution": "Barrow Neurological Institute; arrays processed via the NINDS/NIMH microarray consortium at Translational Genomics Research Institute (TGen), Phoenix, AZ",
+  "date_deposited": "2006-05-05",
+  "date_updated": "2019-03-25",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-12",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-11",
+  "verification_tier": 2,
+  "found_via": [
+    "citation_chain"
+  ],
+  "modality": [
+    "expression_array"
+  ],
+  "platform": "Affymetrix HG-U133A (GPL96, subset of samples explicitly marked 'U133A' in sample description) and HG-U133 Plus 2.0 (GPL570), mixed across the 62 samples",
+  "reference_genome": "Not reported",
+  "pipeline": "Not reported",
+  "patient_count": 62,
+  "sample_count": 62,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": 36,
+    "grade_2": 22,
+    "grade_3": 3
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": false,
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "primary",
+    "recurrent"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "fresh_frozen",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "Not reported",
+  "age_distribution": "Not reported",
+  "has_outcome_data": true,
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": []
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": true,
+  "processed_data_available": true,
+  "processed_data_format": "GSM-level MAS5 VALUE/ABS_CALL/DETECTION P-VALUE data table; no combined series-level processed matrix file",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High",
+    "grade_breakdown": "High",
+    "has_outcome_data": "High",
+    "publications": "Low"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "Live GEO verification (2026-07-11) confirms 62 GSM samples (GSM107987-GSM108048), matching the discovery-log claim. The series title itself is only a grant-number placeholder ('Scheck-3U24NS043571-01S1-2'), never renamed to something descriptive; no Series_pubmed_id is linked and this appears to be a raw NINDS/NIMH microarray-consortium submission whose generating publication was never explicitly tied back to this accession in GEO. Per rule against overclaiming outcome/recurrence status without checking actual per-sample data: ALL 62 individual GSM records were fetched and their 'Sample_description' field decoded, e.g. 'Meningioma Primary Grade 1', 'Meningioma Recurrent Grade 2' (one entry, GSM108015, is spelled 'Reccurrent'); this yields a genuine, fully-verified per-sample grade x recurrence-status tally: grade 1 n=36 (29 primary, 7 recurrent), grade 2 n=22 (20 primary, 2 recurrent), grade 3 n=3 (1 primary, 2 recurrent), plus one sample (GSM108020) with no grade or recurrence status recorded at all (description = plain 'Meningioma'), which is excluded from the grade_breakdown/recurrence tallies above (62 = 36+22+3+1). Because this recurrence/primary classification is real, directly-observed per-sample data (not inferred from a title or abstract), has_outcome_data and tags.recurrence_annotated are set true. treatment_timepoint_status uses 'primary' and 'recurrent' (both genuinely present per-sample) rather than the treatment-naive/radiation vocabulary, since no radiation-timing information is stated. tissue_preservation set to fresh_frozen based on the explicit harvest-protocol text ('flash frozen in liquid nitrogen within 1 minute of removal'), though the series summary also mentions an RNAlater-preserved subset not distinguished per-sample; flagging this preservation-method mix for follow-up. A candidate secondary publication was investigated and explicitly NOT added: PMID 21157382 (Stuart et al., J Neuropathol Exp Neurol 2011, 'Identification of gene markers associated with aggressive meningioma by filtering across multiple sets of gene expression arrays') shares a contributor (Scheck AC, co-author) and a closely matching subject (grade I vs III differential expression across multiple cohorts), making it a plausible reuse of this series as one of its 'multiple cohorts', but the abstract alone does not confirm GSE4780 specifically is one of the cohorts used, and Europe PMC full-text search for 'GSE4780' did not surface this paper; left unlinked rather than guessed. FACT-CHECK UPDATE (2026-07-12): corrected a stale statement in this field that said 'large_cohort left false pending centralized quartile recomputation'; tags.large_cohort is in fact true, which is correct: sample_count=62 meets the expression_array top-quartile threshold of >=62 (per docs/schema.md). All other fields re-verified fresh against the live GEO record and all 62 GSM Sample_description strings this pass with no further changes: grade_breakdown 36/22/3 (grade1 29 primary+7 recurrent, grade2 20 primary+2 recurrent, grade3 1 primary+2 recurrent, plus 1 ungraded 'Meningioma' GSM108020 excluded), 5 GPL96 'U133A'-marked samples + 57 GPL570, fresh_frozen preservation, has_outcome_data/recurrence_annotated true.",
+  "source_urls": [
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE4780"
+  ],
+  "tags": {
+    "grade_comparable": true,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": false,
+    "large_cohort": true,
+    "recurrence_annotated": true,
+    "molecular_subtype_annotated": false,
+    "has_outcome_data": true,
+    "peer_reviewed": false
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

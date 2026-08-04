@@ -1,0 +1,130 @@
+{
+  "id": "figshare-22471806-parada-rb1-phosphoproteomics-kinome",
+  "title": "Phosphoproteomic and Kinomic Signature of Clinically Aggressive Grade I (1.5) Meningiomas Reveals RB1 Signaling as a Novel Mediator and Biomarker",
+  "accessions": [
+    "10.1158/1078-0432.22471806.v1",
+    "10.1158/1078-0432.22471809.v1",
+    "10.1158/1078-0432.22471812.v1",
+    "10.1158/1078-0432.22471815.v1"
+  ],
+  "related_accessions": [],
+  "source_repositories": [
+    "Figshare"
+  ],
+  "publications": [
+    {
+      "title": "Phosphoproteomic and Kinomic Signature of Clinically Aggressive Grade I (1.5) Meningiomas Reveals RB1 Signaling as a Novel Mediator and Biomarker.",
+      "authors": [
+        "Parada CA",
+        "Osbun JW",
+        "Busald T",
+        "Karasozen Y",
+        "Kaur S",
+        "Shi M",
+        "Barber J",
+        "Adidharma W",
+        "Cimino PJ",
+        "Pan C",
+        "Gonzalez-Cuyar LF",
+        "Rostomily R",
+        "Born DE",
+        "Zhang J",
+        "Ferreira M Jr"
+      ],
+      "venue": "Clinical Cancer Research",
+      "year": 2020,
+      "doi": "10.1158/1078-0432.CCR-18-0641",
+      "pmid": "31615938",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Manuel Ferreira Jr",
+  "institution": "University of Washington School of Medicine (Dept. of Neurosurgery / Dept. of Pathology), Seattle",
+  "date_deposited": "2023-03-31",
+  "date_updated": "2023-03-31",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-11",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-11",
+  "verification_tier": 2,
+  "found_via": [
+    "keyword_api"
+  ],
+  "modality": [
+    "proteomics_bulk_ms"
+  ],
+  "platform": "iTRAQ 4-plex isobaric labeling LC-MS/MS (phosphoproteomics, Table S6); PamStation/peptide-chip kinome array (Table S7)",
+  "reference_genome": "Not applicable",
+  "pipeline": "Not reported",
+  "patient_count": 85,
+  "sample_count": 85,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": 31,
+    "grade_2": 26,
+    "grade_3": 4
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": false,
+  "brain_invasion": {
+    "status_reported": true,
+    "counts": "Invasion column present in Table S3/S4 per-sample annotation ('yes'/'no'/'NA'); exact aggregate counts not tabulated in this review, present at the individual-sample level in the downloaded file",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "Not reported"
+  ],
+  "anatomic_location_breakdown": "Per-sample free-text location field in Table S3/S4 (e.g. left orbital roof/basal frontal, right parietal parafalcine, extra-axial foramen magnum, falx and parasagittal, convexity, CPA); not aggregated into the controlled vocabulary's anatomic categories here",
+  "tissue_preservation": "Not reported",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "Reported per-sample in Table S3/S4 'Demography' free-text field (e.g. '75 F'); not aggregated in this review",
+  "age_distribution": "Reported per-sample in Table S3/S4 'Demography' free-text field; not aggregated in this review",
+  "has_outcome_data": true,
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": []
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": false,
+  "processed_data_available": true,
+  "processed_data_format": "Two per-sample clinical/pathology annotation tables (Table S3, Table S4, xlsx), one MS/MS phosphopeptide identification/quantification table with iTRAQ4plex + phospho modifications (Table S6, xlsx, 649 peptide-spectrum rows), and one kinome peptide-array signal-intensity table (Table S7, xlsx, 101 peptides x grade-group signal intensity/fold-change/p-value)",
+  "license": "CC BY 4.0",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "sample_count": "Medium",
+    "modality": "Medium",
+    "publications": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "Directly downloaded and inspected 4 of the 5 figshare items named in the extraction task (Table S3, S4, S6, S7); Table S8 (10.1158/1078-0432.22471818.v1) was checked and EXCLUDED from this record because it is an Ingenuity Pathway Analysis (IPA) enrichment-analysis export derived from the other tables' results, not itself a primary molecular dataset. MODALITY CHOICE: this study combines (a) MS-based iTRAQ phosphoproteomics (Table S6) and (b) a kinome peptide-chip array (Table S7, PamStation-style, signal intensity per peptide substrate per grade group -- NOT per-individual-sample, only group-level averages for Grade1/Grade1.5/Grade1.5-1 are present in the deposited file). Neither this project's controlled_vocabulary.md nor any existing modality cleanly covers a kinome peptide-substrate array; 'proteomics_bulk_ms' was used as the closest available fit for the whole record per instructions, but this likely undercounts the distinctiveness of the kinome-array component -- recommend the project consider a dedicated 'kinome_array' (or similar) controlled-vocabulary value if more kinome-profiling datasets are added. SAMPLE-COUNT AMBIGUITY: Table S3 (n=85 valid rows after removing 4 blank trailer rows) mixes Grade I (31), Grade 1.5 (19), Grade II (26+1 annotated variant), and Grade III (4) samples in one per-sample TMA-style annotation table with a near-empty 'Discovery Set?' flag column (only 1 of 85 rows marked 'Yes'), so the exact discovery-cohort vs. independent-TMA-validation-cohort (140 samples per the paper's abstract) split could NOT be cleanly resolved from the deposited spreadsheet alone; Table S4 is a separate, overlapping-but-distinct 59-row table (Grade 1.5=22, I=19, II=18) that additionally carries per-sample NF2/TRAF7/AKT1/KLF4/SMO genotyping. Given this ambiguity, patient_count/sample_count are reported as Table S3's row count (85) as the single largest coherently-countable per-sample table, with the caveat that Table S4's 59-row cohort is a separate/overlapping set not additively combined into this figure (to avoid double-counting patients who may appear in both tables under different IDs). grade_breakdown uses Table S3's counts. has_outcome_data=true is based on directly-observed 'Ability to Recur/Progress' and 'Time of Recurrence/Progression (months)' columns present in both S3 and S4 (not inferred from the abstract), but recurrence_annotated was left false since these columns record eventual outcome per sample rather than an explicit primary-vs-recurrent sample-type split. brain_invasion.status_reported=true reflects a genuine 'Invasion' column in the data, though determination method (e.g. histologic criteria used) is not stated in the spreadsheet, so brain_invasion_annotated tag is false per the tag's own definition (requires a stated determination method). tags.large_cohort is set false regardless of this cohort's actual size, per instruction that large_cohort requires centralized recomputation across the whole inventory after this extraction batch, not a per-record judgment. RE-VERIFICATION AUDIT 2026-07-12: re-downloaded all four figshare items and re-tabulated directly. Table S7's peptide count in processed_data_format was corrected from 103 to 101 (the deposited sheet has peptides numbered 1 through 101; the prior 103 counted the two header rows as data). Table S3 (85 clinical rows: Grade I=31, Grade 1.5=19, Grade II=26 plus 1 atypical-variant, Grade III=4), Table S4 (59 rows with NF2/TRAF7/AKT1/KLF4/SMO), and Table S6 (649 peptide-spectrum rows) all re-confirmed exactly. Publication (PMID 31615938) re-verified: 15 authors, corresponding author Manuel Ferreira (email manuelf3@uw.edu), all match.",
+  "source_urls": [
+    "https://aacr.figshare.com/articles/dataset/Supplementary_Data_from_Phosphoproteomic_and_Kinomic_Signature_of_Clinically_Aggressive_Grade_I_1_5_Meningiomas_Reveals_RB1_Signaling_as_a_Novel_Mediator_and_Biomarker/22471806",
+    "https://aacr.figshare.com/articles/dataset/Supplementary_Data_from_Phosphoproteomic_and_Kinomic_Signature_of_Clinically_Aggressive_Grade_I_1_5_Meningiomas_Reveals_RB1_Signaling_as_a_Novel_Mediator_and_Biomarker/22471809",
+    "https://aacr.figshare.com/articles/dataset/Supplementary_Data_from_Phosphoproteomic_and_Kinomic_Signature_of_Clinically_Aggressive_Grade_I_1_5_Meningiomas_Reveals_RB1_Signaling_as_a_Novel_Mediator_and_Biomarker/22471812",
+    "https://aacr.figshare.com/articles/dataset/Supplementary_Data_from_Phosphoproteomic_and_Kinomic_Signature_of_Clinically_Aggressive_Grade_I_1_5_Meningiomas_Reveals_RB1_Signaling_as_a_Novel_Mediator_and_Biomarker/22471815",
+    "https://pubmed.ncbi.nlm.nih.gov/31615938/",
+    "https://doi.org/10.1158/1078-0432.CCR-18-0641"
+  ],
+  "tags": {
+    "grade_comparable": true,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": false,
+    "large_cohort": true,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": false,
+    "has_outcome_data": true,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

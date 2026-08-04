@@ -1,0 +1,123 @@
+{
+  "id": "gse-55609-yeh-culture-expression-array",
+  "title": "Human meningioma culture",
+  "accessions": [
+    "GSE55609"
+  ],
+  "related_accessions": [
+    "PRJNA240215"
+  ],
+  "source_repositories": [
+    "GEO"
+  ],
+  "publications": [
+    {
+      "title": "Transglutaminase 2 expression is increased as a function of malignancy grade and negatively regulates cell growth in meningioma.",
+      "authors": [
+        "Huang YC",
+        "Wei KC",
+        "Chang CN",
+        "Chen PY",
+        "Hsu PW",
+        "Chen CP",
+        "Lu CS",
+        "Wang HL",
+        "Gutmann DH",
+        "Yeh TH"
+      ],
+      "venue": "PLoS One",
+      "year": 2014,
+      "doi": "10.1371/journal.pone.0108228",
+      "pmid": "25247996",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Tu-Hsueh Yeh",
+  "institution": "Department of Neurology / Department of Neurosurgery, Chang Gung Memorial Hospital at Linkou, Chang Gung University College of Medicine, Taiwan",
+  "date_deposited": "2014-03-05",
+  "date_updated": "2019-03-25",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-12",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-11",
+  "verification_tier": 2,
+  "found_via": [
+    "citation_chain"
+  ],
+  "modality": [
+    "expression_array"
+  ],
+  "platform": "Affymetrix Human Genome U133 Plus 2.0 Array (GPL570)",
+  "reference_genome": "Not reported",
+  "pipeline": "Not reported",
+  "patient_count": 24,
+  "sample_count": 24,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": 18,
+    "grade_2": 3,
+    "grade_3": 0
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": false,
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "Not applicable"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "not_applicable",
+  "normal_control_tissue": {
+    "included": true,
+    "type": "primary cultures of non-neoplastic arachnoid membrane, grown under the identical culture protocol as the tumor samples",
+    "count": 3
+  },
+  "sex_distribution": "Not reported",
+  "age_distribution": "Not reported",
+  "has_outcome_data": false,
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": []
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": true,
+  "processed_data_available": true,
+  "processed_data_format": "GSM-level RMA-normalized values (sample data table); no combined series-level processed matrix file",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High",
+    "publications": "High",
+    "grade_breakdown": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "DEEP-AUDIT (2026-07-14): publications[0].authors was truncated to exactly 6 names; expanded to the full 10-author Europe PMC authorString for PMID 25247996 (Huang YC ... Gutmann DH, Yeh TH), which confirms Yeh TH as the last author, consistent with the already-verified sole corresponding author (Tu-Hsueh Yeh, do2739@adm.cgmh.org.tw per PMC4172767, corrected in the 2026-07-12 pass). No further correspondence, grade, or outcome-data discrepancies found. RULE 13 JUDGMENT CALL, flagged explicitly per instructions: all 24 individual GSM records were fetched and read in full. Series_overall_design states '24 primary meningioma cultures from surgical specimen were maintained to primary meningioma cultures' and every GSM's growth_protocol field reads identically: 'Meningioma samples were acquired from surgical specimens, then were maintained in DMEM with 10% FBS.' Per-sample 'cell type' is uniformly 'primary meningioma culture' (or 'primary...culture' for the 3 arachnoid controls) with a per-sample 'tumor grade' field (values: arachnoid x3, WHO grade I x18, WHO grade II x3). There is NO mention anywhere in the series or any of the 24 samples of an established/immortalized cell line name (e.g. IOMM-Lee, Ben-Men-1, KT21-MG1, HBL-52, the immortalized lines this project has excluded to /data/adjacent/ elsewhere), no passage number suggesting long-term immortalization, and no viral transformation/SV40/hTERT language. This reads as genuine short-term primary culture directly from resected tumor tissue (real WHO-graded patient tumors, individually graded), one step removed from raw tissue but not an established cell line -- consistent with this project's stated standard that some cultured-tissue studies remain in-scope. Judgment call made: KEPT IN CORE (/data/), not /data/adjacent/, but flagging explicitly so a human can double-check this reasoning. Full grade tally (verified against all 24 GSM records, not a partial sample): 3 arachnoid (non-neoplastic) controls, 18 WHO grade I, 3 WHO grade II, 0 WHO grade III. tissue_preservation set to 'not_applicable' (cultured cells, neither fresh-frozen nor FFPE tissue) and treatment_timepoint_status set to 'Not applicable', mirroring this project's existing convention for cultured/cell-derived records (see e.g. gse-282351-methylation.json in /data/adjacent/). Publication (PMID 25247996, Huang et al., PLoS One 2014, Transglutaminase 2 / TGM2 study) confirmed via PubMed full abstract fetch, which states verbatim 'we performed microarray analyses on 24 primary cultures from 21 meningiomas and 3 arachnoid membranes' -- an exact match to this series' sample composition, giving high confidence in this publication link despite no Series_pubmed_id being present in the GEO record itself. large_cohort left false pending centralized quartile recomputation. CORRESPONDING AUTHOR CORRECTED 2026-07-12: prior value 'Tu-Hsueh Yeh / Yi-Chin Huang' included the first author (Huang YC), who is not a corresponding author. The PLoS One paper (PMID 25247996, PMC4172767) carries a single correspondence email do2739@adm.cgmh.org.tw, which belongs to Tu-Hsueh Yeh (matches the GEO contact email); Yeh is the sole corresponding author. Corrected to 'Tu-Hsueh Yeh'. All 24 GSM growth_protocol/cell-type/tumor-grade fields re-verified 2026-07-12 against the live family.soft: 3 arachnoid controls, 18 WHO grade I, 3 WHO grade II confirmed unchanged; the primary-short-term-culture (not immortalized line) judgment holds.",
+  "source_urls": [
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE55609",
+    "https://pubmed.ncbi.nlm.nih.gov/25247996/",
+    "https://doi.org/10.1371/journal.pone.0108228",
+    "https://www.ncbi.nlm.nih.gov/bioproject/PRJNA240215"
+  ],
+  "tags": {
+    "grade_comparable": true,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": false,
+    "large_cohort": false,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": false,
+    "has_outcome_data": false,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

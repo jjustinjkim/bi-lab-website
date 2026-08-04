@@ -1,0 +1,99 @@
+{
+  "id": "egas00001000282-sanger-meningioma-targeted-seq",
+  "title": "Meningioma_Targeted_Sequencing_Study",
+  "accessions": [
+    "EGAS00001000282",
+    "EGAD00001000273"
+  ],
+  "related_accessions": [],
+  "source_repositories": [
+    "EGA"
+  ],
+  "publications": [],
+  "corresponding_author": "Not reported",
+  "institution": "Not reported",
+  "date_deposited": "Not reported",
+  "date_updated": "Not reported",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-11",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-11",
+  "verification_tier": 2,
+  "found_via": [
+    "keyword_api"
+  ],
+  "modality": [
+    "targeted_panel_seq"
+  ],
+  "platform": "Illumina HiSeq 2000",
+  "reference_genome": "Not reported",
+  "pipeline": "Not reported",
+  "patient_count": "Not reported",
+  "sample_count": 147,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": null,
+    "grade_2": null,
+    "grade_3": null
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": false,
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "Not reported"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "Not reported",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "Not reported",
+  "age_distribution": "Not reported",
+  "has_outcome_data": "Not reported",
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": []
+  },
+  "access_type": "controlled",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": "Not reported",
+  "processed_data_available": "Not reported",
+  "processed_data_format": "Not reported",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not reported",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "Medium",
+    "publications": "Low"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "NEW RECORD (2026-07-11). Live EGA record: EGAS00001000282 ('Meningioma_Targeted_Sequencing_Study'), pubmed_ids=null, description states 'This Study uses a focused bespoke bait pull down library method to target findings of Meningioma whole genome and whole exome sequencing studies in order to validate findings. This method will also be used on a larger set of tumour only samples...'. Dataset EGAD00001000273 ('Meningioma Targeted Sequencing Study', 147 samples, dataset_types=null, technologies=['Illumina HiSeq 2000']). Modality is set to targeted_panel_seq based on the plain-text description (bespoke bait pulldown/validation panel), since dataset_types itself is null and provides no categorical confirmation; confidence marked Medium accordingly. The live /samples endpoint returns all-null fields for all 147 entries (no subject_id, phenotype, or title), so patient_count and any tumor/normal split cannot be derived and are 'Not reported'. An active PubMed search for a linked publication (combinations of 'meningioma', 'targeted sequencing', 'validation', 'Sanger') did not surface a clearly matching dedicated paper; this study's stated purpose (validating findings from a companion WGS/WES effort in a larger tumor-only set) suggests it may be a supporting/validation cohort for another paper not clearly identifiable from the terse EGA metadata alone. This EGAS/EGAD shares its Data Access Committee/policy accession (EGAP00001000001) with EGAS00001000177, EGAS00001000859, and EGAS00001001155 in this batch, suggesting a common Wellcome Trust Sanger Institute submitting group, but no explicit submitter/institution field is exposed by the live API, so institution is left 'Not reported'. publications left as an empty array and peer_reviewed set false; publication_status defaults to 'normal' absent any evidence otherwise. Only public EGA study/dataset-level metadata was used; the controlled-access sequencing data itself was never accessed, per docs/scope.md. FOLLOW-UP PUBLICATION SEARCH (2026-07-11), no match found: a dedicated, thorough follow-up search was conducted to try to find a linked publication and none was found. Steps taken: (1) Europe PMC full-text search for the exact strings EGAS00001000282 and EGAD00001000273 (https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EGAS00001000282&format=json and the EGAD equivalent) both returned hitCount=0. (2) Web searches for the bare accession strings, for the exact title 'Meningioma_Targeted_Sequencing_Study', and for keyword combinations describing the study's own stated purpose (a bespoke bait-pulldown panel validating findings from meningioma WGS/WES studies in a larger tumor-only cohort) returned no dedicated matching paper; some AI-generated search summaries asserted this accession belonged to an unrelated myelodysplastic syndrome whole-genome study, but that claim was not backed by any actual source in the returned links and directly contradicts the live EGA record (title 'Meningioma_Targeted_Sequencing_Study', confirmed meningioma validation-panel description) already established in this file, so it was discarded as a search-summary hallucination rather than treated as a lead. (3) The sibling Collord et al. 2018 Scientific Reports paper (PMID 30202034), which links three related Sanger anaplastic-meningioma EGA studies (EGAS00001000859, EGAS00001001155, EGAS00001001873, the latter two also being 366/500-gene targeted cancer-gene panels), was checked directly as a candidate given the shared DAC accession and targeted-panel modality: its Data Availability statement was retrieved both via a PMC full-text fetch and independently via the raw Europe PMC fullTextXML endpoint for PMC6131140, and both confirm the statement lists exactly five accessions -- EGAS00001000377, EGAS00001000828, EGAS00001000859, EGAS00001001155, EGAS00001001873 -- none of which is EGAS00001000282. The paper's own reported validation cohort (31 primary tumors by a 366-gene panel) also does not correspond to this study's 147-sample tumor-only validation set, and this study's description (a broad, generic effort to 'validate findings of Meningioma whole genome and whole exome sequencing studies', not anaplastic-meningioma-specific) reads as a distinct, larger-scope project from the anaplastic-meningioma-only Collord paper. This EGA study is therefore confirmed not to be part of the Collord 2018 accession set. (4) The Wellcome Sanger Institute's public Cancer Genome Project page was checked directly and does not mention any meningioma targeted-sequencing project by name. (5) No submitter/DAC contact name is exposed by the live EGA API for this study (pubmed_ids, external_links both null; DAC accession EGAP00001000001 returns 404 on the metadata API), so no separate PI/lab name lead could be extracted to search on beyond what was already tried. Conclusion: this appears to be a genuinely orphaned ~2012 Sanger validation-panel registration (147 tumor-only samples, no matched normals recorded) with no discoverable associated publication as of this search, possibly because it was a supporting/validation dataset folded into a later paper's results without being separately cited by EGA accession, or never published as a standalone analysis. publications is left as an empty array and peer_reviewed remains false. A future maintainer should not assume this is an easy unresolved lead; both the original extraction and this follow-up have already searched it thoroughly.",
+  "source_urls": [
+    "https://ega-archive.org/studies/EGAS00001000282",
+    "https://ega-archive.org/datasets/EGAD00001000273",
+    "https://www.sanger.ac.uk/group/cancer-genome-project/"
+  ],
+  "tags": {
+    "grade_comparable": false,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": false,
+    "large_cohort": true,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": false,
+    "has_outcome_data": false,
+    "peer_reviewed": false
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

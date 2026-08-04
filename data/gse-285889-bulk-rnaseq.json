@@ -1,0 +1,116 @@
+{
+  "id": "gse-285889-bulk-rnaseq",
+  "title": "Integrative transcriptomics and network analysis reveals core genes driving meningioma pathogenesis and clinical outcomes",
+  "accessions": [
+    "GSE285889"
+  ],
+  "related_accessions": [],
+  "source_repositories": [
+    "GEO",
+    "SRA"
+  ],
+  "publications": [
+    {
+      "title": "Integrative transcriptomics and network analysis reveals core genes driving meningioma pathogenesis and clinical outcomes.",
+      "authors": [
+        "Zohdy YM",
+        "Alawieh AM",
+        "Jahangiri A",
+        "Siciliano B",
+        "Tariciotti L",
+        "Rodas A"
+      ],
+      "venue": "Scientific reports",
+      "year": 2025,
+      "doi": "10.1038/s41598-025-29334-2",
+      "pmid": "41272189",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Youssef M Zohdy, Ali M Alawieh, Tomas Garzon-Muvdi",
+  "institution": "Emory University",
+  "date_deposited": "2025-01-05",
+  "date_updated": "2025-12-11",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-14",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-10",
+  "verification_tier": 1,
+  "found_via": [
+    "keyword_api",
+    "citation_chain"
+  ],
+  "modality": [
+    "bulk_rna_seq"
+  ],
+  "platform": "Illumina NovaSeq 6000 (GPL24676)",
+  "reference_genome": "hg38",
+  "pipeline": "nf-core bulk RNA-seq pipeline (FastQC, TrimGalore, STAR v2.7.11, Salmon, DESeq2)",
+  "patient_count": "Not reported",
+  "sample_count": 14,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": null,
+    "grade_2": null,
+    "grade_3": null
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": "Not reported",
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "Not reported"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "Not reported",
+  "normal_control_tissue": {
+    "included": true,
+    "type": "normal meninges",
+    "count": 3
+  },
+  "sex_distribution": "Not reported",
+  "age_distribution": "Not reported",
+  "has_outcome_data": "Not reported",
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": []
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": "Not reported",
+  "processed_data_available": true,
+  "processed_data_format": "GSE285889_FPKM.csv.gz",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High",
+    "publications": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "Series-level GEO metadata verified directly against the live source; per-sample clinical/pathology fields (grade, sex/age, anatomic location, brain invasion, treatment timepoint) have not yet been extracted from individual GSM records or supplementary tables -- part of the batch-1 scaling pass, prioritizing breadth of verified accessions over per-sample depth. Publication metadata pulled from PubMed esummary; not yet manually spot-checked against the full text for every record in this batch. FACT-CHECK (2026-07-10): normal_control_tissue was recorded as not included, but Series_overall_design states tumors were 'compared to normal meninges'; checked individual GSM source_name_ch1 fields directly and confirmed 7 of the 40 samples (GSM8712034-GSM8712040) are labeled 'Patient resected meningies' (normal control) versus 33 labeled 'Patient resected tumor'; corrected to included=true, count=7. FACT-CHECK (2026-07-11): corresponding_author was missing a genuine third corresponding author. Fetched the paper's open-access PMC full text (PMC12749072) directly: three authors are marked corresp=\"yes\" with listed emails -- Zohdy YM (youssef.ismail@emory.edu), Alawieh AM (ali.mostafa.alawieh@emory.edu), and Garzon-Muvdi T (tomas.garzon-muvdi@emory.edu), the paper's last author. All three are present in the live GSE285889 Series_contributor list (16 names total); corrected corresponding_author from just the first two to all three, matching GEO's contributor name format. EXTERNAL RE-VERIFICATION (2026-07-12): reference_genome filled from 'Not reported' to 'hg38' and pipeline from 'Not reported' to the nf-core bulk RNA-seq pipeline (TrimGalore, STAR v2.7.11, Salmon, DESeq2); all 40 GSM records' data_processing state 'Assembly: hg38' and describe this pipeline verbatim. Re-verified normal_control (7 of 40 GSMs labelled 'Patient resected meningies', GSM8712034-8712040), sample_count (40 GSM), platform, dates, and the three corresponding authors (Zohdy, Alawieh, Garzon-Muvdi all carry the author-notes correspondence marker in PMC12749072) against live GEO/PubMed; no further discrepancy. sex/age remain 'Not reported' (no per-sample sex or age field exists in this series' GSM characteristics). DEEP-AUDIT UPDATE (2026-07-14): sample_count was incorrectly recorded as 40, which is the raw GSM library-record count, not the number of distinct biological specimens. Re-pulled all 40 GSM records fresh (acc.cgi?acc=GSE285889&targ=gsm&form=text&view=brief): titles follow a specimen-plus-replicate pattern (e.g. D1-1/D1-2, P2-1/P2-2/P2-3), and every GSM's own Sample_extract_protocol_ch1 states libraries were built 'in 3 technical replicates for each sample.' Enumerating distinct specimen-title prefixes gives exactly 14 distinct specimens: 3 normal-meninges donors (D1, D2, D3; 2-3 replicate libraries each = 7 GSMs) and 11 tumor specimens (P2, P3, P4, P5A, P5B, P6, P7, P8, P9, P10A, P10B; 3 replicate libraries each = 33 GSMs), totaling the 40 deposited GSMs. This is independently corroborated by the peer-reviewed paper's own Methods section (PMC12749072, 'Patient cohort and specimens'): 'A total of 11 meningiomas were included in this study, resected from 9 patients; in two patients, two tumors were simultaneously resected from different anatomical locations... Additionally, 3 normal meninges were resected and included in the analysis: 2 samples were obtained during meningioma resection away from the tumor site, and 1 sample was obtained during a cerebrovascular lesion surgery.' Corrected sample_count from 40 to 14 (11 tumor + 3 normal biological specimens) and normal_control_tissue.count from 7 to 3 (3 distinct normal-donor specimens, not the 7 GSM library records derived from them). patient_count left 'Not reported': the paper gives a clean count for the tumor arm only (9 patients contributing 11 tumors), but whether the 3 normal-meninges specimens come from any of those same 9 patients or from additional, distinct individuals cannot be determined from the live source (2 of the 3 are described only as 'away from the tumor site' during meningioma resection, without stating if patient-matched to the 9; 1 is explicitly a different, non-meningioma cerebrovascular-lesion patient), so a single total patient_count would require guessing and was not filled in.",
+  "source_urls": [
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE285889",
+    "https://pubmed.ncbi.nlm.nih.gov/41272189/"
+  ],
+  "tags": {
+    "grade_comparable": false,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": false,
+    "large_cohort": false,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": false,
+    "has_outcome_data": false,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

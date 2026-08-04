@@ -1,0 +1,129 @@
+{
+  "id": "gse-232528-bulk-rnaseq",
+  "title": "\"Immunogenic subtype\" characterised by macrophages infiltration predominantly comprise meningiomas in neurofibromatosis type 2 patients",
+  "accessions": [
+    "GSE232528"
+  ],
+  "related_accessions": [],
+  "source_repositories": [
+    "GEO",
+    "SRA"
+  ],
+  "publications": [
+    {
+      "title": "Meningiomas in patients with neurofibromatosis type 2 predominantly comprise 'immunogenic subtype' tumours characterised by macrophage infiltration.",
+      "authors": [
+        "Teranishi Y",
+        "Miyawaki S",
+        "Nakatochi M",
+        "Okano A",
+        "Ohara K",
+        "Hongo H",
+        "Ishigami D",
+        "Sakai Y",
+        "Shimada D",
+        "Takayanagi S",
+        "Ikemura M",
+        "Komura D",
+        "Katoh H",
+        "Mitsui J",
+        "Morishita S",
+        "Ushiku T",
+        "Ishikawa S",
+        "Nakatomi H",
+        "Saito N"
+      ],
+      "venue": "Acta neuropathologica communications",
+      "year": 2023,
+      "doi": "10.1186/s40478-023-01645-3",
+      "pmid": "37752594",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Yu Teranishi, Satoru Miyawaki",
+  "institution": "The University of Tokyo",
+  "date_deposited": "2023-05-15",
+  "date_updated": "2023-10-03",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-10",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-10",
+  "verification_tier": 1,
+  "found_via": [
+    "keyword_api",
+    "citation_chain"
+  ],
+  "modality": [
+    "bulk_rna_seq"
+  ],
+  "platform": "Illumina NovaSeq 6000 (GPL24676)",
+  "reference_genome": "Not reported",
+  "pipeline": "Not reported",
+  "patient_count": "Not reported",
+  "sample_count": 29,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": null,
+    "grade_2": null,
+    "grade_3": null
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": "Not reported",
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "Not reported"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "Not reported",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "12 male, 17 female (n=29, extracted from GSM 'sex' field)",
+  "age_distribution": "Not reported",
+  "has_outcome_data": true,
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": []
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": false,
+  "processed_data_available": true,
+  "processed_data_format": "GSE232528_RAW.tar",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High",
+    "publications": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "DEEP-AUDIT (2026-07-14): publications[0].authors was truncated to exactly 6 names; expanded to the full 18-author Europe PMC authorString for PMID 37752594 (Teranishi Y ... Ishikawa S, Nakatomi H, Saito N). corresponding_author re-verified against the paper's own <corresp> footnotes (PMC10521403 full text): 'Teranishi Y...(yteranishi-nsu@umin.ac.jp)' and 'Miyawaki S...(smiya-nsu@m.u-tokyo.ac.jp)', confirming the existing 'Yu Teranishi, Satoru Miyawaki' value is correct; no change made. has_outcome_data corrected from 'Not reported' to true (tags.has_outcome_data likewise true): the paper's own full text explicitly compares mRNA expression profiles between 'patients with recurrence (+)' and implicitly recurrence(-) within the same RNA-seq-profiled sample set this record covers (Methods state 'presence/absence and timing of recurrence' were tracked, and Fig./Additional file S4-S6 legends read 'Each immunologic gene expression in recurrence(-) and recurrence(+)', 'Each deconvoluted score in recurrence(-) and recurrence(+)', performed on the n=14 NF2 + n=15 sporadic NF2-altered = 29 transcriptomic cohort that matches this record's sample_count exactly) -- i.e. recurrence outcome data is present for this dataset's own samples even though GEO's per-GSM metadata does not expose a recurrence field. recurrence_annotated left false since no explicit per-sample COUNT of recurrence(+) vs recurrence(-) specifically within this 29-sample subset was found in the retrievable text (only the qualitative comparison), consistent with this project's convention requiring counts, not just category presence, for that tag. 'immunogenic subtype' (the paper's title term) was also evaluated for molecular_subtype_annotated: it reads as a single descriptive conclusion about the NF2 cohort overall (an immune-profiling comparison), not a multi-category named subtype system with discrete per-sample labels, so molecular_subtype_annotated is left unchanged (false/Not reported) as already recorded. PER-SAMPLE DATA UPDATE (2026-07-10): Per-sample sex data recovered from family.soft. A 'group' characteristic field is also present (likely the NF2-patient vs. sporadic or immunogenic-subtype grouping central to this paper's title) but not yet individually parsed. Series-level GEO metadata verified directly against the live source; per-sample clinical/pathology fields (grade, sex/age, anatomic location, brain invasion, treatment timepoint) have not yet been extracted from individual GSM records or supplementary tables -- part of the batch-1 scaling pass, prioritizing breadth of verified accessions over per-sample depth. Publication metadata pulled from PubMed esummary; not yet manually spot-checked against the full text for every record in this batch. FACT-CHECK (2026-07-10): raw_data_available corrected to false, GEO Series_overall_design explicitly states raw data files were not provided per the study's ethical approval terms.",
+  "source_urls": [
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE232528",
+    "https://pubmed.ncbi.nlm.nih.gov/37752594/"
+  ],
+  "tags": {
+    "grade_comparable": false,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": false,
+    "large_cohort": false,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": false,
+    "has_outcome_data": true,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

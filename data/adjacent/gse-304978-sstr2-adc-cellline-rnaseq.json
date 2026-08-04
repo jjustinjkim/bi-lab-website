@@ -1,0 +1,96 @@
+{
+  "id": "gse-304978-sstr2-adc-cellline-rnaseq",
+  "title": "Humanized antibody-drug conjugates for SSTR2-positive tumor treatment [meningioma cell line arm]",
+  "accessions": [
+    "GSE304978"
+  ],
+  "related_accessions": [],
+  "source_repositories": [
+    "GEO",
+    "SRA"
+  ],
+  "publications": [],
+  "corresponding_author": "Zhuoxin Zhou",
+  "institution": "Ohio State University",
+  "date_deposited": "2025-08-08",
+  "date_updated": "2025-08-12",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-17",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-17",
+  "verification_tier": 2,
+  "found_via": [
+    "keyword_api"
+  ],
+  "modality": [
+    "bulk_rna_seq"
+  ],
+  "platform": "Illumina HiSeq X Ten (Novogene America)",
+  "reference_genome": "Not reported",
+  "pipeline": "Not reported",
+  "patient_count": "Not applicable (cell line)",
+  "sample_count": 10,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": null,
+    "grade_2": null,
+    "grade_3": null
+  },
+  "who_edition": "Not applicable (cell line)",
+  "molecular_subtype_annotated": false,
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "Not applicable"
+  ],
+  "anatomic_location_breakdown": "Not applicable (cell line)",
+  "tissue_preservation": "not_applicable",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "Not reported",
+  "age_distribution": "Not reported",
+  "has_outcome_data": false,
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": []
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": true,
+  "processed_data_available": true,
+  "processed_data_format": "Not reported at the per-sample level",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "NEW RECORD (2026-07-17), resolving the last unresolved item from sources/fresh_search_2026-07-11.md's own note: 'GSE304978 (SSTR2 antibody-drug conjugate study): confirmed this session to be entirely CH157-MN cell line + mouse xenograft model work, no patient tissue; adjacent-eligible (cell line) if ever extracted, consistent with its prior \"raw candidate, never followed up\" status in sources/query_log.md.' Of the 5 similarly-flagged accessions from that same 2026-07-11 note (GSE244554, GSE239795, GSE224347, GSE222895, GSE304978), the first 4 were confirmed already extracted (gse-244554-cellline-rnaseq, gse-239795-pdx-scrnaseq, gse-224347-xenograft-scrnaseq, gse-222895-iomm-lee-xenograft-rnaseq -- presumably in a later session between 2026-07-11 and now); only this one remained genuinely missing. Verified live: 10 GSM records, all CH157-MN meningioma cell line, 5 PBS control + 5 treated with a humanized SSTR2-targeting antibody-drug conjugate (100nM), bulk RNA-seq performed 3 days post-treatment to characterize the ADC's mechanism of action. Per docs/scope.md, cell-line data is adjacent, not core scope. No linked publication found: searched PubMed directly for the study's own title/subject terms and found zero hits, consistent with this being a recent (August 2025) deposit that may predate its own paper's publication or indexing; publications left as an empty array rather than guessed, and tags.peer_reviewed correctly left false. Corresponding author/institution taken from the GSM-level contact fields (Zhuoxin Zhou, Ohio State University) since no Series-level contact/publication fields exist in this deposit. patient_count/who_edition/tissue_preservation/anatomic_location_breakdown/treatment_timepoint_status all set to their 'Not applicable (cell line)' controlled-vocabulary values, consistent with how other cell-line-only adjacent records in this corpus are handled. No per-sample sex/age/grade data exists (not applicable to a cell line), so those fields correctly remain 'Not reported'.",
+  "source_urls": [
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE304978"
+  ],
+  "tags": {
+    "grade_comparable": false,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": false,
+    "large_cohort": false,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": false,
+    "has_outcome_data": false,
+    "peer_reviewed": false
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

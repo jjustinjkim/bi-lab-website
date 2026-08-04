@@ -1,0 +1,107 @@
+{
+  "id": "pxd021188-traf7-meningeal-cell-proteomics",
+  "title": "Mutations in TRAF7 drive meningioma development by dysregulating proteostasis of the RAS-like GTPases",
+  "accessions": [
+    "PXD021188"
+  ],
+  "related_accessions": [],
+  "source_repositories": [
+    "PRIDE",
+    "ProteomeXchange"
+  ],
+  "publications": [
+    {
+      "title": "Loss-of-Function Mutations in TRAF7 and KLF4 Cooperatively Activate RAS-Like GTPase Signaling and Promote Meningioma Development.",
+      "authors": ["Najm P", "Zhao P", "Steklov M", "Sewduth RN", "Baietti MF", "Pandolfi S", "Criem N", "Lechat B", "Maia TM", "Van Haver D", "Corthout N", "Eyckerman S", "Impens F", "Sablina AA"],
+      "venue": "Cancer Research",
+      "year": 2021,
+      "doi": "10.1158/0008-5472.CAN-20-3669",
+      "pmid": "34215617",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Anna Sablina",
+  "institution": "VIB-KU Leuven Center for Cancer Biology",
+  "date_deposited": "2020-08-28",
+  "date_updated": "2024-06-19",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-13",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-13",
+  "verification_tier": 2,
+  "found_via": [
+    "keyword_api"
+  ],
+  "modality": [
+    "proteomics_bulk_ms"
+  ],
+  "platform": "Q Exactive HF (Ultimate 3000 RSLC nano LC)",
+  "reference_genome": "Not applicable",
+  "pipeline": "MaxQuant / Andromeda",
+  "patient_count": "Not applicable (cell line)",
+  "sample_count": 15,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": null,
+    "grade_2": null,
+    "grade_3": null
+  },
+  "who_edition": "Not applicable (cell line)",
+  "molecular_subtype_annotated": false,
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not applicable",
+    "determination_method": "Not applicable"
+  },
+  "treatment_timepoint_status": [
+    "Not applicable"
+  ],
+  "anatomic_location_breakdown": "Not applicable (cell line)",
+  "tissue_preservation": "not_applicable",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "Not applicable",
+  "age_distribution": "Not applicable",
+  "has_outcome_data": false,
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": []
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": true,
+  "processed_data_available": true,
+  "processed_data_format": "MaxQuant proteinGroups/GlyGly output tables",
+  "license": "Creative Commons Public Domain (CC0)",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "modality": "High",
+    "sample_count": "Medium",
+    "publications": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "NEW RECORD (2026-07-13), surfaced by the monthly refresh's PRIDE keyword_api check, verified directly against the live PRIDE Archive API (title and full project/sample-processing description confirmed to match exactly). This is an in vitro model, not patient tissue: the project description explicitly states an 'in vitro meningioma model derived from primary meningeal cells' was engineered via TRAF7 knockdown (shTRAF7 vs shGFP control) and TRAF7 overexpression (WT and a truncated E353* variant), studying proteome/ubiquitome changes -- hence adjacent scope. sample_count=15 is the sum of the two described experiments (6 samples for the shTRAF7 knockdown proteome+ubiquitome comparison, 9 samples for the overexpression proteome comparison), taken directly from the sample-processing protocol text, not estimated. No linked publication was found via a live Europe PMC search (several query variations tried); flagged for a follow-up literature search in a future session. Submitter/institution not exposed in the fields checked; left 'Not reported' rather than guessed. FOLLOW-UP PUBLICATION SEARCH (2026-07-13), match found and directly confirmed: an author search for 'Sablina' + 'TRAF7' + 'meningioma' surfaced Najm et al. 2021 (PMID 34215617, Cancer Research, 'Loss-of-Function Mutations in TRAF7 and KLF4 Cooperatively Activate RAS-Like GTPase Signaling and Promote Meningioma Development'), whose abstract topic (TRAF7 ubiquitin ligase loss-of-function driving RAS-like GTPase signaling in meningioma) matches this project's own description verbatim. Re-fetched the live PRIDE project record's own 'references' field directly (not assumed): it lists DOI 10.1158/0008-5472.CAN-20-3669, an exact match to this PMID's DOI, and the record's 'labPIs' field lists 'Anna Sablina, VIB-KU Leuven Center for Cancer Biology, 3000 Leuven, Belgium' as lab PI, matching this paper's last/corresponding author exactly. corresponding_author and institution updated from 'Not reported' to this PRIDE-confirmed PI/affiliation (High confidence, sourced directly from PRIDE's own labPIs field, not inferred). This is the same paper newly linked this session to the companion RNA-seq record gse-156211-bulk-rnaseq (GEO's own Series_contributor/contact fields for that record independently match the same author group). Publication added; publication_status normal so tags.peer_reviewed set true. AUTHOR-LIST COMPLETENESS FIX (2026-07-14 deep audit): publications[0].authors was truncated to the first 6 of the paper's actual 14 authors; expanded to the full list (ending in Sablina AA, the already-confirmed corresponding author per this record's PRIDE labPI field match) via the Europe PMC REST API authorString field.",
+  "source_urls": [
+    "https://www.ebi.ac.uk/pride/archive/projects/PXD021188"
+  ],
+  "tags": {
+    "grade_comparable": false,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": false,
+    "large_cohort": false,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": false,
+    "has_outcome_data": false,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

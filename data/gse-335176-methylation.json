@@ -1,0 +1,126 @@
+{
+  "id": "gse-335176-methylation",
+  "title": "Genomic hallmarks of depot medroxyprogesterone acetate-associated meningiomas [methylation]",
+  "accessions": [
+    "GSE335176"
+  ],
+  "related_accessions": [
+    "GSE335177",
+    "GSE335175"
+  ],
+  "source_repositories": [
+    "GEO"
+  ],
+  "publications": [
+    {
+      "title": "Genomic hallmarks of depot medroxyprogesterone acetate-associated meningiomas.",
+      "authors": [
+        "Huq S",
+        "Gatesman TA",
+        "Abou-Al-Shaar H",
+        "Raleigh DR",
+        "Hadjipanayis CG",
+        "Bayley JC",
+        "Zenonos GA",
+        "Pearce TM",
+        "Marker DF",
+        "Agnihotri S",
+        "Gardner PA"
+      ],
+      "venue": "Neuro-oncology",
+      "year": 2026,
+      "doi": "10.1093/neuonc/noag136",
+      "pmid": "42258618",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Paul A. Gardner",
+  "institution": "University of Pittsburgh Medical Center",
+  "date_deposited": "2026-06-11",
+  "date_updated": "2026-06-13",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-12",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-10",
+  "verification_tier": 2,
+  "found_via": [
+    "keyword_api"
+  ],
+  "modality": [
+    "dna_methylation_array"
+  ],
+  "platform": "Illumina Infinium MethylationEPIC v2.0 array (GPL33022)",
+  "reference_genome": "Not reported",
+  "pipeline": "Not reported",
+  "patient_count": "Not reported",
+  "sample_count": 10,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": 10,
+    "grade_2": 0,
+    "grade_3": 0
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": true,
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "Not reported"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "ffpe",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "10 female (n=10, per-sample 'gender' field)",
+  "age_distribution": "Not reported",
+  "has_outcome_data": "Not reported",
+  "paired_multimodal": {
+    "is_paired": true,
+    "related_datasets": [
+      "gse-335175-bulk-rnaseq"
+    ]
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": "Not reported",
+  "processed_data_available": true,
+  "processed_data_format": "GSE335176_DMPA_methylation_noob_beta_matrix.csv.gz",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High",
+    "publications": "High",
+    "grade_breakdown": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "Series-level GEO metadata verified directly against the live source; per-sample clinical/pathology fields (grade, sex/age, anatomic location, brain invasion, treatment timepoint) have not yet been extracted from individual GSM records or supplementary tables. FACT-CHECK UPDATE (2026-07-10): publications was incorrectly empty and date_deposited/date_updated were 'Not reported'. The sibling SuperSeries GSE335177 carries a live Series_pubmed_id of 42258618, resolving to 'Genomic hallmarks of depot medroxyprogesterone acetate-associated meningiomas' (Huq S et al., Neuro-Oncology, 2026, DOI 10.1093/neuonc/noag136), matching this series' title minus the '[methylation]' suffix and the same 11-author contributor list; added to publications and verified via PubMed esummary and Europe PMC (no retraction/correction signal). date_deposited/date_updated filled in from Series_submission_date (Jun 11 2026) and this subseries' own Series_last_update_date (Jun 13 2026, one day later than sibling GSE335175's Jun 12 2026). FACT-CHECK UPDATE (2026-07-10 verification pass): tissue_preservation filled in as 'ffpe', previously 'Not reported'. Series_overall_design states 'Genome-wide DNA methylation profiling ... of 10 FFPE WHO grade 1 meningiomas'. FACT-CHECK UPDATE (2026-07-12): all 10 GSM records parsed from family.soft. grade_breakdown populated to 10/0/0 (every sample 'who grade: 1'). sex_distribution populated to '10 female' (every sample 'gender: female'). molecular_subtype_annotated corrected from 'Not reported' to true (and tags.molecular_subtype_annotated false->true): each sample carries named DNA-methylation-class annotations ('heidelberg methylation class' Ben-2/Ben-3/unclassified, 'baylor meng subgroup' MenG-A, 'ucsf methylation group' Merlin-intact) plus a 'traf7 group' driver field. corresponding_author corrected from the first-two-authors string 'Sakibul Huq, Taylor Gatesman' to 'Paul A. Gardner', the sole corresponding author of the linked publication (Neuro-Oncology, DOI 10.1093/neuonc/noag136) per the article correspondence footnote; Sakibul Huq is the GEO submitting contact only.",
+  "source_urls": [
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE335176",
+    "https://pubmed.ncbi.nlm.nih.gov/42258618/",
+    "https://doi.org/10.1093/neuonc/noag136"
+  ],
+  "tags": {
+    "grade_comparable": false,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": true,
+    "large_cohort": false,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": true,
+    "has_outcome_data": false,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

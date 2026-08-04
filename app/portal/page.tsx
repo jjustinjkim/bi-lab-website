@@ -27,14 +27,9 @@ export default async function PortalDashboard() {
         <p className="text-sm mb-3" style={{ color: 'var(--ink-muted)' }}>
           The lab&rsquo;s public catalog of meningioma molecular datasets.
         </p>
-        <a
-          href="https://meningioma-public-inventory.vercel.app"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="btn btn-secondary"
-        >
+        <Link href="/inventory" className="btn btn-secondary">
           Open inventory &rarr;
-        </a>
+        </Link>
       </div>
 
       <div className="grid md:grid-cols-3 gap-4">

@@ -1,0 +1,292 @@
+/* ============================================================
+   SPECIMEN LEDGER design system, ported from the standalone
+   Meningioma Public Inventory site and scoped under .inventory-scope
+   so its token/class names (many shared 1:1 with the main site's own
+   design system -- .panel, .text-display, --paper, --accent, etc.)
+   never leak into or collide with the rest of wlbilab.org. Reacts to
+   the SAME global dark-mode toggle as the rest of the site (via
+   html[data-theme]) rather than carrying its own separate toggle.
+
+   A precision-instrument read on scientific provenance data, grounded
+   in the actual two-color vocabulary of pathology: an H&E stain.
+   Hematoxylin (deep blue-violet) marks cell nuclei and is the primary
+   interactive color throughout, links, active states, the manifest
+   stat line; eosin (warm rose) marks cytoplasm and is used
+   specifically to distinguish adjacent (out-of-core-scope) records.
+   A third warm rust note is reserved for review/attention flags.
+   Every molecular modality keeps its own fixed identity color from
+   the categorical set below, validated for colorblind safety.
+   ============================================================ */
+
+.inventory-scope {
+  --paper: #eef0f7;
+  --paper-raised: #ffffff;
+  --ink: #0f172a;
+  --ink-muted: #475569;
+  --ink-faint: #64748b;
+  --hairline: #e2e8f0;
+  --hairline-strong: #cbd5e1;
+  --accent: #423876;
+  --accent-ink: #322760;
+  --accent-2: #a8446a;
+  --accent-2-ink: #8a3455;
+  --flag: #a8501c;
+
+  --cat-1: #2a78d6;
+  --cat-2: #1baf7a;
+  --cat-3: #eda100;
+  --cat-4: #008300;
+  --cat-5: #4a3aa7;
+  --cat-6: #e34948;
+  --cat-7: #e87ba4;
+  --cat-8: #eb6834;
+
+  --background: var(--paper);
+  --foreground: var(--ink);
+
+  --font-sans: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+}
+
+html[data-theme="dark"] .inventory-scope {
+  --paper: #0a0c12;
+  --paper-raised: #211d38;
+  --ink: #f1f5f9;
+  --ink-muted: #94a3b8;
+  --ink-faint: #7c8aa0;
+  --hairline: #334155;
+  --hairline-strong: #475569;
+  --accent: #9a8ade;
+  --accent-ink: #b3a5eb;
+  --accent-2: #d6849a;
+  --accent-2-ink: #e5a1b3;
+  --flag: #d98a5c;
+
+  --cat-1: #3987e5;
+  --cat-2: #199e70;
+  --cat-3: #c98500;
+  --cat-4: #008300;
+  --cat-5: #9085e9;
+  --cat-6: #e66767;
+  --cat-7: #d55181;
+  --cat-8: #d95926;
+
+  --background: var(--paper);
+  --foreground: var(--ink);
+}
+
+.inventory-scope * {
+  border-color: var(--hairline);
+}
+
+.inventory-scope {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.inventory-scope ::selection {
+  background: color-mix(in srgb, var(--accent) 25%, transparent);
+}
+
+.inventory-scope a:focus-visible,
+.inventory-scope button:focus-visible,
+.inventory-scope input:focus-visible,
+.inventory-scope select:focus-visible,
+.inventory-scope [tabindex]:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* ---------- Type scale ---------- */
+.inventory-scope .text-display {
+  font-family: var(--font-sans);
+  font-size: 2.75rem;
+  line-height: 1.08;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+  overflow-wrap: anywhere;
+}
+.inventory-scope .text-section-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+.inventory-scope .text-title {
+  font-family: var(--font-sans);
+  font-size: 1.625rem;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.008em;
+  text-wrap: balance;
+  overflow-wrap: anywhere;
+}
+.inventory-scope .text-subtitle {
+  font-size: 1.0625rem;
+  font-weight: 600;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+.inventory-scope .text-caption {
+  font-size: 0.8125rem;
+  color: var(--ink-muted);
+}
+.inventory-scope .text-mono {
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- Ledger primitives ---------- */
+
+.inventory-scope .hairline-y {
+  border-top: 1px solid var(--hairline);
+  border-bottom: 1px solid var(--hairline);
+}
+.inventory-scope .hairline-t {
+  border-top: 1px solid var(--hairline);
+}
+.inventory-scope .hairline-b {
+  border-bottom: 1px solid var(--hairline);
+}
+
+.inventory-scope .panel {
+  border: 1px solid var(--hairline);
+  border-radius: 4px;
+  background: var(--paper-raised);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.inventory-scope .manifest {
+  display: flex;
+  flex-wrap: wrap;
+  background: var(--paper-raised);
+  border: 1px solid var(--hairline);
+  border-radius: 4px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+.inventory-scope .manifest-item {
+  flex: 1 1 8.5rem;
+  min-width: 0;
+  padding: 1.25rem 1.5rem;
+  border-left: 1px solid var(--hairline);
+}
+.inventory-scope .manifest-item:first-child {
+  border-left: none;
+}
+@media (max-width: 420px) {
+  .inventory-scope .manifest-item {
+    flex-basis: 100%;
+    border-left: none;
+    border-top: 1px solid var(--hairline);
+  }
+  .inventory-scope .manifest-item:first-child {
+    border-top: none;
+  }
+}
+.inventory-scope .manifest-value {
+  font-family: var(--font-sans);
+  font-variant-numeric: tabular-nums;
+  font-size: 2.125rem;
+  font-weight: 600;
+  line-height: 1.05;
+  color: var(--foreground);
+}
+.inventory-scope .manifest-value--accent2 {
+  color: var(--accent-2-ink);
+}
+.inventory-scope .manifest-label {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  margin-top: 0.35rem;
+  display: block;
+}
+
+.inventory-scope .readout {
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-variant-numeric: tabular-nums;
+  font-size: 0.8125rem;
+  padding-left: 0.5rem;
+  border-left: 2px solid var(--hairline-strong);
+}
+
+.inventory-scope .flag-note {
+  border-left: 2px solid var(--flag);
+  padding: 0.15rem 0 0.15rem 0.75rem;
+  color: var(--foreground);
+}
+.inventory-scope .flag-label {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--flag);
+}
+
+.inventory-scope .ledger-tag {
+  display: inline-flex;
+  align-items: center;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 0.2rem 0.55rem;
+  border: 1px solid var(--hairline-strong);
+  border-radius: 3px;
+  color: var(--ink-muted);
+  background: transparent;
+}
+.inventory-scope .ledger-tag[data-active="true"] {
+  color: var(--accent-ink);
+  border-color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 10%, transparent);
+}
+.inventory-scope .ledger-tag:hover {
+  border-color: var(--hairline-strong);
+  color: var(--foreground);
+}
+
+.inventory-scope .ledger-tag--adjacent {
+  color: var(--accent-2-ink);
+  border-color: var(--accent-2);
+  background: color-mix(in srgb, var(--accent-2) 10%, transparent);
+}
+
+.inventory-scope .modality-dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  margin-right: 0.4rem;
+  flex-shrink: 0;
+}
+
+.inventory-scope .completeness-track {
+  position: relative;
+  height: 6px;
+  border-radius: 3px;
+  background: var(--hairline);
+  overflow: hidden;
+}
+.inventory-scope .completeness-fill {
+  height: 100%;
+  border-radius: 3px;
+  background: var(--accent);
+}
+
+.inventory-scope .link-accent {
+  color: var(--accent-ink);
+  text-decoration-color: color-mix(in srgb, var(--accent-ink) 40%, transparent);
+  text-underline-offset: 2px;
+}
+.inventory-scope .link-accent:hover {
+  text-decoration-color: var(--accent-ink);
+}

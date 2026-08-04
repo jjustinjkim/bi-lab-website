@@ -1,0 +1,118 @@
+{
+  "id": "gse-256490-brain-vasculature-scrnaseq",
+  "title": "Single-cell atlas of the human brain vasculature across development, adulthood and disease [meningioma subset, scRNA-seq]",
+  "accessions": [
+    "GSE256490"
+  ],
+  "related_accessions": [
+    "GSE256493",
+    "GSE256491"
+  ],
+  "source_repositories": [
+    "GEO",
+    "SRA"
+  ],
+  "publications": [
+    {
+      "title": "Single-cell atlas of the human brain vasculature across development, adulthood and disease.",
+      "authors": [
+        "Wälchli T", "Ghobrial M", "Schwab M", "Takada S", "Zhong H", "Suntharalingham S", "Vetiska S", "Gonzalez DR", "Wu R", "Rehrauer H", "Dinesh A", "Yu K", "Chen ELY", "Bisschop J", "Farnhammer F", "Mansur A", "Kalucka J", "Tirosh I", "Regli L", "Schaller K", "Frei K", "Ketela T", "Bernstein M", "Kongkham P", "Carmeliet P", "Valiante T", "Dirks PB", "Suva ML", "Zadeh G", "Tabar V", "Schlapbach R", "Jackson HW", "De Bock K", "Fish JE", "Monnier PP", "Bader GD", "Radovanovic I"
+      ],
+      "venue": "Nature",
+      "year": 2024,
+      "doi": "10.1038/s41586-024-07493-y",
+      "pmid": "38987604",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Thomas Wälchli",
+  "institution": "University College London (contact institution per GEO; multi-site collaboration per publication)",
+  "date_deposited": "2024-02-23",
+  "date_updated": "2024-10-24",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-16",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-16",
+  "verification_tier": 2,
+  "found_via": [
+    "pan_atlas_check"
+  ],
+  "modality": [
+    "scrna_seq"
+  ],
+  "platform": "10x Chromium Single Cell 3' Reagent Kit v2 (Illumina NovaSeq 6000, GPL24676)",
+  "reference_genome": "GRCh38.p13 (Ensembl)",
+  "pipeline": "Cell Ranger mkfastq + count",
+  "patient_count": 5,
+  "sample_count": 8,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": null,
+    "grade_2": null,
+    "grade_3": null
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": false,
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "Not reported"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "fresh_frozen",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "Not reported",
+  "age_distribution": "Not reported",
+  "has_outcome_data": false,
+  "paired_multimodal": {
+    "is_paired": true,
+    "related_datasets": [
+      "gse-256492-brain-vasculature-bulk-rnaseq"
+    ]
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": true,
+  "processed_data_available": true,
+  "processed_data_format": "10x Genomics filtered count matrix per sample (barcodes.tsv.gz, features.tsv.gz, matrix.mtx.gz)",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "sample_count": "High",
+    "patient_count": "High",
+    "modality": "High",
+    "publications": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "NEW RECORD (2026-07-16), closing out a coverage_gaps.md-carried lead ('GSE256490-GSE256493 ... Not yet checked. Needs the same per-sample-metadata check as the E-MTAB entries above before it can be included or excluded'). This is a pan-CNS-vasculature single-cell atlas (GSE256493 SuperSeries: 606,380 endothelial/perivascular cells from 117 samples across fetal brain, adult temporal-lobe controls, and five vascular-dependent pathologies -- AVM, lower/higher-grade glioma, lung-cancer brain metastasis, and meningioma). Per docs/scope.md's explicit pan-atlas rule ('where a pan-tumor atlas contains a meningioma subset, that subset IS in scope'), only the meningioma-labeled subset is extracted here, as its own record, not the whole atlas. Identified via scripts/extract_gsm_characteristics.py's per-sample fallback (family.soft parsed cleanly, no size issue) across GSE256490 (71 samples total): the per-GSM 'genotype' characteristic labels exactly 8 samples 'Meningioma', spanning 5 distinct patients per each sample's own 'treatment' field/title (MEN_patient1 through MEN_patient5) -- patients 1 and 2 have only a FACS-sorted CD31+/CD45- endothelial-cell (EC) sample each, while patients 3-5 each have both an EC sample and an unsorted 'all cells' (endothelial + perivascular) sample, accounting for 2+2+2+1+1=8. The sibling GSE256491 ('Extra Individuals') subseries was also checked and has zero meningioma-labeled samples among its 16. SCOPE CAVEAT, stated plainly: these are FACS-sorted/unsorted endothelial and perivascular cells isolated FROM resected meningioma tumor specimens, not meningothelial tumor cells themselves -- vascular/stromal tumor-microenvironment cells, consistent with how this inventory already treats TME cell populations captured within an in-scope tumor specimen (e.g. the macrophage/fibroblast clusters already present in this corpus's other scRNA-seq records), not a normal/reference-tissue baseline (which would route to /data/adjacent/ instead). Publication (PMID 38987604, Nature 2024, DOI 10.1038/s41586-024-07493-y) verified via PubMed esummary; retraction/correction status checked (none found). Sole corresponding author confirmed as Thomas Wälchli via the open-access PMC full text's (PMC11324530) author-notes contrib-group xref to the correspondence footnote ('_fncrsp93pmc__'), cross-checked against the live GEO record's own Sample_contact_name ('Thomas,,Wälchli') -- exact match. Full author list (37 names) taken from PubMed esummary directly, not truncated. Full-text data-availability statement confirmed citing GSE256493 (the SuperSeries covering this record). Cross-linked to the sibling bulk RNA-seq meningioma-subset record (gse-256492-brain-vasculature-bulk-rnaseq) via paired_multimodal; patient-identity correspondence between the two subseries' patient-numbering (MEN_patient1-5 here vs. MEN_patient1-6 in the bulk arm) is a reasonable but unconfirmed inference -- no explicit shared patient-ID field links the two subseries, so this is flagged rather than asserted as certain. No per-sample sex/age/grade/anatomic-location/treatment-timing data exists in either subseries' GSM metadata, so those fields correctly remain 'Not reported'. found_via is pan_atlas_check only (single path, Tier 2) since this was surfaced by the pan-cancer/pan-tissue atlas check already documented in docs/coverage_gaps.md, not independently corroborated via a second search method this pass.",
+  "source_urls": [
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE256490",
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE256493",
+    "https://pubmed.ncbi.nlm.nih.gov/38987604/",
+    "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11324530/"
+  ],
+  "tags": {
+    "grade_comparable": false,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": true,
+    "spatially_resolved": false,
+    "multi_modal_matched": true,
+    "large_cohort": false,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": false,
+    "has_outcome_data": false,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

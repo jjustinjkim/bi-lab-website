@@ -1,0 +1,117 @@
+{
+  "id": "gse-293851-methylation",
+  "title": "DNA methylation profiling of incidental meningiomas",
+  "accessions": [
+    "GSE293851"
+  ],
+  "related_accessions": [
+    "GSE293815",
+    "GSE293981"
+  ],
+  "source_repositories": [
+    "GEO"
+  ],
+  "publications": [
+    {
+      "title": "Incidental meningiomas have favorable clinical outcomes across molecular classification systems.",
+      "authors": [
+        "Nguyen MP",
+        "Mirchia K",
+        "Chen WC",
+        "Morshed RA",
+        "Raleigh DR"
+      ],
+      "venue": "Neuro-oncology",
+      "year": 2026,
+      "doi": "10.1093/neuonc/noag086",
+      "pmid": "41999202",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Minh P Nguyen, David R Raleigh",
+  "institution": "University of California, San Francisco",
+  "date_deposited": "2025-04-04",
+  "date_updated": "2026-04-09",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-11",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-10",
+  "verification_tier": 1,
+  "found_via": [
+    "keyword_api",
+    "citation_chain"
+  ],
+  "modality": [
+    "dna_methylation_array"
+  ],
+  "platform": "GPL33022",
+  "reference_genome": "Not reported",
+  "pipeline": "Not reported",
+  "patient_count": "Not reported",
+  "sample_count": 131,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": 114,
+    "grade_2": 16,
+    "grade_3": 0
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": "Not reported",
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "Not reported"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "Not reported",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "105 female, 26 male (n=131, extracted from GSM 'Sex' field)",
+  "age_distribution": "n=131 (age at surgery), range 20-87, median 59 (extracted from GSM 'age at surgery' field)",
+  "has_outcome_data": true,
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": []
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": "Not reported",
+  "processed_data_available": true,
+  "processed_data_format": "GSE293851_IncidentalMeningioma_sesame_IDs_betas.csv.gz",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High",
+    "publications": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "FACT-CHECK UPDATE (2026-07-10): Publication found and linked via citation-chain search (was previously unlinked with no PMID). PMID 41999202, 'Incidental meningiomas have favorable clinical outcomes across molecular classification systems' (Neuro-oncology, 2026), matches exactly on authorship (Nguyen MP first author, Raleigh DR last author, the record's only two contributors) and topic (incidental meningioma molecular risk stratification); confirmed not retracted/corrected via Europe PMC. Also added related_accessions GSE293815 and GSE293981: live GSE293851 declares itself a SubSeries of SuperSeries GSE293981 ('The molecular architecture of incidental meningiomas'), which also contains a sibling SubSeries GSE293815 (targeted gene expression profiling by array) on the presumably same incidental-meningioma cohort -- GSE293815 does not yet have its own record anywhere in this inventory; this is a coverage gap worth harvesting in a future pass, not something resolved here. Series-level GEO metadata verified directly against the live source; per-sample clinical/pathology fields (grade, sex/age, anatomic location, brain invasion, treatment timepoint) have not yet been extracted from individual GSM records or supplementary tables. FACT-CHECK UPDATE (2026-07-10 verification pass): date_deposited/date_updated filled in from the live GEO record's Series_submission_date/Series_last_update_date, previously 'Not reported'. PER-SAMPLE DATA RECOVERED (2026-07-11 fact-check pass): downloaded the full family.soft data for this series (all 131 GSM records) and parsed per-sample characteristics, not previously done. Each sample carries 'tissue', 'Sex', 'tumor grade', 'age at surgery', and 'outcome'. tumor grade: grade 1 (114), grade 2 (16), 1 sample 'n/a' (grade_breakdown filled in as 114/16/0, previously null/null/null; tags.grade_comparable corrected false to true). Sex: 105 female, 26 male (sex_distribution filled in, previously 'Not reported'). age at surgery: present for all 131 samples, range 20-87, median 59, matching the paper's own stated 'median age at detection of 59 years' (age_distribution filled in). outcome: 'censored' (125 samples) vs. 'progression' (6 samples) -- a genuine per-sample time-to-event/progression-free-survival field, so has_outcome_data corrected from 'Not reported' to true (and tags.has_outcome_data to true) per the schema definition. tissue_preservation left as 'Not reported': the per-sample 'tissue' field here just says 'meningioma' with no preservation method stated (unlike the sibling GSE292325/292326 methylation records, which have an explicit 'tissue type: FFPE' field), so this was not guessed.",
+  "source_urls": [
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE293851",
+    "https://pubmed.ncbi.nlm.nih.gov/41999202/"
+  ],
+  "tags": {
+    "grade_comparable": true,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": false,
+    "large_cohort": false,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": false,
+    "has_outcome_data": true,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

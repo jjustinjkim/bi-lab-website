@@ -1,0 +1,106 @@
+{
+  "id": "gse-299027-spatial-transcriptomics",
+  "title": "Molecular Characterization of Meningioma",
+  "accessions": [
+    "GSE299027"
+  ],
+  "related_accessions": [],
+  "source_repositories": [
+    "GEO"
+  ],
+  "publications": [],
+  "corresponding_author": "Lyla Atta, Jean Fan",
+  "institution": "Johns Hopkins",
+  "date_deposited": "2025-06-04",
+  "date_updated": "2026-06-01",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-10",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-10",
+  "verification_tier": 2,
+  "found_via": [
+    "keyword_api"
+  ],
+  "modality": [
+    "spatial_transcriptomics"
+  ],
+  "platform": "10x Genomics Visium",
+  "reference_genome": "Not reported",
+  "pipeline": "Not reported",
+  "patient_count": "Not reported",
+  "sample_count": 19,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": null,
+    "grade_2": null,
+    "grade_3": null
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": true,
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "Not reported"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "Not reported",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "Not reported",
+  "age_distribution": "Not reported",
+  "has_outcome_data": false,
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": []
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": "Not reported",
+  "processed_data_available": true,
+  "processed_data_format": "10x Visium raw output (RAW.tar)",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High",
+    "publications": "Low"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "No linked publication in the GEO record yet -- likely a recent/in-progress study from the Fan Lab (computational spatial transcriptomics). Full-transcriptome Visium on 19 low-grade (WHO I/II) meningiomas, cross-classified by bulk methylation into the Merlin-intact/immune-enriched/hypermitotic groups from Choudhury et al. 2022 -- worth checking in a future session whether the underlying methylation data was also deposited separately. FACT-CHECK UPDATE (2026-07-10 verification pass): date_deposited/date_updated filled in from the live GEO record's Series_submission_date/Series_last_update_date, previously 'Not reported'.",
+  "source_urls": [
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE299027"
+  ],
+  "tags": {
+    "grade_comparable": false,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": true,
+    "multi_modal_matched": false,
+    "large_cohort": false,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": true,
+    "has_outcome_data": false,
+    "peer_reviewed": false
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null,
+  "gene_expression_viewer": {
+    "sample_label": "All 19 samples, each spot plotted at its true tissue position, side by side",
+    "data_url": "/pilot-data/gse-299027-spatial-transcriptomics.json",
+    "cell_count": 48388,
+    "gene_count": 100,
+    "sample_count": 19,
+    "embedding_method": "scanpy 1.10.3: read_10x_mtx of each sample's deposited 10x Visium output (per-sample tar.gz archives, GSM9031082-GSM9031100, filenames 'ProcessedN' where N is not contiguous -- confirmed via live per-GSM title inspection after an initial contiguous-numbering assumption produced 404s), joined against each sample's own tissue_positions.csv, kept in_tissue==1 spots only, QC (min 100 genes/spot), anndata.concat with each sample's array_col offset so all 19 tissue sections render side by side. Plotted coordinates are the TRUE physical Visium hex-grid position (array_row/array_col), not a UMAP. Clustering (Leiden, resolution 0.5, 23 clusters) uses transcriptional similarity via PCA/neighbors, same as scRNA-seq.",
+    "pathways": ["Proliferation / cell cycle", "Hypoxia", "Epithelial-mesenchymal transition"],
+    "integration_note": "Spots are plotted at true tissue position per sample, not merged into one shared coordinate space -- the 19 samples are independent tissue sections side by side, not directly overlaid."
+  }
+}

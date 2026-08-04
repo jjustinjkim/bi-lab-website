@@ -1,0 +1,122 @@
+{
+  "id": "prjca007005-cfdna-5hmc",
+  "title": "Plasma cfDNA 5hmC-seq of Glioma Patients, meningioma subset",
+  "accessions": [
+    "PRJCA007005"
+  ],
+  "related_accessions": [],
+  "source_repositories": [
+    "NGDC"
+  ],
+  "publications": [
+    {
+      "title": "Noninvasive detection of brain gliomas using plasma cell-free DNA 5-hydroxymethylcytosine sequencing",
+      "authors": [
+        "Zhang S",
+        "Zhang J",
+        "Hu X",
+        "Yin S",
+        "Yuan Y",
+        "Xia L",
+        "Cao F",
+        "Yan X",
+        "Yan Z",
+        "Mao Q",
+        "Xie D",
+        "Liu Y"
+      ],
+      "venue": "International Journal of Cancer",
+      "year": 2023,
+      "doi": "10.1002/ijc.34401",
+      "pmid": "36522844",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Yanhui Liu",
+  "institution": "West China Hospital of Sichuan University",
+  "date_deposited": "Not reported",
+  "date_updated": "2023-04-15",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-11",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-11",
+  "verification_tier": 2,
+  "found_via": [
+    "keyword_api"
+  ],
+  "modality": [
+    "cfdna_epigenomic"
+  ],
+  "platform": "Not reported",
+  "reference_genome": "Not reported",
+  "pipeline": "Not reported",
+  "patient_count": 47,
+  "sample_count": 47,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": null,
+    "grade_2": null,
+    "grade_3": null
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": false,
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "Not reported"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "liquid_biopsy",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "Not reported",
+  "age_distribution": "Not reported",
+  "has_outcome_data": "Not reported",
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": []
+  },
+  "access_type": "controlled",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": true,
+  "processed_data_available": "Not reported",
+  "processed_data_format": "Not reported",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not reported",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High",
+    "publications": "Medium"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "DEEP-AUDIT ATTEMPT (2026-07-14): tried to verify corresponding_author ('Yanhui Liu') against the paper's own correspondence footnote for PMID 36522844 (Int J Cancer, Wiley). Europe PMC's structured author-affiliation data gives full institutional affiliations for all 12 authors but no email address embedded in any of them (unlike the AACR/Nature/MDPI-style records elsewhere in this corpus, Wiley's Europe PMC affiliation strings for this record carry no correspondence marker at all), so this source is inconclusive rather than confirmatory. Direct fetch of the Wiley article (https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/ijc.34401) was blocked by a Cloudflare 'Just a moment...' challenge on two attempts with different User-Agent strings; no PMC full text exists for this article (isOpenAccess=N, inEPMC=N per Europe PMC). Semantic Scholar API was rate-limited (429) on retry. Per this audit's instructions, corresponding_author is left UNCHANGED (not confirmed, not guessed); a human with paywall access should verify 'Yanhui Liu' directly. Authors array (12 names) already matches the full Europe PMC authorString exactly, no truncation found. The known deliberate peer_reviewed=false exception (linked publication is about gliomas, not meningioma specifically) was re-confirmed and left unchanged, per the task's explicit instruction not to flip it without new evidence -- none was found. NEW RECORD (2026-07-11), from a discovery-log LEAD noting that despite this BioProject's glioma-focused title ('Plasma cfDNA 5hmC-seq of Glioma Patients'), ~47 of its BioSamples are individually labeled meningioma/atypical meningioma/anaplastic meningioma. Independently re-verified live, NOT trusting the log's '47' figure: queried the NGDC BIG Search API directly for BioSamples under this BioProject matching 'meningioma' (https://ngdc.cncb.ac.cn/search/api/specific?db=biosample&q=PRJCA007005%20meningioma), paginated through all results, and de-duplicated by accession: recordsTotal=47, and 47 unique BioSample accessions (SAMC19xxxxx-SAMC1953xxx range) were actually returned, confirming the count independently rather than transcribing it. Breakdown by the BioSample's own free-text description field: 38 labeled simply 'meningioma', 8 labeled 'atypical meningioma', 1 labeled 'anaplastic (malignant) meningioma'; NOT translated into grade_breakdown (grade_1/2/3) because these are histological-subtype free-text labels from sample titles, not an explicit WHO-grade field, so grade_breakdown is left null per this project's rule against inferring grade from subtype terminology alone -- flagged here for a future pass that may choose to treat 'atypical'=grade 2 and 'anaplastic/malignant'=grade 3 with appropriate confidence caveats. IMPORTANT SCOPE CAVEAT (mixed-cohort pattern, docs/scope.md-relevant): the parent BioProject PRJCA007005 has 540 total BioSamples covering glioma patients, non-glioma controls, and gDNA from white-blood-cells, i.e. meningioma patients appear to have been included as a 'non-glioma' comparator/control tumor-type arm for a glioma diagnostic classifier, not as the study's primary subject. The BioProject's own linked publication (Zhang et al., Int J Cancer 2023, PMID 36522844) describes a cohort of '180 glioma patients and 229 non-glioma controls' and, per its abstract (fetched directly), makes NO mention of meningioma anywhere; it is a glioma-vs-control diagnostic-classifier paper, not a meningioma-focused analysis, so peer_reviewed is set to false for this meningioma-scoped record (the linked publication is real and verified, but is not a primary reference for the meningioma subset specifically) and publications is populated only for provenance/traceability. patient_count/sample_count set to 47 (1 cfDNA sample per patient, no evidence of replicate sampling in the meningioma-labeled subset). tissue_preservation set to 'liquid_biopsy' since these are plasma cfDNA liquid-biopsy samples, not solid tissue (per docs/controlled_vocabulary.md, 'liquid_biopsy' is the value for blood/plasma/serum/CSF-derived samples). Only public NGDC BioProject/BioSample-level metadata (titles, free-text phenotype descriptions, counts) and PubMed abstract text were used; no restricted sequencing data was accessed. 2026-07-12 RE-VERIFICATION AUDIT: (a) publication title corrected from 'Non-invasive detection...' to 'Noninvasive detection...' to match the exact PubMed ArticleTitle for PMID 36522844 ('Noninvasive detection of brain gliomas using plasma cell-free DNA 5-hydroxymethylcytosine sequencing.'). (b) This note's own stale wording, which had said tissue_preservation was set to 'not_applicable', was corrected to 'liquid_biopsy' to match the actual field value (which was already correct). The 47 meningioma-labeled BioSamples (38 meningioma, 8 atypical meningioma, 1 anaplastic/malignant meningioma) were re-confirmed live via the NGDC biosample search API (recordsTotal=47).",
+  "source_urls": [
+    "https://ngdc.cncb.ac.cn/bioproject/browse/PRJCA007005",
+    "https://ngdc.cncb.ac.cn/search/api/specific?db=bioproject&q=PRJCA007005",
+    "https://ngdc.cncb.ac.cn/search/api/specific?db=biosample&q=PRJCA007005%20meningioma",
+    "https://pubmed.ncbi.nlm.nih.gov/36522844/"
+  ],
+  "tags": {
+    "grade_comparable": false,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": false,
+    "large_cohort": false,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": false,
+    "has_outcome_data": false,
+    "peer_reviewed": false
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

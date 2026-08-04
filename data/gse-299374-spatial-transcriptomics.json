@@ -1,0 +1,125 @@
+{
+  "id": "gse-299374-spatial-transcriptomics",
+  "title": "Meningioma cell reprogramming and microenvironment interactions underlie brain invasion",
+  "accessions": [
+    "GSE299374"
+  ],
+  "related_accessions": [],
+  "source_repositories": [
+    "GEO"
+  ],
+  "publications": [
+    {
+      "title": "Meningioma cell reprogramming and microenvironment interactions underlie brain invasion.",
+      "authors": [
+        "Aggarwal A",
+        "Youngblood MW",
+        "Picart T",
+        "Najem H",
+        "Oten S",
+        "Cady MA"
+      ],
+      "venue": "Neuro-oncology",
+      "year": 2026,
+      "doi": "10.1093/neuonc/noaf292",
+      "pmid": "41476144",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "David Raleigh",
+  "institution": "University of California San Francisco",
+  "date_deposited": "2025-06-09",
+  "date_updated": "2026-04-29",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-10",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-10",
+  "verification_tier": 1,
+  "found_via": [
+    "keyword_api",
+    "citation_chain"
+  ],
+  "modality": [
+    "spatial_transcriptomics"
+  ],
+  "platform": "10x Genomics Visium",
+  "reference_genome": "Not reported",
+  "pipeline": "Not reported",
+  "patient_count": "Not reported",
+  "sample_count": 2,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": null,
+    "grade_2": null,
+    "grade_3": null
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": false,
+  "brain_invasion": {
+    "status_reported": true,
+    "counts": "2 of 2 tumors specifically selected/dissected for brain-invasive regions",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "Not reported"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "Not reported",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "Not reported",
+  "age_distribution": "Not reported",
+  "has_outcome_data": false,
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": []
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": "Not reported",
+  "processed_data_available": true,
+  "processed_data_format": "10x Visium raw output (RAW.tar)",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High",
+    "publications": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "Small but high-value cohort: only 2 tumors, but both specifically selected and dissected for brain-invasive regions -- directly relevant to the brain_invasion_annotated priority tag once per-spot pathology annotation is confirmed from the paper's methods/figures (not yet extracted from GEO series-level metadata alone). FACT-CHECK UPDATE (2026-07-10 verification pass): date_deposited/date_updated filled in from the live GEO record's Series_submission_date/Series_last_update_date, previously 'Not reported'. EXTERNAL RE-VERIFICATION (2026-07-12): corresponding_author corrected from 'Mark W Youngblood, Ayush Aggarwal, David Raleigh' to 'David Raleigh' only. Fetched the published paper's open-access full text (PMID 41476144, PMC13128487): exactly one author is marked corresp=\"yes\", David R. Raleigh (david.raleigh@ucsf.edu), and the sole corresponding-author footnote names only him; the author-notes explicitly state 'Ayush Aggarwal and Mark W. Youngblood contributed equally as first author', i.e. they are co-first authors, not corresponding authors. Publication metadata (title, Neuro-oncology, 2026, doi 10.1093/neuonc/noaf292, first six authors) re-confirmed against PubMed esummary. CORRECTION (2026-07-13, corpus-wide tag audit): tags.brain_invasion_annotated had been set true even though this record's own note above already flagged it as pending ('once per-spot pathology annotation is confirmed... not yet extracted') -- the tag was set ahead of that confirmation actually happening. determination_method is still 'Not reported'; tried to resolve this by fetching the linked paper's full text (PMC13128487) directly but it 404'd via the Europe PMC full-text API, so this remains unconfirmed rather than guessed. Set to false to match brain_invasion.determination_method, consistent with docs/schema.md's definition requiring both status_reported and a stated determination method. Flagged for a follow-up session to access the paper's methods/figures directly.",
+  "source_urls": [
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE299374",
+    "https://pubmed.ncbi.nlm.nih.gov/41476144/"
+  ],
+  "tags": {
+    "grade_comparable": false,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": true,
+    "multi_modal_matched": false,
+    "large_cohort": false,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": false,
+    "has_outcome_data": false,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null,
+  "gene_expression_viewer": {
+    "sample_label": "Both samples (NP21-104, N21-202), each spot plotted at its true tissue position, side by side",
+    "data_url": "/pilot-data/gse-299374-spatial-transcriptomics.json",
+    "cell_count": 6699,
+    "gene_count": 200,
+    "sample_count": 2,
+    "embedding_method": "scanpy 1.10.3: read_10x_mtx of each sample's deposited 10x Visium output (barcodes/features/matrix), joined against its own tissue_positions_list.csv, kept in_tissue==1 spots only (3740 and 2959 spots), QC (min 100 genes/spot), anndata.concat with each sample's array_col offset so both tissue sections render side by side rather than overlapping. Plotted coordinates are the TRUE physical Visium hex-grid position (array_row/array_col), not a UMAP -- spatial layout is the point of this modality, so an abstract embedding would discard the one thing that makes it different from regular scRNA-seq. Clustering (Leiden, resolution 0.5, 8 clusters) still uses transcriptional similarity via PCA/neighbors, same as scRNA-seq.",
+    "pathways": ["Proliferation / cell cycle", "Hypoxia", "Epithelial-mesenchymal transition"],
+    "integration_note": "Spots are plotted at true tissue position per sample, not merged into one shared coordinate space -- the two samples are independent tissue sections side by side, not directly overlaid."
+  }
+}

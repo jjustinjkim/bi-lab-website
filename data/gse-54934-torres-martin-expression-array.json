@@ -1,0 +1,125 @@
+{
+  "id": "gse-54934-torres-martin-expression-array",
+  "title": "Global expression profile in a combined study in low grade meningiomas and schwannomas shows upregulation in PDGF, CDH1, SLIT2 and MET (meningioma subset)",
+  "accessions": [
+    "GSE54934"
+  ],
+  "related_accessions": [
+    "E-GEOD-54934"
+  ],
+  "source_repositories": [
+    "GEO",
+    "ArrayExpress_BioStudies"
+  ],
+  "publications": [
+    {
+      "title": "Global expression profile in low grade meningiomas and schwannomas shows upregulation of PDGFD, CDH1 and SLIT2 compared to their healthy tissue.",
+      "authors": [
+        "Torres-Martin M",
+        "Lassaletta L",
+        "Isla A",
+        "De Campos JM",
+        "Pinto GR",
+        "Burbano RR",
+        "Castresana JS",
+        "Melendez B",
+        "Rey JA"
+      ],
+      "venue": "Oncology Reports",
+      "year": 2014,
+      "doi": "10.3892/or.2014.3526",
+      "pmid": "25333347",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Juan A. Rey / Miguel Torres-Martin",
+  "institution": "Fundacion de Investigacion Hospital La Paz (IdiPAZ), Madrid",
+  "date_deposited": "2014-02-12",
+  "date_updated": "2018-07-26",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-12",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-11",
+  "verification_tier": 2,
+  "found_via": [
+    "keyword_api"
+  ],
+  "modality": [
+    "expression_array"
+  ],
+  "platform": "[HuGene-1_0-st] Affymetrix Human Gene 1.0 ST Array (GPL6244)",
+  "reference_genome": "Not reported",
+  "pipeline": "RMA signal, log2-converted via Expression Console Software 1.1.2800.29167 (per-GSM data processing notes)",
+  "patient_count": 22,
+  "sample_count": 25,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": 20,
+    "grade_2": 2,
+    "grade_3": 0
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": false,
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "Not reported"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "fresh_frozen",
+  "normal_control_tissue": {
+    "included": true,
+    "type": "commercial reference RNA pool (BioChain 'Meningeal Control', catalog R1234043-10-D03), NOT real patient-derived normal tissue, used only as a technical baseline",
+    "count": 3
+  },
+  "sex_distribution": "Not reported",
+  "age_distribution": "Not reported",
+  "has_outcome_data": false,
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": []
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": true,
+  "processed_data_available": true,
+  "processed_data_format": "GSE54934_series_matrix.txt.gz (RMA-normalized signal, covers the full 65-sample series including the non-meningioma schwannoma/nerve arm, not pre-filtered to this record's meningioma-only subset) plus per-sample CEL files in GSE54934_RAW.tar",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High",
+    "publications": "High",
+    "grade_breakdown": "High",
+    "tissue_preservation": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "SCOPE NARROWED TO MENINGIOMA SUBSET, mirroring this project's established practice for mixed-tumor-type accessions (e.g. gse-222895-iomm-lee-xenograft-rnaseq). Never previously fetched; identified only as a plausible candidate in this project's first search session (2026-07-10) and independently verified fresh this session via the live BioStudies API (https://www.ebi.ac.uk/biostudies/api/v1/studies/E-GEOD-54934), which mirrors GEO series GSE54934, cross-checked against GEO's own acc.cgi record and confirmed by directly downloading and parsing the full GSE54934_family.soft.gz (65 total ^SAMPLE records). The 65-sample GEO series is a combined NF2-related-tumor comparison study: 22 meningiomas (this record), 31 vestibular schwannomas, 8 non-tumoral peripheral nerve samples of various types, 1 primary human Schwann cell culture, and 3 'Meningeal Control' samples. This record covers ONLY the 22 confirmed meningioma tumor samples (contiguous GSM1326671 through GSM1326692, individually verified: 20 labeled 'Meningioma Grade I' and 2 labeled 'Meningioma Grade 2' in the per-sample 'tissue subtype' characteristic field, their sample titles being 'Meningioma 1' through 'Meningioma 22') plus the 3 meningeal-control samples (GSM1326668-GSM1326670); the 31 schwannoma and 9 nerve/Schwann-cell samples are excluded from patient_count/sample_count/grade_breakdown as a genuinely different tumor/tissue entity, consistent with this project's blood/tissue and mixed-cohort scope precedents. Confirmed genuinely new (grepped GSE54934 across all of /data/, zero hits). The 3 'Meningeal Control' samples are explicitly labeled in their own GEO characteristics as 'control source: BioChain RNA commercial sample' (a purchased pooled reference RNA product, not tissue from an actual normal human control subject in this study), so normal_control_tissue.type spells this out rather than implying they are patient-matched normal dura/meninges. tissue_preservation ('fresh_frozen') is confirmed only for the 22 meningioma samples via their explicit treatment_protocol text ('frozen in liquid Nitrogen immediately after surgical resection... conserved at -80C'); the commercial control samples have no such protocol (being a purchased reagent, not surgically obtained tissue). grade_3=0 is a verified true zero (not an unknown), since all 22 meningioma GSMs were individually enumerated and none is grade III, consistent with the study's own title restricting scope to 'low grade meningiomas.' Publication (Torres-Martin et al., Oncology Reports 2014, PMID 25333347) confirmed via GEO's own Series_pubmed_id field and PubMed esummary/abstract, which independently states the same 22/31/3/8/1 sample breakdown. Note the deposited series_matrix file itself is NOT pre-split by tumor type; a user pulling processed data must filter to the GSM range documented here to isolate the meningioma-only arm. tags.large_cohort left false pending centralized quartile recomputation. CORRESPONDING AUTHOR CORRECTED 2026-07-12: prior value 'Miguel Torres-Martin' omitted the co-corresponding senior author. The Oncology Reports paper (PMID 25333347, PMC4240498) states verbatim 'Correspondence to: Dr Juan A. Rey or Miguel Torres-Martin' with emails jreyh@salud.madrid.org and migtorres.martin@gmail.com; both are corresponding authors, Rey listed first. Corrected to 'Juan A. Rey / Miguel Torres-Martin'. All 22 meningioma + 3 meningeal-control GSM tissue-subtype/grade fields re-verified 2026-07-12 against the live family.soft (20 grade I, 2 grade 2 confirmed unchanged).",
+  "source_urls": [
+    "https://www.ebi.ac.uk/biostudies/arrayexpress/studies/E-GEOD-54934",
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE54934",
+    "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE54nnn/GSE54934/soft/GSE54934_family.soft.gz",
+    "https://pubmed.ncbi.nlm.nih.gov/25333347/",
+    "https://doi.org/10.3892/or.2014.3526"
+  ],
+  "tags": {
+    "grade_comparable": true,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": false,
+    "large_cohort": false,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": false,
+    "has_outcome_data": false,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

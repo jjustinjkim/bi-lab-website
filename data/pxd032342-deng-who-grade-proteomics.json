@@ -1,0 +1,126 @@
+{
+  "id": "pxd032342-deng-who-grade-proteomics",
+  "title": "Proteomics data of WHO I and WHO III meningiomas",
+  "accessions": [
+    "PXD032342"
+  ],
+  "related_accessions": [
+    "IPX0004219000"
+  ],
+  "source_repositories": [
+    "ProteomeXchange"
+  ],
+  "publications": [
+    {
+      "title": "A Nicotinamide Phosphoribosyltransferase Inhibitor, FK866, Suppresses the Growth of Anaplastic Meningiomas and Inhibits Immune Checkpoint Expression by Regulating STAT1.",
+      "authors": [
+        "Deng Y",
+        "Hu B",
+        "Miao Y",
+        "Wang J",
+        "Zhang S",
+        "Wan H",
+        "Wu Z",
+        "Lv Y",
+        "Feng J",
+        "Ji N",
+        "Park D",
+        "Hao S"
+      ],
+      "venue": "Frontiers in Oncology",
+      "year": 2022,
+      "doi": "10.3389/fonc.2022.836257",
+      "pmid": "35515130",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Shuyu Hao",
+  "institution": "Department of Neurosurgery, Beijing Tiantan Hospital / Beijing Neurosurgical Institute, Capital Medical University",
+  "date_deposited": "2022-03-17",
+  "date_updated": "2022-09-30",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-14",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-11",
+  "verification_tier": 2,
+  "found_via": [
+    "keyword_api"
+  ],
+  "modality": [
+    "proteomics_bulk_ms"
+  ],
+  "platform": "TripleTOF 5600+",
+  "reference_genome": "Not applicable",
+  "pipeline": "Not reported",
+  "patient_count": 10,
+  "sample_count": 10,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": 6,
+    "grade_2": 0,
+    "grade_3": 4
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": false,
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "Not reported"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "Not reported",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "Not reported",
+  "age_distribution": "Not reported",
+  "has_outcome_data": false,
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": []
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": true,
+  "processed_data_available": "Not reported",
+  "processed_data_format": "Not reported",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "modality": "High",
+    "publications": "High",
+    "sample_count": "High",
+    "patient_count": "High",
+    "grade_breakdown": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "PXD032342 is hosted at iProX (IPX0004219000), not PRIDE; the PRIDE REST API (ebi.ac.uk/pride/ws/archive/v2) correctly returns 'not in database' for this accession, so verification was instead performed directly against the live ProteomeXchange umbrella XML (proteomecentral.proteomexchange.org/cgi/GetDataset?ID=PXD032342&outputMode=XML), which confirms: title 'Proteomics data of WHO I and WHO III meningiomas', description 'Proteomics data of endothelial meningiomas, fibrous meningiomas and anaplastic meningiomas', hosting repository iProX, TripleTOF 5600+ instrument, human species, and a linked publication (PMID 35515130) that matches exactly. The linked publication's title ('...FK866...STAT1...') differs substantially from the dataset's own title/description (which is about WHO I vs III meningioma proteomics specifically) -- this is expected, since FK866/NAMPT was the paper's main pharmacological finding, and the abstract explicitly states 'A proteomics analysis was performed to investigate the differentially expressed proteins between anaplastic meningiomas and fibrous meningiomas by micro-LC-MS/MS', confirming this is genuine primary patient tumor tissue proteomics (not a cell line), consistent with what the prior discovery pass already found from the same abstract. Direct browsing of the iProX project page (iprox.cn) returned a 403/Access-Denied on its REST API and only an empty JS-shell template on the human-facing page, so sample_count, patient_count, platform pipeline, license, and processed-data-format details that would normally come from iProX's own file listing could NOT be independently confirmed beyond what ProteomeXchange's umbrella record exposes; all such fields are left 'Not reported' rather than estimated. Per project instruction, verification_tier is 2 (single-path via ProteomeXchange + PubMed, not independently corroborated by a second discovery path). tags.large_cohort is set false pending centralized recomputation across the whole inventory (not meaningful to judge per-record here since sample_count itself is unresolved). FACT-CHECK UPDATE (2026-07-11): re-fetched the raw ProteomeXchange umbrella XML directly (not just a summarized read): the ContactList shows project_submitter = Yuxuan Deng (Dept of Neurosurgery, Beijing Tiantan Hospital) and project_lab_head = Jie Feng (Beijing Neurosurgical Institute, email fengjie111@ccmu.edu.cn); there is no 'Hao' contact in the XML at all, so corresponding_author's second name was independently re-derived from the linked paper's own author/affiliation list (PubMed efetch XML for PMID 35515130) rather than the dataset contact list. That confirmed the last author's actual name is 'Shuyu Hao' (Dept of Neurosurgery, Beijing Tiantan Hospital, Capital Medical University), not 'Shiming Hao' as previously recorded; corrected. Also, sample_count corrected from 'Not reported' to 12: the XML's DatasetFileList contains matched .wiff/.wiff.scan raw-file pairs individually numbered MG1 through MG12 (plus one unrelated 'betagal' QC/calibration run and two ProteinSummary output text files), consistent with 12 tumor specimens; confidence marked Medium since this is inferred from raw filenames rather than an explicit stated sample count in the description text. AUDIT 2026-07-14 (live-source deep audit): two genuine errors found and corrected. (1) SAMPLE/PATIENT COUNT AND GRADE BREAKDOWN CORRECTED: fetched the full text of the linked publication directly (PMC9065474 fullTextXML, PMID 35515130) and found its own Patients-and-Specimens/Methods text states explicitly: 'Six patients were diagnosed with fibrous meningiomas and four patients were diagnosed with anaplastic meningiomas... All tumor tissue samples were used for proteomic analysis' and, in the MS methods subsection, 'Equal protein samples from each of six fibrous meningiomas or four anaplastic meningioma tissues were combined into a single pool' before micro-LC-MS/MS. This means the prior sample_count=12 (inferred solely from 12 MG-numbered raw .wiff filenames) almost certainly counted technical fractions/replicate injections of two grade-level pools, not 12 distinct patients -- the paper's own text gives the true patient-level composition as 10 total (6 WHO I fibrous + 4 WHO III anaplastic), which is also consistent with the PXD032342 dataset's raw files spanning two dated acquisition batches (20201121 and 20201123) rather than 12 independent specimens. patient_count and sample_count corrected from 'Not reported'/12 to 10; grade_breakdown corrected from null/null/null to grade_1=6, grade_2=0, grade_3=4 (fibrous meningioma = WHO grade I, anaplastic = WHO grade III, per this paper's own terminology); tags.grade_comparable corrected false to true. Residual open question, not resolved: the ProteomeXchange umbrella XML's own top-level description reads 'Proteomics data of endothelial meningiomas, fibrous meningiomas and anaplastic meningiomas' -- a third tumor-type group ('endothelial') that this specific publication never mentions or analyzes; it is unclear whether PXD032342 as deposited contains additional specimens/runs beyond the 10 patients described in this paper, since the iProX portal itself remains inaccessible (403/empty JS-shell, as previously found) to check file-level sample annotation directly. Flagged for a future session with iProX access. (2) CORRESPONDING_AUTHOR WRONG: previously listed as 'Jie Feng / Shuyu Hao', with Feng sourced from the ProteomeXchange dataset's project_lab_head contact field rather than the paper's own correspondence marker. Fetched the paper's own full-text author-notes/corresp section directly (PMC9065474 fullTextXML): only one author carries the corresponding-author marker, 'Shuyu Hao' (Department of Neurosurgery, Beijing Tiantan Hospital, Capital Medical University), email 'shuyuhao@hotmail.com' -- Jie Feng is a co-author (9th of 12) with no corresponding-author marker in the article itself. corrected to 'Shuyu Hao' only. Author list (12 names, Deng Y ... Hao S) re-confirmed complete and unchanged against both Europe PMC authorString and PubMed efetch XML for PMID 35515130 -- no truncation found here.",
+  "source_urls": [
+    "https://proteomecentral.proteomexchange.org/cgi/GetDataset?ID=PXD032342&outputMode=XML",
+    "https://www.iprox.cn/page/project.html?id=IPX0004219000",
+    "https://pubmed.ncbi.nlm.nih.gov/35515130/",
+    "https://doi.org/10.3389/fonc.2022.836257"
+  ],
+  "tags": {
+    "grade_comparable": true,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": false,
+    "large_cohort": false,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": false,
+    "has_outcome_data": false,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

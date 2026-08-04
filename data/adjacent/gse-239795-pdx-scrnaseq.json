@@ -1,0 +1,137 @@
+{
+  "id": "gse-239795-pdx-scrnaseq",
+  "title": "Single-cell RNA sequencing of patient-derived xenograft meningiomas",
+  "accessions": [
+    "GSE239795"
+  ],
+  "related_accessions": [
+    "GSE235998",
+    "PRJNA1000978"
+  ],
+  "source_repositories": [
+    "GEO",
+    "SRA"
+  ],
+  "publications": [
+    {
+      "title": "Perivascular NOTCH3+ Stem Cells Drive Meningioma Tumorigenesis and Resistance to Radiotherapy.",
+      "authors": [
+        "Choudhury A",
+        "Cady MA",
+        "Lucas CG",
+        "Najem H",
+        "Phillips JJ",
+        "Palikuqi B",
+        "Zakimi N",
+        "Joseph T",
+        "Birrueta JO",
+        "Chen WC",
+        "Oberheim Bush NA",
+        "Hervey-Jumper SL",
+        "Klein OD",
+        "Toedebusch CM",
+        "Horbinski CM",
+        "Magill ST",
+        "Bhaduri A",
+        "Perry A",
+        "Dickinson PJ",
+        "Heimberger AB",
+        "Ashworth A",
+        "Crouch EE",
+        "Raleigh DR"
+      ],
+      "venue": "Cancer Discovery",
+      "year": 2024,
+      "doi": "10.1158/2159-8290.CD-23-1459",
+      "pmid": "38742767",
+      "preprint_id": "10.1101/2023.07.10.548456"
+    }
+  ],
+  "corresponding_author": "David R Raleigh",
+  "institution": "University of California, San Francisco",
+  "date_deposited": "2023-08-01",
+  "date_updated": "2024-08-02",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-14",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-11",
+  "verification_tier": 2,
+  "found_via": [
+    "keyword_api"
+  ],
+  "modality": [
+    "scrna_seq"
+  ],
+  "platform": "Illumina NovaSeq 6000 (GPL24676)",
+  "reference_genome": "Not reported",
+  "pipeline": "Not reported",
+  "patient_count": "Not applicable (PDX xenograft model, not directly patient-derived tissue samples)",
+  "sample_count": 23,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": null,
+    "grade_2": null,
+    "grade_3": null
+  },
+  "who_edition": "Not applicable (cell line)",
+  "molecular_subtype_annotated": false,
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not applicable",
+    "determination_method": "Not applicable"
+  },
+  "treatment_timepoint_status": [
+    "Not applicable"
+  ],
+  "anatomic_location_breakdown": "Not applicable (PDX xenograft model, mouse-hosted)",
+  "tissue_preservation": "not_applicable",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "Not applicable",
+  "age_distribution": "Not applicable",
+  "has_outcome_data": false,
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": []
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": true,
+  "processed_data_available": true,
+  "processed_data_format": "10x Genomics raw output (RAW.tar)",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High",
+    "publications": "High",
+    "patient_count": "Medium"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "Adjacent-scope per docs/scope.md (PDX/mouse-hosted model system, not primary patient tumor tissue): live GEO record (verified directly via acc.cgi) confirms Series_overall_design describes 23 PDX meningiomas total (5 unradiated controls, plus 3 replicates each of 6 conditions spanning Notch3 overexpression, Notch3 neutralizing antibody, and early/late radiation timepoints), matching the 23 Series_sample_id entries (GSM7673415-GSM7673437) exactly. Series_sample_organism lists only Homo sapiens (single-species reference; no mouse/stromal reads called out), unlike the companion CH-157MN xenograft dataset (gse-224347-xenograft-scrnaseq) which lists both Homo sapiens and Mus musculus. who_edition and patient_count use this corpus's established 'Not applicable (cell line)'-style convention for non-patient-tissue model systems; no separate controlled-vocabulary enum exists specifically for PDX models, so the closest available enum value ('Not applicable (cell line)') was used for who_edition per existing adjacent-record precedent (e.g. gse-282349-bulk-rnaseq). radiation_timepoint tag intentionally left false despite the study's explicit early/late post-radiation PDX arms, because the tag's definition concerns patient-level pre/post-radiation sample designation, not a model-system experimental variable; flagging this judgment call for review. Series is a SubSeries of the SuperSeries GSE235998, whose other member series were not independently investigated in this pass. Publication (PMID 38742767, Choudhury et al., Cancer Discovery 2024) verified via PubMed esummary and matches the Series_pubmed_id field on the live record; author list truncated to first 6 per this corpus's existing citation-formatting convention. PREPRINT_ID POPULATED (2026-07-12 adjacent re-verification pass): the bioRxiv preprint 10.1101/2023.07.10.548456 ('NOTCH3 drives meningioma tumorigenesis and resistance to radiotherapy', Choudhury A et al., corresponding author David R Raleigh, University of California San Francisco, posted 2023-07-11) was confirmed real and matching via the bioRxiv details API (same author list and corresponding author as the published Cancer Discovery paper, same NOTCH3/meningioma/radiotherapy subject); it is the preprint version of PMID 38742767 and had been left null. CROSS-CONSISTENCY FLAG: the sibling core record gse-234402-scrnaseq.json carries this same publication (PMID 38742767) with preprint_id still null and should be updated to match; that file is outside this adjacent batch's edit scope, so it is flagged here rather than edited. DEEP-AUDIT PASS (2026-07-14): AUTHOR LIST CORRECTED: publications[0].authors had been mechanically truncated to the first 6 names (this record's own note above even called this 'truncated to first 6 per this corpus's existing citation-formatting convention' -- there is no such convention in docs/schema.md; this was the corpus-wide truncation bug, not a deliberate convention). Europe PMC's authorString for PMID 38742767 confirms 23 total authors, now written in full. CORRESPONDING AUTHOR CORRECTED: 'Abrar Choudhury / David R Raleigh' was not verified against either the preprint's or the published paper's own correspondence marker. The bioRxiv preprint API (10.1101/2023.07.10.548456) records 'author_corresponding': 'David R Raleigh' (Choudhury, the first author, is not listed as corresponding). The published version's own PMC full text (PMC11452293, fetched directly) states verbatim: 'Author for correspondence David R. Raleigh, MD, PhD, 1450 3rd Street, HD481, San Francisco, CA 94158, david.raleigh@ucsf.edu' -- a single corresponding author, Choudhury is not listed. Corrected corresponding_author from 'Abrar Choudhury / David R Raleigh' to 'David R Raleigh' alone.",
+  "source_urls": [
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE239795",
+    "https://pubmed.ncbi.nlm.nih.gov/38742767/",
+    "https://www.ncbi.nlm.nih.gov/bioproject/PRJNA1000978"
+  ],
+  "tags": {
+    "grade_comparable": false,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": true,
+    "spatially_resolved": false,
+    "multi_modal_matched": false,
+    "large_cohort": true,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": false,
+    "has_outcome_data": false,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

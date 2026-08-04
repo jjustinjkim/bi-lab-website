@@ -1,0 +1,132 @@
+{
+  "id": "figshare-24217661-halder-mrm-tissue-proteomics",
+  "title": "A large-scale targeted proteomics of serum and tissue shows the utility of classifying high grade and low grade meningioma tumors (tissue component)",
+  "accessions": [
+    "10.6084/m9.figshare.24217661.v1",
+    "10.6084/m9.figshare.26620792.v1"
+  ],
+  "related_accessions": [
+    "10.6084/m9.figshare.24217443.v1"
+  ],
+  "source_repositories": [
+    "Figshare"
+  ],
+  "publications": [
+    {
+      "title": "A large-scale targeted proteomics of serum and tissue shows the utility of classifying high grade and low grade meningioma tumors.",
+      "authors": [
+        "Halder A",
+        "Biswas D",
+        "Chauhan A",
+        "Saha A",
+        "Auromahima S",
+        "Yadav D",
+        "Nissa MU",
+        "Iyer G",
+        "Parihari S",
+        "Sharma G",
+        "Epari S",
+        "Shetty P",
+        "Moiyadi A",
+        "Ball GR",
+        "Srivastava S"
+      ],
+      "venue": "Clinical Proteomics",
+      "year": 2023,
+      "doi": "10.1186/s12014-023-09426-9",
+      "pmid": "37770851",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Sanjeeva Srivastava",
+  "institution": "Indian Institute of Technology (IIT) Bombay; tissue provided by Tata Memorial Centre, Mumbai",
+  "date_deposited": "2023-09-29",
+  "date_updated": "2024-08-14",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-11",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-11",
+  "verification_tier": 2,
+  "found_via": [
+    "keyword_api"
+  ],
+  "modality": [
+    "proteomics_bulk_ms"
+  ],
+  "platform": "TSQ Altis triple-quadrupole mass spectrometer (Thermo Fisher Scientific) coupled to a Dionex Ultimate 3000 HPLC; targeted MRM (multiple reaction monitoring)",
+  "reference_genome": "Not applicable",
+  "pipeline": "Not reported",
+  "patient_count": "Not reported",
+  "sample_count": 53,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": 23,
+    "grade_2": null,
+    "grade_3": null
+  },
+  "who_edition": "2021",
+  "molecular_subtype_annotated": false,
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "Not reported"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "fresh_frozen",
+  "normal_control_tissue": {
+    "included": true,
+    "type": "healthy control tissue (n=8), plus 4 glioma/glioblastoma tissue samples included as an inter-tumor comparison group (not meningioma)",
+    "count": 8
+  },
+  "sex_distribution": "Reported per-sample in Additional file 1's Tissue sheet (F/M), aggregate not separately tabulated for the meningioma-only subset",
+  "age_distribution": "Reported per-sample in Additional file 1's Tissue sheet, aggregate not separately tabulated for the meningioma-only subset",
+  "has_outcome_data": false,
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": [
+      "figshare-26620783-halder-mrm-serum-proteomics"
+    ]
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": false,
+  "processed_data_available": true,
+  "processed_data_format": "MRM transition/method list (Compound, RT, Precursor/Product m/z, Collision Energy, Fragment Ion; 'Additional file 6') and per-sample Protein/Peptide MRM peak-area quantification tables ('Additional file 2', sheets 'Proteins' and 'Peptides')",
+  "license": "CC BY + CC0",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High",
+    "publications": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "FACT-CHECK UPDATE 2026-07-11: corrected grade_breakdown.grade_2 from 18 to null. Re-downloaded and directly inspected the live Additional file 1 'Tissue' sheet (via figshare API, https://ndownloader.figshare.com/files/42503469): the Condition column only distinguishes MG_LG (23) vs MG_HG (18), it does not itself separate WHO grade II from grade III. However the per-sample free-text Histopathology column within the MG_HG group explicitly states 'WHO grade III' for at least one sample ('Invasive (bone) atypical meningioma (WHO grade III)') and is blank/#N/A for 3 others, with the remaining 14 explicitly WHO grade II. Recording grade_2:18 therefore overstated precision and miscounted at least one true grade-III sample as grade-II; since the source's own high-grade bucket cannot be cleanly split into grade 2 vs grade 3 counts (3 of 18 indeterminate), grade_2 is now left null alongside grade_3, with grade_1:23 retained since the low-grade count is unambiguous. tags.grade_comparable is left true since the dataset still supports a low-grade vs high-grade comparison, just not a full 3-tier one. SCOPE NARROWED TO TISSUE ONLY. This paper (PMID 37770851) reports BOTH a 53-sample fresh-frozen tissue cohort and a 51-sample serum cohort under one BMC Clinical Proteomics article with 6 total supplementary files (verified live via figshare.search for the full list: Additional file 1=clinical annotation [Tissue + Serum sheets], 2=tissue protein/peptide MRM quantification, 3=serum protein/peptide MRM quantification, 4=PDF figures, 5=serum MRM transition list, 6=tissue MRM transition list). This record covers only the TISSUE component (files 2 and 6, i.e. the two files named in the extraction task), since tissue is unambiguously primary tumor material; the SERUM component (files 3 and 5, plus the Serum sheet of file 1: 31 meningioma serum samples [17 low-grade + 14 high-grade] + 14 GBM + 6 healthy-control serum) is blood-derived, not tumor tissue, and per this project's existing scope precedent (blood/serum records routed to /data/adjacent/, e.g. gse-263756-bulk-rnaseq) was deliberately NOT written as part of this core record. UPDATE 2026-07-11 (centralized integration pass): the companion serum-cohort record was created (`figshare-26620783-halder-mrm-serum-proteomics`, 51 samples, /data/adjacent/, since blood-derived serum data is out of core scope) and cross-linked here via paired_multimodal.related_datasets. is_paired left false since it is not certain from the deposited files whether the same patients contributed both tissue and serum, per direct confirmation from the paper's Methods text that sample collection is described separately for the two sample types. Tissue cohort of 53 = 23 low-grade (WHO I) + 18 high-grade (WHO II/III) meningioma + 8 healthy control + 4 glioma/GBM (verified by directly downloading Additional file 1's 'Tissue' sheet and cross-tabulating Condition; independently reproduced the paper's own abstract-stated n=53/n=51 split). patient_count left 'Not reported' since the deposited files use per-tissue-sample IDs (e.g. T7, T38) without an explicit distinct-patient count; the abstract describes '53 tumor tissue... samples... from meningioma patients... along with healthy controls', which does not resolve whether any patient contributed more than one tissue sample. normal_control_tissue.count reflects only the 8 non-tumor control samples per convention (glioma/GBM comparator samples are noted in the 'type' field, not counted as tumor or control here). tags.large_cohort is set false regardless of this cohort's actual size, per instruction that large_cohort requires centralized recomputation across the whole inventory after this extraction batch, not a per-record judgment.",
+  "source_urls": [
+    "https://springernature.figshare.com/articles/dataset/Additional_file_2_of_A_large-scale_targeted_proteomics_of_serum_and_tissue_shows_the_utility_of_classifying_high_grade_and_low_grade_meningioma_tumors/24217661",
+    "https://springernature.figshare.com/articles/dataset/Additional_file_6_of_A_large-scale_targeted_proteomics_of_serum_and_tissue_shows_the_utility_of_classifying_high_grade_and_low_grade_meningioma_tumors/26620792",
+    "https://springernature.figshare.com/articles/dataset/Additional_file_1_of_A_large-scale_targeted_proteomics_of_serum_and_tissue_shows_the_utility_of_classifying_high_grade_and_low_grade_meningioma_tumors/24217443",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC10540342/",
+    "https://pubmed.ncbi.nlm.nih.gov/37770851/",
+    "https://doi.org/10.1186/s12014-023-09426-9"
+  ],
+  "tags": {
+    "grade_comparable": true,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": false,
+    "large_cohort": false,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": false,
+    "has_outcome_data": false,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

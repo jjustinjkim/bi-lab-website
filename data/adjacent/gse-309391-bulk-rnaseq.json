@@ -1,0 +1,107 @@
+{
+  "id": "gse-309391-bulk-rnaseq",
+  "title": "Influence of hsa-miR-1265 and hsa-miR-21-5p on meningioma cells",
+  "accessions": [
+    "GSE309391"
+  ],
+  "related_accessions": [],
+  "source_repositories": [
+    "GEO",
+    "SRA"
+  ],
+  "publications": [
+    {
+      "title": "DNA Hypomethylation of MIR21 Drives Hsa-miR-21-5p Expression in High-Grade Meningiomas and Reshapes Transcriptomic Signatures of Oncogenic Pathways and Intercellular Communication.",
+      "authors": ["Kober P", "Baluszek S", "Mossakowska BJ", "Myśliwy I", "Tsegaye B", "Oziębło A", "Mandat T", "Bujko M"],
+      "venue": "International Journal of Molecular Sciences",
+      "year": 2026,
+      "doi": "10.3390/ijms27104403",
+      "pmid": "42196381",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Mateusz Bujko",
+  "institution": "Maria Sklodowska-Curie National Research Institute of Oncology",
+  "date_deposited": "2025-09-29",
+  "date_updated": "2025-10-01",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-12",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-10",
+  "verification_tier": 2,
+  "found_via": [
+    "keyword_api"
+  ],
+  "modality": [
+    "bulk_rna_seq"
+  ],
+  "platform": "Illumina NovaSeq 6000 (GPL24676)",
+  "reference_genome": "Not reported",
+  "pipeline": "Not reported",
+  "patient_count": "Not applicable (cell line)",
+  "sample_count": 15,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": null,
+    "grade_2": null,
+    "grade_3": null
+  },
+  "who_edition": "Not applicable (cell line)",
+  "molecular_subtype_annotated": "Not reported",
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not applicable",
+    "determination_method": "Not applicable"
+  },
+  "treatment_timepoint_status": [
+    "Not applicable"
+  ],
+  "anatomic_location_breakdown": "Not applicable (cell line)",
+  "tissue_preservation": "not_applicable",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "Not applicable",
+  "age_distribution": "Not applicable",
+  "has_outcome_data": false,
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": []
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": "Not reported",
+  "processed_data_available": true,
+  "processed_data_format": "GSE309391_miRNA_counts.csv.gz",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High",
+    "publications": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "DEEP-AUDIT CORRECTION (2026-07-14): publications[0].authors was truncated to 6 names -- notably, the record's OWN prior note (2026-07-13 pass) had already quoted the full 8-author list ('Kober P, Baluszek S, Mossakowska BJ, Myśliwy I, Tsegaye B, Oziębło A, Mandat T, Bujko M') when confirming the publication match, but the authors array field itself was never actually updated to match, leaving it silently truncated -- exactly the 'note says fixed but the JSON field itself was never updated' failure pattern flagged for this audit. Expanded authors to all 8 names, matching both the prior note and the live Europe PMC authorString for PMID 42196381. corresponding_author corrected from 'Paulina Kober, Szymon Baluszek' to 'Mateusz Bujko' -- this was a significant error: Kober and Baluszek are the first two (co-first) authors, but the article's own author-notes/contrib-group markup (PMC13206978 full text) shows the corresp xref (*) attached to ONLY Bujko M's <contrib>, with a single <author-notes><fn><label>*</label><p>Correspondence: mateusz.bujko@nio.gov.pl</p></fn> footnote in the entire article -- no other author, including Kober or Baluszek, carries any correspondence marker. Bujko M is the last author and sole corresponding author; corrected accordingly. Moved to adjacent: overall_design confirms this uses KT21-MG1 and Ben-Men-1, established meningioma cell lines, not primary patient tissue. Series-level GEO metadata verified directly against the live source; per-sample clinical/pathology fields (grade, sex/age, anatomic location, brain invasion, treatment timepoint) have not yet been extracted from individual GSM records or supplementary tables -- part of the batch-1 scaling pass, prioritizing breadth of verified accessions over per-sample depth. Publication metadata pulled from PubMed esummary; not yet manually spot-checked against the full text for every record in this batch. RE-VERIFICATION (2026-07-12): live GEO overall_design re-confirms this is a KT21-MG1 / Ben-Men-1 meningioma cell-line-only experiment (15 GSMs GSM9266731-GSM9266745, cells transfected with hsa-miR-1265 / hsa-miR-21-5p mimics vs negative-control mimic, 3 biological replicates each), so patient-level clinical fields are categorically Not applicable (not merely un-extracted); normalized patient_count and who_edition to 'Not applicable (cell line)', anatomic_location_breakdown to 'Not applicable (cell line)', treatment_timepoint_status to ['Not applicable'], tissue_preservation to 'not_applicable', brain_invasion counts/determination_method to 'Not applicable', sex_distribution/age_distribution to 'Not applicable', and has_outcome_data to false -- matching this corpus's other adjacent cell-line records. Note the study measures mRNA/gene-expression response (poly-A/mRNA library prep) to miRNA-mimic transfection, so modality bulk_rna_seq is retained despite the 'miRNA_counts.csv.gz' processed filename. FOLLOW-UP PUBLICATION SEARCH (2026-07-13), match found and directly confirmed: a Europe PMC full-text search for the literal accession string GSE309391 returned exactly one hit, Kober et al. 2026 (PMID 42196381, Int J Mol Sci, 'DNA Hypomethylation of MIR21 Drives Hsa-miR-21-5p Expression in High-Grade Meningiomas...'), whose fullTextXML Data Availability statement (fetched directly) states verbatim: 'the RNA sequencing datasets generated for this study are available from GEO under accession number GSE309391.' Author list (Kober P, Baluszek S, Mossakowska BJ, Myśliwy I, Tsegaye B, Oziębło A, Mandat T, Bujko M) matches this record's corresponding_author (Kober, Baluszek) exactly. This is the same research group (Maria Sklodowska-Curie National Research Institute of Oncology) previously flagged in zenodo-10808902-cellline-mirna-rnaseq's own review note as a 'plausible companion dataset for that group's miRNA-21 research' -- this record is that group's own hsa-miR-21-5p functional-validation RNA-seq, now confirmed published; zenodo-10808902 itself was separately re-checked and its own full text does NOT mention the Zenodo DOI, so that record remains correctly unlinked. Publication added; publication_status normal so tags.peer_reviewed set true.",
+  "source_urls": [
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE309391"
+  ],
+  "tags": {
+    "grade_comparable": false,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": false,
+    "large_cohort": false,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": false,
+    "has_outcome_data": false,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

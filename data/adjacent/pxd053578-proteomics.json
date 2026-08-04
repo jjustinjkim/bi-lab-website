@@ -1,0 +1,126 @@
+{
+  "id": "pxd053578-proteomics",
+  "title": "Merlin S13 phosphorylation controls meningioma Wnt signaling and magnetic resonance imaging features",
+  "accessions": [
+    "PXD053578"
+  ],
+  "related_accessions": [],
+  "source_repositories": [
+    "PRIDE"
+  ],
+  "publications": [
+    {
+      "title": "Merlin(S13) phosphorylation regulates meningioma Wnt signaling and magnetic resonance imaging features.",
+      "authors": [
+        "Eaton CD",
+        "Avalos L",
+        "Liu SJ",
+        "Chen Z",
+        "Zakimi N",
+        "Casey-Clyde T",
+        "Bisignano P",
+        "Lucas CG",
+        "Stevenson E",
+        "Choudhury A",
+        "Vasudevan HN",
+        "Magill ST",
+        "Young JS",
+        "Krogan NJ",
+        "Villanueva-Meyer JE",
+        "Swaney DL",
+        "Raleigh DR"
+      ],
+      "venue": "Nature Communications",
+      "year": 2024,
+      "doi": "10.1038/s41467-024-52284-8",
+      "pmid": "39251601",
+      "preprint_id": "10.21203/rs.3.rs-2577844/v1"
+    }
+  ],
+  "corresponding_author": "David R. Raleigh",
+  "institution": "UCSF / Gladstone Institutes",
+  "date_deposited": "2024-07-02",
+  "date_updated": "2024-07-04",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-14",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-10",
+  "verification_tier": 1,
+  "found_via": [
+    "keyword_api",
+    "citation_chain"
+  ],
+  "modality": [
+    "proteomics_bulk_ms"
+  ],
+  "platform": "Orbitrap Fusion Lumos; Q Exactive Plus",
+  "reference_genome": "Not applicable",
+  "pipeline": "Not reported",
+  "patient_count": "Not applicable (cell line)",
+  "sample_count": "Not reported",
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": null,
+    "grade_2": null,
+    "grade_3": null
+  },
+  "who_edition": "Not applicable (cell line)",
+  "molecular_subtype_annotated": false,
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not applicable",
+    "determination_method": "Not applicable"
+  },
+  "treatment_timepoint_status": [
+    "Not applicable"
+  ],
+  "anatomic_location_breakdown": "Not applicable (cell line)",
+  "tissue_preservation": "not_applicable",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "Not applicable",
+  "age_distribution": "Not applicable",
+  "has_outcome_data": false,
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": []
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": true,
+  "processed_data_available": true,
+  "processed_data_format": "MaxQuant search-result output (zip archives, e.g. CE4.zip, CE-20201108.zip)",
+  "license": "Creative Commons Public Domain (CC0)",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "modality": "High",
+    "publications": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "SCOPE CORRECTION APPLIED (2026-07-11 fact-check pass): moved from /data/ to /data/adjacent/. Direct inspection of the live PRIDE record's sampleProcessingProtocol confirms this project's proteomic samples are all M10G cells (an immortalized meningioma cell line) stably expressing pLV APEX2 constructs encoding wildtype or variant Merlin, used for proximity-labeling mass spectrometry; no primary patient tumor tissue was submitted to this PXD accession. The linked paper (PMID 39251601) does include patient MRI and xenograft data, but the mass-spec dataset itself deposited under PXD053578 is cell-line only. Per docs/scope.md ('Cell line, PDX, and organoid meningioma omics data... not patient tissue directly' -> adjacent), this record does not belong in the core inventory; consistent with the precedent already established for cell-line GSE records (gse-174360, gse-199549, gse-210178, gse-273963, gse-282349/282351, gse-307286, gse-309391). Prior note (2026-07-10): the previously-linked PMID 36993679 was only the March 2023 Research Square preprint; PubMed's own 'Update in' cross-reference shows this work was subsequently published as a peer-reviewed article in Nature Communications (PMID 39251601, doi 10.1038/s41467-024-52284-8, 2024 Sep 9, title changed slightly to '...regulates meningioma Wnt signaling...'). The publications entry, date_deposited/date_updated, platform, and license have been filled in/corrected from the live PRIDE record and PubMed; peer_reviewed tag corrected to true accordingly. patient_count/who_edition/brain_invasion/treatment_timepoint_status/anatomic_location_breakdown/tissue_preservation/sex_distribution/age_distribution updated to cell-line-appropriate 'Not applicable' values consistent with this corpus's other adjacent cell-line records. RE-VERIFICATION (2026-07-12): live PRIDE v2 API file listing for PXD053578 returns 48 files -- 45 RAW (.raw) plus 2 SEARCH-category MaxQuant result zips and 1 OTHER (xlsx); processed_data_available corrected from 'Not reported' to true (the SEARCH zips are the processed search-result output already named in processed_data_format). PRIDE title, submissionDate 2024-07-02, publicationDate 2024-07-04, instruments (Orbitrap Fusion Lumos; Q Exactive Plus), CC0 license, and M10G cell-line sampleProcessingProtocol re-confirmed against the live record; publication (PMID 39251601, Nat Commun 2024, doi 10.1038/s41467-024-52284-8) and preprint (10.21203/rs.3.rs-2577844/v1) re-confirmed against PubMed. AUDIT 2026-07-14 (live-source deep audit): two genuine errors found and corrected. (1) AUTHOR LIST TRUNCATED: publications[0].authors previously listed only the first 6 of 17 authors. Re-fetched Europe PMC authorString and the PMC full-text XML (PMC11383945) for PMID 39251601, both confirming 17 authors total ending 'Swaney DL, Raleigh DR'; authors array expanded to the complete list. (2) CORRESPONDING_AUTHOR WRONG: previously listed 'Charlotte Eaton / Nevan Krogan / David Raleigh'. Fetched the paper's own full-text XML author-notes/corresp section directly (PMC11383945): only the last author, David R. Raleigh (Department of Radiation Oncology, Neurological Surgery, and Pathology, UCSF), carries the corresponding-author marker and email 'david.raleigh@ucsf.edu'; neither Charlotte Eaton nor Nevan Krogan is marked as corresponding in the article itself. corresponding_author corrected to 'David R. Raleigh' only.",
+  "source_urls": [
+    "https://www.ebi.ac.uk/pride/archive/projects/PXD053578",
+    "https://pubmed.ncbi.nlm.nih.gov/39251601/",
+    "https://doi.org/10.1038/s41467-024-52284-8"
+  ],
+  "tags": {
+    "grade_comparable": false,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": false,
+    "large_cohort": false,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": false,
+    "has_outcome_data": false,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

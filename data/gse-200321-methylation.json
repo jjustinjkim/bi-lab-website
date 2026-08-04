@@ -1,0 +1,117 @@
+{
+  "id": "gse-200321-methylation",
+  "title": "Epigenome analysis of formalin-fixed paraffin-embedded (FFPE) meningioma samples",
+  "accessions": [
+    "GSE200321"
+  ],
+  "related_accessions": [],
+  "source_repositories": [
+    "GEO"
+  ],
+  "publications": [
+    {
+      "title": "Epigenetic and genomic profiling of chordoid meningioma: implications for clinical management.",
+      "authors": [
+        "Daoud EV",
+        "Zhu K",
+        "Mickey B",
+        "Mohamed H",
+        "Wen M",
+        "Delorenzo M"
+      ],
+      "venue": "Acta neuropathologica communications",
+      "year": 2022,
+      "doi": "10.1186/s40478-022-01362-3",
+      "pmid": "35440040",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Cai Chunyu, Snuderl Matija",
+  "institution": "NYU Langone Health Ambulatory Care Center",
+  "date_deposited": "2022-04-06",
+  "date_updated": "2022-04-29",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-16",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-10",
+  "verification_tier": 1,
+  "found_via": [
+    "keyword_api",
+    "citation_chain"
+  ],
+  "modality": [
+    "dna_methylation_array"
+  ],
+  "platform": "GPL23976",
+  "reference_genome": "Not reported",
+  "pipeline": "Not reported",
+  "patient_count": "Not reported",
+  "sample_count": 64,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": 7,
+    "grade_2": 53,
+    "grade_3": 4
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": "Not reported",
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "Not reported"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "ffpe",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "32 female, 32 male (n=64, extracted from GSM 'gender' field)",
+  "age_distribution": "Not reported",
+  "has_outcome_data": "Not reported",
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": []
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": "Not reported",
+  "processed_data_available": true,
+  "processed_data_format": "GSE200321_RAW.tar",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High",
+    "publications": "High",
+    "grade_breakdown": "High",
+    "sex_distribution": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "Series-level GEO metadata verified directly against the live source; per-sample clinical/pathology fields (age, anatomic location, brain invasion, treatment timepoint) have not yet been extracted from individual GSM records or supplementary tables. FACT-CHECK UPDATE (2026-07-10 verification pass): tissue_preservation filled in as 'ffpe', previously 'Not reported'. Series_title itself is 'Epigenome analysis of formalin-fixed paraffin-embedded (FFPE) meningioma samples'. UPDATE (2026-07-16): grade_breakdown and sex_distribution extracted per-GSM via scripts/extract_gsm_characteristics.py's new per-sample fallback (this series' family.soft.gz is 202.9MB, too large to parse directly). The per-GSM 'histology' field also distinguishes chordoid/atypical/meningothelial/transitional/anaplastic subtypes and separately labels 13 of 64 samples 'ATYPICAL AND INVASIVE MENINGIOMA' or 'INVASIVE MENINGIOMA' -- not set as brain_invasion_annotated here, since (matching the caution in docs/coverage_gaps.md's tag-audit history) a histology-label word is not the same as a stated determination method; worth a closer look at the source publication as a lead for the brain_invasion_annotated gap, not silently promoted to a tag on the strength of this field alone.",
+  "source_urls": [
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE200321",
+    "https://pubmed.ncbi.nlm.nih.gov/35440040/"
+  ],
+  "tags": {
+    "grade_comparable": true,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": false,
+    "large_cohort": false,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": false,
+    "has_outcome_data": false,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

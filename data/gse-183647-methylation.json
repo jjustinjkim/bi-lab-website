@@ -1,0 +1,259 @@
+{
+  "id": "gse-183647-methylation",
+  "title": "Meningioma DNA methylation grouping reveals biologic drivers and therapeutic vulnerabilities (array)",
+  "accessions": [
+    "GSE183647"
+  ],
+  "related_accessions": [
+    "GSE183656",
+    "GSE183653",
+    "GSE183655"
+  ],
+  "source_repositories": [
+    "GEO"
+  ],
+  "publications": [
+    {
+      "title": "Meningioma DNA methylation groups identify biological drivers and therapeutic vulnerabilities.",
+      "authors": [
+        "Choudhury A",
+        "Magill ST",
+        "Eaton CD",
+        "Prager BC",
+        "Chen WC",
+        "Cady MA",
+        "Seo K",
+        "Lucas CG",
+        "Casey-Clyde TJ",
+        "Vasudevan HN",
+        "Liu SJ",
+        "Villanueva-Meyer JE",
+        "Lam TC",
+        "Pu JK",
+        "Li LF",
+        "Leung GK",
+        "Swaney DL",
+        "Zhang MY",
+        "Chan JW",
+        "Qiu Z",
+        "Martin MV",
+        "Susko MS",
+        "Braunstein SE",
+        "Bush NAO",
+        "Schulte JD",
+        "Butowski N",
+        "Sneed PK",
+        "Berger MS",
+        "Krogan NJ",
+        "Perry A",
+        "Phillips JJ",
+        "Solomon DA",
+        "Costello JF",
+        "McDermott MW",
+        "Rich JN",
+        "Raleigh DR"
+      ],
+      "venue": "Nature genetics",
+      "year": 2022,
+      "doi": "10.1038/s41588-022-01061-8",
+      "pmid": "35534562",
+      "preprint_id": null
+    },
+    {
+      "title": "Intratumor and informatic heterogeneity influence meningioma molecular classification.",
+      "authors": [
+        "Vasudevan HN",
+        "Choudhury A",
+        "Hilz S",
+        "Villanueva-Meyer JE",
+        "Chen WC",
+        "Lucas CG",
+        "Braunstein SE",
+        "Oberheim Bush NA",
+        "Butowski N",
+        "Pekmezci M",
+        "McDermott MW",
+        "Perry A",
+        "Solomon DA",
+        "Magill ST",
+        "Raleigh DR"
+      ],
+      "venue": "Acta neuropathologica",
+      "year": 2022,
+      "doi": "10.1007/s00401-022-02455-y",
+      "pmid": "35759011",
+      "preprint_id": null
+    },
+    {
+      "title": "Supervised machine learning algorithms demonstrate proliferation index correlates with long-term recurrence after complete resection of WHO grade I meningioma.",
+      "authors": [
+        "Nguyen MP",
+        "Morshed RA",
+        "Dalle Ore CL",
+        "Cummins DD",
+        "Saggi S",
+        "Chen WC",
+        "Choudhury A",
+        "Ravi A",
+        "Raleigh DR",
+        "Magill ST",
+        "McDermott MW",
+        "Theodosopoulos PV"
+      ],
+      "venue": "Journal of neurosurgery",
+      "year": 2023,
+      "doi": "10.3171/2022.4.JNS212516",
+      "pmid": "36303473",
+      "preprint_id": null
+    },
+    {
+      "title": "Gene transcript fusions are associated with clinical outcomes and molecular groups of meningiomas.",
+      "authors": [
+        "Zakimi N",
+        "Nguyen MP",
+        "Raleigh DR"
+      ],
+      "venue": "Acta neuropathologica",
+      "year": 2024,
+      "doi": "10.1007/s00401-024-02708-y",
+      "pmid": "38509407",
+      "preprint_id": null
+    },
+    {
+      "title": "Meningeal solitary fibrous tumor cell states phenocopy cerebral vascular development and homeostasis.",
+      "authors": [
+        "Mirchia K",
+        "Choudhury A",
+        "Joseph T",
+        "Birrueta JO",
+        "Phillips JJ",
+        "Bhaduri A",
+        "Crouch EE",
+        "Perry A",
+        "Raleigh DR"
+      ],
+      "venue": "Neuro-oncology",
+      "year": 2025,
+      "doi": "10.1093/neuonc/noae172",
+      "pmid": "39207122",
+      "preprint_id": null
+    },
+    {
+      "title": "Pan-cancer copy number analysis identifies optimized size thresholds and co-occurrence models for individualized risk stratification.",
+      "authors": [
+        "Nguyen MP",
+        "Chen WC",
+        "Mirchia K",
+        "Choudhury A",
+        "Zakimi N",
+        "Nitturi V",
+        "Klisch TJ",
+        "Magill ST",
+        "Lucas CG",
+        "Patel AJ",
+        "Raleigh DR"
+      ],
+      "venue": "Nature communications",
+      "year": 2025,
+      "doi": "10.1038/s41467-025-61063-y",
+      "pmid": "40603285",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "David R Raleigh, Stephen T Magill, Jeremy N Rich",
+  "institution": "University of California, San Francisco",
+  "date_deposited": "2021-09-07",
+  "date_updated": "2025-07-10",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-10",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-10",
+  "verification_tier": 1,
+  "found_via": [
+    "keyword_api",
+    "citation_chain"
+  ],
+  "modality": [
+    "dna_methylation_array"
+  ],
+  "platform": "GPL21145",
+  "reference_genome": "Not reported",
+  "pipeline": "Not reported",
+  "patient_count": "Not reported",
+  "sample_count": 565,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": 388,
+    "grade_2": 142,
+    "grade_3": 35
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": true,
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "Not reported"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "Not reported",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "Not reported",
+  "age_distribution": "n=565, range 5.1-90.6, mean 56.7 (extracted from GSM 'age' field)",
+  "has_outcome_data": true,
+  "paired_multimodal": {
+    "is_paired": true,
+    "related_datasets": [
+      "gse-183653-bulk-rnaseq",
+      "gse-183655-scrnaseq"
+    ]
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": true,
+  "processed_data_available": true,
+  "processed_data_format": "GSE183647_meningioma_betas.csv.gz (processed beta-value matrix)",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High",
+    "publications": "High",
+    "grade_breakdown": "High",
+    "age_distribution": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "Series-level GEO metadata verified directly against the live source. FACT-CHECK UPDATE (2026-07-10): date_deposited/date_updated filled in from Series_submission_date/Series_last_update_date, previously 'Not reported'. PER-SAMPLE DATA UPDATE (2026-07-12 re-verification pass): downloaded the full GSE183647_family.soft.gz and read all 565 GSM 'grade', 'age', 'Sex', 'tissue', and 'institution' characteristics directly. All 565 samples are tissue=meningioma (institution: 365 HKU, 200 UCSF). grade_breakdown populated from the per-GSM 'grade' field, which sums exactly to 565: grade 1 = 388, grade 2 = 142, grade 3 = 35 (previously all null); tags.grade_comparable corrected from false to true accordingly. age_distribution populated from the per-GSM 'age' field: n=565, range 5.1-90.6, mean 56.7 (previously 'Not reported'). A per-GSM 'Sex' field is also present but is numerically coded (193 records coded '1', 372 coded '2') with no coding key given anywhere in the GEO record, so sex_distribution is left 'Not reported' rather than guess the male/female assignment. raw_data_available corrected from 'Not reported' to true: the live series lists GSE183647_RAW.tar (raw IDAT array files) as a supplementary_file. Remaining per-sample fields (anatomic location, brain invasion, treatment timepoint, molecular/methylation group) are not present in the GSM metadata. processed_data_format corrected this pass from 'GSE183647_RAW.tar' (which is the raw IDAT archive, now cited for raw_data_available) to 'GSE183647_meningioma_betas.csv.gz', the actual processed beta-value matrix deposited as a supplementary_file. DEEP-AUDIT FIX (2026-07-14): publications author lists were truncated to 6 names each across all 5 entries; expanded to the complete lists via Europe PMC authorString (36/15/12/9/11 authors respectively). corresponding_author corrected from 'Abrar Choudhury, David R Raleigh' to 'David R Raleigh, Stephen T Magill, Jeremy N Rich': this is the same underlying paper (PMID 35534562) already independently verified via its own PMC full-text correspondence footnote on the sibling record gse-183655-scrnaseq (same 2026-07-14 audit pass) -- Choudhury A is first author only, not corresponding. molecular_subtype_annotated and has_outcome_data corrected from 'Not reported'/false to true: the paper's full text (PMC9374001) reports Kaplan-Meier recurrence-free-survival/overall-survival curves and defines a named 3-group DNA methylation classification (Merlin-intact/Immune-enriched/Hypermitotic) for this exact 565-sample discovery+validation cohort, genuine per-cohort data beyond what GEO's own GSM metadata exposes.",
+  "source_urls": [
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE183647",
+    "https://pubmed.ncbi.nlm.nih.gov/35534562/",
+    "https://pubmed.ncbi.nlm.nih.gov/35759011/",
+    "https://pubmed.ncbi.nlm.nih.gov/36303473/",
+    "https://pubmed.ncbi.nlm.nih.gov/38509407/",
+    "https://pubmed.ncbi.nlm.nih.gov/39207122/",
+    "https://pubmed.ncbi.nlm.nih.gov/40603285/"
+  ],
+  "tags": {
+    "grade_comparable": true,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": true,
+    "large_cohort": true,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": true,
+    "has_outcome_data": true,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

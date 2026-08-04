@@ -1,0 +1,97 @@
+{
+  "id": "gse-263756-bulk-rnaseq",
+  "title": "Hidden RNA profiles revealed by malignant cell fraction-informed deconvolution",
+  "accessions": [
+    "GSE263756"
+  ],
+  "related_accessions": [],
+  "source_repositories": [
+    "GEO",
+    "SRA"
+  ],
+  "publications": [],
+  "corresponding_author": "Yongsoo Kim",
+  "institution": "University Medical Center Amsterdam, Location VUmc",
+  "date_deposited": "2024-04-11",
+  "date_updated": "2024-05-23",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-11",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-10",
+  "verification_tier": 2,
+  "found_via": [
+    "keyword_api"
+  ],
+  "modality": [
+    "bulk_rna_seq"
+  ],
+  "platform": "Illumina NovaSeq 6000 (GPL24676)",
+  "reference_genome": "Not reported",
+  "pipeline": "Not reported",
+  "patient_count": "Not reported",
+  "sample_count": 48,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": null,
+    "grade_2": null,
+    "grade_3": null
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": "Not reported",
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "Not reported"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "liquid_biopsy",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "Not reported",
+  "age_distribution": "Not reported",
+  "has_outcome_data": "Not reported",
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": []
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": "Not reported",
+  "processed_data_available": true,
+  "processed_data_format": "GSE263756_featurecounts.txt.gz",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High",
+    "publications": "Low"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "SCOPE DECISION RESOLVED (2026-07-11 re-verification pass): this dataset is peripheral BLOOD (PBMCs), not tumor tissue, drawn from a MIXED cohort of glioblastoma, meningioma, AND astrocytoma surgery patients plus healthy donors -- not a meningioma-tissue-specific or even meningioma-patient-only cohort. The Checkpoint 5 QA pass referenced below has since concluded: docs/scope.md was updated on 2026-07-10 to add an explicit rule for exactly this case ('Non-tumor specimens from meningioma patients... drawn from a mixed cohort spanning multiple CNS tumor types... added 2026-07-10 as a judgment call during Checkpoint 5 QA, see gse-263756-bulk-rnaseq for the case that prompted this'), citing this record by id as the motivating example. This record's placement in /data/adjacent/ is therefore CONFIRMED CORRECT per the current rule, not merely provisional; no further scope action is needed. Live GEO record re-verified directly via acc.cgi on 2026-07-11: 48 samples (GSM8197925-GSM8197972) confirmed, matching sample_count; Series_overall_design confirms PBMCs from glioblastoma/meningioma/astrocytoma surgery patients plus healthy donors, live cells sorted for RNA to match a prior CyTOF study. tissue_preservation corrected from 'Not reported' to 'liquid_biopsy' (controlled_vocabulary.md defines liquid_biopsy explicitly for blood/plasma/serum/CSF-derived samples; this PBMC record clearly qualifies and was previously mis-tagged). Separately (carried over from original note): the CyTOF data referenced in this series' summary ('Dusowa et al., Front Immunol. 2024') is NOT deposited in this accession -- it is a separate prior study, not yet located/verified, so no cytof modality tag was added despite this record surfacing in a CyTOF-keyword search. Per-sample clinical/pathology fields still not individually extracted from GSM records; sample-level breakdown by tumor type/donor status was not needed to confirm the scope classification. CORRESPONDING-AUTHOR FIX (2026-07-14 deep audit): corresponding_author was 'Jurriaan Janssen, Teodora Radonic', the first two Series_contributor entries, assumed from list position; no publication is linked to this record yet (still confirmed via a live Europe PMC search for the literal string 'GSE263756', zero hits), so the correct analog to a corresponding author is GEO's own designated series contact. Fetched the live GEO record in raw text form (acc.cgi ...&form=text): Series_contact_name is explicitly 'Yongsoo,,Kim' (Series_contact_institute: University Medical Center Amsterdam, Location VUmc), the last-listed of 12 Series_contributor entries, not Janssen or Radonic. Corrected corresponding_author to 'Yongsoo Kim'. Re-confirmed sample_count (48, GSM8197925-GSM8197972) and modality/scope classification unchanged.",
+  "source_urls": [
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE263756"
+  ],
+  "tags": {
+    "grade_comparable": false,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": false,
+    "large_cohort": false,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": false,
+    "has_outcome_data": false,
+    "peer_reviewed": false
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

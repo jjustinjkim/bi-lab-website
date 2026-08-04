@@ -1,0 +1,121 @@
+{
+  "id": "gse-210178-bulk-rnaseq",
+  "title": "Histone deacetylase inhibitors (HDACi) enhance oncolytic herpes simplex virus in malignant meningioma.",
+  "accessions": [
+    "GSE210178"
+  ],
+  "related_accessions": [],
+  "source_repositories": [
+    "GEO",
+    "SRA"
+  ],
+  "publications": [
+    {
+      "title": "Histone deacetylase inhibitors enhance oncolytic herpes simplex virus therapy for malignant meningioma.",
+      "authors": [
+        "Kawamura Y",
+        "Hua L",
+        "Gurtner A",
+        "Wong E",
+        "Kiyokawa J",
+        "Shah N",
+        "Gorham J",
+        "Wakimoto H",
+        "Rabkin SD",
+        "Martuza RL",
+        "Wakimoto H"
+      ],
+      "venue": "Biomedicine & pharmacotherapy = Biomedecine & pharmacotherapie",
+      "year": 2022,
+      "doi": "10.1016/j.biopha.2022.113843",
+      "pmid": "36271587",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Hiroaki Wakimoto",
+  "institution": "Massachusetts General Hospital",
+  "date_deposited": "2022-08-01",
+  "date_updated": "2022-11-01",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-14",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-10",
+  "verification_tier": 1,
+  "found_via": [
+    "keyword_api",
+    "citation_chain"
+  ],
+  "modality": [
+    "bulk_rna_seq"
+  ],
+  "platform": "Illumina HiSeq 2500 (GPL16791)",
+  "reference_genome": "Not reported",
+  "pipeline": "Not reported",
+  "patient_count": "Not reported",
+  "sample_count": 24,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": null,
+    "grade_2": null,
+    "grade_3": null
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": "Not reported",
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "Not reported"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "not_applicable",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "Not reported",
+  "age_distribution": "Not reported",
+  "has_outcome_data": "Not reported",
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": []
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": "Not reported",
+  "processed_data_available": true,
+  "processed_data_format": "GSE210178_all_compare.txt.gz",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High",
+    "publications": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "SCOPE CORRECTION APPLIED (2026-07-10 fact-check pass): live GEO overall_design confirms this series is RNA-seq of two established human meningioma cell lines only (CH-157 and IOMM-Lee, 12 samples each = 24 total; conditions: untreated control, oncolytic HSV G47delta, Panobinostat, TrichostatinA, and combinations), not primary patient tumor tissue. Per docs/scope.md, 'Cell line, PDX, and organoid meningioma omics data (in vitro/model systems, not patient tissue directly)' belongs in /data/adjacent/, not the core inventory. Moved from /data/ to /data/adjacent/ in this pass, consistent with the precedent already set for gse-263756-bulk-rnaseq (a prior QA pass had flagged this same issue but held off moving the file; this pass completes that correction). Series-level GEO metadata (title, PMID, dates, sample count) verified directly against the live source and is accurate as stored. AUDIT 2026-07-14 (live-source deep audit): two genuine errors found and corrected. (1) AUTHOR LIST TRUNCATED: publications[0].authors previously listed only the first 6 of 11 authors. Re-fetched Europe PMC authorString and PubMed efetch XML for PMID 36271587, both confirming 11 authors total, including two distinct people both named Wakimoto (Hiroko Wakimoto, 8th author, and Hiroaki Wakimoto, 11th/last author -- confirmed as different individuals via different given names and department affiliations in the PubMed efetch XML, not a duplicate-entry artifact); authors array expanded to the complete 11-name list. (2) CORRESPONDING_AUTHOR WRONG: previously listed 'Hiroaki Wakimoto, Joshua Gorham'. PubMed efetch XML shows only the final author entry (Hiroaki Wakimoto, Department of Neurosurgery, Massachusetts General Hospital, Harvard Medical School) carries an email address, 'hwakimoto@mgh.harvard.edu'; Joshua Gorham's affiliation entry carries no email/corresponding marker. This was independently corroborated by a web search on the paper's title returning the same conclusion ('The corresponding author for this study is Hiroaki Wakimoto, with contact information at hwakimoto@mgh.harvard.edu'). Direct fetch of the ScienceDirect/PMC full text to see the article's own asterisked corresponding-author footnote was blocked (403 Forbidden on ScienceDirect; reCAPTCHA wall on PMC), so this is corroborated via PubMed XML + independent web search rather than the article's own footnote directly, per the two-source standard used elsewhere in this pass; corresponding_author corrected to 'Hiroaki Wakimoto' only.",
+  "source_urls": [
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE210178",
+    "https://pubmed.ncbi.nlm.nih.gov/36271587/"
+  ],
+  "tags": {
+    "grade_comparable": false,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": false,
+    "large_cohort": false,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": false,
+    "has_outcome_data": false,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

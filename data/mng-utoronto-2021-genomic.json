@@ -1,0 +1,153 @@
+{
+  "id": "mng-utoronto-2021-genomic",
+  "title": "Meningioma (University of Toronto, Nature 2021)",
+  "accessions": [
+    "mng_utoronto_2021"
+  ],
+  "related_accessions": [
+    "EGAS00001004982",
+    "EGAD00001007494",
+    "EGAD00001007677",
+    "GSE180061",
+    "GSE168726"
+  ],
+  "source_repositories": [
+    "cBioPortal"
+  ],
+  "publications": [
+    {
+      "title": "A clinically applicable integrative molecular classification of meningiomas.",
+      "authors": [
+        "Nassiri F",
+        "Liu J",
+        "Patil V",
+        "Mamatjan Y",
+        "Wang JZ",
+        "Hugh-White R",
+        "Macklin AM",
+        "Khan S",
+        "Singh O",
+        "Karimi S",
+        "Corona RI",
+        "Liu LY",
+        "Chen CY",
+        "Chakravarthy A",
+        "Wei Q",
+        "Mehani B",
+        "Suppiah S",
+        "Gao A",
+        "Workewych AM",
+        "Tabatabai G",
+        "Boutros PC",
+        "Bader GD",
+        "de Carvalho DD",
+        "Kislinger T",
+        "Aldape K",
+        "Zadeh G"
+      ],
+      "venue": "Nature",
+      "year": 2021,
+      "doi": "10.1038/s41586-021-03850-3",
+      "pmid": "34433969",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Gelareh Zadeh",
+  "institution": "University of Toronto / Princess Margaret Cancer Centre",
+  "date_deposited": "Not reported",
+  "date_updated": "2026-01-08",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-14",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-10",
+  "verification_tier": 1,
+  "found_via": [
+    "keyword_api",
+    "citation_chain"
+  ],
+  "modality": [
+    "wes",
+    "cnv_snp_array",
+    "bulk_rna_seq",
+    "proteomics_bulk_ms"
+  ],
+  "platform": "Not reported (cBioPortal API exposes sample-type counts, not instrument/platform detail)",
+  "reference_genome": "hg19",
+  "pipeline": "Not reported",
+  "patient_count": 121,
+  "sample_count": 121,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": null,
+    "grade_2": null,
+    "grade_3": null
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": true,
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "Not reported"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "Not reported",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "Not reported",
+  "age_distribution": "Not reported",
+  "has_outcome_data": true,
+  "paired_multimodal": {
+    "is_paired": true,
+    "related_datasets": [
+      "egad00001007494-nassiri-rnaseq",
+      "egad00001007677-nassiri-snrnaseq",
+      "gse-180061-methylation",
+      "msv000086901-nassiri-proteomics"
+    ]
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": "Not reported",
+  "processed_data_available": true,
+  "processed_data_format": "cBioPortal study (browsable/downloadable via cBioPortal API and UI)",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "sample_count": "High",
+    "patient_count": "High",
+    "modality": "High",
+    "publications": "High",
+    "has_outcome_data": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "COMPLETENESS FIX (2026-07-10): patient_count corrected from 'Not reported' to 121, confirmed via the live cBioPortal patients endpoint (/api/studies/mng_utoronto_2021/patients), which returns exactly 121 patient records, i.e. one sample per patient (no multi-sample patients in this study). IMPORTANT MODALITY CAVEAT: cBioPortal's study API confirms real counts for cnaSampleCount=121, sequencedSampleCount=115, massSpectrometrySampleCount=96, and a methylationHm27SampleCount field present in the schema but reported as 0 (methylation data appears to live in a companion GEO deposit rather than loaded into cBioPortal itself -- see gse-183647-methylation-style cross-check, not yet performed for this specific study). The study description text says 'RNA abundance' is included, but mrnaRnaSeqSampleCount, mrnaRnaSeqV2SampleCount, and mrnaMicroarraySampleCount are ALL 0 in the API response -- RNA-seq is NOT actually loaded in cBioPortal for this study despite the description, so no RNA-seq modality tag was added here (avoid double-counting against gse-270371-methylation/gse-270638, which are a DIFFERENT Nassiri/Zadeh cohort, not this one). 'wes' modality tag is a reasonable inference from 'somatic point mutations' + sequencedSampleCount but the exact assay (whole-exome vs. targeted panel vs. whole-genome) was not confirmed directly -- flagged rather than asserted with confidence. This is this session's only cBioPortal-sourced record; full per-sample extraction (grade, molecular group assignments, etc.) has not been attempted. CROSS-LINK ADDED (2026-07-11): the RNA-seq data absent from cBioPortal (noted above) was located on EGA via an author/lab-based search (study EGAS00001004982, 'Integrative Molecular Classification of Meningiomas', exact title match), along with previously-uncaptured single-nucleus RNA-seq data for this same cohort; both added as new records (egad00001007494-nassiri-rnaseq, egad00001007677-nassiri-snrnaseq) and cross-linked here via paired_multimodal. FACT-CHECK CORRECTION (2026-07-11): the prior claim that 'RNA-seq is NOT actually loaded in cBioPortal for this study' was itself wrong and is corrected here. The study-summary endpoint's mrnaRnaSeqV2SampleCount=0 field is stale/misleading; live re-verification via /api/studies/mng_utoronto_2021/molecular-profiles and /api/studies/mng_utoronto_2021/sample-lists?projection=DETAILED shows a real molecular profile 'mng_utoronto_2021_mrna_seq_tpm' (mRNA expression, Illumina HiSeq_RNASeqV2 TPM) with an associated sample list 'mng_utoronto_2021_tpm' containing all 121 samples. bulk_rna_seq is therefore added to modality (cBioPortal does host processed RNA-seq TPM data for this cohort; the EGA record egad00001007494-nassiri-rnaseq separately hosts the raw sequencing reads, so both records remain valid and non-duplicative). Conversely, the same sample-lists/molecular-profiles endpoints confirm there is NO methylation-related molecular profile or sample list anywhere in this cBioPortal study (only cna/cnaseq/log2CNA/protein_quantification/sequenced/tpm lists exist), confirming methylationHm27SampleCount=0 was accurate: dna_methylation_array is removed from this record's modality list since methylation data for this cohort is not actually present via cBioPortal (the source_repository for this specific record) and instead lives in the separately cross-linked gse-180061-methylation.json record. modality confidence upgraded from Medium to High given this direct live re-verification. CROSS-COHORT AUDIT (2026-07-11): reviewed possible overlap with egas00001003490-nassiri-methylation-nomogram.json (2019 Neuro-Oncology nomogram paper, PMID 31158293, same Nassiri/Zadeh/Aldape Toronto group). That EGA-hosted record covers a 280-sample 3-site consortium cohort (MDA=140, TOR=122, HK=18); its Toronto-site subset (122 samples) is numerically close to this record's 121-patient single-institution cohort and shares the same corresponding authors and modality (DNA methylation array). No specimen-level identifiers are available in either record's public metadata to confirm or refute patient-level overlap (unlike the confirmed GSE168726/GSE180061 duplicate, where matching specimen IDs were directly observed), so this is flagged as an unresolved possible partial overlap rather than merged or cross-linked as the same dataset. CROSS-LINK ADDED (2026-07-13): msv000086901-nassiri-proteomics.json (this paper's proteomics arm, MassIVE MSV000086901) added as a new record and cross-linked here. FACT-CHECK PASS (2026-07-14): the publications[0] author list was hit by this corpus's known author-truncation bug, cut to the first 8 names (Nassiri F through Khan S); live PubMed efetch and Europe PMC both independently confirm the true author list is 26 names, ending in Aldape K and Zadeh G, now recorded in full. corresponding_author corrected from 'Farshad Nassiri / Gelareh Zadeh' to 'Gelareh Zadeh' alone: the PMC full-text article (PMC11604310) correspondence footnote names only Gelareh Zadeh (gelareh.zadeh@uhn.ca) as corresponding author; the article states Kenneth Aldape and Gelareh Zadeh 'jointly supervised this work' (a senior-author/supervision credit, not a correspondence designation), and Nassiri is first author only, not a corresponding author -- the prior 'Farshad Nassiri / ...' framing was an unsourced assumption from first-author position, exactly the kind of error this audit's corresponding-author rule exists to catch. has_outcome_data corrected from 'Not reported'/false to true (top-level and tags), reversing the prior call given genuine live evidence: this record's own earlier notes already established this is explicitly an outcome/prognosis-based classification paper, but the actual determining check is the paper's Methods section (confirmed via PMC11604310 full text), which states 'All samples were annotated with detailed high-quality clinical data elements that were established a priori (see Methods and Supplementary Table 1)' and explicitly lists the 19 core elements as including 'recurrence status, time to recurrence from index surgery' plus 'histopathological grade [WHO] and year of WHO classification system' -- i.e. per-patient recurrence-free-survival data is confirmed present in Supplementary Table 1 for this cohort, not merely implied by the paper's title or abstract, satisfying this project's evidentiary bar (see the Hertie-Institute and gse-292325/gse-292326 caution in docs/methodology.md, which this is deliberately distinguished from: here the Methods section itself, not just abstract language, names the specific deposited clinical variable). grade_breakdown was re-investigated given the same Supplementary Table 1 also lists WHO grade as a core element for every sample, meaning a true per-patient grade breakdown for this 121-sample cohort almost certainly exists; however, the exact grade_1/grade_2/grade_3 counts could not be recovered from the main text (which only states qualitatively that the cohort 'includes a substantial number of WHO grade 2 and 3 meningiomas'), the Discussion, or the fetched Supplementary Information PDF (MOESM1, which contains supplementary figures/discussion text, not the Table 1 spreadsheet itself). Per this project's never-guess standard, grade_breakdown is left as null/null/null rather than estimated; flagging this specifically as an open follow-up requiring direct access to/parsing of the Supplementary Table 1 spreadsheet file (not retrievable via the tooling available in this pass) to extract the true per-grade counts.",
+  "source_urls": [
+    "https://www.cbioportal.org/study/summary?id=mng_utoronto_2021",
+    "https://www.cbioportal.org/api/studies/mng_utoronto_2021",
+    "https://pubmed.ncbi.nlm.nih.gov/34433969/",
+    "https://doi.org/10.1038/s41586-021-03850-3"
+  ],
+  "tags": {
+    "grade_comparable": false,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": true,
+    "large_cohort": true,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": true,
+    "has_outcome_data": true,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": true,
+  "duplicate_notes": "CROSS-COHORT AUDIT (2026-07-11): possible partial patient overlap with egas00001003490-nassiri-methylation-nomogram.json (2019 Neuro-Oncology nomogram, PMID 31158293), same Nassiri/Zadeh/Aldape Toronto group. That 280-sample 3-site cohort's Toronto subset is 122 samples, close to this record's 121-patient cohort; same modality (DNA methylation array) and same institution/authors. Not confirmed as the same patients (no comparable specimen IDs available in either record's public metadata), so not merged or cross-linked; flagged true pending future controlled-access-level verification."
+}

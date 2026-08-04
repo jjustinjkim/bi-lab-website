@@ -1,0 +1,122 @@
+{
+  "id": "figshare-26561431-biczok-mutational-signature",
+  "title": "Mutational signature of extracranial meningioma metastases and their respective primary tumors",
+  "accessions": [
+    "10.6084/m9.figshare.26561431.v1"
+  ],
+  "related_accessions": [],
+  "source_repositories": [
+    "Figshare"
+  ],
+  "publications": [
+    {
+      "title": "Mutational signature of extracranial meningioma metastases and their respective primary tumors.",
+      "authors": [
+        "Biczok A",
+        "Thorsteinsdottir J",
+        "Karschnia P",
+        "Ruf VC",
+        "Tonn JC",
+        "Herms J",
+        "Schichor C",
+        "Dorostkar MM"
+      ],
+      "venue": "Acta Neuropathologica Communications",
+      "year": 2023,
+      "doi": "10.1186/s40478-023-01505-0",
+      "pmid": "36641486",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Annamaria Biczok",
+  "institution": "LMU University Hospital Munich (Center for Neuropathology and Prion Research / Department of Neurosurgery)",
+  "date_deposited": "2024-08-13",
+  "date_updated": "2024-08-13",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-14",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-11",
+  "verification_tier": 2,
+  "found_via": [
+    "keyword_api"
+  ],
+  "modality": [
+    "targeted_panel_seq"
+  ],
+  "platform": "Illumina TruSight Oncology 500 (TSO500) targeted NGS panel",
+  "reference_genome": "Not reported",
+  "pipeline": "Not reported",
+  "patient_count": 4,
+  "sample_count": 9,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": 4,
+    "grade_2": 3,
+    "grade_3": 2
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": true,
+  "brain_invasion": {
+    "status_reported": true,
+    "counts": "1/9 samples CNS-infiltration positive ('yes': case 1 primary convexity tumor), 7/9 negative ('no'), 1/9 not applicable ('n/a': case 2's pulmonary extracranial metastasis sample)",
+    "determination_method": "Not reported (deposited file has a per-sample 'CNS infiltration' yes/no/n/a column; the paper's methods describe only general neuropathological workup -- H&E, Ki67 IHC, H3K27me3 IHC -- without stating the specific criterion used to call CNS infiltration)"
+  },
+  "treatment_timepoint_status": [
+    "primary",
+    "recurrent",
+    "metastatic"
+  ],
+  "anatomic_location_breakdown": "Primary tumor sites: convexity (case 1), convexity (case 2), fronto-basal (case 3), intraventricular (case 4). Case 3 also has a local intracranial recurrence at the same fronto-basal site (18.9 months post-primary) before its extracranial spread -- not itself a second extracranial metastasis. Extracranial metastatic sites per case: lumbar vertebral body L4 (case 1, 210.1 months post-primary), pulmonary (case 2, 6.1 months), cervical spinal canal/neuroforaminal C3-C4 (case 3, 20.5 months), lumbar spinal canal intradural adjacent to nerves L5 (case 4, 12 months). 4 cases x 2-3 samples each: cases 1/2/4 have 2 samples each (primary + one extracranial metastasis), case 3 has 3 samples (primary + one local recurrence + one extracranial metastasis) = 9 total.",
+  "tissue_preservation": "Not reported",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "Not reported (no sex/gender column in the deposited table)",
+  "age_distribution": "9 specimens across 4 cases, ages at resection ranging from 49.72 to 71.55 years",
+  "has_outcome_data": false,
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": []
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": false,
+  "processed_data_available": true,
+  "processed_data_format": "Per-case variant-call annotation table (xlsx): TSO500 gene-level variant/CNV calls (NF2, TERT, PIK3CA, PTEN, BAP1, CDKN2A/B, and others) plus DKFZ/Heidelberg 850k (EPIC) methylation-classifier class/score annotation per sample",
+  "license": "CC BY + CC0",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "Medium",
+    "publications": "High",
+    "brain_invasion": "High",
+    "treatment_timepoint_status": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "Directly downloaded and inspected the deposited file (40478_2023_1505_MOESM3_ESM.xlsx, 'Additional file 3'): a genuine per-case table of 9 rows across 4 unique cases, each with paired primary-tumor and extracranial-metastasis samples, TSO500 targeted-panel variant calls (NF2, TERT, PIK3CA, PTEN, BAP1, CDKN2A/B, EP300, ERBB3, GNAS, KDM5A, KLHL6, NOTCH1, PIK3C3, POLE, RAD50, SLIT2, SUFU, TGFBR2), and DNA-methylation-classifier ('850K Class/Family/Subclass', v12.5) annotation columns. IMPORTANT SCOPE NOTE: the '850K Class' columns are classifier OUTPUT (a class name and confidence score), not raw Illumina EPIC/850k array data (no beta values or IDAT files are present in this file) -- this record is therefore classified modality=targeted_panel_seq only, NOT dna_methylation_array, since the underlying methylation array data itself does not appear to be deposited here (it may exist in a DKFZ/Heidelberg classifier-internal reference set not part of this supplementary file). UPDATE 2026-07-11 (centralized integration pass): a 'metastatic' treatment_timepoint_status value was added to docs/controlled_vocabulary.md specifically for this dataset's core design (matched primary tumor + extracranial metastasis per case), and treatment_timepoint_status above now reflects both timepoints directly. grade_breakdown/sample_count/patient_count/age_distribution were computed directly from the 9 data rows (case IDs 1-4) in the downloaded file, not taken from the abstract. Institution inferred from PubMed author affiliations; the figshare funding field separately lists 'Universit\u00e4tsklinik M\u00fcnchen'. tags.large_cohort is set false regardless of this cohort's actual size, per instruction that large_cohort requires centralized recomputation across the whole inventory after this extraction batch, not a per-record judgment. RE-VERIFICATION AUDIT 2026-07-12: (1) corresponding_author corrected from 'Mario M. Dorostkar / Christian Schichor' (a prior last-authorship inference) to 'Annamaria Biczok'; the actual correspondence data both in PubMed efetch (email Annamaria.biczok@med.uni-muenchen.de) and in the PMC full text (only the first author's contrib carries corresp=\"yes\") identifies A. Biczok as the sole corresponding author, per the instruction to use email/footnote data rather than author-list position. (2) grade_breakdown re-verified directly from the deposited file's 'Integrated Dx' column across the 9 rows (G1: 4 [Microcystic G1, Microcystic G1, Meningothelial G1, Papillary G1]; G2: 3 [two Atypical G2, one Papillary G2]; G3: 2 [two Anaplastic G3]); the existing 4/3/2 value is correct and unchanged. sample_count=9, patient_count=4, age range 49.72-71.55 also re-confirmed from the file. DEEP-AUDIT FIX 2026-07-14: re-downloaded and fully parsed the deposited xlsx (40478_2023_1505_MOESM3_ESM.xlsx, all 9 data rows x all columns) directly from the figshare API/ndownloader link and cross-checked against the live PMC full text of the linked paper (PMC9840245, PMID 36641486). Two things were wrong. (1) brain_invasion.status_reported was false/'Not reported', but the deposited file has an explicit per-sample 'CNS infiltration' column with values yes/no/n/a (row-by-row: case1-primary=yes, case1-met=no, case2-primary=no, case2-met=n/a, case3-primary=no, case3-recurrence=no, case3-met=no, case4-primary=no, case4-met=no) -- 1/9 positive, 7/9 negative, 1/9 not applicable -- corrected status_reported to true and counts populated; determination_method left 'Not reported' since the paper's methods only describe general neuropathological workup (H&E, Ki67, H3K27me3 IHC) without stating the specific criterion for calling CNS infiltration, so tags.brain_invasion_annotated correctly stays false (that tag requires a stated determination method, which this source lacks). (2) treatment_timepoint_status was ['primary','metastatic'], omitting a real third category: case 3 in the deposited table has 3 rows, not 2 -- row order is primary tumor (fronto-basal, t=0), a SECOND fronto-basal sample at t=18.9 months (same site, same grade/diagnosis as the primary), then the true extracranial metastasis (cervical spinal canal, t=20.5 months). The live PMC full text confirms this second fronto-basal sample is a local intracranial recurrence, not a metastasis: case #3 had a local recurrence at the primary site before later developing the cervical-spinal extracranial metastasis. This was miscategorized as an undifferentiated 'metastatic' sample previously. Corrected treatment_timepoint_status to ['primary','recurrent','metastatic'] and tags.recurrence_annotated from false to true (the dataset explicitly distinguishes primary (4, one per case) vs. recurrent (1, case 3's second fronto-basal sample) vs. metastatic (4) samples, with counts, satisfying the tag definition). anatomic_location_breakdown text also corrected to describe case 3's true 3-sample composition instead of implying all non-primary samples are metastases. has_outcome_data re-confirmed false/correct: live full text states 'Due to the small sample size and short follow-up period no statement could be made about long-term tumor control' -- no survival/RFS data reported. grade_breakdown, sample_count, patient_count, age_distribution, molecular_subtype_annotated all re-confirmed unchanged and correct.",
+  "source_urls": [
+    "https://springernature.figshare.com/articles/dataset/Additional_file_3_of_Mutational_signature_of_extracranial_meningioma_metastases_and_their_respective_primary_tumors/26561431",
+    "https://springernature.figshare.com/articles/dataset/Additional_file_3_of_Mutational_signature_of_extracranial_meningioma_metastases_and_their_respective_primary_tumors/26561431",
+    "https://pubmed.ncbi.nlm.nih.gov/36641486/",
+    "https://doi.org/10.1186/s40478-023-01505-0"
+  ],
+  "tags": {
+    "grade_comparable": true,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": false,
+    "large_cohort": false,
+    "recurrence_annotated": true,
+    "molecular_subtype_annotated": true,
+    "has_outcome_data": false,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

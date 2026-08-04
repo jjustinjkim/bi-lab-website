@@ -1,0 +1,107 @@
+{
+  "id": "gse-212377-bulk-rnaseq",
+  "title": "Columbia University Irving Medical Center RNASeq of meningioma tumors",
+  "accessions": [
+    "GSE212377"
+  ],
+  "related_accessions": [],
+  "source_repositories": [
+    "GEO",
+    "SRA"
+  ],
+  "publications": [
+    {
+      "title": "A Transcriptome-Based Precision Oncology Platform for Patient-Therapy Alignment in a Diverse Set of Treatment-Resistant Malignancies.",
+      "authors": ["Mundi PS", "Dela Cruz FS", "Grunn A", "Diolaiti D", "Mauguen A", "Rainey AR", "Guillan K", "Siddiquee A", "You D", "Realubit R", "Karan C", "Ortiz MV", "Douglass EF", "Accordino M", "Mistretta S", "Brogan F", "Bruce JN", "Caescu CI", "Carvajal RD", "Crew KD", "Decastro G", "Heaney M", "Henick BS", "Hershman DL", "Hou JY", "Iwamoto FM", "Jurcic JG", "Kiran RP", "Kluger MD", "Kreisl T", "Lamanna N", "Lassman AB", "Lim EA", "Manji GA", "McKhann GM", "McKiernan JM", "Neugut AI", "Olive KP", "Rosenblat T", "Schwartz GK", "Shu CA", "Sisti MB", "Tergas A", "Vattakalam RM", "Welch M", "Wenske S", "Wright JD", "Canoll P", "Hibshoosh H", "Kalinsky K", "Aburi M", "Sims PA", "Alvarez MJ", "Kung AL", "Califano A"],
+      "venue": "Cancer Discovery",
+      "year": 2023,
+      "doi": "10.1158/2159-8290.CD-22-1020",
+      "pmid": "37061969",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Mariano J Alvarez, Andrew L Kung, Andrea Califano",
+  "institution": "COLUMBIA UNIVERSITY HEALTH SCIENCES",
+  "date_deposited": "2022-08-30",
+  "date_updated": "2022-10-03",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-10",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-10",
+  "verification_tier": 2,
+  "found_via": [
+    "keyword_api"
+  ],
+  "modality": [
+    "bulk_rna_seq"
+  ],
+  "platform": "Illumina NextSeq 500 (GPL18573)",
+  "reference_genome": "Not reported",
+  "pipeline": "Not reported",
+  "patient_count": "Not reported",
+  "sample_count": 102,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": null,
+    "grade_2": null,
+    "grade_3": null
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": "Not reported",
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "Not reported"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "Not reported",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "Not reported",
+  "age_distribution": "Not reported",
+  "has_outcome_data": "Not reported",
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": []
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": "Not reported",
+  "processed_data_available": true,
+  "processed_data_format": "GSE212377_RAW.tar",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High",
+    "publications": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "Series-level GEO metadata verified directly against the live source; per-sample clinical/pathology fields (grade, sex/age, anatomic location, brain invasion, treatment timepoint) have not yet been extracted from individual GSM records or supplementary tables -- part of the batch-1 scaling pass, prioritizing breadth of verified accessions over per-sample depth. Publication metadata pulled from PubMed esummary; not yet manually spot-checked against the full text for every record in this batch. FOLLOW-UP PUBLICATION SEARCH (2026-07-13), match found and directly confirmed: fetched the live PMC full text (PMC10239356, via pmc.ncbi.nlm.nih.gov) of Mundi et al. 2023 (PMID 37061969, Cancer Discovery, 'A Transcriptome-Based Precision Oncology Platform for Patient-Therapy Alignment in a Diverse Set of Treatment-Resistant Malignancies'); its Data Availability table explicitly lists a row 'RNASeq of meningioma tumors sequenced at CUIMC' mapped directly to GEO accession GSE212377 -- an exact, unambiguous accession-to-row match, not a topic guess. Note: the related record gse-197763-bulk-rnaseq (same corresponding authors, GEO Series_summary describing an overlapping '103 meningioma patient tumors... used to derive a meningioma gene regulatory network') was also checked against this same paper's full text and does NOT appear anywhere in it; only GSE212377 and GSE212854 (PDX/cell-line RNASeq) are cited. GSE212377's own Series_overall_design ('RNAseq profiles of 102 meningioma patient tumors... used to derive a meningioma gene regulatory network (interactome)') is near-identical wording to GSE197763's meningioma-subset description, submitted ~5 months later (Aug 2022 vs Mar 2022), suggesting GSE212377 may be a cleaner re-deposit of the same specimens that the paper's own Data Availability statement treats as canonical -- flagged here for a possible_duplicate_needs_verification check in a future dedup pass, not resolved in this session (out of scope for this pass). Publication added; publication_status normal so tags.peer_reviewed set true. AUTHOR-LIST AND CORRESPONDING-AUTHOR FIX (2026-07-14 deep audit): publications[0].authors was truncated to the first 6 of the paper's actual 55 authors; expanded to the full list via Europe PMC's authorString field. Separately, corresponding_author was wrong: it had been set to 'Prabhjot S Mundi, Mariano J Alvarez', assuming the first-listed author (Mundi, the clinical fellow) was co-corresponding. A live web search cross-checked against the AACR publisher page and PMC listing confirms the paper's actual designated corresponding authors are Mariano J. Alvarez, Andrew L. Kung, and Andrea Califano (the senior computational-biology/oncology PIs); Mundi PS is the first author, not a corresponding author. Corrected to 'Mariano J Alvarez, Andrew L Kung, Andrea Califano'. This is the same class of error flagged elsewhere in this audit: assuming corresponding authorship from author-list position rather than confirming the actual designated correspondence.",
+  "source_urls": [
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE212377"
+  ],
+  "tags": {
+    "grade_comparable": false,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": false,
+    "large_cohort": true,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": false,
+    "has_outcome_data": false,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": true,
+  "duplicate_notes": "Likely overlaps with gse-197763-bulk-rnaseq's meningioma subset (same 102-103 count, same Columbia PI trio Mundi/Alvarez/Califano, near-identical 'gene regulatory network (interactome)' design text; this series appears to be a cleaner standalone re-deposit of the same cohort ~5-6 months later, and is the one this record's own linked paper's Data Availability table actually cites) -- not confirmed at the patient level, flagged for a future dedup pass."
+}

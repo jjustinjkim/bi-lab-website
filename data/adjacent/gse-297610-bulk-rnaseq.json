@@ -1,0 +1,116 @@
+{
+  "id": "gse-297610-bulk-rnaseq",
+  "title": "KMT2C deficiency promotes meningioma progression through H3K27ac-mediated HIPPO Pathway Inactivation",
+  "accessions": [
+    "GSE297610"
+  ],
+  "related_accessions": [],
+  "source_repositories": [
+    "GEO",
+    "SRA"
+  ],
+  "publications": [
+    {
+      "title": "KMT2C Loss Promotes NF2-Wildtype Meningioma Progression and Ferroptosis Sensitivity via Epigenetic Repression of Hippo Signaling.",
+      "authors": [
+        "Zhang L",
+        "Ye Y",
+        "Gu W",
+        "Wang X",
+        "Chen N",
+        "He Q"
+      ],
+      "venue": "Advanced science (Weinheim, Baden-Wurttemberg, Germany)",
+      "year": 2026,
+      "doi": "10.1002/advs.202522756",
+      "pmid": "41642951",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Jing Ji",
+  "institution": "Nanjing medical universuty",
+  "date_deposited": "2025-05-19",
+  "date_updated": "2025-12-13",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-12",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-10",
+  "verification_tier": 1,
+  "found_via": [
+    "keyword_api",
+    "citation_chain"
+  ],
+  "modality": [
+    "bulk_rna_seq"
+  ],
+  "platform": "Illumina NovaSeq 6000 (GPL24676)",
+  "reference_genome": "Not reported",
+  "pipeline": "Not reported",
+  "patient_count": "Not reported",
+  "sample_count": 6,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": null,
+    "grade_2": null,
+    "grade_3": null
+  },
+  "who_edition": "Not applicable (cell line)",
+  "molecular_subtype_annotated": "Not reported",
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "Not applicable"
+  ],
+  "anatomic_location_breakdown": "Not applicable (cell line)",
+  "tissue_preservation": "not_applicable",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "Not applicable",
+  "age_distribution": "Not applicable",
+  "has_outcome_data": false,
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": []
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": "Not reported",
+  "processed_data_available": true,
+  "processed_data_format": "GSE297610_processed_data.xlsx",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High",
+    "publications": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "FACT-CHECK UPDATE (2026-07-10): Publication found and linked via citation-chain search (was previously unlinked with no PMID in GEO). PMID 41642951, 'KMT2C Loss Promotes NF2-Wildtype Meningioma Progression and Ferroptosis Sensitivity via Epigenetic Repression of Hippo Signaling' (Advanced Science, 2026); the published title differs from the GEO-deposited series title but authorship (Zhang L first author, Ji J last author -- this record's only two contributors), institution (Nanjing Medical University Dept of Neurosurgery, matching this record's 'Nanjing medical universuty'), and mechanism (KMT2C loss, H3K27ac/CBP-EP300, NF2/Hippo suppression, ferroptosis/TSA rescue) all match exactly; confirmed not retracted/corrected via Europe PMC. UNRESOLVED SCOPE QUESTION (previously open, RESOLVED 2026-07-11): overall_design said only 'By knockdown the expression of KMT2C in meningioma cells...' without naming a specific cell line. Fetched the paper's open-access PMC full text (PMC13067829) directly: the RNA-seq experiment underlying this GEO series is explicitly described in Figure 3 as 'RNA-seq analysis of KMT2C-WT and KMT2C-KO cells (n = 3 per group)' (3+3=6, matching this series' sample_count exactly), performed on NF2-wild-type meningioma cells with CRISPR/Cas9-mediated KMT2C knockout. The paper's methods confirm all functional/mechanistic experiments used the established immortalized meningioma cell lines IOMM-Lee and CH157MN plus patient-derived cell cultures MN-TY1, MN-WKM2, and MN-TS1 (isogenic KMT2C-WT/KO pairs) -- no primary, uncultured patient tumor tissue was sequenced. Per docs/scope.md, 'Cell line, PDX, and organoid meningioma omics data (in vitro/model systems, not patient tissue directly)' is out of scope for the core /data/ inventory and belongs in /data/adjacent/, matching the same class of error already found and corrected for GSE263122/Ben-Men-1 in this same corpus. RELOCATED (2026-07-11): this file moved from data/gse-297610-bulk-rnaseq.json to data/adjacent/gse-297610-bulk-rnaseq.json (same filename/id retained, following the gse-263122 precedent) after confirming via live re-fetch of the GEO record and the paper's full text that this is entirely an isogenic cell-line knockout/knockdown experiment, not patient tissue. who_edition corrected to 'Not applicable (cell line)', treatment_timepoint_status to ['Not applicable'], anatomic_location_breakdown to 'Not applicable (cell line)', tissue_preservation to 'not_applicable', sex_distribution/age_distribution to 'Not applicable', has_outcome_data corrected from 'Not reported' to false (no patient-level outcome concept applies to a cell-line knockout experiment), consistent with this corpus's existing cell-line record conventions (see gse-244554-cellline-rnaseq.json, gse-263122-bulk-rnaseq.json). corresponding_author corrected from 'Liuchao,,Zhang, Jing,,Ji' to 'Jing,,Ji' only: fetched the paper's PMC full text directly and found exactly two corresp=\"yes\" authors with emails, Tu Yiming (yimingtu2018@njmu.edu.cn) and Ji Jing (jijing@njmu.edu.cn); Zhang L (first author) has no corresponding designation. Of the two true corresponding authors, only Ji Jing appears in this accession's live GEO Series_contributor list (which has only 'Liuchao,,Zhang' and 'Jing,,Ji'); Tu Yiming is not a GEO contributor here, so per this corpus's established sourcing convention only Ji is retained. Series-level GEO metadata verified directly against the live source; per-sample clinical/pathology fields not applicable to a cell-line experiment. RE-VERIFICATION (2026-07-12), per-sample GSM check: all 6 GSMs were fetched (GSM8995732 'Control_1' through GSM8995737 'KMT2C-KD_3') and every one carries characteristics 'tissue: cell line', 'cell line: IOMM-Lee', 'cell type: meningioma' -- i.e. the deposited GEO series is a single established meningioma cell line (IOMM-Lee), 3 Control vs 3 KMT2C-knockdown (KD) replicates, matching the overall_design's 'By knockdown the expression of KMT2C in meningioma cells'. This DIRECTLY confirms and strengthens the adjacent-scope decision (isogenic meningioma cell-line experiment, no primary patient tissue). Note the earlier paragraph's paraphrase of the paper's Figure 3 ('KMT2C-WT and KMT2C-KO cells... CRISPR/Cas9 knockout... MN-TY1/MN-WKM2/MN-TS1') describes the publication's broader panel of functional experiments; the GEO deposit GSE297610 itself is specifically the IOMM-Lee Control-vs-KMT2C-knockdown RNA-seq (KD, not the CRISPR-KO subline), which does not change the cell-line classification. Publication (PMID 41642951, Adv Sci 2026, doi 10.1002/advs.202522756) re-confirmed against PubMed esummary.",
+  "source_urls": [
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE297610",
+    "https://pubmed.ncbi.nlm.nih.gov/41642951/"
+  ],
+  "tags": {
+    "grade_comparable": false,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": false,
+    "large_cohort": false,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": false,
+    "has_outcome_data": false,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

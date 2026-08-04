@@ -1,0 +1,126 @@
+{
+  "id": "msv000086901-nassiri-proteomics",
+  "title": "Global proteomic profiles of meningioma tissues reveal proteogenomic subtypes",
+  "accessions": [
+    "MSV000086901"
+  ],
+  "related_accessions": [
+    "GSE180061",
+    "EGAS00001004982"
+  ],
+  "source_repositories": [
+    "MassIVE"
+  ],
+  "publications": [
+    {
+      "title": "A clinically applicable integrative molecular classification of meningiomas.",
+      "authors": [
+        "Nassiri F",
+        "Liu J",
+        "Patil V",
+        "Mamatjan Y",
+        "Wang JZ",
+        "Hugh-White R"
+      ],
+      "venue": "Nature",
+      "year": 2021,
+      "doi": "10.1038/s41586-021-03850-3",
+      "pmid": "34433969",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Thomas Kislinger / Gelareh Zadeh",
+  "institution": "University Health Network / University of Toronto",
+  "date_deposited": "Not reported",
+  "date_updated": "Not reported",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-13",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-13",
+  "verification_tier": 2,
+  "found_via": [
+    "citation_chain"
+  ],
+  "modality": [
+    "proteomics_bulk_ms"
+  ],
+  "platform": "Orbitrap Fusion",
+  "reference_genome": "Not applicable",
+  "pipeline": "Not reported",
+  "patient_count": "Not reported",
+  "sample_count": 96,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": null,
+    "grade_2": null,
+    "grade_3": null
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": true,
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "Not reported"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "fresh_frozen",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "Not reported",
+  "age_distribution": "Not reported",
+  "has_outcome_data": false,
+  "paired_multimodal": {
+    "is_paired": true,
+    "related_datasets": [
+      "mng-utoronto-2021-genomic",
+      "egad00001007494-nassiri-rnaseq",
+      "egad00001007677-nassiri-snrnaseq",
+      "gse-180061-methylation"
+    ]
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": true,
+  "processed_data_available": "Not reported",
+  "processed_data_format": "Not reported",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not applicable (open access via MassIVE/ProteomeXchange)",
+  "confidence_level": {
+    "modality": "High",
+    "publications": "High",
+    "corresponding_author": "Medium",
+    "sample_count": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "NEW RECORD (2026-07-13), surfaced by cross-checking a user-supplied data-availability statement (Landry et al. 2026, Nature Genetics, PMID 42265312) against this inventory. That statement reads: 'Proteomic data were deposited as part of a prior publication4 to the Mass Spectrometry Interactive Virtual Environment (MassIVE; MSV000086901)', where reference 4 (confirmed by fetching the paper's own reference list XML) is Nassiri F et al. 2021 Nature, 'A clinically applicable integrative molecular classification of meningiomas' -- the same landmark paper already backing mng-utoronto-2021-genomic.json, egad00001007494-nassiri-rnaseq.json, egad00001007677-nassiri-snrnaseq.json, and gse-180061-methylation.json in this inventory. Verified MSV000086901 directly via MassIVE's own PROXI API (proxi/v0.1/datasets/MSV000086901): title 'Global proteomic profiles of meningioma tissues reveal proteogenomic subtypes', summary 'Fresh-frozen meningioma tissues of varying WHO grades were analyzed by shotgun DDA proteomics. The proteomic profiles were compared and reflected a set of new clinical subtypes derived from genomic, epigenomic and transcriptomic data which improved risk stratification', instrument Orbitrap Fusion, contacts Thomas Kislinger (thomas.kislinger@utoronto.ca, University Health Network) and Gelareh Zadeh (Gelareh.zadeh@uhn.ca, Toronto Western Hospital) -- both consistent with the Nassiri 2021 author list (Kislinger T and Zadeh G are co-authors) and with this inventory's existing corresponding_author for the sibling records. MassIVE's own metadata field lists 'Dataset with no associated published manuscript', but the newer Landry 2026 paper's data-availability statement explicitly attributes it to the Nassiri 2021 paper by reference number, which is treated as the stronger, more specific source here. molecular_subtype_annotated set true per the summary's own description of deriving 'new clinical subtypes'. tissue_preservation set to fresh_frozen per the summary's explicit wording. Could NOT retrieve a per-sample file listing or sample count via MassIVE's API (QueryMSV/DownloadResultFile endpoints returned errors in this environment); patient_count/sample_count left 'Not reported' rather than guessed from the paper's own overall cohort size (which spans multiple omics arms, not proteomics specifically) -- flagged for a follow-up pass to pull the FTP file listing (ftp://massive.ucsd.edu/v03/MSV000086901) directly. paired_multimodal.is_paired set true and cross-linked to the other three Nassiri-2021 records already in this inventory, consistent with the paper's own 'integrative' multi-omic premise on the same cohort, though this specific proteomics-to-methylation/RNA-seq patient-level match was not independently confirmed via shared sample IDs (no file listing was accessible); flagged here as an inference from the paper's design rather than a confirmed same-ID match. The reverse links were added to the 4 sibling records' own paired_multimodal.related_datasets in the same pass. DEEP-AUDIT UPDATE (2026-07-14): sample_count corrected from 'Not reported' to 96, and confidence_level.sample_count upgraded from Low to High. The prior pass's QueryMSV/DownloadResultFile attempts to retrieve a file listing failed in that environment, but this pass successfully retrieved the live per-file listing via the dataset's own file-browser AJAX endpoint (https://massive.ucsd.edu/ProteoSAFe/dataset_files.jsp?task=2c0b49a2fe5f48468adb1c4abc18cee1, which calls MassiveServlet?function=massivesummary&massiveid=MSV000086901 returning filecount:97): 97 total files, of which 96 are distinct raw instrument files under the 'raw' collection (filenames 'CAM20.####.raw', one non-data ccms_parameters/params.xml file makes up the 97th). This 96-raw-file count is independently cross-validated against this same Nassiri 2021 cohort's own cBioPortal record (mng-utoronto-2021-genomic.json), whose own needs_manual_review_reason already documents a live cBioPortal API field 'massSpectrometrySampleCount=96' for this identical study -- two independent live sources (MassIVE's own file browser and cBioPortal's own sample-count API field) converge on the same figure of 96, given that record's own confirmation elsewhere that this cohort has one sample per patient (no multi-sample patients), supporting the standard one-raw-file-per-sample assumption for shotgun DDA proteomics. patient_count intentionally left 'Not reported' rather than also set to 96, since no live source enumerates patient-level identity specifically for the proteomics subset (only the total raw-file/sample count), and this project's rule is to never infer a patient_count from a sample_count without direct confirmation. Also upgraded confidence_level.publications from Medium to High: a direct Europe PMC full-text search for the literal string 'MSV000086901' (https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%22MSV000086901%22) returns exactly 2 hits -- PMID 42265312 (Landry et al. 2026 Nature Genetics, already the basis for this record) AND, newly confirmed this pass, PMID 34433969 itself (the Nassiri 2021 Nature paper already linked here), meaning the accession is directly associated with the original landmark paper's own text/metadata as indexed by Europe PMC, not solely inferred via the newer paper's back-reference. The Landry et al. 2026 full text (PMC13263146) was also directly fetched and its reference list confirms citation CR4 is precisely 'Nassiri, F. et al. A clinically applicable integrative molecular classification of meningiomas. Nature 597, 119-125 (2021)' (DOI 10.1038/s41586-021-03850-3, PMID 34433969), an exact match to this record's sole publications entry, closing the loop on the attribution chain described in the original extraction note above.",
+  "source_urls": [
+    "https://massive.ucsd.edu/ProteoSAFe/QueryMSV?id=MSV000086901",
+    "https://massive.ucsd.edu/ProteoSAFe/proxi/v0.1/datasets/MSV000086901",
+    "https://massive.ucsd.edu/ProteoSAFe/dataset_files.jsp?task=2c0b49a2fe5f48468adb1c4abc18cee1",
+    "https://pubmed.ncbi.nlm.nih.gov/34433969/",
+    "https://pubmed.ncbi.nlm.nih.gov/42265312/"
+  ],
+  "tags": {
+    "grade_comparable": false,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": true,
+    "large_cohort": true,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": true,
+    "has_outcome_data": false,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

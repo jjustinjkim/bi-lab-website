@@ -1,0 +1,180 @@
+{
+  "id": "gse-212666-bulk-rnaseq",
+  "title": "Hypermitotic meningiomas harbor DNA methylation subgroups with distinct biological and clinical features",
+  "accessions": [
+    "GSE212666"
+  ],
+  "related_accessions": [],
+  "source_repositories": [
+    "GEO",
+    "SRA"
+  ],
+  "publications": [
+    {
+      "title": "Hypermitotic meningiomas harbor DNA methylation subgroups with distinct biological and clinical features.",
+      "authors": [
+        "Choudhury A",
+        "Chen WC",
+        "Lucas CG",
+        "Bayley JC",
+        "Harmanci AS",
+        "Maas SLN",
+        "Santagata S",
+        "Klisch T",
+        "Perry A",
+        "Bi WL",
+        "Sahm F",
+        "Patel AJ",
+        "Magill ST",
+        "Raleigh DR"
+      ],
+      "venue": "Neuro-oncology",
+      "year": 2023,
+      "doi": "10.1093/neuonc/noac224",
+      "pmid": "36227281",
+      "preprint_id": null
+    },
+    {
+      "title": "Gene transcript fusions are associated with clinical outcomes and molecular groups of meningiomas.",
+      "authors": [
+        "Zakimi N",
+        "Nguyen MP",
+        "Raleigh DR"
+      ],
+      "venue": "Acta neuropathologica",
+      "year": 2024,
+      "doi": "10.1007/s00401-024-02708-y",
+      "pmid": "38509407",
+      "preprint_id": null
+    },
+    {
+      "title": "Meningeal solitary fibrous tumor cell states phenocopy cerebral vascular development and homeostasis.",
+      "authors": [
+        "Mirchia K",
+        "Choudhury A",
+        "Joseph T",
+        "Birrueta JO",
+        "Phillips JJ",
+        "Bhaduri A",
+        "Crouch EE",
+        "Perry A",
+        "Raleigh DR"
+      ],
+      "venue": "Neuro-oncology",
+      "year": 2025,
+      "doi": "10.1093/neuonc/noae172",
+      "pmid": "39207122",
+      "preprint_id": null
+    },
+    {
+      "title": "Pan-cancer copy number analysis identifies optimized size thresholds and co-occurrence models for individualized risk stratification.",
+      "authors": [
+        "Nguyen MP",
+        "Chen WC",
+        "Mirchia K",
+        "Choudhury A",
+        "Zakimi N",
+        "Nitturi V",
+        "Klisch TJ",
+        "Magill ST",
+        "Lucas CG",
+        "Patel AJ",
+        "Raleigh DR"
+      ],
+      "venue": "Nature communications",
+      "year": 2025,
+      "doi": "10.1038/s41467-025-61063-y",
+      "pmid": "40603285",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "David R Raleigh",
+  "institution": "UCSF",
+  "date_deposited": "2022-09-04",
+  "date_updated": "2025-07-10",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-14",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-10",
+  "verification_tier": 1,
+  "found_via": [
+    "keyword_api",
+    "citation_chain"
+  ],
+  "modality": [
+    "bulk_rna_seq"
+  ],
+  "platform": "Illumina NovaSeq 6000 (GPL24676)",
+  "reference_genome": "Not reported",
+  "pipeline": "Not reported",
+  "patient_count": "Not reported",
+  "sample_count": 302,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": null,
+    "grade_2": null,
+    "grade_3": null
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": "Not reported",
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "Not reported"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "Not reported",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "Not reported",
+  "age_distribution": "Not reported",
+  "has_outcome_data": "Not reported",
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": []
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": "Not reported",
+  "processed_data_available": true,
+  "processed_data_format": "GSE212666_RAW.tar",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High",
+    "publications": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "Series-level GEO metadata verified directly against the live source; per-sample clinical/pathology fields (grade, sex/age, anatomic location, brain invasion, treatment timepoint) have not yet been extracted from individual GSM records or supplementary tables -- part of the batch-1 scaling pass, prioritizing breadth of verified accessions over per-sample depth. Publication metadata pulled from PubMed esummary; not yet manually spot-checked against the full text for every record in this batch. CORRESPONDING-AUTHOR INVESTIGATION (2026-07-14): a prior audit pass had changed corresponding_author from 'Abrar Choudhury, David Raleigh' to just 'David Raleigh' with no cited justification, and that undocumented edit was reverted. Redone properly this time: Europe PMC's API returns isOpenAccess:N and an empty/absent fullTextXML for PMID 36227281 (the primary paper for this GSE, Choudhury et al. 2023 Neuro-Oncology), so instead fetched pmc.ncbi.nlm.nih.gov/articles/PMC10013643/ directly (browser user-agent) and got the real rendered HTML (confirmed by successfully extracting body text, not a CAPTCHA/login page). Searched it for every occurrence of 'correspond' and for author-footnote markers: there is exactly one author-notes entry, reading verbatim 'Corresponding Author: David R. Raleigh, MD, PhD, Associate Professor, Departments of Radiation Oncology and Neurological Surgery, University of California San Francisco, 1450 3rd Street, HD481, San Francisco, CA 94158, USA (david.raleigh@ucsf.edu).', with a single '✉' marker in the byline next to Raleigh's name only -- Choudhury (first author) carries no such marker. This is a direct quote from the paper's own correspondence footnote, not an inference from author-list position, so corresponding_author is changed to 'David R Raleigh' (Choudhury dropped) with high confidence this time, unlike the previous unexplained edit. Also cross-checked GEO's own Series_contact_name for GSE212666, which lists William Chen (UCSF) as the metadata-submission contact -- included here for transparency but explicitly NOT used to set corresponding_author, since GEO's submission contact is a different role from the paper's corresponding author and this project's standard requires verifying against the paper's own footnote. Per-sample GSM characteristics (spot-checked GSM6542802) carry only 'tissue: Meningioma', no grade/timepoint/brain-invasion/subtype fields, confirming grade_breakdown/brain_invasion/treatment_timepoint_status/molecular_subtype_annotated/has_outcome_data remain correctly 'Not reported' (not exposed at either the repository or per-sample level for this specific 302-sample RNA-seq set, as distinct from the paper's larger 565-tumor multi-modal clinical cohort). DEEP-AUDIT (2026-07-14): all 4 linked publications' author lists checked against Europe PMC authorString; publications[0] (Choudhury 2023, 14 authors), [2] (Mirchia 2025, 9 authors), and [3] (Nguyen 2025, 11 authors) were each truncated to 6 and are now expanded to full; publications[1] (Zakimi 2024) was already complete at 3/3 authors, no change. All 4 papers independently confirmed to be genuinely about meningioma/this cohort (Raleigh lab UCSF meningioma methylation-classification series), not mismatched links.",
+  "source_urls": [
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE212666",
+    "https://pubmed.ncbi.nlm.nih.gov/36227281/",
+    "https://pubmed.ncbi.nlm.nih.gov/38509407/",
+    "https://pubmed.ncbi.nlm.nih.gov/39207122/",
+    "https://pubmed.ncbi.nlm.nih.gov/40603285/"
+  ],
+  "tags": {
+    "grade_comparable": false,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": false,
+    "large_cohort": true,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": false,
+    "has_outcome_data": false,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

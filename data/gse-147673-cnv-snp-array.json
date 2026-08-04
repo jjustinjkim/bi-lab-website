@@ -1,0 +1,131 @@
+{
+  "id": "gse-147673-cnv-snp-array",
+  "title": "High copy number variation burdens in cranial meningiomas from patients with diverse clinical phenotypes characterized by hot genomic structure changes",
+  "accessions": [
+    "GSE147673"
+  ],
+  "related_accessions": [],
+  "source_repositories": [
+    "GEO"
+  ],
+  "publications": [
+    {
+      "title": "High Copy-Number Variation Burdens in Cranial Meningiomas From Patients With Diverse Clinical Phenotypes Characterized by Hot Genomic Structure Changes.",
+      "authors": [
+        "Ma J",
+        "Hong Y",
+        "Chen W",
+        "Li D",
+        "Tian K",
+        "Wang K",
+        "Yang Y",
+        "Zhang Y",
+        "Chen Y",
+        "Song L",
+        "Chen L",
+        "Zhang L",
+        "Du J",
+        "Zhang J",
+        "Wu Z",
+        "Zhang D",
+        "Wang L"
+      ],
+      "venue": "Frontiers in oncology",
+      "year": 2020,
+      "doi": "10.3389/fonc.2020.01382",
+      "pmid": "32923390",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Zhen Wu, Dake Zhang, Liang Wang",
+  "institution": "Beijing Institute of Genomics, Chinese Academy of Sciences",
+  "date_deposited": "2020-03-27",
+  "date_updated": "2025-12-10",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-14",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-10",
+  "verification_tier": 1,
+  "found_via": [
+    "keyword_api",
+    "citation_chain"
+  ],
+  "modality": [
+    "cnv_snp_array"
+  ],
+  "platform": "GPL28320",
+  "reference_genome": "Not reported",
+  "pipeline": "Not reported",
+  "patient_count": 383,
+  "sample_count": 383,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": 331,
+    "grade_2": 47,
+    "grade_3": 5
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": false,
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "primary",
+    "recurrent"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "Not reported",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "265 female, 118 male (n=383, from GSM 'gender' field)",
+  "age_distribution": "n=383, range 18-81, mean 49.5 (from GSM 'age' field)",
+  "has_outcome_data": true,
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": []
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": "Not reported",
+  "processed_data_available": true,
+  "processed_data_format": "GSE147673_Matrix_processed_data.txt.gz",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "sample_count": "High",
+    "patient_count": "High",
+    "grade_breakdown": "High",
+    "sex_distribution": "High",
+    "age_distribution": "High",
+    "modality": "High",
+    "publications": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "Series-level GEO metadata verified directly against the live source. date_deposited/date_updated were previously recorded as Not reported despite being present in the live GEO record (Series_submission_date/Series_last_update_date); filled in. PER-SAMPLE DATA UPDATE (2026-07-12 re-verification audit): family.soft carries grade/gender/age for all 383 GSM samples. patient_count filled to 383 (Series_summary/overall_design state 'cranial meningiomas in 383 Chinese patients'). grade_breakdown tallied from per-sample 'grade' field: 331 grade I, 47 grade II, 5 grade III (=383). sex_distribution tallied from 'gender' field: 265 F, 118 M. age_distribution from 'age' field: range 18-81, mean 49.5. tags.grade_comparable set true accordingly. DEEP-AUDIT (2026-07-14): re-downloaded the live GSE147673_family.soft directly and re-tallied per-sample 'grade:' characteristics from scratch (grep count): 331 grade I / 47 grade II / 5 grade III -- reconfirms the existing grade_breakdown exactly; note the published paper's own Table 1 states 46 (12%)/6 (1.6%) for grade II/III (a 1-patient discrepancy from the live per-sample GEO data), but per this project's convention the repository's own per-sample field is treated as authoritative for this field, so grade_breakdown is left unchanged. publications[0].authors was truncated to 6 of 17 authors (Europe PMC authorString for PMID 32923390 confirms the full 17); expanded. corresponding_author changed from 'Liang Wang, Dake Zhang' to 'Zhen Wu, Dake Zhang, Liang Wang': live-fetched the paper's own full text (PMC7457130) and found the correspondence footnote reads verbatim '*Correspondence: Zhen Wu wuzhen1966@aliyun.com / Dake Zhang dakezhang@gmail.com / Liang Wang saintage7@126.com' -- three co-corresponding authors, not two; Zhen Wu had been dropped. treatment_timepoint_status changed from 'Not reported' to ['primary','recurrent'] and has_outcome_data from false to true, with tags.recurrence_annotated and tags.has_outcome_data both flipped to true: the same full text states verbatim 'In all, 338 patients had primary meningiomas and 45 patients suffered from tumor recurrence' (338+45=383, matching this series' full cohort) and separately reports recurrence-free survival with a defined follow-up period ('Recurrence-free survival was defined as the period from the time of present surgery... Mean follow-up was 60 months', with 12 recurrence events in a 267-patient prognostic subcohort) -- none of this is exposed in the GEO per-sample metadata (which carries only grade/gender/age), only recoverable from the publication's full text, per this audit's specific mandate to check for that.",
+  "source_urls": [
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE147673",
+    "https://pubmed.ncbi.nlm.nih.gov/32923390/"
+  ],
+  "tags": {
+    "grade_comparable": true,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": false,
+    "large_cohort": true,
+    "recurrence_annotated": true,
+    "molecular_subtype_annotated": false,
+    "has_outcome_data": true,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

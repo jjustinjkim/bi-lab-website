@@ -1,0 +1,130 @@
+{
+  "id": "gse-83933-methylation",
+  "title": "NF2 disruption by genomic rearrangments drives a subset of radiation induced meningiomas",
+  "accessions": [
+    "GSE83933"
+  ],
+  "related_accessions": [
+    "EGAS00001002317",
+    "EGAS00001002318",
+    "EGAD00001004358"
+  ],
+  "source_repositories": [
+    "GEO"
+  ],
+  "publications": [
+    {
+      "title": "Therapeutic radiation for childhood cancer drives structural aberrations of NF2 in meningiomas.",
+      "authors": [
+        "Agnihotri S",
+        "Suppiah S",
+        "Tonge PD",
+        "Jalali S",
+        "Danesh A",
+        "Bruce JP"
+      ],
+      "venue": "Nature communications",
+      "year": 2017,
+      "doi": "10.1038/s41467-017-00174-7",
+      "pmid": "28775249",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Gelareh Zadeh / Kenneth Aldape",
+  "institution": "University of Pittsburgh",
+  "date_deposited": "2016-06-30",
+  "date_updated": "2019-03-22",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-12",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-10",
+  "verification_tier": 1,
+  "found_via": [
+    "keyword_api",
+    "citation_chain"
+  ],
+  "modality": [
+    "dna_methylation_array"
+  ],
+  "platform": "GPL13534",
+  "reference_genome": "Not reported",
+  "pipeline": "Not reported",
+  "patient_count": "Not reported",
+  "sample_count": 39,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": 20,
+    "grade_2": 15,
+    "grade_3": 4
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": "Not reported",
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "Not reported"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "Not reported",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "20 female, 19 male (n=39, extracted from GSM 'gender' field)",
+  "age_distribution": "Not reported",
+  "has_outcome_data": "Not reported",
+  "paired_multimodal": {
+    "is_paired": true,
+    "related_datasets": [
+      "egas00001002317-agnihotri-rim-wes",
+      "egas00001002318-agnihotri-rim-rnaseq"
+    ]
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": "Not reported",
+  "processed_data_available": true,
+  "processed_data_format": "GSE83933_RAW.tar",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High",
+    "publications": "High",
+    "grade_breakdown": "High",
+    "sex_distribution": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "PER-SAMPLE DATA UPDATE (2026-07-12): all 39 GSM records were fetched from the live family.soft and each carries per-sample 'who grade' and 'gender' characteristics fields (previously left null/Not reported). grade_breakdown filled from the 'who grade' field: 20 grade 1, 15 grade 2, 4 grade 3 (sum 39 = sample_count; these are per-GSM counts). sex_distribution filled from the 'gender' field: 20 female, 19 male. tags.grade_comparable set true accordingly. NOTE: the three GSMs labeled 'meningioma tumor 18' (RIM18/RIM27/RIM28) actually carry DIFFERING grade AND gender values (RIM18 grade1/male, RIM27 grade1/female, RIM28 grade2/female), so they are effectively three distinct samples and patient_count remains 'Not reported' (unique-tumor count is genuinely ambiguous). No per-sample age or mutation-subtype field exists, so age_distribution and molecular_subtype_annotated stay Not reported. CORRESPONDING AUTHOR CORRECTED 2026-07-12: prior value was the malformed GEO-contributor string 'Gelareh,,Zadeh, Kenneth,,Aldape'; reformatted to 'Gelareh Zadeh / Kenneth Aldape'. Both confirmed as the paper's corresponding authors via Europe PMC core record for PMID 28775249 (both Aldape KD and Zadeh G carry email affiliations). Series-level GEO metadata verified directly against the live source; per-sample anatomic location, brain invasion, and treatment timepoint remain absent from GSM records. FACT-CHECK UPDATE (2026-07-10 verification pass): date_deposited/date_updated filled in from the live GEO record's Series_submission_date/Series_last_update_date, previously 'Not reported'. sample_count corrected from 'Not reported' to 39, counted directly from the live GEO record's 39 GSM sample entries (confirmed via GDS esummary sample list) and cross-checked by radiation-history label: 20 samples titled 'Prior radiation history...' (RIM01-RIM18, with tumor 18 duplicated across 3 GSMs labeled RIM18/RIM27/RIM28, apparently a tumor-numbering label quirk in the original submission, not a count error) and 19 titled 'No prior radiation history...' (NPRM1-NPRM19). Note the series summary/design text itself states '18 radiation induced meningiomas and 19 spontaneous meningiomas' (37 total), 2 fewer than the 39 actually deposited; sample_count here reflects the verified GSM total (39) rather than the summary's prose, consistent with how other records in this corpus resolve source-text arithmetic inconsistencies (e.g. gse-176457). CROSS-LINK ADDED (2026-07-11): WES and RNA-seq data for the 18-sample multi-omic subset of this same cohort were located on EGA (studies EGAS00001002317, EGAS00001002318) via an author/lab-based search and added as new records; paired_multimodal updated accordingly. CORRECTION 2026-07-13: radiation_timepoint had been set true, but this record's own 'radiation history' field (prior radiation history: yes/no, splitting the cohort into 20 radiation-induced vs. 19 spontaneous meningiomas) is about tumor etiology -- did radiation exposure years earlier cause this tumor -- not about whether this specific tumor was sampled before/after its own radiotherapy treatment (treatment_timepoint_status here is, correctly, 'Not reported', since no such per-sample treatment-timing data exists). Set radiation_timepoint to false and radiation_induced_etiology to true instead, which is what this cohort split actually documents. ONTOLOGY ADDED (2026-07-14): disease_id=MONDO:0016642, tissue_ids=['UBERON:0003547'], both verified live against the EBI Ontology Lookup Service (ols4/api/search) before use, not guessed. Deliberately kept generic, NOT MONDO:0011648 (radiation-induced meningioma): this cohort is a MIX of 20 radiation-induced and 19 spontaneous cases (per this record's own tags.radiation_induced_etiology reasoning), so the specific term would misrepresent the spontaneous half if applied to the whole record.",
+  "source_urls": [
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE83933",
+    "https://pubmed.ncbi.nlm.nih.gov/28775249/"
+  ],
+  "tags": {
+    "grade_comparable": true,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": true,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": true,
+    "large_cohort": false,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": false,
+    "has_outcome_data": false,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null,
+  "ontology": {
+    "disease_id": "MONDO:0016642",
+    "tissue_ids": [
+      "UBERON:0003547"
+    ]
+  }
+}

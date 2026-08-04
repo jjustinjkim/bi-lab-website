@@ -1,0 +1,554 @@
+{
+  "e-mexp-3586-monleon-expression-array": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "e-mtab-14038-baker-hernandez-pancancer-classifier": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "e-mtab-15-martinez-glez-expression-array": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "e-mtab-1852-choy-etumour-expression-array": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "egad00001007494-nassiri-rnaseq": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "egad00001007677-nassiri-snrnaseq": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "egad50000001254-recurrent-meningioma-scwgs": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "egas00001000177-sanger-meningioma-exome": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "egas00001000282-sanger-meningioma-targeted-seq": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "egas00001000859-collord-anaplastic-panel": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "egas00001001155-collord-anaplastic-panel-v3": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "egas00001001873-collord-anaplastic-rnaseq": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "egas00001001916-clark-polr2a-wes": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "egas00001002294-bi-highgrade-wgs-wes": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "egas00001002317-agnihotri-rim-wes": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "egas00001002318-agnihotri-rim-rnaseq": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "egas00001003481-paramasivam-meningioma-wgs": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "egas00001003490-nassiri-methylation-nomogram": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "egas00001005700-erson-omay-multiple-meningioma-wes": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "egas00001006585-cain-grade-progression-panel": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "egas00001007121-spatial-heterogeneity": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "egas50000001539-cfmedip-methylation": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "egas50000001556-spatial-transcriptomics": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "egas50000001589-atlas-snrna-spatial": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "figshare-22471806-parada-rb1-phosphoproteomics-kinome": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "figshare-24217661-halder-mrm-tissue-proteomics": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "figshare-26561431-biczok-mutational-signature": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "figshare-32043249-methylation-project": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "figshare-32386740-tapestri-scdna": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "figshare-32829844-ate1-proteomics": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "gdc-ccdi-mci-pediatric-meningioma": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "gdc-fm-ad-meningioma-targeted-panel": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "gse-101638-bulk-rnaseq": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "gse-12530-ludwig-expression-array": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "gse-136661-bulk-rnaseq": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "gse-139651-bulk-rnaseq": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "gse-147673-cnv-snp-array": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "gse-149923-dunn-grade3-expression-array": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "gse-151067-methylation": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "gse-151921-bulk-rnaseq": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "gse-16181-durso-expression-array": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "gse-16583-cnv-snp-array": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "gse-168726-methylation": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "gse-173825-bulk-rnaseq": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "gse-174360-bulk-rnaseq": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "gse-176457-cnv-snp-array": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "gse-17792-saydam-mirna-array": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "gse-178139-methylation": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "gse-180061-methylation": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "gse-183647-methylation": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "gse-183653-bulk-rnaseq": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "gse-183655-scrnaseq": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "gse-189521-methylation": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "gse-189672-bulk-rnaseq": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "gse-19720-durso-mirna-array": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "gse-197763-bulk-rnaseq": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "gse-200321-methylation": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "gse-206647-scrnaseq": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "gse-212377-bulk-rnaseq": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "gse-212449-methylation": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "gse-212666-bulk-rnaseq": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "gse-212854-precision-oncology-platform": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "gse-213544-scrnaseq": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "gse-221029-methylation": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "gse-221429-bulk-rnaseq": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "gse-228316-methylation": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "gse-232528-bulk-rnaseq": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "gse-234402-scrnaseq": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "gse-241956-methylation": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "gse-252291-bulk-rnaseq": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "gse-256490-brain-vasculature-scrnaseq": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "gse-256492-brain-vasculature-bulk-rnaseq": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "gse-264680-sc-classified-bulk-rnaseq": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "gse-267654-methylation": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "gse-270371-methylation": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "gse-270638-nassiri-retrospective-rnaseq": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "gse-278452-snrnaseq": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "gse-283616-bulk-rnaseq": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "gse-284758-methylation": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "gse-285889-bulk-rnaseq": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "gse-287174-zohdy-meningioma-organoid-tissue": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "gse-287322-bulk-rnaseq": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "gse-287920-cnv-snp-array": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "gse-289349-scrnaseq": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "gse-290805-bulk-rnaseq": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "gse-292325-methylation": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "gse-292326-methylation": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "gse-293851-methylation": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "gse-297637-bulk-rnaseq": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "gse-297758-multiome": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "gse-298049-bulk-rnaseq": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "gse-299027-spatial-transcriptomics": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "gse-299374-spatial-transcriptomics": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "gse-300855-bulk-rnaseq": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "gse-304087-bulk-rnaseq": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "gse-304094-methylation": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "gse-304096-methylation": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "gse-304666-bulk-rnaseq": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "gse-313693-snrnaseq": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "gse-313694-spatial-transcriptomics": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "gse-317578-methylation": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "gse-32197-wang-expression-array": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "gse-335175-bulk-rnaseq": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "gse-335176-methylation": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "gse-42624-cnv-snp-array": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "gse-42882-methylation": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "gse-43290-tabernero-expression-array": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "gse-4780-scheck-expression-array": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "gse-54934-torres-martin-expression-array": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "gse-55609-yeh-culture-expression-array": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "gse-58037-clark-expression-array": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "gse-74385-schmidt-expression-array": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "gse-77259-schulten-expression-array": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "gse-83933-methylation": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "gse-85133-polr2a-rnaseq": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "gse-91375-methylation": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "gse-93519-mirna-seq": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "gse-9438-claus-expression-array": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "mendeley-zrc982rvjm-herrgott-melb-methylation": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "mng-utoronto-2021-genomic": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "msv000086901-nassiri-proteomics": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "omix003901-hra004857-scrnaseq": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "omix010616-gaba-metabolomics": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "phs000552-brastianos-meningioma-genomic": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "phs003707-rtog0539-mp2prt-genomic": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "prjca007005-cfdna-5hmc": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "prjca024570-cfrna-slipirseq": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "pxd007044-proteomics": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "pxd009925-proteomics": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "pxd012923-proteomics": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "pxd014823-proteomics": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "pxd014852-proteomics": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "pxd014853-meningioma-anxa2-ipms": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "pxd015979-proteomics": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "pxd032108-proteomics": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "pxd032342-deng-who-grade-proteomics": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "pxd058651-proteomics": {
+    "status": "not_contacted",
+    "contact_log": []
+  },
+  "zenodo-6473604-wang-dunn-dura-scrnaseq": {
+    "status": "not_contacted",
+    "contact_log": []
+  }
+}

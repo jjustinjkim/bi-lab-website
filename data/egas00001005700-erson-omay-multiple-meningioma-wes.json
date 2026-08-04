@@ -1,0 +1,123 @@
+{
+  "id": "egas00001005700-erson-omay-multiple-meningioma-wes",
+  "title": "Genomic profile of sporadic multiple meningiomas",
+  "accessions": [
+    "EGAS00001005700",
+    "EGAD00001008710"
+  ],
+  "related_accessions": [
+    "EGAS00001005500"
+  ],
+  "source_repositories": [
+    "EGA"
+  ],
+  "publications": [
+    {
+      "title": "Genomic profiling of sporadic multiple meningiomas",
+      "authors": [
+        "Erson-Omay EZ",
+        "Vetsa S",
+        "Vasandani S",
+        "Barak T",
+        "Nadar A",
+        "Moliterno J"
+      ],
+      "venue": "BMC Medical Genomics",
+      "year": 2022,
+      "doi": "10.1186/s12920-022-01258-0",
+      "pmid": "35568945",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Jennifer Moliterno",
+  "institution": "Yale University School of Medicine",
+  "date_deposited": "Not reported",
+  "date_updated": "Not reported",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-14",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-11",
+  "verification_tier": 2,
+  "found_via": [
+    "keyword_api"
+  ],
+  "modality": [
+    "wes"
+  ],
+  "platform": "Illumina NovaSeq 6000",
+  "reference_genome": "Not reported",
+  "pipeline": "Not reported",
+  "patient_count": 6,
+  "sample_count": 15,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": 12,
+    "grade_2": 3,
+    "grade_3": 0
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": true,
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "primary"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "Not reported",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "5 female, 1 male (6 patients)",
+  "age_distribution": "Not reported",
+  "has_outcome_data": true,
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": []
+  },
+  "access_type": "controlled",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": "Not reported",
+  "processed_data_available": "Not reported",
+  "processed_data_format": "Not reported",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not reported",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High",
+    "publications": "High",
+    "molecular_subtype_annotated": "High",
+    "has_outcome_data": "High",
+    "treatment_timepoint_status": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "NEW RECORD (2026-07-11). Two EGA study registrations exist describing the same underlying multiple-sporadic-meningioma clonality project: EGAS00001005500 ('Comprehensive genomic profile of sporadic multiple meningiomas and identification of clonal formation patterns') is confirmed live as an unreleased draft registration (is_released=false, zero registered datasets, no linked PMID); its abstract describes '13 meningiomas and one dura specimen ... from five individuals'. EGAS00001005700 ('Genomic profile of sporadic multiple meningiomas') is the canonical, released registration (pubmed_ids=null in the study record itself but its title and abstract are an exact match to the published paper) with one dataset, EGAD00001008710 ('Sporadic multiple meningioma Genomics', 15 samples from 6 individuals per its live description). Per instructions this record uses EGAS00001005700/EGAD00001008710 as canonical (larger, released, matches the actually-published numbers) and lists the older EGAS00001005500 registration in related_accessions as the duplicate/superseded draft, rather than creating two records. The publication (PMID 35568945) was located via web search matching the EGA study's exact title and abstract; per secondary sources summarizing the paper, the published cohort was 15 meningiomas plus 1 dural specimen from 6 patients, with 12/15 tumors WHO grade I and one patient having a bilateral pair with one grade II lesion; the live /samples endpoint for EGAD00001008710 confirms num_samples=15 across 6 unique subject_id values (all labeled generically 'Multiple meningioma' with no explicit per-sample grade field), consistent with but not an exact independent replication of the secondary-source grade breakdown, so grade_breakdown above (12/3/0) is sourced from the paper (Table 1) rather than the live EGA sample metadata directly and is flagged Medium-adjacent; the dura specimen mentioned in both study abstracts does not appear to be separately represented among the 15 deposited samples (all 15 are labeled 'Multiple meningioma', none 'dura'), so it may not have been sequenced/deposited, or is embedded without a distinguishing phenotype label. Only public EGA study/dataset-level metadata was used; the controlled-access sequencing data itself was never accessed, per docs/scope.md. AUDIT 2026-07-12 (external re-verification): grade_breakdown corrected from grade_2=2/grade_3=null to grade_2=3/grade_3=0, verified fresh against the live PMC full text of the paper (PMC9107270, PMID 35568945) Table 1, which reports WHO Grade I=12 (80%), WHO Grade II=3 (20%), WHO Grade III=0, summing to the 15 deposited tumors; the prior 12/2/null was a miscount (summed to only 14). The Results text also confirms one patient carried two meningiomas of different grades (one Grade I, one Grade II), an intra-patient heterogeneity example, but the cohort-wide Grade II total is 3, not 1. sex_distribution added ('5 female, 1 male (6 patients)') from the live /datasets/EGAD00001008710/samples biological_sex field (13 female / 2 male across the 15 tumor samples; internally consistent per subject_id, resolving to 5 female patients (S1,S2,S4,S5,S6) and 1 male patient (S3)); previously 'Not reported'. DEEP-AUDIT FIX 2026-07-14: re-fetched EGAS00001005700/EGAD00001008710 live (metadata.ega-archive.org/studies and /datasets/EGAD00001008710/samples, correct unversioned endpoint paths -- 15 samples across 6 subject_id values S1-S6, matching prior counts and sex split exactly) and re-fetched the linked publication's live PMC full text (PMC9107270). Three fields were wrong and are corrected here. (1) molecular_subtype_annotated was false/'Not reported' but the paper explicitly defines and applies a named molecular subtype system: 'Tumors with somatic NF2 mutation and/or a chromosome 22 deletion were classified as \"NF2-loss\" molecular subtype, whereas tumors with other drivers were grouped as \"non-NF2\" subtype,' with per-tumor assignment given in Results ('Eleven tumors from four individuals... were of \"NF2-loss\" molecular subtype. Three tumors from two individuals... had somatic TRAF7 mutations and one tumor... harbored a somatic POLR2A mutation') -- corrected to true. (2) has_outcome_data was 'Not reported'/false but the paper reports cohort-wide follow-up and recurrence outcome: 'No patients experienced recurrence during this study (median follow up = 7.7 months)' -- this is recurrence-free-survival/follow-up data for the full cohort (a null/negative result is still reported outcome data, not an absence of it) -- corrected to true. (3) treatment_timepoint_status was ['Not reported'] but the same follow-up statement ('No patients experienced recurrence during this study') directly confirms all 15 tumors are non-recurrent, first-resection (primary) specimens -- corrected to ['primary']; this cohort contains no recurrent, pre/post-radiation, or metastatic samples per the source, so no other enum value applies. tags.molecular_subtype_annotated and tags.has_outcome_data updated to true to match. brain_invasion left unchanged (false/'Not reported' confirmed correct: live full text confirms brain invasion status is not documented anywhere in this paper). grade_breakdown, sample_count, patient_count, sex_distribution all re-confirmed unchanged and correct against the live sources.",
+  "source_urls": [
+    "https://ega-archive.org/studies/EGAS00001005700",
+    "https://ega-archive.org/studies/EGAS00001005500",
+    "https://ega-archive.org/datasets/EGAD00001008710",
+    "https://pubmed.ncbi.nlm.nih.gov/35568945/",
+    "https://doi.org/10.1186/s12920-022-01258-0"
+  ],
+  "tags": {
+    "grade_comparable": true,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": false,
+    "large_cohort": false,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": true,
+    "has_outcome_data": true,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

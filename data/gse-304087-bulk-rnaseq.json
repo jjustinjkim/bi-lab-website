@@ -1,0 +1,104 @@
+{
+  "id": "gse-304087-bulk-rnaseq",
+  "title": "DNA methylation profiling identifies long-range epigenetic silencing of clustered protocadherins as a key determinant of meningioma progression [RNA-seq]",
+  "accessions": [
+    "GSE304087"
+  ],
+  "related_accessions": [
+    "GSE304093",
+    "GSE304094",
+    "GSE304096",
+    "GSE304097"
+  ],
+  "source_repositories": [
+    "GEO",
+    "SRA"
+  ],
+  "publications": [],
+  "corresponding_author": "Daniel J Merk, Ghazaleh Tabatabai",
+  "institution": "Hertie-Institute for Clinical Brain Research",
+  "date_deposited": "2025-07-30",
+  "date_updated": "2026-07-01",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-10",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-10",
+  "verification_tier": 2,
+  "found_via": [
+    "keyword_api"
+  ],
+  "modality": [
+    "bulk_rna_seq"
+  ],
+  "platform": "Illumina NovaSeq 6000 (GPL24676)",
+  "reference_genome": "Not reported",
+  "pipeline": "Not reported",
+  "patient_count": "Not reported",
+  "sample_count": 10,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": null,
+    "grade_2": null,
+    "grade_3": null
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": true,
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "Not reported"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "Not reported",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "Not reported",
+  "age_distribution": "Not reported",
+  "has_outcome_data": "Not reported",
+  "paired_multimodal": {
+    "is_paired": true,
+    "related_datasets": [
+      "gse-304094-methylation"
+    ]
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": "Not reported",
+  "processed_data_available": true,
+  "processed_data_format": "GSE304087_RNAseq_meningioma_discovery_processed.txt.gz",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High",
+    "publications": "Low"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "Series-level GEO metadata verified directly against the live source; per-sample clinical/pathology fields (grade, sex/age, anatomic location, brain invasion, treatment timepoint) have not yet been extracted from individual GSM records or supplementary tables -- part of the batch-1 scaling pass, prioritizing breadth of verified accessions over per-sample depth. Publication metadata pulled from PubMed esummary; not yet manually spot-checked against the full text for every record in this batch. FACT-CHECK UPDATE (2026-07-10): molecular_subtype_annotated corrected from 'Not reported' to true; the live GEO overall_design explicitly categorizes the 10 samples into METHlow/METHhigh methylation clusters (n=5 each). has_outcome_data was briefly marked true based on the shared series summary's statement that the hypermethylation signature 'is correlated with clinical outcomes,' but this describes an analytical finding of the paper, not deposited per-sample data (no survival/recurrence/vital-status field exists in this series' own GSM records); reverted to 'Not reported'. CROSS-CONSISTENCY FIX (2026-07-11 fact-check pass): paired_multimodal.related_datasets incorrectly also listed gse-304096-methylation (the 42-sample longitudinal primary/recurrence cohort). Fetched the actual GSM sample titles for all three series via NCBI esummary (db=gds): all 10 of this series' specimen IDs (e.g. T26_0016, T26_0175, T26_0123) exactly match 10 of the 231 specimen IDs in gse-304094-methylation (the discovery cohort), confirming that pairing. None of this series' 10 specimen IDs appear anywhere among gse-304096-methylation's 42 specimen IDs (T26_0110, T26_0290, etc., a disjoint set), so that claimed pairing was incorrect and has been removed. gse-304096-methylation's own paired_multimodal.is_paired was already false/empty and needed no change; gse-304094-methylation's reciprocal link to this record was already correct and needed no change.",
+  "source_urls": [
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE304087"
+  ],
+  "tags": {
+    "grade_comparable": false,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": true,
+    "large_cohort": false,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": true,
+    "has_outcome_data": false,
+    "peer_reviewed": false
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

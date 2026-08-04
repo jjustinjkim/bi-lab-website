@@ -1,0 +1,147 @@
+{
+  "id": "gse-101638-bulk-rnaseq",
+  "title": "RNA-seq from human meningioma samples",
+  "accessions": [
+    "GSE101638"
+  ],
+  "related_accessions": [],
+  "source_repositories": [
+    "GEO",
+    "SRA"
+  ],
+  "publications": [
+    {
+      "title": "Comprehensive Molecular Profiling Identifies FOXM1 as a Key Transcription Factor for Meningioma Proliferation.",
+      "authors": [
+        "Vasudevan HN",
+        "Braunstein SE",
+        "Phillips JJ",
+        "Pekmezci M",
+        "Tomlin BA",
+        "Wu A",
+        "Reis GF",
+        "Magill ST",
+        "Zhang J",
+        "Feng FY",
+        "Nicholaides T",
+        "Chang SM",
+        "Sneed PK",
+        "McDermott MW",
+        "Berger MS",
+        "Perry A",
+        "Raleigh DR"
+      ],
+      "venue": "Cell reports",
+      "year": 2018,
+      "doi": "10.1016/j.celrep.2018.03.013",
+      "pmid": "29590631",
+      "preprint_id": null
+    },
+    {
+      "title": "Meningeal solitary fibrous tumor cell states phenocopy cerebral vascular development and homeostasis.",
+      "authors": [
+        "Mirchia K",
+        "Choudhury A",
+        "Joseph T",
+        "Birrueta JO",
+        "Phillips JJ",
+        "Bhaduri A",
+        "Crouch EE",
+        "Perry A",
+        "Raleigh DR"
+      ],
+      "venue": "Neuro-oncology",
+      "year": 2025,
+      "doi": "10.1093/neuonc/noae172",
+      "pmid": "39207122",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Harish N Vasudevan, David R Raleigh",
+  "institution": "University of California San Francisco",
+  "date_deposited": "2017-07-19",
+  "date_updated": "2025-01-22",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-10",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-10",
+  "verification_tier": 1,
+  "found_via": [
+    "keyword_api",
+    "citation_chain"
+  ],
+  "modality": [
+    "bulk_rna_seq"
+  ],
+  "platform": "Illumina HiSeq 2500 (GPL16791)",
+  "reference_genome": "hg19",
+  "pipeline": "HISAT2 (alignment to hg19); Cufflinks (FPKM quantification)",
+  "patient_count": "Not reported",
+  "sample_count": 42,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": null,
+    "grade_2": null,
+    "grade_3": null
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": "Not reported",
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "Not reported"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "Not reported",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "Not reported",
+  "age_distribution": "Not reported",
+  "has_outcome_data": "Not reported",
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": []
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": "Not reported",
+  "processed_data_available": true,
+  "processed_data_format": "GSE101638_MeningiomaRNAseq_FPKM_compiled.xlsx",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High",
+    "publications": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "Series-level GEO metadata verified directly against the live source; per-sample clinical/pathology fields (grade, sex/age, anatomic location, brain invasion, treatment timepoint) have not yet been extracted from individual GSM records or supplementary tables -- part of the batch-1 scaling pass, prioritizing breadth of verified accessions over per-sample depth. Publication metadata pulled from PubMed esummary; not yet manually spot-checked against the full text for every record in this batch. RE-VERIFICATION AUDIT 2026-07-12: (1) reference_genome corrected from 'Not reported' to 'hg19' and pipeline corrected from 'Not reported' to HISAT2/Cufflinks; all 42 GSM records report identical data_processing (Genome_build: hg19, HISAT2 alignment, Cufflinks FPKM), so this is series-level source-stated, not per-sample clinical detail. (2) Both publications' author lists were truncated to the first 6 names; completed to the full author lists from live PubMed efetch (PMID 29590631 = 17 authors, PMID 39207122 = 9 authors). Per-sample grade/sex/age confirmed genuinely absent from GEO (GSM characteristics carry only 'tissue: Meningioma tumor'), so those remain 'Not reported'.",
+  "source_urls": [
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE101638",
+    "https://pubmed.ncbi.nlm.nih.gov/29590631/",
+    "https://pubmed.ncbi.nlm.nih.gov/39207122/"
+  ],
+  "tags": {
+    "grade_comparable": false,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": false,
+    "large_cohort": false,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": false,
+    "has_outcome_data": false,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

@@ -1,0 +1,113 @@
+{
+  "id": "gse-212854-precision-oncology-platform",
+  "title": "An RNA-based precision oncology platform for patient-therapy alignment in a diverse set of treatment resistant malignancies [meningioma sample]",
+  "accessions": [
+    "GSE212854"
+  ],
+  "related_accessions": [],
+  "source_repositories": [
+    "GEO",
+    "SRA"
+  ],
+  "publications": [
+    {
+      "title": "A Transcriptome-Based Precision Oncology Platform for Patient-Therapy Alignment in a Diverse Set of Treatment-Resistant Malignancies.",
+      "authors": [
+        "Mundi PS", "Dela Cruz FS", "Grunn A", "Diolaiti D", "Mauguen A", "Rainey AR", "Guillan K", "Siddiquee A", "You D", "Realubit R", "Karan C", "Ortiz MV", "Douglass EF", "Accordino M", "Mistretta S", "Brogan F", "Bruce JN", "Caescu CI", "Carvajal RD", "Crew KD", "Decastro G", "Heaney M", "Henick BS", "Hershman DL", "Hou JY", "Iwamoto FM", "Jurcic JG", "Kiran RP", "Kluger MD", "Kreisl T", "Lamanna N", "Lassman AB", "Lim EA", "Manji GA", "McKhann GM", "McKiernan JM", "Neugut AI", "Olive KP", "Rosenblat T", "Schwartz GK", "Shu CA", "Sisti MB", "Tergas A", "Vattakalam RM", "Welch M", "Wenske S", "Wright JD", "Canoll P", "Hibshoosh H", "Kalinsky K", "Aburi M", "Sims PA", "Alvarez MJ", "Kung AL", "Califano A"
+      ],
+      "venue": "Cancer Discovery",
+      "year": 2023,
+      "doi": "10.1158/2159-8290.CD-22-1020",
+      "pmid": "37061969",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Mariano J Alvarez, Andrew L Kung, Andrea Califano",
+  "institution": "Columbia University",
+  "date_deposited": "2022-09-07",
+  "date_updated": "2022-09-22",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-17",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-17",
+  "verification_tier": 2,
+  "found_via": [
+    "citation_chain"
+  ],
+  "modality": [
+    "bulk_rna_seq"
+  ],
+  "platform": "RNA-seq (Illumina), exact chemistry not specified per-sample",
+  "reference_genome": "Not reported",
+  "pipeline": "Not reported",
+  "patient_count": 1,
+  "sample_count": 1,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": 0,
+    "grade_2": 1,
+    "grade_3": 0
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": false,
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "recurrent"
+  ],
+  "anatomic_location_breakdown": "Meninges (recurrence site stated explicitly in the sample title)",
+  "tissue_preservation": "Not reported",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "Not reported",
+  "age_distribution": "Not reported",
+  "has_outcome_data": false,
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": []
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": true,
+  "processed_data_available": true,
+  "processed_data_format": "Not reported at the per-sample level",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High",
+    "publications": "High",
+    "grade_breakdown": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "NEW RECORD (2026-07-17), resolving an open thread flagged in sources/query_log.md since the original Checkpoint 2 triage: GSE212854 was listed as a raw candidate but never followed up, with its disposition (included/excluded/pending) left undocumented. This series is overwhelmingly a pan-cancer precision-oncology drug-response-prediction platform (25 GSM records: cell lines, PDX tumor/vehicle-treated samples, and patient tumor samples spanning GIST, breast, colon, and pancreatic cancer) -- but scripts/extract_gsm_characteristics.py's per-sample fallback found exactly one sample, GSM6559659 ('CNS.16474 patient tumor sample'), with tissue characteristic 'Patient tumor sample, meninges recurrence from grade II meningioma, RNASeq' and cell type 'meningioma'. Genuinely tiny (n=1) but real: explicit WHO grade 2 and recurrence status stated directly in the source metadata, extracted per this project's existing small-n precedent (e.g. gse-32197-wang-expression-array, n=3). Note: the series also includes a multiplexed PLATE-seq PDX sample pooling treated/vehicle arms from four different PDX models including one labeled 'CNS.16474' (the same patient identifier as this meningioma sample) -- this PDX-derived data is NOT separable into its own clean per-model record at the per-sample level (the multiplexed sample mixes 4 different patients' PDX models in one GSM), so it is deliberately not extracted here or as a separate adjacent record; flagged for a future pass if the underlying multiplexed count matrix can be demultiplexed by model. Publication (PMID 37061969, Cancer Discovery 2023) verified via PubMed esummary; retrieved the NIH-manuscript full text directly (PMC10239356, efetch db=pmc) since Europe PMC's own OA flag was N despite a PMC ID existing -- confirmed GSE212854 is cited twice in the data availability statement. Three corresponding authors (Mariano J Alvarez, Andrew L Kung, Andrea Califano) confirmed via the full text's own author-notes correspondence block, not assumed from author-list position; Alvarez and Califano both appear in the live GEO Series_contributor list, corroborating the match. No per-sample sex, age, or brain-invasion data exists in the GSM metadata, so those fields correctly remain 'Not reported'.",
+  "source_urls": [
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE212854",
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM6559659",
+    "https://pubmed.ncbi.nlm.nih.gov/37061969/",
+    "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10239356/"
+  ],
+  "tags": {
+    "grade_comparable": false,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": false,
+    "large_cohort": false,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": false,
+    "has_outcome_data": false,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

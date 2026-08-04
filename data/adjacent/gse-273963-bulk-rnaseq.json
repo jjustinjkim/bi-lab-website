@@ -1,0 +1,120 @@
+{
+  "id": "gse-273963-bulk-rnaseq",
+  "title": "A novel mutation in SMARCB1 associated with adult Coffin-Siris syndrome and meningioma",
+  "accessions": [
+    "GSE273963"
+  ],
+  "related_accessions": [],
+  "source_repositories": [
+    "GEO",
+    "SRA"
+  ],
+  "publications": [
+    {
+      "title": "A novel mutation in SMARCB1 associated with adult Coffin-Siris syndrome and meningioma.",
+      "authors": [
+        "Guo Z",
+        "Bai J",
+        "Liu Y",
+        "Zhang X",
+        "Yang W",
+        "Wang J",
+        "Zhang Y",
+        "Xiao H",
+        "Hao B",
+        "Liao S"
+      ],
+      "venue": "Acta biochimica et biophysica Sinica",
+      "year": 2024,
+      "doi": "10.3724/abbs.2024204",
+      "pmid": "39563460",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Zhenglong Guo, Bingtao Hao, Shixiu Liao",
+  "institution": "Henan Provincial People's Hospital",
+  "date_deposited": "2024-08-05",
+  "date_updated": "2025-07-16",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-14",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-10",
+  "verification_tier": 1,
+  "found_via": [
+    "keyword_api",
+    "citation_chain"
+  ],
+  "modality": [
+    "bulk_rna_seq"
+  ],
+  "platform": "Illumina NovaSeq 6000 (GPL24676)",
+  "reference_genome": "Not reported",
+  "pipeline": "Not reported",
+  "patient_count": "Not applicable (cell line)",
+  "sample_count": 6,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": null,
+    "grade_2": null,
+    "grade_3": null
+  },
+  "who_edition": "Not applicable (cell line)",
+  "molecular_subtype_annotated": "Not reported",
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not applicable",
+    "determination_method": "Not applicable"
+  },
+  "treatment_timepoint_status": [
+    "Not applicable"
+  ],
+  "anatomic_location_breakdown": "Not applicable (cell line)",
+  "tissue_preservation": "not_applicable",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "Not applicable",
+  "age_distribution": "Not applicable",
+  "has_outcome_data": false,
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": []
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": "Not reported",
+  "processed_data_available": true,
+  "processed_data_format": "GSE273963_readcount.xlsx",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High",
+    "publications": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "Moved to adjacent: overall_design confirms this uses IOMM-Lee (immortalized meningioma cell line) overexpression constructs, not primary patient tissue, despite the title referencing a real clinical case. Series-level GEO metadata verified directly against the live source; per-sample clinical/pathology fields (grade, sex/age, anatomic location, brain invasion, treatment timepoint) have not yet been extracted from individual GSM records or supplementary tables -- part of the batch-1 scaling pass, prioritizing breadth of verified accessions over per-sample depth. Publication metadata pulled from PubMed esummary; not yet manually spot-checked against the full text for every record in this batch. RE-VERIFICATION (2026-07-12): live GEO overall_design re-confirms this is an IOMM-Lee cell-line-only experiment (6 GSMs GSM8440386-GSM8440391, WT/mutant SMARCB1 overexpression), so patient-level clinical fields are categorically Not applicable (not merely un-extracted); normalized patient_count and who_edition to 'Not applicable (cell line)', anatomic_location_breakdown to 'Not applicable (cell line)', treatment_timepoint_status to ['Not applicable'], tissue_preservation to 'not_applicable', brain_invasion counts/determination_method to 'Not applicable', sex_distribution/age_distribution to 'Not applicable', and has_outcome_data to false -- matching this corpus's other adjacent cell-line records (e.g. gse-282349). Publication (PMID 39563460, Acta Biochim Biophys Sin, vol 57, 2024-11-13, doi 10.3724/abbs.2024204) re-verified against PubMed esummary. AUDIT 2026-07-14 (live-source deep audit): two genuine errors found and corrected. (1) AUTHOR LIST TRUNCATED: publications[0].authors previously listed only the first 6 of 10 authors. Re-fetched Europe PMC authorString for PMID 39563460, confirming 10 authors total ending 'Zhang Y, Xiao H, Hao B, Liao S'; authors array expanded to the complete list. (2) CORRESPONDING_AUTHOR INCOMPLETE: previously listed 'Zhenglong Guo, Bingtao Hao', missing a third co-corresponding author. Fetched the open-access full text via PMC (PMC12247133, europepmc.org/articles/PMC12247133) and confirmed three authors are each marked with an asterisk (*) as corresponding authors with their own emails: Zhenglong Guo (zhenglongguo@zzu.edu.cn), Bingtao Hao (haobt123@zzu.edu.cn), and Shixiu Liao (ychslshx@henu.edu.cn, last author); corresponding_author corrected to add 'Shixiu Liao'.",
+  "source_urls": [
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE273963",
+    "https://pubmed.ncbi.nlm.nih.gov/39563460/"
+  ],
+  "tags": {
+    "grade_comparable": false,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": false,
+    "large_cohort": false,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": false,
+    "has_outcome_data": false,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

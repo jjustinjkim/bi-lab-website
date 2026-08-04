@@ -1,0 +1,109 @@
+{
+  "id": "phs003707-rtog0539-mp2prt-genomic",
+  "title": "MP2PRT-MNG: Identifying Novel Molecular Markers of Response to Radiotherapy in Meningiomas Using Samples from the RTOG-0539",
+  "accessions": [
+    "phs003707.v2.p1"
+  ],
+  "related_accessions": [
+    "NCT00895622"
+  ],
+  "source_repositories": [
+    "dbGaP"
+  ],
+  "publications": [],
+  "corresponding_author": "Kenneth Aldape",
+  "institution": "Center for Cancer Research, National Cancer Institute, National Institutes of Health",
+  "date_deposited": "2024-11-06",
+  "date_updated": "2025-05-05",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-13",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-13",
+  "verification_tier": 2,
+  "found_via": [
+    "citation_chain"
+  ],
+  "modality": [
+    "dna_methylation_array",
+    "bulk_rna_seq",
+    "wes"
+  ],
+  "platform": "Illumina methylation array (raw .IDAT files confirmed via dbGaP manifest); RNA-seq and WES sequencing platform not specified in the public dbGaP metadata reviewed",
+  "reference_genome": "Not reported",
+  "pipeline": "Not reported",
+  "patient_count": 100,
+  "sample_count": 350,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": 145,
+    "grade_2": 105,
+    "grade_3": 39
+  },
+  "who_edition": "2007",
+  "molecular_subtype_annotated": false,
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "primary"
+  ],
+  "anatomic_location_breakdown": "289 of 350 samples from Brain (tumor tissue, PRIMARY_TUMOR_LOCATION='Brain' for all), 61 from Blood (germline control) -- no finer-grained anatomic location reported",
+  "tissue_preservation": "Not reported",
+  "normal_control_tissue": {
+    "included": true,
+    "type": "Blood (germline control)",
+    "count": 61
+  },
+  "sex_distribution": "35 male, 65 female (n=100 subjects)",
+  "age_distribution": "n=350 samples, mean 56 years, median 57, range 18->89 (COLLECTION_AGE field, includes both tumor and blood samples)",
+  "has_outcome_data": false,
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": []
+  },
+  "access_type": "controlled",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": true,
+  "processed_data_available": "Not reported",
+  "processed_data_format": "Illumina array raw .IDAT files (genotype/methylation component confirmed via manifest); RNA-seq/WES raw file formats not shown in the manifest excerpt reviewed",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "dbGaP DAC approval required (General Research Use, GRU-COL consent); requestor must submit a CTEP Notification e-mail plus a Data Access Request per the study's Data Use Certification; unsigned requests cancelled after 8 weeks per the dbGaP study configuration report",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High",
+    "grade_breakdown": "High",
+    "sex_distribution": "High",
+    "publications": "Low",
+    "corresponding_author": "Medium"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "NEW RECORD (2026-07-13), surfaced by cross-checking a user-supplied data-availability statement (Landry et al. 2026, Nature Genetics, PMID 42265312) against this inventory, which cites 'Database of Genotypes and Phenotypes (dbGaP): phs003707.v1.p1' among reused prior data. Confirmed by fetching the fullTextXML directly: this dataset's own citing paper is Wang JZ et al. 2024 Nature Medicine (PMID 39169220, already the publication on record for gse-270371-methylation.json/gse-270638-nassiri-retrospective-rnaseq.json), whose own data-availability section states 'Unprocessed DNA methylation data and gene expression data (RNA sequencing) for the prospective NRG RTOG-0539 clinical trial cases are deposited in the database of Genotypes and Phenotypes (dbGaP) under the project no. phs003707.v1.p1 entitled MP2PRT-MNG... using samples from the RTOG-0539 (NCT00895622)'. v1 has since been superseded by v2.p1 (the accession recorded here) per dbGaP's own study page; only publicly available metadata was used (no DAC approval was sought or required for what follows). Study description (GapExchange XML + public study page) confirms: NCI's MP2PRT Cancer Moonshot program retrospectively molecularly profiled biospecimens from the completed NRG RTOG-0539 phase II trial, which assigned meningioma patients to 1 of 3 risk groups by 2007 WHO grade, resection extent, and recurrence status, giving radiotherapy per-protocol to intermediate/high-risk cases; DNA methylation, RNA-seq, and whole-exome sequencing were performed. who_edition set to '2007' since the study description states this explicitly (not inferred from date). PI Kenneth Aldape (Center for Cancer Research, NCI) confirmed via the study's own GapExchange XML Data_Provider table; confidence marked Medium since this is the named PI/data provider, not independently confirmed via a corresponding-author email footnote on a specific paper (no dedicated companion publication for this molecular-profiling deposit itself was found; publications left empty and confidence Low -- the RTOG-0539 trial's own clinical-outcomes literature, e.g. Rogers et al., is about trial results, not this molecular dataset specifically, so was not added here). All per-sample counts below are from dbGaP's PUBLIC aggregate 'variable report' XMLs (pheno_variable_summaries, no DAC approval needed, same precedent as phs000552-brastianos-meningioma-genomic.json), fetched directly: MP2PRT_MNG_Subject var_report confirms 100 subjects, 35 male/65 female. MP2PRT_MNG_Sample_Attributes var_report (n=350 sample-attribute rows, out of 352 total SAMPLE_ID entries in the separate MP2PRT_MNG_Sample table -- this 2-row discrepancy is unresolved and flagged for a follow-up pass) confirms: BODY_SITE 289 Brain/61 Blood; ANALYTE_TYPE 251 DNA/99 RNA; IS_TUMOR 289 tumor/61 not-tumor; HISTOLOGICAL_TYPE 289 Meningioma/61 Blood control; COLLECTION_AGE n=350 mean 56 median 57 range 18->89; PRIMARY_METASTATIC_TUMOR 289 Primary/61 N/A (no recurrent or metastatic SAMPLES exist in this deposit -- recurrence status was used only as a trial-eligibility/risk-category criterion at enrollment, not as a distinct sample type, so treatment_timepoint_status is left at just ['primary'] and tags.recurrence_annotated is false); PRIMARY_TUMOR_LOCATION 289 Brain/61 N/A; TUMOR_GRADE (n=289 tumor samples) 145 grade1/105 grade2/39 grade3 (sums to 289) -- filled into grade_breakdown, tags.grade_comparable set true. RADIATION-TIMING CAVEAT (deliberately NOT tagged, consistent with this session's stricter standard after the Agnihotri RIM conflation): the Sample_Attributes table also has a TUMOR_TREATMENT field (177 'Radiation' / 173 N/A, out of 350), but this records per-protocol TREATMENT ASSIGNMENT, not a confirmed statement of whether each tissue SAMPLE was collected before or after radiotherapy. The trial's own design (surgical resection to obtain tissue and confirm risk-group eligibility, with radiotherapy given afterward per protocol to intermediate/high-risk cases only) makes it very likely that all 289 tumor specimens are pre-radiotherapy specimens, but this was not confirmed by an explicit sample-timing field, so tags.radiation_timepoint is left false rather than inferred, and this reasoning is documented here for a future pass with access to the controlled data or trial protocol document. has_outcome_data left false: no outcome/survival/progression field was found in the three public phenotype tables reviewed (Subject, Sample, Sample_Attributes); deeper clinical-outcome variables may exist under controlled access, not accessed here. multi_modal_matched left false: DNA (methylation+WES) vs RNA analyte counts (251 vs 99) don't establish that the same physical specimens/patients were split across all three modalities from the public tables alone.",
+  "source_urls": [
+    "https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs003707.v2.p1",
+    "https://ftp.ncbi.nlm.nih.gov/dbgap/studies/phs003707/phs003707.v2.p1/GapExchange_phs003707.v2.p1.xml",
+    "https://ftp.ncbi.nlm.nih.gov/dbgap/studies/phs003707/phs003707.v2.p1/pheno_variable_summaries/phs003707.v2.pht014787.v2.p1.MP2PRT_MNG_Subject.var_report.xml",
+    "https://ftp.ncbi.nlm.nih.gov/dbgap/studies/phs003707/phs003707.v2.p1/pheno_variable_summaries/phs003707.v2.pht014789.v2.p1.MP2PRT_MNG_Sample_Attributes.var_report.xml",
+    "https://clinicaltrials.gov/study/NCT00895622",
+    "https://pubmed.ncbi.nlm.nih.gov/39169220/",
+    "https://pubmed.ncbi.nlm.nih.gov/42265312/"
+  ],
+  "tags": {
+    "grade_comparable": true,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": false,
+    "large_cohort": true,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": false,
+    "has_outcome_data": false,
+    "peer_reviewed": false
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

@@ -1,0 +1,116 @@
+{
+  "id": "egas50000001539-cfmedip-methylation",
+  "title": "cell-free Methylated DNA by Immunoprecipitation and Sequencing (cfMeDIP) of human meningioma samples",
+  "accessions": [
+    "EGAS50000001539",
+    "EGAD50000002214"
+  ],
+  "related_accessions": [],
+  "source_repositories": [
+    "EGA"
+  ],
+  "publications": [
+    {
+      "title": "Spatially resolved single-cell analyses of human meningioma identify novel cell states influencing tumor microenvironment and progression.",
+      "authors": [
+        "Landry AP",
+        "Yefet LS",
+        "Wang JZ",
+        "Ajisebutu A",
+        "Gui C",
+        "Ellenbogen Y"
+      ],
+      "venue": "Nature Genetics",
+      "year": 2026,
+      "doi": "10.1038/s41588-026-02615-w",
+      "pmid": "42265312",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Farshad Nassiri / Gelareh Zadeh",
+  "institution": "University Health Network / University of Toronto",
+  "date_deposited": "Not reported",
+  "date_updated": "2026-04-21",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-11",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-11",
+  "verification_tier": 2,
+  "found_via": [
+    "keyword_api"
+  ],
+  "modality": [
+    "cfdna_epigenomic"
+  ],
+  "platform": "Illumina HiSeq X",
+  "reference_genome": "Not reported",
+  "pipeline": "Not reported",
+  "patient_count": 59,
+  "sample_count": 59,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": null,
+    "grade_2": null,
+    "grade_3": null
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": "Not reported",
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "Not reported"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "liquid_biopsy",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "35 female, 24 male",
+  "age_distribution": "Not reported",
+  "has_outcome_data": "Not reported",
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": []
+  },
+  "access_type": "controlled",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": true,
+  "processed_data_available": "Not reported",
+  "processed_data_format": "Not reported",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not reported",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High",
+    "publications": "High",
+    "corresponding_author": "Medium"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "NEW RECORD (2026-07-11), from a discovery-log LEAD describing this as liquid-biopsy cfMeDIP methylation data. Independently verified live via the EGA Metadata API: study EGAS50000001539 / dataset EGAD50000002214, num_samples=59, dataset_types 'Methylation profiling by high-throughput sequencing', technologies 'Illumina HiSeq X', access_type controlled, released 2026-04-21. Fetched all 59 registered EGAN sample records directly: all phenotype 'tumor', 35 female/24 male, subject IDs mostly 'MNG###' (predominantly MNG138-MNG187, above the MNG001-137 range used by the sibling EGAS50000001589/EGAS50000001556 snRNA+spatial atlas studies, but NOT strictly non-overlapping: four cfMeDIP subjects, MNG005, MNG006, MNG009 and MNG022, fall within the atlas MNG001-137 numbering, so a partial patient overlap with the tissue-atlas cohort cannot be ruled out from the shared MNG numbering scheme alone) plus 5 subjects labeled 'CAM20.00xx' (a different site/cohort naming convention, likely a Cambridge-based collaborating cohort); recorded as a standalone record with no related_accessions, but the four in-range MNG IDs are flagged for reviewer attention as possible cross-modality (liquid-biopsy vs tissue) same-patient links rather than duplicates. MODALITY DECISION (per explicit instruction to check controlled_vocabulary.md's exact wording): used 'cfdna_epigenomic' ('liquid-biopsy cell-free DNA methylation/hydroxymethylation profiling... distinct from tissue-based dna_methylation_array/dna_methylation_seq') rather than 'dna_methylation_seq', since cfMeDIP is precisely a cell-free/liquid-biopsy methylation immunoprecipitation-sequencing assay on plasma, exactly the use case this vocabulary term was added for. tissue_preservation set to 'liquid_biopsy' (the controlled-vocabulary value for blood/plasma/serum/CSF-derived samples, added 2026-07-11) since these are plasma cfDNA liquid-biopsy samples, not a solid-tissue specimen with a fresh-frozen/FFPE preservation method. No linked publication (pubmed_ids empty); this is a very recent (2026-04-21) raw-data-only deposition with no processed_data_format or pipeline information exposed via the public API. Only public EGA study/dataset/sample-level metadata was used per docs/scope.md; the controlled-access sequencing data itself was never accessed. tags.large_cohort left false pending the centralized post-hoc recomputation across the whole inventory (this record would likely be the largest cfdna_epigenomic cohort in the inventory once that recompute runs). AUDIT 2026-07-12 (external re-verification): corrected two stale statements in this note that contradicted the live source/actual field values. (1) The prior claim that the MNG subject IDs were 'distinct from and non-overlapping with the MNG001-137 range' of the atlas studies was false; the live /studies/EGAS50000001539/samples list includes MNG005, MNG006, MNG009 and MNG022, which lie inside the atlas MNG001-094 (snRNA, EGAD50000002272) / MNG095-137 (spatial, EGAD50000002233) numbering, so overlap cannot be excluded from IDs alone; text reworded accordingly. (2) The note previously described tissue_preservation as set to 'not_applicable', but the actual field value is 'liquid_biopsy' (the correct vocab value added 2026-07-11); note text reconciled to the actual value. No field values other than this note text were changed for this record; patient_count/sample_count (59/59), sex_distribution (35 female/24 male, matching live biological_sex), platform (Illumina HiSeq X) and all other fields re-verified correct against the live EGA API this pass. PUBLICATION LINKED (2026-07-13), prompted by a user question about whether a specific paper's data-availability statement was fully represented in this inventory: that statement (Landry et al. 2026, Nature Genetics, PMID 42265312, DOI 10.1038/s41588-026-02615-w, 'Spatially resolved single-cell analyses of human meningioma...') cites 'EGAD50000002214 for cfMeDIP-seq data' verbatim; confirmed by fetching the paper's own full-text XML and finding this exact accession in its data-availability section, and cross-confirmed the paper's abstract states 'plasma methylation (n = 59)', matching this record's own sample_count exactly. publications/corresponding_author/institution added accordingly; corresponding_author inferred from Nassiri/Zadeh's last-author position and this lab's established program leadership (consistent with how this project handles the rest of this same group's records), not from an explicit corresponding-author footnote (none found in the fetched XML), so confidence kept Medium for that field specifically.",
+  "source_urls": [
+    "https://ega-archive.org/studies/EGAS50000001539",
+    "https://ega-archive.org/datasets/EGAD50000002214"
+  ],
+  "tags": {
+    "grade_comparable": false,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": false,
+    "large_cohort": false,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": false,
+    "has_outcome_data": false,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

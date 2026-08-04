@@ -1,0 +1,135 @@
+{
+  "id": "gse-16583-cnv-snp-array",
+  "title": "Genomic landscape of meningiomas: genotyping",
+  "accessions": [
+    "GSE16583"
+  ],
+  "related_accessions": [
+    "GSE16584",
+    "GSE16581"
+  ],
+  "source_repositories": [
+    "GEO"
+  ],
+  "publications": [
+    {
+      "title": "Genomic landscape of meningiomas.",
+      "authors": [
+        "Lee Y",
+        "Liu J",
+        "Patel S",
+        "Cloughesy T",
+        "Lai A",
+        "Farooqi H"
+      ],
+      "venue": "Brain pathology (Zurich, Switzerland)",
+      "year": 2010,
+      "doi": "10.1111/j.1750-3639.2009.00356.x",
+      "pmid": "20015288",
+      "preprint_id": null
+    },
+    {
+      "title": "Corrigendum.",
+      "authors": [
+        "Lee Y",
+        "Liu J",
+        "Patel S",
+        "Cloughesy T",
+        "Lai A",
+        "Farooqi H"
+      ],
+      "venue": "Brain pathology (Zurich, Switzerland)",
+      "year": 2011,
+      "doi": "10.1111/j.1750-3639.2011.00503.x",
+      "pmid": null,
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Stanley F. Nelson",
+  "institution": "U.C.L.A.",
+  "date_deposited": "2009-06-12",
+  "date_updated": "2017-12-22",
+  "publication_status": "corrected",
+  "last_verified_date": "2026-08-04",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-10",
+  "verification_tier": 1,
+  "found_via": [
+    "keyword_api",
+    "citation_chain"
+  ],
+  "modality": [
+    "cnv_snp_array"
+  ],
+  "platform": "GPL2004, GPL2005",
+  "reference_genome": "Not reported",
+  "pipeline": "Not reported",
+  "patient_count": 85,
+  "sample_count": 85,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": 57,
+    "grade_2": 20,
+    "grade_3": 8
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": false,
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "primary"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "Not reported",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "53 female, 32 male (n=85, corrected 2026-07-10: matches Series_overall_design's '53 female and 32 male subjects' exactly; the earlier n=170 figure double-counted every patient because each of the 85 patients was genotyped on 2 SNP array platforms -- GPL2004 'Hind' and GPL2005 'Xba', confirmed by direct GSM inspection, e.g. GSM815639/Meningioma_1024_Hind_50k and the corresponding Xba-platform GSM for the same patient ID both carry identical demographics)",
+  "age_distribution": "n=85, range 31.0-89.0, mean 62.1 (corrected 2026-07-10 from n=170 for the same double-counting reason as sex_distribution; range/mean unchanged since each patient's age value is identical across its 2 GSM chip records)",
+  "has_outcome_data": true,
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": []
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": "Not reported",
+  "processed_data_available": true,
+  "processed_data_format": "GSE16583_RAW.tar",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High",
+    "publications": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "PER-SAMPLE DATA UPDATE (2026-07-10, corrected same day during fact-check pass): Rich per-sample clinical data recovered directly from the series' family.soft file: WHO grade, sex, age, vital status, and a recurrence-frequency count per sample. CORRECTION: an earlier extraction pass tallied these fields across all 170 GSM records and reported grade_breakdown 114/40/16, sex 106F/64M, and vital status 146 Alive/24 Deceased -- this double-counted every patient, because the series contains 170 GSM records for only 85 unique patients (each patient was genotyped on 2 SNP array platforms, GPL2004 'Hind' and GPL2005 'Xba', producing 2 GSM entries per patient with identical characteristics). Confirmed directly: Sample_title values pair up 1:1 by patient ID across the two platforms (e.g. patient 984 appears as both a Hind and an Xba GSM with matching grade/sex/age), and every per-sample tally exactly halves to match the study's own stated cohort description (Series_overall_design: '53 female and 32 male subjects... 57 tumors WHO I, 20 WHO II, 8 WHO III' = 85 total). All affected fields (patient_count, sample_count, grade_breakdown, sex_distribution, age_distribution) have been corrected to the true n=85 patient-level counts. RECURRENCE DATA (corrected, n=85): recurrence_frequency 72 patients with 0 recurrences, 4 with 1, 5 with 2, 1 with 4, 2 with 5, 1 with 9 (halved from the raw 170-GSM tally of 144/8/10/2/4/2); a 'tts' (time-to-something, likely time-to-survival-event) field with values not yet parsed for exact meaning remains unextracted. OUTCOME DATA (corrected, n=85): vital status 73 Alive, 12 Deceased (halved from 146/24 across 170 GSM records). Series-level GEO metadata verified directly against the live source; remaining per-sample fields (anatomic location, brain invasion, treatment timepoint) not yet extracted from individual GSM records. PUBLICATION STATUS CORRECTION (2026-07-10 re-verification pass): publication_status was 'normal' but PubMed's record for PMID 20015288 lists an 'Erratum in' reference (Brain Pathol. 2011 Jul;21(4):478); confirmed via Crossref (DOI 10.1111/j.1750-3639.2011.00503.x, references the original article's DOI) and the corrigendum's PMC full text (PMC8094315, no PMID assigned): the correction is limited to mislabeled supporting-information table/figure numbers, it does not affect the deposited data or reported results. publication_status updated to 'corrected' and the corrigendum added as a second publications entry. COMPLETENESS FIX (2026-07-13, corpus-wide tag audit): treatment_timepoint_status had been left at 'Not reported' even though tags.recurrence_annotated is true and this record's own notes above already document genuine per-sample primary/recurrent data. Corrected to ['primary', 'recurrent'] to match. CORRECTION (2026-07-14, live-source deep audit): the 2026-07-13 fix above was itself wrong -- it conflated the per-sample 'recurrence_frequency' field (a lifetime OUTCOME count of how many times that patient's tumor later recurred during follow-up, already correctly supporting has_outcome_data=true) with a genuine per-SAMPLE primary-vs-recurrent specimen classification. Fetched and read the paper's own text directly (Lee et al. 2010, Brain Pathology, PMID 20015288, PMC3167483): it states verbatim 'Tumor biopsies from 53 female and 32 male subjects with sporadic meningioma were identified from the UCLA Neuro-oncology Program Tissue Bank' and, critically, 'Only eight primary samples analyzed in this data set were sampled from patients who had a later recurrence. None of the recurrent biopsies were available for analysis.' This confirms all 85 deposited samples are PRIMARY (initial-surgery) specimens; 'recurrent' in this study is exclusively a downstream clinical-outcome label describing what later happened to the patient, not a description of any deposited tissue itself -- the authors explicitly did not have access to any actual recurrent-tumor biopsies. Re-verified live via GSE16583_family.soft: the only per-sample fields are age, gender, recurrence_frequency (a count, values 0/1/2/4/5/9, not a primary/recurrent label), tissue (uniformly 'meningioma tumor' for all 170 GSM records, no primary/recurrent distinction), tts, vital status, and who grade -- there is no field anywhere that labels any individual sample as a recurrent-tumor specimen. treatment_timepoint_status corrected back to ['primary'] only (removing the incorrect 'recurrent' value), and tags.recurrence_annotated corrected from true back to false, since this dataset does not in fact distinguish primary-vs-recurrent SAMPLES (the schema's own bar for that tag) -- it distinguishes primary samples by their patients' later recurrence outcome, which is a has_outcome_data fact, not a recurrence_annotated fact. has_outcome_data remains correctly true (vital status + recurrence-outcome counts are genuine survival/outcome data) and grade_breakdown/sex/age/vital-status counts were independently re-verified against the live family.soft during this same pass and remain unchanged and accurate (85 unique patients via Hind/Xba platform-pair dedup, grade 57/20/8, 73 Alive/12 Deceased, recurrence_frequency 72/4/5/0/1/2/0/0/0/1/0/0(=values 0:72,1:4,2:5,4:1,5:2,9:1)). CORRESPONDING-AUTHOR CORRECTION (2026-08-04): field previously read 'Yohan Lee, Stanley F Nelson' -- Lee (first author) is not the designated corresponding author. Re-verified against the paper's own PMC full text (PMID 20015288, PMCID PMC3167483): the author-notes/corresp block names only 'Stanley F. Nelson, MD ... snelson@ucla.edu', and the contrib-group flags corresp=\"yes\" on Stanley Nelson alone. Corrected to Nelson only.",
+  "source_urls": [
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE16583",
+    "https://pubmed.ncbi.nlm.nih.gov/20015288/",
+    "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8094315/"
+  ],
+  "tags": {
+    "grade_comparable": true,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": false,
+    "large_cohort": false,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": false,
+    "has_outcome_data": true,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

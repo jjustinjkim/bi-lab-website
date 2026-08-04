@@ -1,0 +1,124 @@
+{
+  "id": "gse-270638-nassiri-retrospective-rnaseq",
+  "title": "Retrospective meningiomas RNA-sequencing data.",
+  "accessions": [
+    "GSE270638"
+  ],
+  "related_accessions": [
+    "GSE270371",
+    "GSE270375",
+    "PRJNA1126283",
+    "PRJNA1127224"
+  ],
+  "source_repositories": [
+    "GEO"
+  ],
+  "publications": [
+    {
+      "title": "Molecular classification to refine surgical and radiotherapeutic decision-making in meningioma.",
+      "authors": [
+        "Wang JZ",
+        "Patil V",
+        "Landry AP",
+        "Gui C",
+        "Ajisebutu A",
+        "Liu J"
+      ],
+      "venue": "Nature Medicine",
+      "year": 2024,
+      "doi": "10.1038/s41591-024-03167-4",
+      "pmid": "39169220",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Farshad Nassiri, Gelareh Zadeh",
+  "institution": "Princess Margaret Cancer Center",
+  "date_deposited": "2024-06-24",
+  "date_updated": "2024-08-21",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-12",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-10",
+  "verification_tier": 1,
+  "found_via": [
+    "keyword_api",
+    "citation_chain"
+  ],
+  "modality": [
+    "bulk_rna_seq"
+  ],
+  "platform": "Illumina NovaSeq 6000 (GPL24676)",
+  "reference_genome": "Not reported",
+  "pipeline": "HTSeq (raw counts file named accordingly)",
+  "patient_count": "Not reported (384 samples per series; retrospective multicentre cohort, patient count not separately stated)",
+  "sample_count": 384,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": null,
+    "grade_2": null,
+    "grade_3": null
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": "Not reported",
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "Not reported"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "both",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "Not reported",
+  "age_distribution": "Not reported",
+  "has_outcome_data": "Not reported",
+  "paired_multimodal": {
+    "is_paired": true,
+    "related_datasets": [
+      "gse-270371-methylation"
+    ]
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": "Not reported",
+  "processed_data_available": true,
+  "processed_data_format": "Raw counts (HTSeq, .txt.gz)",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High",
+    "publications": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "PUBLICATION RESOLVED (2026-07-11): a previous plausible-looking candidate (PMID 42143623, 'Modern molecular profiling recontextualizes the NRG/RTOG-0539 trial...', same senior authors Nassiri and Zadeh) was checked directly and ruled out, that paper describes a distinct, smaller (n=100) trial cohort, not this retrospective series. A different candidate, PMID 39169220 ('Molecular classification to refine surgical and radiotherapeutic decision-making in meningioma,' Nature Medicine, published 2024-08-21, exactly matching this series' own 'Public on' date), was found via a Europe PMC full-text search for the literal accession strings 'GSE270638' and 'GSE270375', which returned this paper as an explicit hit, confirming it actually cites this dataset in its full text (not just a topical/authorship guess). Author list independently confirmed to include both Nassiri F and Zadeh G (Zadeh as final/senior author, matching this record's corresponding_author field exactly). Abstract describes a large retrospective cohort (2,824 meningiomas, 1,686 with molecular data) that separately incorporates the RTOG-0539 trial (~100 prospective patients) as one validation component, consistent with this being the larger umbrella study distinct from the smaller RTOG-0539-only paper already ruled out. publication_status left 'normal' (no retraction/correction found on this PMID via PubMed esummary). verification_tier upgraded from 2 to 1 and found_via extended to include citation_chain, since the publication is now independently corroborated via a second search method beyond the original keyword_api discovery of the accession. FACT-CHECK (2026-07-10): sample_count was wrongly copied from the paired methylation series (994) instead of this series' own count; the live GEO record for GSE270638 lists exactly 384 Series_sample_id entries (confirmed 994 + 384 = 1378, matching the GSE270375 superseries total), corrected to 384. tissue_preservation corrected from 'fresh_frozen' to 'both': although the series summary says 'fresh-frozen samples', individual GSM records (e.g. GSM8348767) state RNA was extracted 'from a combination of fresh frozen and paraffin-embedded tissue'. title corrected to add the trailing period present in the live Series_title. date_deposited corrected to the actual Series_submission_date (Jun 24 2024); the prior value (2024-08-21) was actually the 'Public on' date, not the submission date. FACT-CHECK (2026-07-11): corresponding_author reformatted from 'Farshad Nassiri / Gelareh Zadeh' to 'Farshad,,Nassiri, Gelareh,,Zadeh' -- same two people (independently re-confirmed as the paper's only two true corresponding authors via PMC full text PMC11564112, author-notes emails farshad.nassiri@uhn.ca and gelareh.zadeh@uhn.ca), just reformatted to match this corpus's standard GEO-contributor-string convention (comma-separated 'Last,MI,First' pairs) used elsewhere, and to now be textually identical to the sibling gse-270371-methylation.json record's corrected corresponding_author field. COMPLETENESS FIX (2026-07-12): source_urls was missing the PubMed link for the resolved publication (PMID 39169220), even though this record's publications array cites it and the reason field extensively documents its verification; added https://pubmed.ncbi.nlm.nih.gov/39169220/. ACCESSION ADDED (2026-07-13), prompted by a user question about whether a different paper's (Landry et al. 2026) data-availability statement, which reuses this cohort's data, was fully cross-referenced here: fetched PMID 39169220's own full-text data-availability section directly and confirmed it states 'Unprocessed RNA sequencing data (FASTQ) are deposited in the NCBI Sequence Read Archive... under the project number PRJNA1127224 for the retrospective meningiomas' -- i.e. PRJNA1127224 is the raw-FASTQ SRA mirror of this exact GSE270638 cohort, not a separate dataset. Added as a related_accession for discoverability.",
+  "source_urls": [
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE270638",
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE270375",
+    "https://www.ncbi.nlm.nih.gov/bioproject/PRJNA1126283",
+    "https://pubmed.ncbi.nlm.nih.gov/39169220/"
+  ],
+  "tags": {
+    "grade_comparable": false,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": true,
+    "large_cohort": true,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": false,
+    "has_outcome_data": false,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

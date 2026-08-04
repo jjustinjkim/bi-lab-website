@@ -1,0 +1,143 @@
+{
+  "id": "gse-234402-scrnaseq",
+  "title": "Single-cell RNA sequencing of human meningioma",
+  "accessions": [
+    "GSE234402"
+  ],
+  "related_accessions": [
+    "GSE235998"
+  ],
+  "source_repositories": [
+    "GEO",
+    "SRA"
+  ],
+  "publications": [
+    {
+      "title": "Perivascular NOTCH3+ Stem Cells Drive Meningioma Tumorigenesis and Resistance to Radiotherapy.",
+      "authors": [
+        "Choudhury A",
+        "Cady MA",
+        "Lucas CG",
+        "Najem H",
+        "Phillips JJ",
+        "Palikuqi B",
+        "Zakimi N",
+        "Joseph T",
+        "Birrueta JO",
+        "Chen WC",
+        "Oberheim Bush NA",
+        "Hervey-Jumper SL",
+        "Klein OD",
+        "Toedebusch CM",
+        "Horbinski CM",
+        "Magill ST",
+        "Bhaduri A",
+        "Perry A",
+        "Dickinson PJ",
+        "Heimberger AB",
+        "Ashworth A",
+        "Crouch EE",
+        "Raleigh DR"
+      ],
+      "venue": "Cancer discovery",
+      "year": 2024,
+      "doi": "10.1158/2159-8290.CD-23-1459",
+      "pmid": "38742767",
+      "preprint_id": "10.1101/2023.07.10.548456"
+    }
+  ],
+  "corresponding_author": "David R Raleigh",
+  "institution": "University of California, San Francisco",
+  "date_deposited": "2023-06-07",
+  "date_updated": "2024-08-02",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-12",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-10",
+  "verification_tier": 1,
+  "found_via": [
+    "keyword_api",
+    "citation_chain"
+  ],
+  "modality": [
+    "scrna_seq"
+  ],
+  "platform": "Illumina NovaSeq 6000 (GPL24676)",
+  "reference_genome": "Not reported",
+  "pipeline": "Not reported",
+  "patient_count": 1,
+  "sample_count": 1,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": null,
+    "grade_2": null,
+    "grade_3": null
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": "Not reported",
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "Not reported"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "Not reported",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "Not reported",
+  "age_distribution": "Not reported",
+  "has_outcome_data": "Not reported",
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": []
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": "Not reported",
+  "processed_data_available": true,
+  "processed_data_format": "GSE234402_RAW.tar",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High",
+    "publications": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "Series-level GEO metadata verified directly against the live source; per-sample clinical/pathology fields (grade, sex/age, anatomic location, brain invasion, treatment timepoint) have not yet been extracted from individual GSM records or supplementary tables -- part of the batch-1 scaling pass, prioritizing breadth of verified accessions over per-sample depth. Publication metadata pulled from PubMed esummary; not yet manually spot-checked against the full text for every record in this batch. FIELD CORRECTION (2026-07-11 re-verification pass): patient_count was left as 'Not reported' even though the live GEO overall_design explicitly states 'One tissue sample from a human meningioma patient was analyzed' and a direct GSM count confirms exactly 1 sample record under this accession; corrected to 1. CORRESPONDING-AUTHOR CORRECTION (2026-07-12): corresponding_author changed from 'Abrar,,Choudhury, Martha,A,Cady' to 'David,R,Raleigh'. Fetched the linked Cancer Discovery paper's PMC full text (PMID 38742767, PMC11452293) author-notes directly: Abrar Choudhury (AC) and Martha A. Cady (MAC) are the equal-contribution co-first authors, and the sole corresponding email belongs to David R. Raleigh (david.raleigh@ucsf.edu). Raleigh is present in the live GSE234402 Series_contributor list (Abrar,,Choudhury / Martha,A,Cady / David,R,Raleigh), so per this corpus's convention the field now reflects the true corresponding author in GEO's literal name format. CROSS-CONSISTENCY FIX (2026-07-12): publications[0].preprint_id was null despite a matching bioRxiv preprint (10.1101/2023.07.10.548456, same title/authors/corresponding author) already populated on the sibling adjacent record gse-239795-pdx-scrnaseq.json for this same paper; populated here to match. AUTHOR-LIST COMPLETENESS FIX (2026-07-14 deep audit): publications[0].authors was truncated to the first 6 of the paper's actual 23 authors; expanded to the full list (ending in Raleigh DR, the already-confirmed corresponding author) via the Europe PMC REST API authorString field. patient_count/sample_count (1) re-confirmed unchanged.",
+  "source_urls": [
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE234402",
+    "https://pubmed.ncbi.nlm.nih.gov/38742767/"
+  ],
+  "tags": {
+    "grade_comparable": false,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": true,
+    "spatially_resolved": false,
+    "multi_modal_matched": false,
+    "large_cohort": false,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": false,
+    "has_outcome_data": false,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null,
+  "gene_expression_viewer": {
+    "sample_label": "This record's single sample (patient 10)",
+    "data_url": "/pilot-data/gse-234402-scrnaseq.json",
+    "cell_count": 451,
+    "gene_count": 150,
+    "embedding_method": "scanpy 1.10.3: read_10x_mtx of GSM7466900's deposited Cell Ranger output (499 raw cells, 33538 genes), QC (min 200 genes/cell, <20% pct_counts_mt; 499->451 cells), filter_genes min_cells=3 (16498 genes), normalize_total+log1p, top-2000 HVG, PCA, neighbors, UMAP, Leiden (resolution 0.5, 6 clusters, igraph flavor). Gene panel: 11 guaranteed meningioma driver genes + top HVGs by dispersion to 150 total. Cluster identity via rank_genes_groups (Wilcoxon) matched against canonical marker sets; pathway scores via score_genes.",
+    "pathways": ["Proliferation / cell cycle", "Hypoxia", "Epithelial-mesenchymal transition", "Interferon response"]
+  }
+}

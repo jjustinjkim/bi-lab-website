@@ -1,0 +1,100 @@
+{
+  "id": "gse-304093-methylation",
+  "title": "DNA methylation profiling identifies long-range epigenetic silencing of clustered protocadherins as a key determinant of meningioma progression [cell line]",
+  "accessions": [
+    "GSE304093"
+  ],
+  "related_accessions": [
+    "GSE304097",
+    "GSE304087",
+    "GSE304094",
+    "GSE304096"
+  ],
+  "source_repositories": [
+    "GEO"
+  ],
+  "publications": [],
+  "corresponding_author": "Daniel J Merk, Ghazaleh Tabatabai",
+  "institution": "Hertie-Institute for Clinical Brain Research",
+  "date_deposited": "2025-07-30",
+  "date_updated": "2026-07-01",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-12",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-10",
+  "verification_tier": 2,
+  "found_via": [
+    "keyword_api"
+  ],
+  "modality": [
+    "dna_methylation_array"
+  ],
+  "platform": "Illumina Infinium MethylationEPIC v2.0 array (GPL33022)",
+  "reference_genome": "Not reported",
+  "pipeline": "Not reported",
+  "patient_count": "Not applicable (cell line)",
+  "sample_count": 10,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": null,
+    "grade_2": null,
+    "grade_3": null
+  },
+  "who_edition": "Not applicable (cell line)",
+  "molecular_subtype_annotated": false,
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not applicable",
+    "determination_method": "Not applicable"
+  },
+  "treatment_timepoint_status": [
+    "Not applicable"
+  ],
+  "anatomic_location_breakdown": "Not applicable (cell line)",
+  "tissue_preservation": "not_applicable",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "Not applicable",
+  "age_distribution": "Not applicable",
+  "has_outcome_data": false,
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": []
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": "Not reported",
+  "processed_data_available": true,
+  "processed_data_format": "Processed methylation values (txt.gz)",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "Adjacent-scope per docs/scope.md: overall_design confirms 5 human meningioma cell lines (2 from benign, 3 from malignant meningiomas), not primary patient tissue. Part of the GSE304097 SuperSeries alongside the core patient-tissue records gse-304087-bulk-rnaseq, gse-304094-methylation, and gse-304096-methylation. Corresponding_author, institution, and dates were previously recorded as Not reported despite being present in the live GEO record (matches contact/contributor info shared with sibling series GSE304087/GSE304094/GSE304096); filled in accordingly. sample_count corrected from 5 to 10: the live GEO record lists 10 GSM sample entries (GSM9143061-GSM9143070) even though overall_design describes 5 distinct cell lines, implying 2 array entries per cell line; sample_count here reflects the GEO-reported sample count, not the distinct cell line count. RE-VERIFICATION (2026-07-12): live GEO re-fetch shows the series lists a processed supplementary file (GSE304093_Meythylation_meningioma_cell_lines_processed.txt.gz) plus GSE304093_RAW.tar; processed_data_available corrected from 'Not reported' to true and processed_data_format populated accordingly. SubSeries/SuperSeries structure re-confirmed against live GSE304097 (SuperSeries of GSE304087, GSE304093, GSE304094, GSE304096), matching related_accessions; 10 GSMs (GSM9143061-GSM9143070) and platform GPL33022 re-confirmed.",
+  "source_urls": [
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE304093"
+  ],
+  "tags": {
+    "grade_comparable": false,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": false,
+    "large_cohort": false,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": false,
+    "has_outcome_data": false,
+    "peer_reviewed": false
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

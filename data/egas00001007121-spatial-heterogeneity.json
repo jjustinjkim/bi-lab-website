@@ -1,0 +1,131 @@
+{
+  "id": "egas00001007121-spatial-heterogeneity",
+  "title": "Spatial genomic, biochemical, and cellular mechanisms drive meningioma heterogeneity and evolution",
+  "accessions": [
+    "EGAS00001007121"
+  ],
+  "related_accessions": [],
+  "source_repositories": [
+    "EGA"
+  ],
+  "publications": [
+    {
+      "title": "Spatial genomic, biochemical and cellular mechanisms underlying meningioma heterogeneity and evolution.",
+      "authors": [
+        "Lucas CG",
+        "Mirchia K",
+        "Seo K",
+        "Najem H",
+        "Chen WC",
+        "Zakimi N",
+        "Foster K",
+        "Eaton CD",
+        "Cady MA",
+        "Choudhury A",
+        "Liu SJ",
+        "Phillips JJ",
+        "Magill ST",
+        "Horbinski CM",
+        "Solomon DA",
+        "Perry A",
+        "Vasudevan HN",
+        "Heimberger AB",
+        "Raleigh DR"
+      ],
+      "venue": "Nature Genetics",
+      "year": 2024,
+      "doi": "10.1038/s41588-024-01747-1",
+      "pmid": "38760638",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "David R Raleigh",
+  "institution": "Not reported",
+  "date_deposited": "Not reported",
+  "date_updated": "Not reported",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-14",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-11",
+  "verification_tier": 2,
+  "found_via": [
+    "keyword_api"
+  ],
+  "modality": [
+    "spatial_transcriptomics",
+    "proteomics_spatial"
+  ],
+  "platform": "Not reported",
+  "reference_genome": "Not reported",
+  "pipeline": "Not reported",
+  "patient_count": 10,
+  "sample_count": 16,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": null,
+    "grade_2": null,
+    "grade_3": null
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": "Not reported",
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "primary",
+    "recurrent"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "Not reported",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "Not reported",
+  "age_distribution": "Not reported",
+  "has_outcome_data": true,
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": []
+  },
+  "access_type": "controlled",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": false,
+  "processed_data_available": false,
+  "processed_data_format": "Not reported",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not reported",
+  "confidence_level": {
+    "sample_count": "Medium",
+    "modality": "Medium",
+    "publications": "Medium"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "NEW RECORD (2026-07-11), from a discovery-log LEAD noting 0 datasets registered but 16 samples listed at the study level, asking to re-check live in case a dataset had been registered since. Independently re-verified live via the EGA Metadata API: as of this check, the /studies/EGAS00001007121/datasets endpoint STILL returns an empty array (zero registered datasets); no controlled-access data is actually available to request yet, this is a study/sample registration with no deposited dataset. The study's own record shows is_released=false but released_date='2023-03-28' (a date already in the past relative to today), an internally inconsistent combination worth flagging rather than resolving by assumption; date_deposited/date_updated left 'Not reported' rather than using that ambiguous released_date field. The study abstract (fetched directly, not from title/description alone) confirms genuine human high-grade meningioma focus: 'Meningiomas are the most common primary intracranial tumors... High-grade meningiomas... Here we integrate spatial transcriptomic and spatial protein profiling approaches across high-grade meningiomas... Analyses of matched pairs of primary and recurrent meningiomas reveal spatial expansion of subclonal copy number variants...'. This directly confirms modality = spatial_transcriptomics + proteomics_spatial (both explicitly named in the abstract), matching the lead. Fetched all 16 registered EGAN sample records directly: all phenotype 'Meningioma', biological_sex 'unknown' for all, subject IDs M1-M10 with primed variants (M2, M4', M5, M5', M6, M6', M7, M7', M10, M10', etc.) plus one duplicated bare 'M9' entry; this pattern is consistent with primary/recurrent paired sampling for at least 5 of the 10 patients as the abstract describes, but the EGA sample records themselves carry no explicit 'primary'/'recurrent' field (title/description are null for every sample); patient_count set to 10 (unique base subject IDs) and sample_count to 16 (total registered EGAN sample accessions), both Medium confidence given the ambiguous primed-ID/duplicate-M9 pattern. access_type set to 'controlled' as the EGA-wide norm even though no dataset is registered to actually confirm this; raw_data_available and processed_data_available set to false since nothing is deposited/requestable yet, not merely 'Not reported', because the datasets endpoint affirmatively returned empty. Only public EGA study/sample-level metadata was used per docs/scope.md. DEEP-AUDIT UPDATE (2026-07-14): the recommended periodic recheck found the paper. Live-fetched Lucas et al. 2024 Nature Genetics (PMC11239374, doi:10.1038/s41588-024-01747-1, PMID 38760638; originally posted as a Research Square preprint in 2023 under this record's exact title before the journal shortened 'drive' to 'underlying'). The paper's own Methods state 'The study cohort consisted of 16 samples from 10 clinically aggressive meningiomas and 2 samples from 2 histologically WHO grade 1 meningiomas... resected from 11 patients at UCSF from 2009 to 2022' -- the 16-samples/10-aggressive-meningioma figure is an exact match to this record's sample_count=16/patient_count=10 (the record correctly excludes the 2 extra WHO-grade-1 comparison samples, LGM1/LGM2, which are not part of the 16 registered EGAN samples). Corresponding author confirmed via the same full text: 'Author for correspondence: david.raleigh@ucsf.edu' (David R. Raleigh, sole corresponding author). Caveat documented rather than concealed: the paper's Data Availability statement lists only SRA BioProject PRJNA950017 and GEO GSE228316/GSE228433 -- it does not name EGAS00001007121 explicitly, so confidence_level.publications is set to Medium (not High) despite the otherwise-exact quantitative match; needs_manual_review left true so a future pass can try to get direct confirmation (e.g. from EGA support or the authors) that this EGA study is the same spatial-proteomics/transcriptomics deposit rather than an unrelated one that merely shares the same working title and cohort size. treatment_timepoint_status updated from 'Not reported' to ['primary','recurrent'] and tags.recurrence_annotated to true: the paper explicitly analyzes matched primary/recurrent pairs from this same cohort (e.g. 'Images from M4 and M4' that are representative of matched pairs of pri[mary and recurrent]...'), not merely a cohort-selection framing. has_outcome_data updated from 'Not reported' to true: the paper states 'Patient demographics, adjuvant treatments, and clinical outcomes were recorded from the electronic medical record (Supplementary Table 1)' for this exact cohort. grade_breakdown and brain_invasion left unchanged ('Not reported'/false) since the paper discusses WHO grade and brain invasion only as general background/single-region figure examples (e.g. one region of sample M9), not as a per-patient breakdown table accessible outside Supplementary Table 1, which was not retrievable.",
+  "source_urls": [
+    "https://ega-archive.org/studies/EGAS00001007121",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC11239374/",
+    "https://pubmed.ncbi.nlm.nih.gov/38760638/",
+    "https://doi.org/10.1038/s41588-024-01747-1"
+  ],
+  "tags": {
+    "grade_comparable": false,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": true,
+    "multi_modal_matched": false,
+    "large_cohort": false,
+    "recurrence_annotated": true,
+    "molecular_subtype_annotated": false,
+    "has_outcome_data": true,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

@@ -1,0 +1,119 @@
+{
+  "id": "gse-221429-bulk-rnaseq",
+  "title": "Specific gene expression signatures of low grade meningiomas",
+  "accessions": [
+    "GSE221429"
+  ],
+  "related_accessions": [],
+  "source_repositories": [
+    "GEO",
+    "SRA"
+  ],
+  "publications": [
+    {
+      "title": "Specific gene expression signatures of low grade meningiomas.",
+      "authors": [
+        "Tsitsikov EN",
+        "Hameed S",
+        "Tavakol SA",
+        "Stephens TM",
+        "Tsytsykova AV",
+        "Garman L",
+        "Bi WL",
+        "Dunn IF"
+      ],
+      "venue": "Frontiers in oncology",
+      "year": 2023,
+      "doi": "10.3389/fonc.2023.1126550",
+      "pmid": "36937440",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Ian F Dunn",
+  "institution": "OUHSC",
+  "date_deposited": "2022-12-20",
+  "date_updated": "2023-06-09",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-14",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-10",
+  "verification_tier": 1,
+  "found_via": [
+    "keyword_api",
+    "citation_chain"
+  ],
+  "modality": [
+    "bulk_rna_seq"
+  ],
+  "platform": "Illumina NovaSeq 6000 (GPL24676)",
+  "reference_genome": "Not reported",
+  "pipeline": "Not reported",
+  "patient_count": "Not reported",
+  "sample_count": 20,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": 18,
+    "grade_2": 2,
+    "grade_3": 0
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": true,
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "Not reported"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "Not reported",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "20 female, 0 male (n=20, per PMID 36937440 full text: 'selected from twenty female patients')",
+  "age_distribution": "n=20, median 61 years at diagnosis (per PMID 36937440 full text)",
+  "has_outcome_data": "Not reported",
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": []
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": "Not reported",
+  "processed_data_available": true,
+  "processed_data_format": "GSE221429_gene_fpkm.xlsx",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High",
+    "publications": "High",
+    "molecular_subtype_annotated": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "Series-level GEO metadata verified directly against the live source (2026-07-10): overall_design explicitly states RNA-seq of 'twenty meningiomas with genomic alterations including NF2 inactivation, loss of chr1p and missense mutations in TRAF7, AKT1 and KLF4,' i.e. a named driver-genotype subtyping system, so molecular_subtype_annotated is now set to true (previously 'Not reported'). Remaining per-sample clinical/pathology fields (grade, sex/age, anatomic location, brain invasion, treatment timepoint, per-genotype-group sample counts) have not yet been extracted from individual GSM records or supplementary tables. DEEP-AUDIT PASS (2026-07-14): AUTHOR LIST CORRECTED: publications[0].authors had been mechanically truncated to the first 6 names; Europe PMC's authorString for PMID 36937440 confirms 8 total authors, now written in full (added Bi WL, Dunn IF). CORRESPONDING AUTHOR CORRECTED: 'Erdyni Tsitsikov, Sherwin A Tavakol' was never actually verified against the paper's own correspondence marker. Direct check of PMC10016690.xml (Europe PMC fullTextXML) author-notes confirms exactly one corresponding-author (✉) footnote: 'Correspondence: Ian F. Dunn, ian-dunn@ouhsc.edu' -- Tsitsikov (first author) and Tavakol are not corresponding authors on this paper. Corrected to 'Ian F Dunn'. HIDDEN PER-SAMPLE DATA CHECKED, none found beyond what's already recorded: the same full text states 'primary samples from meningiomas with WHO grades of 1 (n=18) or 2 (n=2) were selected from twenty female patients... with a median age of 61 years', consistent with this record's sample_count=20 and confirming this is an all-grade-1/2, all-female cohort of 20 samples/patients -- but this duplicates rather than adds to the existing molecular-subtype-only extraction. Given the schema's grade_comparable tag requires an explicit per-grade breakdown, and the paper does state grade 1 (n=18) and grade 2 (n=2): grade_breakdown filled in as {grade_1: 18, grade_2: 2, grade_3: 0} and tags.grade_comparable corrected from false to true, sex_distribution corrected to '20 female (0 male)' and age_distribution to 'n=20, median 61 years' per the same quoted sentence. No brain invasion or outcome/survival data found in the full text (checked directly: one 'brain invasion' hit is a definitional citation about WHO grading criteria in general, not per-sample data for this cohort); brain_invasion/has_outcome_data left unchanged.",
+  "source_urls": [
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE221429",
+    "https://pubmed.ncbi.nlm.nih.gov/36937440/"
+  ],
+  "tags": {
+    "grade_comparable": true,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": false,
+    "large_cohort": false,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": true,
+    "has_outcome_data": false,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

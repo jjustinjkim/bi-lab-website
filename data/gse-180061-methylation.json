@@ -1,0 +1,122 @@
+{
+  "id": "gse-180061-methylation",
+  "title": "Meningioma methylation analysis.",
+  "accessions": [
+    "GSE180061"
+  ],
+  "related_accessions": [
+    "GSE168726"
+  ],
+  "source_repositories": [
+    "GEO"
+  ],
+  "publications": [
+    {
+      "title": "A clinically applicable integrative molecular classification of meningiomas.",
+      "authors": [
+        "Nassiri F",
+        "Liu J",
+        "Patil V",
+        "Mamatjan Y",
+        "Wang JZ",
+        "Hugh-White R"
+      ],
+      "venue": "Nature",
+      "year": 2021,
+      "doi": "10.1038/s41586-021-03850-3",
+      "pmid": "34433969",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Gelareh Zadeh",
+  "institution": "Princess Margaret Cancer Center",
+  "date_deposited": "2021-07-13",
+  "date_updated": "2021-09-17",
+  "publication_status": "normal",
+  "last_verified_date": "2026-08-04",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-10",
+  "verification_tier": 1,
+  "found_via": [
+    "keyword_api",
+    "citation_chain"
+  ],
+  "modality": [
+    "dna_methylation_array"
+  ],
+  "platform": "GPL23976",
+  "reference_genome": "Not reported",
+  "pipeline": "Not reported",
+  "patient_count": "Not reported",
+  "sample_count": 121,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": null,
+    "grade_2": null,
+    "grade_3": null
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": "Not reported",
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "Not reported"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "fresh_frozen",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "Not reported",
+  "age_distribution": "Not reported",
+  "has_outcome_data": "Not reported",
+  "paired_multimodal": {
+    "is_paired": true,
+    "related_datasets": [
+      "mng-utoronto-2021-genomic",
+      "egad00001007494-nassiri-rnaseq",
+      "egad00001007677-nassiri-snrnaseq",
+      "msv000086901-nassiri-proteomics"
+    ]
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": true,
+  "processed_data_available": true,
+  "processed_data_format": "GSE180061_Matrix_processed.txt.gz",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High",
+    "publications": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "Series-level GEO metadata verified directly against the live source; per-sample clinical/pathology fields (grade, sex/age, anatomic location, brain invasion, treatment timepoint) have not yet been extracted from individual GSM records or supplementary tables. The duplicate-cohort question previously flagged here has now been RESOLVED (2026-07-11 fact-check pass) via direct GSM-level comparison against GSE168726, see duplicate_notes for the evidence; this record is the canonical entry, GSE168726 is the confirmed duplicate. FACT-CHECK UPDATE (2026-07-10): date_deposited/date_updated filled in from Series_submission_date/Series_last_update_date, previously 'Not reported'. FACT-CHECK UPDATE (2026-07-10 verification pass): tissue_preservation filled in as 'fresh_frozen', previously 'Not reported'. Series_summary states 'Genomic DNA isolated directly from fresh-frozen human meningioma specimens.' CROSS-LINK ADDED (2026-07-11): bulk RNA-seq and single-nucleus RNA-seq data for this same published cohort were located on EGA (study EGAS00001004982) via an author/lab-based search and added as new records; paired_multimodal updated accordingly, tags.multi_modal_matched corrected to true. FACT-CHECK UPDATE (2026-07-12 re-verification pass): raw_data_available corrected from 'Not reported' to true; the live series lists GSE180061_RAW.tar and GSE180061_Matrix_signal_intensities.txt.gz (raw IDAT / signal-intensity array files) as supplementary_file entries. Also confirmed all 121 GSMs carry tissue='fresh-frozen human meningioma' with no grade/sex/age fields at the GSM level (those live only in the paper/supplement), so grade_breakdown, sex_distribution, and age_distribution remain 'Not reported' at the GEO level. CROSS-LINK ADDED (2026-07-13): msv000086901-nassiri-proteomics.json (this paper's proteomics arm, MassIVE MSV000086901) added as a new record and cross-linked here. CORRESPONDING-AUTHOR CORRECTION (2026-08-04): field previously read 'Yasin Mamatjan, Nassiri Farshad', neither of whom is the paper's designated corresponding author. Re-verified against the paper's own PMC full text (PMID 34433969, PMCID PMC11604310): the author-notes/corresp block explicitly states 'Correspondence should be addressed to: Gelareh Zadeh ... gelareh.zadeh@uhn.ca' and names no other corresponding author. Corrected to Zadeh.",
+  "source_urls": [
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE180061",
+    "https://pubmed.ncbi.nlm.nih.gov/34433969/"
+  ],
+  "tags": {
+    "grade_comparable": false,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": true,
+    "large_cohort": false,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": false,
+    "has_outcome_data": false,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": "CONFIRMED CANONICAL (resolved 2026-07-11, reconciled with GSE168726's own record): direct GSM-level specimen-ID comparison (see gse-168726-methylation.json's duplicate_notes for the full evidence) proves GSE168726 and this record (GSE180061) contain the identical 121-sample Princess Margaret Cancer Center meningioma methylation cohort, deposited twice under two different GEO accessions. This accession (GSE180061, submitted 2021-07-13, public 2021-07-14) is the one actually linked to the published paper (Nassiri et al. Nature 2021, PMID 34433969) and is treated as the canonical/citable entry; GSE168726 (submitted 2021-03-11, public 2022-03-30, no linked PMID) is the redundant duplicate deposit. Not auto-merged into a single corpus record (both accessions are kept as separate entries per the corpus's dedup policy), but downstream analyses should avoid double-counting these 121 patients across both records."
+}

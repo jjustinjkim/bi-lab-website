@@ -1,0 +1,114 @@
+{
+  "id": "pxd014853-meningioma-anxa2-ipms",
+  "title": "Mining Meningioma Proteomics Alterations Using IP MS",
+  "accessions": [
+    "PXD014853"
+  ],
+  "related_accessions": [],
+  "source_repositories": [
+    "PRIDE",
+    "ProteomeXchange"
+  ],
+  "publications": [
+    {
+      "title": "Comprehending Meningioma Signaling Cascades Using Multipronged Proteomics Approaches & Targeted Validation of Potential Markers.",
+      "authors": [
+        "Mukherjee S",
+        "Biswas D",
+        "Gadre R",
+        "Jain P",
+        "Syed N",
+        "Stylianou J"
+      ],
+      "venue": "Frontiers in Oncology",
+      "year": 2020,
+      "doi": "10.3389/fonc.2020.01600",
+      "pmid": "32974197",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Sanjeeva Srivastava",
+  "institution": "Lund University",
+  "date_deposited": "2019-07-31",
+  "date_updated": "2021-08-30",
+  "publication_status": "normal",
+  "last_verified_date": "2026-08-04",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-13",
+  "verification_tier": 2,
+  "found_via": [
+    "keyword_api"
+  ],
+  "modality": [
+    "proteomics_bulk_ms"
+  ],
+  "platform": "Not reported",
+  "reference_genome": "Not applicable",
+  "pipeline": "Proteome Discoverer 2.2",
+  "patient_count": "Not reported",
+  "sample_count": "Not reported",
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": null,
+    "grade_2": null,
+    "grade_3": null
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": false,
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "Not reported"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "Not reported",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "Not reported",
+  "age_distribution": "Not reported",
+  "has_outcome_data": false,
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": []
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": true,
+  "raw_data_available": true,
+  "processed_data_available": "Not reported",
+  "processed_data_format": "Not reported",
+  "license": "Creative Commons Public Domain (CC0)",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "modality": "High",
+    "tissue_type": "Medium",
+    "publications": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "NEW RECORD (2026-07-13), surfaced by the monthly refresh's PRIDE keyword_api check, verified directly against the live PRIDE Archive API before extraction (accession, title, and description all confirmed to match exactly). PRIDE's own record marks this project 'submissionType: PARTIAL', meaning the original submitter did not complete every standard PRIDE metadata field (no sample count, no per-sample clinical annotation, no linked publication anywhere in the record) -- this is a genuine, real, publicly accessible dataset, just an unusually thin one. The project description states an IP-MS (immunoprecipitation mass spectrometry) approach was used on 'brain tumor tissue lysates' with an antibody specific to ANXA2 (Annexin A2) to identify protein-protein interaction partners, confirming real patient tumor tissue (not a cell line) was used, hence core scope rather than adjacent. access_blocked_metadata_incomplete is set true to reflect that the source record itself, not this extraction, is missing standard fields. No linked publication was found via a live Europe PMC search; flagged for a follow-up literature search in a future session rather than left unattempted. FOLLOW-UP PUBLICATION SEARCH (2026-07-13), match found -- and on closer inspection, was directly available in the PRIDE record's own 'references' field all along (missed by the original extraction's Europe PMC-only search): re-fetching the live PRIDE v2 project record's 'references' array (not merely its free-text description, which is what the original pass checked) returns exactly one entry, 'Mukherjee S, Biswas D, Gadre R, Jain P, Syed N, Stylianou J, Zeng Q, Mahadevan A, Epari S, Shetty P, Moiyadi A, Roy Ball G, Srivastava S. Comprehending Meningioma Signaling Cascades Using Multipronged Proteomics Approaches & Targeted Validation of Potential Markers. Front Oncol. 2020 10:1600', with pubmedID 32974197 and doi 10.3389/fonc.2020.01600 both populated directly in that field. Cross-confirmed independently via a Europe PMC full-text search for PXD014853, which surfaces the same paper's Data Availability Statement listing this accession alongside PXD014852, PXD014855, and PXD014823 (the same paper is also the confirmed originating publication for those two sibling records in this inventory). Mukherjee S (first author) matches this record's corresponding_author exactly. institution ('Lund University') is unchanged: it is independently confirmed as this record's PRIDE submitter's own listed affiliation (Dr. Shuvolina Mukherjee, Lund University, Sweden) -- her current/post-study affiliation at time of PRIDE submission, distinct from her IIT Bombay affiliation on the paper itself; both are accurate for what each field represents, so left as-is per this project's precedent for submitter-vs-paper affiliation distinctions. Publication added; publication_status normal so tags.peer_reviewed set true. CORRESPONDING-AUTHOR CORRECTION (2026-08-04): field previously read 'Shuvolina Mukherjee' (first author), which does not match the source paper's actual corresponding author. Re-verified against the paper's own PMC full text (PMID 32974197, PMCID PMC7482667): the author-notes/corresp block names only 'Sanjeeva Srivastava, sanjeeva@iitb.ac.in'. Corrected to Srivastava, consistent with this project's existing author_lab_search finding that Srivastava is the PI for this cohort.",
+  "source_urls": [
+    "https://www.ebi.ac.uk/pride/archive/projects/PXD014853"
+  ],
+  "tags": {
+    "grade_comparable": false,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": false,
+    "large_cohort": false,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": false,
+    "has_outcome_data": false,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

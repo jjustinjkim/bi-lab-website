@@ -1,0 +1,126 @@
+{
+  "id": "gse-173825-bulk-rnaseq",
+  "title": "Genomic profiling of anaplastic meningioma identifies recurrent genetic alterations with relevance to lower-grade meningioma",
+  "accessions": [
+    "GSE173825"
+  ],
+  "related_accessions": [],
+  "source_repositories": [
+    "GEO",
+    "SRA"
+  ],
+  "publications": [
+    {
+      "title": "Genomic profiling of anaplastic meningioma identifies recurrent genetic alterations with relevance to lower-grade meningioma.",
+      "authors": [
+        "Cimino PJ",
+        "Yoda RA",
+        "Wirsching HG",
+        "Warrick JI",
+        "Dorschner MO",
+        "Ferreira M"
+      ],
+      "venue": "Neuropathology and applied neurobiology",
+      "year": 2019,
+      "doi": "10.1111/nan.12487",
+      "pmid": "29675951",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "P J Cimino, R A Yoda",
+  "institution": "National Institutes of Health",
+  "date_deposited": "2021-05-04",
+  "date_updated": "2021-05-05",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-14",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-10",
+  "verification_tier": 1,
+  "found_via": [
+    "keyword_api",
+    "citation_chain"
+  ],
+  "modality": [
+    "bulk_rna_seq"
+  ],
+  "platform": "Illumina HiSeq 2500 (GPL16791)",
+  "reference_genome": "Not reported",
+  "pipeline": "Not reported",
+  "patient_count": 8,
+  "sample_count": 8,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": 0,
+    "grade_2": 0,
+    "grade_3": 8
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": "Not reported",
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "primary",
+    "recurrent",
+    "pre_radiation",
+    "post_radiation"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "fresh_frozen",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "Not reported",
+  "age_distribution": "Not reported",
+  "has_outcome_data": "Not reported",
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": []
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": "Not reported",
+  "processed_data_available": true,
+  "processed_data_format": "GSE173825_RAW.tar",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "sample_count": "High",
+    "patient_count": "High",
+    "modality": "High",
+    "publications": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "PER-SAMPLE DATA UPDATE (2026-07-10): Per-sample diagnosis/tumor-type/radiation data recovered from family.soft. All 8 samples are anaplastic (WHO grade III) meningioma -- single-grade cohort, so no grade_breakdown comparison is possible, but this is now confirmed rather than inferred from the title alone. RADIATION DATA: radiation field per-sample: 3 no, 5 yes -- extracted from family.soft. RECURRENCE DATA: tumor type field per-sample: 3 Primary, 5 Secondary (i.e. recurrent) -- extracted from family.soft, out of 8 total anaplastic meningioma samples. Series-level GEO metadata verified directly against the live source; per-sample clinical/pathology fields (grade, sex/age, anatomic location, brain invasion, treatment timepoint) have not yet been extracted from individual GSM records or supplementary tables -- part of the batch-1 scaling pass, prioritizing breadth of verified accessions over per-sample depth. Publication metadata pulled from PubMed esummary; not yet manually spot-checked against the full text for every record in this batch. FACT-CHECK UPDATE (2026-07-10 verification pass): tissue_preservation filled in as 'fresh_frozen', previously 'Not reported'. Series_overall_design states 'Eight cases of anaplastic meningioma with snap frozen tissue underwent RNA sequencing.' COMPLETENESS FIX (2026-07-11 fact-check pass): treatment_timepoint_status was left at 'Not reported' even though this record's own note above already documents an explicit per-sample primary-vs-recurrent breakdown (3 Primary, 5 Secondary/recurrent, from the family.soft 'tumor type' field), consistent with tags.recurrence_annotated already being true; corrected to ['primary', 'recurrent'] to match. COMPLETENESS FIX (2026-07-13, prompted by an audit of the radiation_timepoint tag corpus-wide): tags.radiation_timepoint was already correctly true, but treatment_timepoint_status had never been updated to reflect the radiation dimension this record's own 'RADIATION DATA' note above already documented. Re-verified directly against the live GEO family.soft per-sample data: every one of the 3 'Primary'/radiation:no samples and every one of the 5 'Secondary'(recurrent)/radiation:yes samples correlate perfectly (radiation:yes occurs only alongside tumor type:Secondary), confirming this is genuine post-radiotherapy-treatment recurrence data (radiotherapy given after the primary tumor, before the recurrence sample was later collected) -- true treatment timing, not a radiation-induced-etiology cohort-selection criterion (see the correction made the same day on the unrelated Agnihotri RIM records, where that distinction was found to matter). Added pre_radiation/post_radiation to treatment_timepoint_status to match. CONFIDENCE CAVEAT (2026-07-13, prompted by direct user follow-up questioning how this was known): re-checked the raw evidence honestly rather than resting on the prior pass. The GEO per-sample field is literally just 'radiation: yes/no' correlated 1:1 with 'tumor type: Primary/Secondary' -- that correlation alone is ambiguous between treatment timing and radiation-induced etiology (the same shape of ambiguity that caused the Agnihotri RIM misclassification). The paper is a letter with no PubMed abstract and no open-access full text, so no sentence stating what 'radiation' refers to could be found. The read given here (post-radiotherapy recurrence, i.e. treatment timing) rests on the Series_summary's stated premise -- 'paired primary and recurrent meningiomas... evolution of anaplastic meningioma from lower-grade precursor tumours' -- which is about primary-to-recurrent genomic evolution, with no radiation-induced-etiology language anywhere in the title/summary/design (unlike the RIM papers, which state that premise outright). This is a lower-confidence inference from context, not a directly confirming sentence; flagged here explicitly so this record isn't mistaken for the same evidentiary strength as figshare-32043249-methylation-project's priorRT/adjuvantRT columns (which are confirmed via the linked GitHub survival-analysis code treating radiotherapy as a time-dependent covariate). AUDIT PASS (2026-07-14): per instructions from the prior 2026-07-13 caveat, treatment_timepoint_status/tags.radiation_timepoint were left untouched -- no new full-text access was obtained (Wiley page for doi.org/10.1111/nan.12487 returned HTTP 403; PubMed/Europe PMC still show no abstract for this letter), so nothing changed there. Other fields re-verified live: (1) publications[0] author list re-checked against both PubMed efetch XML and Europe PMC core record -- both independently confirm the exact same 6 authors (Cimino PJ, Yoda RA, Wirsching H-G, Warrick JI, Dorschner MO, Ferreira M) with no additional authors past #6, so this is a genuine 6-author paper, NOT an instance of the corpus's known 6-author-truncation bug; no author-list change made. corresponding_author could not be confirmed or refuted (no correspondence footnote accessible; left unchanged). (2) patient_count corrected from 'Not reported' to 8: live GSE173825 Series_overall_design states verbatim 'Eight cases of anaplastic meningioma with snap frozen tissue underwent RNA sequencing' -- one sample per case/patient (each of the 8 GSMs is an independent case; no shared-patient/paired-sample GSM field exists linking any two GSMs to the same patient), and the Series_summary's 'larger scale studies in paired primary and recurrent meningiomas are warranted' is phrased as future work NOT YET DONE, confirming this dataset itself is 8 unpaired independent cases rather than fewer patients each contributing a primary+recurrent pair. confidence_level.patient_count added as High. (3) Re-checked two individual GSM records (GSM5280835, GSM5280840) directly for any molecular-subtype/driver-mutation or outcome/survival fields beyond diagnosis/tumor type/tissue/radiation -- none present, confirming molecular_subtype_annotated and has_outcome_data remain correctly false/Not reported (not an instance of the 'real data hiding in full text' failure pattern, since full text itself is inaccessible, and GEO per-sample fields plainly contain nothing further). ONTOLOGY ADDED (2026-07-14): disease_id=MONDO:0020635, tissue_ids=['UBERON:0003547'], both verified live against the EBI Ontology Lookup Service (ols4/api/search) before use, not guessed. All 8 samples are anaplastic (WHO grade III) meningioma per this record's own grade_breakdown (0/0/8) and the series title -- a single-grade cohort, so the specific anaplastic-meningioma MONDO term applies to every sample, not just a subset.",
+  "source_urls": [
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE173825",
+    "https://pubmed.ncbi.nlm.nih.gov/29675951/"
+  ],
+  "tags": {
+    "grade_comparable": false,
+    "radiation_timepoint": true,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": false,
+    "large_cohort": false,
+    "recurrence_annotated": true,
+    "molecular_subtype_annotated": false,
+    "has_outcome_data": false,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null,
+  "ontology": {
+    "disease_id": "MONDO:0020635",
+    "tissue_ids": [
+      "UBERON:0003547"
+    ]
+  }
+}

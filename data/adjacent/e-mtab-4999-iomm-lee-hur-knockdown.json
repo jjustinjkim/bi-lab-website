@@ -1,0 +1,105 @@
+{
+  "id": "e-mtab-4999-iomm-lee-hur-knockdown",
+  "title": "Transcriptome profiling of human anaplastic meningioma IOMM-Lee cells following silencing of HuR (Human antigen R) gene expression by siRNA",
+  "accessions": [
+    "E-MTAB-4999"
+  ],
+  "related_accessions": [],
+  "source_repositories": [
+    "ArrayExpress_BioStudies"
+  ],
+  "publications": [
+    {
+      "title": "Cytoplasmic overexpression of RNA-binding protein HuR is a marker of poor prognosis in meningioma, and HuR knockdown decreases meningioma cell growth and resistance to hypoxia.",
+      "authors": ["Gauchotte G", "Hergalant S", "Vigouroux C", "Casse JM", "Houlgatte R", "Kaoma T"],
+      "venue": "The Journal of Pathology",
+      "year": 2017,
+      "doi": "10.1002/path.4916",
+      "pmid": "28493484",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Laurent Vallar",
+  "institution": "Luxembourg Institute of Health",
+  "date_deposited": "Not reported",
+  "date_updated": "2017-07-01",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-13",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-13",
+  "verification_tier": 2,
+  "found_via": [
+    "keyword_api"
+  ],
+  "modality": [
+    "expression_array"
+  ],
+  "platform": "Not reported",
+  "reference_genome": "Not applicable",
+  "pipeline": "Not reported",
+  "patient_count": "Not applicable (cell line)",
+  "sample_count": 12,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": null,
+    "grade_2": null,
+    "grade_3": null
+  },
+  "who_edition": "Not applicable (cell line)",
+  "molecular_subtype_annotated": false,
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not applicable",
+    "determination_method": "Not applicable"
+  },
+  "treatment_timepoint_status": [
+    "Not applicable"
+  ],
+  "anatomic_location_breakdown": "Not applicable (cell line)",
+  "tissue_preservation": "not_applicable",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "Not applicable",
+  "age_distribution": "Not applicable",
+  "has_outcome_data": false,
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": []
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": true,
+  "processed_data_available": true,
+  "processed_data_format": "Not reported",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "modality": "High",
+    "sample_count": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "NEW RECORD (2026-07-13), surfaced by the monthly refresh's ArrayExpress/BioStudies keyword_api check, verified directly against the live BioStudies API (title, description, and sample count confirmed exactly). IOMM-Lee is the same well-known anaplastic meningioma cell line already used in other adjacent records in this inventory (e.g. gse-222895-iomm-lee-xenograft-rnaseq.json), so this is a distinct experiment on a shared standard reagent, not a duplicate of any existing record -- confirmed no overlapping accession or identical description. sample_count=12 taken directly from the BioStudies 'Samples' attribute ('Sample count: 12'), a sextuplicate design (6 replicates x 2 conditions: HuR/ELAVL1 siRNA knockdown vs. negative-control siRNA). Despite the title saying 'Transcriptome profiling,' the record's own Study type field is 'transcription profiling by array' (EFO_0002768) -- this is a microarray study, not RNA-seq, hence modality is expression_array, not bulk_rna_seq. Corresponding author and institution taken directly from the record's listed submitter/investigator and organization fields. No linked publication was found via a live Europe PMC search; flagged for a follow-up literature search in a future session rather than left unattempted. FOLLOW-UP PUBLICATION SEARCH (2026-07-13), match found: a Europe PMC keyword search for the corresponding author (Vallar, Luxembourg Institute of Health) combined with 'meningioma HuR' surfaced Gauchotte et al. 2017 (PMID 28493484, J Pathol), whose abstract (fetched directly via PubMed efetch) explicitly states the authors 'examined the anti-proliferative effects of HuR knockdown in two meningioma cell lines (IOMM-Lee and Ben-Men-1) and conducted transcriptome-wide analyses (IOMM-Lee cells) to elucidate the molecular consequences of HuR knockdown' -- an exact design match for this record's siHuR-vs-negative-control IOMM-Lee microarray. Author list includes Vallar L (Proteome and Genome Research Unit, Luxembourg Institute of Health), matching this record's corresponding_author/institution exactly. The paper is closed-access with no PMCID, so the exact accession string E-MTAB-4999 could not be grepped in the full text; the match is based on exact author-institution identity plus an unambiguous design/topic match rather than an in-text accession hit, and is recorded here as such. Publication added; publication_status normal so tags.peer_reviewed set true.",
+  "source_urls": [
+    "https://www.ebi.ac.uk/biostudies/arrayexpress/studies/E-MTAB-4999"
+  ],
+  "tags": {
+    "grade_comparable": false,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": false,
+    "large_cohort": false,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": false,
+    "has_outcome_data": false,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

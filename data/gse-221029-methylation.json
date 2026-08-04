@@ -1,0 +1,113 @@
+{
+  "id": "gse-221029-methylation",
+  "title": "DNA methylation of human FFPE meningioma samples",
+  "accessions": [
+    "GSE221029"
+  ],
+  "related_accessions": [],
+  "source_repositories": [
+    "GEO"
+  ],
+  "publications": [
+    {
+      "title": "Targeted gene expression profiling predicts meningioma outcomes and radiotherapy responses.",
+      "authors": [
+        "Chen WC",
+        "Choudhury A",
+        "Youngblood MW",
+        "Polley MC",
+        "Lucas CG",
+        "Mirchia K"
+      ],
+      "venue": "Nature Medicine",
+      "year": 2023,
+      "doi": "10.1038/s41591-023-02586-z",
+      "pmid": "37944590",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "David R. Raleigh, Stephen T. Magill, William C. Chen",
+  "institution": "UCSF",
+  "date_deposited": "2022-12-15",
+  "date_updated": "2023-09-07",
+  "publication_status": "normal",
+  "last_verified_date": "2026-08-04",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-10",
+  "verification_tier": 2,
+  "found_via": [
+    "keyword_api"
+  ],
+  "modality": [
+    "dna_methylation_array"
+  ],
+  "platform": "GPL21145",
+  "reference_genome": "Not reported",
+  "pipeline": "Not reported",
+  "patient_count": "Not reported",
+  "sample_count": 230,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": null,
+    "grade_2": null,
+    "grade_3": null
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": "Not reported",
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "Not reported"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "ffpe",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "Not reported",
+  "age_distribution": "Not reported",
+  "has_outcome_data": "Not reported",
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": []
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": "Not reported",
+  "processed_data_available": true,
+  "processed_data_format": "GSE221029_1731-1732_Raleigh-Methylated_intensities-raw.csv.gz",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High",
+    "publications": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "Series-level GEO metadata verified directly against the live source; per-sample clinical/pathology fields (grade, sex/age, anatomic location, brain invasion, treatment timepoint) have not yet been extracted from individual GSM records or supplementary tables. FACT-CHECK UPDATE (2026-07-10 verification pass): tissue_preservation filled in as 'ffpe', previously 'Not reported'. Series_title/summary/overall_design all state 'FFPE meningioma samples'. FOLLOW-UP PUBLICATION SEARCH (2026-07-13), match found and directly confirmed: a Europe PMC full-text search for GSE221029 surfaced a later paper (Youngblood et al. 2026 STING activation paper, PMID 41680157) that cites GSE221029 alongside two other datasets in its own Data Availability section with reference callouts to three prior papers; tracing those references and testing each directly (via efetch db=pmc, since two of the three are closed-access with no searchable Europe PMC full text) found that Choudhury et al. 2022 Nat Genet (PMID 35534562) does NOT mention GSE221029 in its fulltext (only GSE101638/GSE139652/GSE183656), but Chen et al. 2023 Nat Med (PMID 37944590, 'Targeted gene expression profiling predicts meningioma outcomes and radiotherapy responses') DOES: its Data Availability section states verbatim 'Raw DNA methylation data from the UCSF WHO grade 2 or grade 3 validation cohort and the RTOG 0539 validation cohort are available under accession number GSE221029.' Author list (Chen WC first author, Raleigh DR last author) matches this record's corresponding_author exactly. Publication added; publication_status normal so tags.peer_reviewed set true. CORRESPONDING-AUTHOR CORRECTION (2026-08-04): field previously read 'William C Chen, David R Raleigh', omitting a third genuine co-corresponding author. Re-verified against the paper's own PMC full text (PMID 37944590, PMCID PMC11073469): the author-notes/corresp block explicitly lists three co-corresponding authors -- David R. Raleigh, Stephen T. Magill, and William C. Chen, each with their own email. Corrected to include all three.",
+  "source_urls": [
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE221029"
+  ],
+  "tags": {
+    "grade_comparable": false,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": false,
+    "large_cohort": true,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": false,
+    "has_outcome_data": false,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

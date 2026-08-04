@@ -1,0 +1,135 @@
+{
+  "id": "egas00001003490-nassiri-methylation-nomogram",
+  "title": "Predicting brain tumor recurrence: development and validation of a DNA-methylation based nomogram in meningioma",
+  "accessions": [
+    "EGAS00001003490",
+    "EGAD00010001687"
+  ],
+  "related_accessions": [],
+  "source_repositories": [
+    "EGA"
+  ],
+  "publications": [
+    {
+      "title": "DNA methylation profiling to predict recurrence risk in meningioma: development and validation of a nomogram to optimize clinical management",
+      "authors": [
+        "Nassiri F",
+        "Mamatjan Y",
+        "Suppiah S",
+        "Badhiwala JH",
+        "Mansouri S",
+        "Karimi S",
+        "Saarela O",
+        "Poisson L",
+        "Gepfner-Tuma I",
+        "Schittenhelm J",
+        "Ng HK",
+        "Noushmehr H",
+        "Harter P",
+        "Baumgarten P",
+        "Weller M",
+        "Preusser M",
+        "Herold-Mende C",
+        "Tatagiba M",
+        "Tabatabai G",
+        "Sahm F",
+        "von Deimling A",
+        "International Consortium on Meningiomas",
+        "Zadeh G",
+        "Aldape KD"
+      ],
+      "venue": "Neuro-Oncology",
+      "year": 2019,
+      "doi": "10.1093/neuonc/noz061",
+      "pmid": "31158293",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Kenneth D. Aldape / Gelareh Zadeh",
+  "institution": "Princess Margaret Cancer Centre, University Health Network, Toronto (International Consortium on Meningiomas, multi-institutional)",
+  "date_deposited": "Not reported",
+  "date_updated": "Not reported",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-11",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-11",
+  "verification_tier": 2,
+  "found_via": [
+    "keyword_api"
+  ],
+  "modality": [
+    "dna_methylation_array"
+  ],
+  "platform": "Illumina (array type unspecified in live metadata)",
+  "reference_genome": "Not reported",
+  "pipeline": "Not reported",
+  "patient_count": 280,
+  "sample_count": 280,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": null,
+    "grade_2": null,
+    "grade_3": null
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": false,
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "Not reported"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "Not reported",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "Not reported",
+  "age_distribution": "Not reported",
+  "has_outcome_data": true,
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": []
+  },
+  "access_type": "controlled",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": "Not reported",
+  "processed_data_available": "Not reported",
+  "processed_data_format": "Not reported",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not reported",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "Medium",
+    "publications": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "DEEP-AUDIT UPDATE (2026-07-14): (1) publications[0].authors was truncated to exactly 6 names; expanded to the full 24-entry Europe PMC authorString for PMID 31158293 (Nassiri F ... International Consortium on Meningiomas, Zadeh G, Aldape KD), including the group-author entry as PubMed lists it. (2) corresponding_author corrected from 'Farshad Nassiri / Kenneth D. Aldape' to 'Kenneth D. Aldape / Gelareh Zadeh'. Verified directly against the paper's own correspondence footnote (full text, PMC6620635, fetched via NCBI efetch since Europe PMC's affiliation-derived corresponding-author scan returned nothing usable for this record): '<corresp id=\"c1\"><bold>Corresponding Author:</bold> Kenneth D. Aldape, National Cancer Institute...(kenneth.aldape@nih.gov); Gelareh Zadeh, MacFeeters-Hamilton Center for Neuro-Oncology Research...(gelareh.zadeh@uhn.ca).</corresp>'. Nassiri F is the first author, not a corresponding author per this footnote; he was previously included by author-list-position assumption, exactly the pattern this audit was asked to catch. (3) has_outcome_data corrected from 'Not reported' to true (tags.has_outcome_data likewise true). The prior note reasoned that per-sample recurrence/outcome data was not confirmed as deposited in EGA's public sample metadata and therefore could not be marked true; however, the paper's own full text (PMC6620635 abstract/results) directly reports recurrence-free-survival (RFS) outcome analysis for this exact study cohort: 'a methylome model of 5-year recurrence-free survival (RFS)...independently associated with RFS...(hazard ratio 3.6, 95% CI: 1.8-7.2, P<0.001)...resulted in 2 groups with distinct recurrence patterns (hazard ratio 7.7, 95% CI: 5.3-11.1, P<0.001)'. This is exactly the failure pattern flagged for this audit (full-text outcome data present but left 'Not reported' because only repository metadata was checked); has_outcome_data is now set true since RFS/outcome data is demonstrably present for this cohort's samples, even though it is not separately exposed as an EGA sample-metadata field. molecular_subtype_annotated left unchanged (false) since the paper reports a continuous methylome recurrence-risk SCORE/nomogram, not a discrete named subtype classification system. NEW RECORD (2026-07-11). Note the unusual dataset accession format flagged in the task: EGAD00010001687 (an 'EGAD0001-' prefixed metadata-only/array-style dataset accession rather than the more common 'EGAD00001-' file-based prefix) was double-checked and resolves correctly live via the standard /datasets/{accession}/... endpoints; title 'Methylation', description 'Meningioma Methylation', num_samples=280, technologies=['Illumina'] (no more specific array chemistry given, e.g. 450K vs. EPIC, hence modality confidence Medium and platform left partially unspecified). Live /samples endpoint confirms 280 unique subject_id values (no duplicates), all phenotype='meningioma', with subject_id prefixes revealing a 3-site multi-institutional cohort: MDA=140, TOR=122, HK=18 (consistent with the paper's 'International Consortium on Meningiomas' multi-site design and author list spanning Toronto/MD Anderson-style and Hong Kong collaborators). No PMID is attached in the live EGA record (pubmed_ids=null); the paper (PMID 31158293, Nassiri et al. 2019, Neuro-Oncology) was located via web search matching the EGA study's title verbatim ('Predicting brain tumor recurrence: development and validation of a DNA-methylation based nomogram in meningioma' is the EGA title; the published paper's title is a near-identical 'DNA methylation profiling to predict recurrence risk in meningioma: development and validation of a nomogram to optimize clinical management'), high confidence given the exact match of study aim, first author, and sample-ID site-code structure. RULE 13 APPLIED STRICTLY: although this paper's entire premise is predicting per-sample 5-year recurrence-free survival from methylation profiles, the live /samples endpoint exposes only phenotype='meningioma' for every entry, with no recurrence, RFS, or outcome field of any kind in the public EGA metadata. Per this project's explicit rule against inferring has_outcome_data/recurrence_annotated from a paper's title or abstract alone, both has_outcome_data and recurrence_annotated are left 'Not reported'/false here; the underlying per-sample clinical/outcome annotations almost certainly exist in the paper's own supplementary tables but are not confirmed as deposited in the public EGA sample-level metadata itself, so cannot be marked true under this project's verification standard. This cohort may partially or wholly overlap with existing inventory records from the same Nassiri/Zadeh Toronto group (mng-utoronto-2021-genomic.json, gse-180061-methylation.json, egad00001007494-nassiri-rnaseq.json), which derive from the later 2021 Nature integrative-classification paper; this 2019 Neuro-Oncology nomogram cohort (n=280, 3-site consortium) predates and is structured differently (multi-institutional recurrence-prediction cohort vs. single-institution classification cohort) from that later work, so it is NOT merged with those records here, but patient overlap across the two Toronto-led projects is plausible and should be checked centrally. Only public EGA study/dataset-level metadata was used; the controlled-access data itself was never accessed, per docs/scope.md. CROSS-COHORT AUDIT (2026-07-11): reviewed as part of a corpus-wide dedup and cross-link audit. Specific evidence found: the Toronto-site subset of this 280-sample 3-site cohort is 122 samples (site prefix 'TOR'), numerically close to the 121-patient single-institution cohort in mng-utoronto-2021-genomic.json / gse-180061-methylation.json, with the same corresponding authors (Nassiri/Zadeh/Aldape), same institution, and the same modality (DNA methylation array). This is suggestive of possible patient overlap but the public EGA sample-level metadata for this accession exposes no specimen/subject identifiers comparable to the 'CAM20.xxxx'-style IDs that were used to directly confirm the GSE168726/GSE180061 duplicate elsewhere in this corpus, so patient-level overlap cannot be confirmed or ruled out from public metadata alone. possible_duplicate_needs_verification corrected to true (previously false, which did not match this record's own 'flagged for centralized dedup check' language) so this stays visible as unresolved and pending EGA controlled-access sample-ID comparison in a future pass; not treated as a confirmed duplicate and not merged or cross-linked.",
+  "source_urls": [
+    "https://ega-archive.org/studies/EGAS00001003490",
+    "https://ega-archive.org/datasets/EGAD00010001687",
+    "https://pubmed.ncbi.nlm.nih.gov/31158293/",
+    "https://doi.org/10.1093/neuonc/noz061"
+  ],
+  "tags": {
+    "grade_comparable": false,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": false,
+    "large_cohort": true,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": false,
+    "has_outcome_data": true,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": true,
+  "duplicate_notes": "Possible cohort overlap with mng-utoronto-2021-genomic.json / gse-180061-methylation.json / egad00001007494-nassiri-rnaseq.json (same Toronto PI group, Nassiri/Zadeh/Aldape), but this is an earlier (2019), larger, 3-site consortium cohort (Toronto+MD Anderson-style+Hong Kong) rather than the single-institution 2021 Nature integrative classification cohort; not confirmed as the same patients, flagged for centralized dedup check rather than assumed. CROSS-COHORT AUDIT (2026-07-11): the Toronto-site subset of this cohort is 122 samples, close to the 121-patient mng-utoronto-2021-genomic/gse-180061-methylation cohort; same PI group and modality, but no specimen-level ID evidence available from public EGA metadata to confirm or refute overlap. Flag kept/corrected to true (unresolved) pending future controlled-access-level sample-ID comparison; not merged or cross-linked absent stronger evidence."
+}

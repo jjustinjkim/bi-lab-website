@@ -1,0 +1,99 @@
+{
+  "id": "egas00001000177-sanger-meningioma-exome",
+  "title": "Meningioma_Exome",
+  "accessions": [
+    "EGAS00001000177",
+    "EGAD00001000099"
+  ],
+  "related_accessions": [],
+  "source_repositories": [
+    "EGA"
+  ],
+  "publications": [],
+  "corresponding_author": "Not reported",
+  "institution": "Not reported",
+  "date_deposited": "Not reported",
+  "date_updated": "Not reported",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-11",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-11",
+  "verification_tier": 2,
+  "found_via": [
+    "keyword_api"
+  ],
+  "modality": [
+    "wes"
+  ],
+  "platform": "Illumina Genome Analyzer II",
+  "reference_genome": "GRCh37 (build 37, per study description)",
+  "pipeline": "Not reported",
+  "patient_count": "Not reported",
+  "sample_count": 26,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": null,
+    "grade_2": null,
+    "grade_3": null
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": false,
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "Not reported"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "Not reported",
+  "normal_control_tissue": {
+    "included": true,
+    "type": "matched normal DNA (per study description)",
+    "count": null
+  },
+  "sex_distribution": "Not reported",
+  "age_distribution": "Not reported",
+  "has_outcome_data": "Not reported",
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": []
+  },
+  "access_type": "controlled",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": "Not reported",
+  "processed_data_available": "Not reported",
+  "processed_data_format": "Not reported",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not reported",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High",
+    "publications": "Low"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "NEW RECORD (2026-07-11). Old, terse Wellcome Trust Sanger Institute-style registration (study_type 'Cancer Genomics', released 2011, dataset released 2015). Live EGA record: EGAS00001000177 ('Meningioma_Exome'), pubmed_ids=null; dataset EGAD00001000099 ('Meningioma Exome', 26 samples, technologies=['Illumina Genome Analyzer II'], dataset_types=null). The live /samples endpoint returns all-null fields (no subject_id, phenotype, or title for any of the 26 sample entries), so patient_count, tissue type, and normal/tumor split cannot be derived from the API and are 'Not reported'. An active PubMed search was performed (title-based, keyword combinations of 'meningioma', 'exome', 'Sanger', 'Cancer Genome Project') and did not surface a clearly matching dedicated publication; several superficially similar hits (PMID 25549701, 'Exome sequencing on malignant meningiomas...NF2...MN1', a Chinese cohort; and others) were checked and are distinct, unrelated studies, not this dataset. This EGAS/EGAD shares its Data Access Committee/policy accession (EGAP00001000001) with several other undated Sanger-style meningioma registrations in this batch (EGAS00001000282, EGAS00001000859, EGAS00001001155), suggesting a common Wellcome Trust Sanger Institute submitting group, but no explicit submitter/institution field is exposed by the live API for this specific study, so institution is left 'Not reported' rather than inferred. publication_status defaults to 'normal' (no evidence of correction/retraction) though there is literally no confirmed associated publication at all; publications left as an empty array and peer_reviewed set false accordingly. Only public EGA study/dataset-level metadata was used; the controlled-access sequencing data itself was never accessed, per docs/scope.md. FOLLOW-UP PUBLICATION SEARCH (2026-07-11), no match found: a dedicated, thorough follow-up search was conducted to try to find a linked publication and none was found. Steps taken: (1) Europe PMC full-text search for the exact strings EGAS00001000177 and EGAD00001000099 (https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EGAS00001000177&format=json and the EGAD equivalent) both returned hitCount=0. (2) Web searches for the bare accession strings, for the exact titles 'Meningioma_Exome' and 'Meningioma Exome' combined with EGA/Sanger, and for keyword combinations ('Wellcome Trust Sanger Institute meningioma exome sequencing 26 samples publication', 'Santarius meningioma exome sequencing Sanger Institute Cancer Genome Project') returned no dedicated matching paper; some AI-generated search summaries asserted this accession belonged to an unrelated NK/T-cell lymphoma study, but that claim was not backed by any actual source in the returned links and directly contradicts the live EGA record (title 'Meningioma_Exome', confirmed meningioma description) already established in this file, so it was discarded as a search-summary hallucination rather than treated as a lead. (3) The sibling Collord et al. 2018 Scientific Reports paper (PMID 30202034), which links three related Sanger anaplastic-meningioma EGA studies (EGAS00001000859, EGAS00001001155, EGAS00001001873), was checked directly as a candidate: its Data Availability statement was retrieved both via a PMC full-text fetch and independently via the raw Europe PMC fullTextXML endpoint for PMC6131140, and both confirm the statement lists exactly five accessions -- EGAS00001000377, EGAS00001000828, EGAS00001000859, EGAS00001001155, EGAS00001001873 -- none of which is EGAS00001000177. The paper's own reported cohort sizes (19 primary tumors by WGS, 31 by 366-gene targeted panel, 13 recurrences from 7 patients by WGS) also do not correspond to a 26-sample whole-exome cohort. This EGA study is therefore confirmed not to be part of the Collord 2018 accession set. (4) The Wellcome Sanger Institute's public Cancer Genome Project page was checked directly and does not mention any meningioma exome project by name. (5) No submitter/DAC contact name is exposed by the live EGA API for this study (pubmed_ids, external_links both null; DAC accession EGAP00001000001 returns 404 on the metadata API), so no separate PI/lab name lead could be extracted to search on beyond what was already tried. Conclusion: this appears to be a genuinely orphaned, terse ~2011 Sanger pilot-scale registration (description text is written in future tense, i.e. pre-registration boilerplate, and dataset_types/pubmed_ids are both null) with no discoverable associated publication as of this search. publications is left as an empty array and peer_reviewed remains false. A future maintainer should not assume this is an easy unresolved lead; both the original extraction and this follow-up have already searched it thoroughly.",
+  "source_urls": [
+    "https://ega-archive.org/studies/EGAS00001000177",
+    "https://ega-archive.org/datasets/EGAD00001000099",
+    "https://www.sanger.ac.uk/group/cancer-genome-project/"
+  ],
+  "tags": {
+    "grade_comparable": false,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": false,
+    "large_cohort": false,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": false,
+    "has_outcome_data": false,
+    "peer_reviewed": false
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

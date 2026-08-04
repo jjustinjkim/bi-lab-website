@@ -1,0 +1,128 @@
+{
+  "id": "zenodo-6473604-wang-dunn-dura-scrnaseq",
+  "title": "Single Cell Profiling of Human Dura and Meningioma Reveals Cellular Meningeal Landscape and Insights into Meningioma Immune Response",
+  "accessions": [
+    "zenodo.6473604",
+    "zenodo.4932158"
+  ],
+  "related_accessions": [],
+  "source_repositories": [
+    "Zenodo"
+  ],
+  "publications": [
+    {
+      "title": "Single-cell profiling of human dura and meningioma reveals cellular meningeal landscape and insights into meningioma immune response.",
+      "authors": [
+        "Wang AZ",
+        "Bowman-Kirigin JA",
+        "Desai R",
+        "Kang LI",
+        "Patel PR",
+        "Patel B"
+      ],
+      "venue": "Genome Medicine",
+      "year": 2022,
+      "doi": "10.1186/s13073-022-01051-9",
+      "pmid": "35534852",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Allegra A Petti / Gavin P Dunn",
+  "institution": "Washington University School of Medicine in St. Louis",
+  "date_deposited": "2022-04-06",
+  "date_updated": "2022-04-21",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-11",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-11",
+  "verification_tier": 2,
+  "found_via": [
+    "keyword_api"
+  ],
+  "modality": [
+    "scrna_seq",
+    "tcr_bcr_seq"
+  ],
+  "platform": "Not reported",
+  "reference_genome": "Not reported",
+  "pipeline": "Seurat (processed .rds objects deposited directly)",
+  "patient_count": "Not reported",
+  "sample_count": 6,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": null,
+    "grade_2": null,
+    "grade_3": null
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": false,
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "Not reported"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "Not reported",
+  "normal_control_tissue": {
+    "included": true,
+    "type": "non-tumor-associated dura",
+    "count": 7
+  },
+  "sex_distribution": "Not reported",
+  "age_distribution": "Not reported",
+  "has_outcome_data": "Not reported",
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": []
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": true,
+  "processed_data_available": true,
+  "processed_data_format": "Seurat .rds objects (Final_Tumor_cells_only.rds, Final_CD45_neg_Dura.rds, Final_CD45_pos_Dura_and_Tumor.rds, Final_CD45_pos_Dura.rds, Final_Aggregated_Dura.rds), plus VDJ (T cell receptor) sequencing zip archives and a raw data zip archive",
+  "license": "CC-BY-4.0",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High",
+    "publications": "High",
+    "corresponding_author": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "NEW RECORD (2026-07-11), found via a Zenodo discovery search never before performed by this project, refined from an initial 370-hit raw keyword search down to real dataset-type records. Verified directly: Zenodo record 6473604 (DOI 10.5281/zenodo.6473604), 'Single Cell Profiling of Human Dura and Meningioma Reveals Cellular Meningeal Landscape and Insights into Meningioma Immune Response,' creators Wang/Bowman-Kirigin/Petti/Dunn, matches linked publication PMID 35534852 (Genome Medicine 2022) exactly by title; no retraction/correction found via PubMed esummary. Paper's own abstract states: 'Single-cell RNA sequencing of seven non-tumor-associated human dura samples and six primary meningioma tumor samples (4 matched and 2 non-matched)... T cell receptor expression were analyzed... Copy number variant (CNV) analysis was performed... Immunohistochemistry and imaging mass cytometry was performed on selected samples.' sample_count set to 6 (the meningioma tumor samples specifically, this being a meningioma-focused inventory); the 7 dura samples are recorded via normal_control_tissue (4 of which are matched to 4 of the 6 tumor samples from the same patient, per the paper's own '4 matched and 2 non-matched' framing, exact patient-level accounting not resolved here, hence patient_count 'Not reported'). tcr_bcr_seq added as a second modality since the paper explicitly performed T cell receptor sequencing and the Zenodo deposit includes MEN13_Dura_VDJ.zip and MEN13_Tumor_VDJ.zip archives (VDJ = variable-diversity-joining, standard TCR/BCR sequencing output). The paper also mentions imaging mass cytometry (IMC) as a validation technique on 'selected samples,' but no IMC-specific data files are visible in the Zenodo deposit's file listing, so codex_imc_mibi_mif was not added as a modality here. Raw sequencing reads (fastq) likely also exist under a separate SRA/GEO accession referenced in the paper's own data availability statement, but this was not located in this pass, only the Zenodo-hosted processed Seurat objects and VDJ archives were confirmed and are the basis for this record; flagging this as a follow-up for a future pass. Only the record's public metadata and file listing were inspected; the multi-gigabyte .rds/zip files themselves were not downloaded. CORRECTION DURING EXTRACTION: an initial DOI guess (10.1186/s13073-022-01039-x) was wrong and has been corrected to the true DOI (10.1186/s13073-022-01051-9), confirmed via PubMed esummary. corresponding_author (Gavin P Dunn) is inferred from his last-author position and the Zenodo creator-list ordering (both consistent with standard biomedical-paper convention), not independently confirmed via a corresponding-author affiliation footnote (Europe PMC has no author-affiliation data for this record), so confidence is marked Medium. FACT-CHECK UPDATE (2026-07-11): re-verified full author list (19 authors) via PubMed efetch XML for PMID 35534852; the truncated 6-author list already recorded in publications[0].authors (Wang AZ, Bowman-Kirigin JA, Desai R, Kang LI, Patel PR, Patel B) matches the true first six authors exactly, and Dunn GP is confirmed as last author; no 'Electronic address' marker was present in the XML for any author so the corresponding-author designation remains an inference, confidence left Medium. Also corrected verification_tier from 1 to 2: per docs/controlled_vocabulary.md, tier 1 requires 2+ independent found_via paths, but found_via lists only one path (keyword_api), so tier 2 (single-path verified) is the correct value. RE-VERIFICATION CORRECTION (2026-07-12): the earlier statement that 'no Electronic address marker was present in the XML for any author so the corresponding-author designation remains an inference' was mistaken in its conclusion. A fresh PubMed efetch of PMID 35534852 shows that two authors carry a bare email address appended to their affiliation footnote (the same corresponding-author signal this project relied on for pxd015979): Petti AA (allegra.petti@wustl.edu, second-to-last author, Washington University School of Medicine) and Dunn GP (gpdunn@mgh.harvard.edu, last author). No literal 'Electronic address:' prefix is used, but the email footnotes are present, so both are confirmed co-corresponding authors. corresponding_author corrected from 'Gavin P Dunn' to 'Allegra A Petti / Gavin P Dunn' and confidence_level.corresponding_author raised from Medium to High. Also corrected date_updated from 2022-04-06 to 2022-04-21: the Zenodo API exposes a distinct 'updated' timestamp of 2022-04-21 (vs. publication_date 2022-04-06, which is retained for date_deposited as the record's stated publication date). ACCESSION ADDED (2026-07-13), prompted by a user question about whether a data-availability statement citing 'zenodo.4932158' was already represented here: fetched the Zenodo API record for 10.5281/zenodo.6473604 directly and confirmed its 'conceptdoi' field is exactly '10.5281/zenodo.4932158' -- Zenodo mints a version-independent 'concept DOI' that always resolves to the latest version of a record, separate from each version's own DOI. zenodo.4932158 is therefore not a different, missing dataset; it is this exact same record cited by its concept DOI rather than its version DOI. Added as a second accession so future accession-based lookups (e.g. against a new paper's data-availability statement) find this record either way.",
+  "source_urls": [
+    "https://zenodo.org/records/6473604",
+    "https://pubmed.ncbi.nlm.nih.gov/35534852/",
+    "https://doi.org/10.1186/s13073-022-01051-9"
+  ],
+  "tags": {
+    "grade_comparable": false,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": true,
+    "spatially_resolved": false,
+    "multi_modal_matched": false,
+    "large_cohort": false,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": false,
+    "has_outcome_data": false,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null,
+  "gene_expression_viewer": {
+    "sample_label": "5 of this record's 6 tumor samples, merged (unintegrated) -- see note below on the 6th",
+    "data_url": "/pilot-data/zenodo-6473604-wang-dunn-dura-scrnaseq.json",
+    "cell_count": 27369,
+    "gene_count": 150,
+    "sample_count": 5,
+    "embedding_method": "scanpy 1.10.3: read_10x_mtx of MEN08_TUMOR/MEN09_TUMOR/MEN10_TUMOR/MEN11_TUMOR/MEN13_TUMOR's deposited Cell Ranger filtered_feature_bc_matrix output (from the Zenodo-hosted RawData_210723.zip -> scRNA_Raw_Files.7z raw-data archive, not the processed .rds Seurat objects), QC per sample (min 200 genes/cell, <20% pct_counts_mt), anndata.concat (unintegrated), filter_genes min_cells=3, normalize_total+log1p, top-2000 HVG, PCA, neighbors, UMAP, Leiden (resolution 0.5, 15 clusters, igraph flavor). Gene panel: 11 guaranteed meningioma driver genes + top HVGs by dispersion to 150 total.",
+    "pathways": ["Proliferation / cell cycle", "Hypoxia", "Epithelial-mesenchymal transition", "Interferon response"],
+    "integration_note": "This record's sample_count is 6 tumor samples (per the paper's own '4 matched and 2 non-matched' framing), but the raw-data archive's directory naming only unambiguously identifies 5 as tumor via an explicit '_TUMOR' suffix (MEN08/09/10/11/13_TUMOR); two further directories (MEN05, MEN06) lack that suffix and could not be confidently assigned to dura vs. the 6th tumor sample from directory naming alone, so they were excluded from this viewer rather than guessed. All 5 samples merged by raw concatenation, not batch-corrected/integrated (same approach ScPCA documents for its own merged objects) -- use \"color by sample\" to check for patient-driven rather than biological clustering."
+  }
+}

@@ -1,0 +1,120 @@
+{
+  "id": "egas00001002294-bi-highgrade-wgs-wes",
+  "title": "Whole genome, whole exome, and targeted sequencing of high-grade meningioma tumor samples",
+  "accessions": [
+    "EGAS00001002294",
+    "EGAD00001003220"
+  ],
+  "related_accessions": [],
+  "source_repositories": [
+    "EGA"
+  ],
+  "publications": [
+    {
+      "title": "Genomic landscape of high-grade meningiomas",
+      "authors": [
+        "Bi WL",
+        "Greenwald NF",
+        "Abedalthagafi M",
+        "Wala J",
+        "Gibson WJ",
+        "Beroukhim R"
+      ],
+      "venue": "npj Genomic Medicine",
+      "year": 2017,
+      "doi": "10.1038/s41525-017-0014-7",
+      "pmid": "28713588",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Sandro Santagata / Ian F. Dunn / Rameen Beroukhim",
+  "institution": "Dana-Farber Cancer Institute / Brigham and Women's Hospital, Harvard Medical School",
+  "date_deposited": "Not reported",
+  "date_updated": "Not reported",
+  "publication_status": "corrected",
+  "last_verified_date": "2026-07-11",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-11",
+  "verification_tier": 1,
+  "found_via": [
+    "keyword_api",
+    "author_search"
+  ],
+  "modality": [
+    "wgs",
+    "wes"
+  ],
+  "platform": "Not reported",
+  "reference_genome": "Not reported",
+  "pipeline": "Not reported",
+  "patient_count": 125,
+  "sample_count": 188,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": null,
+    "grade_2": null,
+    "grade_3": null
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": false,
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "Not reported"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "Not reported",
+  "normal_control_tissue": {
+    "included": true,
+    "type": "matched peripheral blood",
+    "count": 45
+  },
+  "sex_distribution": "61 female, 64 male (125 patients)",
+  "age_distribution": "Not reported",
+  "has_outcome_data": "Not reported",
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": []
+  },
+  "access_type": "controlled",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": "Not reported",
+  "processed_data_available": "Not reported",
+  "processed_data_format": "Not reported",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not reported",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "Medium",
+    "publications": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "NEW RECORD (2026-07-11). Verified live via the EGA Metadata API: study EGAS00001002294 ('Whole genome, whole exome, and targeted sequencing of high-grade meningioma tumor samples') has exactly one registered dataset, EGAD00001003220 ('High-grade meningioma sequencing data'), num_samples=188 (confirmed via /datasets/EGAD00001003220/samples: 143 tumor + 45 normal/blood, 125 unique subject_id patients), dataset_types=['Exome sequencing','Whole genome sequencing']. THREE DIFFERENT SAMPLE-COUNT NARRATIVES were found across the live sources and could not be fully reconciled, flagging per instructions: (1) the EGAS study-level description text states 'we analyzed the genomes of 274 high-grade meningiomas and compared this information with data from 456 low-grade meningiomas' (274/456, a broader multi-cohort framing that does not match any single deposited dataset); (2) the actual live PMC full text of the linked paper (PMID 28713588, post-erratum PMC version, erratum PMID 29263836 corrected an original miscount) states 'we analyzed the genomes of 134 high-grade meningiomas and compared this information with data from 595 previously published meningiomas', built from a discovery cohort of 66 tumor samples/39 individuals (WGS+WES) extended with targeted sequencing of 76 additional samples (39+76 does not cleanly equal 134, likely due to overlap/recurrences counted differently); (3) the actually deposited EGAD00001003220 dataset itself, which is the only concrete public artifact and forms the basis of this record's sample_count/patient_count fields, contains 188 total BAM files (143 tumor, 45 normal) from 125 patients. Given the instruction to prioritize what the live dataset itself shows, sample_count=188 and patient_count=125 are used here, distinct from both narrative totals in the paper and the EGAS description; a human pass should decide if the discrepancy needs a clarifying note to end users. Modality: the dataset's own free-text description says 'Whole genome, whole exome, and custom panel sequencing of high-grade meningioma cohort,' but the formal categorical dataset_types field returned by the live API only lists Exome sequencing and Whole genome sequencing (no targeted-panel category), so modality here is conservatively set to ['wgs','wes'] only; the mismatch between the free-text 'custom panel sequencing' mention and the absence of a corresponding categorical/vocabulary tag is flagged for reviewer attention rather than guessed. grade_breakdown left null because the live sample metadata only exposes tumor/normal phenotype, not per-sample WHO grade 2 vs 3 split, despite the whole cohort being 'high-grade' by the study's own inclusion criterion. Corresponding author taken from PMC full-text XML corresp='yes' tags (Santagata, Dunn IF, Beroukhim all marked corresponding). publication_status set to 'corrected' because PMID 28713588 has a formal published Erratum (PMID 29263836, Sep 2017) altering the reported sample totals; the erratum-corrected numbers are what is reflected above. Only public EGA study/dataset-level metadata was used; the controlled-access sequencing data itself was never accessed, per docs/scope.md. AUDIT 2026-07-12 (external re-verification): sex_distribution added ('61 female, 64 male (125 patients)') from the live /datasets/EGAD00001003220/samples biological_sex field, which is exposed for all 188 registered samples (95 female / 93 male at the sample level) and is internally consistent per subject_id, resolving to 61 female and 64 male across the 125 unique patients; previously 'Not reported'. sample_count (188), patient_count (125), normal_control_tissue count (45), publication metadata (PMID 28713588, erratum PMID 29263836, DOI 10.1038/s41525-017-0014-7) and all other fields re-verified correct against the live EGA API and PubMed this pass.",
+  "source_urls": [
+    "https://ega-archive.org/studies/EGAS00001002294",
+    "https://ega-archive.org/datasets/EGAD00001003220",
+    "https://pubmed.ncbi.nlm.nih.gov/28713588/",
+    "https://doi.org/10.1038/s41525-017-0014-7",
+    "https://pubmed.ncbi.nlm.nih.gov/29263836/"
+  ],
+  "tags": {
+    "grade_comparable": false,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": false,
+    "large_cohort": true,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": false,
+    "has_outcome_data": false,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

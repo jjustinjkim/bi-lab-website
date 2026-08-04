@@ -1,0 +1,138 @@
+{
+  "id": "gse-176457-cnv-snp-array",
+  "title": "DNA Methylation Signatures Differentiate Meningiomas from Normal Dura [OmniSNP]",
+  "accessions": [
+    "GSE176457"
+  ],
+  "related_accessions": [
+    "GSE178143",
+    "GSE178139"
+  ],
+  "source_repositories": [
+    "GEO"
+  ],
+  "publications": [
+    {
+      "title": "Epigenetic dysregulation in meningiomas.",
+      "authors": [
+        "Wedemeyer MA",
+        "Muskens I",
+        "Strickland BA",
+        "Aurelio O",
+        "Martirosian V",
+        "Wiemels JL"
+      ],
+      "venue": "Neuro-oncology advances",
+      "year": 2022,
+      "doi": "10.1093/noajnl/vdac084",
+      "pmid": "35769412",
+      "preprint_id": null
+    },
+    {
+      "title": "Corrigendum to: Epigenetic dysregulation in meningiomas.",
+      "authors": [
+        "Wedemeyer MA",
+        "Muskens I",
+        "Strickland BA",
+        "Aurelio O",
+        "Martirosian V",
+        "Wiemels JL"
+      ],
+      "venue": "Neuro-oncology advances",
+      "year": 2023,
+      "doi": "10.1093/noajnl/vdac190",
+      "pmid": "36632569",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Gabriel Zada, Suhn K Rhie",
+  "institution": "University of Southern California",
+  "date_deposited": "2021-06-09",
+  "date_updated": "2023-07-14",
+  "publication_status": "corrected",
+  "last_verified_date": "2026-07-10",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-10",
+  "verification_tier": 1,
+  "found_via": [
+    "keyword_api",
+    "citation_chain"
+  ],
+  "modality": [
+    "cnv_snp_array"
+  ],
+  "platform": "GPL18900",
+  "reference_genome": "Not reported",
+  "pipeline": "Not reported",
+  "patient_count": "Not reported",
+  "sample_count": 19,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": 10,
+    "grade_2": 5,
+    "grade_3": 4
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": false,
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "primary",
+    "recurrent"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "Not reported",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "14 female, 5 male (n=19, extracted from GSM 'Sex' field)",
+  "age_distribution": "n=19, range 24.0-68.0, mean 51.6 (extracted from GSM 'age' field)",
+  "has_outcome_data": true,
+  "paired_multimodal": {
+    "is_paired": true,
+    "related_datasets": [
+      "gse-178139-methylation"
+    ]
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": true,
+  "processed_data_available": true,
+  "processed_data_format": "GSE176457_Processed_OmniSNP.txt.gz",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High",
+    "publications": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "DATA DISCREPANCY IN SOURCE, NOW RESOLVED (2026-07-11 fact-check pass): the GEO overall_design states '19 meningiomas (11 WHO grade I, 6 WHO grade II, 4 WHO grade III)' but 11+6+4=21, not 19 -- an arithmetic inconsistency in the source record's free-text summary. Resolved by fetching all 19 individual GSM records directly (GSM5365909-GSM5365927) and reading each one's own 'who grade' characteristic: the true per-sample breakdown is 10 grade I, 5 grade II, 4 grade III (sums to 19, matching sample_count exactly). grade_breakdown corrected from 11/6/4 (a direct transcription of the source's internally-inconsistent free-text summary) to the per-GSM-verified 10/5/4. Series-level GEO metadata otherwise verified directly against the live source. PER-SAMPLE DATA UPDATE (2026-07-12 re-verification pass): downloaded the full GSE176457_family.soft.gz and read all 19 GSM characteristics directly. Per-sample 'who grade' re-confirms 10 I / 5 II / 4 III. sex_distribution populated from the per-GSM 'Sex' field (14 FEMALE, 5 MALE), previously 'Not reported'. age_distribution populated from the per-GSM 'age' field (n=19, range 24-68, mean 51.6), previously 'Not reported'. Per-sample 'progression' (6 No, 4 Yes, 9 Unknown) and 'reoperation' (8 No, 2 Yes, 9 Unknown) fields are present, matching the annotation scheme of its sibling subseries GSE178139; has_outcome_data corrected from false to true (per-sample progression outcome present for a subset) and tags.has_outcome_data / tags.recurrence_annotated set to true for consistency with GSE178139. raw_data_available corrected from 'Not reported' to true: the live series lists GSE176457_RAW.tar and GSE176457_Raw_OmniSNP.txt.gz (raw SNP-array intensity data) as supplementary_file entries. FACT-CHECK UPDATE (2026-07-10): date_deposited/date_updated filled in from Series_submission_date/Series_last_update_date, previously 'Not reported'. PUBLICATION STATUS CORRECTION: PMID 35769412 has a published corrigendum (PMID 36632569, PMC9825709), confirmed via PubMed esummary and the corrigendum's own PMC full text: it corrects the corresponding-author designation only (both Gabriel Zada and Suhn K. Rhie should have been listed as co-corresponding authors, this record's corresponding_author field already lists both and needs no change), it does not affect the deposited data. publication_status updated from 'normal' to 'corrected' and the corrigendum added as a second publications entry. COMPLETENESS FIX (2026-07-13, corpus-wide tag audit): treatment_timepoint_status had been left at 'Not reported' even though tags.recurrence_annotated is true and this record's own notes above already document genuine per-sample primary/recurrent data. Corrected to ['primary', 'recurrent'] to match.",
+  "source_urls": [
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE176457",
+    "https://pubmed.ncbi.nlm.nih.gov/35769412/",
+    "https://pubmed.ncbi.nlm.nih.gov/36632569/"
+  ],
+  "tags": {
+    "grade_comparable": true,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": true,
+    "large_cohort": false,
+    "recurrence_annotated": true,
+    "molecular_subtype_annotated": false,
+    "has_outcome_data": true,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

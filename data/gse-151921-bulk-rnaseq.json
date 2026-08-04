@@ -1,0 +1,163 @@
+{
+  "id": "gse-151921-bulk-rnaseq",
+  "title": "Multisite methylation profiling of primary human meningioma [RNA-seq]",
+  "accessions": [
+    "GSE151921"
+  ],
+  "related_accessions": [
+    "GSE151067"
+  ],
+  "source_repositories": [
+    "GEO",
+    "SRA"
+  ],
+  "publications": [
+    {
+      "title": "Multiplatform genomic profiling and magnetic resonance imaging identify mechanisms underlying intratumor heterogeneity in meningioma.",
+      "authors": [
+        "Magill ST",
+        "Vasudevan HN",
+        "Seo K",
+        "Villanueva-Meyer JE",
+        "Choudhury A",
+        "John Liu S",
+        "Pekmezci M",
+        "Findakly S",
+        "Hilz S",
+        "Lastella S",
+        "Demaree B",
+        "Braunstein SE",
+        "Bush NAO",
+        "Aghi MK",
+        "Theodosopoulos PV",
+        "Sneed PK",
+        "Abate AR",
+        "Berger MS",
+        "McDermott MW",
+        "Lim DA",
+        "Ullian EM",
+        "Costello JF",
+        "Raleigh DR"
+      ],
+      "venue": "Nature communications",
+      "year": 2020,
+      "doi": "10.1038/s41467-020-18582-7",
+      "pmid": "32968068",
+      "preprint_id": null
+    },
+    {
+      "title": "Intratumor and informatic heterogeneity influence meningioma molecular classification.",
+      "authors": [
+        "Vasudevan HN",
+        "Choudhury A",
+        "Hilz S",
+        "Villanueva-Meyer JE",
+        "Chen WC",
+        "Lucas CG",
+        "Braunstein SE",
+        "Oberheim Bush NA",
+        "Butowski N",
+        "Pekmezci M",
+        "McDermott MW",
+        "Perry A",
+        "Solomon DA",
+        "Magill ST",
+        "Raleigh DR"
+      ],
+      "venue": "Acta neuropathologica",
+      "year": 2022,
+      "doi": "10.1007/s00401-022-02455-y",
+      "pmid": "35759011",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Stephen T Magill, David R Raleigh",
+  "institution": "University of California San Francisco",
+  "date_deposited": "2020-06-05",
+  "date_updated": "2022-11-17",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-14",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-10",
+  "verification_tier": 1,
+  "found_via": [
+    "keyword_api",
+    "citation_chain"
+  ],
+  "modality": [
+    "bulk_rna_seq"
+  ],
+  "platform": "Illumina HiSeq 2500 (GPL16791)",
+  "reference_genome": "Not reported",
+  "pipeline": "Not reported",
+  "patient_count": 13,
+  "sample_count": 77,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": null,
+    "grade_2": null,
+    "grade_3": null
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": "Not reported",
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "Not reported"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "Not reported",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "50 female, 27 male (n=77, from GSM 'gender' field)",
+  "age_distribution": "n=77, range 52-79, mean 66.1 (from GSM 'age' field)",
+  "has_outcome_data": "Not reported",
+  "paired_multimodal": {
+    "is_paired": true,
+    "related_datasets": [
+      "gse-151067-methylation"
+    ]
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": "Not reported",
+  "processed_data_available": true,
+  "processed_data_format": "GSE151921_NormalizedCounts_DESeq_ForGEO.xls.gz",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High",
+    "publications": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "Series-level GEO metadata verified directly against the live source. PER-SAMPLE DATA UPDATE (2026-07-12 re-verification audit against family.soft, 77/77 samples): patient_count filled to 13 (the 'individual' field carries exactly 13 unique patient IDs M1-M13, the same 13-patient multisite cohort as the paired methylation series GSE151067; Series_overall_design states samples derive from 13 human meningiomas). sex_distribution from 'gender' field: 50 F, 27 M. age_distribution from 'age' field: range 52-79, mean 66.1. The 'site' field records 76 Intracranial and 1 Liver (metastatic deposit); disease is uniformly Meningioma; no per-sample WHO grade is deposited so grade_breakdown remains null. Publication metadata (PMID 32968068, 35759011) re-verified against PubMed esummary/efetch. DEEP-AUDIT PASS (2026-07-14): AUTHOR LISTS CORRECTED: both publications[].authors had been mechanically truncated to the first 6 names; Europe PMC's authorString confirms 23 total authors for PMID 32968068 and 15 total for PMID 35759011, both now written in full. CORRESPONDING AUTHOR CORRECTED: 'Harish N Vasudevan, David R Raleigh' was not actually verified against either paper's own correspondence marker -- checked directly this pass. PMC7511976.xml (PMID 32968068 full text) has exactly one contrib with the corresponding-author (✉) xref: 'Raleigh David R'; Vasudevan is not corresponding on this paper. PMID 35759011's PubMed record (not open access via PMC) lists exactly two authors with an affiliation Email marker: Stephen T Magill (stephen.magill@northwestern.edu) and David R Raleigh (david.raleigh@ucsf.edu); Vasudevan (first author) again has no email/corresponding marker. Corrected corresponding_author to 'Stephen T Magill, David R Raleigh', reflecting the union of both papers' actual corresponding authors (Raleigh on both; Magill co-corresponding on the second). FLAGGED, NOT FIXED -- hidden per-sample data found but not safely mappable to this specific 77-sample RNA-seq series: PMC7511976's full text states 'Seven meningiomas were WHO grade I (54%, 46 samples), 3 were WHO grade II (23%, 22 samples), and 3 were WHO grade III (23%, 18 samples)' and 'Seven meningiomas were sampled at the time of salvage surgery for tumor recurrence after prior treatment (54%, 48 samples), and 6 were sampled at the time of surgery for initial diagnosis (46%, 38 samples)' for the same 13-patient cohort (46+22+18=86 total samples across ALL platforms; 48+38=86 also). However, this record's own sample_count is 77 (the RNA-seq-only GSM count), and the live GSE151921 overall_design separately states 'A total of 88 spatially-distinct samples from 13 human meningiomas were profiled' -- three different totals (86 in the paper abstract's framing, 88 in GEO's overall_design, 77 actual RNA-seq GSMs) for what is nominally the same multi-platform stereotactic-sampling cohort, meaning not every collected/profiled specimen necessarily yielded a passing RNA-seq library. Direct GSM-level characteristics (checked: individual, disease, age, gender, site) carry no grade or primary/recurrent field, and the paper's per-tumor grade/recurrence figures are not broken out by which specific assay (RNA-seq vs methylation vs CNV) each of the 86 samples underwent. Rather than guess that the 77 RNA-seq samples share the same 46/22/18 grade split or 48/38 primary/recurrent split as the full 86-sample multi-omic cohort, grade_breakdown and treatment_timepoint_status are left unchanged (null / 'Not reported'); flagging this as a concrete, well-evidenced follow-up lead (patient IDs M1-M13 are shared between GEO sample titles and the paper's own figure labels, e.g. 'a primary WHO grade I meningioma (M1)', 'WHO grade II and grade III meningiomas M6, M7, M12, and M13', so a full per-patient mapping is very likely resolvable from the paper's Supplementary Table 1, which was not retrieved in this pass).",
+  "source_urls": [
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE151921",
+    "https://pubmed.ncbi.nlm.nih.gov/32968068/",
+    "https://pubmed.ncbi.nlm.nih.gov/35759011/"
+  ],
+  "tags": {
+    "grade_comparable": false,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": true,
+    "large_cohort": false,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": false,
+    "has_outcome_data": false,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

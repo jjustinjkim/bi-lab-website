@@ -1,0 +1,120 @@
+{
+  "id": "gse-290805-bulk-rnaseq",
+  "title": "Meningioma microenvironment harbors a rich immune landscape with therapeutic implications (Bulk RNA-seq part)",
+  "accessions": [
+    "GSE290805"
+  ],
+  "related_accessions": [
+    "GSE289349"
+  ],
+  "source_repositories": [
+    "GEO",
+    "SRA"
+  ],
+  "publications": [
+    {
+      "title": "Meningioma microenvironment harbors a rich immune landscape that evolves with biological state.",
+      "authors": [
+        "Guo X",
+        "Moynihan ZA",
+        "Driver J",
+        "Patel RV",
+        "Bhave VM",
+        "Maury EA"
+      ],
+      "venue": "Neuro-oncology",
+      "year": 2026,
+      "doi": "10.1093/neuonc/noag022",
+      "pmid": "41630100",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Wenya Linda Bi",
+  "institution": "Mass General Brigham",
+  "date_deposited": "2025-02-28",
+  "date_updated": "2026-05-21",
+  "publication_status": "normal",
+  "last_verified_date": "2026-08-04",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-10",
+  "verification_tier": 1,
+  "found_via": [
+    "keyword_api",
+    "citation_chain"
+  ],
+  "modality": [
+    "bulk_rna_seq"
+  ],
+  "platform": "Illumina HiSeq 2500 (GPL16791)",
+  "reference_genome": "hg19 (GRCh37)",
+  "pipeline": "STAR alignment (version not specified)",
+  "patient_count": "Not reported",
+  "sample_count": 47,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": 21,
+    "grade_2": 23,
+    "grade_3": 3
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": "Not reported",
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "Not reported"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "fresh_frozen",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "22 female, 25 male (n=47, extracted from GSM 'sex' field)",
+  "age_distribution": "n=47 (range 22-87, median 57; extracted from GSM 'age' field)",
+  "has_outcome_data": "Not reported",
+  "paired_multimodal": {
+    "is_paired": true,
+    "related_datasets": [
+      "gse-289349-scrnaseq"
+    ]
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": "Not reported",
+  "processed_data_available": true,
+  "processed_data_format": "GSE290805_Bulk_RNA_seq_processed_matrix.txt.gz",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High",
+    "publications": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "PER-SAMPLE DATA UPDATE (2026-07-10): Per-sample grade/sex data recovered from family.soft (47/47 samples, counts sum exactly to sample_count). Series-level GEO metadata verified directly against the live source; per-sample clinical/pathology fields (grade, sex/age, anatomic location, brain invasion, treatment timepoint) have not yet been extracted from individual GSM records or supplementary tables -- part of the batch-1 scaling pass, prioritizing breadth of verified accessions over per-sample depth. Publication metadata pulled from PubMed esummary; not yet manually spot-checked against the full text for every record in this batch. FACT-CHECK UPDATE (2026-07-10 verification pass): tissue_preservation filled in as 'fresh_frozen', previously 'Not reported'. Series_overall_design states '47 human meningiomas (fresh frozen tumor tissues)'. EXTERNAL RE-VERIFICATION (2026-07-12): reference_genome filled from 'Not reported' to 'hg19 (GRCh37)' and pipeline from 'Not reported' to 'STAR alignment (version not specified)'; all 47 GSM records' data_processing state 'Assembly: hg19 (GRCh37)' and describe STAR-aligned reads on the HiSeq 2500 (no aligner version given). age_distribution range parsed (n=47, 22-87, median 57). Re-verified grade (21/23/3 = 47), sex (22 female, 25 male), platform (GPL16791 HiSeq 2500), dates, and PMID 41630100 against live GEO/PubMed; no further discrepancy. CORRESPONDING-AUTHOR CORRECTION (2026-08-04): field previously read 'Wenya Linda Bi, Xiaopeng Guo' -- Guo is a genuine co-author but not flagged as corresponding on the source paper. Re-verified against the paper's own PMC full text (PMID 41630100, PMCID PMC13186497): contrib-group flags corresp=\"yes\" on Wenya Linda Bi only, and the author-notes/corresp block gives only her contact (wbi@bwh.harvard.edu). Corrected to Bi alone.",
+  "source_urls": [
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE290805",
+    "https://pubmed.ncbi.nlm.nih.gov/41630100/"
+  ],
+  "tags": {
+    "grade_comparable": true,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": true,
+    "large_cohort": false,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": false,
+    "has_outcome_data": false,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

@@ -1,0 +1,134 @@
+{
+  "id": "egas50000001589-atlas-snrna-spatial",
+  "title": "A single-cell atlas of meningioma",
+  "accessions": [
+    "EGAS50000001589",
+    "EGAD50000002272"
+  ],
+  "related_accessions": [
+    "EGAS50000001556",
+    "EGAD50000002233"
+  ],
+  "source_repositories": [
+    "EGA"
+  ],
+  "publications": [
+    {
+      "title": "Spatially resolved single-cell analyses of human meningioma identify novel cell states influencing tumor microenvironment and progression.",
+      "authors": [
+        "Landry AP",
+        "Yefet LS",
+        "Wang JZ",
+        "Ajisebutu A",
+        "Gui C",
+        "Ellenbogen Y",
+        "Liu J",
+        "Patil V",
+        "Ding CQ",
+        "Wei Q",
+        "Mansouri S",
+        "Singh O",
+        "Cohen-Gadol AA",
+        "Tsang DS",
+        "Gao A",
+        "Aldape K",
+        "Nassiri F",
+        "Zadeh G"
+      ],
+      "venue": "Nature Genetics",
+      "year": 2026,
+      "doi": "10.1038/s41588-026-02615-w",
+      "pmid": "42265312",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Farshad Nassiri / Gelareh Zadeh",
+  "institution": "University Health Network / University of Toronto",
+  "date_deposited": "Not reported",
+  "date_updated": "2026-04-21",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-14",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-11",
+  "verification_tier": 2,
+  "found_via": [
+    "keyword_api"
+  ],
+  "modality": [
+    "snrna_seq"
+  ],
+  "platform": "Illumina NovaSeq X",
+  "reference_genome": "Not reported",
+  "pipeline": "Not reported",
+  "patient_count": 94,
+  "sample_count": 102,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": 580185,
+  "grade_breakdown": {
+    "grade_1": null,
+    "grade_2": null,
+    "grade_3": null
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": true,
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "Not reported"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "Not reported",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "70 female, 24 male (of 94 registered samples)",
+  "age_distribution": "Not reported",
+  "has_outcome_data": "Not reported",
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": [
+      "egas50000001556-spatial-transcriptomics"
+    ]
+  },
+  "access_type": "controlled",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": true,
+  "processed_data_available": "Not reported",
+  "processed_data_format": "Not reported",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not reported",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High",
+    "publications": "High",
+    "corresponding_author": "High",
+    "molecular_subtype_annotated": "Medium"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "NEW RECORD (2026-07-11), from a discovery-log LEAD describing this as '>7.5 million total cells... profiled using single-nuclear RNA sequencing and high-resolution spatial transcriptomics' and flagging it as likely the single highest-value flagship dataset of the search round. Independently verified live via the EGA Metadata API (study EGAS50000001589, dataset EGAD50000002272, samples endpoint). IMPORTANT CORRECTION to the lead: the study-level abstract does describe a combined snRNA-seq + spatial-transcriptomics atlas ('>7.5 million total cells... from meningioma and surrounding dura'), but the actually REGISTERED dataset under this specific accession pair (EGAD50000002272) contains only the single-nucleus RNA-seq arm: num_samples=94, matching 94 distinct registered EGAN sample accessions with subject IDs MNG001-MNG094 (all phenotype 'tumor', 70 female/24 male). The dataset's own description states 'snRNAseq, n=102 samples and 580,185 high-quality nuclei' (102 sequencing libraries from the 94 registered subjects) as well as 'high-resolution spatial transcriptomics (Visium HD, n=43 samples and 7,146,538 segmented cells)', but that spatial arm turns out to be a SEPARATE EGA study/dataset registration: EGAS50000001556 / EGAD50000002233 ('Spatial transcriptomics of human meningioma samples', released the same week, same policy_accession_id EGAP00001001109), whose own 43 registered samples have subject IDs MNG095-MNG137, i.e. a numerically contiguous but entirely DISJOINT patient set from this record's 94 (verified directly, no overlapping subject IDs). Because the two arms use non-overlapping patients, this is NOT a matched multi-modal cohort in the schema's sense (paired_multimodal/multi_modal_matched requires the SAME patients profiled by >=2 modalities); modality here has been corrected to snrna_seq only (not snrna_seq+spatial_transcriptomics as the lead suggested) to reflect what this specific accession pair actually contains, with the spatial arm logged as its own cross-linked record (egas50000001556-spatial-transcriptomics) per instructions not to double-count. Combined, the two arms form one 137-patient 'single-cell atlas of meningioma' flagship project; that combined framing is noted here and on the sibling record but each record's own patient_count/sample_count/modality reflects only its own registered accession. No linked publication (pubmed_ids empty on both study and dataset records); this is a very recently released (2026-04-21) pre-print-less deposition, likely pending its primary publication. The abstract's mention of 'surrounding dura' (implying included normal control tissue) could not be corroborated in the per-sample metadata: all 94 registered samples in this dataset are phenotype 'tumor', with no dura/normal-labeled samples found; normal_control_tissue.included set to false pending resolution, flagged here since a normal-tissue arm may exist but not be separately registered/discoverable yet. Only public EGA study/dataset/sample-level metadata was used per docs/scope.md; the controlled-access sequencing data itself was never accessed. tags.large_cohort left false pending the centralized post-hoc recomputation across the whole inventory noted in docs/schema.md. PUBLICATION LINKED (2026-07-13), prompted by a user question about whether a paper's data-availability statement was fully represented here: Landry et al. 2026 (Nature Genetics, PMID 42265312, DOI 10.1038/s41588-026-02615-w) cites 'EGAD50000002272 for snRNA-seq data' verbatim in its data-availability section (confirmed by fetching the paper's own full-text XML), and its abstract explicitly describes 'a large cohort profiled with single-nuclear RNA sequencing and high-resolution spatial transcriptomics' -- an exact match to this record's own discovery-log description. corresponding_author inferred from Nassiri/Zadeh's last-author position, consistent with this lab's other records in this inventory; no explicit corresponding-author footnote was found in the fetched XML, so kept at Medium confidence. DEEP-AUDIT PASS (2026-07-14): CORRESPONDING AUTHOR CONFIRMED via a direct contrib-group xref check of PMC13263146.xml (Europe PMC fullTextXML, distinct from the earlier fullTextXML fetch that missed the author-notes structure): exactly two contributors carry the corresponding-author (✉) xref -- 'Nassiri Farshad' and 'Zadeh Gelareh' -- matching this record's existing value exactly. Upgraded confidence_level.corresponding_author from Medium to High. AUTHOR LIST CORRECTED: publications[0].authors had been mechanically truncated to the first 6 names; Europe PMC's authorString for PMID 42265312 confirms 18 total authors, now written in full. HIDDEN PER-SAMPLE DATA FOUND IN FULL TEXT: PMC13263146's own 'Study cohort' section states 'Our cohort focused on snRNA-seq (n=102 samples...) and spatial transcriptomics (Visium HD, n=43 samples...). Bulk DNA methylation was used to classify cases by MG using our published model' -- i.e. every case in this exact snRNA-seq accession (EGAD50000002272) is classified by a named Molecular Group (MG) methylation-based subtyping system, not exposed anywhere in the public EGA sample-level metadata. molecular_subtype_annotated corrected from 'Not reported' to true (tags.molecular_subtype_annotated matched); confidence marked Medium since exact per-sample MG counts were not found in the fetched full-text excerpt (likely in a supplementary table not retrieved in this pass). grade_breakdown left null: the paper discusses WHO grade extensively (e.g. 'tissue repair MP was significantly upregulated in WHO grade 1 cases compared to WHO grade 2 or 3 cases') but no exact per-grade sample count specific to this 94-patient/102-sample accession was found in the full text checked; not guessed. has_outcome_data left false/'Not reported': the paper's PFS analysis in the excerpts found ('cycling and metabolic MPs were both associated with shorter progression-free survival') is explicitly described as deconvolved 'from our bulk RNA cohort', a different accession, not this snRNA-seq dataset's own samples, so no outcome-data claim was applied here. brain_invasion checked (2 citation-only hits to an unrelated reference paper on brain invasion criteria, no per-sample data for this cohort) and left unchanged.",
+  "source_urls": [
+    "https://ega-archive.org/studies/EGAS50000001589",
+    "https://ega-archive.org/datasets/EGAD50000002272"
+  ],
+  "tags": {
+    "grade_comparable": false,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": true,
+    "spatially_resolved": false,
+    "multi_modal_matched": false,
+    "large_cohort": true,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": true,
+    "has_outcome_data": false,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

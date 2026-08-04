@@ -1,0 +1,115 @@
+{
+  "id": "gse-22577-cnv-snp-array",
+  "title": "Meningioma initiating cells (MICs) derived from primary tumors",
+  "accessions": [
+    "GSE22577"
+  ],
+  "related_accessions": [],
+  "source_repositories": [
+    "GEO"
+  ],
+  "publications": [
+    {
+      "title": "Isolation and characterization of a population of stem-like progenitor cells from an atypical meningioma.",
+      "authors": [
+        "Rath P",
+        "Miller DC",
+        "Litofsky NS",
+        "Anthony DC",
+        "Feng Q",
+        "Franklin C"
+      ],
+      "venue": "Experimental and molecular pathology",
+      "year": 2011,
+      "doi": "10.1016/j.yexmp.2010.12.003",
+      "pmid": "21168406",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Huidong Shi, Prakash Rath",
+  "institution": "Augusta University",
+  "date_deposited": "2010-06-25",
+  "date_updated": "2018-08-16",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-11",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-10",
+  "verification_tier": 2,
+  "found_via": [
+    "keyword_api"
+  ],
+  "modality": [
+    "cnv_snp_array"
+  ],
+  "platform": "Affymetrix Genome-Wide Human SNP 5.0 Array (GPL6804)",
+  "reference_genome": "Not reported",
+  "pipeline": "Not reported",
+  "patient_count": 1,
+  "sample_count": 4,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": null,
+    "grade_2": null,
+    "grade_3": null
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": false,
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "Not reported"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "Not reported",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "Not reported",
+  "age_distribution": "Not reported",
+  "has_outcome_data": false,
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": []
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": "Not reported",
+  "processed_data_available": "Not reported",
+  "processed_data_format": "Not reported",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High",
+    "publications": "High",
+    "patient_count": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "PER-GSM REVIEW COMPLETED (2026-07-10): this GSE contains 6 total samples across two platforms/parts. Part 1 (GPL6804, Affymetrix SNP array, this record's modality) has 4 samples, all from a single case labeled '1174': GSM560316 ('1174 DN2L condition cell line'), GSM560317 ('1174 Primary tumor tissue', the only genuine primary patient tissue sample), GSM560318 ('1174 primary xenograft tissue', characteristics list it as 'cell line: 1174 M1-R'), and GSM560319 ('1174 primary xenograft cell line in DN2L condition'). sample_count and patient_count above have been corrected to reflect only the SNP-array (cnv_snp_array) samples (4), all derived from the single patient/tumor case 1174 (patient_count=1); only 1 of the 4 is unmodified primary tissue, the rest are cell-line/xenograft-derived materials from that same tumor. Part 2 (GPL6947, Illumina gene-expression array, 2 samples: GSM563827 '1174 DN2L cell line' and GSM563828 'NSPC DN2L cell line') is a different assay/platform (not CNV/SNP data) and pure cell line (including a non-tumor neural stem/progenitor cell line control), and is excluded from this record's sample_count entirely. SCOPE DECISION MADE (2026-07-11): moved from /data/ to /data/adjacent/. Three of the 4 in-modality samples are cell-line/xenograft-derived, only 1 is genuine unmodified primary tissue, and the study's own title and design ('Meningioma initiating cells derived from primary tumors') frames this as a cell-derivation/model-system study, not a patient-cohort profiling study, the same category as this corpus's other cell-line/PDX adjacent records (e.g. gse-282349-bulk-rnaseq, gse-282351-methylation). A single remaining tissue sample from one patient was judged too thin a basis to represent a core CNV/SNP-array dataset entry on its own.",
+  "source_urls": [
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE22577",
+    "https://pubmed.ncbi.nlm.nih.gov/21168406/"
+  ],
+  "tags": {
+    "grade_comparable": false,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": false,
+    "large_cohort": false,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": false,
+    "has_outcome_data": false,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

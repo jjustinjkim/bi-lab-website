@@ -1,0 +1,126 @@
+{
+  "id": "prjca024570-cfrna-slipirseq",
+  "title": "Brain tumors cfRNA sequencing data, meningioma subset",
+  "accessions": [
+    "PRJCA024570"
+  ],
+  "related_accessions": [],
+  "source_repositories": [
+    "NGDC"
+  ],
+  "publications": [
+    {
+      "title": "Diagnostic and prognostic potential of cell-free RNAs in cerebrospinal fluid and plasma for brain tumors",
+      "authors": [
+        "Huang J",
+        "Zhou J",
+        "Wang J",
+        "Yi Y",
+        "Zhang L",
+        "Qiu S",
+        "Tan Y",
+        "Guo Q",
+        "Zhao F",
+        "Li X",
+        "Niu Y",
+        "Li H",
+        "Wu C",
+        "Kang K",
+        "Liu Q",
+        "Gou D"
+      ],
+      "venue": "NPJ Precision Oncology",
+      "year": 2025,
+      "doi": "10.1038/s41698-025-00909-6",
+      "pmid": "40301505",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Deming Gou",
+  "institution": "Shenzhen University",
+  "date_deposited": "Not reported",
+  "date_updated": "2024-12-07",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-11",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-11",
+  "verification_tier": 2,
+  "found_via": [
+    "keyword_api"
+  ],
+  "modality": [
+    "bulk_rna_seq"
+  ],
+  "platform": "Not reported",
+  "reference_genome": "Not reported",
+  "pipeline": "Not reported",
+  "patient_count": 46,
+  "sample_count": 89,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": null,
+    "grade_2": null,
+    "grade_3": null
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": false,
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "Not reported"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "liquid_biopsy",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "Not reported",
+  "age_distribution": "Not reported",
+  "has_outcome_data": false,
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": []
+  },
+  "access_type": "controlled",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": true,
+  "processed_data_available": "Not reported",
+  "processed_data_format": "Not reported",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not reported",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "Medium",
+    "publications": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "NEW RECORD (2026-07-11), from a discovery-log LEAD reporting 89 total BioSamples with several labeled 'meningioma patient plasma sample' (SLiPiR-seq cfRNA sequencing), in a mixed cohort with glioma and tumor-free controls. Independently re-verified live via the NGDC BIG Search API, NOT trusting the log's framing: a full unpaginated pull of all BioSamples under PRJCA024570 (https://ngdc.cncb.ac.cn/search/api/specific?db=biosample&q=PRJCA024570&length=300) returns 159 total unique BioSamples (not 89; the log's '89 total BioSamples' appears to have actually been the meningioma-only count, mislabeled as the project total), with descriptions breaking down as: 46 'meningioma patient plasma sample' + 43 'meningioma patient CSF sample' = 89 meningioma-labeled biosamples (confirmed independently, matches the log's number exactly once correctly interpreted as the meningioma subset, not the project total); 18 'glioma patient plasma sample' + 16 'glioma patient CSF sample' = 34 glioma-labeled; 18 'tumor-free CNS disease patient plasma sample' + 18 'tumor-free CNS disease patient CSF sample' = 36 tumor-free-control biosamples. 46+43+34+16+18+18 = 159, confirming the arithmetic is internally consistent. patient_count set to 46 (the plasma-sample count, assumed 1 plasma draw per patient) and sample_count set to 89 (plasma+CSF biosamples combined) since 43 of the 46 patients also had a paired CSF biosample; this is a Medium-confidence inference (some patients may have 2 biosamples, others may have only 1, exact 1:1 plasma:patient mapping not independently confirmed at the per-subject level) -- flagged for follow-up verification of exact per-patient sample counts. The parent BioProject additionally contains 34 glioma-labeled and 36 tumor-free-control biosamples NOT counted in this record's patient_count/sample_count, since this record is deliberately scoped to only the meningioma-labeled subset of a genuinely mixed multi-disease cohort (a textbook case of 'meningioma hidden inside a differently-titled/mixed project'). MODALITY: SLiPiR-seq is a cell-free RNA (cfRNA) sequencing method; controlled_vocabulary.md has no dedicated cfRNA-specific term, so 'bulk_rna_seq' was used as the closest existing fit per instruction, flagged here as a possible controlled-vocabulary gap (a future 'cfrna_seq' term, analogous to how 'cfdna_epigenomic' was added for cfDNA methylation, may be warranted). Located and verified a genuine linked publication independently via the BioProject page and cross-checked via PubMed esummary: Huang et al., 'Diagnostic and prognostic potential of cell-free RNAs in cerebrospinal fluid and plasma for brain tumors', NPJ Precision Oncology 2025, PMID 40301505, DOI 10.1038/s41698-025-00909-6, last author Gou D (matches the BioProject's submitter contact, Deming Gou, Shenzhen University) -- this paper's title covers 'brain tumors' broadly (including this project's meningioma arm) and is a genuine peer-reviewed primary reference, so peer_reviewed is set to true. Per the recurring-mistake guardrail on this project: although the paper's title says 'prognostic potential', has_outcome_data is set to false (not true) because no meningioma-specific survival/recurrence-free-survival data was confirmed at the BioSample-metadata level examined here; the title alone does not confirm outcome data exists for the meningioma subset specifically. Only public NGDC BioProject/BioSample-level metadata and PubMed metadata were used; no restricted sequencing data was accessed.",
+  "source_urls": [
+    "https://ngdc.cncb.ac.cn/bioproject/browse/PRJCA024570",
+    "https://ngdc.cncb.ac.cn/search/api/specific?db=bioproject&q=PRJCA024570",
+    "https://ngdc.cncb.ac.cn/search/api/specific?db=biosample&q=PRJCA024570",
+    "https://pubmed.ncbi.nlm.nih.gov/40301505/"
+  ],
+  "tags": {
+    "grade_comparable": false,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": false,
+    "large_cohort": false,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": false,
+    "has_outcome_data": false,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

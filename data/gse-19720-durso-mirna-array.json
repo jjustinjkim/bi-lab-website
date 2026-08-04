@@ -1,0 +1,97 @@
+{
+  "id": "gse-19720-durso-mirna-array",
+  "title": "Human primary meningioma vs. non-neoplastic adult meningeal tissue",
+  "accessions": [
+    "GSE19720"
+  ],
+  "related_accessions": [],
+  "source_repositories": [
+    "GEO"
+  ],
+  "publications": [],
+  "corresponding_author": "Oscar F. D'Urso / Pietro I. D'Urso",
+  "institution": "Salento University / Bari Medical School (Neurosurgery)",
+  "date_deposited": "2010-01-02",
+  "date_updated": "2012-03-21",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-11",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-11",
+  "verification_tier": 2,
+  "found_via": [
+    "citation_chain"
+  ],
+  "modality": [
+    "mirna_seq"
+  ],
+  "platform": "DiSteBa Homo sapiens Glioblastoma miRNA 340 v1.0 spotted oligonucleotide array (GPL7389), 340 mammalian miRNAs, non-coding RNA profiling by array",
+  "reference_genome": "Not reported",
+  "pipeline": "Not reported",
+  "patient_count": 37,
+  "sample_count": 37,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": null,
+    "grade_2": null,
+    "grade_3": null
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": true,
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "Not reported"
+  ],
+  "anatomic_location_breakdown": "Not reported at series level; per-sample 'tumor location' field confirmed present in spot-checked GSM record",
+  "tissue_preservation": "Not reported",
+  "normal_control_tissue": {
+    "included": true,
+    "type": "non-neoplastic adult meningeal tissue used as the reference channel in a two-color array design (not deposited as separate GSM records)",
+    "count": null
+  },
+  "sex_distribution": "Not reported",
+  "age_distribution": "Not reported",
+  "has_outcome_data": true,
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": []
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": true,
+  "processed_data_available": true,
+  "processed_data_format": "GSM-level normalized data table",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High",
+    "publications": "Low",
+    "has_outcome_data": "Medium"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "Live GEO verification (2026-07-11) confirms exactly 37 GSM samples, matching the discovery-log claim ('37 primary meningiomas, 340 mammalian miRNAs'); Series_overall_design states 'We studied the gene expression profiles of 340 mammalian miRNAs in 37 primary meningioma tumors by means of DNA microarrays.' No PMID is linked in GEO (no Series_pubmed_id field present) and an extensive PubMed search (author D'Urso, 'meningioma microRNA', 'Ciappetta meningioma microRNA', 'benign malignant molecular groups grade') found no matching indexed publication for this specific miRNA study; publications is left empty rather than guessed. This appears to be from the same D'Urso/Ciappetta lab group (Salento University / Bari) as GSE16153/GSE16156 (gse-16181-durso-expression-array, also in this inventory), and shares that record's two-color array design (tumor channel vs. a non-neoplastic adult meningeal reference channel not separately deposited as its own GSM) and per-sample 'survival (years)' field -- one spot-checked GSM (GSM493840, 'Typical meningioma, NCH_T_1') confirms 'meningioma type: typical', 'tumor location: parasagittal', and 'survival (years): 14' fields are genuinely present per-sample, so has_outcome_data is set true on that direct evidence, though the aggregate breakdown across all 37 samples (grade/type tally, survival summary) has not been computed, only this one sample was checked. molecular_subtype_annotated is set true based on the abstract's description of a named 'benign' vs 'malignant' miRNA-based molecular grouping system distinct from WHO grade (atypical meningiomas distribute into either group); this had not been confirmed against a per-sample characteristics field and was flagged for a follow-up pass. CONFIRMED (2026-07-13, corpus-wide tag audit -- checking whether the 'molecular subtype' concept itself was ever conflated with mere histological subtype, the same way radiation_timepoint had been conflated with radiation_induced_etiology): re-fetched the live GEO series record directly (not just the abstract on file); Series_summary states verbatim 'meningiomas of all three grades fall into two main molecular groups designated benign and malignant meningiomas... atypical meningiomas distribute into either one of these groups... We have identified a miRNA signature that distinguishes benign meningiomas from malignant meningiomas' -- this is a genuine named molecular classification independent of WHO grade/histology, not histological subtyping mislabeled as molecular. molecular_subtype_annotated confirmed correctly true; no per-sample characteristics field carries the classification, but the series-level definition itself is sufficient basis for the tag per docs/schema.md. large_cohort not computed for mirna_seq per current changelog (fewer than 4 records in modality).",
+  "source_urls": [
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE19720"
+  ],
+  "tags": {
+    "grade_comparable": false,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": false,
+    "large_cohort": false,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": true,
+    "has_outcome_data": true,
+    "peer_reviewed": false
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

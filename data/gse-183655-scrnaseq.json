@@ -1,0 +1,274 @@
+{
+  "id": "gse-183655-scrnaseq",
+  "title": "Single-cell RNA sequencing of meningiomas",
+  "accessions": [
+    "GSE183655"
+  ],
+  "related_accessions": [
+    "GSE183647",
+    "GSE183653",
+    "GSE183656",
+    "PRJNA761582",
+    "SRP336139"
+  ],
+  "source_repositories": [
+    "GEO",
+    "SRA"
+  ],
+  "publications": [
+    {
+      "title": "Meningioma DNA methylation groups identify biological drivers and therapeutic vulnerabilities",
+      "authors": [
+        "Choudhury A",
+        "Magill ST",
+        "Eaton CD",
+        "Prager BC",
+        "Chen WC",
+        "Cady MA",
+        "Seo K",
+        "Lucas CG",
+        "Casey-Clyde TJ",
+        "Vasudevan HN",
+        "Liu SJ",
+        "Villanueva-Meyer JE",
+        "Lam TC",
+        "Pu JK",
+        "Li LF",
+        "Leung GK",
+        "Swaney DL",
+        "Zhang MY",
+        "Chan JW",
+        "Qiu Z",
+        "Martin MV",
+        "Susko MS",
+        "Braunstein SE",
+        "Bush NAO",
+        "Schulte JD",
+        "Butowski N",
+        "Sneed PK",
+        "Berger MS",
+        "Krogan NJ",
+        "Perry A",
+        "Phillips JJ",
+        "Solomon DA",
+        "Costello JF",
+        "McDermott MW",
+        "Rich JN",
+        "Raleigh DR"
+      ],
+      "venue": "Nature Genetics",
+      "year": 2022,
+      "doi": "10.1038/s41588-022-01061-8",
+      "pmid": "35534562",
+      "preprint_id": null
+    },
+    {
+      "title": "Intratumor and informatic heterogeneity influence meningioma molecular classification.",
+      "authors": [
+        "Vasudevan HN",
+        "Choudhury A",
+        "Hilz S",
+        "Villanueva-Meyer JE",
+        "Chen WC",
+        "Lucas CG",
+        "Braunstein SE",
+        "Oberheim Bush NA",
+        "Butowski N",
+        "Pekmezci M",
+        "McDermott MW",
+        "Perry A",
+        "Solomon DA",
+        "Magill ST",
+        "Raleigh DR"
+      ],
+      "venue": "Acta neuropathologica",
+      "year": 2022,
+      "doi": "10.1007/s00401-022-02455-y",
+      "pmid": "35759011",
+      "preprint_id": null
+    },
+    {
+      "title": "Supervised machine learning algorithms demonstrate proliferation index correlates with long-term recurrence after complete resection of WHO grade I meningioma.",
+      "authors": [
+        "Nguyen MP",
+        "Morshed RA",
+        "Dalle Ore CL",
+        "Cummins DD",
+        "Saggi S",
+        "Chen WC",
+        "Choudhury A",
+        "Ravi A",
+        "Raleigh DR",
+        "Magill ST",
+        "McDermott MW",
+        "Theodosopoulos PV"
+      ],
+      "venue": "Journal of neurosurgery",
+      "year": 2023,
+      "doi": "10.3171/2022.4.JNS212516",
+      "pmid": "36303473",
+      "preprint_id": null
+    },
+    {
+      "title": "Gene transcript fusions are associated with clinical outcomes and molecular groups of meningiomas.",
+      "authors": [
+        "Zakimi N",
+        "Nguyen MP",
+        "Raleigh DR"
+      ],
+      "venue": "Acta neuropathologica",
+      "year": 2024,
+      "doi": "10.1007/s00401-024-02708-y",
+      "pmid": "38509407",
+      "preprint_id": null
+    },
+    {
+      "title": "Meningeal solitary fibrous tumor cell states phenocopy cerebral vascular development and homeostasis.",
+      "authors": [
+        "Mirchia K",
+        "Choudhury A",
+        "Joseph T",
+        "Birrueta JO",
+        "Phillips JJ",
+        "Bhaduri A",
+        "Crouch EE",
+        "Perry A",
+        "Raleigh DR"
+      ],
+      "venue": "Neuro-oncology",
+      "year": 2025,
+      "doi": "10.1093/neuonc/noae172",
+      "pmid": "39207122",
+      "preprint_id": null
+    },
+    {
+      "title": "Pan-cancer copy number analysis identifies optimized size thresholds and co-occurrence models for individualized risk stratification.",
+      "authors": [
+        "Nguyen MP",
+        "Chen WC",
+        "Mirchia K",
+        "Choudhury A",
+        "Zakimi N",
+        "Nitturi V",
+        "Klisch TJ",
+        "Magill ST",
+        "Lucas CG",
+        "Patel AJ",
+        "Raleigh DR"
+      ],
+      "venue": "Nature communications",
+      "year": 2025,
+      "doi": "10.1038/s41467-025-61063-y",
+      "pmid": "40603285",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Stephen T Magill, Jeremy N Rich, David R Raleigh",
+  "institution": "University of California, San Francisco",
+  "date_deposited": "2021-09-08",
+  "date_updated": "2025-07-10",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-14",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-10",
+  "verification_tier": 1,
+  "found_via": [
+    "keyword_api",
+    "citation_chain"
+  ],
+  "modality": [
+    "scrna_seq"
+  ],
+  "platform": "Illumina NovaSeq 6000 (GPL24676)",
+  "reference_genome": "Not reported",
+  "pipeline": "Not reported",
+  "patient_count": 6,
+  "sample_count": 10,
+  "cell_count_raw": 57114,
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": null,
+    "grade_2": null,
+    "grade_3": null
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": true,
+  "brain_invasion": {
+    "status_reported": true,
+    "counts": "2 of 6 patients had a paired brain-tumor-interface (BTI) sample analyzed alongside bulk tumor",
+    "determination_method": "Sampling location (BTI piece vs. tumor bulk), not a formal pathology brain-invasion call"
+  },
+  "treatment_timepoint_status": [
+    "Not reported"
+  ],
+  "anatomic_location_breakdown": "Not location per se, but tissue type breakdown confirmed from GSM records: 6 meningioma (tumor bulk), 2 meningioma brain-tumor-interface, 2 dura (normal control) -- consistent with the 6-patient/10-sample design already described.",
+  "tissue_preservation": "Not reported",
+  "normal_control_tissue": {
+    "included": true,
+    "type": "dura / normal meningeal tissue",
+    "count": 2
+  },
+  "sex_distribution": "Not reported",
+  "age_distribution": "n=10, range 38.1-86.3, mean 65.5 (extracted from GSM Sample_characteristics_ch1: age)",
+  "has_outcome_data": false,
+  "paired_multimodal": {
+    "is_paired": true,
+    "related_datasets": [
+      "gse-183647-methylation",
+      "gse-183653-bulk-rnaseq"
+    ]
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": true,
+  "processed_data_available": true,
+  "processed_data_format": "10x Genomics raw output (RAW.tar)",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "cell_count_raw": "High",
+    "modality": "High",
+    "publications": "High",
+    "grade_breakdown": "Low"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "PER-SAMPLE DATA UPDATE (2026-07-10): Per-sample tissue-type and age extracted directly from the series' family.soft file. No grade field present at the per-sample level for this scRNA-seq accession (unlike its RNA-seq sibling gse-183653). Series-level GEO metadata verified directly; per-sample/per-cell characteristics (grade, sex/age, exact brain-invasion pathology determination) have not yet been extracted from individual GSM records. COMPLETENESS UPDATE (2026-07-10 fact-check pass): the live GEO record lists 6 Series_pubmed_id entries (35534562, 35759011, 36303473, 38509407, 39207122, 40603285), only the first was present in this record's publications array; the other 5 are follow-up papers from the same lab (Raleigh/Magill/Choudhury) that reuse this GSE183655 cohort. All 5 added, each verified against PubMed esummary for title/authors/venue/year/doi. TAG CORRECTION (2026-07-10 fact-check pass): tags.brain_invasion_annotated was false despite brain_invasion.status_reported=true with a stated determination_method, contradicting the docs/schema.md tag definition (status_reported==true with a stated determination method). Corrected to true; caveat retained in the determination_method field itself that this is a sampling-location proxy (BTI piece vs. tumor bulk), not a formal neuropathologist brain-invasion call, so treat with appropriate caution relative to records with a true pathology-based determination. REVERSED (2026-07-13, corpus-wide filter-concept audit): on reflection this was the wrong call. Sampling a brain-tumor-interface piece for sequencing is a dissection/research-design choice, not a pathologist's determination of invasion status -- the record's own determination_method text already admitted as much ('not a formal pathology brain-invasion call'). Leaving the tag true overclaimed the same way radiation_timepoint previously did: a technically-present field standing in for a different, more specific concept than what the filter's plain meaning promises ('brain invasion was annotated' should mean invasion status was actually determined, not that a sample happened to be taken near the interface). Set back to false. brain_invasion.status_reported and determination_method fields are left unchanged (they're accurate as descriptions of what was actually done); only the derived priority tag changes. AUTHOR-LIST TRUNCATION FIX (2026-07-14): per instructions to check all 6 linked publications for the corpus's known 6-author-truncation bug, fetched the full author list for every PMID from both PubMed efetch and Europe PMC core records (both agree). RESULT: 5 of 6 were truncated to exactly 6 authors when the real paper has more -- PMID 35534562 (Choudhury, Nat Genet) actually has 36 authors, corresponding authors Magill ST/Rich JN/Raleigh DR per the paper's own correspondence footnote (Choudhury A is FIRST author, not corresponding -- the record's old corresponding_author field wrongly listed 'David R Raleigh / Abrar Choudhury', an instance of the exact assume-from-author-position error this audit is supposed to guard against; corrected to 'Stephen T Magill, Jeremy N Rich, David R Raleigh'). PMID 35759011 (Vasudevan, Acta Neuropathol) actually has 15 authors. PMID 36303473 (Nguyen, J Neurosurg) actually has 12 authors. PMID 39207122 (Mirchia, Neuro-oncology) actually has 9 authors. PMID 40603285 (Nguyen, Nat Commun) actually has 11 authors. All 5 corrected to their full author lists in place. PMID 38509407 (Zakimi, Acta Neuropathol) was already correctly complete at exactly 3 authors (Zakimi N, Nguyen MP, Raleigh DR) -- this is the one 3-author exception flagged in the task instructions, confirmed genuinely 3 authors via both PubMed and Europe PMC, no change needed. FULL-TEXT CHECK FOR HIDDEN PER-SAMPLE DATA (2026-07-14): fetched PMC full text for the two papers most likely to describe this specific GSE183655 10-sample/6-patient scRNA-seq cohort in detail. PMC9374001 (Choudhury et al., the primary paper) states verbatim of the scRNA-seq samples: 'These samples were not part of the discovery or validation cohorts' -- i.e. deliberately excluded from the clinically-annotated cohorts, confirming no per-patient WHO grade/outcome/recurrence data exists for this scRNA-seq cohort in the full text (consistent with grade_breakdown remaining null and has_outcome_data/recurrence_annotated remaining false -- not an instance of the 'data hiding in full text' failure pattern). It does confirm '8 meningioma samples with each DNA methylation group represented' (Merlin-intact/Immune-enriched/Hypermitotic), supporting molecular_subtype_annotated=true already set. It also contains no brain-invasion-determination-method language, consistent with the brain_invasion_annotated=false reversal above. PMC9618384 (Vasudevan et al.) does NOT actually reference GSE183655 in its data-availability statement -- it cites GSE183656 (a sibling accession already in related_accessions) instead; no GSE183655-specific per-sample outcome/recurrence/subtype data found there either. Checked PMC10954959 (Zakimi et al., gene-fusion paper) similarly -- its data-availability statement cites GSE183656/GSE101638/GSE212666/GSE222054, not GSE183655, and it draws on unrelated large HK/UCSF cohorts (302+200 patients), not this 6-patient scRNA-seq series; no relevant per-sample data found for this record. CROSS-REFERENCE ADDED (2026-07-14), prompted by a request to digest external portals: checked the Curated Cancer Cell Atlas (3CA, Tirosh lab, weizmann.ac.il/sites/3CA) for meningioma coverage. Across all 124 studies on the site (11 in its 'Brain' category, 23 in 'Other/Models', plus 90 elsewhere), exactly one is meningioma: 'Choudhury et al. 2022' under Brain, listed as 10x, 10 samples, 58,843 cells -- this is the same study as this record (identical sample count, same first author/year, same disease). 3CA's cell count (58,843) differs slightly from this record's own cell_count_raw (57,114, taken directly from GSE183655's own Series_summary: '57,114 cells from 8 meningioma samples and 2 dura samples'); the difference reflects 3CA's independent reprocessing/QC pipeline, not an error in either source, and is left unreconciled since 3CA does not publish its own per-sample raw/processed distinction on the summary page. 3CA additionally offers curated downstream analysis not otherwise available for this record -- cell-type annotations, inferred CNAs, malignant-cell meta-programs, and UMAP embeddings, all recomputed by the 3CA pipeline -- added as a source_url for future reference. Separately checked the ScPCA portal (scpca.alexslemonade.org, Alex's Lemonade Stand Foundation, pediatric-focused): confirmed via its public API (api.scpca.alexslemonade.org/v1/projects/) that none of its 23 projects/124 diagnoses include meningioma, consistent with meningioma being overwhelmingly an adult-onset tumor; no new record needed from that portal. INTERACTIVE GENE-EXPRESSION VIEWER PILOT (2026-07-14): built a real, working interactive UMAP viewer for one sample from this record -- 'Meningioma 1' (GSM5567093, one of the 6 tumor-bulk samples; the other 4 samples in this record are 2 brain-tumor-interface + 2 dura). Downloaded that sample's own deposited Cell Ranger output fresh (GSM5567093_MSC1_barcodes/features/matrix.mtx.gz, confirmed live to be a genuine filtered-cell 10x matrix, not raw droplets) and ran a standard scanpy 1.10.3 pipeline offline: QC (min 200 genes/cell, min 3 cells/gene, <20% mitochondrial reads; 3790->2734 cells, 33538->19815 genes survived), normalize_total+log1p, top-2000 HVG, PCA/neighbors/UMAP, Leiden clustering (resolution 0.5, 8 clusters ranging 26-549 cells). Exported a compact static JSON (2734 cells x 101 genes -- top 100 HVG by dispersion + NF2 explicitly, since NF2 itself was not independently highly-variable in this single sample despite being the most biologically relevant meningioma gene) to website/public/pilot-data/gse-183655-scrnaseq-meningioma1.json (~1.3MB), fetched client-side by a new GeneExpressionViewer component -- no backend/database involved, consistent with this site's static architecture. This is a single-sample, single-record pilot, not a corpus-wide or even whole-dataset feature (9 of this record's own 10 samples are not part of the viewer); extending it to more samples/records requires repeating this same hands-on processing pass each time. CLUSTER-IDENTITY ANNOTATION ADDED (2026-07-14), prompted by a direct question about what the viewer's 8 Leiden clusters represent: ran scanpy.tl.rank_genes_groups (Wilcoxon rank-sum) per cluster on the full 19,815-gene processed matrix (not just the 101-gene exported panel) and matched each cluster's top 10 marker genes against canonical cell-type signatures. High confidence: Cluster 6 = macrophage/microglia (CD74, HLA-DRA/DPA1/DRB1/DQB1, TYROBP, CD163); Cluster 5 = fibroblast/stromal (COL1A1, COL3A1, COL1A2, MGP, SFRP4). Medium confidence: Cluster 3 = likely meningioma tumor cells/meningothelial (top genes mostly ribosomal -- a known DE confound -- but PTGDS, a well-established meningothelial/meningioma diagnostic marker, stands out); Cluster 7 = proliferating/cycling cells (PCNA, TYMS, TK1, FEN1, CENPN -- lineage not indicated by these markers). Explicitly flagged rather than guessed: Cluster 2 is a dissociation stress-response technical artifact (FOS, JUN, JUNB, EGR1, HSPA1A -- a well-documented tissue-dissociation confound in scRNA-seq, not a real cell population); Clusters 0, 1, 4 are labeled 'Unclear identity' since their top marker genes did not match a specific canonical signature. These labels are my own independent marker-based calls, not verified against the original Choudhury et al. paper's own cell-type annotations (not confirmed to exist in its published full text). Added as a cluster_annotations object (label/confidence/note/top_markers per cluster) in the pilot's own static data artifact, surfaced in the viewer's legend, hover tooltip, and table view -- no schema field changed on this record itself.",
+  "source_urls": [
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE183655",
+    "https://pubmed.ncbi.nlm.nih.gov/35534562/",
+    "https://pubmed.ncbi.nlm.nih.gov/35759011/",
+    "https://pubmed.ncbi.nlm.nih.gov/36303473/",
+    "https://pubmed.ncbi.nlm.nih.gov/38509407/",
+    "https://pubmed.ncbi.nlm.nih.gov/39207122/",
+    "https://pubmed.ncbi.nlm.nih.gov/40603285/",
+    "https://doi.org/10.1038/s41588-022-01061-8",
+    "https://www.ncbi.nlm.nih.gov/bioproject/PRJNA761582",
+    "https://www.weizmann.ac.il/sites/3CA/brain"
+  ],
+  "tags": {
+    "grade_comparable": false,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": true,
+    "spatially_resolved": false,
+    "multi_modal_matched": true,
+    "large_cohort": false,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": true,
+    "has_outcome_data": false,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null,
+  "gene_expression_viewer": {
+    "sample_label": "All 10 samples merged (unintegrated): 6 tumor-bulk, 2 brain-tumor-interface, 2 dura",
+    "data_url": "/pilot-data/gse-183655-scrnaseq-merged.json",
+    "cell_count": 64346,
+    "gene_count": 150,
+    "sample_count": 10,
+    "embedding_method": "scanpy 1.10.3: read_10x_mtx of all 10 samples' own deposited Cell Ranger output (GSM5567093-GSM5567102), QC per sample (min 200 genes/cell, <20% pct_counts_mt), anndata.concat (unintegrated), filter_genes min_cells=3 (26223 genes), normalize_total+log1p, top-2000 HVG, PCA (30 comps), neighbors, UMAP, Leiden clustering (resolution 0.5, 21 clusters, igraph flavor). Gene panel: 11 guaranteed meningioma driver genes + top HVGs by dispersion to 150 total (reduced from an initial 300-gene version, whose 82MB artifact GitHub flagged as oversized). Supersedes the 2026-07-14 single-sample pilot (2734 cells, 1 of 10 samples), extended 2026-07-15 to the full cohort per direct request.",
+    "pathways": ["Proliferation / cell cycle", "Hypoxia", "Epithelial-mesenchymal transition", "Interferon response"],
+    "integration_note": "All 10 samples were merged by raw concatenation, not batch-corrected/integrated (same approach ScPCA documents for its own merged per-project objects) -- use \"color by sample\" to check whether cells separate by patient/tissue-type rather than assuming a shared embedding means removed batch effects. 21 Leiden clusters at this scale is more granular than the original 8-cluster single-sample pilot; several resolve to the same broad identity (e.g. multiple myeloid subclusters) rather than being 21 distinct cell types."
+  }
+}

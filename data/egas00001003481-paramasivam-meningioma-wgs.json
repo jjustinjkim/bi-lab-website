@@ -1,0 +1,122 @@
+{
+  "id": "egas00001003481-paramasivam-meningioma-wgs",
+  "title": "Mutational patterns and regulatory networks in epigenetic subgroups of meningioma (H033)",
+  "accessions": [
+    "EGAS00001003481",
+    "EGAD00001005061",
+    "EGAD00001005021"
+  ],
+  "related_accessions": [
+    "EGAS00001003480"
+  ],
+  "source_repositories": [
+    "EGA"
+  ],
+  "publications": [
+    {
+      "title": "Mutational patterns and regulatory networks in epigenetic subgroups of meningioma",
+      "authors": [
+        "Paramasivam N",
+        "Hubschmann D",
+        "Toprak UH",
+        "Ishaque N",
+        "Neidert M",
+        "Sahm F"
+      ],
+      "venue": "Acta Neuropathologica",
+      "year": 2019,
+      "doi": "10.1007/s00401-019-02008-w",
+      "pmid": "31069492",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Felix Sahm",
+  "institution": "German Cancer Research Center (DKFZ) / Heidelberg University Hospital",
+  "date_deposited": "Not reported",
+  "date_updated": "Not reported",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-11",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-11",
+  "verification_tier": 2,
+  "found_via": [
+    "keyword_api"
+  ],
+  "modality": [
+    "wgs",
+    "chip_seq"
+  ],
+  "platform": "Illumina HiSeq X Ten",
+  "reference_genome": "Not reported",
+  "pipeline": "Not reported",
+  "patient_count": 62,
+  "sample_count": 124,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": null,
+    "grade_2": null,
+    "grade_3": null
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": true,
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "Not reported"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "Not reported",
+  "normal_control_tissue": {
+    "included": true,
+    "type": "matched peripheral blood",
+    "count": 62
+  },
+  "sex_distribution": "43 female, 19 male (62 patients)",
+  "age_distribution": "Not reported",
+  "has_outcome_data": "Not reported",
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": []
+  },
+  "access_type": "controlled",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": "Not reported",
+  "processed_data_available": "Not reported",
+  "processed_data_format": "Not reported",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not reported",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High",
+    "publications": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "NEW RECORD (2026-07-11). Two EGA study registrations exist for what is the same underlying project: EGAS00001003480 ('Mutational patterns and regulatory networks in epigenetic subgroups of meningioma') is confirmed live as an unreleased draft/stub registration (is_released=false, zero registered datasets, no linked PMID), while EGAS00001003481 (same title plus '(H033)' project-code suffix) is the canonical, released registration (pubmed_ids=[31069492] attached directly in the live EGA record) with two real datasets: EGAD00001005061 (WGS, 124 samples = 62 tumor/blood pairs from 62 patients, this record) and EGAD00001005021 (ChIP-seq, 16 samples). Per instructions this record uses EGAS00001003481/EGAD00001005061 as canonical and lists EGAS00001003480 in related_accessions as the duplicate/draft registration, not a separate record. The paper's abstract also describes RNA-seq added for 18 cases and ChIP-seq for 16 samples targeting the H3K27ac enhancer mark; no RNA-seq dataset is registered under either EGAS accession (only WGS and ChIP-seq are), so RNA-seq is not represented in this inventory from this study. UPDATE 2026-07-11 (centralized integration pass): a `chip_seq` modality value was added to docs/controlled_vocabulary.md specifically for EGAD00001005021 (the 16-sample H3K27ac ChIP-seq dataset from this same study), which is now folded into this record's own accessions/modality fields rather than left only in related_accessions, since it is part of the same integrated study and cohort. patient_count/sample_count above reflect only the WGS dataset (EGAD00001005061, 62 patients/124 samples); the ChIP-seq dataset's 16 samples are a further subset of the same cohort, not additional patients. The study description states the WGS cohort spans '40 sporadic and 22 radiation-induced (Mrad) meningiomas' and 'all MCs [6 methylation classes] and WHO grades', but the live /samples endpoint for EGAD00001005061 only exposes phenotype='Meningioma' for all 124 entries with no per-sample radiation-induced/sporadic or grade/methylation-class flag, so treatment_timepoint_status, grade_breakdown, and who_edition are left 'Not reported'/null here despite the aggregate description; the sporadic-vs-radiation-induced etiology distinction also does not map cleanly onto the existing treatment_timepoint_status controlled vocabulary (pre_radiation/post_radiation describe treatment timing, not radiation-induced tumor etiology), flagged for reviewer consideration. Only public EGA study/dataset-level metadata was used; the controlled-access sequencing data itself was never accessed, per docs/scope.md. AUDIT 2026-07-12 (external re-verification): sex_distribution added ('43 female, 19 male (62 patients)') from the live /datasets/EGAD00001005061/samples biological_sex field, exposed for all 124 WGS samples (86 female / 38 male at the sample level = 62 tumor/blood pairs) and internally consistent per subject_id, resolving to 43 female and 19 male across the 62 patients; previously 'Not reported'. patient_count (62), sample_count (124), ChIP-seq dataset EGAD00001005021 (16 samples), platform (Illumina HiSeq X Ten), pubmed_ids=[31069492] and all other fields re-verified correct against the live EGA API and PubMed this pass.",
+  "source_urls": [
+    "https://ega-archive.org/studies/EGAS00001003481",
+    "https://ega-archive.org/studies/EGAS00001003480",
+    "https://ega-archive.org/datasets/EGAD00001005061",
+    "https://pubmed.ncbi.nlm.nih.gov/31069492/",
+    "https://doi.org/10.1007/s00401-019-02008-w"
+  ],
+  "tags": {
+    "grade_comparable": false,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": false,
+    "large_cohort": false,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": true,
+    "has_outcome_data": false,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

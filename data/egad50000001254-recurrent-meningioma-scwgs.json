@@ -1,0 +1,111 @@
+{
+  "id": "egad50000001254-recurrent-meningioma-scwgs",
+  "title": "Low-coverage Single-cell Whole Genome Sequencing Data from Paired Meningioma Samples",
+  "accessions": [
+    "EGAS50000000860",
+    "EGAD50000001254"
+  ],
+  "related_accessions": [],
+  "source_repositories": [
+    "EGA"
+  ],
+  "publications": [
+    {
+      "title": "High-resolution detection of copy number alterations in single cells with HiScanner.",
+      "authors": ["Zhao Y", "Luquette LJ", "Veit AD", "Wang X", "Xi R", "Viswanadham VV"],
+      "venue": "Nature Communications",
+      "year": 2025,
+      "doi": "10.1038/s41467-025-60446-5",
+      "pmid": "40595464",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Mark D Johnson, Peter J Park",
+  "institution": "University of Massachusetts Chan Medical School, Dept. of Neurological Surgery (tissue source) / Harvard Medical School, Dept. of Biomedical Informatics (computational)",
+  "date_deposited": "Not reported",
+  "date_updated": "Not reported",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-13",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-13",
+  "verification_tier": 2,
+  "found_via": [
+    "keyword_api"
+  ],
+  "modality": [
+    "scdna_seq"
+  ],
+  "platform": "NextSeq 1000",
+  "reference_genome": "Not reported",
+  "pipeline": "Not reported",
+  "patient_count": 1,
+  "sample_count": 2,
+  "cell_count_raw": 179,
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": null,
+    "grade_2": 1,
+    "grade_3": 1
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": false,
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "primary",
+    "recurrent"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "Not reported",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "Not reported",
+  "age_distribution": "Not reported",
+  "has_outcome_data": false,
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": []
+  },
+  "access_type": "controlled",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": true,
+  "processed_data_available": "Not reported",
+  "processed_data_format": "Fastq",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not reported",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High",
+    "grade_breakdown": "High",
+    "publications": "High",
+    "corresponding_author": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "NEW RECORD (2026-07-13), surfaced by the monthly refresh's EGA keyword_api check (scripts/update.py), verified directly against the live EGA Metadata API before extraction. Study EGAS50000000860 ('Longitudinal Single-cell Genomic Analysis of Initial and Recurrent Meningioma') and its one dataset EGAD50000001254 ('Low-coverage Single-cell Whole Genome Sequencing Data from Paired Meningioma Samples') both confirmed live, exact title match, released 2025-04-11, is_deprecated=false. Dataset description explicitly states 179 single cells (88 from an initial grade II tumor, 91 from a recurrent grade III tumor) from the same patient, low-coverage (~0.5X) WGS via Primary Template Amplification + ResolveDNA, NextSeq 1000, 2x150bp. patient_count=1 and sample_count=2 (the two tumor timepoints) are inferred directly from this description, not estimated. No linked publication exists yet (pubmed_ids: [] in the live EGA record) -- publications left empty rather than guessed. No submitter/institution/corresponding-author metadata is exposed by the public EGA study/dataset API for this record; left 'Not reported' rather than inferred. Only public EGA study/dataset-level metadata was used; the controlled-access sequencing data itself was never accessed, per docs/scope.md's compliance guardrail. Worth a follow-up check in a future session for a linked publication, since this appears to be a genuinely new, unpublished dataset as of 2026-07-13. FOLLOW-UP PUBLICATION SEARCH (2026-07-13), match found and directly confirmed: a Europe PMC full-text search for the literal accession string EGAD50000001254 returned exactly one hit, Zhao et al. 2025 (PMID 40595464, Nature Communications, 'High-resolution detection of copy number alterations in single cells with HiScanner'), whose fullTextXML Data Availability section (fetched directly via efetch db=pmc) states verbatim: 'Newly generated scWGS data for 179 PTA-amplified single-cells and two matched tumor/blood bulk WGS of the initial and recurrent meningioma samples have been deposited in the European Genome-Phenome Archive (EGA) under dataset ID EGAD50000001254' -- an exact match on cell count (179), design (PTA-amplified single cells), and cohort (initial + recurrent meningioma) to this record's own EGA-sourced description; this is a computational-methods paper (HiScanner, a CNA-detection tool) that generated this meningioma cohort as one of its validation datasets. corresponding_author/institution updated from 'Not reported': the paper's author-notes footnote (fetched directly, not inferred from last-author position) marks BOTH Mark D. Johnson (Dept. of Neurological Surgery, UMass Chan Medical School -- also the EGA Data Access Committee contact, mark.johnson3@umassmemorial.org, matching EGAC50000000512) and Peter J. Park (Dept. of Biomedical Informatics, Harvard Medical School, last author) with the corresponding-author (✉) symbol; both added accordingly. Publication added; publication_status normal so tags.peer_reviewed set true.",
+  "source_urls": [
+    "https://ega-archive.org/studies/EGAS50000000860",
+    "https://ega-archive.org/datasets/EGAD50000001254"
+  ],
+  "tags": {
+    "grade_comparable": true,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": true,
+    "spatially_resolved": false,
+    "multi_modal_matched": false,
+    "large_cohort": false,
+    "recurrence_annotated": true,
+    "molecular_subtype_annotated": false,
+    "has_outcome_data": false,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

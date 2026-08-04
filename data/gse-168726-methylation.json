@@ -1,0 +1,136 @@
+{
+  "id": "gse-168726-methylation",
+  "title": "Meningioma methylation analysis",
+  "accessions": [
+    "GSE168726"
+  ],
+  "related_accessions": [
+    "GSE180061"
+  ],
+  "source_repositories": [
+    "GEO"
+  ],
+  "publications": [
+    {
+      "title": "A clinically applicable integrative molecular classification of meningiomas.",
+      "authors": [
+        "Nassiri F",
+        "Liu J",
+        "Patil V",
+        "Mamatjan Y",
+        "Wang JZ",
+        "Hugh-White R",
+        "Macklin AM",
+        "Khan S",
+        "Singh O",
+        "Karimi S",
+        "Corona RI",
+        "Liu LY",
+        "Chen CY",
+        "Chakravarthy A",
+        "Wei Q",
+        "Mehani B",
+        "Suppiah S",
+        "Gao A",
+        "Workewych AM",
+        "Tabatabai G",
+        "Boutros PC",
+        "Bader GD",
+        "de Carvalho DD",
+        "Kislinger T",
+        "Aldape K",
+        "Zadeh G"
+      ],
+      "venue": "Nature",
+      "year": 2021,
+      "doi": "10.1038/s41586-021-03850-3",
+      "pmid": "34433969",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Gelareh Zadeh",
+  "institution": "Princess Margaret Cancer Center",
+  "date_deposited": "2021-03-11",
+  "date_updated": "2022-03-31",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-10",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-10",
+  "verification_tier": 2,
+  "found_via": [
+    "keyword_api"
+  ],
+  "modality": [
+    "dna_methylation_array"
+  ],
+  "platform": "GPL21145",
+  "reference_genome": "Not reported",
+  "pipeline": "Not reported",
+  "patient_count": "Not reported",
+  "sample_count": 121,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": null,
+    "grade_2": null,
+    "grade_3": null
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": "Not reported",
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "Not reported"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "fresh_frozen",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "Not reported",
+  "age_distribution": "Not reported",
+  "has_outcome_data": "Not reported",
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": []
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": "Not reported",
+  "processed_data_available": true,
+  "processed_data_format": "GSE168726_Matrix_processed.txt.gz",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High",
+    "publications": "Medium"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "Series-level GEO metadata verified directly against the live source; per-sample clinical/pathology fields (grade, sex/age, anatomic location, brain invasion, treatment timepoint) have not yet been extracted from individual GSM records or supplementary tables. The duplicate-cohort question previously flagged here has now been RESOLVED (2026-07-10 fact-check pass) via direct GSM-level comparison against GSE180061 -- see duplicate_notes for the evidence; this is a confirmed duplicate deposit of the same 121-sample cohort, not two distinct sample sets. The publication above (PMID 34433969) is not declared in this accession's own GEO record (no Series_pubmed_id) but is attached here at Medium confidence because it is the paper linked to GSE180061, which was confirmed to contain the identical 121 specimens (matching specimen IDs 'CAM20.0001' through 'CAM20.0156'). FACT-CHECK UPDATE (2026-07-10 verification pass): tissue_preservation filled in as 'fresh_frozen', previously 'Not reported'. Series_summary states 'Genomic DNA isolated directly from fresh-frozen human meningioma specimens.' DEEP AUDIT (2026-07-14): re-fetched live GSE168726 series and a spot-checked GSM record (GSM5159926) directly via acc.cgi form=text -- confirms sample_count 121 still exact and confirms this specific accession's own per-sample GSM metadata carries only 'tissue: meningioma' and 'molecule subtype: bisulfite-treated DNA', no grade/subtype/outcome/brain-invasion/treatment-timepoint field, so grade_breakdown/molecular_subtype_annotated/has_outcome_data/brain_invasion/treatment_timepoint_status remaining 'Not reported'/null/false is correct for this specific GEO deposit (the per-sample clinical work for this shared 121-specimen cohort belongs on the canonical gse-180061-methylation record per the existing duplicate_notes above, not duplicated here). FIXED: publications[0].authors was truncated to the first 6 of 26 real authors (verified via Europe PMC authorString for PMID 34433969: full list is Nassiri F, Liu J, Patil V, Mamatjan Y, Wang JZ, Hugh-White R, Macklin AM, Khan S, Singh O, Karimi S, Corona RI, Liu LY, Chen CY, Chakravarthy A, Wei Q, Mehani B, Suppiah S, Gao A, Workewych AM, Tabatabai G, Boutros PC, Bader GD, de Carvalho DD, Kislinger T, Aldape K, Zadeh G); authors array corrected to the complete 26-name list. Also FIXED: corresponding_author was 'Yasin Mamatjan, Nassiri Farshad' (assumed from first/co-first-author position), but the paper's own PMC full text (PMC11604310) footnote states only one corresponding author: 'Correspondence should be addressed to: Gelareh Zadeh, MD, PhD, ... gelareh.zadeh@uhn.ca'; corrected corresponding_author to 'Gelareh Zadeh' (institution field, Princess Margaret Cancer Center, already matches her affiliation and needed no change). Tags re-checked against the corrected fields above: no tag changes required, all remain consistent with the still-'Not reported'/false underlying fields for this specific accession.",
+  "source_urls": [
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE168726",
+    "https://pubmed.ncbi.nlm.nih.gov/34433969/"
+  ],
+  "tags": {
+    "grade_comparable": false,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": false,
+    "large_cohort": false,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": false,
+    "has_outcome_data": false,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": "CONFIRMED DUPLICATE (resolved 2026-07-10 via live GSM-level verification, upgraded from 'possible/unresolved'): direct comparison of individual GSM sample titles proves GSE168726 and GSE180061 contain the IDENTICAL 121-sample cohort, not two distinct sample sets. Every specimen ID matches 1:1 across both accessions -- e.g. GSM5159926 in this series is titled 'CAM20.0001' (tissue: fresh-frozen human meningioma, molecule subtype: bisulfite-treated DNA), and the corresponding GSM5452060 in GSE180061 is titled 'Tumor methylation_CAM20.0001' with identical tissue/molecule-subtype characteristics; the same match holds at the other end of both sample lists (GSM5160046='CAM20.0156' here vs. GSM5452180='Tumor methylation_CAM20.0156' in GSE180061). This is the same underlying 121-sample Princess Margaret Cancer Center meningioma methylation cohort deposited twice under two different GEO accessions: this one (GSE168726, submitted 2021-03-11, public 2022-03-30, no linked PMID) and GSE180061 (submitted 2021-07-13, public 2021-07-14, linked to Nassiri et al. Nature 2021, PMID 34433969). GSE180061 is the accession actually linked to the published paper and should be treated as the canonical/citable accession; this record (GSE168726) is a redundant duplicate deposit of the same 121 specimens. Not auto-merged into a single corpus record in this pass (both accessions are kept as separate entries per the corpus's dedup policy), but downstream analyses should avoid double-counting these 121 patients across both records."
+}

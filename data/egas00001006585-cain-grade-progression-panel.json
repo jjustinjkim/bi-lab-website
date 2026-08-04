@@ -1,0 +1,117 @@
+{
+  "id": "egas00001006585-cain-grade-progression-panel",
+  "title": "Somatic mutations predict an aggressive phenotype in meningioma but do not drive grade progression",
+  "accessions": [
+    "EGAS00001006585",
+    "EGAD00001009391"
+  ],
+  "related_accessions": [],
+  "source_repositories": [
+    "EGA"
+  ],
+  "publications": [
+    {
+      "title": "Somatic mutation landscape in a cohort of meningiomas that have undergone grade progression",
+      "authors": [
+        "Cain SA",
+        "Pope B",
+        "Mangiola S",
+        "Mantamadiotis T",
+        "Drummond KJ"
+      ],
+      "venue": "BMC Cancer",
+      "year": 2023,
+      "doi": "10.1186/s12885-023-10624-9",
+      "pmid": "36882706",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Kate J. Drummond",
+  "institution": "University of Melbourne / Royal Melbourne Hospital",
+  "date_deposited": "Not reported",
+  "date_updated": "Not reported",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-11",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-11",
+  "verification_tier": 2,
+  "found_via": [
+    "keyword_api"
+  ],
+  "modality": [
+    "targeted_panel_seq",
+    "wes"
+  ],
+  "platform": "Illumina NovaSeq 6000 (TruSight Oncology 500); Agilent SureSelect Clinical Research Exome V2 (subset)",
+  "reference_genome": "Not reported",
+  "pipeline": "Not reported",
+  "patient_count": 10,
+  "sample_count": 50,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": 21,
+    "grade_2": 19,
+    "grade_3": 23
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": false,
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "Not reported"
+  ],
+  "anatomic_location_breakdown": "Per the publication abstract, among NF2-mutated tumours 94% were non-skull base (the 94% figure applies specifically to the NF2-mutated subset, not the whole cohort); overall per-sample anatomic location is not broken down in the live EGA dataset metadata",
+  "tissue_preservation": "Not reported",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "4 female, 6 male (10 patients)",
+  "age_distribution": "Not reported",
+  "has_outcome_data": "Not reported",
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": []
+  },
+  "access_type": "controlled",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": "Not reported",
+  "processed_data_available": "Not reported",
+  "processed_data_format": "Not reported",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not reported",
+  "confidence_level": {
+    "sample_count": "Medium",
+    "modality": "High",
+    "publications": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "NEW RECORD (2026-07-11). Verified live: EGAS00001006585 has a linked pubmed_ids field of null in the EGA record itself; the paper was found independently via web search matching the exact EGA study title and abstract text verbatim (PMID 36882706, 'Somatic mutation landscape in a cohort of meningiomas that have undergone grade progression', BMC Cancer 2023, same 10-patient/50-sample matched pre-/post-progression design, same NF2/STAT6-NAB2/SETD2/TP53/TERT findings described in both the EGA abstract and the paper abstract almost verbatim). Dataset EGAD00001009391 num_samples=63, not 50: per its own live description, '50 meningiomas were sequenced ... using the hybrid capture-based TruSight Oncology 500 (TSO500) ... and 13 of those meningiomas were also sequenced using Agilent SureSelect Clinical Research Exome V2', i.e. 63 total BAM/sequencing-run files represent only 50 unique tissue specimens (13 specimens sequenced twice, once by panel and once by exome). sample_count is set to 50 (unique tissue specimens) rather than the raw num_samples=63 (sequencing runs); confidence marked Medium because of this run-vs-specimen distinction. grade_breakdown (21 grade_1 / 19 grade_2 / 23 grade_3, summing to 63) is taken directly from the live /samples endpoint's phenotype field ('grade1/2/3 meningioma'), which is reported per sequencing run, not per unique specimen, so it does not sum to 50; flagged as an internal inconsistency in the live source itself rather than resolved by guessing. recurrence_annotated / treatment_timepoint_status left false/'Not reported' despite the study concept being explicitly 'matched pre- and post-grade-progression tissue' from the same 10 patients, because the live per-sample metadata only exposes WHO grade (1/2/3), not an explicit primary/recurrent or pre-/post-progression flag per BAM file, so per rule 13 this cannot be confirmed as deposited per-sample outcome/timepoint annotation, only as a cohort-level design described in the abstract text. No controlled vocabulary value cleanly captures 'matched pre-/post-grade-progression' (distinct from simple primary/recurrent); flagged for a maintainer to consider whether treatment_timepoint_status needs an additional value. Only public EGA study/dataset-level metadata was used; the controlled-access sequencing data itself was never accessed, per docs/scope.md. AUDIT 2026-07-12 (external re-verification): (1) anatomic_location_breakdown reworded; the prior '94% non-skull base tumours' presented as a cohort-wide figure, but the paper's abstract (PMID 36882706) actually states 'Mutations in NF2 were identified in 4/10 patients, of these 94% were non-skull base tumours', i.e. the 94% is specific to the NF2-mutated subset, not the whole cohort. (2) sex_distribution added ('4 female, 6 male (10 patients)') from the live /datasets/EGAD00001009391/samples biological_sex field (39 male / 24 female across the 63 sequencing runs, internally consistent per subject_id, resolving to 6 male and 4 female across the 10 unique donors); previously 'Not reported'. grade_breakdown (21/19/23 per sequencing run), sample_count (50 unique specimens vs num_samples=63 runs), patient_count (10) and all other fields re-verified correct against the live EGA API and PubMed this pass.",
+  "source_urls": [
+    "https://ega-archive.org/studies/EGAS00001006585",
+    "https://ega-archive.org/datasets/EGAD00001009391",
+    "https://pubmed.ncbi.nlm.nih.gov/36882706/",
+    "https://doi.org/10.1186/s12885-023-10624-9"
+  ],
+  "tags": {
+    "grade_comparable": true,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": false,
+    "large_cohort": false,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": false,
+    "has_outcome_data": false,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

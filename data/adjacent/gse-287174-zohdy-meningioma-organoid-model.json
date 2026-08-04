@@ -1,0 +1,114 @@
+{
+  "id": "gse-287174-zohdy-meningioma-organoid-model",
+  "title": "Patient-Derived Meningioma Organoids: A Reliable Model for Studying Human Tumor Pathophysiology [organoid model system]",
+  "accessions": [
+    "GSE287174"
+  ],
+  "related_accessions": [],
+  "source_repositories": [
+    "GEO",
+    "SRA"
+  ],
+  "publications": [
+    {
+      "title": "Patient-Derived Meningioma Organoids: A Reliable Model for Studying Human Tumor Pathophysiology.",
+      "authors": [
+        "Zohdy YM", "Jahangiri A", "Jacob F", "Aksionau A", "Alawieh AM", "Tong A", "Chern B", "Maldonado J", "Hoang K", "Nduom E", "Howard BM", "Barrow DL", "Neill SG", "Wen Z", "Pradilla G", "Garzon-Muvdi T"
+      ],
+      "venue": "Cancers",
+      "year": 2025,
+      "doi": "10.3390/cancers17030526",
+      "pmid": "39941893",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Tomas Garzon-Muvdi",
+  "institution": "Emory University",
+  "date_deposited": "2025-01-16",
+  "date_updated": "2025-02-11",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-17",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-17",
+  "verification_tier": 2,
+  "found_via": [
+    "citation_chain"
+  ],
+  "modality": [
+    "bulk_rna_seq"
+  ],
+  "platform": "RNA-seq (Illumina), exact chemistry not specified per-sample",
+  "reference_genome": "Not reported",
+  "pipeline": "Not reported",
+  "patient_count": 7,
+  "sample_count": 32,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": null,
+    "grade_2": null,
+    "grade_3": null
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": false,
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "Not applicable"
+  ],
+  "anatomic_location_breakdown": "Not applicable (in vitro organoid culture, not a tissue site)",
+  "tissue_preservation": "not_applicable",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "Not reported",
+  "age_distribution": "Not reported",
+  "has_outcome_data": false,
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": [
+      "gse-287174-zohdy-meningioma-organoid-tissue"
+    ]
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": true,
+  "processed_data_available": true,
+  "processed_data_format": "Not reported at the per-sample level",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "sample_count": "High",
+    "patient_count": "High",
+    "modality": "High",
+    "publications": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "NEW RECORD (2026-07-17), adjacent-scope sibling to gse-287174-zohdy-meningioma-organoid-tissue.json -- see that record's needs_manual_review_reason for the full extraction methodology and the tumor/organoid scope-split rationale shared by both. Covers this study's 32 'Patient-derived tumor organoid' GSM records (7 patients: 2, 3, 4, 6, 7, 8, 9, matched 1:1 with the same 7 patients' tumor-tissue samples via each organoid sample's 'PO<patient>-<replicate>' title convention against the tissue arm's 'P<patient>-<replicate>'). Per docs/scope.md ('Cell line, PDX, and organoid meningioma omics data (in vitro/model systems, not patient tissue directly)' is adjacent, not core), routed here rather than into /data/. tissue_preservation set to 'not_applicable' and anatomic_location_breakdown/treatment_timepoint_status set to 'Not applicable', since these are in vitro cultures, not directly-sampled patient tissue with a preservation method or anatomic site of its own. paired_multimodal.is_paired left false for the same reason as the tissue-arm record: both arms are the same modality (bulk_rna_seq), so this doesn't meet multi_modal_matched's >=2-modality definition even though it's a genuine matched cohort; the relationship is carried via related_datasets only.",
+  "source_urls": [
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE287174",
+    "https://pubmed.ncbi.nlm.nih.gov/39941893/",
+    "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11817449/"
+  ],
+  "tags": {
+    "grade_comparable": false,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": false,
+    "large_cohort": false,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": false,
+    "has_outcome_data": false,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

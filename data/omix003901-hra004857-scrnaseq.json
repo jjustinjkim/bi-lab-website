@@ -1,0 +1,112 @@
+{
+  "id": "omix003901-hra004857-scrnaseq",
+  "title": "Single cell transcriptome data from five meningioma tissues",
+  "accessions": [
+    "OMIX003901",
+    "PRJCA016696",
+    "HRA004857",
+    "PRJCA017724"
+  ],
+  "related_accessions": [],
+  "source_repositories": [
+    "NGDC"
+  ],
+  "publications": [
+    {
+      "title": "Decoding meningioma heterogeneity and neoplastic cell-macrophage interaction through single-cell transcriptome profiling across pathological grades.",
+      "authors": ["Fan H", "Song L", "Fan J", "Ma J", "Li X", "Zhang J"],
+      "venue": "Journal of Translational Medicine",
+      "year": 2023,
+      "doi": "10.1186/s12967-023-04445-4",
+      "pmid": "37880655",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Dake Zhang",
+  "institution": "Beihang University (School of Biological Science and Medical Engineering) / Beijing Tiantan Hospital, Capital Medical University (sample source)",
+  "date_deposited": "2023-05-03",
+  "date_updated": "2023-10-20",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-11",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-11",
+  "verification_tier": 2,
+  "found_via": [
+    "keyword_api"
+  ],
+  "modality": [
+    "scrna_seq"
+  ],
+  "platform": "10x Genomics Chromium Single Cell 3' v2, Illumina HiSeq X-10",
+  "reference_genome": "GRCh38",
+  "pipeline": "Cell Ranger v3.02",
+  "patient_count": 5,
+  "sample_count": 5,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": null,
+    "grade_2": null,
+    "grade_3": null
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": false,
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "Not reported"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "Not reported",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "Not reported",
+  "age_distribution": "Not reported",
+  "has_outcome_data": "Not reported",
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": []
+  },
+  "access_type": "controlled",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": false,
+  "processed_data_available": true,
+  "processed_data_format": "Cell Ranger matrix/features/barcodes files (15 files total across 5 samples)",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Controlled access via NGDC Data Access Committee (HDAC001290, 'DK Research Group'); per OMIX003901's own page, files are additionally listed as 'currently unavailable for download pending Human Genetic Resource Management Platform registration', i.e. gated behind China's Human Genetic Resources (HGR) administrative approval process in addition to standard DAC review.",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High",
+    "publications": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "NEW COMBINED RECORD (2026-07-11) for two leads that a prior discovery pass strongly suspected were the SAME underlying study submitted under two separate accession systems: OMIX003901 (BioProject PRJCA016696) and HRA004857 (BioProject PRJCA017724), both titled 'Single cell transcriptome data from five/[no five] meningioma tissues' (Beihang University / Beijing Tiantan Hospital, Capital Medical University). Independently verified live via the NGDC BIG Search API (bioproject, omix, and hra/gsa-human endpoints, not a search engine's cached summary): (1) PRJCA016696's own description text is character-for-character identical to PRJCA017724's description apart from PRJCA016696 having one extra leading sentence ('Beijing Tiantan Hospital, Capital Medical University enlisted five patients during the period of 2017 to 2018.'); both cite the exact same ethics approval number (KY2017-022-01, Beijing Tiantan Hospital, Capital Medical University), the same organization (Beihang University), the identical 10x Genomics Single Cell 3' v2 / Illumina HiSeq X-10 / Cell Ranger v3.02 / GRCh38 protocol description verbatim. (2) OMIX003901's own page lists submitter 'Dake Zhang (zhang_dake@outlook.com), Beihang University'; HRA004857's page lists submitter/DAC contact 'Zhang Dake, Beihang University ... Data Access Committee HDAC001290, DK Research Group' -- the SAME individual as OMIX003901's submitter. (3) HRA004857 lists exactly 5 BioSample accessions (SAMC2801299-SAMC2801303) under BioProject PRJCA017724; these are the raw-sequence-read (GSA-Human) deposit for the identical 5-patient cohort whose processed/expression-profiling data is separately archived as OMIX003901 under the sibling BioProject PRJCA016696. This is NGDC's standard dual-deposit pattern (raw human genetic sequence reads must go to GSA-Human/HRA, while the omics data record itself is separately catalogued in OMIX), not two independently generated meningioma cohorts. CONCLUSION: genuinely the same study, submitted once as raw reads (HRA004857/PRJCA017724) and once as the OMIX expression-profiling catalog entry (OMIX003901/PRJCA016696); combined into this ONE record per instructions, all four accessions listed, not double-counted as two separate dataset records. patient_count/sample_count = 5 (matches both accessions' sample lists exactly). access_type controlled on both sides (OMIX003901 explicitly 'Controlled-access'; HRA004857 gated behind a Data Access Committee plus China's Human Genetic Resources administrative approval, per OMIX003901's own page noting files are 'currently unavailable for download pending Human Genetic Resource Management Platform registration'). No linked publication was found via PubMed esearch (searched OMIX003901, PRJCA016696, and HRA004857 as terms; zero hits for all three), and neither NGDC page itself lists a linked publication; publications left empty rather than fabricated, flagged Low-to-Medium risk that a companion paper exists but wasn't indexed under these accession numbers as search terms. tissue_preservation left 'Not reported' rather than inferring 'fresh_frozen': single-cell suspension protocols strongly imply fresh (non-FFPE) tissue handling, but this was not explicitly stated in either record, so left unconfirmed rather than assumed. Only public NGDC BioProject/OMIX/GSA-Human metadata-level information was used per docs/scope.md; the controlled-access sequencing data itself was never accessed. FOLLOW-UP PUBLICATION SEARCH (2026-07-13), match found and directly confirmed: a Europe PMC full-text search for HRA004857 (rather than the PubMed-only search tried previously) returned exactly one hit, Fan et al. 2023 (PMID 37880655, Journal of Translational Medicine, 'Decoding meningioma heterogeneity and neoplastic cell-macrophage interaction through single-cell transcriptome profiling across pathological grades'), whose Data Availability section (fetched directly) states verbatim: 'Five single-cell transcriptome datasets of meningioma have been deposited in the Genome Sequence Archive of Beijing Institute of Genomics, Chinese Academy of Sciences, with the accession number PRJCA017724... publicly available for access at https://bigd.big.ac.cn/gsa-human/browse/HRA004857' -- an exact match on both accessions used in this combined record. Author list includes Zhang D (Dake Zhang), matching this record's corresponding_author exactly, and the paper's own text separately cross-references GSE183655 (the existing gse-183655-scrnaseq record in this inventory) as a distinct prior dataset it also reanalyzed, confirming this is a genuinely independent primary dataset rather than a duplicate. This search succeeded where the original PubMed-only esearch (zero hits for all three accession terms) did not, because Europe PMC's full-text index picks up the accession as it actually appears in-body (a Data Availability sentence), which PubMed's title/abstract/MeSH-indexed esearch does not cover. Publication added; publication_status normal so tags.peer_reviewed set true.",
+  "source_urls": [
+    "https://ngdc.cncb.ac.cn/bioproject/browse/PRJCA016696",
+    "https://ngdc.cncb.ac.cn/bioproject/browse/PRJCA017724",
+    "https://ngdc.cncb.ac.cn/omix/release/OMIX003901",
+    "https://ngdc.cncb.ac.cn/gsa-human/browse/HRA004857"
+  ],
+  "tags": {
+    "grade_comparable": false,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": true,
+    "spatially_resolved": false,
+    "multi_modal_matched": false,
+    "large_cohort": false,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": false,
+    "has_outcome_data": false,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": "OMIX003901/PRJCA016696 and HRA004857/PRJCA017724 were confirmed (2026-07-11) to be the same underlying 5-patient meningioma scRNA-seq study, dual-deposited across NGDC's OMIX (expression-profiling catalog) and GSA-Human/HRA (raw sequence reads) systems under two different BioProject accessions; combined into this single inventory record rather than logged twice. See needs_manual_review_reason for full evidence."
+}

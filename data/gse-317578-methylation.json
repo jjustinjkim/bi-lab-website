@@ -1,0 +1,97 @@
+{
+  "id": "gse-317578-methylation",
+  "title": "Pediatric and AYA meningiomas constitute a molecularly distinct entity not captured by adult-based risk strategies",
+  "accessions": [
+    "GSE317578"
+  ],
+  "related_accessions": [],
+  "source_repositories": [
+    "GEO"
+  ],
+  "publications": [],
+  "corresponding_author": "Philipp Sievers, Felix Sahm",
+  "institution": "University Hospital Heidelberg, Intitute of Pathology",
+  "date_deposited": "2026-01-26",
+  "date_updated": "2026-06-09",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-12",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-10",
+  "verification_tier": 2,
+  "found_via": [
+    "keyword_api"
+  ],
+  "modality": [
+    "dna_methylation_array"
+  ],
+  "platform": "Illumina HumanMethylation450 BeadChip (GPL13534), Infinium MethylationEPIC (GPL21145), Illumina Infinium MethylationEPIC v2.0 array (GPL33022)",
+  "reference_genome": "Not reported",
+  "pipeline": "Not reported",
+  "patient_count": "Not reported",
+  "sample_count": 293,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": null,
+    "grade_2": null,
+    "grade_3": null
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": true,
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "Not reported"
+  ],
+  "anatomic_location_breakdown": "Per-sample 'localisation' field (n=293): supratentorial 112, skull_base 50, posterior_fossa 31, spinal 25, intraventricular (ventricel) 15, orbital 11, tentorial 4, not available/NA 45.",
+  "tissue_preservation": "both",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "156 female, 137 male (n=293, per-sample 'Sex' field)",
+  "age_distribution": "age group 0-14 years: 115; 15-39 years: 178 (n=293, per-sample 'age group' field; pediatric/AYA cohort)",
+  "has_outcome_data": "Not reported",
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": []
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": "Not reported",
+  "processed_data_available": true,
+  "processed_data_format": "GSE317578_GPL13534_matrix_processed.txt.gz",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High",
+    "publications": "Low",
+    "tissue_preservation": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "Series-level GEO metadata verified directly against the live source; per-sample clinical/pathology fields (grade, sex/age, anatomic location, brain invasion, treatment timepoint) have not yet been extracted from individual GSM records or supplementary tables. FACT-CHECK UPDATE (2026-07-10): date_deposited/date_updated filled in from Series_submission_date (Jan 26 2026) / Series_last_update_date (Jun 09 2026), previously 'Not reported'. molecular_subtype_annotated corrected from 'Not reported' to true: the live series summary explicitly describes named molecular subtype groups (NF2/SMARCE1/BAP1-altered epigenetic clusters), and a spot-check of one GSM record (GSM9474410) confirms a per-sample 'methylation class' field. Spot-check of that same GSM record shows per-sample sex, age group, methylation class, and anatomic localisation fields are present (e.g. 'Sex: Female', 'age group: 0-14', 'methylation class: ben', 'localisation: ventricel') but have not yet been extracted across all 293 samples; a full per-sample pass would let sex_distribution, age_distribution, and anatomic_location_breakdown be populated instead of 'Not reported.' has_outcome_data was briefly marked true based on the summary's statement that 'extent of resection remained the strongest predictor of outcome,' but the spot-checked GSM record has no survival, recurrence, or vital-status field, only sex/age/methylation-class/localisation; the summary's claim describes a prognostic-factor finding of the paper, not deposited per-sample outcome data. Reverted to 'Not reported'. FACT-CHECK UPDATE (2026-07-11): tissue_preservation corrected from 'Not reported' to 'ffpe'. Re-fetched 9 individual GSM records spread across the full sample range (GSM9474410, GSM9474439, GSM9474484, GSM9474529, GSM9474559, GSM9474609, GSM9474659, GSM9474700, GSM9474702), covering samples 1, 30, 75, 120, 150, 200, 250, 291, and 293 of 293; every one carries a per-sample 'material: FFPE' characteristic with no exceptions found. Confidence set to Medium rather than High since this is a 9/293 spot check, not a full census; a complete per-sample pass is still recommended to rule out any fresh-frozen exceptions. FACT-CHECK UPDATE (2026-07-12): full per-sample census of all 293 GSM records (targ=gsm quick view) performed. tissue_preservation corrected from 'ffpe' to 'both': the census shows 279 FFPE + 14 Frozen (the earlier 9-sample spot check missed the frozen subset); confidence raised to High. sex_distribution populated from per-sample 'Sex' field (156 female, 137 male, n=293); age_distribution populated from per-sample 'age group' field (0-14: 115; 15-39: 178, n=293); anatomic_location_breakdown populated from per-sample 'localisation' field. molecular_subtype_annotated remains true (per-sample 'methylation class': ben 184, int 66, SMARCE1 35, mal 8).",
+  "source_urls": [
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE317578"
+  ],
+  "tags": {
+    "grade_comparable": false,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": false,
+    "large_cohort": true,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": true,
+    "has_outcome_data": false,
+    "peer_reviewed": false
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

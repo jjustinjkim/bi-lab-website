@@ -1,0 +1,124 @@
+{
+  "id": "pxd058651-proteomics",
+  "title": "Integrated proteomic, DNA methylation, and targeted Next Generation Sequencing reveals relevant heterogeneity in lower-grade meningioma and a new target in NF2 mutated meningiomas",
+  "accessions": [
+    "PXD058651",
+    "PXD058653"
+  ],
+  "related_accessions": [],
+  "source_repositories": [
+    "PRIDE"
+  ],
+  "publications": [
+    {
+      "title": "Integrated proteomic and targeted Next Generation Sequencing reveal relevant heterogeneity in lower-grade meningioma and ANXA3 as a new target in NF2 mutated meningiomas.",
+      "authors": [
+        "Shah M",
+        "Akther Y",
+        "Adams CL",
+        "Banton MC",
+        "Sharma V",
+        "Ercolano E",
+        "Hilton DA",
+        "Kurian KM",
+        "Laraba L",
+        "Woznica W",
+        "Parkinson DB",
+        "de Assis LJ",
+        "Hanemann CO"
+      ],
+      "venue": "EBioMedicine",
+      "year": 2025,
+      "doi": "10.1016/j.ebiom.2025.105814",
+      "pmid": "40562609",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Vikram Sharma / C. Oliver Hanemann",
+  "institution": "University of Plymouth",
+  "date_deposited": "2024-12-06",
+  "date_updated": "2025-07-02",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-10",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-10",
+  "verification_tier": 1,
+  "found_via": [
+    "keyword_api",
+    "citation_chain"
+  ],
+  "modality": [
+    "proteomics_bulk_ms"
+  ],
+  "platform": "Orbitrap Fusion Lumos",
+  "reference_genome": "Not applicable",
+  "pipeline": "MaxQuant (Andromeda)",
+  "patient_count": "Not reported",
+  "sample_count": 30,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": null,
+    "grade_2": null,
+    "grade_3": null
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": true,
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "Not reported"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "Not reported",
+  "normal_control_tissue": {
+    "included": true,
+    "type": "Not reported",
+    "count": 2
+  },
+  "sex_distribution": "Not reported",
+  "age_distribution": "Not reported",
+  "has_outcome_data": false,
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": []
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": true,
+  "processed_data_available": true,
+  "processed_data_format": "MaxQuant search-result output (PXD058651) and Spectronaut/Spectrodive spectral library output (PXD058653)",
+  "license": "Creative Commons Public Domain (CC0)",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High",
+    "publications": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "PXD058651 and PXD058653 share an identical title, description, and linked publication -- confirmed duplicate/split submissions of the same dataset (unlike the GSE168726/GSE180061 methylation case, this duplication is certain, not merely suspected, so both accessions are listed on one record rather than flagging possible_duplicate_needs_verification. Re-verified 2026-07-10: sample_count corrected from 'Not reported' to 30 (meningioma=28, normal=2, per PXD058651's sampleProcessingProtocol: 'A total of 4162 proteins were identified in 30 samples'), normal_control_tissue corrected to included=true/count=2, molecular_subtype_annotated corrected from false to true (study explicitly stratifies by NF2/AKT1/KLF4/TRAF7 driver mutation groups). platform/pipeline/license/date_deposited/date_updated filled in from the live PRIDE record. Exact grade-level breakdown not stated in the abstract-level description. DEEP-AUDIT UPDATE (2026-07-14): re-fetched the live PRIDE v2 project records for both PXD058651 (https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD058651) and its otherOmicsLinks-confirmed sibling PXD058653, re-confirming the 'A total of 4162 proteins were identified in 30 samples (meningioma = 28, normal = 2)' sampleProcessingProtocol text verbatim, the single live PRIDE 'references' entry (Shah M et al., EBioMedicine 2025:105814, PMID 40562609, DOI 10.1016/j.ebiom.2025.105814), and license/instrument/dates -- all unchanged and correct. Cross-checked the linked publication's full author list directly via Europe PMC (query EXT_ID:40562609, resultType=core): the record's own authors array had only 6 of the paper's true 13 authors, omitting 'Hilton DA', 'Kurian KM', 'Laraba L', 'Woznica W', 'Parkinson DB', 'de Assis LJ', and 'Hanemann CO' -- the last of whom is the paper's senior/corresponding author and is also named in this exact record's own corresponding_author field ('Vikram Sharma / C. Oliver Hanemann'), so the omission was an internal inconsistency as well as an external one. Corrected, authors array now lists all 13 in the paper's own order. Title/venue/year/doi/pmid all re-confirmed exact matches against both the live PRIDE reference entry and Europe PMC.",
+  "source_urls": [
+    "https://www.ebi.ac.uk/pride/archive/projects/PXD058651",
+    "https://www.ebi.ac.uk/pride/archive/projects/PXD058653",
+    "https://pubmed.ncbi.nlm.nih.gov/40562609/"
+  ],
+  "tags": {
+    "grade_comparable": false,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": false,
+    "large_cohort": false,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": true,
+    "has_outcome_data": false,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

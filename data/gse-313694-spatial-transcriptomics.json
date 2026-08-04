@@ -1,0 +1,192 @@
+{
+  "id": "gse-313694-spatial-transcriptomics",
+  "title": "Spatial transcriptomic profiling (Visium) of meningioma",
+  "accessions": [
+    "GSE313694"
+  ],
+  "related_accessions": [
+    "GSE313693"
+  ],
+  "source_repositories": [
+    "GEO"
+  ],
+  "publications": [
+    {
+      "title": "A microenvironment-determined risk continuum refines subtyping in meningioma and reveals determinants of machine learning-based tumor classification.",
+      "authors": [
+        "Maas SLN",
+        "Tang Y",
+        "Stutheit-Zhao E",
+        "Rahmanzade R",
+        "Blume C",
+        "Hielscher T",
+        "Zettl F",
+        "Benfatto S",
+        "Calafato D",
+        "Sill M",
+        "Benotmane JK",
+        "Yabo YA",
+        "Behling F",
+        "Suwala A",
+        "Kardo H",
+        "Ritter M",
+        "Peyre M",
+        "Sankowski R",
+        "Okonechnikov K",
+        "Sievers P",
+        "Patel A",
+        "Reuss D",
+        "Friedrich MJ",
+        "Stichel D",
+        "Schrimpf D",
+        "Van den Bosch TPP",
+        "Beck K",
+        "Wirsching HG",
+        "Jungwirth G",
+        "Hanemann CO",
+        "Lamszus K",
+        "Etminan N",
+        "Unterberg A",
+        "Mawrin C",
+        "Remke M",
+        "Ayrault O",
+        "Lichter P",
+        "Reifenberger G",
+        "Platten M",
+        "Kacprowski T",
+        "List M",
+        "Pauling JK",
+        "Baumbach J",
+        "Milde T",
+        "Grossmann R",
+        "Ram Z",
+        "Ratliff M",
+        "Mallm JP",
+        "Neidert MC",
+        "Bos EM",
+        "Prinz M",
+        "Weller M",
+        "Acker T",
+        "Hartmann FJ",
+        "Preusser M",
+        "Tabatabai G",
+        "Herold-Mende C",
+        "Krieg SM",
+        "Jones DTW",
+        "Pfister SM",
+        "Wick W",
+        "Kalamarides M",
+        "von Deimling A",
+        "Heiland DH",
+        "Hovestadt V",
+        "Gerstung M",
+        "Schlesner M",
+        "German \"Aggressive Meningiomas\" Consortium (KAM)",
+        "Sahm F"
+      ],
+      "venue": "Nature genetics",
+      "year": 2026,
+      "doi": "10.1038/s41588-025-02475-w",
+      "pmid": "41663806",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Sybren L N Maas, Felix Sahm",
+  "institution": "Heidelberg University Hospital",
+  "date_deposited": "2025-12-15",
+  "date_updated": "2026-02-18",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-14",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-10",
+  "verification_tier": 1,
+  "found_via": [
+    "keyword_api",
+    "citation_chain"
+  ],
+  "modality": [
+    "spatial_transcriptomics"
+  ],
+  "platform": "10x Genomics Visium",
+  "reference_genome": "Not reported",
+  "pipeline": "Not reported",
+  "patient_count": "Not reported",
+  "sample_count": 42,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": null,
+    "grade_2": null,
+    "grade_3": null
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": true,
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "Not reported"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "Not reported",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "Not reported",
+  "age_distribution": "Not reported",
+  "has_outcome_data": false,
+  "paired_multimodal": {
+    "is_paired": true,
+    "related_datasets": [
+      "gse-313693-snrnaseq"
+    ]
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": "Not reported",
+  "processed_data_available": true,
+  "processed_data_format": "10x Visium raw output (RAW.tar)",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High",
+    "publications": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "Companion Visium dataset to gse-313693-snrnaseq (same paper, same Heidelberg cohort, same PMID 41663806) -- cross-linked as multi_modal_matched. FACT-CHECK UPDATE (2026-07-10): date_deposited/date_updated filled in from the live GEO record's Series_submission_date (Dec 15 2025) and Series_last_update_date (Feb 18 2026); previously both 'Not reported' despite being present in the source. DEEP-AUDIT PASS (2026-07-14): AUTHOR LIST CORRECTED: publications[0].authors had been mechanically truncated to the first 6 names; Europe PMC's authorString for PMID 41663806 confirms 69 total author entries (including the collective 'German \"Aggressive Meningiomas\" Consortium (KAM)' credit), now written in full. CORRESPONDING AUTHOR CONFIRMED AND CORRECTED (minor): direct contrib-group xref check of PMC12900647.xml (Europe PMC fullTextXML) confirms exactly two corresponding-author (✉) xrefs: 'Maas Sybren L N' and 'Sahm Felix'; corresponding_author corrected from 'Sybren N Maas' to 'Sybren L N Maas' to match the paper's own middle-initial rendering exactly (Sahm unchanged). HIDDEN PER-SAMPLE DATA FOUND IN FULL TEXT: the paper states verbatim 'we conducted spatial transcriptomics on 42 samples from 37 different meningiomas... trained a graph attention network (GAN)... Confusion matrix of the predicted (from spatial transcriptomics) versus ground truth (MC from epigenetic profiling)' -- i.e. every one of the 42 GSE313694 samples has a known ground-truth DKFZ Molecular Class (MC) from bulk methylation, used as the training/validation label for this exact dataset. molecular_subtype_annotated corrected from false to true (tags updated to match). grade_breakdown left null: no exact per-grade sample count specific to the 42/37 cohort was found in the text checked (only the qualitative overall_design phrase 'across WHO grades and methylation classes'); not guessed. has_outcome_data left false: the paper's Data Availability statement explicitly states 'DNA methylation and clinical outcome data can be shared after completion of a data transfer agreement for noncommercial use' -- i.e. outcome data exists for this cohort but is NOT part of the public GSE313694/GSE313693 deposits and requires a separate controlled-access request, consistent with this corpus's convention of not counting access-gated data as 'has_outcome_data' for the public accession itself.",
+  "source_urls": [
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE313694",
+    "https://pubmed.ncbi.nlm.nih.gov/41663806/"
+  ],
+  "tags": {
+    "grade_comparable": false,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": true,
+    "multi_modal_matched": true,
+    "large_cohort": true,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": true,
+    "has_outcome_data": false,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null,
+  "gene_expression_viewer": {
+    "sample_label": "All 42 samples, each spot plotted at its true tissue position, side by side -- the largest single viewer artifact in this inventory",
+    "data_url": "/pilot-data/gse-313694-spatial-transcriptomics.json",
+    "cell_count": 239399,
+    "gene_count": 25,
+    "sample_count": 42,
+    "embedding_method": "scanpy 1.10.3: read_10x_h5 of each sample's deposited raw feature-barcode .h5 (a mix of standard Visium and newer CytAssist chemistry -- CytAssist samples have a much higher spot density, confirmed via cytassist_image.tiff present in their spatial bundles), joined against each sample's own tissue_positions.csv/tissue_positions_list.csv (extracted from each sample's own spatial.tar.gz into an isolated per-sample directory, since the archives' internal folder names do not match their external GEO filenames -- e.g. GSM-labeled 'MNG_Sample_01_spatial.tar.gz' contains an internal 'A_MNG_BI_01_spatial/' folder), kept in_tissue==1 spots only, QC (min 100 genes/spot), anndata.concat with each sample's array_col offset so all 42 tissue sections render side by side. Plotted coordinates are the TRUE physical Visium hex-grid position, not a UMAP. Clustering (Leiden, resolution 0.5, 38 clusters) uses transcriptional similarity via PCA/neighbors. Gene panel trimmed to 25 (post-hoc, from an already-ranked list, no recomputation) to keep the 239,399-spot artifact under GitHub's 50MB warning threshold -- an initial 70-gene export was 90.9MB.",
+    "pathways": ["Proliferation / cell cycle", "Hypoxia"],
+    "integration_note": "Spots are plotted at true tissue position per sample, not merged into one shared coordinate space -- the 42 samples are independent tissue sections side by side, not directly overlaid. This is the largest single dataset in this inventory's viewer (239,399 spots across 42 samples)."
+  }
+}

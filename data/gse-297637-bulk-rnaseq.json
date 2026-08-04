@@ -1,0 +1,121 @@
+{
+  "id": "gse-297637-bulk-rnaseq",
+  "title": "STING activation induces cytotoxic and immune responses in meningiomas via inflammatory cell death pathways",
+  "accessions": [
+    "GSE297637"
+  ],
+  "related_accessions": [
+    "GSE297764",
+    "GSE297758"
+  ],
+  "source_repositories": [
+    "GEO",
+    "SRA"
+  ],
+  "publications": [
+    {
+      "title": "STING activation induces cytotoxic and immune responses in meningiomas via inflammatory cell death pathways.",
+      "authors": [
+        "Youngblood MW",
+        "Tripathi S",
+        "Najem H",
+        "Congivaram H",
+        "Gomez M",
+        "Sears TK"
+      ],
+      "venue": "Nature communications",
+      "year": 2026,
+      "doi": "10.1038/s41467-026-69296-1",
+      "pmid": "41680157",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Amy B Heimberger",
+  "institution": "Northwestern University",
+  "date_deposited": "2025-05-20",
+  "date_updated": "2026-03-01",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-14",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-10",
+  "verification_tier": 1,
+  "found_via": [
+    "keyword_api",
+    "citation_chain"
+  ],
+  "modality": [
+    "bulk_rna_seq"
+  ],
+  "platform": "Illumina NovaSeq X Plus (GPL34284)",
+  "reference_genome": "Not reported",
+  "pipeline": "Not reported",
+  "patient_count": 4,
+  "sample_count": 8,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": null,
+    "grade_2": null,
+    "grade_3": null
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": "Not reported",
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "Not reported"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "Not reported",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "Not reported",
+  "age_distribution": "Not reported",
+  "has_outcome_data": "Not reported",
+  "paired_multimodal": {
+    "is_paired": true,
+    "related_datasets": [
+      "gse-297758-multiome"
+    ]
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": "Not reported",
+  "processed_data_available": true,
+  "processed_data_format": "GSE297637_RAW.tar",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High",
+    "publications": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "FACT-CHECK UPDATE (2026-07-10): Publication found and linked via citation-chain search (was previously unlinked with no PMID in GEO; the underlying SuperSeries GSE297764 does now carry Series_pubmed_id=41680157 live, but that link had not propagated to this SubSeries record). PMID 41680157, title matches this GEO series title exactly (Nature Communications, 2026), confirmed not retracted/corrected via Europe PMC. corresponding_author corrected from 'Mark,W,Youngblood, Shashwat,,Tripathi' to 'Mark,W,Youngblood, Amy,B,Heimberger': Europe PMC author-affiliation data for this PMID shows only Heimberger AB (the paper's last author) has a listed correspondence email (amy.heimberger@northwestern.edu); Tripathi S is a middle author with no corresponding designation. Series-level GEO metadata verified directly against the live source; per-sample clinical/pathology fields (grade, sex/age, anatomic location, brain invasion, treatment timepoint) have not yet been extracted from individual GSM records or supplementary tables -- part of the batch-1 scaling pass, prioritizing breadth of verified accessions over per-sample depth. FACT-CHECK REVERSAL (2026-07-11): the 2026-07-10 pass had corrected corresponding_author to 'Mark,W,Youngblood, Amy,B,Heimberger', but this still incorrectly retained Youngblood. Fetched the paper's open-access PMC full text (PMC13009160) directly and searched every contrib element in the full author list (47 authors): exactly one author anywhere in the entire paper is marked corresp=\"yes\", Amy B. Heimberger (amy.heimberger@northwestern.edu). Youngblood MW, despite being the GEO submission's contact/first-listed contributor, has no corresponding-author designation on the published paper at all. Corrected corresponding_author to 'Amy,B,Heimberger' only. DEEP-AUDIT UPDATE (2026-07-14): patient_count was left 'Not reported' despite the live source directly enumerating it. Re-pulled all 8 GSM records fresh (acc.cgi?acc=GSE297637&targ=gsm&form=text&view=brief): titles/characteristics show exactly 4 distinct patient identifiers (ITA-56, ITA-72, NU3971, NU3981), each contributed one ex-vivo meningioma specimen split into a 'Control' and an '8803 [STING-agonist]' treatment arm (Sample_characteristics_ch1 = 'treatment: Control' / 'treatment: 8803' for each), yielding the 8 deposited GSMs (4 patients x 2 treatment conditions). Corrected patient_count from 'Not reported' to 4. Also independently re-confirmed the linked publication (PMID 41680157) via its live open-access full text (PMC13009160): the literal accession strings GSE297637, GSE297758, and GSE297764 all appear in its text, confirming this is genuinely the paper this dataset was deposited for, not merely a topical match.",
+  "source_urls": [
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE297637",
+    "https://pubmed.ncbi.nlm.nih.gov/41680157/"
+  ],
+  "tags": {
+    "grade_comparable": false,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": true,
+    "large_cohort": false,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": false,
+    "has_outcome_data": false,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

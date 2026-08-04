@@ -1,0 +1,153 @@
+{
+  "id": "gse-151067-methylation",
+  "title": "Multisite methylation profiling of primary human meningioma",
+  "accessions": [
+    "GSE151067"
+  ],
+  "related_accessions": [
+    "GSE151921"
+  ],
+  "source_repositories": [
+    "GEO"
+  ],
+  "publications": [
+    {
+      "title": "DNA methylation profiling demonstrates superior diagnostic classification to RNA-sequencing in a case of metastatic meningioma.",
+      "authors": [
+        "Vasudevan HN",
+        "Castro MRH",
+        "Lee JC",
+        "Villanueva-Meyer JE",
+        "Bush NAO",
+        "McDermott MW"
+      ],
+      "venue": "Acta neuropathologica communications",
+      "year": 2020,
+      "doi": "10.1186/s40478-020-00952-3",
+      "pmid": "32517746",
+      "preprint_id": null
+    },
+    {
+      "title": "Multiplatform genomic profiling and magnetic resonance imaging identify mechanisms underlying intratumor heterogeneity in meningioma.",
+      "authors": [
+        "Magill ST",
+        "Vasudevan HN",
+        "Seo K",
+        "Villanueva-Meyer JE",
+        "Choudhury A",
+        "John Liu S"
+      ],
+      "venue": "Nature communications",
+      "year": 2020,
+      "doi": "10.1038/s41467-020-18582-7",
+      "pmid": "32968068",
+      "preprint_id": null
+    },
+    {
+      "title": "Intratumor and informatic heterogeneity influence meningioma molecular classification.",
+      "authors": [
+        "Vasudevan HN",
+        "Choudhury A",
+        "Hilz S",
+        "Villanueva-Meyer JE",
+        "Chen WC",
+        "Lucas CG"
+      ],
+      "venue": "Acta neuropathologica",
+      "year": 2022,
+      "doi": "10.1007/s00401-022-02455-y",
+      "pmid": "35759011",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Stephen T. Magill, David R. Raleigh",
+  "institution": "University of California San Francisco",
+  "date_deposited": "2020-05-22",
+  "date_updated": "2022-11-17",
+  "publication_status": "normal",
+  "last_verified_date": "2026-08-04",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-10",
+  "verification_tier": 1,
+  "found_via": [
+    "keyword_api",
+    "citation_chain"
+  ],
+  "modality": [
+    "dna_methylation_array"
+  ],
+  "platform": "GPL23976",
+  "reference_genome": "Not reported",
+  "pipeline": "Not reported",
+  "patient_count": 13,
+  "sample_count": 88,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": null,
+    "grade_2": null,
+    "grade_3": null
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": "Not reported",
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "Not reported"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "Not reported",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "60 female, 28 male (n=88, extracted from GSM 'gender' field)",
+  "age_distribution": "n=88, range 52-79, mean 66.2 (from GSM 'age' field)",
+  "has_outcome_data": "Not reported",
+  "paired_multimodal": {
+    "is_paired": true,
+    "related_datasets": [
+      "gse-151921-bulk-rnaseq"
+    ]
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": "Not reported",
+  "processed_data_available": true,
+  "processed_data_format": "GSE151067_BetaValues_MeningiomaMethylation_Run1.txt.gz",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High",
+    "publications": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "PER-SAMPLE DATA UPDATE (2026-07-10; extended 2026-07-12 re-verification audit): Per-sample data recovered and re-verified from family.soft (88/88 samples). sex_distribution from 'gender' field: 60 F, 28 M. patient_count filled to 13 (2026-07-12): the 'individual' field carries exactly 13 unique patient IDs (M1-M13) and Series_summary states '88 spatially-distinct samples from 13 human meningiomas'. age_distribution completed (2026-07-12) from the per-sample 'age' field: range 52-79, mean 66.2. The 'site' field records 87 Intracranial and 1 Liver (a metastatic deposit, consistent with PMID 32517746's metastatic-meningioma case); disease state is uniformly Meningioma. No per-sample WHO grade field is deposited, so grade_breakdown remains null. Series-level GEO metadata verified directly against the live source. CORRESPONDING-AUTHOR CORRECTION (2026-08-04): field previously read 'Harish N Vasudevan, David R Raleigh' -- Vasudevan is not flagged as a corresponding author on the source paper. Re-verified against the paper's own PMC full text (PMID 32517746, PMCID PMC7285578): contrib-group entries flagged corresp=\"yes\" are Stephen T. Magill and David R. Raleigh. Corrected accordingly.",
+  "source_urls": [
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE151067",
+    "https://pubmed.ncbi.nlm.nih.gov/32517746/",
+    "https://pubmed.ncbi.nlm.nih.gov/32968068/",
+    "https://pubmed.ncbi.nlm.nih.gov/35759011/"
+  ],
+  "tags": {
+    "grade_comparable": false,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": true,
+    "large_cohort": false,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": false,
+    "has_outcome_data": false,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

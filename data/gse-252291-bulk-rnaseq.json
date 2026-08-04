@@ -1,0 +1,133 @@
+{
+  "id": "gse-252291-bulk-rnaseq",
+  "title": "Meningioma transcriptomic landscape demonstrates novel subtypes with regional associated biology and patient outcome",
+  "accessions": [
+    "GSE252291"
+  ],
+  "related_accessions": [],
+  "source_repositories": [
+    "GEO",
+    "SRA"
+  ],
+  "publications": [
+    {
+      "title": "Meningioma transcriptomic landscape demonstrates novel subtypes with regional associated biology and patient outcome.",
+      "authors": [
+        "Thirimanne HN",
+        "Almiron-Bonnin D",
+        "Nuechterlein N",
+        "Arora S",
+        "Jensen M",
+        "Parada CA",
+        "Qiu C",
+        "Szulzewsky F",
+        "English CW",
+        "Chen WC",
+        "Sievers P",
+        "Nassiri F",
+        "Wang JZ",
+        "Klisch TJ",
+        "Aldape KD",
+        "Patel AJ",
+        "Cimino PJ",
+        "Zadeh G",
+        "Sahm F",
+        "Raleigh DR",
+        "Shendure J",
+        "Ferreira M",
+        "Holland EC"
+      ],
+      "venue": "Cell genomics",
+      "year": 2024,
+      "doi": "10.1016/j.xgen.2024.100566",
+      "pmid": "38788713",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Eric C Holland",
+  "institution": "Fred Hutch Cancer Center",
+  "date_deposited": "2023-12-30",
+  "date_updated": "2024-07-26",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-14",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-10",
+  "verification_tier": 1,
+  "found_via": [
+    "keyword_api",
+    "citation_chain"
+  ],
+  "modality": [
+    "bulk_rna_seq"
+  ],
+  "platform": "Illumina NovaSeq 6000 (GPL24676)",
+  "reference_genome": "Not reported",
+  "pipeline": "Not reported",
+  "patient_count": "Not reported",
+  "sample_count": 279,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": null,
+    "grade_2": null,
+    "grade_3": null
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": "Not reported",
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "Not reported"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "Not reported",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "Not reported",
+  "age_distribution": "Not reported",
+  "has_outcome_data": "Not reported",
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": []
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": "Not reported",
+  "processed_data_available": true,
+  "processed_data_format": "GSE252291_UWFHCC_log2tpm_122823.txt.gz",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High",
+    "publications": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "Series-level GEO metadata verified directly against the live source; per-sample clinical/pathology fields (grade, sex/age, anatomic location, brain invasion, treatment timepoint) have not yet been extracted from individual GSM records or supplementary tables -- part of the batch-1 scaling pass, prioritizing breadth of verified accessions over per-sample depth. Publication metadata pulled from PubMed esummary; not yet manually spot-checked against the full text for every record in this batch. CORRESPONDING-AUTHOR CORRECTION (2026-07-12): corresponding_author changed from 'H. Nayanga,,Thirimanne, Sonali,,Arora' to 'Eric,C,Holland'. Thirimanne is the first author; the Cell Genomics paper's PMC full text (PMID 38788713, PMC11228955) names a single corresponding author and lead contact, Eric C. Holland (eholland@fredhutch.org), who is also the live GEO Series_contact_name and a Series_contributor. Per this corpus's convention the field now reflects the true corresponding author in GEO's literal name format. Per-sample GSM characteristics carry only 'disease state: Meningioma tumor' and 'tissue: brain' (all 279), so grade/sex/age remain 'Not reported'. DEEP-AUDIT (2026-07-14): publications[0].authors was truncated to 6 of 23 authors (Europe PMC authorString for PMID 38788713 confirms the full 23, ending '...Sahm F, Raleigh DR, Shendure J, Ferreira M, Holland EC.'); expanded. corresponding_author 'Eric C Holland' re-confirmed directly via the live GEO SOFT record (contact name 'Eric Holland', email eholland@fredhutch.org) and matches the prior 2026-07-12 PMC-based correction; no change. Checked the paper's full text (PMC11228955) specifically for outcome/survival data tied to the 279-sample GSE252291 cohort itself (as opposed to the paper's larger ~1,298-tumor meta-cohort combining 12 external datasets with these 279): 'We obtained 12 publicly available bulk RNA-seq meningioma datasets... and combined them with 279 sequenced meningiomas from the University of Washington to create a set of 1,298 meningiomas' -- all Kaplan-Meier/recurrence-free-survival analyses and WHO grade distributions in the Results are reported for the merged 1,298-tumor landscape, not isolated for the 279 UW samples specifically; has_outcome_data, grade_breakdown, and molecular_subtype_annotated left unchanged ('Not reported') accordingly, since the per-sample data is not attributable to this dataset alone.",
+  "source_urls": [
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE252291",
+    "https://pubmed.ncbi.nlm.nih.gov/38788713/"
+  ],
+  "tags": {
+    "grade_comparable": false,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": false,
+    "large_cohort": true,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": false,
+    "has_outcome_data": false,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

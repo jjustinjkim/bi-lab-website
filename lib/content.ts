@@ -117,6 +117,7 @@ export interface FeaturedPublication {
   journal: string;
   journalUrl: string;
   date: string;
+  image: string;
 }
 
 // The 3 currently featured studies on the real site's Publications page.
@@ -132,6 +133,7 @@ export const FEATURED_PUBLICATIONS: FeaturedPublication[] = [
     journal: "Journal of Neurosurgery",
     journalUrl: "https://thejns.org/view/journals/j-neurosurg/aop/article-10.3171-2025.4.JNS25438/article-10.3171-2025.4.JNS25438.xml",
     date: "2025-10-23",
+    image: "/publications/ki-67-in-meningioma.png",
   },
   {
     slug: "a-molecularly-integrated-grade-for-meningioma",
@@ -143,6 +145,7 @@ export const FEATURED_PUBLICATIONS: FeaturedPublication[] = [
     journal: "Neuro-Oncology",
     journalUrl: "https://academic.oup.com/neuro-oncology/article/24/5/796/6368844",
     date: "2025-10-23",
+    image: "/publications/molecularly-integrated-grade.png",
   },
   {
     slug: "new-study-reveals-how-genomic-thresholds-shape-meningioma-classification-and-recurrence-risk",
@@ -154,6 +157,7 @@ export const FEATURED_PUBLICATIONS: FeaturedPublication[] = [
     journal: "Nature Communications",
     journalUrl: "https://pmc.ncbi.nlm.nih.gov/articles/PMC12222709/pdf/41467_2025_Article_60734.pdf",
     date: "2025-10-23",
+    image: "/publications/genomic-thresholds.png",
   },
 ];
 

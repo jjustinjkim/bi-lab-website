@@ -1,0 +1,97 @@
+{
+  "id": "gse-197763-bulk-rnaseq",
+  "title": "Pre-clinical validation of an RNA-based precision oncology platform for patient-therapy alignment in a diverse set of human malignancies resistant to standard treatments",
+  "accessions": [
+    "GSE197763"
+  ],
+  "related_accessions": [],
+  "source_repositories": [
+    "GEO",
+    "SRA"
+  ],
+  "publications": [],
+  "corresponding_author": "Prabhjot S Mundi, Mariano J Alvarez",
+  "institution": "Columbia University Irving Medical Center",
+  "date_deposited": "2022-03-02",
+  "date_updated": "2022-03-11",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-10",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-10",
+  "verification_tier": 2,
+  "found_via": [
+    "keyword_api"
+  ],
+  "modality": [
+    "bulk_rna_seq"
+  ],
+  "platform": "Illumina NextSeq 500 (GPL18573), Illumina NovaSeq 6000 (GPL24676)",
+  "reference_genome": "Not reported",
+  "pipeline": "Not reported",
+  "patient_count": "Not reported",
+  "sample_count": 102,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": 51,
+    "grade_2": 38,
+    "grade_3": 6
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": "Not reported",
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "Not reported"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "Not reported",
+  "normal_control_tissue": {
+    "included": true,
+    "type": "Benign arachnoid tissue",
+    "count": 7
+  },
+  "sex_distribution": "Not reported",
+  "age_distribution": "Not reported",
+  "has_outcome_data": "Not reported",
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": []
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": "Not reported",
+  "processed_data_available": true,
+  "processed_data_format": "GSE197763_IOMM_Plateseq_viperanalyzeddifferentialproteinactivity.txt.gz",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High",
+    "publications": "Low"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "GEO series mixes multiple sample types under one accession: patient-derived xenograft (PDX) RNA-seq, cognate cell-line RNA-seq (including drug-perturbation profiles), AND real human meningioma patient tumor/tissue samples sequenced at Columbia University Irving Medical Center (Series_summary describes this subset as '103 meningioma patient tumors'). Per docs/scope.md, only the human-patient-tissue subset is core-in-scope; the PDX/cell-line samples within this same accession are adjacent-scope. FACT-CHECK UPDATE (2026-07-11): per-GSM filtering has now been done via NCBI esummary (db=gds) sample titles. All 126 GSM titles were enumerated; 102 (not 103) carry the 'MENI-TB###' prefix used for this cohort, comprising 95 samples explicitly labeled 'WHO Grade-1/2/3 histology' (51 grade 1, 38 grade 2, 6 grade 3) plus 7 samples explicitly labeled 'Benign arachnoid tissue' (normal control, IDs MENI-TB004/007-012; note MENI-TB005/006 do not appear in the series at all). sample_count corrected from 103 (a direct copy of the series' free-text summary figure) to 102, matching the actual enumerated MENI-TB-prefixed GSM count (95 tumor + 7 normal-control arachnoid); per this corpus's established convention (see gse-178139-methylation's 24 = 12 tumor + 12 dura), normal-control samples of the same tissue category are INCLUDED in sample_count and tracked separately via normal_control_tissue (now set to included=true/count=7/type='Benign arachnoid tissue'), unlike genuinely out-of-scope sample types (blood, cell line, PDX, other tumor types) which are excluded from sample_count entirely. grade_breakdown filled in from the same per-GSM titles and reflects only the 95 tumor samples (51/38/6), consistent with the same gse-178139 convention of grade_breakdown counting only tumor samples even when sample_count includes normal controls. (Note: an earlier version of this fix briefly set sample_count to 95, excluding the arachnoid samples entirely; corrected back to 102 for consistency with the corpus-wide normal-control convention.) The remaining ~24 non-'MENI-TB' GSM titles (PDX pharmacodynamic samples, cell lines ASPC1/BT20/GIST430/GISTT1, and other CUAC-coded xenograft/tumor-bank samples with non-CNS disease codes e.g. BC/GIST/PAC/CAR) are confirmed out-of-scope for this record and were already correctly excluded from sample_count. The discrepancy between the series' own stated '103' and the actual enumerated 102 MENI-TB-prefixed GSM records could not be further resolved from available GEO metadata (likely an approximation or minor bookkeeping error in the depositor's free-text summary); the direct per-GSM tally was used as the more authoritative source. Publication metadata: no publications currently linked; Series_pubmed_id is empty on the live record and no clearly matching peer-reviewed paper for this specific GSE has been identified. POSSIBLE DUPLICATE FLAGGED (2026-07-13): a follow-up publication search found that gse-212377-bulk-rnaseq.json (submitted 2022-08-30, ~6 months after this series) is titled 'Columbia University Irving Medical Center RNASeq of meningioma tumors', design text 'RNAseq profiles of 102 meningioma patient tumors sequenced at Columbia University Irving Medical Center used to derive a meningioma gene regulatory network (interactome)' -- same 102 count, same institution, same PI trio (Mundi/Alvarez/Califano), and nearly identical 'gene regulatory network (interactome)' framing to this record's own design text. GSE212377's own linked paper (Mundi et al. 2023, Cancer Discovery, PMID 37061969) cites GSE212377 specifically in its Data Availability, not this accession. Different GSM ID ranges rule out these being literally the same raw files under two accessions, but strongly suggest the same 102-sample meningioma cohort was re-deposited as its own standalone series to support the dedicated meningioma paper, after originally being buried as a subset of this larger multi-cancer platform series. Not resolved/merged here -- flagged via possible_duplicate_needs_verification for a future pass to confirm via patient-level metadata whether these are the same 102 patients (which would mean this record's own samples should not be double-counted alongside gse-212377's in any aggregate corpus statistic).",
+  "source_urls": [
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE197763"
+  ],
+  "tags": {
+    "grade_comparable": true,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": false,
+    "large_cohort": true,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": false,
+    "has_outcome_data": false,
+    "peer_reviewed": false
+  },
+  "possible_duplicate_needs_verification": true,
+  "duplicate_notes": "Likely overlaps with gse-212377-bulk-rnaseq (same 102-count meningioma cohort, same Columbia PI trio Mundi/Alvarez/Califano, near-identical 'gene regulatory network (interactome)' design text, re-deposited ~6 months later as its own standalone series) -- not confirmed at the patient level, flagged for a future dedup pass."
+}

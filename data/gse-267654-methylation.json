@@ -1,0 +1,117 @@
+{
+  "id": "gse-267654-methylation",
+  "title": "Multiomic and clinical analysis of multiply recurrent meningiomas reveals risk factors, underlying biology, and insights into evolution",
+  "accessions": [
+    "GSE267654"
+  ],
+  "related_accessions": [],
+  "source_repositories": [
+    "GEO"
+  ],
+  "publications": [
+    {
+      "title": "Multiomic and clinical analysis of multiply recurrent meningiomas reveals risk factors, underlying biology, and insights into evolution.",
+      "authors": [
+        "Pugazenthi S",
+        "Patel B",
+        "English CW",
+        "Leidig WA",
+        "McGeehan KP",
+        "McCornack CR"
+      ],
+      "venue": "Science advances",
+      "year": 2024,
+      "doi": "10.1126/sciadv.adn4419",
+      "pmid": "39441930",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Akash J Patel, Albert H Kim",
+  "institution": "Washington University School of Medicine",
+  "date_deposited": "2024-05-16",
+  "date_updated": "2025-05-28",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-12",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-10",
+  "verification_tier": 1,
+  "found_via": [
+    "keyword_api",
+    "citation_chain"
+  ],
+  "modality": [
+    "dna_methylation_array"
+  ],
+  "platform": "GPL21145, GPL33022",
+  "reference_genome": "Not reported",
+  "pipeline": "Not reported",
+  "patient_count": 31,
+  "sample_count": 43,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": null,
+    "grade_2": null,
+    "grade_3": null
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": "Not reported",
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "primary",
+    "recurrent"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "ffpe",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "Not reported",
+  "age_distribution": "Not reported",
+  "has_outcome_data": "Not reported",
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": []
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": "Not reported",
+  "processed_data_available": true,
+  "processed_data_format": "GSE267654_NormalizedBetaMatrix.xlsx",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High",
+    "publications": "High",
+    "patient_count": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "Series-level GEO metadata verified directly against the live source; per-sample clinical/pathology fields (grade, sex/age, anatomic location, brain invasion, treatment timepoint) have not yet been extracted from individual GSM records or supplementary tables. FACT-CHECK (2026-07-10): date_deposited/date_updated were 'Not reported' despite being stated on the live GEO record; filled in. treatment_timepoint_status was 'Not reported' despite Series_overall_design explicitly stating a primary vs. recurrent split (31 primary, 10 recurrence-1, 2 recurrence-2); corrected to reflect both are present (exact per-sample counts not yet broken out here). FACT-CHECK (2026-07-11): corresponding_author corrected from 'Sangami,,Pugazenthi, Bhuvic,,Patel' (the paper's first two authors) to 'Akash,J,Patel, Albert,H,Kim'. Fetched the paper's PMC full text (PMC11498213) directly: the author-notes/corresp block explicitly names only two corresponding authors with emails, Albert H. Kim (alberthkim@wustl.edu) and Akash J. Patel (akash.patel@bcm.edu); Pugazenthi and Patel B are first/second authors, not corresponding. Both true corresponding authors are present in the live GEO Series_contributor list (which has 4 names: Pugazenthi, Patel B, Akash J Patel, Albert H Kim), so per this corpus's established sourcing convention the field now reflects the actual corresponding authors in GEO's own name format. tissue_preservation corrected from 'Not reported' to 'ffpe': fetched all 43 individual GSM records directly, every one carries 'tissue: DNA from FFPE Meningioma Sample' in its characteristics, confirming 100% FFPE, not just background/methods-section mention. PER-SAMPLE EXTRACTION (2026-07-12): patient_count changed from 'Not reported' to 31; the per-GSM 'patient' characteristic across all 43 samples resolves to 31 distinct patient identifiers (43 samples from 31 patients), consistent with the overall_design's 31 primary tumors plus 10 recurrence-1 and 2 recurrence-2 from a subset. Per-GSM 'primary/recurrence' confirms 31 Primary, 10 Recurrence1, 2 Recurrence2, and 'multiplyrecurrent(mrm)/nonrecurrent(nrm)' is 26 MRM, 17 NRM.",
+  "source_urls": [
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE267654",
+    "https://pubmed.ncbi.nlm.nih.gov/39441930/"
+  ],
+  "tags": {
+    "grade_comparable": false,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": false,
+    "large_cohort": false,
+    "recurrence_annotated": true,
+    "molecular_subtype_annotated": false,
+    "has_outcome_data": false,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

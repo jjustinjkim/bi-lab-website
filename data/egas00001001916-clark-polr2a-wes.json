@@ -1,0 +1,145 @@
+{
+  "id": "egas00001001916-clark-polr2a-wes",
+  "title": "Recurrent somatic mutations in POLR2A define a distinct subset of meningiomas: Somatic exome variants",
+  "accessions": [
+    "EGAS00001001916",
+    "EGAD00001002650"
+  ],
+  "related_accessions": [
+    "EGAD00001002649",
+    "GSE85133",
+    "GSE85135"
+  ],
+  "source_repositories": [
+    "EGA"
+  ],
+  "publications": [
+    {
+      "title": "Recurrent somatic mutations in POLR2A define a distinct subset of meningiomas",
+      "authors": [
+        "Clark VE",
+        "Harmanci AS",
+        "Bai H",
+        "Youngblood MW",
+        "Lee TI",
+        "Baranoski JF",
+        "Ercan-Sencicek AG",
+        "Abraham BJ",
+        "Weintraub AS",
+        "Hnisz D",
+        "Simon M",
+        "Krischek B",
+        "Erson-Omay EZ",
+        "Henegariu O",
+        "Carrion-Grant G",
+        "Mishra-Gorur K",
+        "Duran D",
+        "Goldmann JE",
+        "Schramm J",
+        "Goldbrunner R",
+        "Piepmeier JM",
+        "Vortmeyer AO",
+        "Gunel JM",
+        "Bilguvar K",
+        "Yasuno K",
+        "Young RA",
+        "Gunel M"
+      ],
+      "venue": "Nature Genetics",
+      "year": 2016,
+      "doi": "10.1038/ng.3651",
+      "pmid": "27548314",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Murat Gunel",
+  "institution": "Yale University School of Medicine",
+  "date_deposited": "Not reported",
+  "date_updated": "2016-09-21",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-14",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-11",
+  "verification_tier": 1,
+  "found_via": [
+    "keyword_api",
+    "author_search"
+  ],
+  "modality": [
+    "wes"
+  ],
+  "platform": "Not reported",
+  "reference_genome": "Not reported",
+  "pipeline": "Not reported",
+  "patient_count": "Not reported",
+  "sample_count": 87,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": null,
+    "grade_2": null,
+    "grade_3": null
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": true,
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "Not reported"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "Not reported",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "Not reported",
+  "age_distribution": "Not reported",
+  "has_outcome_data": "Not reported",
+  "paired_multimodal": {
+    "is_paired": true,
+    "related_datasets": [
+      "gse-85133-polr2a-rnaseq"
+    ]
+  },
+  "access_type": "controlled",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": "Not reported",
+  "processed_data_available": "Not reported",
+  "processed_data_format": "Not reported",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not reported",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High",
+    "publications": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "NEW RECORD (2026-07-11), fills a structural gap this project's own docs/coverage_gaps.md explicitly flagged: the WES data for the Clark et al. 2016 Nature Genetics POLR2A landmark cohort (already represented in this inventory via gse-85133-polr2a-rnaseq, RNA-seq only) was documented as 'not in GEO at all... almost certainly lives in dbGaP' but the actual host turned out to be EGA, found only after this session fixed EGA's search capability (its API has no free-text filter at all, worked around by fetching the entire small archive and filtering client-side). Verified directly via the EGA Metadata API: EGAS00001001916 ('Recurrent somatic mutations in POLR2A define a distinct subset of meningiomas'), containing two datasets: EGAD00001002650 ('Somatic exome variants', 87 meningioma-blood tumor/normal pairs, this record) and EGAD00001002649 ('RNAseq variants', 25 tumors, described as 'Variants called from RNA-seq data of meningioma tumors', almost certainly derived variant calls from the same RNA-seq data already captured in gse-85133-polr2a-rnaseq rather than an independently new dataset, listed here only in related_accessions, not extracted as its own record). Linked to gse-85133-polr2a-rnaseq via paired_multimodal since this is a new modality (WES) for the same published cohort; gse-85133-polr2a-rnaseq.json's own paired_multimodal.related_datasets has been updated to reference this record back. Publication details (title, authors, DOI, PMID) copied from and cross-verified against the existing gse-85133-polr2a-rnaseq.json record's own already-verified publication entry, same paper. Only public EGA study/dataset-level metadata was used (title, description, sample count, dataset type, release date); the controlled-access exome data itself was never accessed, per docs/scope.md's compliance guardrail. Per-sample clinical fields are 'Not reported' since they would require the controlled-access dataset itself. DEEP-AUDIT (2026-07-14): publications[0].authors was truncated to 6 of the paper's 27 authors (this record's own note above says the entry was copied from gse-85133-polr2a-rnaseq.json, which carries the same truncation bug not fixed here); expanded to the full 27-author list per Europe PMC authorString for PMID 27548314. corresponding_author 'Murat Gunel' verified directly against the paper's live PMC full text (pmc.ncbi.nlm.nih.gov/articles/PMC5114141/): 'Correspondence should be addressed to M.G. (murat.gunel@yale.edu)' -- confirmed correct, no change. Also checked the same full text for grade_breakdown/brain_invasion/outcome data specific to this 87-sample WES cohort: the paper states POLR2A mutations were found exclusively in WHO grade I tumors when screening the larger 775-meningioma cohort, but gives no per-sample grade breakdown for this specific 87 tumor/blood-pair WES dataset, and reports no brain invasion or survival/outcome data for either cohort; grade_breakdown/brain_invasion/has_outcome_data left unchanged ('Not reported'/null) accordingly. Aside (out of scope for this record, flagged for a future pass): gse-85133-polr2a-rnaseq.json likely carries the identical 6-author truncation since this record's authors were copied from it.",
+  "source_urls": [
+    "https://ega-archive.org/studies/EGAS00001001916",
+    "https://ega-archive.org/datasets/EGAD00001002650",
+    "https://pubmed.ncbi.nlm.nih.gov/27548314/",
+    "https://doi.org/10.1038/ng.3651"
+  ],
+  "tags": {
+    "grade_comparable": false,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": true,
+    "large_cohort": false,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": true,
+    "has_outcome_data": false,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

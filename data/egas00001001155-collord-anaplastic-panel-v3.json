@@ -1,0 +1,125 @@
+{
+  "id": "egas00001001155-collord-anaplastic-panel-v3",
+  "title": "Anaplastic_Meningioma_V3__cancer_gene_panel",
+  "accessions": [
+    "EGAS00001001155",
+    "EGAD00001001430"
+  ],
+  "related_accessions": [
+    "EGAS00001000859",
+    "EGAD00001001267",
+    "EGAS00001001873",
+    "EGAD00001003255"
+  ],
+  "source_repositories": [
+    "EGA"
+  ],
+  "publications": [
+    {
+      "title": "An integrated genomic analysis of anaplastic meningioma identifies prognostic molecular signatures",
+      "authors": [
+        "Collord G",
+        "Tarpey P",
+        "Kurbatova N",
+        "Martincorena I",
+        "Moran S",
+        "McDermott U"
+      ],
+      "venue": "Scientific Reports",
+      "year": 2018,
+      "doi": "10.1038/s41598-018-31659-0",
+      "pmid": "30202034",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Thomas Santarius / Ultan McDermott",
+  "institution": "Wellcome Sanger Institute / Cambridge University Hospitals NHS Foundation Trust",
+  "date_deposited": "Not reported",
+  "date_updated": "Not reported",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-16",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-11",
+  "verification_tier": 2,
+  "found_via": [
+    "keyword_api"
+  ],
+  "modality": [
+    "targeted_panel_seq"
+  ],
+  "platform": "Illumina HiSeq 2000",
+  "reference_genome": "Not reported",
+  "pipeline": "Not reported",
+  "patient_count": 42,
+  "sample_count": 73,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": null,
+    "grade_2": null,
+    "grade_3": null
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": false,
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "Not reported"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "Not reported",
+  "normal_control_tissue": {
+    "included": true,
+    "type": "matched peripheral blood",
+    "count": 19
+  },
+  "sex_distribution": "Not reported",
+  "age_distribution": "Not reported",
+  "has_outcome_data": "Not reported",
+  "paired_multimodal": {
+    "is_paired": true,
+    "related_datasets": [
+      "egas00001000859-collord-anaplastic-panel",
+      "egas00001001873-collord-anaplastic-rnaseq"
+    ]
+  },
+  "access_type": "controlled",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": "Not reported",
+  "processed_data_available": "Not reported",
+  "processed_data_format": "Not reported",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not reported",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High",
+    "publications": "Medium"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "NEW RECORD (2026-07-11). Live EGA record: EGAS00001001155 ('Anaplastic_Meningioma_V3__cancer_gene_panel'), pubmed_ids=null, description 'Investigation into causal genes underlying anaplastic meningioma'. One dataset, EGAD00001001430 ('Anaplastic Meningioma V3 cancer gene panel'), num_samples=73 live-confirmed (54 phenotype='Brain'/tumor, 19 phenotype='Blood'/normal), mapping to 42 unique patients via the Sanger 'PD#####[a-z]' subject_id root-number convention. Title explicitly names this a 'V3 cancer gene panel', a likely later/revised iteration of the same Sanger anaplastic-meningioma targeted-sequencing initiative as EGAS00001000859 (this batch's other, differently-sized panel dataset: 500 genes, 22 patients); the two studies use different apparent panel sizes (this one is unlabeled for gene count, the sibling study explicitly says 500 genes) and were sequenced on different Illumina platforms (HiSeq 2000 here vs. HiSeq X Ten in the sibling), suggesting they are genuinely separate sequencing batches/panel versions of an evolving project rather than duplicate registrations of the same data, hence kept as a separate record and cross-linked via related_accessions/paired_multimodal rather than merged. No PMID is attached in the live EGA record; the same integrated Collord et al. 2018 Scientific Reports paper (PMID 30202034) identified for the sibling anaplastic-meningioma studies in this batch is used here on the basis of matching institution, PD-ID sample-naming convention, and subject matter (anaplastic meningioma cancer-gene panel sequencing at the Wellcome Sanger Institute), but the publication's own abstract describes a validation cohort of only 31 primary tumors by a 366-gene panel, which does not numerically match this dataset's 42 patients / 73 samples; flagged as an unresolved cohort-size discrepancy between the deposited raw dataset and the smaller cohort actually reported in the paper (see the sibling EGAS00001000859 record for the fuller discussion of this discrepancy across all three related EGA registrations). publications confidence marked Medium as a result. Only public EGA study/dataset-level metadata was used; the controlled-access sequencing data itself was never accessed, per docs/scope.md. STRATIFIED RE-VERIFICATION (2026-07-16): re-fetched the live EGA study record directly. Found the top-level `title` field had a transcription slip (single underscore, \"Anaplastic_Meningioma_V3_cancer_gene_panel\") that didn't match the live source's actual double underscore -- this note itself had already correctly quoted the double-underscore form back in the original 2026-07-11 extraction, so only the `title` field itself needed correcting, not the reasoning. All other fields (description, sample/patient counts, EGAD accession) re-confirmed unchanged.",
+  "source_urls": [
+    "https://ega-archive.org/studies/EGAS00001001155",
+    "https://ega-archive.org/datasets/EGAD00001001430",
+    "https://pubmed.ncbi.nlm.nih.gov/30202034/",
+    "https://doi.org/10.1038/s41598-018-31659-0"
+  ],
+  "tags": {
+    "grade_comparable": false,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": true,
+    "large_cohort": false,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": false,
+    "has_outcome_data": false,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

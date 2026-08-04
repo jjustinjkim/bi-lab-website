@@ -1,0 +1,121 @@
+{
+  "id": "gse-136661-bulk-rnaseq",
+  "title": "Molecular profiling predicts meningioma recurrence and reveals loss of DREAM complex repression in aggressive tumors",
+  "accessions": [
+    "GSE136661"
+  ],
+  "related_accessions": [],
+  "source_repositories": [
+    "GEO",
+    "SRA"
+  ],
+  "publications": [
+    {
+      "title": "Molecular profiling predicts meningioma recurrence and reveals loss of DREAM complex repression in aggressive tumors.",
+      "authors": [
+        "Patel AJ",
+        "Wan YW",
+        "Al-Ouran R",
+        "Revelli JP",
+        "Cardenas MF",
+        "Oneissi M"
+      ],
+      "venue": "Proceedings of the National Academy of Sciences of the United States of America",
+      "year": 2019,
+      "doi": "10.1073/pnas.1912858116",
+      "pmid": "31591222",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Ying-Wooi Wan, Huda Y. Zoghbi, Tiemo J. Klisch",
+  "institution": "Baylor College of Medicine",
+  "date_deposited": "2019-08-29",
+  "date_updated": "2021-11-27",
+  "publication_status": "normal",
+  "last_verified_date": "2026-08-04",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-10",
+  "verification_tier": 1,
+  "found_via": [
+    "keyword_api",
+    "citation_chain"
+  ],
+  "modality": [
+    "bulk_rna_seq"
+  ],
+  "platform": "Illumina HiSeq 4000 (GPL20301)",
+  "reference_genome": "Not reported",
+  "pipeline": "Not reported",
+  "patient_count": 140,
+  "sample_count": 160,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": 121,
+    "grade_2": 32,
+    "grade_3": 7
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": true,
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "primary",
+    "recurrent"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "Not reported",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "93 female, 52 male, 15 not determined (n=160, from GSM 'gender' field)",
+  "age_distribution": "n=160, range 18-81, mean 58.9 (from GSM 'age' field)",
+  "has_outcome_data": true,
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": []
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": "Not reported",
+  "processed_data_available": true,
+  "processed_data_format": "GSE136661_RAW.tar",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High",
+    "publications": "High",
+    "patient_count": "High",
+    "molecular_subtype_annotated": "High",
+    "has_outcome_data": "High",
+    "treatment_timepoint_status": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "Series-level GEO metadata verified directly against the live source. PER-SAMPLE DATA (verified 2026-07-12 re-verification audit against family.soft, 160/160 samples): grade_breakdown tallied from per-sample 'pathology' field (121 WHO I, 32 WHO II, 7 WHO III = 160); sex_distribution from 'gender' field (93 Female, 52 Male, 15 not determined); age_distribution from 'age' field (range 18-81, mean 58.9); cohort field splits Discovery 97 / Validation 48 / Recurrence 15, matching Series_overall_design. tags.grade_comparable corrected from false to true (2026-07-12) to reflect the explicit three-grade breakdown, consistent with the sibling records GSE147673 and GSE16583. Remaining per-sample fields (anatomic location, brain invasion, treatment timepoint) are not present in the GSM characteristics. Publication metadata (PMID 31591222) re-verified against PubMed esummary/efetch. DEEP-AUDIT FIX 2026-07-14: re-downloaded the live family.soft file fresh (ftp.ncbi.nlm.nih.gov/geo/series/GSE136nnn/GSE136661/soft/GSE136661_family.soft.gz) and re-tallied all 160 GSM records programmatically (grade 121/32/7, gender 93F/52M/15-not-determined, cohort Discovery97/Validation48/Recurrence15, age range 18-81 mean 58.875 -- all re-confirmed exactly matching the existing record, no change). Separately fetched the live PMC full text of the linked publication (PMC6815170, PMID 31591222, explicitly citing 'accession no. GSE136661' and confirming these are the same 160 samples), which surfaced three genuine errors in fields not visible in the GEO characteristics alone. (1) patient_count was 'Not reported' but the paper states directly: 'We analyzed 160 meningioma samples from 140 patients' (also: discovery cohort 97 tumors/95 patients, validation 48 tumors/47 patients, plus tumor tissue from patients with resected recurrences) -- corrected to 140. (2) molecular_subtype_annotated (field and tag) was 'Not reported'/false, but the paper defines and applies a named molecular classification system per sample: 'Unsupervised clustering analysis identified 3 molecular types (A, B, and C) that reliably predicted recurrence,' with per-sample type assignments given in the paper's Dataset S1 (patient characteristics/pathology table) -- Type A is exclusively WHO grade I with TRAF7/KLF4/AKT1 mutations, Type B is 79% grade I with NF2 mutations/chr22q loss, Type C is the most aggressive (56% grade I/44% grade II, DREAM-complex dysfunction) -- corrected to true. (3) has_outcome_data (field and tag) was 'Not reported'/false, but the paper reports explicit recurrence-free-survival/follow-up data for the cohort: 'The follow-up period ranged from 0 to 91 mo (median 28 mo). Twenty-four tumors (17%) had a local recurrence. The recurrence rate for WHO I grade tumors was 11%, for grade II 42%, and for grade III 83%,' with per-sample recurrence status and RFS times given in Dataset S1 -- corrected to true. (4) treatment_timepoint_status was ['Not reported'] but the GEO series design itself explicitly separates a 15-sample 'Recurrence set' from the 145 Discovery+Validation samples, and the paper independently confirms these 15 are genuine recurrent-tumor specimens (from patients with 'at least one resected recurrence with tissue available') as opposed to the Discovery/Validation samples drawn from patients' initial operations -- corrected to ['primary','recurrent']. tags.recurrence_annotated was left false: reconsidered, but the GEO-deposited 'cohort' field (Discovery/Validation/Recurrence) is a study-design partition rather than an unambiguous, independently-published recurrent-vs-primary sample count matching Dataset S1's finer-grained per-sample recurrence status field (which the record's authors did not have direct access to, since Dataset S1 itself could not be downloaded live this session -- PMC/PNAS supplementary-file endpoints require a browser proof-of-work handshake that curl cannot complete), so this tag is intentionally left as-is pending a session that can retrieve Dataset S1 directly; flagged for follow-up rather than flipped on secondary-source inference alone. brain_invasion, anatomic_location_breakdown left unchanged ('Not reported'/false, re-confirmed correct: not present in GEO characteristics, and full-text search found brain invasion was collected as a clinical variable ('presence of brain invasion') but never reported with per-sample counts in the main text or tables). RETRIEVAL RE-ATTEMPTED (2026-07-16, part of an audit_tags.py review): tried three separate routes to reach Dataset S1 this session, all blocked. (1) PMC's own article page (pmc.ncbi.nlm.nih.gov/articles/PMC6815170) does list direct binary links to all 4 supplementary files (pnas.1912858116.sd01-sd04.xlsx), an improvement over the 2026-07-14 session's finding of no PMC full text at all -- but fetching any of them now returns PMC's own client-side proof-of-work challenge page (cloudpmc-viewer-pow, requires executing JS to solve a hash puzzle and set a cookie), not the file itself; curl and this project's tooling cannot solve it. (2) The original PNAS DCSupplemental lookup page remains behind the same-style challenge as before. (3) New this session: tried Europe PMC's supplementaryFiles REST endpoint (ebi.ac.uk/europepmc/webservices/rest/PMC6815170/supplementaryFiles) as a possible unblocked mirror -- it returned errCode 0 with 'Article with id PMC6815170 is not open access one', i.e. Europe PMC doesn't carry this article as OA either, despite NCBI PMC hosting a copy. Dataset S1 is confirmed still unreachable by any route available to this tooling; tags.recurrence_annotated correctly remains false, flagged for a session with real browser/JS capability rather than another curl-based attempt. CORRESPONDING-AUTHOR CORRECTION (2026-08-04): field previously read 'Akash J Patel, Ying W Wan' -- Patel (first author) is not a designated corresponding author. Re-verified against the paper's own PMC full text (PMID 31591222, PMCID PMC6815170): the author-notes/corresp block states 'To whom correspondence may be addressed. Email: yingwoow@bcm.edu, hzoghbi@bcm.edu, or klisch@bcm.edu' -- three corresponding authors (Wan, Zoghbi, Klisch), full names resolved from the same article's own author list. Corrected accordingly.",
+  "source_urls": [
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE136661",
+    "https://pubmed.ncbi.nlm.nih.gov/31591222/"
+  ],
+  "tags": {
+    "grade_comparable": true,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": false,
+    "large_cohort": true,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": true,
+    "has_outcome_data": true,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

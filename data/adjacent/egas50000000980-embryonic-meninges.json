@@ -1,0 +1,104 @@
+{
+  "id": "egas50000000980-embryonic-meninges",
+  "title": "Single cell transcriptome sequencing of the developing human embryonic meninges",
+  "accessions": [
+    "EGAS50000000980",
+    "EGAD50000001434"
+  ],
+  "related_accessions": [
+    "7d66d871-091f-4602-9f42-85f86d2853e0"
+  ],
+  "source_repositories": [
+    "EGA",
+    "CELLxGENE"
+  ],
+  "publications": [],
+  "corresponding_author": "Sten Linnarsson (Data Access Committee) / David R Raleigh, Roger A. Barker, Oscar Persson, Erik Sundstrom (data producers/collaborators)",
+  "institution": "Karolinska Institutet",
+  "date_deposited": "Not reported",
+  "date_updated": "2025-06-25",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-13",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-11",
+  "verification_tier": 2,
+  "found_via": [
+    "keyword_api"
+  ],
+  "modality": [
+    "scrna_seq"
+  ],
+  "platform": "Illumina NovaSeq 6000, 10x Genomics Chromium (S4 flow cell, target 100,000 reads/cell)",
+  "reference_genome": "GRCh38.p12, ENSEMBL release 93 gene annotations (10x Genomics GRCh38-3.0.0 reference package)",
+  "pipeline": "STARSolo 2.7.10a",
+  "patient_count": "Not applicable (13 human embryonic specimens, not patients)",
+  "sample_count": 24,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": null,
+    "grade_2": null,
+    "grade_3": null
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": false,
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not applicable",
+    "determination_method": "Not applicable"
+  },
+  "treatment_timepoint_status": [
+    "Not applicable"
+  ],
+  "anatomic_location_breakdown": "Whole dissected meninges for most embryos (20 of 24 samples, per EGA sample-level 'Meninges of embryo PCW X.X' descriptions); one embryo (subject_id BRC2301, 4 samples) had meninges subdivided by region: forebrain dorsal, forebrain ventral, midbrain/hindbrain dorsal, and midbrain/hindbrain ventral. Note this is fetal developmental anatomy, not the adult tumor-location vocabulary (convexity/skull_base/etc.) in docs/controlled_vocabulary.md, which does not apply to this specimen type.",
+  "tissue_preservation": "Not reported",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "Not reported (EGA sample-level metadata lists biological_sex as 'unknown' for all 24 samples)",
+  "age_distribution": "13 human embryos, per-sample post-conceptional week (PCW) values ranging 5.5-13.5 (per EGA sample-level descriptions); the dataset-level description states the range as PCW 5.0-13.0, a minor discrepancy noted here rather than resolved by estimation.",
+  "has_outcome_data": false,
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": []
+  },
+  "access_type": "controlled",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": false,
+  "processed_data_available": true,
+  "processed_data_format": "STARSolo-processed BAM files, 24 total (one per sample), per the EGAD50000001434 dataset description",
+  "license": "Not reported (governed by a Data Access Agreement per policy EGAP50000000516, not a conventional data license)",
+  "controlled_access_approval_timeline": "Requires Data Access Committee approval (DAC EGAC50000000576, chaired by Sten Linnarsson, Karolinska Institutet) via a signed Data Access Agreement (policy EGAP50000000516); specific approval turnaround time is not stated in the public metadata.",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High",
+    "age_distribution": "Medium",
+    "publications": "Low"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "NORMAL/REFERENCE TISSUE, LOGGED PER docs/scope.md's explicit rule that normal/reference tissue atlases (here, normal developing human meninges) belong in /data/adjacent/, not core, even though this is patient-adjacent basic-biology work directly motivated by meningioma cell-of-origin research (per the EGA study description: 'this dataset should help discover cells of origin for meningiomas'). CONTROLLED-ACCESS COMPLIANCE: verified only via the public EGA Metadata API (metadata.ega-archive.org/studies/EGAS50000000980, /datasets/EGAD50000001434, /datasets/EGAD50000001434/samples, /datasets/EGAD50000001434/runs, /policies/EGAP50000000516); the controlled sequencing data itself was never accessed, per docs/scope.md's instruction for controlled-access datasets. Study-level EGA metadata lists pubmed_ids as an empty array (no linked publication yet); a targeted PubMed search for a matching Linnarsson-lab or Raleigh-lab embryonic-meninges single-cell atlas paper did not surface a confirmed match as of this extraction, so publications is left empty rather than guessed; confidence_level.publications is Low to flag that this should be re-checked as new papers are indexed. Sample count (24) and unique-embryo count (13, via distinct subject_id values in the /samples endpoint) both independently corroborate the dataset title's own claim ('24 samples from 13 individual human embryonic meninges'). CONTROLLED-VOCABULARY GAP: who_edition has no enum value appropriate for normal/non-neoplastic tissue (only '2016', '2021', 'Not applicable (cell line)', or 'Not reported' exist in docs/controlled_vocabulary.md); 'Not reported' was used here as the closest available literal value rather than the cell-line-flavored 'Not applicable (cell line)', since this is neither a tumor nor a cell line; recommend docs/controlled_vocabulary.md add a 'Not applicable (normal tissue)' or similar value for future normal-tissue adjacent records. corresponding_author/institution derived from the EGA Data Access Agreement (policy EGAP50000000516), which names Sten Linnarsson as the Data Access Committee/signatory (Karolinska Institutet) and lists Roger A. Barker, Oscar Persson, David R. Raleigh, and Erik Sundstrom as other data producers/collaborators; no single 'corresponding author' is designated in the public metadata the way a GEO record designates one, so both are given here for transparency. date_deposited left 'Not reported' since the EGA API exposes only a released_date (2025-06-25, used for date_updated), not a distinct submission date. UPDATE 2026-07-13: the monthly refresh's new pan_atlas_check (cellxgene) surfaced collection 7d66d871-091f-4602-9f42-85f86d2853e0 ('Single cell RNA sequencing of the human embryonic meninges at 5-13 weeks post conception') as an apparent new candidate; verified directly against the live cellxgene Curation API and confirmed this is the same 13-embryo cohort as this record, not a separate dataset -- same institution (Karolinska), same corresponding contact (Sten Linnarsson), same specimen count and post-conceptional-week range, same research aim (meningioma cell-of-origin). Rather than write a duplicate record, cellxgene's collection id was added to related_accessions and source_urls here. This also resolves part of the earlier raw/processed-data gap: cellxgene hosts a public, open-access processed (h5ad) version of this cohort (broken out by cell type: Neural, Vascular_perivascular, Immune, Fibroblasts, Erythropoietic, Vascular_endothelial, Epithelial, Neural_crest, plus a combined All_cells object of 156,726 cells), even though the raw sequencing data remains controlled-access via EGA -- access_type/raw_data_available above still describe the EGA-hosted raw data specifically. No DOI or linked publication is exposed by the cellxgene collection either, consistent with the 'no publication yet' finding already recorded above.",
+  "source_urls": [
+    "https://ega-archive.org/studies/EGAS50000000980",
+    "https://ega-archive.org/datasets/EGAD50000001434",
+    "https://ega-archive.org/dacs/EGAC50000000576",
+    "https://cellxgene.cziscience.com/collections/7d66d871-091f-4602-9f42-85f86d2853e0"
+  ],
+  "tags": {
+    "grade_comparable": false,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": true,
+    "spatially_resolved": false,
+    "multi_modal_matched": false,
+    "large_cohort": true,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": false,
+    "has_outcome_data": false,
+    "peer_reviewed": false
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

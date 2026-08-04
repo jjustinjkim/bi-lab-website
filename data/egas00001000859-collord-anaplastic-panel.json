@@ -1,0 +1,158 @@
+{
+  "id": "egas00001000859-collord-anaplastic-panel",
+  "title": "Anaplastic_Meningioma_WGS_X10",
+  "accessions": [
+    "EGAS00001000859",
+    "EGAD00001001267"
+  ],
+  "related_accessions": [
+    "EGAS00001001155",
+    "EGAD00001001430",
+    "EGAS00001001873",
+    "EGAD00001003255"
+  ],
+  "source_repositories": [
+    "EGA"
+  ],
+  "publications": [
+    {
+      "title": "An integrated genomic analysis of anaplastic meningioma identifies prognostic molecular signatures",
+      "authors": [
+        "Collord G",
+        "Tarpey P",
+        "Kurbatova N",
+        "Martincorena I",
+        "Moran S",
+        "Castro M",
+        "Nagy T",
+        "Bignell G",
+        "Maura F",
+        "Young MD",
+        "Berna J",
+        "Tubio JMC",
+        "McMurran CE",
+        "Young AMH",
+        "Sanders M",
+        "Noorani I",
+        "Price SJ",
+        "Watts C",
+        "Leipnitz E",
+        "Kirsch M",
+        "Schackert G",
+        "Pearson D",
+        "Devadass A",
+        "Ram Z",
+        "Collins VP",
+        "Allinson K",
+        "Jenkinson MD",
+        "Zakaria R",
+        "Syed K",
+        "Hanemann CO",
+        "Dunn J",
+        "McDermott MW",
+        "Kirollos RW",
+        "Vassiliou GS",
+        "Esteller M",
+        "Behjati S",
+        "Brazma A",
+        "Santarius T",
+        "McDermott U"
+      ],
+      "venue": "Scientific Reports",
+      "year": 2018,
+      "doi": "10.1038/s41598-018-31659-0",
+      "pmid": "30202034",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Thomas Santarius / Ultan McDermott",
+  "institution": "Wellcome Sanger Institute / Cambridge University Hospitals NHS Foundation Trust",
+  "date_deposited": "Not reported",
+  "date_updated": "Not reported",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-11",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-11",
+  "verification_tier": 2,
+  "found_via": [
+    "keyword_api"
+  ],
+  "modality": [
+    "targeted_panel_seq"
+  ],
+  "platform": "Illumina HiSeq X Ten",
+  "reference_genome": "Not reported",
+  "pipeline": "Not reported",
+  "patient_count": 22,
+  "sample_count": 60,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": null,
+    "grade_2": null,
+    "grade_3": null
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": false,
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "Not reported"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "Not reported",
+  "normal_control_tissue": {
+    "included": true,
+    "type": "matched peripheral blood",
+    "count": 22
+  },
+  "sex_distribution": "Not reported",
+  "age_distribution": "Not reported",
+  "has_outcome_data": "Not reported",
+  "paired_multimodal": {
+    "is_paired": true,
+    "related_datasets": [
+      "egas00001001155-collord-anaplastic-panel-v3",
+      "egas00001001873-collord-anaplastic-rnaseq"
+    ]
+  },
+  "access_type": "controlled",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": "Not reported",
+  "processed_data_available": "Not reported",
+  "processed_data_format": "Not reported",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not reported",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "Medium",
+    "publications": "Medium"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "DEEP-AUDIT UPDATE (2026-07-14): publications[0].authors was truncated to exactly 6 names; expanded to the full 41-author list per Europe PMC authorString for PMID 30202034 (Collord G ... Santarius T, McDermott U). corresponding_author re-verified against the paper's own correspondence footnote (Europe PMC authorAffiliationDetailsList / PMC6131140 full text): the <corresp> marks two corresponding authors -- Thomas Santarius (Cambridge University Hospitals NHS Foundation Trust, ts381@cam.ac.uk) and Ultan McDermott (Wellcome Sanger Institute, um1@sanger.ac.uk) -- confirming the existing 'Thomas Santarius / Ultan McDermott' value was already correct; no change made to that field. Full text (PMC6131140) also checked for undisclosed per-sample outcome/subtype data per this audit's brief: found a Kaplan-Meier overall-survival curve for '25 anaplastic meningioma patients in C1 and C2 subgroups', but the text explicitly ties C1/C2 to 'gene-expression defined subgroups' (RNA-seq clustering), i.e. the companion RNA-seq dataset (egas00001001873-collord-anaplastic-rnaseq), not this targeted-panel/WGS-X10 accession's own 22 patients/60 samples; also the 25-patient figure does not match this record's own 22-patient count. Left has_outcome_data and molecular_subtype_annotated unchanged for this record accordingly (the outcome/subtype evidence found belongs to a sibling EGA accession outside this audit's scope, not to EGAS00001000859 itself); flagging here only for a maintainer's awareness, not applied as a fix to this file. NEW RECORD (2026-07-11). RESOLVED MODALITY AMBIGUITY: the study title says 'WGS_X10' (suggesting whole-genome sequencing on a HiSeq X Ten instrument) but both the live EGAS00001000859 study description and its one meningioma-relevant dataset (EGAD00001001267, 'Anaplastic Meningioma WGS-X10') explicitly state 'We plan to sequence a set of 500 known cancer genes in 50 anaplastic meningioma and corresponding peripheral blood DNA samples' -- i.e. this is a targeted 500-gene cancer panel run on a HiSeq X Ten instrument, not whole-genome sequencing; 'X Ten' in the title refers to the sequencer model, not the assay. Modality is therefore set to targeted_panel_seq, not wgs, based on the live description text (dataset_types itself is null, so confidence is marked Medium rather than High). SAMPLE COUNT: live /samples endpoint for EGAD00001001267 shows num_samples=60 (38 phenotype='Brain'/tumor, 22 phenotype='Blood'/normal), mapping to 22 unique patients via the Sanger 'PD#####[a-z]' subject_id convention (root PD number = patient, suffix letter = individual sample/region), not the '50 anaplastic meningioma' originally planned per the study description (a protocol-stage estimate that appears not to match what was ultimately sequenced/deposited). MULTIPLE DATASETS UNDER ONE STUDY, TWO OF WHICH ARE OUT OF SCOPE: EGAS00001000859 actually has 3 registered datasets, confirmed live. Only EGAD00001001267 is meningioma-specific and is the basis of this record. The other two -- EGAD00001003772 and EGAD00001004203, both titled variants of 'Characterization of mutational processes/signatures in human cancer cell lines reveals episodic APOBEC mutagenesis' (163 and 192 samples respectively) -- are a pan-cancer CELL LINE mutational-signatures resource with no meningioma-specific content; they appear to share this EGAS accession as a matter of Sanger institutional/administrative grouping rather than being part of the meningioma project, and are explicitly excluded from this record (not meningioma-specific, and cell-line data would be adjacent/out-of-scope even if it were) rather than logged in related_accessions. PUBLICATION MATCH AND COHORT-SIZE DISCREPANCY: no PMID is attached in the live EGA record for any of the three anaplastic-meningioma-titled EGAS accessions in this batch (this one, EGAS00001001155, EGAS00001001873); a web search located a single integrated Wellcome Sanger Institute/Cambridge paper (PMID 30202034, Collord et al. 2018, Scientific Reports) whose PD-ID sample-naming convention, institutional authorship (Wellcome Sanger Institute, Cambridge University Hospitals), and combined WGS+targeted-panel+RNA-seq+methylation design for anaplastic meningioma appear to match all three EGAS accessions in this batch (this one, EGAS00001001155, EGAS00001001873) as sister sub-studies of the same overall project. However, the paper's own abstract/reporting describes a discovery cohort of only 18 primary tumors by WGS and a validation cohort of 31 primary tumors by a 366-gene panel, whereas the live EGA registrations in this batch show 22 patients (this dataset, 500-gene panel) + 42 patients (EGAS00001001155, 'V3' panel) + 29 patients (EGAS00001001873, RNA-seq) -- none of which numerically match the published 18/31 breakdown. This is flagged as an unresolved discrepancy between the deposited raw-sequencing patient counts (likely representing the full sequencing/recruitment funnel across panel iterations) and the smaller, QC-filtered analytic cohort actually reported in the paper's results; the publication link itself is treated as Medium confidence (found via web/citation matching rather than a direct pubmed_ids field in the EGA record) and should be independently confirmed by a maintainer. Only public EGA study/dataset-level metadata was used; the controlled-access sequencing data itself was never accessed, per docs/scope.md.",
+  "source_urls": [
+    "https://ega-archive.org/studies/EGAS00001000859",
+    "https://ega-archive.org/datasets/EGAD00001001267",
+    "https://pubmed.ncbi.nlm.nih.gov/30202034/",
+    "https://doi.org/10.1038/s41598-018-31659-0"
+  ],
+  "tags": {
+    "grade_comparable": false,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": true,
+    "large_cohort": false,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": false,
+    "has_outcome_data": false,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

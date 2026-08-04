@@ -1,0 +1,120 @@
+{
+  "id": "pxd015979-proteomics",
+  "title": "Proteomics pinpoint alterations in grade I meningiomas of male versus female patients",
+  "accessions": [
+    "PXD015979"
+  ],
+  "related_accessions": [],
+  "source_repositories": [
+    "PRIDE"
+  ],
+  "publications": [
+    {
+      "title": "Proteomics pinpoints alterations in grade I meningiomas of male versus female patients.",
+      "authors": [
+        "Silva JM",
+        "Wippel HH",
+        "Santos MDM",
+        "Verissimo DCA",
+        "Santos RM",
+        "Nogueira FCS",
+        "Passos GAR",
+        "Sprengel SL",
+        "Borba LAB",
+        "Carvalho PC",
+        "Fischer JSDG"
+      ],
+      "venue": "Scientific reports",
+      "year": 2020,
+      "doi": "10.1038/s41598-020-67113-3",
+      "pmid": "32587372",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Juliana de S da G Fischer / Paulo Costa Carvalho",
+  "institution": "Instituto Carlos Chagas / FIOCRUZ",
+  "date_deposited": "2019-10-23",
+  "date_updated": "2020-06-30",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-11",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-10",
+  "verification_tier": 1,
+  "found_via": [
+    "keyword_api",
+    "citation_chain"
+  ],
+  "modality": [
+    "proteomics_bulk_ms"
+  ],
+  "platform": "Q Exactive",
+  "reference_genome": "Not applicable",
+  "pipeline": "PatternLab for Proteomics (PL 4.1.1.17)",
+  "patient_count": 12,
+  "sample_count": 12,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": 12,
+    "grade_2": 0,
+    "grade_3": 0
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": false,
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "Not reported"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "Not reported",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "6 male, 6 female (n=12, per project description)",
+  "age_distribution": "Not reported",
+  "has_outcome_data": false,
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": []
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": true,
+  "processed_data_available": true,
+  "processed_data_format": "PatternLab .sqt search-result files (per-sample)",
+  "license": "Creative Commons Public Domain (CC0)",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High",
+    "publications": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "DEEP-AUDIT CORRECTION (2026-07-14): publications[0].authors was truncated to exactly 6 names, which -- notably -- excluded BOTH of this record's own already-verified corresponding authors (Carvalho PC and Fischer JSDG appeared nowhere in the stored 6-name list despite being named in corresponding_author). Expanded to the full 11-author Europe PMC authorString for PMID 32587372 (Silva JM ... Carvalho PC, Fischer JSDG). corresponding_author re-confirmed unchanged against the same evidence already cited in the 2026-07-11 note (Europe PMC affiliation emails: Carvalho PC paulo@pcarvalho.com, Fischer JSDG julifr@gmail.com). Re-verified 2026-07-10 directly against the live PRIDE record and project description: sample_count/patient_count corrected from 'Not reported' to 12, grade_breakdown filled in (all 12 are grade I per the title/description), sex_distribution filled in (6 male, 6 female per 'twelve tissue samples from male (n=6) and female (n=6) grade I meningiomas'), pipeline/platform/license/date_deposited/date_updated filled in from the live PRIDE record. Per-sample age/other clinical fields not yet extracted. FACT-CHECK CORRECTION (2026-07-11): corresponding_author was wrong -- 'Juliana M Silva' (the first author, PubMed initials JM) was mistakenly used instead of the actual corresponding last author. Re-verified via PubMed efetch XML for PMID 32587372: only two authors carry an email address in their affiliation footnote (the standard PubMed convention marking corresponding authors) -- Carvalho PC (paulo@pcarvalho.com, already correct in this record) and Fischer JSDG, full name 'Juliana de S da G Fischer' (julifr@gmail.com), NOT Silva JM (no email listed, not a corresponding author). This also matches the PRIDE record's own submitter name, 'Juliana Fischer' (email julifr@gmail.com), independently corroborating that Fischer, not Silva, is the correct corresponding co-author. Corrected accordingly.",
+  "source_urls": [
+    "https://www.ebi.ac.uk/pride/archive/projects/PXD015979",
+    "https://pubmed.ncbi.nlm.nih.gov/32587372/"
+  ],
+  "tags": {
+    "grade_comparable": false,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": false,
+    "large_cohort": false,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": false,
+    "has_outcome_data": false,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

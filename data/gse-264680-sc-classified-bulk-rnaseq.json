@@ -1,0 +1,137 @@
+{
+  "id": "gse-264680-sc-classified-bulk-rnaseq",
+  "title": "Leveraging Single-Cell Sequencing to Classify and Characterize Tumor Subgroups in Bulk RNA-Sequencing Data",
+  "accessions": [
+    "GSE264680"
+  ],
+  "related_accessions": [
+    "PRJNA1103795"
+  ],
+  "source_repositories": [
+    "GEO"
+  ],
+  "publications": [
+    {
+      "title": "Leveraging single-cell sequencing to classify and characterize tumor subgroups in bulk RNA-sequencing data.",
+      "authors": [
+        "Shetty A",
+        "Wang S",
+        "Khan AB",
+        "English CW",
+        "Nouri SH",
+        "Magill ST"
+      ],
+      "venue": "Journal of Neuro-Oncology",
+      "year": 2024,
+      "doi": "10.1007/s11060-024-04710-6",
+      "pmid": "38811523",
+      "preprint_id": "10.1101/2024.03.02.583114"
+    },
+    {
+      "title": "Correction to: Leveraging single-cell sequencing to classify and characterize tumor subgroups in bulk RNA-sequencing data",
+      "authors": [
+        "Shetty A",
+        "Wang S",
+        "Khan AB",
+        "English CW",
+        "Nouri SH",
+        "Magill ST"
+      ],
+      "venue": "Journal of Neuro-Oncology",
+      "year": 2024,
+      "doi": "10.1007/s11060-024-04731-1",
+      "pmid": "38834749",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Akdes Serin Harmanci, Akash Patel",
+  "institution": "Baylor College of Medicine",
+  "date_deposited": "2024-04-23",
+  "date_updated": "2024-04-26",
+  "publication_status": "corrected",
+  "last_verified_date": "2026-07-12",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-10",
+  "verification_tier": 1,
+  "found_via": [
+    "keyword_api",
+    "citation_chain"
+  ],
+  "modality": [
+    "bulk_rna_seq"
+  ],
+  "platform": "Illumina HiSeq 4000 (GPL20301)",
+  "reference_genome": "Not reported",
+  "pipeline": "Not reported",
+  "patient_count": "Not reported (167 samples; not distinguished from patient count in series metadata)",
+  "sample_count": 167,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": null,
+    "grade_2": null,
+    "grade_3": null
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": true,
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "Not reported"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "Not reported",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "Not reported",
+  "age_distribution": "Not reported",
+  "has_outcome_data": "Not reported",
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": []
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": "Not reported",
+  "processed_data_available": true,
+  "processed_data_format": "Count matrix (counts.txt.gz)",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High",
+    "publications": "High",
+    "publication_status": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "GEO series record itself lists no pubmed_id, the linked publication, its correction, and the preprint were all found independently via Europe PMC citation-chain search on the exact series title, then cross-confirmed. FACT-CHECK (2026-07-10): re-verified via PubMed esummary and Europe PMC; PMID 38811523 remains an active 'Erratum in' relationship with correction PMID 38834749, no escalation to retraction or expression of concern. Full text of the correction notice (fetched from the publisher) confirms it is authorship/affiliation-only: two corresponding authors (Arif O. Harmanci and Akash J. Patel) were not marked as corresponding and their emails were omitted in the original publication; it does not affect the deposited data or reported results. Full author list now pulled (first 6 of 11 total, per corpus convention) and modality corrected: all 167 deposited samples are annotated library_strategy=RNA-Seq (bulk); no single-cell data is actually deposited under this accession (the 'single-cell' angle is a classifier trained on external/reference data, not part of this GEO series), so 'scrna_seq' was removed from modality. FACT-CHECK (2026-07-11): corresponding_author corrected from 'Akdes Serin Harmanci / Arif O. Harmanci / Akash J. Patel' to 'Akdes,,Serin Harmanci, Akash,,Patel'. Re-verified live GSE264680 record directly: its Series_contributor list is exactly two names, 'Akdes,,Serin Harmanci' and 'Akash,,Patel'. The full published paper (checked via PubMed abstract with author affiliation footnotes) does show three corresponding authors with listed emails -- Harmanci AS, Patel AJ, and Harmanci AO (Arif O. Harmanci, arif.o.harmanci@uth.tmc.edu) -- but Arif O. Harmanci is not a Series_contributor on this specific GEO accession at all. Per this corpus's established convention (documented in gse-287322-bulk-rnaseq.json's prior reversal note), corresponding_author is sourced from the accession's own live GEO Series_contributor field, not the paper's full byline, so Arif Harmanci was dropped and the two remaining names reformatted to match GEO's literal 'Last,MI,First'-style string. FACT-CHECK (2026-07-12): has_outcome_data corrected from false to 'Not reported'. Re-read the PubMed abstract (PMID 38811523) and the deposited GSM characteristics (all 167 samples carry only a 'class: A/B/C' molecular-classification label) in full: neither affirmatively states that survival or outcome data is absent, they simply never address it. Per schema, boolean fields default to false only when the source affirmatively rules the condition out; since this study is a classification-algorithm paper that neither collects nor discusses outcome data, and no other record in this batch uses 'false' for this field under the same non-mention circumstance, corrected to 'Not reported' for consistency with this corpus's own convention.",
+  "source_urls": [
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE264680",
+    "https://pubmed.ncbi.nlm.nih.gov/38811523/",
+    "https://pubmed.ncbi.nlm.nih.gov/38834749/",
+    "https://doi.org/10.1101/2024.03.02.583114",
+    "https://www.ncbi.nlm.nih.gov/bioproject/PRJNA1103795"
+  ],
+  "tags": {
+    "grade_comparable": false,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": false,
+    "large_cohort": true,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": true,
+    "has_outcome_data": false,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

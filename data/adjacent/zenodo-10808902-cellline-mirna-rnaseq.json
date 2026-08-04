@@ -1,0 +1,94 @@
+{
+  "id": "zenodo-10808902-cellline-mirna-rnaseq",
+  "title": "RNA-sequencing of meningioma cell lines with miRNA constructs",
+  "accessions": [
+    "10.5281/zenodo.10808902"
+  ],
+  "related_accessions": [],
+  "source_repositories": [
+    "Zenodo"
+  ],
+  "publications": [],
+  "corresponding_author": "Szymon Baluszek / Mateusz Bujko",
+  "institution": "The Maria Sklodowska-Curie National Research Institute of Oncology",
+  "date_deposited": "2024-03-12",
+  "date_updated": "2024-03-12",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-13",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-13",
+  "verification_tier": 2,
+  "found_via": [
+    "keyword_api"
+  ],
+  "modality": [
+    "mirna_seq"
+  ],
+  "platform": "Not reported",
+  "reference_genome": "Not reported",
+  "pipeline": "Not reported",
+  "patient_count": "Not applicable (cell line)",
+  "sample_count": "Not reported",
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": null,
+    "grade_2": null,
+    "grade_3": null
+  },
+  "who_edition": "Not applicable (cell line)",
+  "molecular_subtype_annotated": false,
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not applicable",
+    "determination_method": "Not applicable"
+  },
+  "treatment_timepoint_status": [
+    "Not applicable"
+  ],
+  "anatomic_location_breakdown": "Not applicable (cell line)",
+  "tissue_preservation": "not_applicable",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "Not applicable",
+  "age_distribution": "Not applicable",
+  "has_outcome_data": false,
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": []
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": true,
+  "raw_data_available": false,
+  "processed_data_available": true,
+  "processed_data_format": "miRNA-seq count tables (counts_table_miRNAseq.tsv, miRNA_counts.csv)",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "modality": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "NEW RECORD (2026-07-13), surfaced by the monthly refresh's Zenodo keyword_api check, verified directly against the live Zenodo API (title and description confirmed to match exactly). Deposit contains only two count-table files (counts_table_miRNAseq.tsv, miRNA_counts.csv), no sample-level metadata, so sample_count is left 'Not reported' rather than guessed. modality is recorded as bulk_rna_seq with Medium confidence since the title says 'RNA-sequencing' but the actual files provided are miRNA count tables -- this could plausibly belong under mirna_seq instead; flagged for reclassification once more detail is available. The creators (Szymon Baluszek, Mateusz Bujko) independently match a corresponding author already surfaced by this inventory's author_search re-check on the same 2026-07-13 refresh (PMID 42196381, 'DNA Hypomethylation of MIR21 Drives Hsa-miR-21-5p Expression in High-Grade Meningiomas...'), a plausible companion dataset for that group's miRNA-21 research -- but the paper's own full text was checked directly and does not mention this specific Zenodo DOI anywhere, so the two are NOT linked here; publications left empty rather than assumed. access_blocked_metadata_incomplete is set true since the deposit itself lacks standard descriptive metadata, not because access is restricted. DEEP AUDIT 2026-07-14: resolved the reclassification flagged above by directly re-fetching the live Zenodo API record for 10.5281/zenodo.10808902 and reading its file listing again: the only two deposited files are counts_table_miRNAseq.tsv and miRNA_counts.csv, i.e. genuine microRNA count tables, not a whole-transcriptome/mRNA count matrix. This is exactly the failure pattern this project's methodology explicitly warns about (a modality/tag set from a suggestive title -- here, 'RNA-sequencing' in the deposit's own title -- rather than from opening the actual data files). modality corrected from ['bulk_rna_seq'] to ['mirna_seq'] (the controlled-vocabulary value for microRNA sequencing), confidence_level.modality raised from Medium to High now that the file contents themselves, not just the title, have been checked.",
+  "source_urls": [
+    "https://zenodo.org/records/10808902"
+  ],
+  "tags": {
+    "grade_comparable": false,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": false,
+    "large_cohort": false,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": false,
+    "has_outcome_data": false,
+    "peer_reviewed": false
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

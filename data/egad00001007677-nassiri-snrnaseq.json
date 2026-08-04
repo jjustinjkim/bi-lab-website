@@ -1,0 +1,129 @@
+{
+  "id": "egad00001007677-nassiri-snrnaseq",
+  "title": "Single-nucleus RNA-sequencing of meningiomas",
+  "accessions": [
+    "EGAS00001004982",
+    "EGAD00001007677"
+  ],
+  "related_accessions": [
+    "EGAD00001007494",
+    "EGAD00001007051",
+    "mng_utoronto_2021",
+    "GSE180061",
+    "GSE168726"
+  ],
+  "source_repositories": [
+    "EGA"
+  ],
+  "publications": [
+    {
+      "title": "A clinically applicable integrative molecular classification of meningiomas.",
+      "authors": [
+        "Nassiri F",
+        "Liu J",
+        "Patil V",
+        "Mamatjan Y",
+        "Wang JZ",
+        "Hugh-White R"
+      ],
+      "venue": "Nature",
+      "year": 2021,
+      "doi": "10.1038/s41586-021-03850-3",
+      "pmid": "34433969",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Gelareh Zadeh",
+  "institution": "Princess Margaret Cancer Center",
+  "date_deposited": "Not reported",
+  "date_updated": "Not reported",
+  "publication_status": "normal",
+  "last_verified_date": "2026-08-04",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-11",
+  "verification_tier": 1,
+  "found_via": [
+    "keyword_api",
+    "author_search"
+  ],
+  "modality": [
+    "snrna_seq"
+  ],
+  "platform": "Illumina NovaSeq 6000",
+  "reference_genome": "Not reported",
+  "pipeline": "Not reported",
+  "patient_count": "Not reported",
+  "sample_count": 10,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": null,
+    "grade_2": null,
+    "grade_3": null
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": true,
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "Not reported"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "Not reported",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "Not reported",
+  "age_distribution": "Not reported",
+  "has_outcome_data": "Not reported",
+  "paired_multimodal": {
+    "is_paired": true,
+    "related_datasets": [
+      "egad00001007494-nassiri-rnaseq",
+      "mng-utoronto-2021-genomic",
+      "gse-180061-methylation",
+      "msv000086901-nassiri-proteomics"
+    ]
+  },
+  "access_type": "controlled",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": "Not reported",
+  "processed_data_available": "Not reported",
+  "processed_data_format": "Not reported",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not reported",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High",
+    "publications": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "NEW RECORD (2026-07-11), found via an author/lab-based search (Nassiri F publication list), never previously found by keyword search since it is EGA-hosted (controlled access) rather than in GEO. This is single-nucleus RNA-seq data (10 samples) for the same Nassiri et al. 2021 Nature integrative-classification cohort already represented in this inventory via mng-utoronto-2021-genomic.json (cBioPortal: CNV/mutation/proteomics) and gse-180061-methylation.json (methylation). Prior to this session, no single-cell/single-nucleus modality existed anywhere in this inventory for this cohort. Verified directly via the EGA Metadata API: study EGAS00001004982 ('Integrative Molecular Classification of Meningiomas', exact title match to the published paper), dataset EGAD00001007677 ('Single-nucleus RNA-sequencing of meningiomas'), 10 samples, Illumina NovaSeq 6000, released 2001-01-01 placeholder date in the EGA record (not a real release date; treated as 'Not reported'). paired_multimodal.related_datasets links to the companion bulk RNA-seq record (egad00001007494-nassiri-rnaseq), the cBioPortal record, and the canonical methylation record; gse-180061-methylation.json's own paired_multimodal has been updated to reference back. Only public EGA study/dataset-level metadata was used; the controlled-access sequencing data itself was never accessed, per docs/scope.md's compliance guardrail. CROSS-LINK ADDED (2026-07-13): msv000086901-nassiri-proteomics.json (this paper's proteomics arm, MassIVE MSV000086901) added as a new record and cross-linked here. CORRESPONDING-AUTHOR CORRECTION (2026-08-04): field previously read 'Farshad Nassiri / Gelareh Zadeh'. Re-verified against the paper's own PMC full text (PMID 34433969, PMCID PMC11604310): the author-notes/corresp block explicitly states 'Correspondence should be addressed to: Gelareh Zadeh ... gelareh.zadeh@uhn.ca' and names no other corresponding author. Nassiri is a genuine co-author (in fact first author) but not the paper's designated corresponding author -- corrected to Zadeh alone.",
+  "source_urls": [
+    "https://ega-archive.org/studies/EGAS00001004982",
+    "https://ega-archive.org/datasets/EGAD00001007677",
+    "https://pubmed.ncbi.nlm.nih.gov/34433969/",
+    "https://doi.org/10.1038/s41586-021-03850-3"
+  ],
+  "tags": {
+    "grade_comparable": false,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": true,
+    "spatially_resolved": false,
+    "multi_modal_matched": true,
+    "large_cohort": false,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": true,
+    "has_outcome_data": false,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

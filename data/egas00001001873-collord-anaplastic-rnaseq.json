@@ -1,0 +1,169 @@
+{
+  "id": "egas00001001873-collord-anaplastic-rnaseq",
+  "title": "Transcriptome_analysis_of_anaplastic_meningiomas",
+  "accessions": [
+    "EGAS00001001873",
+    "EGAD00001003255"
+  ],
+  "related_accessions": [
+    "EGAS00001000859",
+    "EGAD00001001267",
+    "EGAS00001001155",
+    "EGAD00001001430"
+  ],
+  "source_repositories": [
+    "EGA"
+  ],
+  "publications": [
+    {
+      "title": "An integrated genomic analysis of anaplastic meningioma identifies prognostic molecular signatures",
+      "authors": [
+        "Collord G",
+        "Tarpey P",
+        "Kurbatova N",
+        "Martincorena I",
+        "Moran S",
+        "Castro M",
+        "Nagy T",
+        "Bignell G",
+        "Maura F",
+        "Young MD",
+        "Berna J",
+        "Tubio JMC",
+        "McMurran CE",
+        "Young AMH",
+        "Sanders M",
+        "Noorani I",
+        "Price SJ",
+        "Watts C",
+        "Leipnitz E",
+        "Kirsch M",
+        "Schackert G",
+        "Pearson D",
+        "Devadass A",
+        "Ram Z",
+        "Collins VP",
+        "Allinson K",
+        "Jenkinson MD",
+        "Zakaria R",
+        "Syed K",
+        "Hanemann CO",
+        "Dunn J",
+        "McDermott MW",
+        "Kirollos RW",
+        "Vassiliou GS",
+        "Esteller M",
+        "Behjati S",
+        "Brazma A",
+        "Santarius T",
+        "McDermott U"
+      ],
+      "venue": "Scientific Reports",
+      "year": 2018,
+      "doi": "10.1038/s41598-018-31659-0",
+      "pmid": "30202034",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Thomas Santarius / Ultan McDermott",
+  "institution": "Wellcome Sanger Institute / Cambridge University Hospitals NHS Foundation Trust",
+  "date_deposited": "Not reported",
+  "date_updated": "Not reported",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-14",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-11",
+  "verification_tier": 2,
+  "found_via": [
+    "keyword_api"
+  ],
+  "modality": [
+    "bulk_rna_seq"
+  ],
+  "platform": "Illumina HiSeq 2500",
+  "reference_genome": "Not reported",
+  "pipeline": "Not reported",
+  "patient_count": 28,
+  "sample_count": 31,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": 0,
+    "grade_2": 0,
+    "grade_3": 31
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": true,
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "primary",
+    "recurrent"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "Not reported",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "Not reported",
+  "age_distribution": "Not reported",
+  "has_outcome_data": true,
+  "paired_multimodal": {
+    "is_paired": true,
+    "related_datasets": [
+      "egas00001000859-collord-anaplastic-panel",
+      "egas00001001155-collord-anaplastic-panel-v3"
+    ]
+  },
+  "access_type": "controlled",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": "Not reported",
+  "processed_data_available": "Not reported",
+  "processed_data_format": "Not reported",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not reported",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High",
+    "publications": "High",
+    "grade_breakdown": "High",
+    "treatment_timepoint_status": "High",
+    "molecular_subtype_annotated": "High",
+    "has_outcome_data": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "NEW RECORD (2026-07-11). Live EGA record: EGAS00001001873 ('Transcriptome_analysis_of_anaplastic_meningiomas'), pubmed_ids=null, description 'Detection of gene fusions and deferentially [sic] expressed genes in anaplastic meingiomas [sic]'. One dataset, EGAD00001003255 ('Transcriptome analysis of anaplastic meningiomas'), num_samples=34 live-confirmed, all phenotype='Brain'/tumor (no matched-normal RNA samples), mapping to 29 unique patients via the Sanger 'PR#####[a-z]' subject_id root-number convention (a distinct prefix from the 'PD#####' convention used in the sibling panel datasets in this batch, though the same overall root-number-plus-letter-suffix scheme). No PMID is attached in the live EGA record; a web search independently matched this accession to the same integrated Collord et al. 2018 Scientific Reports paper (PMID 30202034) identified for the sibling EGAS00001000859/EGAS00001001155 panel datasets in this batch, whose methods explicitly include RNA-seq/transcriptome profiling of anaplastic meningioma alongside WGS and targeted panels, and whose reported findings (NAB2-STAT6 fusion detection, two transcriptional subgroups C1/C2 with divergent prognosis, SWI/SNF-complex driver mutations, PRC2/EMT signatures in the aggressive subgroup) match this study's stated purpose of detecting gene fusions and differentially expressed genes. A secondary source describing this same paper reports 'mRNA sequencing of 31 anaplastic meningioma samples from a total of 28 patients (26 primary tumors and 5 recurrences)', close to but not an exact match for the live EGA sample count of 34 samples / 29 patients confirmed here; the small discrepancy (34 vs 31, 29 vs 28) likely reflects samples added to the EGA deposit after the paper's reported analysis, or minor QC exclusions in the published analysis, and is noted rather than silently reconciled. Despite the secondary source describing 26 primary vs. 5 recurrent samples, the live EGA per-sample metadata exposes no primary/recurrent distinction (all 34 entries are phenotype='Brain' with no further annotation), so recurrence_annotated is left false and treatment_timepoint_status 'Not reported' per rule 13 (cannot confirm per-sample deposited annotation, only a paper-level description). Cross-linked via paired_multimodal to the two sibling panel-sequencing records from the same overall project (egas00001000859-collord-anaplastic-panel, egas00001001155-collord-anaplastic-panel-v3); all three files were created together in this session so this cross-linking was set directly within these new records rather than requiring an edit to a pre-existing file. Only public EGA study/dataset-level metadata was used; the controlled-access sequencing data itself was never accessed, per docs/scope.md. AUDIT UPDATE (2026-07-14): full author-list truncation fixed (this is the flagged bug) -- PubMed esummary/efetch and Europe PMC both independently confirm the true author list is 39 names (Collord G through McDermott U inclusive of all middle authors), not the 6 previously stored; corrected. corresponding_author ('Thomas Santarius / Ultan McDermott') was independently re-confirmed correct against the paper's own text (PMC6131140), which marks both with an asterisk under 'Corresponding authors' with emails ts381@cam.ac.uk and um1@sanger.ac.uk respectively -- no change needed there. Separately, direct full-text review of PMC6131140 (not just the abstract, per this project's standing rule to check full text/supplement for hidden per-sample data) surfaced several corrections the prior EGA-metadata-only pass missed: (1) the paper's Methods state RNA was extracted from all 34 EGA-deposited samples, but '3 of which were from PD23348 and were subsequently excluded from final analyses' after expression profiling showed they clustered separately and were found to harbour the canonical NAB2-STAT6 fusion pathognomonic for meningeal hemangiopericytoma/SFT, a genuinely different tumor entity, not anaplastic meningioma (Supplementary Fig. S11); final analysis cohort is 31 samples from 28 patients (26 primary tumors, 5 recurrences), exactly matching the secondary-source figures this record's own prior note had already flagged as an unresolved discrepancy (34 vs 31, 29 vs 28) -- that discrepancy is now explained and resolved. sample_count corrected from 34 to 31 and patient_count from 29 to 28, consistent with this corpus's established precedent of narrowing scope to the genuine tumor entity when a co-mingled misdiagnosis is confirmed (cf. gse-174360-bulk-rnaseq, GSE222895). (2) treatment_timepoint_status corrected from 'Not reported' to ['primary','recurrent'] since the paper's own text explicitly states the per-sample composition of the final 31-sample cohort as 26 primary / 5 recurrent -- a genuine deposited-in-publication per-sample classification, not an abstract-level claim -- and tags.recurrence_annotated corrected from false to true accordingly. (3) grade_breakdown corrected from all-null to {grade_1:0, grade_2:0, grade_3:31}: all 31 final-cohort specimens are anaplastic (WHO grade III) meningioma by the study's own inclusion criterion and title. (4) molecular_subtype_annotated corrected from false to true: the paper performs unsupervised hierarchical clustering of this exact RNA-seq dataset and defines two named transcriptional subgroups, C1 and C2, with explicit per-sample assignment shown in Supplementary Figs. S7, S8a-b and S10a-c (heatmaps/PCA plots list each PD-numbered sample under its C1 or C2 label) -- a genuine molecular classification system directly tied to this dataset, not a histological subtype and not merely an abstract-level claim. (5) has_outcome_data corrected from 'Not reported' to true: the paper's Results state verbatim 'We observed a significantly worse overall survival outcome in C1 compared to C2 (P < 0.0001; hazard ratio 17.0, 95% CI 5.2-56.0)... Supplementary Table S8', with follow-up survival data available for 25 of the 28 patients (12 in C1, 13 in C2) -- genuine per-patient survival data deposited in the paper's own supplement, tied to specific samples in this dataset, not an abstract-level prognostic claim (the exact class of evidence this project's methodology explicitly requires, contrasted with the previously-caught Hertie-Institute overreach where no such table existed). Not changed: brain_invasion (no per-sample brain-invasion determination found in the full text) and anatomic_location_breakdown (the paper does show per-sample anatomic location and prior-radiotherapy-timing data in Supplementary Fig. S6 and Table S9, but extracting exact per-sample counts from those figures was not completed in this pass and is left as a flagged follow-up rather than guessed). Source used: PMC6131140 (open access full text and supplementary PDF, https://pmc.ncbi.nlm.nih.gov/articles/PMC6131140/), cross-checked against the live EGA API (unchanged: EGAD00001003255 still shows num_samples=34, the raw deposit count including the 3 excluded misdiagnosed samples). ONTOLOGY ADDED (2026-07-14): disease_id=MONDO:0020635, tissue_ids=['UBERON:0003547'], both verified live against the EBI Ontology Lookup Service (ols4/api/search) before use, not guessed. All 31 analysis-cohort samples are anaplastic (WHO grade III) meningioma per this record's own grade_breakdown (0/0/31).",
+  "source_urls": [
+    "https://ega-archive.org/studies/EGAS00001001873",
+    "https://ega-archive.org/datasets/EGAD00001003255",
+    "https://pubmed.ncbi.nlm.nih.gov/30202034/",
+    "https://doi.org/10.1038/s41598-018-31659-0"
+  ],
+  "tags": {
+    "grade_comparable": false,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": true,
+    "large_cohort": false,
+    "recurrence_annotated": true,
+    "molecular_subtype_annotated": true,
+    "has_outcome_data": true,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null,
+  "ontology": {
+    "disease_id": "MONDO:0020635",
+    "tissue_ids": [
+      "UBERON:0003547"
+    ]
+  }
+}

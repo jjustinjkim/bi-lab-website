@@ -1,0 +1,125 @@
+{
+  "id": "gse-213544-scrnaseq",
+  "title": "Single-cell RNA sequencing of meningiomas",
+  "accessions": [
+    "GSE213544"
+  ],
+  "related_accessions": [],
+  "source_repositories": [
+    "GEO",
+    "SRA"
+  ],
+  "publications": [
+    {
+      "title": "XCVATR: detection and characterization of variant impact on the Embeddings of single -cell and bulk RNA-sequencing samples.",
+      "authors": [
+        "Harmanci A",
+        "Harmanci AS",
+        "Klisch TJ",
+        "Patel AJ"
+      ],
+      "venue": "BMC genomics",
+      "year": 2022,
+      "doi": "10.1186/s12864-022-09004-7",
+      "pmid": "36539717",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Arif Harmanci, Akash Patel",
+  "institution": "Baylor College of Medicine",
+  "date_deposited": "2022-09-16",
+  "date_updated": "2023-01-11",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-10",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-10",
+  "verification_tier": 1,
+  "found_via": [
+    "keyword_api",
+    "citation_chain"
+  ],
+  "modality": [
+    "scrna_seq"
+  ],
+  "platform": "Illumina NextSeq 500 (GPL18573)",
+  "reference_genome": "Not reported",
+  "pipeline": "Not reported",
+  "patient_count": 1,
+  "sample_count": 2,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": null,
+    "grade_2": null,
+    "grade_3": null
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": "Not reported",
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "Not reported"
+  ],
+  "anatomic_location_breakdown": "convexity (parietal and frontal regions, one sample each); source overall_design literally reads 'postal and frontal regions', apparently a typo for 'parietal'",
+  "tissue_preservation": "Not reported",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "Not reported",
+  "age_distribution": "Not reported",
+  "has_outcome_data": "Not reported",
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": []
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": "Not reported",
+  "processed_data_available": true,
+  "processed_data_format": "GSE213544_RAW.tar",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High",
+    "publications": "High",
+    "patient_count": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "Series-level GEO metadata verified directly against the live source (2026-07-10): overall_design explicitly states 'single-cell RNA sequencing from one meningioma patient. This one patient had two meningioma tissues from postal and frontal regions,' confirming patient_count=1 and anatomic location, now reflected in the record. Remaining per-sample clinical/pathology fields (grade, sex/age, brain invasion, treatment timepoint) have not yet been extracted from individual GSM records or supplementary tables. Publication metadata pulled from PubMed esummary and spot-checked against esummary author/venue/DOI data.",
+  "source_urls": [
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE213544",
+    "https://pubmed.ncbi.nlm.nih.gov/36539717/"
+  ],
+  "tags": {
+    "grade_comparable": false,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": true,
+    "spatially_resolved": false,
+    "multi_modal_matched": false,
+    "large_cohort": false,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": false,
+    "has_outcome_data": false,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null,
+  "gene_expression_viewer": {
+    "sample_label": "Both samples merged (unintegrated)",
+    "data_url": "/pilot-data/gse-213544-scrnaseq.json",
+    "cell_count": 42936,
+    "gene_count": 200,
+    "sample_count": 2,
+    "embedding_method": "scanpy 1.10.3: read_10x_mtx of GSM6588919 (Postal) and GSM6588920 (Frontal)'s deposited raw (unfiltered, ~6.79M-barcode) Cell Ranger output, QC (min 200 genes/cell, <20% pct_counts_mt; 28157 and 14779 real cells kept respectively), anndata.concat (unintegrated), filter_genes min_cells=3 (23369 genes), normalize_total+log1p, top-2000 HVG, PCA, neighbors, UMAP, Leiden (resolution 0.5, 9 clusters, igraph flavor). Gene panel: 11 guaranteed meningioma driver genes + top HVGs by dispersion to 200 total.",
+    "pathways": ["Proliferation / cell cycle", "Hypoxia", "Epithelial-mesenchymal transition", "Interferon response"],
+    "integration_note": "Both samples were merged by raw concatenation, not batch-corrected/integrated (same approach ScPCA documents for its own merged per-project objects) -- use \"color by sample\" to check whether cells separate by patient/site rather than assuming a shared embedding means removed batch effects."
+  }
+}

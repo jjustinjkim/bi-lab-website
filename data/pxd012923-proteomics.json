@@ -1,0 +1,115 @@
+{
+  "id": "pxd012923-proteomics",
+  "title": "Proteomic analysis of meningiomas reveals clinically-distinct molecular patterns",
+  "accessions": [
+    "PXD012923"
+  ],
+  "related_accessions": [],
+  "source_repositories": [
+    "PRIDE"
+  ],
+  "publications": [
+    {
+      "title": "Proteomic analysis of meningiomas reveals clinically distinct molecular patterns.",
+      "authors": [
+        "Papaioannou MD",
+        "Djuric U",
+        "Kao J",
+        "Karimi S",
+        "Zadeh G",
+        "Aldape K"
+      ],
+      "venue": "Neuro-oncology",
+      "year": 2019,
+      "doi": "10.1093/neuonc/noz084",
+      "pmid": "31077268",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Phedias Diamandis",
+  "institution": "University of Toronto / Princess Margaret Cancer Centre",
+  "date_deposited": "2019-03-01",
+  "date_updated": "2019-05-30",
+  "publication_status": "normal",
+  "last_verified_date": "2026-08-04",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-10",
+  "verification_tier": 1,
+  "found_via": [
+    "keyword_api",
+    "citation_chain"
+  ],
+  "modality": [
+    "proteomics_bulk_ms"
+  ],
+  "platform": "Q Exactive",
+  "reference_genome": "Not applicable",
+  "pipeline": "Not reported",
+  "patient_count": "Not reported",
+  "sample_count": 69,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": null,
+    "grade_2": null,
+    "grade_3": null
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": false,
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "Not reported"
+  ],
+  "anatomic_location_breakdown": "Convexity vs. skull base meningiomas explicitly compared (proteomic differences reported); exact per-group sample counts not stated in the project description/abstract.",
+  "tissue_preservation": "ffpe",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "Not reported",
+  "age_distribution": "Not reported",
+  "has_outcome_data": false,
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": []
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": true,
+  "processed_data_available": true,
+  "processed_data_format": "MaxQuant search-result output (combined.zip) plus experimental design files",
+  "license": "Creative Commons Public Domain (CC0)",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High",
+    "publications": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "Re-verified 2026-07-10 directly against the live PRIDE record and project description: sample_count corrected from 'Not reported' to 69 ('a clinically well-annotated cohort (n=69) of meningiomas' per the project abstract), tissue_preservation corrected to 'ffpe' (samples explicitly described as 'FFPE curls'), anatomic_location_breakdown filled in (convexity vs. skull base comparison stated but not quantified), platform/license/date_deposited/date_updated filled in from the live PRIDE record. Per-sample clinical/grade fields not yet extracted from supplementary tables. FACT-CHECK UPDATE (2026-07-11): corresponding_author first name corrected from 'Maria D Papaioannou' to 'Michail-Dimitrios Papaioannou'; the first author's actual given name (confirmed via PubMed efetch XML ForeName field for PMID 31077268) is Michail-Dimitrios, not Maria D, the prior entry appears to have misread the citation initials 'MD' as a different first name. Phedias Diamandis (last author) confirmed unchanged as the paper's senior author. CORRESPONDING-AUTHOR CORRECTION (2026-08-04): field previously read 'Michail-Dimitrios Papaioannou / Phedias Diamandis' -- Papaioannou is a genuine co-author but not flagged as corresponding on the source paper. Re-verified against the paper's own PMC full text (PMID 31077268, PMCID PMC6682208): the author-notes/corresp block names only 'Phedias Diamandis, MD, PhD ... p.diamandis@mail.utoronto.ca'. Corrected to Diamandis alone.",
+  "source_urls": [
+    "https://www.ebi.ac.uk/pride/archive/projects/PXD012923",
+    "https://pubmed.ncbi.nlm.nih.gov/31077268/"
+  ],
+  "tags": {
+    "grade_comparable": false,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": false,
+    "large_cohort": true,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": false,
+    "has_outcome_data": false,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

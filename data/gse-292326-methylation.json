@@ -1,0 +1,131 @@
+{
+  "id": "gse-292326-methylation",
+  "title": "Development, validation, and clinical utility of a novel methylation classifier for recurrence risk prediction in meningiomas [dataset 2]",
+  "accessions": [
+    "GSE292326"
+  ],
+  "related_accessions": [
+    "GSE292325",
+    "GSE292327"
+  ],
+  "source_repositories": [
+    "GEO"
+  ],
+  "publications": [
+    {
+      "title": "Development, validation, and utility of a clinically applicable methylation classifier for recurrence risk prediction in meningiomas.",
+      "authors": [
+        "Duckett D",
+        "Santana-Santos L",
+        "McCord M",
+        "Smith V",
+        "Lopes MBS",
+        "Youngblood MW",
+        "Magill ST",
+        "Chandler JP",
+        "Heimberger AB",
+        "Lukas R",
+        "Ahrendsen JT",
+        "Primdahl D",
+        "Stupp R",
+        "Castellani RJ",
+        "Horbinski CM",
+        "Brat DJ",
+        "Jennings LJ",
+        "Sukhanova M",
+        "Jamshidi P"
+      ],
+      "venue": "Acta neuropathologica communications",
+      "year": 2025,
+      "doi": "10.1186/s40478-025-02184-9",
+      "pmid": "41466325",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Madina Sukhanova, Pouya Jamshidi",
+  "institution": "Northwestern Medicine",
+  "date_deposited": "2025-03-18",
+  "date_updated": "2026-01-13",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-11",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-10",
+  "verification_tier": 1,
+  "found_via": [
+    "keyword_api",
+    "citation_chain"
+  ],
+  "modality": [
+    "dna_methylation_array"
+  ],
+  "platform": "GPL33022",
+  "reference_genome": "Not reported",
+  "pipeline": "Not reported",
+  "patient_count": "Not reported",
+  "sample_count": 37,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": 18,
+    "grade_2": 17,
+    "grade_3": 2
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": true,
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "Not reported"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "ffpe",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "20 female, 17 male (n=37, extracted from GSM 'Sex' field)",
+  "age_distribution": "Not reported",
+  "has_outcome_data": "Not reported",
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": []
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": "Not reported",
+  "processed_data_available": true,
+  "processed_data_format": "GSE292326_RAW.tar",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High",
+    "publications": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "FACT-CHECK UPDATE (2026-07-10): corresponding_author corrected from 'Drew,,Duckett, Lucas,,Santana-Santos' to 'Madina,,Sukhanova, Pouya,,Jamshidi'. Verified directly via Europe PMC author-affiliation data for PMID 41466325: only two of the paper's 18 authors have a listed correspondence email (madina.sukhanova@northwestern.edu and pouya.jamshidi@northwestern.edu), identifying them as the actual co-corresponding authors; Duckett D is the first author and Santana-Santos L a middle author, neither is a corresponding author per the published affiliation footnotes. Also note: live GSE292325 (sibling series) overall_design states '217 meningioma tumors used in training/validation' but the two subseries (186 + 37 = 223 samples) do not sum to exactly 217; unresolved discrepancy, see gse-292325-methylation.json for detail. Series-level GEO metadata verified directly against the live source; per-sample clinical/pathology fields (grade, sex/age, anatomic location, brain invasion, treatment timepoint) have not yet been extracted from individual GSM records or supplementary tables. FACT-CHECK UPDATE (2026-07-10 verification pass): date_deposited/date_updated filled in from the live GEO record's Series_submission_date/Series_last_update_date, previously 'Not reported'. TAG CORRECTION (2026-07-11 fact-check pass): tags.recurrence_annotated was true, but this is a 'recurrence risk PREDICTION' classifier study (an analytical/prognostic framing describing the paper's purpose), not evidence of an actual per-sample primary-vs-recurrent breakdown; neither this series' summary/overall_design nor its sibling gse-292325's individual GSM records (checked directly) contain any primary/recurrent or recurrence-count field. Corrected recurrence_annotated to false, consistent with the same fix applied to gse-292325-methylation.json. DISCREPANCY FURTHER INVESTIGATED, STILL UNRESOLVED (2026-07-11): see gse-292325-methylation.json for the full investigation, the linked paper's abstract states 'Using samples from 217 patients,' a 6-sample gap versus the 223 total deposited across both series that would be explained by 6 patients contributing technical-replicate samples, but this cannot be confirmed since no patient-identifier field is exposed in either series' per-sample metadata (only Illumina array chip/position identifiers). See gse-292325-methylation.json for further corroborating context added 2026-07-11 (the paper states methylation profiling used 'EPIC BeadChip or MethylationEPICv2 BeadChip' per case, consistent with this being a platform-generation split rather than a training/validation split, but still not a full explanation of the 6-sample gap). PER-SAMPLE DATA RECOVERED (2026-07-11 fact-check pass): fetched all 37 individual GSM records directly (not previously done for this subseries even though the sibling GSE292325 had already had its 186 samples parsed). Each carries 'tissue type', 'who grade', 'choudhury class', 'kmeans cluster', and 'Sex'. tissue type: 37/37 FFPE (tissue_preservation corrected from 'Not reported' to 'ffpe'). who grade: grade 1 (18), grade 2 (17), grade 3 (2), summing exactly to sample_count 37 (grade_breakdown filled in, previously null/null/null; tags.grade_comparable corrected false to true). Sex: 20 female, 17 male (sex_distribution filled in, previously 'Not reported'). EXTERNAL RE-VERIFICATION (2026-07-12): molecular_subtype_annotated corrected from 'Not reported' to true and tags.molecular_subtype_annotated from false to true. All 37 GSM records carry a per-sample 'choudhury class' field (Merlin Intact 15, Immune Enriched 8, Hypermitotic 14 = 37), the named Choudhury et al DNA methylation class system, plus a 'kmeans cluster' methylation classifier field, matching the schema's named-molecular-subtype-system definition (DNA methylation class); consistent with the same fix applied to sibling gse-292325. Re-verified grade (18/17/2), sex (20 F/17 M), tissue type (37 FFPE), platform GPL33022, sample_count (37 GSM GSM8856514-GSM8856550), dates, corresponding authors (Sukhanova, Jamshidi via PMC12750935), and the 223-vs-217 open discrepancy (SuperSeries GSE292327 = 186+37 = 223) against live GEO/PubMed; no further discrepancy. AUTHOR-LIST COMPLETENESS FIX (2026-07-14 deep audit): publications[0].authors was truncated to the first 6 of the paper's actual 19 authors; expanded to the full list (ending in Sukhanova M, Jamshidi P, the already-confirmed co-corresponding authors) via the Europe PMC REST API authorString field. Separately re-checked this record's own linked paper's full text (PMC12750935) directly for the exact hidden-outcome-data failure pattern this audit was tasked with finding: the paper's methods state 'Tumor recurrence status and date of recurrence were known for 203 patients' and it presents Kaplan-Meier recurrence-free-survival curves by risk group, but only as aggregate group-level statistics -- no per-sample/per-case supplementary table listing individual recurrence status or follow-up time was found, and the paper's own Data Availability statement says only 'All methylation .idat files have been deposited... GSE292327' (no separate clinical/outcome data file). This confirms has_outcome_data is correctly left 'Not reported' for this record (consistent with the already-documented GSM-level check finding no survival/recurrence field), not an instance of the hidden-data pattern.",
+  "source_urls": [
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE292326",
+    "https://pubmed.ncbi.nlm.nih.gov/41466325/"
+  ],
+  "tags": {
+    "grade_comparable": true,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": false,
+    "large_cohort": false,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": true,
+    "has_outcome_data": false,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

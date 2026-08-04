@@ -1,0 +1,139 @@
+{
+  "id": "gse-77259-schulten-expression-array",
+  "title": "Expression profiling in grade I and grade II meningiomas and in normal control brain samples",
+  "accessions": [
+    "GSE77259"
+  ],
+  "related_accessions": [
+    "PRJNA309879"
+  ],
+  "source_repositories": [
+    "GEO"
+  ],
+  "publications": [
+    {
+      "title": "Microarray Expression Data Identify DCC as a Candidate Gene for Early Meningioma Progression.",
+      "authors": [
+        "Schulten HJ",
+        "Hussein D",
+        "Al-Adwani F",
+        "Karim S",
+        "Al-Maghrabi J",
+        "Al-Sharif M"
+      ],
+      "venue": "PLoS One",
+      "year": 2016,
+      "doi": "10.1371/journal.pone.0153681",
+      "pmid": "27096627",
+      "preprint_id": null
+    },
+    {
+      "title": "Pleomorphism and drug resistant cancer stem cells are characteristic of aggressive primary meningioma cell lines.",
+      "authors": [
+        "Khan I",
+        "Baeesa S",
+        "Bangash M",
+        "Schulten HJ",
+        "Alghamdi F",
+        "Qashqari H"
+      ],
+      "venue": "Cancer Cell International",
+      "year": 2017,
+      "doi": "10.1186/s12935-017-0441-7",
+      "pmid": "28736504",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Hans-Juergen Schulten",
+  "institution": "Center of Excellence in Genomic Medicine Research, King Abdulaziz University",
+  "date_deposited": "2016-01-26",
+  "date_updated": "2019-10-07",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-14",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-11",
+  "verification_tier": 2,
+  "found_via": [
+    "citation_chain"
+  ],
+  "modality": [
+    "expression_array"
+  ],
+  "platform": "Affymetrix Human Gene 1.0 ST Array (GPL6244)",
+  "reference_genome": "Not reported",
+  "pipeline": "Not reported",
+  "patient_count": 14,
+  "sample_count": 14,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": 10,
+    "grade_2": 4,
+    "grade_3": 0
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": false,
+  "brain_invasion": {
+    "status_reported": true,
+    "counts": "3 of 14 samples (all WHO grade II) explicitly note brain invasion in the per-sample histology characteristic field: Jed18 ('meningothelial with brain invasion'), Jed49 ('atypical with brain invasion'; also a recurrence per its location field 'posterior right subfalcine (recurrence)'), Jed53 ('transitional with brain invasion'). Jed58 ('atypical') does NOT mention brain invasion and is not counted.",
+    "determination_method": "Stated in per-sample histology characteristic field; specific diagnostic method (e.g. dural/brain parenchyma histology criteria) not further specified"
+  },
+  "treatment_timepoint_status": [
+    "primary",
+    "recurrent"
+  ],
+  "anatomic_location_breakdown": "Per-sample tumor location recorded in GSM characteristics for all 14 samples (e.g. left tentorial, left temporal, occipital, left sphenoid wing, right frontoparietal, cerebellopontine angle, spinal, posterior right subfalcine, right sphenoid wing, right parasagittal, right falcine, right frontal, right temporal); not aggregated into named anatomic categories here, see review note",
+  "tissue_preservation": "Not reported",
+  "normal_control_tissue": {
+    "included": true,
+    "type": "commercial reference normal brain RNA (Affymetrix Tissue Map brain reference samples 01-03, http://www.affymetrix.com/support/technical/sample_data/gene_1_0_array_data.affx), not patient-matched and not deposited as individual GSM records",
+    "count": 3
+  },
+  "sex_distribution": "10 female, 4 male (n=14, extracted from GSM 'gender' field)",
+  "age_distribution": "n=14, range 36-73, mean 54.1 (extracted from GSM 'age' field)",
+  "has_outcome_data": false,
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": []
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": true,
+  "processed_data_available": true,
+  "processed_data_format": "GSM-level RMA-normalized values (sample data table); normal-brain-control RMA values separately in GSE77259_normalized_data_for_normal_brain_controls.txt.gz",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High",
+    "publications": "Medium",
+    "grade_breakdown": "High",
+    "sex_distribution": "High",
+    "age_distribution": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "All 14 GSM records were individually fetched and confirmed genuine primary human meningioma tumor tissue (not cell lines): each carries per-sample tumor grade, location, histology, gender, and age fields. Grade breakdown (10 grade I, 4 grade II), sex (10F/4M), and age (range 36-73, mean 54.1) were computed directly from these 14 records. Two Series_pubmed_id entries are linked in GEO: PMID 27096627 (Schulten et al., PLoS One 2016, 'Microarray Expression Data Identify DCC...') is clearly the primary paper generated directly from this series (same senior author/institution, matches the series title and design exactly). PMID 28736504 (Khan et al. 2017, Cancer Cell International) is about pleomorphism/drug-resistant cancer stem cells in meningioma CELL LINES derived from primary tumors -- this is a separate, later study by an overlapping author group (Schulten HJ) that may cite or reuse this series as background/comparison data, but it is NOT itself a cell-line record (the GSE77259 series itself is unambiguously direct patient tumor tissue, confirmed per-sample). Flagging so a human can decide whether the second publication link is appropriate to keep. Brain-invasion note: 3 of 14 GSM histology fields mention 'brain invasion' explicitly. RE-VERIFIED 2026-07-12 against verbatim per-sample histology in the live family.soft: the three are Jed18 ('meningothelial with brain invasion'), Jed49 ('atypical with brain invasion'), and Jed53 ('transitional with brain invasion'). A prior pass mis-listed this set as Jed49/Jed53/Jed58; corrected: Jed18 (not previously listed) does have brain invasion, and Jed58 ('atypical') does NOT. tissue_preservation not stated in any field checked (protocol describes RNA extraction from 'biospecimens' without specifying fresh-frozen vs FFPE). large_cohort left false pending centralized quartile recomputation. FACT-CHECK UPDATE (2026-07-11): publications[1].doi (PMID 28736504) was incorrectly recorded as null. Verified via PubMed esummary and Crossref (DOI 10.1186/s12935-017-0441-7): this DOI resolves to the exact cited title 'Pleomorphism and drug resistant cancer stem cells are characteristic of aggressive primary meningioma cell lines,' Cancer Cell International, 2017. Corrected from null to 10.1186/s12935-017-0441-7. DEEP-AUDIT UPDATE (2026-07-14): two findings from a fresh full re-pull of all 14 GSM records (acc.cgi?acc=GSE77259&targ=gsm&form=text&view=brief). (1) treatment_timepoint_status was left ['Not reported'] but the per-sample 'tumor location' characteristic field genuinely distinguishes primary vs. recurrent: 13 of 14 samples carry a plain location string (e.g. 'left tentorial', 'right frontal') with no recurrence annotation, while GSM2046765 (Jed49_MN) carries 'tumor location: posterior right subfalcine (recurrence)', an explicit per-sample recurrence flag in the deposited characteristics, not inferred from an abstract or title. Corrected treatment_timepoint_status to ['primary', 'recurrent'] (13 primary, 1 recurrent -- Jed49) and tags.recurrence_annotated to true accordingly. (2) The second publication (PMID 28736504, Khan et al. 2017, Cancer Cell International) had been flagged by a prior pass as uncertain -- 'flagging so a human can decide whether the second publication link is appropriate to keep' -- because its focus is cell lines, not tissue. Fetched its live open-access full text (PMC5521079) and searched for the literal accession string: GSE77259 appears 3 times, including in its own Methods ('data was deposited at the NCBI's Gene Expression Omnibus under accession number GSE77259') and Data Availability Statement, and the Methods explicitly names 6 of this series' own tissue specimens by GSM title (Jed36_MN, Jed49_MN, Jed04_MN, Jed18_MN, Jed34_MN, Jed40_MN) as the basis for a gene-expression clustering analysis. This is genuine, direct use of this exact deposited dataset (not merely a topically similar paper by the same lab), resolving the prior flag: publications[1] is confirmed correctly linked.",
+  "source_urls": [
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE77259",
+    "https://pubmed.ncbi.nlm.nih.gov/27096627/",
+    "https://doi.org/10.1371/journal.pone.0153681",
+    "https://pubmed.ncbi.nlm.nih.gov/28736504/",
+    "https://www.ncbi.nlm.nih.gov/bioproject/PRJNA309879"
+  ],
+  "tags": {
+    "grade_comparable": true,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": true,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": false,
+    "large_cohort": false,
+    "recurrence_annotated": true,
+    "molecular_subtype_annotated": false,
+    "has_outcome_data": false,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

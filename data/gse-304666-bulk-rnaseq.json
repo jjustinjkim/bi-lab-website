@@ -1,0 +1,119 @@
+{
+  "id": "gse-304666-bulk-rnaseq",
+  "title": "Transcriptomic profiling of meningiomas reveals SMARCB1 mutation-driven immunosuppression via IL-17/CSF1 axis",
+  "accessions": [
+    "GSE304666"
+  ],
+  "related_accessions": [],
+  "source_repositories": [
+    "GEO",
+    "SRA"
+  ],
+  "publications": [
+    {
+      "title": "Deficiency of SMARCB1 drives an immunosuppressive microenvironment in meningioma.",
+      "authors": [
+        "Jin B",
+        "Hu H",
+        "Lu Y",
+        "Tian X",
+        "Hu G",
+        "Xu J"
+      ],
+      "venue": "Acta Neuropathologica Communications",
+      "year": 2026,
+      "doi": "10.1186/s40478-025-02217-3",
+      "pmid": "41578352",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Juxiang Chen, Miaoxia He",
+  "institution": "The Affiliated Shanghai Fourth People's Hospital of Tongji University",
+  "date_deposited": "2025-08-06",
+  "date_updated": "2025-10-30",
+  "publication_status": "normal",
+  "last_verified_date": "2026-08-04",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-10",
+  "verification_tier": 2,
+  "found_via": [
+    "keyword_api"
+  ],
+  "modality": [
+    "bulk_rna_seq"
+  ],
+  "platform": "Illumina NovaSeq 6000 (GPL24676)",
+  "reference_genome": "GRCh38",
+  "pipeline": "STAR alignment to GRCh38; FPKM quantification with featureCounts; PCA and GSVA on a 14-gene immunogenic signature (including CSF1, IL17RA, CD163)",
+  "patient_count": "Not reported",
+  "sample_count": 14,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": 5,
+    "grade_2": 5,
+    "grade_3": 3
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": "Not reported",
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "primary",
+    "recurrent"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "ffpe",
+  "normal_control_tissue": {
+    "included": true,
+    "type": "dura mater",
+    "count": 1
+  },
+  "sex_distribution": "Not reported",
+  "age_distribution": "Not reported",
+  "has_outcome_data": "Not reported",
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": []
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": "Not reported",
+  "processed_data_available": true,
+  "processed_data_format": "GSE304666_FPKMs_allSamples.csv.gz",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High",
+    "publications": "High",
+    "grade_breakdown": "High",
+    "tissue_preservation": "High",
+    "normal_control_tissue": "High",
+    "reference_genome": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "FACT-CHECK UPDATE (2026-07-10): per-sample GSM titles were pulled directly from the live GEO record (GSM9154972-GSM9154985) and reveal an explicit grade/recurrence/control breakdown that had been left as 'Not reported': 3 primary WHO G1 + 2 recurrent WHO G1 + 3 primary WHO G2 + 2 recurrent WHO G2 + 3 primary WHO G3 (13 meningioma samples total, matching the overall_design's '13 meningioma samples spanning WHO grades 1-3') plus 1 dura mater normal-control sample (GSM9154985, 'RNA-seq of meningioma control dura 1'). tissue_preservation, reference_genome (GRCh38), and pipeline (STAR + featureCounts) were also directly stated in overall_design and had been left as 'Not reported'. Remaining gaps: sex/age/anatomic location per sample still not extracted. FOLLOW-UP PUBLICATION SEARCH (2026-07-13), match found and directly confirmed: a Europe PMC full-text search for the literal accession string GSE304666 returned exactly one hit, Jin et al. 2026 (PMID 41578352, Acta Neuropathologica Communications, 'Deficiency of SMARCB1 drives an immunosuppressive microenvironment in meningioma'), whose Data Availability section (fetched directly) states verbatim: 'Our bulk-RNA sequencing data was deposited in GEO database (GSE304666) and SRA database (PRJNA1301565) for public use.' Author list (Jin B, Hu H first two authors) matches this record's corresponding_author exactly, and the paper's title matches this record's own title nearly verbatim. Publication added; publication_status normal so tags.peer_reviewed set true. CORRESPONDING-AUTHOR CORRECTION (2026-08-04): field previously read 'Ben Jin, Hao Hu', neither of whom is a designated corresponding author on the source paper. Re-verified against the paper's own PMC full text (PMID 41578352, PMCID PMC12958713): contrib-group flags corresp=\"yes\" on Juxiang Chen and Miaoxia He. Corrected accordingly.",
+  "source_urls": [
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE304666"
+  ],
+  "tags": {
+    "grade_comparable": true,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": false,
+    "large_cohort": false,
+    "recurrence_annotated": true,
+    "molecular_subtype_annotated": false,
+    "has_outcome_data": false,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

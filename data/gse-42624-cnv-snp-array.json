@@ -1,0 +1,143 @@
+{
+  "id": "gse-42624-cnv-snp-array",
+  "title": "GeneChip Mapping 500K set and Genome-Wide Human SNP 6.0 Array in meningioma tumors",
+  "accessions": [
+    "GSE42624"
+  ],
+  "related_accessions": [],
+  "source_repositories": [
+    "GEO"
+  ],
+  "publications": [
+    {
+      "title": "Delineation of commonly deleted chromosomal regions in meningiomas by high-density single nucleotide polymorphism genotyping arrays.",
+      "authors": [
+        "Tabernero MD",
+        "Ma\u00edllo A",
+        "Nieto AB",
+        "Diez-Tasc\u00f3n C",
+        "Lara M",
+        "Sousa P",
+        "Otero A",
+        "Castrillo A",
+        "Patino-Alonso Mdel C",
+        "Espinosa A",
+        "Mackintosh C",
+        "de Alava E",
+        "Orfao A"
+      ],
+      "venue": "Genes, chromosomes & cancer",
+      "year": 2012,
+      "doi": "10.1002/gcc.21948",
+      "pmid": "22371336",
+      "preprint_id": null
+    },
+    {
+      "title": "Proposal for a new risk stratification classification for meningioma based on patient age, WHO tumor grade, size, localization, and karyotype.",
+      "authors": [
+        "Domingues PH",
+        "Sousa P",
+        "Otero \u00c1",
+        "Gon\u00e7alves JM",
+        "Ruiz L",
+        "de Oliveira C",
+        "Lopes MC",
+        "Orfao A",
+        "Tabernero MD"
+      ],
+      "venue": "Neuro-oncology",
+      "year": 2014,
+      "doi": "10.1093/neuonc/not325",
+      "pmid": "24536048",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Maria D Tabernero, Jose A Orfao",
+  "institution": "Hospital Universitario de Salamanca y Centro del C\u00e1ncer",
+  "date_deposited": "2012-11-29",
+  "date_updated": "2018-11-27",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-14",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-10",
+  "verification_tier": 1,
+  "found_via": [
+    "keyword_api",
+    "citation_chain"
+  ],
+  "modality": [
+    "cnv_snp_array"
+  ],
+  "platform": "Affymetrix Mapping 250K Nsp SNP Array (GPL3718), Affymetrix Mapping 250K Sty2 SNP Array (GPL3720), Affymetrix Genome-Wide Human SNP 6.0 Array (GPL6801)",
+  "reference_genome": "Not reported",
+  "pipeline": "Not reported",
+  "patient_count": 50,
+  "sample_count": 50,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": 45,
+    "grade_2": 3,
+    "grade_3": 2
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": false,
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "Not reported"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "Not reported",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "39 female, 11 male (n=50 tumors, per-sample 'gender' field, deduplicated by patient)",
+  "age_distribution": "range 26-84 years (n=50 tumors, per-sample 'age' field)",
+  "has_outcome_data": false,
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": []
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": "Not reported",
+  "processed_data_available": true,
+  "processed_data_format": "GSE42624_RAW.tar",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High",
+    "publications": "High",
+    "grade_breakdown": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "Series-level GEO metadata verified directly against the live source; per-sample clinical/pathology fields not yet extracted from individual GSM records. FACT-CHECK UPDATE (2026-07-10): date_deposited/date_updated filled in from Series_submission_date/Series_last_update_date, previously 'Not reported'. platform expanded with full instrument names for GPL3718/GPL3720/GPL6801. Note on sample_count: the live GEO record's total Series_sample_id count is 214 (100 tumor + 100 matched-blood 500K-array pairs, plus 7 tumor + 7 matched-blood SNP6.0-array pairs), but sample_count here (50) intentionally reflects only the meningioma tumor samples, matching the series summary's own headline figure ('Cytogenetic profiles of 50 meningiomas'); the paired peripheral-blood germline-reference samples are not tumor tissue and are excluded from this count. FACT-CHECK UPDATE (2026-07-11): patient_count filled in as 50 (previously 'Not reported'), confirmed via NCBI esummary (db=gds) sample-title enumeration: all 214 GSM titles follow the pattern 'Sample#N ...', with N ranging over exactly 50 distinct integers (1-50), each patient contributing one tumor specimen (assayed via 2 arrays on the 500K platform or 1 SNP6.0 array, plus a matched blood sample on the same platform(s)); tumor-sample title count (107, matching the summary's 100+7) also confirmed against this same 50-patient set. FACT-CHECK UPDATE (2026-07-12): all 214 GSM records carry per-sample 'who grade', 'gender', and 'age' fields. Deduplicated by patient (Sample#N title), the 50 tumors break down as WHO grade I=45, II=3, III=2; grade_breakdown populated accordingly and tags.grade_comparable set true (all three grades explicitly represented). sex_distribution populated (39 female, 11 male across the 50 tumors) and age_distribution populated (range 26-84 years). who_edition left 'Not reported' since no WHO classification edition is stated in the source (grades given only as I/II/III). DEEP-AUDIT (2026-07-14): both publications' author lists were truncated to 6 names each (Europe PMC authorString confirms 13 for PMID 22371336 and 9 for PMID 24536048); both expanded to full. corresponding_author 'Maria D Tabernero, Jose A Orfao' NOT changed -- genuine attempt made but inconclusive: (1) Tabernero et al. 2012 (GCC, PMID 22371336) has no PMC copy and is paywalled at Wiley (onlinelibrary.wiley.com returned HTTP 403, and Europe PMC confirms isOpenAccess:N/inEPMC:N for this PMID), so its actual correspondence footnote could not be read directly; PubMed's abstract page suggests Tabernero alone (mdtabernero@iecscyl.com) but that is affiliation-list position, not a quoted footnote, and a web search snippet separately described Alberto Orfao as 'one of the corresponding authors' -- these two weak, conflicting secondary signals do not meet this project's bar for changing the field. (2) Domingues et al. 2014 (Neuro-oncology, PMID 24536048) full text (PMC3984558) WAS accessible and gives a single corresponding author, 'Maria Dolores Tabernero Redondo... (taberner@usal.es)', with no mention of Orfao as corresponding -- this alone doesn't justify dropping Orfao since the field is meant to cover both linked publications and the 2012 paper (where Orfao is last/senior author) remains unverified. Per instructions, left unchanged rather than guessed. Separately, cohort-linkage check: Domingues 2014's own cohort (302 primary + 132 validation patients, of which 50 SNP-array cases were 'pooled from our institution') is NOT the same as this GSE42624 series (50 patients) -- the paper does not explicitly equate its 50-case validation subset to the Tabernero 2012 cohort, so its reported outcome/relapse figures (from the 302-patient primary cohort, not the 50-case validation subset specifically) cannot be attributed to this specific dataset; has_outcome_data left false.",
+  "source_urls": [
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE42624",
+    "https://pubmed.ncbi.nlm.nih.gov/22371336/",
+    "https://pubmed.ncbi.nlm.nih.gov/24536048/"
+  ],
+  "tags": {
+    "grade_comparable": true,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": false,
+    "large_cohort": false,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": false,
+    "has_outcome_data": false,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

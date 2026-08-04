@@ -1,0 +1,119 @@
+{
+  "id": "gse-224347-xenograft-scrnaseq",
+  "title": "Merlin rescue drives Wnt signalling",
+  "accessions": [
+    "GSE224347"
+  ],
+  "related_accessions": [
+    "PRJNA930687"
+  ],
+  "source_repositories": [
+    "GEO",
+    "SRA"
+  ],
+  "publications": [
+    {
+      "title": "Merlin(S13) phosphorylation regulates meningioma Wnt signaling and magnetic resonance imaging features.",
+      "authors": [
+        "Eaton CD",
+        "Avalos L",
+        "Liu SJ",
+        "Chen Z",
+        "Zakimi N",
+        "Casey-Clyde T"
+      ],
+      "venue": "Nature Communications",
+      "year": 2024,
+      "doi": "10.1038/s41467-024-52284-8",
+      "pmid": "39251601",
+      "preprint_id": "10.21203/rs.3.rs-2577844/v1"
+    }
+  ],
+  "corresponding_author": "Charlotte Eaton / David R Raleigh",
+  "institution": "University of California, San Francisco",
+  "date_deposited": "2023-02-02",
+  "date_updated": "2024-10-09",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-11",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-11",
+  "verification_tier": 2,
+  "found_via": [
+    "keyword_api"
+  ],
+  "modality": [
+    "scrna_seq"
+  ],
+  "platform": "Illumina NovaSeq 6000 (GPL25526, dual Homo sapiens / Mus musculus reference)",
+  "reference_genome": "Not reported",
+  "pipeline": "Not reported",
+  "patient_count": "Not applicable (cell line xenograft model, not directly patient-derived tissue samples)",
+  "sample_count": 12,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": null,
+    "grade_2": null,
+    "grade_3": null
+  },
+  "who_edition": "Not applicable (cell line)",
+  "molecular_subtype_annotated": false,
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not applicable",
+    "determination_method": "Not applicable"
+  },
+  "treatment_timepoint_status": [
+    "Not applicable"
+  ],
+  "anatomic_location_breakdown": "Not applicable (subcutaneous flank xenograft in mice, not a patient anatomic site)",
+  "tissue_preservation": "not_applicable",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "Not applicable",
+  "age_distribution": "Not applicable",
+  "has_outcome_data": false,
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": []
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": true,
+  "processed_data_available": true,
+  "processed_data_format": "10x Genomics raw output (RAW.tar)",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High",
+    "publications": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "Adjacent-scope per docs/scope.md: live GEO record (verified directly via acc.cgi) confirms Series_overall_design describes NF2-deficient CH-157MN meningioma cells (an established human meningioma cell line, not primary patient tissue) with doxycycline-inducible WT-Merlin, injected subcutaneously into NU/NU mouse flanks; per-GSM inspection (GSM7020145-GSM7020156) confirms exactly 5 'Merlin-deficient' (no doxycycline) and 7 'Merlin rescue' (200ug/ml doxycycline) tumors, matching the series summary's '5 Merlin-deficient tumors and seven Merlin rescue tumors' verbatim; sample_source_name for all 12 samples is literally 'Human cells in mouse xenograft'. Series_sample_organism lists both Homo sapiens and Mus musculus (platform GPL25526 explicitly titled for both organisms), consistent with scRNA-seq of a xenograft capturing both human tumor cells and mouse host-derived cells; reference_genome left 'Not reported' since no specific combined genome build/version is stated on the live record. Two PubMed IDs are listed on the series (36993679, 39251601): PubMed's own 'Update in' cross-reference confirms 36993679 is the March 2023 Research Square preprint of the same work, later published as the peer-reviewed Nature Communications paper (39251601, Eaton et al. 2024); both are represented here as a single publications entry (peer-reviewed version with preprint_id populated), consistent with this corpus's existing PXD053578 companion record for the same underlying study. who_edition/patient_count use the established 'Not applicable (cell line)'-style convention for non-patient-tissue model systems (no separate PDX/xenograft enum exists in docs/controlled_vocabulary.md). Author list truncated to first 6 per this corpus's existing citation-formatting convention.",
+  "source_urls": [
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE224347",
+    "https://pubmed.ncbi.nlm.nih.gov/39251601/",
+    "https://pubmed.ncbi.nlm.nih.gov/36993679/",
+    "https://www.ncbi.nlm.nih.gov/bioproject/PRJNA930687"
+  ],
+  "tags": {
+    "grade_comparable": false,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": true,
+    "spatially_resolved": false,
+    "multi_modal_matched": false,
+    "large_cohort": false,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": false,
+    "has_outcome_data": false,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

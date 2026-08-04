@@ -1,0 +1,119 @@
+{
+  "id": "gse-263122-bulk-rnaseq",
+  "title": "High-grade NF2 mutant meningiomas downregulate oncogenic YAP signaling.",
+  "accessions": [
+    "GSE263122"
+  ],
+  "related_accessions": [],
+  "source_repositories": [
+    "GEO",
+    "SRA"
+  ],
+  "publications": [
+    {
+      "title": "Aggressive high-grade NF2 mutant meningiomas downregulate oncogenic YAP signaling via the upregulation of VGLL4 and FAT3/4.",
+      "authors": [
+        "Parrish AG",
+        "Arora S",
+        "Thirimanne HN",
+        "Rudoy D",
+        "Schmid S",
+        "Sievers P",
+        "Sahm F",
+        "Holland EC",
+        "Szulzewsky F"
+      ],
+      "venue": "Neuro-oncology advances",
+      "year": 2024,
+      "doi": "10.1093/noajnl/vdae148",
+      "pmid": "39380691",
+      "preprint_id": "10.1101/2024.05.30.596719"
+    }
+  ],
+  "corresponding_author": "Frank Szulzewsky",
+  "institution": "FHCRC",
+  "date_deposited": "2024-04-03",
+  "date_updated": "2024-08-27",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-11",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-10",
+  "verification_tier": 2,
+  "found_via": [
+    "keyword_api"
+  ],
+  "modality": [
+    "bulk_rna_seq"
+  ],
+  "platform": "NextSeq 2000 (GPL30173)",
+  "reference_genome": "Not reported",
+  "pipeline": "Not reported",
+  "patient_count": "Not reported",
+  "sample_count": 6,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": null,
+    "grade_2": null,
+    "grade_3": null
+  },
+  "who_edition": "Not applicable (cell line)",
+  "molecular_subtype_annotated": "Not reported",
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "Not reported"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "not_applicable",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "Not reported",
+  "age_distribution": "Not reported",
+  "has_outcome_data": "Not reported",
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": []
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": "Not reported",
+  "processed_data_available": true,
+  "processed_data_format": "GSE263122_RAW.tar",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High",
+    "publications": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "DEEP-AUDIT CORRECTION (2026-07-14): publications[0].authors was truncated to exactly 6 names; expanded to the full 9-author Europe PMC authorString for PMID 39380691 (Parrish AG ... Holland EC, Szulzewsky F). corresponding_author corrected from 'Frank Szulzewsky, Sonali Arora' to 'Frank Szulzewsky'. Verified directly against the paper's own correspondence footnote (full text, PMC11459063): '<corresp id=\"c1\">Corresponding Author: Dr. Frank Szulzewsky, Department of Neurosurgery, Huntsman Cancer Institute, University of Utah...(frank.szulzewsky@hsc.utah.edu).</corresp>' -- the ONLY corresponding-author designation in the article; Arora S (second author) is not marked corresponding anywhere in the text and was removed. FACT-CHECK (2026-07-10): the linked publication was previously missing (publications: []) even though the live GEO record carries an explicit Series_web_link to the paper; found and verified via that link plus Europe PMC (PMID 39380691, no retraction/correction). Per-sample clinical/pathology fields (grade, sex/age, anatomic location, brain invasion, treatment timepoint) have not yet been extracted from individual GSM records or supplementary tables -- part of the batch-1 scaling pass, prioritizing breadth of verified accessions over per-sample depth. SCOPE FLAG (fact-check pass 2026-07-11): live GEO Series_overall_design states this accession is entirely 'Ben-Men-1 cells grown in DMEM...lentivirally transduced with pLJM1-GFP or pLJM1-VGLL4. RNASeq was done on positive clones...3 GFP and 3 VGLL4 replicates,' i.e. all 6 samples are an immortalized benign-meningioma cell line (Ben-Men-1) with lentiviral overexpression, not human patient tissue at all. Per docs/scope.md, 'Cell line, PDX, and organoid meningioma omics data (in vitro/model systems, not patient tissue directly)' is explicitly out of scope for the core /data/ inventory and belongs in /data/adjacent/. This record appears to be misfiled in the core inventory; recommend it be relocated to data/adjacent/ in a follow-up pass (not moved in this fact-check pass, which is restricted to editing fields within the assigned file, not repo restructuring). who_edition corrected from 'Not reported' to 'Not applicable (cell line)' and tissue_preservation corrected from 'Not reported' to 'not_applicable' to reflect that this is 100% cultured cell-line material, no tumor grade or tissue-preservation method applies. sample_count=6 is accurate (3 GFP + 3 VGLL4 replicates) and needed no change; patient_count correctly remains 'Not reported' since the schema has no cell-line carve-out for that field. RELOCATION CONFIRMED (2026-07-11, adjacent re-verification pass): re-fetched the live GEO record directly (acc.cgi) and re-confirmed Series_overall_design describes only Ben-Men-1 cell-line clones (3 GFP control + 3 VGLL4-overexpressing replicates), no primary patient tissue anywhere in this accession. This file is the adjacent-directory copy created to complete the relocation recommended above. RELOCATION NOW FULLY COMPLETE (2026-07-12 adjacent re-verification pass): verified via directory listing that the core original at data/gse-263122-bulk-rnaseq.json no longer exists, so the earlier note that it 'still needs to be deleted' is now stale and has been corrected; only this adjacent copy remains, as intended.",
+  "source_urls": [
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE263122",
+    "https://pubmed.ncbi.nlm.nih.gov/39380691/",
+    "https://doi.org/10.1093/noajnl/vdae148"
+  ],
+  "tags": {
+    "grade_comparable": false,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": false,
+    "large_cohort": false,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": false,
+    "has_outcome_data": false,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

@@ -1,0 +1,115 @@
+{
+  "id": "gse-307286-bulk-rnaseq",
+  "title": "Combining brigatinib with mTOR inhibition to effectively treat NF2-SWN-associated and sporadic NF2-deficient meningiomas",
+  "accessions": [
+    "GSE307286"
+  ],
+  "related_accessions": [],
+  "source_repositories": [
+    "GEO",
+    "SRA"
+  ],
+  "publications": [
+    {
+      "title": "Combining Brigatinib with mTOR Inhibition to Effectively Treat NF2-SWN-Associated and Sporadic NF2-Deficient Meningiomas.",
+      "authors": [
+        "Chang LS",
+        "Oblinger JL",
+        "Wu LMN",
+        "Miller C",
+        "Burns SS"
+      ],
+      "venue": "Cancer research communications",
+      "year": 2026,
+      "doi": "10.1158/2767-9764.CRC-25-0563",
+      "pmid": "41417846",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Long-Sheng Chang, Janet L Oblinger",
+  "institution": "Abigail Wexner Institute at Nationwide Children's Hospital",
+  "date_deposited": "2025-09-04",
+  "date_updated": "2025-12-23",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-12",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-10",
+  "verification_tier": 1,
+  "found_via": [
+    "keyword_api",
+    "citation_chain"
+  ],
+  "modality": [
+    "bulk_rna_seq"
+  ],
+  "platform": "Illumina NovaSeq 6000 (GPL24676)",
+  "reference_genome": "Not reported",
+  "pipeline": "Not reported",
+  "patient_count": "Not applicable (cell line)",
+  "sample_count": 12,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": null,
+    "grade_2": null,
+    "grade_3": null
+  },
+  "who_edition": "Not applicable (cell line)",
+  "molecular_subtype_annotated": "Not reported",
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not applicable",
+    "determination_method": "Not applicable"
+  },
+  "treatment_timepoint_status": [
+    "Not applicable"
+  ],
+  "anatomic_location_breakdown": "Not applicable (cell line)",
+  "tissue_preservation": "not_applicable",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "Not applicable",
+  "age_distribution": "Not applicable",
+  "has_outcome_data": false,
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": []
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": "Not reported",
+  "processed_data_available": true,
+  "processed_data_format": "GSE307286_AG_Raw_Normalized_Counts_Genes_DESeq2_HTSEQ.xlsx",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High",
+    "publications": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "Moved to adjacent: overall_design confirms this uses AG-NF2-Men, a telomerase-immortalized meningioma cell line, not primary patient tissue. Series-level GEO metadata verified directly against the live source; per-sample clinical/pathology fields (grade, sex/age, anatomic location, brain invasion, treatment timepoint) have not yet been extracted from individual GSM records or supplementary tables -- part of the batch-1 scaling pass, prioritizing breadth of verified accessions over per-sample depth. Publication metadata pulled from PubMed esummary; not yet manually spot-checked against the full text for every record in this batch. RE-VERIFICATION (2026-07-12): live GEO overall_design re-confirms this is an AG-NF2-Men telomerase-immortalized meningioma cell-line-only experiment (12 GSMs GSM9220669-GSM9220680, DMSO vs brigatinib/INK128/combination, 3 biological replicates each), so patient-level clinical fields are categorically Not applicable (not merely un-extracted); normalized patient_count and who_edition to 'Not applicable (cell line)', anatomic_location_breakdown to 'Not applicable (cell line)', treatment_timepoint_status to ['Not applicable'], tissue_preservation to 'not_applicable', brain_invasion counts/determination_method to 'Not applicable', sex_distribution/age_distribution to 'Not applicable', and has_outcome_data to false -- matching this corpus's other adjacent cell-line records. Publication (PMID 41417846, Cancer Res Commun, vol 6, 2026, doi 10.1158/2767-9764.CRC-25-0563) re-verified against PubMed esummary.",
+  "source_urls": [
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE307286",
+    "https://pubmed.ncbi.nlm.nih.gov/41417846/"
+  ],
+  "tags": {
+    "grade_comparable": false,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": false,
+    "large_cohort": false,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": false,
+    "has_outcome_data": false,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

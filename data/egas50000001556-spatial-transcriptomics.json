@@ -1,0 +1,121 @@
+{
+  "id": "egas50000001556-spatial-transcriptomics",
+  "title": "Spatial transcriptomics of human meningioma samples",
+  "accessions": [
+    "EGAS50000001556",
+    "EGAD50000002233"
+  ],
+  "related_accessions": [
+    "EGAS50000001589",
+    "EGAD50000002272"
+  ],
+  "source_repositories": [
+    "EGA"
+  ],
+  "publications": [
+    {
+      "title": "Spatially resolved single-cell analyses of human meningioma identify novel cell states influencing tumor microenvironment and progression.",
+      "authors": [
+        "Landry AP",
+        "Yefet LS",
+        "Wang JZ",
+        "Ajisebutu A",
+        "Gui C",
+        "Ellenbogen Y"
+      ],
+      "venue": "Nature Genetics",
+      "year": 2026,
+      "doi": "10.1038/s41588-026-02615-w",
+      "pmid": "42265312",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Farshad Nassiri / Gelareh Zadeh",
+  "institution": "University Health Network / University of Toronto",
+  "date_deposited": "Not reported",
+  "date_updated": "2026-04-21",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-11",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-11",
+  "verification_tier": 2,
+  "found_via": [
+    "keyword_api"
+  ],
+  "modality": [
+    "spatial_transcriptomics"
+  ],
+  "platform": "Illumina NovaSeq X (10x Genomics Visium HD)",
+  "reference_genome": "Not reported",
+  "pipeline": "Not reported",
+  "patient_count": 43,
+  "sample_count": 43,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": 7146538,
+  "grade_breakdown": {
+    "grade_1": null,
+    "grade_2": null,
+    "grade_3": null
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": "Not reported",
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "Not reported"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "Not reported",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "33 female, 10 male (of 43 registered samples)",
+  "age_distribution": "Not reported",
+  "has_outcome_data": "Not reported",
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": [
+      "egas50000001589-atlas-snrna-spatial"
+    ]
+  },
+  "access_type": "controlled",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": true,
+  "processed_data_available": "Not reported",
+  "processed_data_format": "Not reported",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not reported",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High",
+    "publications": "High",
+    "corresponding_author": "Medium"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "NEW RECORD (2026-07-11), from a discovery-log LEAD flagging this as possibly the spatial component of the same project/paper as EGAS50000001589 ('A single-cell atlas of meningioma'), released the same week. Independently verified live via the EGA Metadata API: study EGAS50000001556 ('Spatial transcriptomics of human meningioma samples') / dataset EGAD50000002233, num_samples=43, technologies 'Illumina NovaSeq X', same policy_accession_id (EGAP00001001109) as EGAS50000001589/EGAD50000002272. Fetched this dataset's 43 registered EGAN sample accessions directly: subject IDs run MNG095 through MNG137, phenotype 'tumor' for all, sex 33 female/10 male. This subject ID range is the EXACT continuation of EGAS50000001589's registered snRNA-seq arm (which covers MNG001-MNG094), with zero overlapping subject IDs between the two datasets, and 43 matches precisely the 'n=43 samples, 7,146,538 segmented cells' spatial-arm figure quoted in EGAD50000002272's own description. CONCLUSION: this is genuinely part of the SAME overarching flagship 'single-cell atlas of meningioma' project (same DAC/policy, same release week, sequential patient numbering scheme) but registered as its own separate EGA study/dataset accession, using a DIFFERENT, non-overlapping subset of 43 patients than the 94-patient snRNA-seq arm. Per instructions, this is therefore extracted as a STANDALONE record (not merged, not a duplicate) and cross-linked via related_accessions/paired_multimodal.related_datasets to egas50000001589-atlas-snrna-spatial; the reverse cross-link (egas50000001589-atlas-snrna-spatial.json listing this record in its related_accessions/related_datasets) has already been added there, but that other file was not edited by this process beyond what was written when it was newly created in this same batch -- flagging here for visibility since a parallel batch may also touch that file. paired_multimodal.is_paired set to false (not multi_modal_matched) because the two arms use disjoint patient cohorts, not the same patients profiled by two modalities. cell_count_post_qc (7,146,538) is described in the source as 'segmented cells' from Visium HD spot/cell segmentation, not classic scRNA-seq QC-filtered cell count; recorded here with that caveat, Medium confidence. No linked publication (pubmed_ids empty). Only public EGA study/dataset/sample-level metadata was used per docs/scope.md; the controlled-access spatial data itself was never accessed. tags.large_cohort left false pending centralized post-hoc recomputation. PUBLICATION LINKED (2026-07-13), prompted by a user question about whether a paper's data-availability statement was fully represented here: Landry et al. 2026 (Nature Genetics, PMID 42265312, DOI 10.1038/s41588-026-02615-w) cites 'EGAD50000002233 for Visium HD data' verbatim in its data-availability section (confirmed by fetching the paper's own full-text XML), matching this record's own Visium HD platform and 7,146,538-segmented-cell figure. corresponding_author inferred from Nassiri/Zadeh's last-author position, consistent with this lab's other records; no explicit corresponding-author footnote was found in the fetched XML, so kept at Medium confidence.",
+  "source_urls": [
+    "https://ega-archive.org/studies/EGAS50000001556",
+    "https://ega-archive.org/datasets/EGAD50000002233"
+  ],
+  "tags": {
+    "grade_comparable": false,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": true,
+    "multi_modal_matched": false,
+    "large_cohort": true,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": false,
+    "has_outcome_data": false,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

@@ -1,0 +1,137 @@
+{
+  "id": "gse-139651-bulk-rnaseq",
+  "title": "Enhancer landscape of meningioma [RNA-seq]",
+  "accessions": [
+    "GSE139651"
+  ],
+  "related_accessions": [
+    "GSE139652",
+    "GSE139650"
+  ],
+  "source_repositories": [
+    "GEO",
+    "SRA"
+  ],
+  "publications": [
+    {
+      "title": "The Meningioma Enhancer Landscape Delineates Novel Subgroups and Drives Druggable Dependencies.",
+      "authors": [
+        "Prager BC",
+        "Vasudevan HN",
+        "Dixit D",
+        "Bernatchez JA",
+        "Wu Q",
+        "Wallace LC",
+        "Bhargava S",
+        "Lee D",
+        "King BH",
+        "Morton AR",
+        "Gimple RC",
+        "Pekmezci M",
+        "Zhu Z",
+        "Siqueira-Neto JL",
+        "Wang X",
+        "Xie Q",
+        "Chen C",
+        "Barnett GH",
+        "Vogelbaum MA",
+        "Mack SC",
+        "Chavez L",
+        "Perry A",
+        "Raleigh DR",
+        "Rich JN"
+      ],
+      "venue": "Cancer discovery",
+      "year": 2020,
+      "doi": "10.1158/2159-8290.CD-20-0160",
+      "pmid": "32703768",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "David R. Raleigh, Jeremy N. Rich",
+  "institution": "Cleveland Clinic",
+  "date_deposited": "2019-10-31",
+  "date_updated": "2021-04-18",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-14",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-10",
+  "verification_tier": 1,
+  "found_via": [
+    "keyword_api",
+    "citation_chain"
+  ],
+  "modality": [
+    "bulk_rna_seq"
+  ],
+  "platform": "Illumina HiSeq 2500 (GPL16791)",
+  "reference_genome": "Not reported",
+  "pipeline": "Not reported",
+  "patient_count": "Not reported",
+  "sample_count": 13,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": null,
+    "grade_2": null,
+    "grade_3": null
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": "Not reported",
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "Not reported"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "Not reported",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "Not reported",
+  "age_distribution": "Not reported",
+  "has_outcome_data": "Not reported",
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": []
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": "Not reported",
+  "processed_data_available": true,
+  "processed_data_format": "GSE139651_meningioma_TPM.csv.gz",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High",
+    "publications": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "Series-level GEO metadata verified directly against the live source. COMPOSITION NOTE (2026-07-12 re-verification audit against family.soft): the 13 RNA-seq GSM samples are not all tumor tissue -- the per-sample 'tissue/sample type' field splits into 10 'Meningioma tissue' and 3 'Arachnoid granulation cell model' (non-tumor cell-of-origin models used as a comparator); sample_count is retained at 13 (the deposited GSM count). No per-sample sex/age/grade fields are deposited (only 'tissue/sample type'), so sex_distribution/age_distribution/grade_breakdown remain Not reported/null. Publication metadata (PMID 32703768) re-verified against PubMed esummary/efetch. This is a SubSeries of GSE139652 with matching ChIP-seq in GSE139650. AUDIT 2026-07-14 (live-source deep audit): two genuine errors found and corrected. (1) AUTHOR LIST TRUNCATED: publications[0].authors previously listed only the first 6 of 24 authors (a widespread corpus bug). Re-fetched Europe PMC authorString and PubMed efetch XML for PMID 32703768, both confirming the full 24-author list ending 'Perry A, Raleigh DR, Rich JN.'; authors array expanded to the complete list. (2) CORRESPONDING_AUTHOR WRONG: previously listed 'Briana Prager, Jeremy Rich' (Prager is the first author, apparently assumed corresponding by list position, which this audit is specifically checking for). PubMed's own abstract page lists only two author affiliations with emails: David R. Raleigh (David.Raleigh@ucsf.edu) and Jeremy N. Rich (drjeremyrich@gmail.com), both in the Department of Radiation Oncology, UCSF affiliation block -- confirmed via https://pubmed.ncbi.nlm.nih.gov/32703768/ and cross-checked against the PubMed efetch XML AuthorList/AffiliationInfo. corresponding_author corrected to 'David R. Raleigh, Jeremy N. Rich'. Full-text hidden-data check: fetched Europe PMC fullTextXML for PMC8194360 and confirmed no per-sample WHO grade, recurrence/outcome, or enhancer-subgroup classification is reported for these specific 10 GSE139651 tissue samples -- the paper states 'Clinical information was not available for de-identified (DI) samples' and its enhancer-subgroup classification (Groups 1-3) was derived from a separate 33-tumor H3K27ac ChIP-seq cohort, not this RNA-seq series; grade_breakdown/molecular_subtype_annotated/has_outcome_data correctly remain Not reported/null, no change needed there.",
+  "source_urls": [
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE139651",
+    "https://pubmed.ncbi.nlm.nih.gov/32703768/"
+  ],
+  "tags": {
+    "grade_comparable": false,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": false,
+    "large_cohort": false,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": false,
+    "has_outcome_data": false,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

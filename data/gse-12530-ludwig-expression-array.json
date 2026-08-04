@@ -1,0 +1,126 @@
+{
+  "id": "gse-12530-ludwig-expression-array",
+  "title": "Whole genome expression in meningioma",
+  "accessions": [
+    "GSE12530"
+  ],
+  "related_accessions": [
+    "E-GEOD-12530"
+  ],
+  "source_repositories": [
+    "GEO",
+    "ArrayExpress_BioStudies"
+  ],
+  "publications": [
+    {
+      "title": "Genome wide expression profiling identifies specific deregulated pathways in meningioma.",
+      "authors": [
+        "Keller A",
+        "Ludwig N",
+        "Backes C",
+        "Romeike BF",
+        "Comtesse N",
+        "Henn W",
+        "Steudel WI",
+        "Mawrin C",
+        "Lenhof HP",
+        "Meese E"
+      ],
+      "venue": "International Journal of Cancer",
+      "year": 2009,
+      "doi": "10.1002/ijc.23942",
+      "pmid": "19003955",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Nicole Ludwig",
+  "institution": "Department of Human Genetics, Saarland University",
+  "date_deposited": "2008-08-22",
+  "date_updated": "2014-10-28",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-11",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-11",
+  "verification_tier": 2,
+  "found_via": [
+    "keyword_api"
+  ],
+  "modality": [
+    "expression_array"
+  ],
+  "platform": "GE Healthcare/Amersham Biosciences CodeLink Human Whole Genome Bioarray (GPL2895)",
+  "reference_genome": "Not reported",
+  "pipeline": "Not reported",
+  "patient_count": 26,
+  "sample_count": 26,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": 8,
+    "grade_2": 8,
+    "grade_3": 8
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": false,
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "Not reported"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "Not reported",
+  "normal_control_tissue": {
+    "included": true,
+    "type": "dura mater (non-tumor control tissue)",
+    "count": 2
+  },
+  "sex_distribution": "18 female / 8 male (n=26, all samples including the 2 dura controls; live per-sample factors table)",
+  "age_distribution": "Range 31-85 years (n=26, all samples including the 2 dura controls; live per-sample factors table)",
+  "has_outcome_data": false,
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": []
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": true,
+  "processed_data_available": true,
+  "processed_data_format": "GSE12530_series_matrix.txt.gz (normalized signal intensities) plus per-sample CodeLink text files in GSE12530_RAW.tar",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High",
+    "publications": "High",
+    "grade_breakdown": "High",
+    "sex_distribution": "Medium",
+    "age_distribution": "Medium"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "DEEP-AUDIT ATTEMPT (2026-07-14): tried to verify corresponding_author ('Nicole Ludwig') against the paper's own correspondence footnote for PMID 19003955 (Int J Cancer, Wiley). Europe PMC's structured author-affiliation data returns only the first author's (Keller A) affiliation string and no email for any of the 10 authors (Ludwig N included), i.e. inconclusive rather than confirmatory. Direct fetch of the Wiley article (https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/ijc.23942 and .../doi/full/10.1002/ijc.23942) was blocked by a Cloudflare 'Just a moment...' challenge page on two attempts with different User-Agent strings (default and a Chrome/Windows UA); no PMC full text exists for this 2009 article (not deposited, isOpenAccess=N, inEPMC=N per Europe PMC). Semantic Scholar API was rate-limited (429) on retry. Per this audit's instructions, corresponding_author is therefore left UNCHANGED (not confirmed, not guessed) -- 'Nicole Ludwig' may or may not be correct; this needs a human with paywall access to verify. Authors array (10 names) already matches the full Europe PMC authorString exactly, no truncation found. Never previously fetched; identified only as a plausible candidate in this project's first search session (2026-07-10) and independently verified fresh this session via the live BioStudies API (https://www.ebi.ac.uk/biostudies/api/v1/studies/E-GEOD-12530), which mirrors GEO series GSE12530, cross-checked against GEO's own acc.cgi record. Confirmed genuinely new (not represented under any other accession anywhere in this inventory; grepped for GSE12530 and PMID 19003955 across all of /data/, zero hits) and genuinely in-scope (24 meningioma + 2 dura controls, real human patient tissue, not a cell line). Grade breakdown (8 grade I / 8 grade II / 8 grade III, 2 dura controls with WHO 'not specified') and sex distribution (18F/8M) were confirmed directly from BioStudies' live per-sample Experimental Factors table (26 individual factor rows, each with AGE/HIST/SEX/WHO and a GSM linkage), not estimated from the series summary text alone; this table happens to reproduce the series summary's stated '24 meningioma including eight of each WHO grade and two dura controls' exactly. Publication (Keller et al., Int J Cancer 2009, PMID 19003955) confirmed via GEO's own Series_pubmed_id field and independently via PubMed esummary. tissue_preservation and who_edition are left 'Not reported' because neither the BioStudies record, the GEO SOFT text, nor the protocols subsections state a preservation method (only Trizol RNA extraction is described) or a specific WHO classification edition; per project convention this is not inferred from the 2008 submission date. Sex/age distributions are aggregated across all 26 samples (tumor + control together), not separately tabulated for the meningioma-only subset, since the live per-sample table does not flag a tumor/control axis distinctly from the WHO field itself. tags.large_cohort left false pending centralized quartile recomputation.",
+  "source_urls": [
+    "https://www.ebi.ac.uk/biostudies/arrayexpress/studies/E-GEOD-12530",
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE12530",
+    "https://pubmed.ncbi.nlm.nih.gov/19003955/",
+    "https://doi.org/10.1002/ijc.23942"
+  ],
+  "tags": {
+    "grade_comparable": true,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": false,
+    "large_cohort": false,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": false,
+    "has_outcome_data": false,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

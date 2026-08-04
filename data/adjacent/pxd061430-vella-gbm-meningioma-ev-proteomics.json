@@ -1,0 +1,111 @@
+{
+  "id": "pxd061430-vella-gbm-meningioma-ev-proteomics",
+  "title": "Proteome of human glioblastoma and meningioma tissue small extracellular vesicles",
+  "accessions": [
+    "PXD061430"
+  ],
+  "related_accessions": [
+    "MSV000097225"
+  ],
+  "source_repositories": [
+    "MassIVE",
+    "ProteomeXchange"
+  ],
+  "publications": [
+    {
+      "title": "Proteome of human glioblastoma and meningioma tissue small extracellular vesicles",
+      "authors": ["Su H", "Purnianto A", "Kaye A", "Morokoff A", "Drummond KJ", "Stylli S", "Vella LJ"],
+      "venue": "preprint",
+      "year": 2024,
+      "doi": "10.1101/2024.04.15.589661",
+      "pmid": null,
+      "preprint_id": "10.1101/2024.04.15.589661"
+    }
+  ],
+  "corresponding_author": "Laura Vella",
+  "institution": "The Florey Institute of Neuroscience and Mental Health, University of Melbourne, Australia",
+  "date_deposited": "2025-03-04",
+  "date_updated": "2025-03-04",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-12",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-11",
+  "verification_tier": 2,
+  "found_via": [
+    "keyword_api"
+  ],
+  "modality": [
+    "proteomics_bulk_ms"
+  ],
+  "platform": "Q Exactive Plus",
+  "reference_genome": "Not applicable",
+  "pipeline": "Not reported",
+  "patient_count": "Not reported",
+  "sample_count": "Not reported",
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": null,
+    "grade_2": null,
+    "grade_3": null
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": false,
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "Not reported"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "Not reported",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "Not reported",
+  "age_distribution": "Not reported",
+  "has_outcome_data": false,
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": []
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": true,
+  "processed_data_available": "Not reported",
+  "processed_data_format": "Not reported",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "modality": "High",
+    "sample_count": "Low",
+    "publications": "Medium"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "MIXED-TUMOR-TYPE COHORT WITH UNRESOLVED MENINGIOMA-ONLY N: this dataset combines glioblastoma (GBM) and meningioma (MNG) surgical biopsy tissue and their small extracellular vesicles (EVs) from the SAME study under one PXD/MSV accession; the meningioma-only sample/patient count could not be resolved despite a live multi-pronged attempt: (1) the PRIDE REST API does not have this record (it correctly returns 'not in database', since this is hosted at MassIVE, not PRIDE); (2) the ProteomeXchange umbrella XML (proteomecentral.proteomexchange.org/cgi/GetDataset?ID=PXD061430) was fetched successfully and confirms title, description, Q Exactive Plus instrument, human species, submitter Huaqi Su and PI Dr. Laura Vella (Florey Institute of Neuroscience and Mental Health) exactly as described in the discovery-log lead, plus the dataset's true MassIVE task hash (2dabee7c5e0c43f5895429122b65fc4a) and FTP path (ftp://massive.ucsd.edu/v09/MSV000097225/), but the XML itself does not include a per-sample-type breakdown; (3) massive.ucsd.edu's dataset.jsp page loaded (HTTP 200) but is a JavaScript single-page app that returns only the same free-text description with no server-rendered sample table; (4) MassIVE's QueryDatasets bulk API and an anonymous FTP directory listing attempt were both tried and did not yield a per-sample file manifest (FTP connection timed out; the bulk dataset-search API returns an unfiltered global list rather than honoring a dataset-name query filter). Per project instruction, patient_count and sample_count are left 'Not reported' rather than estimated, and this record is filed to /data/adjacent/ (not /data/) both because the exact meningioma-only sample count is unresolved AND per this project's established scope precedent that mixed-tumor-type cohorts sharing one accession with another (non-meningioma) tumor type are adjacent, not core. ProteomeXchange's own PublicationList explicitly states 'Dataset with no associated published manuscript' and its ReviewLevel is 'Non peer-reviewed dataset' -- both independently confirm the discovery-log's note that no linked publication exists as of this live check. If a future pass can access the MassIVE FTP/file manifest directly (e.g. via an authenticated MassIVE API key or FTP client not blocked in this environment), the meningioma-only n should be extracted and this record reconsidered for promotion to /data/ with corrected sample_count/patient_count. tags.large_cohort is set false pending centralized recomputation across the whole inventory (not meaningful to judge per-record here since sample_count itself is unresolved). RE-VERIFICATION (2026-07-12): the meningioma-only-n unresolvability was re-tested with a fresh, deeper attempt and CONFIRMED still unresolvable. The full MassIVE (MSV000097225) file manifest WAS obtainable this pass via the GNPS dataset cache (datasetcache.gnps2.org) -- 35 files total: 31 numbered raw MS runs (raw/210809_Kate_KS-2829_1..32, no #18) and a filtered protein matrix (metadata/'GBM and MG DATA_Filtered_70%_metadata_PX.txt') whose sample columns are 31 numbered 'LFQ intensity N' fields plus a ccms_metadata/summary.tsv reporting 0 declared Conditions/Bio_replicates/Tech_replicates. So the public data yield a TOTAL of 31 combined GBM+meningioma (tumor + EV) MS runs but NO file maps any sample number to GBM vs meningioma; the meningioma-only sample/patient count therefore remains genuinely unresolvable and sample_count/patient_count stay 'Not reported' (not estimated). ProteomeXchange XML re-confirmed: hostingRepository MassIVE, announceDate 2025-03-04, Q Exactive Plus, Homo sapiens, submitter Huaqi Su, PI Dr. Laura Vella (Florey Institute of Neuroscience and Mental Health), ReviewLevel 'Non peer-reviewed dataset', PublicationList 'Dataset with no associated published manuscript' -- confirming peer_reviewed false and no linked publication. DEEP-AUDIT UPDATE (2026-07-14): re-ran the meningioma-only sample-count resolution attempt fresh (not trusting the 2026-07-12 re-verification's conclusion) -- re-fetched the live ProteomeXchange XML directly (https://proteomecentral.proteomexchange.org/cgi/GetDataset?ID=PXD061430&outputMode=XML) and confirmed it is byte-for-byte consistent with the prior pass (same title, description, hostingRepository MassIVE, submitter Huaqi Su, PI Dr. Laura Vella, ReviewLevel 'Non peer-reviewed dataset', PublicationList 'Dataset with no associated published manuscript'); the meningioma-only n is CONFIRMED STILL UNRESOLVABLE, consistent with docs/methodology.md's own note that 'a MassIVE extracellular-vesicle proteomics dataset's meningioma-only sample count could not be resolved from any public source after exhausting every available metadata route' (this record is that dataset). However, this pass found something the prior two passes missed: ProteomeXchange's 'no associated published manuscript' field is accurate only for a formally-linked peer-reviewed paper -- a genuinely matching preprint does exist and was not previously searched for. An Europe PMC author-based search (query: AUTH:\"Vella LJ\" AND meningioma, and separately AUTH:\"Vella L\" AND meningioma AND \"extracellular vesicles\") surfaced a bioRxiv preprint (PPR838468, DOI 10.1101/2024.04.15.589661, posted 2024-04-16) titled 'Proteome of human glioblastoma and meningioma tissue small extracellular vesicles' -- an EXACT verbatim title match to this PXD061430 project's own title, by submitter Huaqi Su and corresponding author Dr. Laura J. Vella (The Florey Institute of Neuroscience and Mental Health), matching this record's corresponding_author and institution fields exactly, with an abstract that is near-word-for-word identical to the PRIDE/ProteomeXchange project description. Confirmed via the bioRxiv API (https://api.biorxiv.org/details/biorxiv/10.1101/2024.04.15.589661) that this is still an unpublished preprint (published field = 'NA') as of this check, and via a broad Europe PMC search that no subsequent peer-reviewed journal version exists. Direct full-text access to the preprint (biorxiv.org and PMC mirrors) was blocked by bot protection (HTTP 403) in this environment, so the literal accession string PXD061430/MSV000097225 could not be grepped inside the preprint's own methods/data-availability text; the match instead rests on exact title/author/institution identity, the same evidentiary basis and confidence tier already used elsewhere in this corpus for identity-based (non-fulltext-confirmed) matches (e.g. pxd009925-proteomics). Publication added with venue 'preprint', confidence_level.publications downgraded from High (which had reflected confidence there was NO manuscript at all) to Medium (reflecting confidence in this newly-found identity-based preprint match); tags.peer_reviewed correctly remains false since a preprint is not a peer-reviewed primary reference per docs/schema.md's tag definition. This does not change patient_count/sample_count (still unresolved) or the /data/adjacent/ scope placement.",
+  "source_urls": [
+    "https://proteomecentral.proteomexchange.org/cgi/GetDataset?ID=PXD061430&outputMode=XML",
+    "https://massive.ucsd.edu/ProteoSAFe/dataset.jsp?task=2dabee7c5e0c43f5895429122b65fc4a",
+    "https://doi.org/10.1101/2024.04.15.589661"
+  ],
+  "tags": {
+    "grade_comparable": false,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": false,
+    "large_cohort": false,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": false,
+    "has_outcome_data": false,
+    "peer_reviewed": false
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

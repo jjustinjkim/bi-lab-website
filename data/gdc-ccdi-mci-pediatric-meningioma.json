@@ -1,0 +1,97 @@
+{
+  "id": "gdc-ccdi-mci-pediatric-meningioma",
+  "title": "Molecular Characterization Initiative (MCI), pediatric meningioma subset",
+  "accessions": [
+    "CCDI-MCI"
+  ],
+  "related_accessions": [],
+  "source_repositories": [
+    "GDC_TCGA"
+  ],
+  "publications": [],
+  "corresponding_author": "Not reported",
+  "institution": "Children's Hospital of Philadelphia (CCDI Data Coordinating Center) / National Cancer Institute Childhood Cancer Data Initiative",
+  "date_deposited": "Not reported",
+  "date_updated": "Not reported",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-11",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-11",
+  "verification_tier": 2,
+  "found_via": [
+    "keyword_api"
+  ],
+  "modality": [
+    "wes",
+    "dna_methylation_array"
+  ],
+  "platform": "Not reported",
+  "reference_genome": "Not reported",
+  "pipeline": "Not reported",
+  "patient_count": 31,
+  "sample_count": 31,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": null,
+    "grade_2": null,
+    "grade_3": null
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": "Not reported",
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "Not reported"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "Not reported",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "Not reported",
+  "age_distribution": "Not reported",
+  "has_outcome_data": "Not reported",
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": []
+  },
+  "access_type": "controlled",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": true,
+  "processed_data_available": true,
+  "processed_data_format": "Not reported",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not reported",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High",
+    "publications": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "NEW RECORD (2026-07-11), found via a discovery search of GDC (Genomic Data Commons), a database never previously searched by this project (prior documentation only checked TCGA specifically, confirming no dedicated meningioma project exists there, but GDC hosts many other programs beyond TCGA). CCDI-MCI ('Molecular Characterization Initiative') is a large NCI Childhood Cancer Data Initiative pan-pediatric-cancer profiling program (3,093 total cases across many disease types, e.g. Nevi and Melanomas, Gliomas, Leukemias, Meningiomas, Adenomas, etc.), NOT a meningioma-specific project, but 'Meningiomas' is confirmed as one of its genuine, real disease-type categories, not an incidental keyword collision. Verified directly via the GDC REST API: filtering cases by project.project_id=CCDI-MCI and disease_type=*meningioma* returns exactly 31 cases, all with disease_type literally 'Meningiomas'; expanding these cases' file lists confirms real deposited molecular data, not just clinical records: 62 whole-exome sequencing files (access: controlled) and 84 DNA methylation array files (access: open) across these 31 cases. This is a genuine, substantial pediatric meningioma cohort; pediatric meningioma is rare and was essentially unrepresented in this inventory before this record (the only other pediatric-focused record is gse-317578-methylation, a Heidelberg cohort). No linked publication was found, this is an active data-generation consortium program (part of NCI's Childhood Cancer Data Initiative), not a single-paper study; corresponding_author and institution reflect the coordinating center, not an individual investigator. patient_count/sample_count set to 31 (the confirmed case count); the true number of distinct samples (a case can have multiple files/aliquots) was not resolved beyond the case-level count in this pass. modality includes both wes (controlled access) and dna_methylation_array (open access, GDC's own experimental_strategy field lists this as 'Methylation Array' though the exact platform/chip was not confirmed). Only public GDC case/file summary-level metadata was used; the controlled-access WXS data itself was never accessed, per docs/scope.md's compliance guardrail; the open-access methylation array data's actual files were not downloaded in this pass either, only their existence and count were confirmed via the API. FACT-CHECK CORRECTION (2026-07-11 re-verification pass): verification_tier was set to 1 ('Corroborated, 2+ independent found_via paths') but found_via lists only a single path ('keyword_api'), which per docs/controlled_vocabulary.md is the definition of tier 2 ('Single-path verified'), not tier 1. Independently re-verified the underlying GDC data live (re-queried api.gdc.cancer.gov/projects/CCDI-MCI?expand=summary and the cases/files facet endpoints): the 31-case, 146-file (62 WXS controlled + 84 methylation-array open, matching a 56 Masked Intensities + 28 Methylation Beta Value split) figures are all still accurate and reproduce exactly. Only the tier/found_via mismatch was wrong; corrected verification_tier from 1 to 2 since only one found_via path is documented and no second independent path was found in this pass either.",
+  "source_urls": [
+    "https://portal.gdc.cancer.gov/projects/CCDI-MCI"
+  ],
+  "tags": {
+    "grade_comparable": false,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": false,
+    "large_cohort": false,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": false,
+    "has_outcome_data": false,
+    "peer_reviewed": false
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

@@ -1,0 +1,115 @@
+{
+  "id": "gse-174360-bulk-rnaseq",
+  "title": "Cancer-specific deficiency of SMARCE1, a module-linking subunit, generates a targetable chromatin regulatory dependency in clear cell meningioma",
+  "accessions": [
+    "GSE174360"
+  ],
+  "related_accessions": [],
+  "source_repositories": [
+    "GEO",
+    "SRA"
+  ],
+  "publications": [
+    {
+      "title": "SMARCE1 deficiency generates a targetable mSWI/SNF dependency in clear cell meningioma.",
+      "authors": [
+        "St Pierre R",
+        "Collings CK",
+        "Sam\u00e9 Guerra DD",
+        "Widmer CJ",
+        "Bolonduro O",
+        "Mashtalir N"
+      ],
+      "venue": "Nature genetics",
+      "year": 2022,
+      "doi": "10.1038/s41588-022-01077-0",
+      "pmid": "35681054",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Cigall Kadoch",
+  "institution": "Broad Institute of MIT and Harvard, Harvard Medical School, Dana-Farber Cancer Institute",
+  "date_deposited": "2021-05-12",
+  "date_updated": "2022-11-29",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-11",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-10",
+  "verification_tier": 2,
+  "found_via": [
+    "keyword_api"
+  ],
+  "modality": [
+    "bulk_rna_seq"
+  ],
+  "platform": "Illumina NextSeq 500 (GPL18573)",
+  "reference_genome": "Not reported",
+  "pipeline": "Not reported",
+  "patient_count": "Not reported",
+  "sample_count": 15,
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": null,
+    "grade_2": null,
+    "grade_3": null
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": true,
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "Not reported"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "fresh_frozen",
+  "normal_control_tissue": {
+    "included": false,
+    "type": null,
+    "count": null
+  },
+  "sex_distribution": "Not reported",
+  "age_distribution": "Not reported",
+  "has_outcome_data": "Not reported",
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": []
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": false,
+  "processed_data_available": true,
+  "processed_data_format": "GSE174360_RAW.tar (per-sample processed files; despite the 'RAW' filename, raw sequencing reads for the 15 meningioma tumor samples specifically are explicitly withheld per the series' own overall_design text, see note)",
+  "license": "Not reported",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "sample_count": "High",
+    "modality": "High",
+    "publications": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "SCOPE CORRECTION (2026-07-10 fact-check pass): the live GSE174360 series has 158 total GSM records, but this is overwhelmingly a cell-line mechanistic epigenomics study, not a meningioma tissue cohort. Downloaded and inspected the full family.soft file: 143 of 158 samples are 'cancer cell line' (AC7 meningeal cell line and BT549 breast cancer cell line, used as a SWI/SNF/SMARCE1 model system) assayed by ChIP-seq (48), ATAC-seq (28), and CUT&Tag (21, recorded as library_strategy=OTHER); only 15 of 158 samples are 'Primary meningioma tumor sample', and all 15 of those are RNA-Seq. sample_count has been corrected from 158 to 15 to reflect only the true meningioma-tissue RNA-seq samples in scope for this bulk_rna_seq record (this also resolves the modality question -- no need to add atac_seq/chip-seq to modality since those assays apply only to the excluded cell-line samples). The 15 tumor samples' extract_protocol confirms 'fresh frozen tissue samples' (tissue_preservation set to fresh_frozen). Per-sample genotype field on the 15 tumor samples gives a named molecular subtype breakdown: NF2 loss (7), SMARCE1 loss (4), KLF4/TRAF7 missense (2), wild-type (2, titled 'Normal.Brain.Tissue' in the GSM name but characteristics field still lists tissue as 'Primary meningioma tumor' -- likely a labeling quirk in the source, not a true normal-brain control; not moved to normal_control_tissue given the explicit tissue characteristic) -- molecular_subtype_annotated set to true. Discovered a linked publication not declared in this GEO record's own Series_pubmed_id field (which is empty): St Pierre, Collings et al., 'SMARCE1 deficiency generates a targetable mSWI/SNF dependency in clear cell meningioma,' Nat Genet 2022, PMID 35681054 -- author list and institution (Broad Institute/Dana-Farber, Kadoch lab) match this record's corresponding_author and institution fields exactly, and the paper's title matches this GEO series' subject matter (GEO series title itself reads as a working/pre-publication title for the same paper). Added at High confidence given the exact author/institution match. tags.large_cohort corrected to false and tags.peer_reviewed/molecular_subtype_annotated corrected to true as a consequence of the above. Per-sample clinical/pathology fields beyond genotype (WHO grade, sex/age, anatomic location, brain invasion, treatment timepoint) for the 15 tumor samples have not yet been extracted. FACT-CHECK CORRECTION (2026-07-11 re-verification pass): raw_data_available was left 'Not reported' but the live GSE174360 Series_overall_design field states explicitly, in its own words: 'Raw data for the primary meningioma tumor samples were not provided due to patient privacy concerns and will be submitted to dbGaP' -- this is a direct, unambiguous statement (not an inference) that raw sequencing reads for the 15 tumor samples in scope for this record are not available via this GEO accession. Corrected raw_data_available from 'Not reported' to false accordingly. DEEP-AUDIT UPDATE (2026-07-14): re-fetched the live GSE174360 family.soft file fresh (not trusting the prior notes) and re-confirmed every prior correction still holds exactly: 158 total GSM records (48 ChIP-seq + 46 RNA-seq + 28 ATAC-seq + 21 CUT&Tag('OTHER') on cancer cell lines AC7/BT549, plus 15 RNA-seq on 'Primary meningioma tumor sample'); sample_count=15 is still correct. Per-sample genotype tally on the 15 tumor GSMs reconfirmed as NF2-null (7: GSM5292774-80), SMARCE1-null (4: GSM5292783-86), KLF4/TRAF7-null (2: GSM5292772-73), and the 2 GSMs titled 'Normal.Brain.Tissue' (GSM5292781-82) still carry Sample_characteristics_ch1 = 'tissue: Primary meningioma tumor' / 'genotype: wild type', not a true normal-brain control, consistent with the existing note. Series_overall_design's raw-data-withholding statement is unchanged (raw_data_available=false still correct). One genuine new error found and fixed: corresponding_author was listed as 'Roodolph P St. Pierre, Clayton K Collings' (the co-first authors), but the live GEO record's own Series_contact_name is 'Cigall,,Kadoch', matching PubMed esummary's lastauthor='Kadoch C' for PMID 35681054, and independently confirmed via the University of Groningen research portal's record for this paper (research.rug.nl), which explicitly marks 'Cigall Kadoch* / *Corresponding author for this work' -- St Pierre and Collings are first authors, not corresponding authors. Corrected corresponding_author to 'Cigall Kadoch'. Note: the PMID 35681054 linkage itself (added in the 2026-07-10 pass on an author/institution match, since GEO's own Series_pubmed_id field is empty) could not be additionally re-confirmed by a literal 'GSE174360' full-text search in this pass, because the Nature Genetics paper is subscription-only with no PMC/Europe-PMC full-text copy available (confirmed via elink dbfrom=pubmed&db=pmc returning zero linked records) -- a Europe PMC literal-string search for 'GSE174360' returns zero relevant hits (its one hit is an unrelated ARID1A/breast-cancer paper), which is expected/inconclusive given the paywall rather than evidence the linkage is wrong; the original author/institution match (exact match on corresponding author Kadoch, Broad/Dana-Farber institution, and title correspondence between the GEO series title and this paper) remains the basis for the link and is left as-is.",
+  "source_urls": [
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE174360",
+    "https://pubmed.ncbi.nlm.nih.gov/35681054/"
+  ],
+  "tags": {
+    "grade_comparable": false,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": false,
+    "large_cohort": false,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": true,
+    "has_outcome_data": false,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}

@@ -1,0 +1,120 @@
+{
+  "id": "pxd007044-proteomics",
+  "title": "Proteomic analysis of meningioma of different grades identifies potential therapeutic targets and biomarkers",
+  "accessions": [
+    "PXD007044",
+    "PXD007125",
+    "PXD007073"
+  ],
+  "related_accessions": [],
+  "source_repositories": [
+    "PRIDE"
+  ],
+  "publications": [
+    {
+      "title": "Proteomic analysis discovers the differential expression of novel proteins and phosphoproteins in meningioma including NEK9, HK2 and SET and deregulation of RNA metabolism.",
+      "authors": [
+        "Dunn J",
+        "Ferluga S",
+        "Sharma V",
+        "Futschik M",
+        "Hilton DA",
+        "Adams CL",
+        "Lasonder E",
+        "Hanemann CO"
+      ],
+      "venue": "EBioMedicine",
+      "year": 2019,
+      "doi": "10.1016/j.ebiom.2018.12.048",
+      "pmid": "30594554",
+      "preprint_id": null
+    }
+  ],
+  "corresponding_author": "Jemma Dunn / C. Oliver Hanemann",
+  "institution": "University of Plymouth",
+  "date_deposited": "2017-08-16",
+  "date_updated": "2019-01-07",
+  "publication_status": "normal",
+  "last_verified_date": "2026-07-10",
+  "extracted_by": "Claude Code",
+  "extraction_date": "2026-07-10",
+  "verification_tier": 1,
+  "found_via": [
+    "keyword_api",
+    "citation_chain"
+  ],
+  "modality": [
+    "proteomics_bulk_ms"
+  ],
+  "platform": "LTQ Orbitrap Velos",
+  "reference_genome": "Not applicable",
+  "pipeline": "Not reported",
+  "patient_count": "Not reported",
+  "sample_count": "Not reported",
+  "cell_count_raw": "Not reported",
+  "cell_count_post_qc": "Not reported",
+  "grade_breakdown": {
+    "grade_1": null,
+    "grade_2": null,
+    "grade_3": null
+  },
+  "who_edition": "Not reported",
+  "molecular_subtype_annotated": false,
+  "brain_invasion": {
+    "status_reported": false,
+    "counts": "Not reported",
+    "determination_method": "Not reported"
+  },
+  "treatment_timepoint_status": [
+    "Not reported"
+  ],
+  "anatomic_location_breakdown": "Not reported",
+  "tissue_preservation": "fresh_frozen",
+  "normal_control_tissue": {
+    "included": true,
+    "type": "normal healthy human meninges",
+    "count": 3
+  },
+  "sex_distribution": "Not reported",
+  "age_distribution": "Not reported",
+  "has_outcome_data": false,
+  "paired_multimodal": {
+    "is_paired": false,
+    "related_datasets": []
+  },
+  "access_type": "open",
+  "access_blocked_metadata_incomplete": false,
+  "raw_data_available": true,
+  "processed_data_available": true,
+  "processed_data_format": "MaxQuant search-result output present on all three accessions under differing filenames (PXD007044: MaxQuant_output.zip; PXD007073: MaxQuant_Output.zip.zip; PXD007125: MQ_text_folder_phosphopeptides.zip)",
+  "license": "EBI terms of use",
+  "controlled_access_approval_timeline": "Not applicable (open access)",
+  "confidence_level": {
+    "modality": "High",
+    "publications": "High"
+  },
+  "needs_manual_review": true,
+  "needs_manual_review_reason": "PXD007044, PXD007125, and PXD007073 share an identical title, description, and linked publication (same DOI) -- confirmed duplicate/split submissions (likely separate MS runs or fractions of the same study), all three accessions listed on one record. RE-VERIFIED 2026-07-10 directly against the live PRIDE record: corresponding_author corrected from 'Juri Dunn' to 'Jemma Dunn' (matches PRIDE submitter name and paper author 'Dunn J'), platform/license/tissue_preservation/normal_control_tissue filled in from the PRIDE record and sample processing protocol text ('Tumour lysates were collected from grade I, II and III frozen meningioma specimens and three normal healthy human meninges'), date_deposited/date_updated filled from PXD007044's own submissionDate/publicationDate (the sibling accessions PXD007125/PXD007073 have slightly different individual submission/publication dates). Exact total sample count per grade not stated in the abstract-level PRIDE description; sample_count left 'Not reported' pending full-text extraction. 2026-07-12 RE-VERIFICATION AUDIT: processed_data_format corrected; the previous text claimed the file 'MaxQuant_output.zip' was 'confirmed present on all three accessions' PRIDE file listings', but a live re-check of each accession's file listing shows that exact filename only on PXD007044. The MaxQuant search-result output does exist on all three accessions but under different filenames (PXD007073: MaxQuant_Output.zip.zip; PXD007125: MQ_text_folder_phosphopeptides.zip), so the description was rewritten to reflect the real per-accession filenames. All other fields (platform LTQ Orbitrap Velos, tissue_preservation fresh_frozen, normal_control 3 healthy meninges, license 'EBI terms of use', dates 2017-08-16/2019-01-07, corresponding authors Jemma Dunn submitter + C. Oliver Hanemann email oliver.hanemann@plymouth.ac.uk) re-confirmed verbatim against the live PRIDE v2 API. DEEP-AUDIT FIX (2026-07-14): publications[0].authors was truncated to 6 of 8 real authors; expanded to the complete list, confirmed exact via Europe PMC's authorString for PMID 30594554 (adds Lasonder E and Hanemann CO, the latter already this record's own corresponding_author).",
+  "source_urls": [
+    "https://www.ebi.ac.uk/pride/archive/projects/PXD007044",
+    "https://www.ebi.ac.uk/pride/archive/projects/PXD007125",
+    "https://www.ebi.ac.uk/pride/archive/projects/PXD007073",
+    "https://pubmed.ncbi.nlm.nih.gov/30594554/"
+  ],
+  "tags": {
+    "grade_comparable": false,
+    "radiation_timepoint": false,
+    "radiation_induced_etiology": false,
+    "brain_invasion_annotated": false,
+    "single_cell_resolved": false,
+    "spatially_resolved": false,
+    "multi_modal_matched": false,
+    "large_cohort": false,
+    "recurrence_annotated": false,
+    "molecular_subtype_annotated": false,
+    "has_outcome_data": false,
+    "peer_reviewed": true
+  },
+  "possible_duplicate_needs_verification": false,
+  "duplicate_notes": null
+}
