@@ -1,5 +1,11 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import { PRINCIPAL_INVESTIGATOR, CURRENT_MEMBERS, ALUMNI, type TeamMember } from "@/lib/content";
+
+export const metadata: Metadata = {
+  title: "Team",
+  description: "Meet the Bi Lab: principal investigator Wenya Linda Bi, current personnel, and lab alumni.",
+};
 
 function initials(name: string): string {
   return name

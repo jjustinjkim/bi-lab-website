@@ -1,5 +1,12 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import { RESEARCH_AREAS } from "@/lib/content";
+
+export const metadata: Metadata = {
+  title: "Research",
+  description:
+    "The Bi Lab's research spans immunogenomics, imaging, intraoperative neuromonitoring, and outcomes across meningiomas, pituitary tumors, schwannomas, and brain metastases.",
+};
 
 export default function ResearchPage() {
   return (

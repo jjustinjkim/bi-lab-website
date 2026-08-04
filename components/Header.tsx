@@ -5,6 +5,7 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import ThemeToggle from "@/components/ThemeToggle";
+import { PhoneIcon, MailIcon } from "@/components/icons";
 import { RESEARCH_AREAS, CONTACT } from "@/lib/content";
 
 const NAV = [
@@ -14,23 +15,6 @@ const NAV = [
   { href: "/publications", label: "Publications" },
   { href: "/contact", label: "Contact" },
 ];
-
-function PhoneIcon() {
-  return (
-    <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-      <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.3 11.3 0 003.55.57 1 1 0 011 1V20a1 1 0 01-1 1C10.61 21 3 13.39 3 4a1 1 0 011-1h3.5a1 1 0 011 1 11.3 11.3 0 00.57 3.55 1 1 0 01-.25 1.01l-2.2 2.23z" />
-    </svg>
-  );
-}
-
-function MailIcon() {
-  return (
-    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
-      <rect x="2" y="4" width="20" height="16" rx="2" />
-      <path d="m22 6-10 7L2 6" />
-    </svg>
-  );
-}
 
 function ChevronIcon() {
   return (
@@ -75,11 +59,11 @@ export default function Header() {
     <header className="sticky top-0 z-20" style={{ background: "var(--paper)" }}>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 py-1.5 flex justify-end gap-5 text-xs" style={{ color: "var(--ink-muted)", borderBottom: "1px solid var(--hairline)" }}>
         <span className="hidden sm:flex items-center gap-1.5">
-          <PhoneIcon />
+          <PhoneIcon size={11} />
           617-525-8319
         </span>
         <a href={`mailto:${CONTACT.email}`} className="link-accent flex items-center gap-1.5">
-          <MailIcon />
+          <MailIcon size={12} />
           {CONTACT.email}
         </a>
       </div>

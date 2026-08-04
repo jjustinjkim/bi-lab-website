@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { PhoneIcon, MailIcon, FaxIcon } from "@/components/icons";
 import { CONTACT, RESEARCH_AREAS } from "@/lib/content";
 
 const BROWSE = [
@@ -21,34 +22,6 @@ function MapPinIcon() {
     <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
       <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
       <circle cx="12" cy="10" r="3" />
-    </svg>
-  );
-}
-
-function PhoneIcon() {
-  return (
-    <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-      <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.3 11.3 0 003.55.57 1 1 0 011 1V20a1 1 0 01-1 1C10.61 21 3 13.39 3 4a1 1 0 011-1h3.5a1 1 0 011 1 11.3 11.3 0 00.57 3.55 1 1 0 01-.25 1.01l-2.2 2.23z" />
-    </svg>
-  );
-}
-
-function FaxIcon() {
-  return (
-    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
-      <path d="M6 3h9l3 3v4H6z" />
-      <path d="M6 10H4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2" />
-      <path d="M18 10h2a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1h-2" />
-      <rect x="6" y="14" width="12" height="7" />
-    </svg>
-  );
-}
-
-function MailIcon() {
-  return (
-    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
-      <rect x="2" y="4" width="20" height="16" rx="2" />
-      <path d="m22 6-10 7L2 6" />
     </svg>
   );
 }
@@ -105,15 +78,15 @@ export default function Footer() {
               </span>
             </li>
             <li className="flex items-center gap-2.5">
-              <PhoneIcon />
+              <PhoneIcon size={13} />
               {CONTACT.phone}
             </li>
             <li className="flex items-center gap-2.5">
-              <FaxIcon />
+              <FaxIcon size={13} />
               {CONTACT.fax}
             </li>
             <li className="flex items-center gap-2.5">
-              <MailIcon />
+              <MailIcon size={13} />
               <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>
             </li>
           </ul>

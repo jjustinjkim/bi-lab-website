@@ -1,9 +1,11 @@
+import type { Metadata } from 'next'
 import { redirect } from 'next/navigation'
 import { requireAdmin } from '@/lib/auth'
 import { getLabMembers } from '@/lib/queries'
 import { createLabMember, deleteLabMember } from '@/lib/actions'
 
 export const dynamic = 'force-dynamic'
+export const metadata: Metadata = { title: 'Members', robots: { index: false, follow: false } }
 
 export default async function MembersPage() {
   let isAdmin = true

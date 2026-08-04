@@ -1,7 +1,9 @@
+import type { Metadata } from 'next'
 import { getDeadlines, getProjects } from '@/lib/queries'
 import { createDeadline, deleteDeadline } from '@/lib/actions'
 
 export const dynamic = 'force-dynamic'
+export const metadata: Metadata = { title: 'Deadlines', robots: { index: false, follow: false } }
 
 const TYPE_LABEL: Record<string, string> = {
   grant: 'Grant',

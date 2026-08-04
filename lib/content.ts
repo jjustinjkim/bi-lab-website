@@ -75,18 +75,18 @@ export const PRINCIPAL_INVESTIGATOR = {
     "Mass General Brigham",
     "Harvard Medical School",
   ],
-  image: "/team/wenya-linda-bi.png",
+  image: "/team/wenya-linda-bi.jpg",
 };
 
 export const CURRENT_MEMBERS: TeamMember[] = [
   { name: "Mitali Bose, MS, CNIM", role: "Senior Surgical Neurophysiologist", image: "/team/mitali-bose.jpeg" },
-  { name: "Matthew Toczylowski, BS, CNIM", role: "Surgical Neurophysiologist, Clinical Manager, SpecialtyCare Boston", image: "/team/matthew-toczylowski.png" },
-  { name: "Gabrielle Luiselli, MD", role: "Neurosurgery Resident", image: "/team/gabrielle-luiselli.png" },
+  { name: "Matthew Toczylowski, BS, CNIM", role: "Surgical Neurophysiologist, Clinical Manager, SpecialtyCare Boston", image: "/team/matthew-toczylowski.jpg" },
+  { name: "Gabrielle Luiselli, MD", role: "Neurosurgery Resident", image: "/team/gabrielle-luiselli.jpg" },
   { name: "Ruchit Patel, BS", role: "Neurosurgery Resident", image: "/team/ruchit-patel.jpeg" },
   { name: "Junpeng Ma, MD, PhD", role: "Lab Member", image: "/team/junpeng-ma.png" },
   { name: "Erickson Torio, MD", role: "Lab Member", image: "/team/erickson-torio.png" },
-  { name: "MD Candidate", role: "MD Candidate", image: "/team/md-candidate.png" },
-  { name: "Andrew Dunbar, BS", role: "MD Candidate", image: "/team/andrew-dunbar.png" },
+  { name: "MD Candidate", role: "MD Candidate", image: "/team/md-candidate.jpg" },
+  { name: "Andrew Dunbar, BS", role: "MD Candidate", image: "/team/andrew-dunbar.jpg" },
   { name: "Zach Moynihan, BS", role: "Research Assistant", image: "/team/zach-moynihan.png" },
 ];
 

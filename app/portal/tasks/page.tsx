@@ -1,7 +1,9 @@
+import type { Metadata } from 'next'
 import { getTasks, getProjects, getLabMembers } from '@/lib/queries'
 import { createTask, deleteTask, updateTaskStatus } from '@/lib/actions'
 
 export const dynamic = 'force-dynamic'
+export const metadata: Metadata = { title: 'Tasks', robots: { index: false, follow: false } }
 
 const STATUS_LABEL: Record<string, string> = {
   todo: 'To do',

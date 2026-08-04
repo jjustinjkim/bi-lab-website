@@ -1,7 +1,9 @@
+import type { Metadata } from 'next'
 import { getDatasets, getProjects } from '@/lib/queries'
 import { createDataset, deleteDataset } from '@/lib/actions'
 
 export const dynamic = 'force-dynamic'
+export const metadata: Metadata = { title: 'Datasets', robots: { index: false, follow: false } }
 
 export default async function DatasetsPage() {
   const [datasets, projects] = await Promise.all([getDatasets(), getProjects()])

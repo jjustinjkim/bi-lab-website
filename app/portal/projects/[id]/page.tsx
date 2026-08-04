@@ -1,9 +1,11 @@
+import type { Metadata } from 'next'
 import { notFound, redirect } from 'next/navigation'
 import Link from 'next/link'
 import { getProject, getTasksForProject, getDeadlinesForProject, getDatasetsForProject } from '@/lib/queries'
 import { updateProject, deleteProject } from '@/lib/actions'
 
 export const dynamic = 'force-dynamic'
+export const metadata: Metadata = { title: 'Project', robots: { index: false, follow: false } }
 
 const STATUS_LABEL: Record<string, string> = {
   planning: 'Planning',

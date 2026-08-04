@@ -1,9 +1,11 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import { redirect } from 'next/navigation'
 import { isMemberSession, getSessionMember } from '@/lib/auth'
 import { getDashboardData } from '@/lib/queries'
 
 export const dynamic = 'force-dynamic'
+export const metadata: Metadata = { title: 'Portal', robots: { index: false, follow: false } }
 
 export default async function PortalDashboard() {
   if (!(await isMemberSession())) redirect('/portal/login')

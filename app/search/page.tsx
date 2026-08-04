@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import {
   RESEARCH_AREAS,
@@ -13,10 +14,23 @@ function matches(query: string, ...fields: (string | undefined)[]): boolean {
   return fields.some((f) => f?.toLowerCase().includes(q));
 }
 
+type SearchParams = Promise<{ q?: string }>;
+
+export async function generateMetadata({ searchParams }: { searchParams: SearchParams }): Promise<Metadata> {
+  const { q } = await searchParams;
+  return {
+    title: q ? `Search: ${q}` : "Search",
+    // Query-dependent results pages are thin/duplicate content from a
+    // search engine's perspective -- keep them out of the index, same as
+    // the real site's own search results.
+    robots: { index: false, follow: true },
+  };
+}
+
 export default async function SearchPage({
   searchParams,
 }: {
-  searchParams: Promise<{ q?: string }>;
+  searchParams: SearchParams;
 }) {
   const { q } = await searchParams;
   const query = (q ?? "").trim();
@@ -44,7 +58,11 @@ export default async function SearchPage({
       <div>
         <h1 className="text-display">Search</h1>
         <form action="/search" method="get" className="mt-6 flex gap-2">
+          <label htmlFor="search-q" className="sr-only">
+            Search
+          </label>
           <input
+            id="search-q"
             type="search"
             name="q"
             defaultValue={query}

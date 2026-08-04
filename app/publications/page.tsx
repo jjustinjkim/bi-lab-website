@@ -1,4 +1,10 @@
+import type { Metadata } from "next";
 import { FEATURED_PUBLICATIONS, PUBLICATIONS_BY_YEAR, PUBMED_URL } from "@/lib/content";
+
+export const metadata: Metadata = {
+  title: "Publications",
+  description: "Featured studies and the full publication archive from the Bi Lab, 2014 to present.",
+};
 
 export default function PublicationsPage() {
   return (

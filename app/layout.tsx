@@ -14,13 +14,24 @@ const description =
   "The Bi Lab studies the translational biology of skull base and brain tumors, with the aim of improving clinical outcomes for patients.";
 
 export const metadata: Metadata = {
-  title,
+  metadataBase: new URL("https://wlbilab.org"),
+  title: {
+    default: title,
+    template: "%s | Bi Lab",
+  },
   description,
   openGraph: {
     title,
     description,
     type: "website",
     siteName: "Bi Lab",
+    images: ["/opengraph-image"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+    images: ["/opengraph-image"],
   },
 };
 
@@ -39,8 +50,13 @@ export default function RootLayout({
         />
       </head>
       <body>
+        <a href="#main-content" className="skip-link">
+          Skip to content
+        </a>
         <Header />
-        <main className="w-full">{children}</main>
+        <main id="main-content" className="w-full">
+          {children}
+        </main>
         <Footer />
       </body>
     </html>
