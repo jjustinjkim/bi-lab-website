@@ -38,6 +38,7 @@ export const RESEARCH_AREAS: ResearchArea[] = [
       "Intraoperative neuromonitoring (IONM) is a powerful adjunct to improve the safety of high-risk neurosurgical procedures. We present an interactive training module to help make concepts and techniques more broadly accessible to all practitioners.",
     image: "/research/ionm.png",
     imageSide: "left",
+    extraLink: { label: "IONM Training Module", href: "/research/ionm" },
   },
   {
     anchor: "OUT",
@@ -60,6 +61,12 @@ export interface TeamMember {
   name: string;
   role: string;
   image?: string;
+  // Only set for the members who have an individual bio page on the real
+  // site (most don't -- their card is a plain photo tile, matching the
+  // real site's own behavior of only some team members being clickable).
+  slug?: string;
+  bio?: string[];
+  degrees?: string[];
 }
 
 // This is deliberately a shorter list than CONTACT.piTitles below -- the
@@ -79,8 +86,18 @@ export const PRINCIPAL_INVESTIGATOR = {
 };
 
 export const CURRENT_MEMBERS: TeamMember[] = [
-  { name: "Mitali Bose, MS, CNIM", role: "Senior Surgical Neurophysiologist", image: "/team/mitali-bose.jpeg" },
-  { name: "Matthew Toczylowski, BS, CNIM", role: "Surgical Neurophysiologist, Clinical Manager, SpecialtyCare Boston", image: "/team/matthew-toczylowski.jpg" },
+  {
+    name: "Mitali Bose, MS, CNIM",
+    role: "Senior Surgical Neurophysiologist",
+    image: "/team/mitali-bose.jpeg",
+    slug: "mitali-bose-ms-cnim",
+  },
+  {
+    name: "Matthew Toczylowski, BS, CNIM",
+    role: "Surgical Neurophysiologist, Clinical Manager, SpecialtyCare Boston",
+    image: "/team/matthew-toczylowski.jpg",
+    slug: "matthew-toczylowski-bs-cnim",
+  },
   { name: "Gabrielle Luiselli, MD", role: "Neurosurgery Resident", image: "/team/gabrielle-luiselli.jpg" },
   { name: "Ruchit Patel, BS", role: "Neurosurgery Resident", image: "/team/ruchit-patel.jpeg" },
   { name: "Junpeng Ma, MD, PhD", role: "Lab Member", image: "/team/junpeng-ma.png" },
@@ -92,20 +109,94 @@ export const CURRENT_MEMBERS: TeamMember[] = [
 
 export const ALUMNI: TeamMember[] = [
   { name: "Sally Al Abdulmohsen", role: "Student", image: "/team/sally-al-abdulmohsen.jpg" },
-  { name: "Noah Greenwald", role: "Student", image: "/team/noah-greenwald.jpg" },
-  { name: "Xiaopeng Guo", role: "", image: "/team/xiaopeng-guo.png" },
+  {
+    name: "Noah Greenwald",
+    role: "Student",
+    image: "/team/noah-greenwald.jpg",
+    slug: "noah-greenwald",
+    bio: [
+      "Noah was the inaugural member of the Bi lab, who joined after graduating from Harvard with a BA in biophysics. Through his work in the lab, Noah developed an interest in computational biology and cancer genomics. Noah is currently a PhD candidate in the Cancer Biology program at Stanford University, where he splits his time between developing novel algorithms for image analysis and salsa dancing.",
+    ],
+  },
+  {
+    name: "Xiaopeng Guo",
+    role: "",
+    image: "/team/xiaopeng-guo.png",
+    slug: "xiaopeng-guo-md",
+    bio: [
+      "Xiaopeng Guo is a neurosurgery resident at Peking Union Medical College Hospital, Beijing, China, with an interest in skull base tumors, especially pituitary adenomas and meningiomas. He spent 6 months in the Bi Lab at the Brigham and Women's Hospital as a joint PhD student with Peking Union Medical College, where he investigated the immune landscape of human meningiomas and the natural history of recurrent meningiomas.",
+    ],
+  },
   { name: "Saksham Gupta, MD", role: "Neurosurgery Resident", image: "/team/saksham-gupta.png" },
-  { name: "Adwaid Prakash", role: "Student", image: "/team/adwaid-prakash.png" },
-  { name: "Addy Vettel", role: "Student", image: "/team/addy-vettel.png" },
-  { name: "Eleanor Woodward, BS", role: "Research Assistant", image: "/team/eleanor-woodward.jpg" },
+  {
+    name: "Adwaid Prakash",
+    role: "Student",
+    image: "/team/adwaid-prakash.png",
+    slug: "adwaid-prakash",
+    bio: [
+      "Adwaid is a rising senior at Natick High School. He has a long-standing interest in Biology and Statistics. In the lab, he is interested in learning how skull base tumors impact patients and can how they can be monitored over time. Adwaid aspires to go to college with a career in medicine in the future.",
+    ],
+  },
+  {
+    name: "Addy Vettel",
+    role: "Student",
+    image: "/team/addy-vettel.png",
+    slug: "addy-vettel",
+    bio: [
+      "I am a rising senior at Rivers, a private school in Weston, Massachusetts. I have taken a special interest in Biology, Chemistry, and Physics at school and look forward to learning new concepts and material associated with these subjects. I am passionate about pursuing medicine in the future.",
+      "Throughout the year, I run track and cross country competitively. Outside of school and running, I also enjoy baking and playing with my two dogs.",
+    ],
+  },
+  {
+    name: "Eleanor Woodward, BS",
+    role: "Research Assistant",
+    image: "/team/eleanor-woodward.jpg",
+    slug: "eleanor-woodward",
+    bio: [
+      "I am a research assistant in the Bi lab, where I use computational methods to study the genomics of glioma and other CNS tumors. As an undergraduate at Yale University, I studied both experimental particle and astrophysics. I worked with Charles Baltay to map supernovae to investigate the mechanics of dark energy and gravitational waves, and with Sarah Demers of the ATLAS experiment to develop the software to discover new elementary interactions. I then continued my work in developing and testing particle detection algorithms with John Huth of Harvard University before joining the Bi lab in 2018.",
+      "In my free time I enjoy singing in the MIT Women's Chorale and working my way through the novels of Jane Austen.",
+    ],
+    degrees: ["Yale University, B.S. Physics and the Humanities — 2017"],
+  },
   { name: "Kyle Wu, MD", role: "Post-doctoral Fellow / Neurosurgery Resident", image: "/team/kyle-wu.jpg" },
-  { name: "Shun Yao, MD, PhD", role: "Research Fellow", image: "/team/shun-yao.jpg" },
-  { name: "Samantha Hoffman, BS", role: "MD Candidate", image: "/team/samantha-hoffman.jpg" },
+  {
+    name: "Shun Yao, MD, PhD",
+    role: "Research Fellow",
+    image: "/team/shun-yao.jpg",
+    slug: "shun-yao-md-phd",
+    bio: [
+      "Dr. Shun Yao is a Postdoctoral Research Fellow whose research interests include the translational applications of artificial intelligence (AI), radiomics, and multimodal functional magnetic resonance image (fMRI) of pituitary and skull base tumors. With a background in clinical research and fMRI-based neuroscience, Shun is also a Postdoctoral Clinical Fellow in the Department of Neurosurgery and Pituitary Tumor Center, The First Affiliated Hospital, Sun Yat-sen University, China.",
+      "Outside of research, Dr. Yao enjoys exploring nature and food adventures in the Greater Boston, Massachusetts area.",
+    ],
+  },
+  {
+    name: "Samantha Hoffman, BS",
+    role: "MD Candidate",
+    image: "/team/samantha-hoffman.jpg",
+    slug: "samantha-hoffman-bs",
+    bio: [
+      "I am a medical student in the Harvard-MIT Health Sciences and Technology (HST) program at Harvard Medical School. My background is in Molecular and Cellular Neuroscience. As an undergraduate at Stanford University, I investigated the role of the neurexin cell adhesion protein family in synaptic formation and axonal tract development in the visual system as a member of the Thomas C. Südhof Laboratory. In the Bi Lab, I am currently characterizing the immune landscape of skull base tumors using expansion microscopy (ExPath) and mass-cytometery time-of-flight (CyTOF) techniques. When I am not in lab or in class, I enjoy running along the Charles, learning new Chinese baking recipes, and trying my hand at graphic design.",
+    ],
+    degrees: ["Harvard Medical School/HST — Expected May 2023", "Stanford University, B.S. Biology with Distinction and with Honors — June 2017"],
+  },
   { name: "Greg Cello, BS", role: "Master's Candidate & Research Coordinator", image: "/team/greg-cello.jpeg" },
   { name: "Pinky Langat, PhD", role: "MD Candidate", image: "/team/pinky-langat.jpg" },
-  { name: "Joseph Driver, MD", role: "Post-doctoral Fellow / Neurosurgery Resident", image: "/team/joseph-driver.jpg" },
+  {
+    name: "Joseph Driver, MD",
+    role: "Post-doctoral Fellow / Neurosurgery Resident",
+    image: "/team/joseph-driver.jpg",
+    slug: "joseph-driver-md",
+    bio: [
+      "Joe is a resident in the Brigham and Women's Neurosurgery residency program. He obtained his undergraduate degree in biochemistry at Gonzaga University, and later his MD at Loyola University Chicago. He spent his two-year post doctorate research in the Bi lab where he characterized transcriptional and immune landscapes of skull base tumors, using novel techniques including single cell RNA sequencing, mass cytometry by time of flight, and multiplex ion beam imaging.",
+    ],
+  },
   { name: "Xian Marie Boles, BFA", role: "MFA Candidate", image: "/team/xian-marie-boles.png" },
-  { name: "Lilin Tong, MD", role: "Medical Intern", image: "/team/lilin-tong.jpg" },
+  {
+    name: "Lilin Tong, MD",
+    role: "Medical Intern",
+    image: "/team/lilin-tong.jpg",
+    slug: "lilin-tong-md-candidate",
+  },
   { name: "Hia Ghosh, BS", role: "Research Assistant", image: "/team/hia-ghosh.jpg" },
 ];
 

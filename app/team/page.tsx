@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { PRINCIPAL_INVESTIGATOR, CURRENT_MEMBERS, ALUMNI, type TeamMember } from "@/lib/content";
 
 export const metadata: Metadata = {
@@ -18,7 +19,7 @@ function initials(name: string): string {
 }
 
 function PhotoTile({ member }: { member: TeamMember }) {
-  return (
+  const content = (
     <div className="group relative aspect-square overflow-hidden" style={{ background: "var(--paper-raised)" }}>
       {member.image ? (
         <Image src={member.image} alt={member.name} fill sizes="200px" className="object-cover" />
@@ -35,6 +36,14 @@ function PhotoTile({ member }: { member: TeamMember }) {
         {member.role && <div className="text-white text-xs mt-1 opacity-80 italic">{member.role}</div>}
       </div>
     </div>
+  );
+
+  return member.slug ? (
+    <Link href={`/team/${member.slug}`} aria-label={member.name}>
+      {content}
+    </Link>
+  ) : (
+    content
   );
 }
 
