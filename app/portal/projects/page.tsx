@@ -179,6 +179,10 @@ export default async function ProjectsPage() {
             </div>
           </div>
           <div>
+            <label className="field-label" htmlFor="pubmed_url">PubMed link</label>
+            <input id="pubmed_url" name="pubmed_url" type="url" placeholder="https://pubmed.ncbi.nlm.nih.gov/XXXXXXXX/" className="field-input" />
+          </div>
+          <div>
             <label className="field-label" htmlFor="description">Description</label>
             <textarea id="description" name="description" rows={2} className="field-input" />
           </div>
@@ -262,7 +266,15 @@ function ProjectTable({ projects, variant }: { projects: Project[]; variant: 'ac
                 </>
               ) : (
                 <>
-                  <td className="px-3 py-2.5" style={{ color: 'var(--ink-muted)' }}>{p.journal ?? '—'}</td>
+                  <td className="px-3 py-2.5" style={{ color: 'var(--ink-muted)' }}>
+                    {p.pubmed_url ? (
+                      <a href={p.pubmed_url} target="_blank" rel="noopener noreferrer" className="link-accent">
+                        {p.journal ?? 'PubMed'}
+                      </a>
+                    ) : (
+                      p.journal ?? '—'
+                    )}
+                  </td>
                   <td className="px-3 py-2.5" style={{ color: 'var(--ink-muted)' }}>{p.pub_year ?? '—'}</td>
                 </>
               )}

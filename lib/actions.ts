@@ -136,6 +136,7 @@ function trackerFields(formData: FormData) {
     checkpoint: (formData.get('checkpoint') as string) || null,
     journal: (formData.get('journal') as string) || null,
     pub_year: intOrNull(formData, 'pub_year'),
+    pubmed_url: (formData.get('pubmed_url') as string) || null,
   }
 }
 

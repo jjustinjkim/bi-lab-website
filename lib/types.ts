@@ -57,6 +57,7 @@ export interface Project {
   checkpoint: string | null;
   journal: string | null;
   pub_year: number | null;
+  pubmed_url: string | null;
 }
 
 export type TaskStatus = "todo" | "in_progress" | "done";

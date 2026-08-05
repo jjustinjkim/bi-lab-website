@@ -259,9 +259,14 @@ describe('projects', () => {
     expect(fakeDb.table('projects')[0].work_percent).toBe(100)
   })
 
-  it('createProject records journal and pub_year for a completed/published project', async () => {
-    await createProject(form({ name: 'Ki-67 in meningioma', status: 'done', journal: 'J Neurosurg', pub_year: '2025' }))
-    expect(fakeDb.table('projects')[0]).toMatchObject({ status: 'done', journal: 'J Neurosurg', pub_year: 2025 })
+  it('createProject records journal, pub_year, and pubmed_url for a completed/published project', async () => {
+    await createProject(form({
+      name: 'Ki-67 in meningioma', status: 'done', journal: 'J Neurosurg', pub_year: '2025',
+      pubmed_url: 'https://pubmed.ncbi.nlm.nih.gov/40712166/',
+    }))
+    expect(fakeDb.table('projects')[0]).toMatchObject({
+      status: 'done', journal: 'J Neurosurg', pub_year: 2025, pubmed_url: 'https://pubmed.ncbi.nlm.nih.gov/40712166/',
+    })
   })
 
   it('updateProject overwrites tracker fields on the matching row', async () => {

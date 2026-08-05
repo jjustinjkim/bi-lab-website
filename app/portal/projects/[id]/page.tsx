@@ -151,6 +151,18 @@ export default async function ProjectDetailPage({
           </div>
 
           <div>
+            <label className="field-label" htmlFor="pubmed_url">PubMed link</label>
+            <input
+              id="pubmed_url"
+              name="pubmed_url"
+              type="url"
+              placeholder="https://pubmed.ncbi.nlm.nih.gov/XXXXXXXX/"
+              defaultValue={project.pubmed_url ?? ''}
+              className="field-input"
+            />
+          </div>
+
+          <div>
             <label className="field-label" htmlFor="description">Description</label>
             <textarea id="description" name="description" rows={2} defaultValue={project.description ?? ''} className="field-input" />
           </div>
