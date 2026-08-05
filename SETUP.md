@@ -65,7 +65,6 @@ Public site at `http://localhost:3000`, portal at `http://localhost:3000/portal`
 
 ## Known limitations / next steps
 
-- **Team photos are placeholders** (initials avatars) — swap in real photos in `app/team/page.tsx` when available.
 - **Publications list is a short representative slice**, not the full historical archive — the page links out to the lab's PubMed author list for the complete record. Add more entries to `lib/content.ts`'s `PUBLICATIONS` array as needed.
 - **Research area copy is a short summary** sourced from the current BWH site, which itself has minimal per-area text — expand `RESEARCH_AREAS` in `lib/content.ts` with more detail as it becomes available.
 - **No email sending**: adding a lab member sets a temporary password directly; there's no invite email. Share the temporary password with the new member out of band and have them treat it as one-time (there's no self-service password change yet).
