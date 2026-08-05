@@ -7,7 +7,9 @@ Live at [wlbilab.org](https://wlbilab.org).
 ## What's here
 
 - **Public site** (`/`, `/research`, `/team`, `/publications`, `/contact`, `/search`): content and structure modeled on the lab's existing BWH-hosted site, with real team photos, publication citations, and research area copy.
-- **Lab portal** (`/portal`): a login-gated project manager for lab members only, covering research projects, tasks, deadlines, and datasets, plus a link out to the [Meningioma Public Inventory](https://meningioma-public-inventory.vercel.app).
+- **Lab portal** (`/portal`): a login-gated project manager for lab members only, covering research projects, tasks, deadlines, and datasets.
+- **Meningioma Dataset Registry** (`/inventory`): the lab's public catalog of meningioma molecular datasets, merged into this site from its own former standalone repo.
+- **Tools** (`/tools`): a directory of the lab's standalone interactive tools, currently just the registry above; also reachable from within the portal.
 
 ## Stack
 
