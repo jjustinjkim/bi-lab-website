@@ -22,16 +22,6 @@ export default async function PortalDashboard() {
         </p>
       </div>
 
-      <div className="panel p-5">
-        <h2 className="text-subtitle mb-1" style={{ fontSize: '1rem' }}>Meningioma Public Inventory</h2>
-        <p className="text-sm mb-3" style={{ color: 'var(--ink-muted)' }}>
-          The lab&rsquo;s public catalog of meningioma molecular datasets.
-        </p>
-        <Link href="/inventory" className="btn btn-secondary">
-          Open inventory &rarr;
-        </Link>
-      </div>
-
       <div className="grid md:grid-cols-3 gap-4">
         <section className="panel p-5">
           <div className="flex items-center justify-between mb-3">
