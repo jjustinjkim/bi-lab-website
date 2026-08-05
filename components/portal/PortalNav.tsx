@@ -135,7 +135,10 @@ export default function PortalNav({ isAdmin }: { isAdmin: boolean }) {
               </div>
             )}
           </div>
-          <form onSubmit={handleLogout} className="ml-auto">
+          <Link href="/portal/account" className="text-sm whitespace-nowrap ml-auto" style={{ color: 'rgba(255,255,255,0.7)' }}>
+            Account
+          </Link>
+          <form onSubmit={handleLogout}>
             <button type="submit" className="text-sm whitespace-nowrap" style={{ color: 'rgba(255,255,255,0.7)' }}>
               Sign out
             </button>

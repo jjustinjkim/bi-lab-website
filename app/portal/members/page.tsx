@@ -4,6 +4,7 @@ import { requireAdmin } from '@/lib/auth'
 import { getLabMembers } from '@/lib/queries'
 import { createLabMember, deleteLabMember, setCanViewAllProjects } from '@/lib/actions'
 import ConfirmSubmitButton from '@/components/ConfirmSubmitButton'
+import ResetPasswordControl from '@/components/portal/ResetPasswordControl'
 
 export const dynamic = 'force-dynamic'
 export const metadata: Metadata = { title: 'Members', robots: { index: false, follow: false } }
@@ -39,7 +40,12 @@ export default async function MembersPage() {
 
   return (
     <div className="space-y-8">
-      <h1 className="text-title">Lab members</h1>
+      <div className="flex items-center justify-between flex-wrap gap-3">
+        <h1 className="text-title">Lab members</h1>
+        <a href="/portal/export" className="btn btn-secondary">
+          Download backup
+        </a>
+      </div>
 
       <div className="panel p-5">
         <h2 className="text-subtitle mb-4" style={{ fontSize: '0.9375rem' }}>Add a lab member</h2>
@@ -87,7 +93,7 @@ export default async function MembersPage() {
                 </div>
                 <div className="text-xs" style={{ color: 'var(--ink-muted)' }}>{m.email}{m.title ? ` · ${m.title}` : ''}</div>
               </div>
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-4 flex-wrap">
                 <form action={toggleViewAll}>
                   <input type="hidden" name="id" value={m.id} />
                   <input type="hidden" name="next" value={(!m.can_view_all_projects).toString()} />
@@ -95,6 +101,7 @@ export default async function MembersPage() {
                     {m.can_view_all_projects ? 'Restrict to tagged projects' : 'Grant full project visibility'}
                   </button>
                 </form>
+                <ResetPasswordControl memberId={m.id} />
                 <form action={removeMember}>
                   <input type="hidden" name="id" value={m.id} />
                   <ConfirmSubmitButton

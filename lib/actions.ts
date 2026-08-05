@@ -112,6 +112,51 @@ export async function setCanViewAllProjects(id: string, canViewAll: boolean): Pr
   return {}
 }
 
+// Admin-triggered reset: there's no email sending in this app (per
+// SETUP.md), so this sets a new temporary password directly, the same
+// out-of-band-sharing convention createLabMember already uses. A reset
+// invalidates every existing session for the member -- if the old password
+// was compromised, any session already running under it should die too,
+// not just future logins being blocked.
+export async function adminResetMemberPassword(id: string, newPassword: string): Promise<{ error?: string }> {
+  await requireAdmin()
+  if (!newPassword || newPassword.length < 8) return { error: 'Password must be at least 8 characters.' }
+
+  const db = createAdminClient()
+  const passwordHash = await bcrypt.hash(newPassword, 10)
+  const { error } = await db.from('lab_members').update({ password_hash: passwordHash }).eq('id', id)
+  if (error) return { error: error.message }
+
+  await db.from('member_sessions').delete().eq('member_id', id)
+  return {}
+}
+
+// Self-service change, for any logged-in member (not just admins). Keeps
+// the caller's own session alive (deletes every OTHER session for this
+// member, not this one) -- same "kill lingering sessions on a password
+// change" reasoning as adminResetMemberPassword, just scoped so changing
+// your own password doesn't also log you out.
+export async function changeOwnPassword(currentPassword: string, newPassword: string): Promise<{ error?: string }> {
+  const member = await requireMember()
+  if (!newPassword || newPassword.length < 8) return { error: 'New password must be at least 8 characters.' }
+
+  const db = createAdminClient()
+  const { data: row } = await db.from('lab_members').select('password_hash').eq('id', member.id).single()
+  const currentOk = row ? await bcrypt.compare(currentPassword, row.password_hash as string) : false
+  if (!currentOk) return { error: 'Current password is incorrect.' }
+
+  const passwordHash = await bcrypt.hash(newPassword, 10)
+  const { error } = await db.from('lab_members').update({ password_hash: passwordHash }).eq('id', member.id)
+  if (error) return { error: error.message }
+
+  const cookieStore = await cookies()
+  const currentToken = cookieStore.get(SESSION_COOKIE)?.value
+  let sessionQuery = db.from('member_sessions').delete().eq('member_id', member.id)
+  if (currentToken) sessionQuery = sessionQuery.neq('token', currentToken)
+  await sessionQuery
+  return {}
+}
+
 // ── Projects ──────────────────────────────────────────────────────────────
 
 function intOrNull(formData: FormData, key: string, min?: number, max?: number): number | null {

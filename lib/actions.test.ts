@@ -45,6 +45,7 @@ vi.mock('next/headers', () => ({
 
 const {
   loginMember, logout, createLabMember, deleteLabMember, setCanViewAllProjects,
+  adminResetMemberPassword, changeOwnPassword,
   createProject, updateProject, deleteProject, setProjectMembers,
   createTask, updateTaskStatus, deleteTask,
   createDeadline, deleteDeadline,
@@ -195,6 +196,71 @@ describe('setCanViewAllProjects', () => {
     fakeDb.seed('lab_members', [{ id: 'member-1', name: 'Member', can_view_all_projects: true }])
     await setCanViewAllProjects('member-1', false)
     expect(fakeDb.table('lab_members')[0].can_view_all_projects).toBe(false)
+  })
+})
+
+describe('adminResetMemberPassword', () => {
+  it('rejects a password under 8 characters, leaving the hash untouched', async () => {
+    fakeDb.seed('lab_members', [{ id: 'member-1', name: 'Member', password_hash: 'old-hash' }])
+    const result = await adminResetMemberPassword('member-1', 'short')
+    expect(result.error).toBe('Password must be at least 8 characters.')
+    expect(fakeDb.table('lab_members')[0].password_hash).toBe('old-hash')
+  })
+
+  it('sets a new bcrypt-hashed password and invalidates every session for that member only', async () => {
+    fakeDb.seed('lab_members', [{ id: 'member-1', name: 'Member', password_hash: 'old-hash' }])
+    fakeDb.seed('member_sessions', [
+      { id: 's1', member_id: 'member-1', token: 'tok-a' },
+      { id: 's2', member_id: 'member-1', token: 'tok-b' },
+      { id: 's3', member_id: 'other-member', token: 'tok-c' },
+    ])
+
+    const result = await adminResetMemberPassword('member-1', 'longenough')
+    expect(result.error).toBeUndefined()
+
+    const row = fakeDb.table('lab_members')[0]
+    expect(row.password_hash).not.toBe('old-hash')
+    expect(row.password_hash).not.toBe('longenough') // hashed, not plaintext
+
+    expect(fakeDb.table('member_sessions').map((s) => s.token)).toEqual(['tok-c'])
+  })
+})
+
+describe('changeOwnPassword', () => {
+  beforeEach(async () => {
+    const bcrypt = (await import('bcryptjs')).default
+    fakeDb.seed('lab_members', [
+      { id: 'member-1', email: 'member@example.com', name: 'Test Member', password_hash: await bcrypt.hash('correct-horse', 10) },
+    ])
+  })
+
+  it('rejects an incorrect current password', async () => {
+    const result = await changeOwnPassword('wrong', 'longenough')
+    expect(result.error).toBe('Current password is incorrect.')
+  })
+
+  it('rejects a new password under 8 characters', async () => {
+    const result = await changeOwnPassword('correct-horse', 'short')
+    expect(result.error).toBe('New password must be at least 8 characters.')
+  })
+
+  it('updates the hash and invalidates every OTHER session, keeping the caller signed in', async () => {
+    const { cookies } = await import('next/headers')
+    const jar = await cookies()
+    jar.set('bilab_portal_session', 'current-tok')
+    fakeDb.seed('member_sessions', [
+      { id: 's1', member_id: 'member-1', token: 'current-tok' },
+      { id: 's2', member_id: 'member-1', token: 'other-tok' },
+    ])
+
+    const result = await changeOwnPassword('correct-horse', 'a-new-password')
+    expect(result.error).toBeUndefined()
+
+    const bcrypt = (await import('bcryptjs')).default
+    const row = fakeDb.table('lab_members').find((r) => r.id === 'member-1')!
+    expect(await bcrypt.compare('a-new-password', row.password_hash as string)).toBe(true)
+
+    expect(fakeDb.table('member_sessions').map((s) => s.token)).toEqual(['current-tok'])
   })
 })
 
