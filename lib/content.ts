@@ -11,6 +11,23 @@ export interface ResearchArea {
   extraImages?: { src: string; label: string }[];
 }
 
+export interface ToolItem {
+  name: string;
+  href: string;
+  description: string;
+}
+
+// Standalone tools/resources the lab maintains, surfaced from the "Tools"
+// nav dropdown (see components/Header.tsx). Each links to a full page or
+// sub-app, not an in-page anchor, so hrefs are plain routes.
+export const TOOLS: ToolItem[] = [
+  {
+    name: "Meningioma Registry",
+    href: "/inventory",
+    description: "Every publicly discoverable meningioma molecular dataset, verified and tracked in one place.",
+  },
+];
+
 // Order, anchor ids, and left/right image placement match the real site's
 // nav submenu, #IM/#IMM/#IN/#OUT in-page anchors, and alternating layout
 // exactly (IMM=left, IM=right, IN=left, OUT=right).

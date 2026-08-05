@@ -6,13 +6,14 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import ThemeToggle from "@/components/ThemeToggle";
 import { PhoneIcon, MailIcon } from "@/components/icons";
-import { RESEARCH_AREAS, CONTACT } from "@/lib/content";
+import { RESEARCH_AREAS, TOOLS, CONTACT } from "@/lib/content";
 
 const NAV = [
   { href: "/", label: "Home" },
   { href: "/research", label: "Research" },
   { href: "/team", label: "Team" },
   { href: "/publications", label: "Publications" },
+  { href: "/tools", label: "Tools" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -44,6 +45,7 @@ function MenuIcon({ open, color }: { open: boolean; color: string }) {
 export default function Header() {
   const pathname = usePathname();
   const [researchOpen, setResearchOpen] = useState(false);
+  const [toolsOpen, setToolsOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const navTextColor = "var(--ink)";
 
@@ -113,6 +115,42 @@ export default function Header() {
                   </div>
                 );
               }
+              if (item.href === "/tools") {
+                return (
+                  <div
+                    key={item.href}
+                    className="relative"
+                    onMouseEnter={() => setToolsOpen(true)}
+                    onMouseLeave={() => setToolsOpen(false)}
+                  >
+                    <Link
+                      href="/tools"
+                      className="site-nav-link"
+                      data-active={isActive || undefined}
+                      style={{ fontSize: "0.875rem", color: isActive ? "var(--accent)" : navTextColor }}
+                    >
+                      Tools
+                      <ChevronIcon />
+                    </Link>
+                    {toolsOpen && (
+                      <div className="absolute top-full left-0 pt-3" style={{ minWidth: "260px" }}>
+                        <div className="panel py-2">
+                          {TOOLS.map((tool) => (
+                            <Link
+                              key={tool.href}
+                              href={tool.href}
+                              className="block px-4 py-2 text-sm site-nav-link normal-case"
+                              style={{ letterSpacing: "normal", fontWeight: 500 }}
+                            >
+                              {tool.name}
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                );
+              }
               return (
                 <Link
                   key={item.href}
@@ -169,6 +207,15 @@ export default function Header() {
                           <a key={area.anchor} href={`/research#${area.anchor}`} className="site-nav-link normal-case py-1.5 text-sm" style={{ letterSpacing: "normal", fontWeight: 500 }}>
                             {area.name}
                           </a>
+                        ))}
+                      </div>
+                    )}
+                    {item.href === "/tools" && (
+                      <div className="pl-4 pb-1 flex flex-col">
+                        {TOOLS.map((tool) => (
+                          <Link key={tool.href} href={tool.href} className="site-nav-link normal-case py-1.5 text-sm" style={{ letterSpacing: "normal", fontWeight: 500 }}>
+                            {tool.name}
+                          </Link>
                         ))}
                       </div>
                     )}
