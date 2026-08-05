@@ -21,7 +21,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...teamSlugs,
     "/publications",
     ...FEATURED_PUBLICATIONS.map((pub) => `/publications/${pub.slug}`),
-    "/tools",
     "/contact",
     "/inventory",
     ...datasetSlugs,

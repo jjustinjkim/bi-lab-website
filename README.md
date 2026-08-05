@@ -7,9 +7,8 @@ Live at [wlbilab.org](https://wlbilab.org).
 ## What's here
 
 - **Public site** (`/`, `/research`, `/team`, `/publications`, `/contact`, `/search`): content and structure modeled on the lab's existing BWH-hosted site, with real team photos, publication citations, and research area copy.
-- **Lab portal** (`/portal`): a login-gated project manager for lab members only, covering research projects, tasks, deadlines, and datasets.
+- **Lab portal** (`/portal`): a login-gated project manager for lab members only, covering research projects, tasks, deadlines, and datasets, plus a Tools dropdown in its own nav bar (currently just the registry below).
 - **Meningioma Dataset Registry** (`/inventory`): the lab's public catalog of meningioma molecular datasets, merged into this site from its own former standalone repo.
-- **Tools** (`/tools`): a directory of the lab's standalone interactive tools, currently just the registry above; also reachable from within the portal.
 
 ## Stack
 
