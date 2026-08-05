@@ -260,13 +260,33 @@ textarea:focus-visible,
   background: color-mix(in srgb, var(--accent-2) 12%, transparent);
 }
 
+/* Shared by both <a> and text-styled <button> elements -- anchors get
+   underline/cursor from the UA stylesheet for free, but buttons (used for
+   form-submit actions styled to look like links, e.g. portal list rows)
+   don't, so these are set explicitly rather than relied on. */
+.link-accent,
+.link-danger {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  cursor: pointer;
+}
 .link-accent {
   color: var(--accent-ink);
   text-decoration-color: color-mix(in srgb, var(--accent-ink) 40%, transparent);
-  text-underline-offset: 2px;
 }
 .link-accent:hover {
   text-decoration-color: var(--accent-ink);
+}
+.link-danger {
+  color: var(--accent-2-ink);
+  text-decoration-color: color-mix(in srgb, var(--accent-2-ink) 40%, transparent);
+}
+.link-danger:hover {
+  text-decoration-color: var(--accent-2-ink);
 }
 
 .avatar-placeholder {

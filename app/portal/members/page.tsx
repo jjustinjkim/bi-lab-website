@@ -3,6 +3,7 @@ import { redirect } from 'next/navigation'
 import { requireAdmin } from '@/lib/auth'
 import { getLabMembers } from '@/lib/queries'
 import { createLabMember, deleteLabMember, setCanViewAllProjects } from '@/lib/actions'
+import ConfirmSubmitButton from '@/components/ConfirmSubmitButton'
 
 export const dynamic = 'force-dynamic'
 export const metadata: Metadata = { title: 'Members', robots: { index: false, follow: false } }
@@ -96,7 +97,12 @@ export default async function MembersPage() {
                 </form>
                 <form action={removeMember}>
                   <input type="hidden" name="id" value={m.id} />
-                  <button type="submit" className="text-xs" style={{ color: 'var(--accent-2-ink)' }}>Remove</button>
+                  <ConfirmSubmitButton
+                    className="text-xs link-danger"
+                    confirmMessage={`Remove ${m.name} from the lab portal? They will lose access immediately. This cannot be undone.`}
+                  >
+                    Remove
+                  </ConfirmSubmitButton>
                 </form>
               </div>
             </li>

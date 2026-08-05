@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { getDatasets, getProjects } from '@/lib/queries'
 import { createDataset, deleteDataset } from '@/lib/actions'
+import ConfirmSubmitButton from '@/components/ConfirmSubmitButton'
 
 export const dynamic = 'force-dynamic'
 export const metadata: Metadata = { title: 'Datasets', robots: { index: false, follow: false } }
@@ -74,7 +75,9 @@ export default async function DatasetsPage() {
               {d.sample_count != null && <span className="badge">{d.sample_count} samples</span>}
               <form action={removeDataset}>
                 <input type="hidden" name="id" value={d.id} />
-                <button type="submit" className="text-xs" style={{ color: 'var(--accent-2-ink)' }}>Delete</button>
+                <ConfirmSubmitButton className="text-xs link-danger" confirmMessage={`Delete dataset "${d.name}"? This cannot be undone.`}>
+                  Delete
+                </ConfirmSubmitButton>
               </form>
             </div>
           </li>

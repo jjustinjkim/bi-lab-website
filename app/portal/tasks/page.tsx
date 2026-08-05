@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { getTasks, getProjects, getLabMembers } from '@/lib/queries'
 import { createTask, deleteTask, updateTaskStatus } from '@/lib/actions'
+import ConfirmSubmitButton from '@/components/ConfirmSubmitButton'
 
 export const dynamic = 'force-dynamic'
 export const metadata: Metadata = { title: 'Tasks', robots: { index: false, follow: false } }
@@ -96,7 +97,9 @@ export default async function TasksPage() {
               </form>
               <form action={removeTask}>
                 <input type="hidden" name="id" value={t.id} />
-                <button type="submit" className="text-xs" style={{ color: 'var(--accent-2-ink)' }}>Delete</button>
+                <ConfirmSubmitButton className="text-xs link-danger" confirmMessage={`Delete task "${t.title}"? This cannot be undone.`}>
+                  Delete
+                </ConfirmSubmitButton>
               </form>
             </div>
           </li>

@@ -11,6 +11,7 @@ import {
 } from '@/lib/queries'
 import { updateProject, deleteProject, setProjectMembers } from '@/lib/actions'
 import { PROJECT_GROUP_LABELS, type ProjectGroupType } from '@/lib/types'
+import ConfirmSubmitButton from '@/components/ConfirmSubmitButton'
 
 export const dynamic = 'force-dynamic'
 export const metadata: Metadata = { title: 'Project', robots: { index: false, follow: false } }
@@ -175,7 +176,15 @@ export default async function ProjectDetailPage({
           </div>
         </form>
         <form action={removeProject} className="mt-4 pt-4" style={{ borderTop: '1px solid var(--hairline)' }}>
-          <button type="submit" className="text-sm" style={{ color: 'var(--accent-2-ink)' }}>Delete project</button>
+          <ConfirmSubmitButton
+            className="text-sm link-danger"
+            confirmMessage={
+              `Delete project "${project.name}"? This also deletes its ${tasks.length} task(s) and ${deadlines.length} deadline(s). ` +
+              `${datasets.length} dataset(s) will be kept but unlinked. This cannot be undone.`
+            }
+          >
+            Delete project
+          </ConfirmSubmitButton>
         </form>
       </div>
 

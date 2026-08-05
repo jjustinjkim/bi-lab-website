@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { getDeadlines, getProjects } from '@/lib/queries'
 import { createDeadline, deleteDeadline } from '@/lib/actions'
+import ConfirmSubmitButton from '@/components/ConfirmSubmitButton'
 
 export const dynamic = 'force-dynamic'
 export const metadata: Metadata = { title: 'Deadlines', robots: { index: false, follow: false } }
@@ -79,7 +80,9 @@ export default async function DeadlinesPage() {
               <span className="badge badge-flag">{d.date}</span>
               <form action={removeDeadline}>
                 <input type="hidden" name="id" value={d.id} />
-                <button type="submit" className="text-xs" style={{ color: 'var(--accent-2-ink)' }}>Delete</button>
+                <ConfirmSubmitButton className="text-xs link-danger" confirmMessage={`Delete deadline "${d.title}"? This cannot be undone.`}>
+                  Delete
+                </ConfirmSubmitButton>
               </form>
             </div>
           </li>
