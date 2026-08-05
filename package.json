@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.108.2",
+    "@vercel/analytics": "^2.0.1",
     "bcryptjs": "^2.4.3",
     "gray-matter": "^4.0.3",
     "next": "16.2.10",

@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import { CURRENT_MEMBERS, ALUMNI, type TeamMember } from "@/lib/content";
+import { personJsonLd, jsonLdScriptProps } from "@/lib/jsonld";
 
 const ALL_MEMBERS: TeamMember[] = [...CURRENT_MEMBERS, ...ALUMNI];
 
@@ -36,6 +37,8 @@ export default async function TeamMemberPage({
 
   return (
     <div className="max-w-2xl mx-auto px-4 sm:px-6 py-14 space-y-8">
+      <script type="application/ld+json" {...jsonLdScriptProps(personJsonLd(member))} />
+
       <Link href="/team" className="link-accent text-sm">
         &larr; Team
       </Link>

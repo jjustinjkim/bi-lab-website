@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { PhoneIcon, MailIcon, FaxIcon } from "@/components/icons";
 import { CONTACT } from "@/lib/content";
+import EmbedFrame from "@/components/EmbedFrame";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -76,14 +77,11 @@ export default function ContactPage() {
           </div>
         </div>
 
-        <iframe
+        <EmbedFrame
           src={CONTACT.mapEmbedUrl}
-          width="100%"
-          height="450"
-          style={{ border: 0 }}
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
           title="Map to 60 Fenwood Road, Boston, MA 02115"
+          style={{ width: "100%", height: "450px", border: 0 }}
+          referrerPolicy="no-referrer-when-downgrade"
         />
       </div>
     </div>

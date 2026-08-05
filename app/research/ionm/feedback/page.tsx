@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import EmbedFrame from "@/components/EmbedFrame";
+
+const FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSc9GXjj9fV2l9GiRrIjg9dKTUUk5D3xQ7ulNvQhdgWcdOiUXw/viewform";
 
 export const metadata: Metadata = {
   title: "Feedback",
@@ -15,15 +18,19 @@ export default function IonmFeedbackPage() {
         </Link>
         <h1 className="text-display mt-4">Feedback</h1>
       </div>
-      <iframe
-        src="https://docs.google.com/forms/d/e/1FAIpQLSc9GXjj9fV2l9GiRrIjg9dKTUUk5D3xQ7ulNvQhdgWcdOiUXw/viewform?embedded=true"
+      <EmbedFrame
+        src={`${FORM_URL}?embedded=true`}
         title="IONM Feedback"
         className="w-full rounded"
-        style={{ border: "1px solid var(--hairline)", height: "2667px" }}
-        loading="lazy"
-      >
-        Loading&hellip;
-      </iframe>
+        style={{ height: "2667px" }}
+      />
+      <p className="text-xs text-center" style={{ color: "var(--ink-muted)" }}>
+        Having trouble viewing this form?{" "}
+        <a href={FORM_URL} target="_blank" rel="noopener noreferrer" className="link-accent">
+          Open it directly
+        </a>
+        .
+      </p>
     </div>
   );
 }

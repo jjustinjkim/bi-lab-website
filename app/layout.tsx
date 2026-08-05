@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import { Geist_Mono } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { organizationJsonLd, jsonLdScriptProps } from "@/lib/jsonld";
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
@@ -48,6 +50,7 @@ export default function RootLayout({
             __html: `(function(){try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark"){document.documentElement.setAttribute("data-theme",t);}}catch(e){}})();`,
           }}
         />
+        <script type="application/ld+json" {...jsonLdScriptProps(organizationJsonLd())} />
       </head>
       <body>
         <a href="#main-content" className="skip-link">
@@ -58,6 +61,7 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <Analytics />
       </body>
     </html>
   );

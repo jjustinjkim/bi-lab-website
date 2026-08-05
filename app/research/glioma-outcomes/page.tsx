@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import EmbedFrame from "@/components/EmbedFrame";
 
 export const metadata: Metadata = {
   title: "Glioma Outcome Risk Calculators",
@@ -46,24 +47,46 @@ export default function GliomaOutcomesPage() {
             page sidesteps that: the request originates from their own
             domain inside the frame, and the visitor's address bar never
             leaves this site. */}
-        <iframe
+        <EmbedFrame
           src="https://skullbase.bwh.harvard.edu/glioblastoma-survival-risk-calculator/"
           title="Glioblastoma Survival Risk Calculator"
           className="w-full rounded"
-          style={{ border: "1px solid var(--hairline)", height: "1400px" }}
-          loading="lazy"
+          style={{ height: "1400px" }}
         />
+        <p className="text-xs mt-2" style={{ color: "var(--ink-muted)" }}>
+          Having trouble viewing this?{" "}
+          <a
+            href="https://skullbase.bwh.harvard.edu/glioblastoma-survival-risk-calculator/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="link-accent"
+          >
+            Open it directly
+          </a>
+          .
+        </p>
       </section>
 
       <section>
         <h2 className="section-heading mb-6">IDH1/2-Mutant Astrocytoma Survival Risk Calculator</h2>
-        <iframe
+        <EmbedFrame
           src="https://skullbase.bwh.harvard.edu/astrocytoma-survival-risk-calculator/"
           title="IDH1/2-Mutant Astrocytoma Survival Risk Calculator"
           className="w-full rounded"
-          style={{ border: "1px solid var(--hairline)", height: "1400px" }}
-          loading="lazy"
+          style={{ height: "1400px" }}
         />
+        <p className="text-xs mt-2" style={{ color: "var(--ink-muted)" }}>
+          Having trouble viewing this?{" "}
+          <a
+            href="https://skullbase.bwh.harvard.edu/astrocytoma-survival-risk-calculator/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="link-accent"
+          >
+            Open it directly
+          </a>
+          .
+        </p>
       </section>
 
       <div>

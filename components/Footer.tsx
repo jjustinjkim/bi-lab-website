@@ -102,7 +102,10 @@ export default function Footer() {
         </div>
       </div>
       <div className="py-3 text-center text-xs" style={{ background: "var(--accent)", color: "white" }}>
-        Copyright <strong>SKULL BASE LAB</strong> {new Date().getFullYear()} &ndash; All Rights Reserved | PRIVACY POLICY
+        Copyright <strong>SKULL BASE LAB</strong> {new Date().getFullYear()} &ndash; All Rights Reserved |{" "}
+        <Link href="/privacy" style={{ color: "white", textDecoration: "underline" }}>
+          PRIVACY POLICY
+        </Link>
       </div>
     </footer>
   );

@@ -2,16 +2,25 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { FEATURED_PUBLICATIONS, PUBLICATIONS_BY_YEAR, PUBMED_URL } from "@/lib/content";
+import AuthorList from "@/components/AuthorList";
 
 export const metadata: Metadata = {
   title: "Publications",
   description: "Featured studies and the full publication archive from the Bi Lab, 2014 to present.",
+  alternates: {
+    types: { "application/rss+xml": "/publications/rss.xml" },
+  },
 };
 
 export default function PublicationsPage() {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 py-14 space-y-14">
-      <h1 className="text-display">Publications</h1>
+      <div className="flex items-baseline justify-between flex-wrap gap-3">
+        <h1 className="text-display">Publications</h1>
+        <a href="/publications/rss.xml" className="text-sm link-accent">
+          RSS feed
+        </a>
+      </div>
 
       <section>
         <div className="grid sm:grid-cols-3 gap-5">
@@ -60,7 +69,9 @@ export default function PublicationsPage() {
                 <div className="font-semibold" style={{ color: "var(--ink)" }}>
                   {entry.title}
                 </div>
-                <div>{entry.authors}.</div>
+                <div>
+                  <AuthorList authors={entry.authors} />.
+                </div>
                 <div className="italic">{entry.citation}</div>
               </li>
             ))}

@@ -52,7 +52,7 @@ export default function TeamPage() {
     <div className="max-w-6xl mx-auto px-4 sm:px-6 py-14 space-y-16">
       <h1 className="text-display">Team</h1>
 
-      <section>
+      <section id="pi">
         <h2 className="section-heading mb-6">Principal Investigator</h2>
         <div className="flex flex-col sm:flex-row gap-8 items-start">
           <Image

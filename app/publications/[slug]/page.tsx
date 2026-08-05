@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import { FEATURED_PUBLICATIONS } from "@/lib/content";
+import { scholarlyArticleJsonLd, jsonLdScriptProps } from "@/lib/jsonld";
 
 export function generateStaticParams() {
   return FEATURED_PUBLICATIONS.map((pub) => ({ slug: pub.slug }));
@@ -33,6 +34,8 @@ export default async function FeaturedPublicationPage({
 
   return (
     <div className="max-w-2xl mx-auto px-4 sm:px-6 py-14 space-y-8">
+      <script type="application/ld+json" {...jsonLdScriptProps(scholarlyArticleJsonLd(pub))} />
+
       <Link href="/publications" className="link-accent text-sm">
         &larr; All publications
       </Link>

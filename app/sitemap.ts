@@ -23,6 +23,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/inventory/search",
     "/inventory/institutions",
     "/inventory/methodology",
+    "/privacy",
   ];
   return routes.map((route) => ({
     url: `${BASE_URL}${route}`,

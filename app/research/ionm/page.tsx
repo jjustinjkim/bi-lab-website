@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import EmbedFrame from "@/components/EmbedFrame";
 
 export const metadata: Metadata = {
   title: "Intraoperative Neuromonitoring Training Module",
@@ -66,12 +67,10 @@ function Figure({
 function SketchfabEmbed({ title, modelId }: { title: string; modelId: string }) {
   return (
     <figure>
-      <iframe
+      <EmbedFrame
         title={title}
         src={`https://sketchfab.com/models/${modelId}/embed`}
-        className="w-full rounded"
-        style={{ height: "480px", border: "1px solid var(--hairline)" }}
-        loading="lazy"
+        className="w-full rounded h-[300px] sm:h-[400px] lg:h-[480px]"
         allowFullScreen
       />
       <figcaption className="text-sm mt-2" style={{ color: "var(--ink-muted)" }}>
@@ -84,7 +83,16 @@ function SketchfabEmbed({ title, modelId }: { title: string; modelId: string }) 
         >
           bolesxian
         </a>{" "}
-        on Sketchfab
+        on Sketchfab. Having trouble viewing this?{" "}
+        <a
+          href={`https://sketchfab.com/models/${modelId}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="link-accent"
+        >
+          Open directly
+        </a>
+        .
       </figcaption>
     </figure>
   );
