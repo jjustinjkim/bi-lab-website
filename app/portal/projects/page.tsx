@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { getProjects } from '@/lib/queries'
 import { createProject } from '@/lib/actions'
-import { PROJECT_GROUP_LABELS, type Project, type ProjectGroupType } from '@/lib/types'
+import { PROJECT_GROUP_LABELS, PROJECT_GROUP_COLORS, type Project, type ProjectGroupType } from '@/lib/types'
 
 export const dynamic = 'force-dynamic'
 export const metadata: Metadata = { title: 'Projects', robots: { index: false, follow: false } }
@@ -19,12 +19,41 @@ const HEADER_CELL_STYLE: React.CSSProperties = {
   whiteSpace: 'nowrap',
 }
 
-function GroupBadge({ group }: { group: string | null }) {
-  if (!group) return <span style={{ color: 'var(--ink-faint)' }}>&mdash;</span>
+// Only the 5 types the lab's spreadsheet legend actually defines -- X and P
+// are real values in the data but deliberately left out of the legend so
+// they don't read as officially-sanctioned categories.
+const LEGEND_GROUPS: ProjectGroupType[] = ['A', 'C', 'Ch', 'R', 'T']
+
+function GroupDot({ group }: { group: string | null }) {
+  const color = group ? PROJECT_GROUP_COLORS[group as ProjectGroupType] : null
+  const label = group ? (PROJECT_GROUP_LABELS[group as ProjectGroupType] ?? group) : 'Uncategorized'
   return (
-    <span className="badge" title={PROJECT_GROUP_LABELS[group as ProjectGroupType] ?? group}>
-      {group}
-    </span>
+    <span
+      title={label}
+      aria-label={label}
+      style={{
+        display: 'inline-block',
+        width: 8,
+        height: 8,
+        borderRadius: '50%',
+        background: color ?? 'var(--hairline-strong)',
+        marginRight: '0.5rem',
+        flexShrink: 0,
+      }}
+    />
+  )
+}
+
+function GroupLegend() {
+  return (
+    <div className="flex flex-wrap gap-x-5 gap-y-2 text-xs" style={{ color: 'var(--ink-muted)' }}>
+      {LEGEND_GROUPS.map((g) => (
+        <span key={g} className="flex items-center">
+          <GroupDot group={g} />
+          {PROJECT_GROUP_LABELS[g]}
+        </span>
+      ))}
+    </div>
   )
 }
 
@@ -137,6 +166,8 @@ export default async function ProjectsPage() {
         </form>
       </details>
 
+      <GroupLegend />
+
       <section>
         <h2 className="text-caption uppercase tracking-wide font-semibold mb-3">Active</h2>
         <ProjectTable projects={active} variant="active" />
@@ -160,7 +191,6 @@ function ProjectTable({ projects, variant }: { projects: Project[]; variant: 'ac
       <table className="w-full text-sm" style={{ borderCollapse: 'collapse' }}>
         <thead>
           <tr style={{ borderBottom: '1px solid var(--hairline-strong)' }}>
-            <th className="text-left px-3 py-2.5" style={HEADER_CELL_STYLE}>Gr</th>
             <th className="text-left px-3 py-2.5" style={HEADER_CELL_STYLE}>Project</th>
             <th className="text-left px-3 py-2.5" style={HEADER_CELL_STYLE}>Faculty</th>
             <th className="text-left px-3 py-2.5" style={HEADER_CELL_STYLE}>Personnel</th>
@@ -183,9 +213,9 @@ function ProjectTable({ projects, variant }: { projects: Project[]; variant: 'ac
         <tbody>
           {projects.map((p) => (
             <tr key={p.id} style={{ borderBottom: '1px solid var(--hairline)' }}>
-              <td className="px-3 py-2.5"><GroupBadge group={p.group_type} /></td>
               <td className="px-3 py-2.5">
-                <Link href={`/portal/projects/${p.id}`} className="link-accent font-medium">
+                <Link href={`/portal/projects/${p.id}`} className="link-accent font-medium flex items-center">
+                  <GroupDot group={p.group_type} />
                   {p.name}
                 </Link>
               </td>

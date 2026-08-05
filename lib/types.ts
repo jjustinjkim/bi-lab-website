@@ -14,13 +14,27 @@ export type ProjectStatus = "planning" | "active" | "blocked" | "done";
 export type ProjectGroupType = "A" | "C" | "Ch" | "R" | "T" | "X" | "P";
 
 export const PROJECT_GROUP_LABELS: Record<ProjectGroupType, string> = {
-  A: "Article",
+  A: "Article from study",
   C: "Case report",
   Ch: "Chapter",
   R: "Review",
   T: "Trial",
   X: "Other",
   P: "P",
+};
+
+// Colorblind-safe categorical palette (Okabe-Ito), one fixed hue per group
+// so a color always means the same thing across both project tables. X/P
+// (not part of the lab's own legend) get muted grays instead of a vivid hue
+// so they read as "uncategorized," not as a 6th and 7th real category.
+export const PROJECT_GROUP_COLORS: Record<ProjectGroupType, string> = {
+  A: "#0072B2",
+  C: "#009E73",
+  Ch: "#E69F00",
+  R: "#CC79A7",
+  T: "#D55E00",
+  X: "#94A3B8",
+  P: "#64748B",
 };
 
 export interface Project {
