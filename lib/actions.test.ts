@@ -44,8 +44,8 @@ vi.mock('next/headers', () => ({
 }))
 
 const {
-  loginMember, logout, createLabMember, deleteLabMember,
-  createProject, updateProject, deleteProject,
+  loginMember, logout, createLabMember, deleteLabMember, setCanViewAllProjects,
+  createProject, updateProject, deleteProject, setProjectMembers,
   createTask, updateTaskStatus, deleteTask,
   createDeadline, deleteDeadline,
   createDataset, deleteDataset,
@@ -183,6 +183,21 @@ describe('deleteLabMember', () => {
   })
 })
 
+describe('setCanViewAllProjects', () => {
+  it('grants full project visibility to a member', async () => {
+    fakeDb.seed('lab_members', [{ id: 'member-1', name: 'Member', can_view_all_projects: false }])
+    const result = await setCanViewAllProjects('member-1', true)
+    expect(result.error).toBeUndefined()
+    expect(fakeDb.table('lab_members')[0].can_view_all_projects).toBe(true)
+  })
+
+  it('revokes it again', async () => {
+    fakeDb.seed('lab_members', [{ id: 'member-1', name: 'Member', can_view_all_projects: true }])
+    await setCanViewAllProjects('member-1', false)
+    expect(fakeDb.table('lab_members')[0].can_view_all_projects).toBe(false)
+  })
+})
+
 describe('projects', () => {
   it('createProject requires a name and attributes ownership to the caller', async () => {
     const empty = await createProject(form({ name: '' }))
@@ -254,6 +269,34 @@ describe('projects', () => {
     const result = await updateProject('p1', form({ name: 'Old', work_percent: '80', pub_status: 'revision' }))
     expect(result.error).toBeUndefined()
     expect(fakeDb.table('projects')[0]).toMatchObject({ work_percent: 80, pub_status: 'revision' })
+  })
+})
+
+describe('setProjectMembers', () => {
+  it('tags the given members to a project, replacing any previous tags', async () => {
+    fakeDb.seed('project_members', [{ project_id: 'p1', member_id: 'old-member' }])
+    const fd = new FormData()
+    fd.append('member_ids', 'member-a')
+    fd.append('member_ids', 'member-b')
+
+    const result = await setProjectMembers('p1', fd)
+    expect(result.error).toBeUndefined()
+    const rows = fakeDb.table('project_members')
+    expect(rows.map(r => r.member_id).sort()).toEqual(['member-a', 'member-b'])
+    expect(rows.every(r => r.project_id === 'p1')).toBe(true)
+  })
+
+  it('clears all tags when no members are selected', async () => {
+    fakeDb.seed('project_members', [{ project_id: 'p1', member_id: 'member-a' }])
+    const result = await setProjectMembers('p1', new FormData())
+    expect(result.error).toBeUndefined()
+    expect(fakeDb.table('project_members')).toHaveLength(0)
+  })
+
+  it('does not touch tags belonging to a different project', async () => {
+    fakeDb.seed('project_members', [{ project_id: 'other', member_id: 'member-a' }])
+    await setProjectMembers('p1', new FormData())
+    expect(fakeDb.table('project_members')).toHaveLength(1)
   })
 })
 

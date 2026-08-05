@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { redirect } from 'next/navigation'
 import { requireAdmin } from '@/lib/auth'
 import { getLabMembers } from '@/lib/queries'
-import { createLabMember, deleteLabMember } from '@/lib/actions'
+import { createLabMember, deleteLabMember, setCanViewAllProjects } from '@/lib/actions'
 
 export const dynamic = 'force-dynamic'
 export const metadata: Metadata = { title: 'Members', robots: { index: false, follow: false } }
@@ -27,6 +27,13 @@ export default async function MembersPage() {
     'use server'
     const id = formData.get('id') as string
     await deleteLabMember(id)
+  }
+
+  async function toggleViewAll(formData: FormData) {
+    'use server'
+    const id = formData.get('id') as string
+    const next = formData.get('next') === 'true'
+    await setCanViewAllProjects(id, next)
   }
 
   return (
@@ -56,6 +63,10 @@ export default async function MembersPage() {
             <input type="checkbox" name="is_admin" />
             Grant admin access (can add/remove lab members)
           </label>
+          <label className="flex items-center gap-2 text-sm sm:col-span-2">
+            <input type="checkbox" name="can_view_all_projects" />
+            Full project visibility (sees every project, not just the ones they&rsquo;re tagged on)
+          </label>
           <div className="sm:col-span-2">
             <button type="submit" className="btn btn-primary">Add member</button>
           </div>
@@ -66,17 +77,28 @@ export default async function MembersPage() {
         <h2 className="text-subtitle mb-4" style={{ fontSize: '0.9375rem' }}>Current members</h2>
         <ul className="divide-y" style={{ borderColor: 'var(--hairline)' }}>
           {members.map((m) => (
-            <li key={m.id} className="py-3 flex items-center justify-between gap-4">
+            <li key={m.id} className="py-3 flex items-center justify-between gap-4 flex-wrap">
               <div>
                 <div className="text-sm font-medium">
-                  {m.name} {m.is_admin && <span className="badge badge-accent ml-2">Admin</span>}
+                  {m.name}{' '}
+                  {m.is_admin && <span className="badge badge-accent ml-1">Admin</span>}{' '}
+                  {m.can_view_all_projects && <span className="badge ml-1">All projects</span>}
                 </div>
                 <div className="text-xs" style={{ color: 'var(--ink-muted)' }}>{m.email}{m.title ? ` · ${m.title}` : ''}</div>
               </div>
-              <form action={removeMember}>
-                <input type="hidden" name="id" value={m.id} />
-                <button type="submit" className="text-xs" style={{ color: 'var(--accent-2-ink)' }}>Remove</button>
-              </form>
+              <div className="flex items-center gap-4">
+                <form action={toggleViewAll}>
+                  <input type="hidden" name="id" value={m.id} />
+                  <input type="hidden" name="next" value={(!m.can_view_all_projects).toString()} />
+                  <button type="submit" className="text-xs link-accent">
+                    {m.can_view_all_projects ? 'Restrict to tagged projects' : 'Grant full project visibility'}
+                  </button>
+                </form>
+                <form action={removeMember}>
+                  <input type="hidden" name="id" value={m.id} />
+                  <button type="submit" className="text-xs" style={{ color: 'var(--accent-2-ink)' }}>Remove</button>
+                </form>
+              </div>
             </li>
           ))}
         </ul>

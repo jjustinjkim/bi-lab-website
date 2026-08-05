@@ -20,7 +20,7 @@ export async function getSessionMember(): Promise<LabMember | null> {
   const db = createAdminClient()
   const { data } = await db
     .from('member_sessions')
-    .select('member_id, expires_at, lab_members(id, email, name, title, is_admin, created_at)')
+    .select('member_id, expires_at, lab_members(id, email, name, title, is_admin, can_view_all_projects, created_at)')
     .eq('token', token)
     .single()
 

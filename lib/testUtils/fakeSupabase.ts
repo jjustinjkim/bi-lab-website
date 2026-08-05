@@ -3,11 +3,12 @@ import { randomUUID } from 'node:crypto'
 // A small in-memory stand-in for the Supabase/PostgREST client, covering
 // only the query-builder surface lib/actions.ts, lib/queries.ts, and
 // lib/auth.ts actually use: .select/.insert/.update/.delete, .eq/.neq/.ilike
-// /.gte/.lte/.lt, .order/.limit, .single, the embedded-relation select used
-// by getSessionMember (member_sessions -> lab_members), and the
-// {count:'exact', head:true} select option. Adapted from the sibling NASBS
-// portals' fakeSupabase.ts for this project's simpler schema (every table
-// has a standard `id` PK and `created_at`, no upsert or or() usage).
+// /.gte/.lte/.lt, .or (eq/in clauses only), .order/.limit, .single, the
+// embedded-relation select used by getSessionMember (member_sessions ->
+// lab_members), and the {count:'exact', head:true} select option. Adapted
+// from the sibling NASBS portals' fakeSupabase.ts for this project's
+// simpler schema (every table has a standard `id` PK and `created_at`, no
+// upsert).
 
 type Row = Record<string, unknown>
 type Op = 'select' | 'insert' | 'update' | 'delete'
@@ -55,6 +56,45 @@ function matchesFilters(row: Row, filters: Filter[]): boolean {
   })
 }
 
+// .or('owner_id.eq.<id>,id.in.(<id1>,<id2>)') -- a comma-separated list of
+// col.op.val clauses, ORed together, then ANDed with whatever plain filters
+// are also on the query (matching real PostgREST .or() semantics). Only
+// eq/in are implemented since those are the only operators this app's
+// project-visibility filter actually generates.
+interface OrClause { col: string; op: 'eq' | 'in'; val: string | string[] }
+
+function splitTopLevel(s: string): string[] {
+  const parts: string[] = []
+  let depth = 0
+  let cur = ''
+  for (const ch of s) {
+    if (ch === '(') depth++
+    if (ch === ')') depth--
+    if (ch === ',' && depth === 0) { parts.push(cur); cur = '' } else cur += ch
+  }
+  if (cur) parts.push(cur)
+  return parts
+}
+
+function parseOrFilter(filterString: string): OrClause[] {
+  return splitTopLevel(filterString).map((clause) => {
+    const m = clause.match(/^(\w+)\.(eq|in)\.(.+)$/)
+    if (!m) throw new Error(`fakeSupabase: unsupported or() clause: ${clause}`)
+    const [, col, op, rawVal] = m
+    if (op === 'in') {
+      return { col, op: 'in', val: rawVal.replace(/^\(/, '').replace(/\)$/, '').split(',').filter(Boolean) }
+    }
+    return { col, op: 'eq', val: rawVal }
+  })
+}
+
+function matchesOrClauses(row: Row, clauses: OrClause[]): boolean {
+  return clauses.some(c => {
+    if (c.op === 'eq') return String(row[c.col]) === c.val
+    return (c.val as string[]).includes(String(row[c.col]))
+  })
+}
+
 interface SelectSpec {
   plainCols: string[] | null
   embeds: Array<{ table: string; cols: string[] }>
@@ -97,7 +137,7 @@ function fkColumnFor(table: string): string {
 
 class FakeQueryBuilder implements PromiseLike<{ data: unknown; error: null; count?: number }> {
   private op: Op = 'select'
-  private payload: Row | null = null
+  private payload: Row | Row[] | null = null
   private filters: Filter[] = []
   private orderCol: string | null = null
   private orderAscending = true
@@ -105,6 +145,7 @@ class FakeQueryBuilder implements PromiseLike<{ data: unknown; error: null; coun
   private singleFlag = false
   private wantCount = false
   private selectSpec: SelectSpec | null = null
+  private orClauses: OrClause[] | null = null
 
   constructor(private db: FakeDb, private tableName: string) {}
 
@@ -113,7 +154,7 @@ class FakeQueryBuilder implements PromiseLike<{ data: unknown; error: null; coun
     if (cols && cols.trim() !== '*') this.selectSpec = parseSelect(cols)
     return this
   }
-  insert(payload: Row) { this.op = 'insert'; this.payload = payload; return this }
+  insert(payload: Row | Row[]) { this.op = 'insert'; this.payload = payload; return this }
   update(payload: Row) { this.op = 'update'; this.payload = payload; return this }
   delete() { this.op = 'delete'; return this }
   eq(col: string, val: unknown) { this.filters.push({ col, op: 'eq', val }); return this }
@@ -122,6 +163,7 @@ class FakeQueryBuilder implements PromiseLike<{ data: unknown; error: null; coun
   gte(col: string, val: unknown) { this.filters.push({ col, op: 'gte', val }); return this }
   lte(col: string, val: unknown) { this.filters.push({ col, op: 'lte', val }); return this }
   lt(col: string, val: unknown) { this.filters.push({ col, op: 'lt', val }); return this }
+  or(filterString: string) { this.orClauses = parseOrFilter(filterString); return this }
   order(col: string, opts?: { ascending?: boolean }) {
     this.orderCol = col
     this.orderAscending = opts?.ascending ?? true
@@ -146,17 +188,25 @@ class FakeQueryBuilder implements PromiseLike<{ data: unknown; error: null; coun
     return out
   }
 
+  private matches(row: Row): boolean {
+    return matchesFilters(row, this.filters) && (!this.orClauses || matchesOrClauses(row, this.orClauses))
+  }
+
   private execute(): { data: unknown; error: null; count?: number } {
     const table = this.db.table(this.tableName)
 
     if (this.op === 'insert') {
-      const row = this.db.materialize(this.tableName, this.payload as Row)
-      table.push(row)
-      return { data: this.singleFlag ? this.embed({ ...row }) : [this.embed({ ...row })], error: null }
+      const payloads = Array.isArray(this.payload) ? this.payload : [this.payload as Row]
+      const rows = payloads.map(p => {
+        const row = this.db.materialize(this.tableName, p)
+        table.push(row)
+        return this.embed({ ...row })
+      })
+      return { data: this.singleFlag ? rows[0] : rows, error: null }
     }
 
     if (this.op === 'update') {
-      const matched = table.filter(r => matchesFilters(r, this.filters))
+      const matched = table.filter(r => this.matches(r))
       const updated = matched.map(r => {
         const merged = { ...r, ...(this.payload as Row) }
         table[table.indexOf(r)] = merged
@@ -166,15 +216,15 @@ class FakeQueryBuilder implements PromiseLike<{ data: unknown; error: null; coun
     }
 
     if (this.op === 'delete') {
-      const matched = table.filter(r => matchesFilters(r, this.filters))
-      this.db.tables[this.tableName] = table.filter(r => !matchesFilters(r, this.filters))
+      const matched = table.filter(r => this.matches(r))
+      this.db.tables[this.tableName] = table.filter(r => !this.matches(r))
       return { data: matched.map(r => ({ ...r })), error: null }
     }
 
     // select -- always return fresh copies, never live references into the
     // table, so a caller holding onto a previous result can't observe a
     // later write mutate it out from under them (matching real PostgREST).
-    let rows = table.filter(r => matchesFilters(r, this.filters)).map(r => ({ ...r }))
+    let rows = table.filter(r => this.matches(r)).map(r => ({ ...r }))
     const count = rows.length
     if (this.orderCol) {
       const col = this.orderCol

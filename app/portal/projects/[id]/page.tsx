@@ -1,8 +1,15 @@
 import type { Metadata } from 'next'
 import { notFound, redirect } from 'next/navigation'
 import Link from 'next/link'
-import { getProject, getTasksForProject, getDeadlinesForProject, getDatasetsForProject } from '@/lib/queries'
-import { updateProject, deleteProject } from '@/lib/actions'
+import {
+  getProject,
+  getTasksForProject,
+  getDeadlinesForProject,
+  getDatasetsForProject,
+  getLabMembers,
+  getProjectMemberIds,
+} from '@/lib/queries'
+import { updateProject, deleteProject, setProjectMembers } from '@/lib/actions'
 import { PROJECT_GROUP_LABELS, type ProjectGroupType } from '@/lib/types'
 
 export const dynamic = 'force-dynamic'
@@ -26,11 +33,14 @@ export default async function ProjectDetailPage({
   const project = await getProject(id)
   if (!project) notFound()
 
-  const [tasks, deadlines, datasets] = await Promise.all([
+  const [tasks, deadlines, datasets, allMembers, taggedMemberIds] = await Promise.all([
     getTasksForProject(id),
     getDeadlinesForProject(id),
     getDatasetsForProject(id),
+    getLabMembers(),
+    getProjectMemberIds(id),
   ])
+  const taggedSet = new Set(taggedMemberIds)
 
   async function saveProject(formData: FormData) {
     'use server'
@@ -41,6 +51,11 @@ export default async function ProjectDetailPage({
     'use server'
     await deleteProject(id)
     redirect('/portal/projects')
+  }
+
+  async function saveAccess(formData: FormData) {
+    'use server'
+    await setProjectMembers(id, formData)
   }
 
   return (
@@ -149,6 +164,34 @@ export default async function ProjectDetailPage({
         </form>
         <form action={removeProject} className="mt-4 pt-4" style={{ borderTop: '1px solid var(--hairline)' }}>
           <button type="submit" className="text-sm" style={{ color: 'var(--accent-2-ink)' }}>Delete project</button>
+        </form>
+      </div>
+
+      <div className="panel p-5">
+        <h2 className="text-caption uppercase tracking-wide font-semibold mb-1">Team members with access</h2>
+        <p className="text-xs mb-3" style={{ color: 'var(--ink-faint)' }}>
+          Whoever created this project, and anyone with full project visibility, can already see it.
+          Tag other lab member accounts here to share it with them specifically.
+        </p>
+        <form action={saveAccess} className="space-y-3">
+          {allMembers.length === 0 ? (
+            <p className="text-sm" style={{ color: 'var(--ink-faint)' }}>No other lab member accounts yet.</p>
+          ) : (
+            <ul className="space-y-1.5">
+              {allMembers.map((m) => (
+                <li key={m.id}>
+                  <label className="flex items-center gap-2 text-sm">
+                    <input type="checkbox" name="member_ids" value={m.id} defaultChecked={taggedSet.has(m.id)} />
+                    {m.name}
+                    {m.can_view_all_projects && (
+                      <span className="text-xs" style={{ color: 'var(--ink-faint)' }}>(already sees all projects)</span>
+                    )}
+                  </label>
+                </li>
+              ))}
+            </ul>
+          )}
+          <button type="submit" className="btn btn-secondary">Save access</button>
         </form>
       </div>
 

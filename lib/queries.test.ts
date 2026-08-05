@@ -1,12 +1,16 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest'
 import { FakeDb } from './testUtils/fakeSupabase'
+import { requireMember } from './auth'
 
 // Exercises the read logic in queries.ts against an in-memory fake DB.
 // Auth (requireMember) is stubbed out -- these tests are about whether each
 // query returns the right rows in the right order, not about access control.
 
 const fakeDb = new FakeDb()
-const CURRENT_MEMBER = { id: 'member-1', email: 'member@example.com', name: 'Test Member', title: null, is_admin: false, created_at: '2026-01-01T00:00:00.000Z' }
+// can_view_all_projects: true here since this file is about query
+// correctness, not access control -- the project-visibility filter itself
+// (restricted members, tagging) is covered separately below.
+const CURRENT_MEMBER = { id: 'member-1', email: 'member@example.com', name: 'Test Member', title: null, is_admin: false, can_view_all_projects: true, created_at: '2026-01-01T00:00:00.000Z' }
 
 vi.mock('./supabase', () => ({
   createAdminClient: () => fakeDb,
@@ -62,6 +66,50 @@ describe('getProjects / getProject', () => {
   it('getProject returns null (not throw) when no row matches', async () => {
     const result = await getProject('missing')
     expect(result).toBeNull()
+  })
+})
+
+describe('project visibility filtering', () => {
+  const RESTRICTED_MEMBER = {
+    id: 'restricted-1', email: 'r@example.com', name: 'Restricted', title: null,
+    is_admin: false, can_view_all_projects: false, created_at: '2026-01-01T00:00:00.000Z',
+  }
+
+  it('a restricted member only sees projects they own or are tagged on', async () => {
+    fakeDb.seed('projects', [
+      { id: 'owned', name: 'Owned by me', owner_id: 'restricted-1' },
+      { id: 'tagged', name: 'Tagged to me', owner_id: 'someone-else' },
+      { id: 'hidden', name: 'Not mine', owner_id: 'someone-else' },
+    ])
+    fakeDb.seed('project_members', [{ project_id: 'tagged', member_id: 'restricted-1' }])
+    vi.mocked(requireMember).mockResolvedValueOnce(RESTRICTED_MEMBER)
+
+    const result = await getProjects()
+    expect(result.map(p => p.id).sort()).toEqual(['owned', 'tagged'])
+  })
+
+  it('getProject returns null for a project a restricted member cannot see (not just filtered from the list)', async () => {
+    fakeDb.seed('projects', [{ id: 'hidden', name: 'Not mine', owner_id: 'someone-else' }])
+    vi.mocked(requireMember).mockResolvedValueOnce(RESTRICTED_MEMBER)
+
+    expect(await getProject('hidden')).toBeNull()
+  })
+
+  it('getProject still returns a project the restricted member owns', async () => {
+    fakeDb.seed('projects', [{ id: 'mine', name: 'Mine', owner_id: 'restricted-1' }])
+    vi.mocked(requireMember).mockResolvedValueOnce(RESTRICTED_MEMBER)
+
+    expect((await getProject('mine'))?.id).toBe('mine')
+  })
+
+  it('can_view_all_projects sees every project regardless of ownership or tags', async () => {
+    fakeDb.seed('projects', [
+      { id: 'a', name: 'A', owner_id: 'someone-else' },
+      { id: 'b', name: 'B', owner_id: 'someone-else-2' },
+    ])
+    // default CURRENT_MEMBER mock has can_view_all_projects: true
+    const result = await getProjects()
+    expect(result.map(p => p.id).sort()).toEqual(['a', 'b'])
   })
 })
 
@@ -160,5 +208,18 @@ describe('getDashboardData', () => {
     ])
     const { activeProjects } = await getDashboardData()
     expect(activeProjects.map(p => p.id)).toEqual(['p1'])
+  })
+
+  it('activeProjects is also restricted to owned/tagged projects for a restricted member', async () => {
+    fakeDb.seed('projects', [
+      { id: 'mine', name: 'Mine', status: 'active', owner_id: 'member-1' },
+      { id: 'not-mine', name: 'Not mine', status: 'active', owner_id: 'someone-else' },
+    ])
+    vi.mocked(requireMember).mockResolvedValueOnce({
+      id: 'member-1', email: 'member@example.com', name: 'Test Member', title: null,
+      is_admin: false, can_view_all_projects: false, created_at: '2026-01-01T00:00:00.000Z',
+    })
+    const { activeProjects } = await getDashboardData()
+    expect(activeProjects.map(p => p.id)).toEqual(['mine'])
   })
 })

@@ -16,6 +16,12 @@ CREATE TABLE IF NOT EXISTS lab_members (
   created_at TIMESTAMPTZ DEFAULT NOW()
 );
 
+-- Separate from is_admin (which only governs member management): controls
+-- whether this person sees every project in the tracker, or only the ones
+-- they're personally involved in. Intended for the PI, not member-management
+-- admins in general.
+ALTER TABLE lab_members ADD COLUMN IF NOT EXISTS can_view_all_projects BOOLEAN NOT NULL DEFAULT false;
+
 CREATE TABLE IF NOT EXISTS member_sessions (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   member_id UUID REFERENCES lab_members(id) ON DELETE CASCADE,
@@ -119,6 +125,20 @@ CREATE INDEX IF NOT EXISTS idx_deadlines_date ON deadlines(date);
 CREATE INDEX IF NOT EXISTS idx_deadlines_project ON deadlines(project_id);
 CREATE INDEX IF NOT EXISTS idx_datasets_project ON datasets(project_id);
 
+-- Explicit per-person sharing: which lab_members accounts (not the freeform
+-- personnel/faculty text, which mostly names people who never get accounts)
+-- can see a given project. A member without can_view_all_projects only sees
+-- projects where they're tagged here or where they're the owner.
+CREATE TABLE IF NOT EXISTS project_members (
+  project_id UUID NOT NULL REFERENCES projects(id) ON DELETE CASCADE,
+  member_id UUID NOT NULL REFERENCES lab_members(id) ON DELETE CASCADE,
+  created_at TIMESTAMPTZ DEFAULT NOW(),
+  PRIMARY KEY (project_id, member_id)
+);
+
+CREATE INDEX IF NOT EXISTS idx_project_members_member ON project_members(member_id);
+CREATE INDEX IF NOT EXISTS idx_project_members_project ON project_members(project_id);
+
 -- Disable Row Level Security (portal is gated app-side; all access via
 -- the service-role key from server-side code that has already checked
 -- requireMember()/requireAdmin()).
@@ -129,8 +149,9 @@ ALTER TABLE projects DISABLE ROW LEVEL SECURITY;
 ALTER TABLE tasks DISABLE ROW LEVEL SECURITY;
 ALTER TABLE deadlines DISABLE ROW LEVEL SECURITY;
 ALTER TABLE datasets DISABLE ROW LEVEL SECURITY;
+ALTER TABLE project_members DISABLE ROW LEVEL SECURITY;
 
 -- The public anon key is never meant to touch these tables at all -- the
 -- app only ever reads/writes via the service-role key, server-side.
-REVOKE ALL ON lab_members, member_sessions, member_login_attempts, projects, tasks, deadlines, datasets
+REVOKE ALL ON lab_members, member_sessions, member_login_attempts, projects, tasks, deadlines, datasets, project_members
 FROM anon, authenticated;

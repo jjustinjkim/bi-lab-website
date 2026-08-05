@@ -79,6 +79,7 @@ export async function createLabMember(formData: FormData): Promise<{ error?: str
   const title = (formData.get('title') as string) || null
   const password = formData.get('password') as string
   const isAdmin = formData.get('is_admin') === 'on'
+  const canViewAllProjects = formData.get('can_view_all_projects') === 'on'
 
   if (!password || password.length < 8) return { error: 'Password must be at least 8 characters.' }
 
@@ -86,7 +87,9 @@ export async function createLabMember(formData: FormData): Promise<{ error?: str
   if (existing && existing.length > 0) return { error: 'A lab member with this email already exists.' }
 
   const passwordHash = await bcrypt.hash(password, 10)
-  const { error } = await db.from('lab_members').insert({ email, name, title, is_admin: isAdmin, password_hash: passwordHash })
+  const { error } = await db
+    .from('lab_members')
+    .insert({ email, name, title, is_admin: isAdmin, can_view_all_projects: canViewAllProjects, password_hash: passwordHash })
   if (error) return { error: error.message }
   return {}
 }
@@ -97,6 +100,14 @@ export async function deleteLabMember(id: string): Promise<{ error?: string }> {
 
   const db = createAdminClient()
   const { error } = await db.from('lab_members').delete().eq('id', id)
+  if (error) return { error: error.message }
+  return {}
+}
+
+export async function setCanViewAllProjects(id: string, canViewAll: boolean): Promise<{ error?: string }> {
+  await requireAdmin()
+  const db = createAdminClient()
+  const { error } = await db.from('lab_members').update({ can_view_all_projects: canViewAll }).eq('id', id)
   if (error) return { error: error.message }
   return {}
 }
@@ -173,6 +184,27 @@ export async function deleteProject(id: string): Promise<{ error?: string }> {
   const db = createAdminClient()
   const { error } = await db.from('projects').delete().eq('id', id)
   if (error) return { error: error.message }
+  return {}
+}
+
+// Replaces the full set of tagged members for a project with whatever was
+// checked in the form (rather than incremental add/remove calls) -- simpler
+// to reason about and avoids partial-failure states.
+export async function setProjectMembers(projectId: string, formData: FormData): Promise<{ error?: string }> {
+  await requireMember()
+  const db = createAdminClient()
+
+  const memberIds = formData.getAll('member_ids') as string[]
+
+  const { error: deleteError } = await db.from('project_members').delete().eq('project_id', projectId)
+  if (deleteError) return { error: deleteError.message }
+
+  if (memberIds.length > 0) {
+    const { error: insertError } = await db
+      .from('project_members')
+      .insert(memberIds.map((memberId) => ({ project_id: projectId, member_id: memberId })))
+    if (insertError) return { error: insertError.message }
+  }
   return {}
 }
 

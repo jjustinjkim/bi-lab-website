@@ -14,8 +14,8 @@ const GROUP_OPTIONS = Object.entries(PROJECT_GROUP_LABELS) as [ProjectGroupType,
 // on and makes every header stack vertically instead of across the row.
 const HEADER_CELL_STYLE: React.CSSProperties = {
   fontSize: '0.8125rem',
-  fontWeight: 600,
-  color: 'var(--ink-muted)',
+  fontWeight: 700,
+  color: 'var(--ink)',
   whiteSpace: 'nowrap',
 }
 
@@ -44,9 +44,22 @@ function GroupDot({ group }: { group: string | null }) {
   )
 }
 
+// Sticky just below the portal nav bar (which is h-14 / 3.5rem and itself
+// sticky at top-0 z-30) so the legend stays visible while scrolling through
+// either table, instead of scrolling away with the rest of the page.
 function GroupLegend() {
   return (
-    <div className="flex flex-wrap gap-x-5 gap-y-2 text-xs" style={{ color: 'var(--ink-muted)' }}>
+    <div
+      className="flex flex-wrap gap-x-5 gap-y-2 text-xs px-1 py-3"
+      style={{
+        color: 'var(--ink-muted)',
+        position: 'sticky',
+        top: '3.5rem',
+        zIndex: 20,
+        background: 'var(--paper)',
+        borderBottom: '1px solid var(--hairline)',
+      }}
+    >
       {LEGEND_GROUPS.map((g) => (
         <span key={g} className="flex items-center">
           <GroupDot group={g} />
@@ -55,6 +68,13 @@ function GroupLegend() {
       ))}
     </div>
   )
+}
+
+// A soft tint of the group's color behind the whole row, not just the dot,
+// so the category reads at a glance without having to look at each name.
+function rowBackground(group: string | null): string | undefined {
+  const color = group ? PROJECT_GROUP_COLORS[group as ProjectGroupType] : null
+  return color ? `color-mix(in srgb, ${color} 16%, var(--paper-raised))` : undefined
 }
 
 function formatDeadline(date: string | null) {
@@ -212,7 +232,7 @@ function ProjectTable({ projects, variant }: { projects: Project[]; variant: 'ac
         </thead>
         <tbody>
           {projects.map((p) => (
-            <tr key={p.id} style={{ borderBottom: '1px solid var(--hairline)' }}>
+            <tr key={p.id} style={{ borderBottom: '1px solid var(--hairline)', background: rowBackground(p.group_type) }}>
               <td className="px-3 py-2.5">
                 <Link href={`/portal/projects/${p.id}`} className="link-accent font-medium flex items-center">
                   <GroupDot group={p.group_type} />

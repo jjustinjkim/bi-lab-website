@@ -4,6 +4,7 @@ export interface LabMember {
   name: string;
   title: string | null;
   is_admin: boolean;
+  can_view_all_projects: boolean;
   created_at: string;
 }
 
