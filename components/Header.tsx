@@ -57,8 +57,11 @@ export default function Header() {
     setMenuOpen(false);
   }, [pathname]);
 
+  // z-40: must stack above the portal's own sticky sub-nav (PortalNav,
+  // z-30), or this header's Research/Tools dropdowns render clipped behind
+  // it on /portal pages. Below the z-50 skip-link.
   return (
-    <header className="sticky top-0 z-20" style={{ background: "var(--paper)" }}>
+    <header className="sticky top-0 z-40" style={{ background: "var(--paper)" }}>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 py-1.5 flex justify-end gap-5 text-xs" style={{ color: "var(--ink-muted)", borderBottom: "1px solid var(--hairline)" }}>
         <span className="hidden sm:flex items-center gap-1.5">
           <PhoneIcon size={11} />
@@ -185,7 +188,7 @@ export default function Header() {
 
         {menuOpen && (
           <div
-            className="xl:hidden absolute top-full left-0 right-0 z-20"
+            className="xl:hidden absolute top-full left-0 right-0 z-40"
             style={{ background: "var(--paper)", borderTop: "1px solid var(--hairline)", borderBottom: "1px solid var(--hairline)", boxShadow: "0 8px 16px rgba(0,0,0,0.1)" }}
           >
             <nav className="max-w-6xl mx-auto px-4 sm:px-6 py-3 flex flex-col">
