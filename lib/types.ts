@@ -9,6 +9,20 @@ export interface LabMember {
 
 export type ProjectStatus = "planning" | "active" | "blocked" | "done";
 
+// Matches the "Gr" column in the lab's own tracker spreadsheet. "P" appears
+// in older (pre-2015) rows but was never in its own legend there either.
+export type ProjectGroupType = "A" | "C" | "Ch" | "R" | "T" | "X" | "P";
+
+export const PROJECT_GROUP_LABELS: Record<ProjectGroupType, string> = {
+  A: "Article",
+  C: "Case report",
+  Ch: "Chapter",
+  R: "Review",
+  T: "Trial",
+  X: "Other",
+  P: "P",
+};
+
 export interface Project {
   id: string;
   name: string;
@@ -18,6 +32,16 @@ export interface Project {
   notes: string | null;
   created_at: string;
   updated_at: string;
+  group_type: ProjectGroupType | null;
+  faculty: string | null;
+  personnel: string | null;
+  work_percent: number | null;
+  pub_status: string | null;
+  meeting: string | null;
+  deadline_date: string | null;
+  checkpoint: string | null;
+  journal: string | null;
+  pub_year: number | null;
 }
 
 export type TaskStatus = "todo" | "in_progress" | "done";

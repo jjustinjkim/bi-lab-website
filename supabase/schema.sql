@@ -60,6 +60,27 @@ CREATE TRIGGER projects_updated_at
   BEFORE UPDATE ON projects
   FOR EACH ROW EXECUTE FUNCTION update_updated_at();
 
+-- Lab-wide research tracker fields, matching the structure of the lab's own
+-- spreadsheet tracker: group_type/faculty/personnel/work_percent/pub_status/
+-- meeting/deadline_date/checkpoint track an in-progress project, journal/
+-- pub_year get filled in once it's actually published. faculty and personnel
+-- are free text (not FKs to lab_members) because most named collaborators
+-- --  co-authoring faculty, historical trainees -- are never lab_members
+-- accounts themselves.
+-- 'P' shows up in the historical spreadsheet (pre-2015 entries) but was
+-- never in its own legend -- kept as a valid value since real rows use it,
+-- without guessing at what it stood for.
+ALTER TABLE projects ADD COLUMN IF NOT EXISTS group_type TEXT CHECK (group_type IN ('A', 'C', 'Ch', 'R', 'T', 'X', 'P'));
+ALTER TABLE projects ADD COLUMN IF NOT EXISTS faculty TEXT;
+ALTER TABLE projects ADD COLUMN IF NOT EXISTS personnel TEXT;
+ALTER TABLE projects ADD COLUMN IF NOT EXISTS work_percent INTEGER CHECK (work_percent BETWEEN 0 AND 100);
+ALTER TABLE projects ADD COLUMN IF NOT EXISTS pub_status TEXT;
+ALTER TABLE projects ADD COLUMN IF NOT EXISTS meeting TEXT;
+ALTER TABLE projects ADD COLUMN IF NOT EXISTS deadline_date DATE;
+ALTER TABLE projects ADD COLUMN IF NOT EXISTS checkpoint TEXT;
+ALTER TABLE projects ADD COLUMN IF NOT EXISTS journal TEXT;
+ALTER TABLE projects ADD COLUMN IF NOT EXISTS pub_year INTEGER;
+
 CREATE TABLE IF NOT EXISTS tasks (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   title TEXT NOT NULL,

@@ -213,6 +213,48 @@ describe('projects', () => {
     await deleteProject('p1')
     expect(fakeDb.table('projects')).toHaveLength(0)
   })
+
+  it('createProject persists the lab tracker fields (group, faculty, personnel, work %, etc.)', async () => {
+    const result = await createProject(form({
+      name: 'Meningioma radiomics',
+      group_type: 'A',
+      faculty: 'Bi / Ray',
+      personnel: 'Shun, Driver',
+      work_percent: '50',
+      pub_status: 'manuscript',
+      meeting: 'AANS',
+      deadline_date: '2026-09-01',
+      checkpoint: 'await radiomics primary publications',
+    }))
+    expect(result.error).toBeUndefined()
+    expect(fakeDb.table('projects')[0]).toMatchObject({
+      group_type: 'A',
+      faculty: 'Bi / Ray',
+      personnel: 'Shun, Driver',
+      work_percent: 50,
+      pub_status: 'manuscript',
+      meeting: 'AANS',
+      deadline_date: '2026-09-01',
+      checkpoint: 'await radiomics primary publications',
+    })
+  })
+
+  it('createProject clamps out-of-range work_percent into 0-100', async () => {
+    await createProject(form({ name: 'A', work_percent: '150' }))
+    expect(fakeDb.table('projects')[0].work_percent).toBe(100)
+  })
+
+  it('createProject records journal and pub_year for a completed/published project', async () => {
+    await createProject(form({ name: 'Ki-67 in meningioma', status: 'done', journal: 'J Neurosurg', pub_year: '2025' }))
+    expect(fakeDb.table('projects')[0]).toMatchObject({ status: 'done', journal: 'J Neurosurg', pub_year: 2025 })
+  })
+
+  it('updateProject overwrites tracker fields on the matching row', async () => {
+    fakeDb.seed('projects', [{ id: 'p1', name: 'Old', status: 'active', work_percent: 10, pub_status: null }])
+    const result = await updateProject('p1', form({ name: 'Old', work_percent: '80', pub_status: 'revision' }))
+    expect(result.error).toBeUndefined()
+    expect(fakeDb.table('projects')[0]).toMatchObject({ work_percent: 80, pub_status: 'revision' })
+  })
 })
 
 describe('tasks', () => {

@@ -103,6 +103,31 @@ export async function deleteLabMember(id: string): Promise<{ error?: string }> {
 
 // ── Projects ──────────────────────────────────────────────────────────────
 
+function intOrNull(formData: FormData, key: string, min?: number, max?: number): number | null {
+  const raw = formData.get(key) as string
+  if (!raw) return null
+  const n = parseInt(raw, 10)
+  if (Number.isNaN(n)) return null
+  if (min != null && n < min) return min
+  if (max != null && n > max) return max
+  return n
+}
+
+function trackerFields(formData: FormData) {
+  return {
+    group_type: (formData.get('group_type') as string) || null,
+    faculty: (formData.get('faculty') as string) || null,
+    personnel: (formData.get('personnel') as string) || null,
+    work_percent: intOrNull(formData, 'work_percent', 0, 100),
+    pub_status: (formData.get('pub_status') as string) || null,
+    meeting: (formData.get('meeting') as string) || null,
+    deadline_date: (formData.get('deadline_date') as string) || null,
+    checkpoint: (formData.get('checkpoint') as string) || null,
+    journal: (formData.get('journal') as string) || null,
+    pub_year: intOrNull(formData, 'pub_year'),
+  }
+}
+
 export async function createProject(formData: FormData): Promise<{ error?: string }> {
   const member = await requireMember()
   const db = createAdminClient()
@@ -116,6 +141,7 @@ export async function createProject(formData: FormData): Promise<{ error?: strin
     status: (formData.get('status') as string) || 'planning',
     owner_id: member.id,
     notes: (formData.get('notes') as string) || null,
+    ...trackerFields(formData),
   })
   if (error) return { error: error.message }
   return {}
@@ -135,6 +161,7 @@ export async function updateProject(id: string, formData: FormData): Promise<{ e
       description: (formData.get('description') as string) || null,
       status: (formData.get('status') as string) || 'planning',
       notes: (formData.get('notes') as string) || null,
+      ...trackerFields(formData),
     })
     .eq('id', id)
   if (error) return { error: error.message }

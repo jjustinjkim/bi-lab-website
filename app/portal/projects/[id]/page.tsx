@@ -3,6 +3,7 @@ import { notFound, redirect } from 'next/navigation'
 import Link from 'next/link'
 import { getProject, getTasksForProject, getDeadlinesForProject, getDatasetsForProject } from '@/lib/queries'
 import { updateProject, deleteProject } from '@/lib/actions'
+import { PROJECT_GROUP_LABELS, type ProjectGroupType } from '@/lib/types'
 
 export const dynamic = 'force-dynamic'
 export const metadata: Metadata = { title: 'Project', robots: { index: false, follow: false } }
@@ -13,6 +14,8 @@ const STATUS_LABEL: Record<string, string> = {
   blocked: 'Blocked',
   done: 'Done',
 }
+
+const GROUP_OPTIONS = Object.entries(PROJECT_GROUP_LABELS) as [ProjectGroupType, string][]
 
 export default async function ProjectDetailPage({
   params,
@@ -48,20 +51,93 @@ export default async function ProjectDetailPage({
         <h1 className="text-title mb-4">{project.name}</h1>
         <form action={saveProject} className="space-y-4">
           <div>
-            <label className="field-label" htmlFor="name">Name</label>
+            <label className="field-label" htmlFor="name">Project</label>
             <input id="name" name="name" defaultValue={project.name} required className="field-input" />
           </div>
+
+          <div className="grid sm:grid-cols-3 gap-4">
+            <div>
+              <label className="field-label" htmlFor="group_type">Gr</label>
+              <select id="group_type" name="group_type" defaultValue={project.group_type ?? ''} className="field-input">
+                <option value="">&mdash;</option>
+                {GROUP_OPTIONS.map(([v, l]) => (
+                  <option key={v} value={v}>{v} &mdash; {l}</option>
+                ))}
+              </select>
+            </div>
+            <div>
+              <label className="field-label" htmlFor="status">Status</label>
+              <select id="status" name="status" defaultValue={project.status} className="field-input">
+                {Object.entries(STATUS_LABEL).map(([v, l]) => (
+                  <option key={v} value={v}>{l}</option>
+                ))}
+              </select>
+            </div>
+            <div>
+              <label className="field-label" htmlFor="work_percent">Work status (% done)</label>
+              <input
+                id="work_percent"
+                name="work_percent"
+                type="number"
+                min={0}
+                max={100}
+                defaultValue={project.work_percent ?? ''}
+                className="field-input"
+              />
+            </div>
+          </div>
+
+          <div className="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label className="field-label" htmlFor="faculty">Faculty</label>
+              <input id="faculty" name="faculty" defaultValue={project.faculty ?? ''} className="field-input" />
+            </div>
+            <div>
+              <label className="field-label" htmlFor="personnel">Personnel</label>
+              <input id="personnel" name="personnel" defaultValue={project.personnel ?? ''} className="field-input" />
+            </div>
+          </div>
+
+          <div className="grid sm:grid-cols-3 gap-4">
+            <div>
+              <label className="field-label" htmlFor="pub_status">Pub status</label>
+              <input id="pub_status" name="pub_status" defaultValue={project.pub_status ?? ''} className="field-input" />
+            </div>
+            <div>
+              <label className="field-label" htmlFor="meeting">Mtg</label>
+              <input id="meeting" name="meeting" defaultValue={project.meeting ?? ''} className="field-input" />
+            </div>
+            <div>
+              <label className="field-label" htmlFor="deadline_date">Deadline</label>
+              <input
+                id="deadline_date"
+                name="deadline_date"
+                type="date"
+                defaultValue={project.deadline_date ?? ''}
+                className="field-input"
+              />
+            </div>
+          </div>
+
+          <div>
+            <label className="field-label" htmlFor="checkpoint">Checkpoint</label>
+            <input id="checkpoint" name="checkpoint" defaultValue={project.checkpoint ?? ''} className="field-input" />
+          </div>
+
+          <div className="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label className="field-label" htmlFor="journal">Journal / Book</label>
+              <input id="journal" name="journal" defaultValue={project.journal ?? ''} className="field-input" />
+            </div>
+            <div>
+              <label className="field-label" htmlFor="pub_year">Year</label>
+              <input id="pub_year" name="pub_year" type="number" defaultValue={project.pub_year ?? ''} className="field-input" />
+            </div>
+          </div>
+
           <div>
             <label className="field-label" htmlFor="description">Description</label>
             <textarea id="description" name="description" rows={2} defaultValue={project.description ?? ''} className="field-input" />
-          </div>
-          <div>
-            <label className="field-label" htmlFor="status">Status</label>
-            <select id="status" name="status" defaultValue={project.status} className="field-input">
-              {Object.entries(STATUS_LABEL).map(([v, l]) => (
-                <option key={v} value={v}>{l}</option>
-              ))}
-            </select>
           </div>
           <div>
             <label className="field-label" htmlFor="notes">Notes</label>
