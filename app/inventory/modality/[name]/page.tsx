@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getRecordsByModality } from "@/lib/inventory/data";
 import { modalityLabel, allModalityKeys, modalityColorVar } from "@/lib/inventory/modality";
@@ -5,6 +6,27 @@ import DatasetTable from "@/components/inventory/DatasetTable";
 
 export async function generateStaticParams() {
   return allModalityKeys().map((name) => ({ name }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ name: string }>;
+}): Promise<Metadata> {
+  const { name } = await params;
+  if (!allModalityKeys().includes(name)) return {};
+
+  const label = modalityLabel(name);
+  const count = getRecordsByModality(name).length;
+  // Not label.toLowerCase() -- several labels (scRNA-seq, snRNA-seq) have
+  // meaningful internal capitalization that lowercasing would mangle.
+  const description = `${count} public meningioma dataset${count === 1 ? "" : "s"} in the ${label} modality, tracked in the Bi Lab's Meningioma Dataset Registry.`;
+
+  return {
+    title: label,
+    description,
+    openGraph: { title: label, description, type: "website" },
+  };
 }
 
 export default async function ModalityPage({

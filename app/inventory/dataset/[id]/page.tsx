@@ -1,7 +1,9 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { getAllRecords, getRecordById } from "@/lib/inventory/data";
 import { citationLabel, fullCitation } from "@/lib/inventory/citation";
+import { modalityLabel } from "@/lib/inventory/modality";
 import TagPills from "@/components/inventory/TagPills";
 import ModalityTag from "@/components/inventory/ModalityTag";
 import BackLink from "@/components/inventory/BackLink";
@@ -12,6 +14,27 @@ import { sourceLabel } from "@/lib/inventory/sources";
 
 export async function generateStaticParams() {
   return getAllRecords().map((r) => ({ id: r.id }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}): Promise<Metadata> {
+  const { id } = await params;
+  const record = getRecordById(id);
+  if (!record) return {};
+
+  const modalities = record.modality.map(modalityLabel).join(", ");
+  const description =
+    `${record.accessions.join(", ")}: ${modalities}, ${record.sample_count} samples` +
+    `${record.institution ? ` from ${record.institution}` : ""}. Part of the Bi Lab's Meningioma Dataset Registry.`;
+
+  return {
+    title: record.title,
+    description,
+    openGraph: { title: record.title, description, type: "article" },
+  };
 }
 
 export default async function DatasetPage({
