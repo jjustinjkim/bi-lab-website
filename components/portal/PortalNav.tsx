@@ -25,10 +25,19 @@ function ChevronIcon() {
   )
 }
 
+function MenuIcon({ open }: { open: boolean }) {
+  return (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
+      {open ? <path d="M6 6l12 12M18 6L6 18" /> : <path d="M4 7h16M4 12h16M4 17h16" />}
+    </svg>
+  )
+}
+
 export default function PortalNav({ isAdmin }: { isAdmin: boolean }) {
   const pathname = usePathname()
   const navLinks = isAdmin ? [...BASE_NAV_LINKS, ...ADMIN_NAV_LINKS] : BASE_NAV_LINKS
   const [toolsOpen, setToolsOpen] = useState(false)
+  const [mobileOpen, setMobileOpen] = useState(false)
   const toolsRef = useRef<HTMLDivElement>(null)
 
   function isActive(href: string, exact?: boolean) {
@@ -53,11 +62,13 @@ export default function PortalNav({ isAdmin }: { isAdmin: boolean }) {
 
   useEffect(() => {
     // Route change (including a click on a tool link itself) always closes
-    // it -- pathname is an external signal (the router), not derived render
-    // state, so syncing to it here is the correct use of an effect despite
-    // the lint rule's general guidance (same pattern as Header.tsx).
+    // both menus -- pathname is an external signal (the router), not
+    // derived render state, so syncing to it here is the correct use of an
+    // effect despite the lint rule's general guidance (same pattern as
+    // Header.tsx).
     // eslint-disable-next-line react-hooks/set-state-in-effect
     setToolsOpen(false)
+    setMobileOpen(false)
   }, [pathname])
 
   async function handleLogout(e: React.FormEvent) {
@@ -76,74 +87,130 @@ export default function PortalNav({ isAdmin }: { isAdmin: boolean }) {
   return (
     <nav style={{ background: 'var(--accent-ink)' }} className="sticky top-0 z-30">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="flex items-center h-14 gap-1 sm:gap-2">
-          <Link href="/portal" className="text-sm font-semibold text-white mr-4 whitespace-nowrap">
+        <div className="flex items-center h-14 gap-2">
+          <Link href="/portal" className="text-sm font-semibold text-white whitespace-nowrap">
             Bi Lab Portal
           </Link>
-          {/* Only the variable-length link list scrolls -- Tools (with its
-              dropdown) and Sign out stay outside this container. An
-              absolutely-positioned dropdown inside an overflow-x-auto
-              ancestor gets its overflow-y silently forced to "auto" too
-              (browsers can't do overflow-x:auto/overflow-y:visible
-              independently) and was clipping/hiding the panel. */}
-          <div className="flex items-center gap-1 sm:gap-2 overflow-x-auto">
+
+          {/* Desktop: full horizontal bar. Below md, this can't fit even
+              scrolled -- 6 nav links plus Tools/Account/Sign out squeezed
+              the scrollable region down to ~50px on a phone width, hiding
+              nearly all of it behind an undiscoverable horizontal scroll
+              (found by actually testing at 375px, not just verifying the
+              Tools dropdown fix at desktop width). Collapses to a hamburger
+              menu below instead, same pattern as the main site Header. */}
+          <div className="hidden md:flex items-center gap-2 min-w-0 flex-1">
+            {/* Only the variable-length link list scrolls -- Tools (with
+                its dropdown), Account, and Sign out stay outside this
+                container. An absolutely-positioned dropdown inside an
+                overflow-x-auto ancestor gets its overflow-y silently forced
+                to "auto" too (browsers can't do overflow-x:auto/
+                overflow-y:visible independently) and was clipping/hiding
+                the panel. */}
+            <div className="flex items-center gap-1 sm:gap-2 overflow-x-auto">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="px-3 py-1.5 text-sm font-medium rounded-md whitespace-nowrap transition-colors"
+                  style={{
+                    background: isActive(link.href, link.exact) ? 'rgba(255,255,255,0.15)' : 'transparent',
+                    color: isActive(link.href, link.exact) ? 'white' : 'rgba(255,255,255,0.7)',
+                  }}
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </div>
+            <div className="relative flex-shrink-0" ref={toolsRef}>
+              <button
+                type="button"
+                onClick={() => setToolsOpen((o) => !o)}
+                aria-expanded={toolsOpen}
+                className="px-3 py-1.5 text-sm font-medium rounded-md whitespace-nowrap transition-colors"
+                style={{
+                  background: toolsActive || toolsOpen ? 'rgba(255,255,255,0.15)' : 'transparent',
+                  color: toolsActive || toolsOpen ? 'white' : 'rgba(255,255,255,0.7)',
+                }}
+              >
+                Tools
+                <ChevronIcon />
+              </button>
+              {toolsOpen && (
+                // right-0, not left-0: Tools sits near the right end of the
+                // nav bar (right before Sign out), so a left-anchored panel
+                // runs off the right edge of the viewport on narrow screens.
+                <div className="absolute top-full right-0 pt-2 z-40" style={{ minWidth: '220px' }}>
+                  <div className="panel py-2">
+                    {TOOLS.map((tool) => (
+                      <Link
+                        key={tool.href}
+                        href={tool.href}
+                        className="block px-4 py-2 text-sm site-nav-link normal-case"
+                        style={{ letterSpacing: 'normal', fontWeight: 500 }}
+                      >
+                        {tool.name}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+            <Link href="/portal/account" className="text-sm whitespace-nowrap ml-auto flex-shrink-0" style={{ color: 'rgba(255,255,255,0.7)' }}>
+              Account
+            </Link>
+            <form onSubmit={handleLogout} className="flex-shrink-0">
+              <button type="submit" className="text-sm whitespace-nowrap" style={{ color: 'rgba(255,255,255,0.7)' }}>
+                Sign out
+              </button>
+            </form>
+          </div>
+
+          <button
+            type="button"
+            className="md:hidden ml-auto w-9 h-9 flex items-center justify-center rounded-md flex-shrink-0"
+            onClick={() => setMobileOpen((o) => !o)}
+            aria-label={mobileOpen ? 'Close portal menu' : 'Open portal menu'}
+            aria-expanded={mobileOpen}
+          >
+            <MenuIcon open={mobileOpen} />
+          </button>
+        </div>
+
+        {mobileOpen && (
+          <div className="md:hidden pb-4 flex flex-col">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="px-3 py-1.5 text-sm font-medium rounded-md whitespace-nowrap transition-colors"
-                style={{
-                  background: isActive(link.href, link.exact) ? 'rgba(255,255,255,0.15)' : 'transparent',
-                  color: isActive(link.href, link.exact) ? 'white' : 'rgba(255,255,255,0.7)',
-                }}
+                className="py-2.5 text-sm font-medium"
+                style={{ color: isActive(link.href, link.exact) ? 'white' : 'rgba(255,255,255,0.7)' }}
               >
                 {link.label}
               </Link>
             ))}
+
+            <div className="mt-2 pt-2" style={{ borderTop: '1px solid rgba(255,255,255,0.15)' }}>
+              <div className="text-xs uppercase tracking-wide py-1" style={{ color: 'rgba(255,255,255,0.5)' }}>Tools</div>
+              {TOOLS.map((tool) => (
+                <Link key={tool.href} href={tool.href} className="block py-2 text-sm" style={{ color: 'rgba(255,255,255,0.7)' }}>
+                  {tool.name}
+                </Link>
+              ))}
+            </div>
+
+            <div className="mt-2 pt-2 flex flex-col" style={{ borderTop: '1px solid rgba(255,255,255,0.15)' }}>
+              <Link href="/portal/account" className="py-2.5 text-sm" style={{ color: 'rgba(255,255,255,0.7)' }}>
+                Account
+              </Link>
+              <form onSubmit={handleLogout}>
+                <button type="submit" className="py-2.5 text-sm text-left w-full" style={{ color: 'rgba(255,255,255,0.7)' }}>
+                  Sign out
+                </button>
+              </form>
+            </div>
           </div>
-          <div className="relative flex-shrink-0" ref={toolsRef}>
-            <button
-              type="button"
-              onClick={() => setToolsOpen((o) => !o)}
-              aria-expanded={toolsOpen}
-              className="px-3 py-1.5 text-sm font-medium rounded-md whitespace-nowrap transition-colors"
-              style={{
-                background: toolsActive || toolsOpen ? 'rgba(255,255,255,0.15)' : 'transparent',
-                color: toolsActive || toolsOpen ? 'white' : 'rgba(255,255,255,0.7)',
-              }}
-            >
-              Tools
-              <ChevronIcon />
-            </button>
-            {toolsOpen && (
-              // right-0, not left-0: Tools sits near the right end of the
-              // nav bar (right before Sign out), so a left-anchored panel
-              // runs off the right edge of the viewport on narrow screens.
-              <div className="absolute top-full right-0 pt-2 z-40" style={{ minWidth: '220px' }}>
-                <div className="panel py-2">
-                  {TOOLS.map((tool) => (
-                    <Link
-                      key={tool.href}
-                      href={tool.href}
-                      className="block px-4 py-2 text-sm site-nav-link normal-case"
-                      style={{ letterSpacing: 'normal', fontWeight: 500 }}
-                    >
-                      {tool.name}
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            )}
-          </div>
-          <Link href="/portal/account" className="text-sm whitespace-nowrap ml-auto" style={{ color: 'rgba(255,255,255,0.7)' }}>
-            Account
-          </Link>
-          <form onSubmit={handleLogout}>
-            <button type="submit" className="text-sm whitespace-nowrap" style={{ color: 'rgba(255,255,255,0.7)' }}>
-              Sign out
-            </button>
-          </form>
-        </div>
+        )}
       </div>
     </nav>
   )
