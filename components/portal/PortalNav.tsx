@@ -116,7 +116,10 @@ export default function PortalNav({ isAdmin }: { isAdmin: boolean }) {
               <ChevronIcon />
             </button>
             {toolsOpen && (
-              <div className="absolute top-full left-0 pt-2 z-40" style={{ minWidth: '220px' }}>
+              // right-0, not left-0: Tools sits near the right end of the
+              // nav bar (right before Sign out), so a left-anchored panel
+              // runs off the right edge of the viewport on narrow screens.
+              <div className="absolute top-full right-0 pt-2 z-40" style={{ minWidth: '220px' }}>
                 <div className="panel py-2">
                   {TOOLS.map((tool) => (
                     <Link
