@@ -120,9 +120,9 @@ export default async function ProjectsPage() {
             <div>
               <label className="field-label" htmlFor="group_type">Gr</label>
               <select id="group_type" name="group_type" className="field-input" defaultValue="">
-                <option value="">&mdash;</option>
+                <option value="">None</option>
                 {GROUP_OPTIONS.map(([v, l]) => (
-                  <option key={v} value={v}>{v} &mdash; {l}</option>
+                  <option key={v} value={v}>{v} - {l}</option>
                 ))}
               </select>
             </div>
@@ -243,8 +243,8 @@ function ProjectTable({ projects, variant }: { projects: Project[]; variant: 'ac
                   {p.name}
                 </Link>
               </td>
-              <td className="px-3 py-2.5" style={{ color: 'var(--ink-muted)' }}>{p.faculty ?? '—'}</td>
-              <td className="px-3 py-2.5" style={{ color: 'var(--ink-muted)' }}>{p.personnel ?? '—'}</td>
+              <td className="px-3 py-2.5" style={{ color: 'var(--ink-muted)' }}>{p.faculty ?? 'n/a'}</td>
+              <td className="px-3 py-2.5" style={{ color: 'var(--ink-muted)' }}>{p.personnel ?? 'n/a'}</td>
               {variant === 'active' ? (
                 <>
                   <td className="px-3 py-2.5">
@@ -256,13 +256,13 @@ function ProjectTable({ projects, variant }: { projects: Project[]; variant: 'ac
                         <span style={{ color: 'var(--ink-muted)' }}>{p.work_percent}%</span>
                       </div>
                     ) : (
-                      <span style={{ color: 'var(--ink-faint)' }}>&mdash;</span>
+                      <span style={{ color: 'var(--ink-faint)' }}>n/a</span>
                     )}
                   </td>
-                  <td className="px-3 py-2.5" style={{ color: 'var(--ink-muted)' }}>{p.pub_status ?? '—'}</td>
-                  <td className="px-3 py-2.5" style={{ color: 'var(--ink-muted)' }}>{p.meeting ?? '—'}</td>
-                  <td className="px-3 py-2.5" style={{ color: 'var(--ink-muted)' }}>{formatDeadline(p.deadline_date) ?? '—'}</td>
-                  <td className="px-3 py-2.5" style={{ color: 'var(--ink-muted)' }}>{p.checkpoint ?? '—'}</td>
+                  <td className="px-3 py-2.5" style={{ color: 'var(--ink-muted)' }}>{p.pub_status ?? 'n/a'}</td>
+                  <td className="px-3 py-2.5" style={{ color: 'var(--ink-muted)' }}>{p.meeting ?? 'n/a'}</td>
+                  <td className="px-3 py-2.5" style={{ color: 'var(--ink-muted)' }}>{formatDeadline(p.deadline_date) ?? 'n/a'}</td>
+                  <td className="px-3 py-2.5" style={{ color: 'var(--ink-muted)' }}>{p.checkpoint ?? 'n/a'}</td>
                 </>
               ) : (
                 <>
@@ -272,10 +272,10 @@ function ProjectTable({ projects, variant }: { projects: Project[]; variant: 'ac
                         {p.journal ?? 'PubMed'}
                       </a>
                     ) : (
-                      p.journal ?? '—'
+                      p.journal ?? 'n/a'
                     )}
                   </td>
-                  <td className="px-3 py-2.5" style={{ color: 'var(--ink-muted)' }}>{p.pub_year ?? '—'}</td>
+                  <td className="px-3 py-2.5" style={{ color: 'var(--ink-muted)' }}>{p.pub_year ?? 'n/a'}</td>
                 </>
               )}
             </tr>

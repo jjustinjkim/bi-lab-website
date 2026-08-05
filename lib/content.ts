@@ -173,7 +173,7 @@ export const ALUMNI: TeamMember[] = [
       "I am a research assistant in the Bi lab, where I use computational methods to study the genomics of glioma and other CNS tumors. As an undergraduate at Yale University, I studied both experimental particle and astrophysics. I worked with Charles Baltay to map supernovae to investigate the mechanics of dark energy and gravitational waves, and with Sarah Demers of the ATLAS experiment to develop the software to discover new elementary interactions. I then continued my work in developing and testing particle detection algorithms with John Huth of Harvard University before joining the Bi lab in 2018.",
       "In my free time I enjoy singing in the MIT Women's Chorale and working my way through the novels of Jane Austen.",
     ],
-    degrees: ["Yale University, B.S. Physics and the Humanities — 2017"],
+    degrees: ["Yale University, B.S. Physics and the Humanities, 2017"],
   },
   { name: "Kyle Wu, MD", role: "Post-doctoral Fellow / Neurosurgery Resident", image: "/team/kyle-wu.jpg" },
   {
@@ -194,7 +194,7 @@ export const ALUMNI: TeamMember[] = [
     bio: [
       "I am a medical student in the Harvard-MIT Health Sciences and Technology (HST) program at Harvard Medical School. My background is in Molecular and Cellular Neuroscience. As an undergraduate at Stanford University, I investigated the role of the neurexin cell adhesion protein family in synaptic formation and axonal tract development in the visual system as a member of the Thomas C. Südhof Laboratory. In the Bi Lab, I am currently characterizing the immune landscape of skull base tumors using expansion microscopy (ExPath) and mass-cytometery time-of-flight (CyTOF) techniques. When I am not in lab or in class, I enjoy running along the Charles, learning new Chinese baking recipes, and trying my hand at graphic design.",
     ],
-    degrees: ["Harvard Medical School/HST — Expected May 2023", "Stanford University, B.S. Biology with Distinction and with Honors — June 2017"],
+    degrees: ["Harvard Medical School/HST, Expected May 2023", "Stanford University, B.S. Biology with Distinction and with Honors, June 2017"],
   },
   { name: "Greg Cello, BS", role: "Master's Candidate & Research Coordinator", image: "/team/greg-cello.jpeg" },
   { name: "Pinky Langat, PhD", role: "MD Candidate", image: "/team/pinky-langat.jpg" },

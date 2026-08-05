@@ -75,9 +75,9 @@ export default async function ProjectDetailPage({
             <div>
               <label className="field-label" htmlFor="group_type">Gr</label>
               <select id="group_type" name="group_type" defaultValue={project.group_type ?? ''} className="field-input">
-                <option value="">&mdash;</option>
+                <option value="">None</option>
                 {GROUP_OPTIONS.map(([v, l]) => (
-                  <option key={v} value={v}>{v} &mdash; {l}</option>
+                  <option key={v} value={v}>{v} - {l}</option>
                 ))}
               </select>
             </div>

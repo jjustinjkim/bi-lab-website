@@ -346,9 +346,9 @@ export default function IonmPage() {
                   <li><strong style={{ color: "var(--ink)" }}>Trochlear (IV):</strong> Superior oblique m.</li>
                   <li>
                     <strong style={{ color: "var(--ink)" }}>Trigeminal (V1):</strong> Supraorbital n.*
-                    {" — "}
+                    {"; "}
                     <strong style={{ color: "var(--ink)" }}>(V2):</strong> Infraorbital n.*
-                    {" — "}
+                    {"; "}
                     <strong style={{ color: "var(--ink)" }}>(V3):</strong> Masseter m.
                   </li>
                   <li><strong style={{ color: "var(--ink)" }}>Abducens (VI):</strong> Lateral rectus m.</li>
@@ -508,13 +508,13 @@ export default function IonmPage() {
                 <Figure src="/ionm/2.4a-body-mep-composite.jpg" width={1168} height={756} className="mb-4" />
                 <p className="text-sm" style={{ color: "var(--ink-muted)" }}>
                   <strong style={{ color: "var(--ink)" }}>APB:</strong> Abductor pollicis brevis
-                  {" — "}
+                  {"; "}
                   <strong style={{ color: "var(--ink)" }}>ADM:</strong> Abductor digiti minimi
-                  {" — "}
+                  {"; "}
                   <strong style={{ color: "var(--ink)" }}>ECR:</strong> Extensor carpi radialis
-                  {" — "}
+                  {"; "}
                   <strong style={{ color: "var(--ink)" }}>EHL:</strong> Extensor hallucis longus
-                  {" — "}
+                  {"; "}
                   *high-density coverage
                 </p>
               </div>
