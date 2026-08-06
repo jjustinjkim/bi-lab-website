@@ -1039,7 +1039,10 @@ export const CONTACT = {
   phone: "617.525.8319",
   fax: "617.713.3050",
   email: "wbi@mgb.harvard.edu",
-  supportUrl: "http://www.Bwhgiving.org/research",
+  // The old /research path here 404s -- verified live: bwhgiving.org (any
+  // path) redirects to give.brighamandwomens.org, which has no dedicated
+  // neurosurgery/brain-tumor fund page, just this general giving homepage.
+  supportUrl: "https://give.brighamandwomens.org/",
   buildingImage: "/brand/contact-building.jpg",
   mapEmbedUrl:
     "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2949.337931643105!2d-71.11092558454449!3d42.335318079188504!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e3798e2f673c17%3A0xd7def63584c291a2!2s60+Fenwood+Rd%2C+Boston%2C+MA+02115!5e0!3m2!1sen!2sus!4v1561184506958!5m2!1sen!2sus",
