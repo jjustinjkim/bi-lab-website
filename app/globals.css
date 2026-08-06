@@ -314,6 +314,17 @@ textarea:focus-visible,
   color: var(--accent);
 }
 
+/* Account / Sign out in the portal's own nav bar -- plain text with no
+   hover feedback at all before this, and sitting right up against each
+   other with only the parent row's default gap between them. */
+.portal-nav-link {
+  color: rgba(255, 255, 255, 0.7);
+  transition: color 0.15s;
+}
+.portal-nav-link:hover {
+  color: white;
+}
+
 .section-heading {
   display: inline-block;
   color: var(--accent);

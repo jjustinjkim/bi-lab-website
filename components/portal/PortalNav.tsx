@@ -156,14 +156,16 @@ export default function PortalNav({ isAdmin }: { isAdmin: boolean }) {
                 </div>
               )}
             </div>
-            <Link href="/portal/account" className="text-sm whitespace-nowrap ml-auto flex-shrink-0" style={{ color: 'rgba(255,255,255,0.7)' }}>
-              Account
-            </Link>
-            <form onSubmit={handleLogout} className="flex-shrink-0">
-              <button type="submit" className="text-sm whitespace-nowrap" style={{ color: 'rgba(255,255,255,0.7)' }}>
-                Sign out
-              </button>
-            </form>
+            <div className="flex items-center gap-5 ml-auto flex-shrink-0">
+              <Link href="/portal/account" className="text-sm whitespace-nowrap portal-nav-link">
+                Account
+              </Link>
+              <form onSubmit={handleLogout}>
+                <button type="submit" className="text-sm whitespace-nowrap portal-nav-link">
+                  Sign out
+                </button>
+              </form>
+            </div>
           </div>
 
           <button
@@ -200,11 +202,11 @@ export default function PortalNav({ isAdmin }: { isAdmin: boolean }) {
             </div>
 
             <div className="mt-2 pt-2 flex flex-col" style={{ borderTop: '1px solid rgba(255,255,255,0.15)' }}>
-              <Link href="/portal/account" className="py-2.5 text-sm" style={{ color: 'rgba(255,255,255,0.7)' }}>
+              <Link href="/portal/account" className="py-2.5 text-sm portal-nav-link">
                 Account
               </Link>
               <form onSubmit={handleLogout}>
-                <button type="submit" className="py-2.5 text-sm text-left w-full" style={{ color: 'rgba(255,255,255,0.7)' }}>
+                <button type="submit" className="py-2.5 text-sm text-left w-full portal-nav-link">
                   Sign out
                 </button>
               </form>
