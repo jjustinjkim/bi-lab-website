@@ -32,9 +32,11 @@ export default async function DeadlinesPage() {
     <div className="space-y-8">
       <h1 className="text-title">Deadlines</h1>
 
-      <div className="panel p-5">
-        <h2 className="text-subtitle mb-4" style={{ fontSize: '0.9375rem' }}>New deadline</h2>
-        <form action={addDeadline} className="grid sm:grid-cols-2 gap-4">
+      <details className="panel p-5">
+        <summary className="text-subtitle cursor-pointer" style={{ fontSize: '0.9375rem' }}>
+          Add deadline
+        </summary>
+        <form action={addDeadline} className="grid sm:grid-cols-2 gap-4 mt-4">
           <div className="sm:col-span-2">
             <label className="field-label" htmlFor="title">Title</label>
             <input id="title" name="title" required className="field-input" />
@@ -64,7 +66,7 @@ export default async function DeadlinesPage() {
             <button type="submit" className="btn btn-primary">Add deadline</button>
           </div>
         </form>
-      </div>
+      </details>
 
       <ul className="space-y-2">
         {deadlines.map((d) => (

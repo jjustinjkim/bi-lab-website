@@ -47,9 +47,11 @@ export default async function MembersPage() {
         </a>
       </div>
 
-      <div className="panel p-5">
-        <h2 className="text-subtitle mb-4" style={{ fontSize: '0.9375rem' }}>Add a lab member</h2>
-        <form action={addMember} className="grid sm:grid-cols-2 gap-4">
+      <details className="panel p-5">
+        <summary className="text-subtitle cursor-pointer" style={{ fontSize: '0.9375rem' }}>
+          Add a lab member
+        </summary>
+        <form action={addMember} className="grid sm:grid-cols-2 gap-4 mt-4">
           <div>
             <label className="field-label" htmlFor="name">Name</label>
             <input id="name" name="name" required className="field-input" />
@@ -78,7 +80,7 @@ export default async function MembersPage() {
             <button type="submit" className="btn btn-primary">Add member</button>
           </div>
         </form>
-      </div>
+      </details>
 
       <div className="panel p-5">
         <h2 className="text-subtitle mb-4" style={{ fontSize: '0.9375rem' }}>Current members</h2>

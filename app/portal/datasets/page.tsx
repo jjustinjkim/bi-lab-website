@@ -24,9 +24,11 @@ export default async function DatasetsPage() {
     <div className="space-y-8">
       <h1 className="text-title">Datasets</h1>
 
-      <div className="panel p-5">
-        <h2 className="text-subtitle mb-4" style={{ fontSize: '0.9375rem' }}>New dataset</h2>
-        <form action={addDataset} className="grid sm:grid-cols-2 gap-4">
+      <details className="panel p-5">
+        <summary className="text-subtitle cursor-pointer" style={{ fontSize: '0.9375rem' }}>
+          Add dataset
+        </summary>
+        <form action={addDataset} className="grid sm:grid-cols-2 gap-4 mt-4">
           <div className="sm:col-span-2">
             <label className="field-label" htmlFor="name">Name</label>
             <input id="name" name="name" required className="field-input" />
@@ -58,7 +60,7 @@ export default async function DatasetsPage() {
             <button type="submit" className="btn btn-primary">Add dataset</button>
           </div>
         </form>
-      </div>
+      </details>
 
       <ul className="space-y-2">
         {datasets.map((d) => (
