@@ -54,7 +54,13 @@ function GroupLegend() {
       style={{
         color: 'var(--ink-muted)',
         position: 'sticky',
-        top: '3.5rem',
+        // PortalNav measures the real combined height of the site header +
+        // its own bar (both sticky, stacked) and publishes it here -- a
+        // fixed rem guess previously only accounted for PortalNav's own
+        // height, so the legend stuck underneath both bars instead of below
+        // them. 10.4rem is a pre-JS-paint fallback (roughly header + nav at
+        // desktop width), replaced within a frame of mount.
+        top: 'var(--portal-sticky-stack, 10.4rem)',
         zIndex: 20,
         background: 'var(--paper)',
         borderBottom: '1px solid var(--hairline)',
@@ -206,15 +212,23 @@ export default async function ProjectsPage() {
 
       <GroupLegend />
 
-      <section>
-        <h2 className="text-caption uppercase tracking-wide font-semibold mb-3">Active</h2>
-        <ProjectTable projects={active} variant="active" archiveProject={archiveProject} />
-      </section>
+      <details open>
+        <summary className="text-caption uppercase tracking-wide font-semibold cursor-pointer mb-3" style={{ display: 'inline-block' }}>
+          Active ({active.length})
+        </summary>
+        <div className="mt-3">
+          <ProjectTable projects={active} variant="active" archiveProject={archiveProject} />
+        </div>
+      </details>
 
-      <section>
-        <h2 className="text-caption uppercase tracking-wide font-semibold mb-3">Completed / PubMedable</h2>
-        <ProjectTable projects={completed} variant="completed" />
-      </section>
+      <details open>
+        <summary className="text-caption uppercase tracking-wide font-semibold cursor-pointer mb-3" style={{ display: 'inline-block' }}>
+          Completed / PubMedable ({completed.length})
+        </summary>
+        <div className="mt-3">
+          <ProjectTable projects={completed} variant="completed" />
+        </div>
+      </details>
 
       <details>
         <summary className="text-caption uppercase tracking-wide font-semibold cursor-pointer mb-3" style={{ display: 'inline-block' }}>

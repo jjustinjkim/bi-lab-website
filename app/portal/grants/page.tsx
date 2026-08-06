@@ -189,13 +189,15 @@ export default async function GrantsPage() {
         </ul>
       </div>
 
-      <div className="space-y-3">
-        <h2 className="text-subtitle" style={{ fontSize: '0.9375rem' }}>Identified ({identified.length})</h2>
-        <ul className="space-y-2">
+      <details open>
+        <summary className="text-subtitle cursor-pointer" style={{ fontSize: '0.9375rem' }}>
+          Identified ({identified.length})
+        </summary>
+        <ul className="space-y-2 mt-3">
           {identified.map(GrantItem)}
           {identified.length === 0 && <p className="text-sm" style={{ color: 'var(--ink-faint)' }}>Nothing identified yet.</p>}
         </ul>
-      </div>
+      </details>
 
       <details>
         <summary className="text-subtitle cursor-pointer" style={{ fontSize: '0.9375rem' }}>

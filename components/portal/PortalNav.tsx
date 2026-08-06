@@ -40,6 +40,7 @@ export default function PortalNav({ isAdmin }: { isAdmin: boolean }) {
   const [toolsOpen, setToolsOpen] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
   const toolsRef = useRef<HTMLDivElement>(null)
+  const navRef = useRef<HTMLElement>(null)
 
   function isActive(href: string, exact?: boolean) {
     if (exact) return pathname === href
@@ -72,6 +73,40 @@ export default function PortalNav({ isAdmin }: { isAdmin: boolean }) {
     setMobileOpen(false)
   }, [pathname])
 
+  useEffect(() => {
+    // Both this nav and the main site header are `position: sticky`, and
+    // this one used a hardcoded `top-0` -- which doesn't stack it below the
+    // header the way normal document flow does, it makes both of them
+    // independently pin to the literal top of the viewport once scrolled
+    // past, so they overlap and the header (higher z-index) hides this nav
+    // entirely. Measuring the header's real height and using it as this
+    // nav's own sticky offset fixes that. --portal-sticky-stack (header +
+    // this nav, combined) is published too, for anything that needs to
+    // stick below both (e.g. the Projects page's group legend) -- a
+    // hardcoded guess for that combined height is exactly what broke the
+    // legend previously. Re-measures on resize and whenever either bar's
+    // own size changes (e.g. the header wrapping to a second line, or this
+    // nav's mobile menu opening).
+    function updateOffset() {
+      const headerEl = document.querySelector('header')
+      const headerHeight = headerEl?.getBoundingClientRect().height ?? 0
+      const navHeight = navRef.current?.getBoundingClientRect().height ?? 0
+      const root = document.documentElement.style
+      root.setProperty('--site-header-height', `${headerHeight}px`)
+      root.setProperty('--portal-sticky-stack', `${headerHeight + navHeight}px`)
+    }
+    updateOffset()
+    window.addEventListener('resize', updateOffset)
+    const ro = new ResizeObserver(updateOffset)
+    if (navRef.current) ro.observe(navRef.current)
+    const headerEl = document.querySelector('header')
+    if (headerEl) ro.observe(headerEl)
+    return () => {
+      window.removeEventListener('resize', updateOffset)
+      ro.disconnect()
+    }
+  }, [mobileOpen])
+
   async function handleLogout(e: React.FormEvent) {
     e.preventDefault()
     try {
@@ -86,7 +121,11 @@ export default function PortalNav({ isAdmin }: { isAdmin: boolean }) {
   }
 
   return (
-    <nav style={{ background: 'var(--portal-nav-bg)' }} className="sticky top-0 z-30">
+    <nav
+      ref={navRef}
+      style={{ background: 'var(--portal-nav-bg)', top: 'var(--site-header-height, 6.9rem)' }}
+      className="sticky z-30"
+    >
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="flex items-center h-14 gap-2">
           <Link href="/portal" className="text-sm font-semibold text-white whitespace-nowrap">
