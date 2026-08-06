@@ -73,10 +73,6 @@ export default function PortalLoginPage() {
             {loading ? 'Signing in...' : 'Sign in'}
           </button>
         </form>
-
-        <p className="text-center mt-6 text-sm" style={{ color: 'var(--ink-faint)' }}>
-          Trouble signing in? Contact Dr. Bi.
-        </p>
       </div>
     </div>
   )
