@@ -50,6 +50,7 @@ const {
   createTask, updateTaskStatus, deleteTask,
   createDeadline, deleteDeadline,
   createDataset, deleteDataset,
+  createGrant, updateGrantStatus, deleteGrant,
 } = await import('./actions')
 
 function form(fields: Record<string, string>): FormData {
@@ -447,5 +448,53 @@ describe('datasets', () => {
     fakeDb.seed('datasets', [{ id: 'ds1', name: 'X' }])
     await deleteDataset('ds1')
     expect(fakeDb.table('datasets')).toHaveLength(0)
+  })
+})
+
+describe('grants', () => {
+  it('requires a name', async () => {
+    const result = await createGrant(form({ name: '' }))
+    expect(result.error).toBe('Name is required.')
+  })
+
+  it('defaults status to identified when omitted', async () => {
+    await createGrant(form({ name: 'NBTS Meningioma Research Fund' }))
+    expect(fakeDb.table('grants')[0].status).toBe('identified')
+  })
+
+  it('stores funder, amount, deadline, url, project, and notes', async () => {
+    await createGrant(form({
+      name: 'NBTS Meningioma Research Fund',
+      funder: 'National Brain Tumor Society',
+      status: 'researching',
+      amount: 'up to $200,000',
+      deadline_date: '2026-12-01',
+      url: 'https://braintumor.org/research/initiatives/meningioma-research-fund/',
+      project_id: 'p1',
+      notes: 'Dedicated meningioma fund, good fit',
+    }))
+    expect(fakeDb.table('grants')[0]).toMatchObject({
+      name: 'NBTS Meningioma Research Fund',
+      funder: 'National Brain Tumor Society',
+      status: 'researching',
+      amount: 'up to $200,000',
+      deadline_date: '2026-12-01',
+      url: 'https://braintumor.org/research/initiatives/meningioma-research-fund/',
+      project_id: 'p1',
+      notes: 'Dedicated meningioma fund, good fit',
+    })
+  })
+
+  it('updateGrantStatus changes only the status field', async () => {
+    fakeDb.seed('grants', [{ id: 'g1', name: 'X', status: 'identified' }])
+    await updateGrantStatus('g1', 'submitted')
+    expect(fakeDb.table('grants')[0].status).toBe('submitted')
+    expect(fakeDb.table('grants')[0].name).toBe('X')
+  })
+
+  it('deleteGrant removes the row', async () => {
+    fakeDb.seed('grants', [{ id: 'g1', name: 'X' }])
+    await deleteGrant('g1')
+    expect(fakeDb.table('grants')).toHaveLength(0)
   })
 })

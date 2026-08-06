@@ -26,6 +26,7 @@ const {
   getDeadlines, getDeadlinesForProject,
   getDatasets, getDatasetsForProject,
   getDashboardData,
+  getGrants,
 } = await import('./queries')
 
 beforeEach(() => {
@@ -165,6 +166,15 @@ describe('getDeadlines / getTasks / getDatasets (unscoped)', () => {
       { id: 'ds2', name: 'Newer', created_at: '2026-02-01T00:00:00.000Z' },
     ])
     expect((await getDatasets()).map(d => d.id)).toEqual(['ds2', 'ds1'])
+  })
+
+  it('getGrants orders by deadline_date ascending, with no-deadline grants last', async () => {
+    fakeDb.seed('grants', [
+      { id: 'g1', name: 'Later deadline', deadline_date: '2026-12-01' },
+      { id: 'g2', name: 'Sooner deadline', deadline_date: '2026-09-01' },
+      { id: 'g3', name: 'No deadline (rolling)', deadline_date: null },
+    ])
+    expect((await getGrants()).map(g => g.id)).toEqual(['g2', 'g1', 'g3'])
   })
 })
 

@@ -13,6 +13,7 @@ const BASE_NAV_LINKS = [
   { href: '/portal/tasks', label: 'Tasks', exact: true },
   { href: '/portal/deadlines', label: 'Deadlines', exact: true },
   { href: '/portal/datasets', label: 'Datasets', exact: true },
+  { href: '/portal/grants', label: 'Grants', exact: true },
 ]
 
 const ADMIN_NAV_LINKS = [{ href: '/portal/members', label: 'Members', exact: true }]

@@ -120,11 +120,33 @@ CREATE TABLE IF NOT EXISTS datasets (
   created_at TIMESTAMPTZ DEFAULT NOW()
 );
 
+-- Grant opportunity tracker: separate from deadlines (which is for a
+-- specific already-committed date like an abstract or IRB renewal) --
+-- a grant has its own lifecycle from "found it" through to an outcome,
+-- and usually needs a note on eligibility/fit before anyone commits time
+-- to actually applying. project_id is optional -- a grant might be
+-- earmarked for a specific ongoing project, or just a general lead not
+-- yet tied to one.
+CREATE TABLE IF NOT EXISTS grants (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  name TEXT NOT NULL,
+  funder TEXT,
+  status TEXT NOT NULL DEFAULT 'identified' CHECK (status IN ('identified', 'researching', 'applying', 'submitted', 'awarded', 'declined')),
+  amount TEXT,
+  deadline_date DATE,
+  url TEXT,
+  project_id UUID REFERENCES projects(id) ON DELETE SET NULL,
+  notes TEXT,
+  created_at TIMESTAMPTZ DEFAULT NOW()
+);
+
 CREATE INDEX IF NOT EXISTS idx_tasks_project ON tasks(project_id);
 CREATE INDEX IF NOT EXISTS idx_tasks_assignee ON tasks(assignee_id);
 CREATE INDEX IF NOT EXISTS idx_deadlines_date ON deadlines(date);
 CREATE INDEX IF NOT EXISTS idx_deadlines_project ON deadlines(project_id);
 CREATE INDEX IF NOT EXISTS idx_datasets_project ON datasets(project_id);
+CREATE INDEX IF NOT EXISTS idx_grants_deadline ON grants(deadline_date);
+CREATE INDEX IF NOT EXISTS idx_grants_project ON grants(project_id);
 
 -- Explicit per-person sharing: which lab_members accounts (not the freeform
 -- personnel/faculty text, which mostly names people who never get accounts)
@@ -151,8 +173,9 @@ ALTER TABLE tasks DISABLE ROW LEVEL SECURITY;
 ALTER TABLE deadlines DISABLE ROW LEVEL SECURITY;
 ALTER TABLE datasets DISABLE ROW LEVEL SECURITY;
 ALTER TABLE project_members DISABLE ROW LEVEL SECURITY;
+ALTER TABLE grants DISABLE ROW LEVEL SECURITY;
 
 -- The public anon key is never meant to touch these tables at all -- the
 -- app only ever reads/writes via the service-role key, server-side.
-REVOKE ALL ON lab_members, member_sessions, member_login_attempts, projects, tasks, deadlines, datasets, project_members
+REVOKE ALL ON lab_members, member_sessions, member_login_attempts, projects, tasks, deadlines, datasets, project_members, grants
 FROM anon, authenticated;

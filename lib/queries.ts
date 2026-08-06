@@ -1,6 +1,6 @@
 import { createAdminClient } from './supabase'
 import { requireMember } from './auth'
-import type { Project, LabTask, Deadline, Dataset, LabMember } from './types'
+import type { Project, LabTask, Deadline, Dataset, LabMember, Grant } from './types'
 
 type Db = ReturnType<typeof createAdminClient>
 
@@ -91,6 +91,16 @@ export async function getDatasetsForProject(projectId: string): Promise<Dataset[
   await requireMember()
   const db = createAdminClient()
   const { data } = await db.from('datasets').select('*').eq('project_id', projectId).order('created_at', { ascending: false })
+  return data ?? []
+}
+
+// Unfiltered by project visibility, same as tasks/deadlines/datasets above --
+// grant opportunities are lab-wide knowledge every member should see, not
+// scoped by who owns/is tagged on a project.
+export async function getGrants(): Promise<Grant[]> {
+  await requireMember()
+  const db = createAdminClient()
+  const { data } = await db.from('grants').select('*').order('deadline_date', { ascending: true, nullsFirst: false })
   return data ?? []
 }
 

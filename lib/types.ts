@@ -95,3 +95,27 @@ export interface Dataset {
   project_id: string | null;
   created_at: string;
 }
+
+export type GrantStatus = "identified" | "researching" | "applying" | "submitted" | "awarded" | "declined";
+
+export const GRANT_STATUS_LABELS: Record<GrantStatus, string> = {
+  identified: "Identified",
+  researching: "Researching",
+  applying: "Applying",
+  submitted: "Submitted",
+  awarded: "Awarded",
+  declined: "Declined",
+};
+
+export interface Grant {
+  id: string;
+  name: string;
+  funder: string | null;
+  status: GrantStatus;
+  amount: string | null;
+  deadline_date: string | null;
+  url: string | null;
+  project_id: string | null;
+  notes: string | null;
+  created_at: string;
+}

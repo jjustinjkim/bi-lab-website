@@ -367,3 +367,42 @@ export async function deleteDataset(id: string): Promise<{ error?: string }> {
   if (error) return { error: error.message }
   return {}
 }
+
+// ── Grants ────────────────────────────────────────────────────────────────
+
+export async function createGrant(formData: FormData): Promise<{ error?: string }> {
+  await requireMember()
+  const db = createAdminClient()
+
+  const name = (formData.get('name') as string)?.trim()
+  if (!name) return { error: 'Name is required.' }
+
+  const { error } = await db.from('grants').insert({
+    name,
+    funder: (formData.get('funder') as string) || null,
+    status: (formData.get('status') as string) || 'identified',
+    amount: (formData.get('amount') as string) || null,
+    deadline_date: (formData.get('deadline_date') as string) || null,
+    url: (formData.get('url') as string) || null,
+    project_id: (formData.get('project_id') as string) || null,
+    notes: (formData.get('notes') as string) || null,
+  })
+  if (error) return { error: error.message }
+  return {}
+}
+
+export async function updateGrantStatus(id: string, status: string): Promise<{ error?: string }> {
+  await requireMember()
+  const db = createAdminClient()
+  const { error } = await db.from('grants').update({ status }).eq('id', id)
+  if (error) return { error: error.message }
+  return {}
+}
+
+export async function deleteGrant(id: string): Promise<{ error?: string }> {
+  await requireMember()
+  const db = createAdminClient()
+  const { error } = await db.from('grants').delete().eq('id', id)
+  if (error) return { error: error.message }
+  return {}
+}
