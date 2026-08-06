@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { getTasks, getProjects, getLabMembers } from '@/lib/queries'
 import { createTask, deleteTask, updateTaskStatus } from '@/lib/actions'
 import ConfirmSubmitButton from '@/components/ConfirmSubmitButton'
+import SubmitButton from '@/components/portal/SubmitButton'
 
 export const dynamic = 'force-dynamic'
 export const metadata: Metadata = { title: 'Tasks', robots: { index: false, follow: false } }
@@ -65,7 +66,7 @@ export default async function TasksPage() {
             <input id="due_date" name="due_date" type="date" className="field-input" />
           </div>
           <div className="sm:col-span-2">
-            <button type="submit" className="btn btn-primary">Add task</button>
+            <SubmitButton className="btn btn-primary" toastMessage="Task added">Add task</SubmitButton>
           </div>
         </form>
       </details>
@@ -95,11 +96,11 @@ export default async function TasksPage() {
                     <option key={v} value={v}>{l}</option>
                   ))}
                 </select>
-                <button type="submit" className="text-xs link-accent">Update</button>
+                <SubmitButton className="text-xs link-accent" toastMessage="Status updated">Update</SubmitButton>
               </form>
               <form action={removeTask}>
                 <input type="hidden" name="id" value={t.id} />
-                <ConfirmSubmitButton className="text-xs link-danger" confirmMessage={`Delete task "${t.title}"? This cannot be undone.`}>
+                <ConfirmSubmitButton className="text-xs link-danger" confirmMessage={`Delete task "${t.title}"? This cannot be undone.`} toastMessage="Task deleted">
                   Delete
                 </ConfirmSubmitButton>
               </form>

@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { getProjects } from '@/lib/queries'
 import { createProject, updateProjectStatus } from '@/lib/actions'
 import { PROJECT_GROUP_LABELS, PROJECT_GROUP_COLORS, type Project, type ProjectGroupType } from '@/lib/types'
+import SubmitButton from '@/components/portal/SubmitButton'
 
 export const dynamic = 'force-dynamic'
 export const metadata: Metadata = { title: 'Projects', robots: { index: false, follow: false } }
@@ -44,9 +45,10 @@ function GroupDot({ group }: { group: string | null }) {
   )
 }
 
-// Sticky just below the portal nav bar (which is h-14 / 3.5rem and itself
-// sticky at top-0 z-30) so the legend stays visible while scrolling through
-// either table, instead of scrolling away with the rest of the page.
+// Sticky just below the header + portal nav stack (see the
+// --portal-sticky-stack comment below) so the legend stays visible while
+// scrolling through either table, instead of scrolling away with the rest
+// of the page.
 function GroupLegend() {
   return (
     <div
@@ -206,7 +208,7 @@ export default async function ProjectsPage() {
             <label className="field-label" htmlFor="description">Description</label>
             <textarea id="description" name="description" rows={2} className="field-input" />
           </div>
-          <button type="submit" className="btn btn-primary">Create project</button>
+          <SubmitButton className="btn btn-primary" toastMessage="Project created">Create project</SubmitButton>
         </form>
       </details>
 
@@ -332,7 +334,7 @@ function ProjectTable({
                 <td className="px-3 py-2.5">
                   <form action={archiveProject}>
                     <input type="hidden" name="id" value={p.id} />
-                    <button type="submit" className="text-xs link-accent whitespace-nowrap">Archive</button>
+                    <SubmitButton className="text-xs link-accent whitespace-nowrap" toastMessage="Project archived">Archive</SubmitButton>
                   </form>
                 </td>
               )}
@@ -340,7 +342,7 @@ function ProjectTable({
                 <td className="px-3 py-2.5">
                   <form action={unarchiveProject}>
                     <input type="hidden" name="id" value={p.id} />
-                    <button type="submit" className="text-xs link-accent whitespace-nowrap">Unarchive</button>
+                    <SubmitButton className="text-xs link-accent whitespace-nowrap" toastMessage="Project unarchived">Unarchive</SubmitButton>
                   </form>
                 </td>
               )}

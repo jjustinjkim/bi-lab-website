@@ -5,6 +5,7 @@ import { getLabMembers } from '@/lib/queries'
 import { createLabMember, deleteLabMember, setCanViewAllProjects } from '@/lib/actions'
 import ConfirmSubmitButton from '@/components/ConfirmSubmitButton'
 import ResetPasswordControl from '@/components/portal/ResetPasswordControl'
+import SubmitButton from '@/components/portal/SubmitButton'
 
 export const dynamic = 'force-dynamic'
 export const metadata: Metadata = { title: 'Members', robots: { index: false, follow: false } }
@@ -77,7 +78,7 @@ export default async function MembersPage() {
             Full project visibility (sees every project, not just the ones they&rsquo;re tagged on)
           </label>
           <div className="sm:col-span-2">
-            <button type="submit" className="btn btn-primary">Add member</button>
+            <SubmitButton className="btn btn-primary" toastMessage="Member added">Add member</SubmitButton>
           </div>
         </form>
       </details>
@@ -99,9 +100,12 @@ export default async function MembersPage() {
                 <form action={toggleViewAll}>
                   <input type="hidden" name="id" value={m.id} />
                   <input type="hidden" name="next" value={(!m.can_view_all_projects).toString()} />
-                  <button type="submit" className="text-xs link-accent">
+                  <SubmitButton
+                    className="text-xs link-accent"
+                    toastMessage={m.can_view_all_projects ? 'Restricted to tagged projects' : 'Full project visibility granted'}
+                  >
                     {m.can_view_all_projects ? 'Restrict to tagged projects' : 'Grant full project visibility'}
-                  </button>
+                  </SubmitButton>
                 </form>
                 <ResetPasswordControl memberId={m.id} />
                 <form action={removeMember}>
@@ -109,6 +113,7 @@ export default async function MembersPage() {
                   <ConfirmSubmitButton
                     className="text-xs link-danger"
                     confirmMessage={`Remove ${m.name} from the lab portal? They will lose access immediately. This cannot be undone.`}
+                    toastMessage="Member removed"
                   >
                     Remove
                   </ConfirmSubmitButton>

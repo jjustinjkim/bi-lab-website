@@ -6,6 +6,7 @@ import { createGrant, deleteGrant, updateGrantStatus } from '@/lib/actions'
 import { GRANT_STATUS_LABELS } from '@/lib/types'
 import type { Grant } from '@/lib/types'
 import ConfirmSubmitButton from '@/components/ConfirmSubmitButton'
+import SubmitButton from '@/components/portal/SubmitButton'
 
 export const dynamic = 'force-dynamic'
 export const metadata: Metadata = { title: 'Grants', robots: { index: false, follow: false } }
@@ -104,11 +105,11 @@ export default async function GrantsPage() {
                     <option key={v} value={v}>{l}</option>
                   ))}
                 </select>
-                <button type="submit" className="text-xs link-accent">Update</button>
+                <SubmitButton className="text-xs link-accent" toastMessage="Status updated">Update</SubmitButton>
               </form>
               <form action={removeGrant}>
                 <input type="hidden" name="id" value={g.id} />
-                <ConfirmSubmitButton className="text-xs link-danger" confirmMessage={`Delete "${g.name}" from the grants tracker? This cannot be undone.`}>
+                <ConfirmSubmitButton className="text-xs link-danger" confirmMessage={`Delete "${g.name}" from the grants tracker? This cannot be undone.`} toastMessage="Grant deleted">
                   Delete
                 </ConfirmSubmitButton>
               </form>
@@ -176,7 +177,7 @@ export default async function GrantsPage() {
             />
           </div>
           <div className="sm:col-span-2">
-            <button type="submit" className="btn btn-primary">Add grant</button>
+            <SubmitButton className="btn btn-primary" toastMessage="Grant added">Add grant</SubmitButton>
           </div>
         </form>
       </details>

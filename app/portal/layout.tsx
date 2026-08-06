@@ -1,5 +1,6 @@
 import { getSessionMember } from '@/lib/auth'
 import PortalNav from '@/components/portal/PortalNav'
+import Toaster from '@/components/portal/Toaster'
 
 export default async function PortalLayout({ children }: { children: React.ReactNode }) {
   const member = await getSessionMember()
@@ -15,6 +16,7 @@ export default async function PortalLayout({ children }: { children: React.React
     <div className="min-h-screen">
       <PortalNav isAdmin={member.is_admin} />
       <main className="max-w-6xl mx-auto px-4 sm:px-6 py-8">{children}</main>
+      <Toaster />
     </div>
   )
 }

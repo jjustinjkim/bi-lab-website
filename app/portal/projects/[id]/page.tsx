@@ -12,6 +12,7 @@ import {
 import { updateProject, deleteProject, setProjectMembers } from '@/lib/actions'
 import { PROJECT_GROUP_LABELS, type ProjectGroupType } from '@/lib/types'
 import ConfirmSubmitButton from '@/components/ConfirmSubmitButton'
+import SubmitButton from '@/components/portal/SubmitButton'
 
 export const dynamic = 'force-dynamic'
 export const metadata: Metadata = { title: 'Project', robots: { index: false, follow: false } }
@@ -173,7 +174,7 @@ export default async function ProjectDetailPage({
             <textarea id="notes" name="notes" rows={3} defaultValue={project.notes ?? ''} className="field-input" />
           </div>
           <div className="flex gap-3">
-            <button type="submit" className="btn btn-primary">Save changes</button>
+            <SubmitButton className="btn btn-primary" toastMessage="Project saved">Save changes</SubmitButton>
           </div>
         </form>
         <form action={removeProject} className="mt-4 pt-4" style={{ borderTop: '1px solid var(--hairline)' }}>
@@ -213,7 +214,7 @@ export default async function ProjectDetailPage({
               ))}
             </ul>
           )}
-          <button type="submit" className="btn btn-secondary">Save access</button>
+          <SubmitButton className="btn btn-secondary" toastMessage="Access updated">Save access</SubmitButton>
         </form>
       </div>
 

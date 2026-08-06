@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { getDeadlines, getProjects } from '@/lib/queries'
 import { createDeadline, deleteDeadline } from '@/lib/actions'
 import ConfirmSubmitButton from '@/components/ConfirmSubmitButton'
+import SubmitButton from '@/components/portal/SubmitButton'
 
 export const dynamic = 'force-dynamic'
 export const metadata: Metadata = { title: 'Deadlines', robots: { index: false, follow: false } }
@@ -63,7 +64,7 @@ export default async function DeadlinesPage() {
             <textarea id="notes" name="notes" rows={2} className="field-input" />
           </div>
           <div className="sm:col-span-2">
-            <button type="submit" className="btn btn-primary">Add deadline</button>
+            <SubmitButton className="btn btn-primary" toastMessage="Deadline added">Add deadline</SubmitButton>
           </div>
         </form>
       </details>
@@ -82,7 +83,7 @@ export default async function DeadlinesPage() {
               <span className="badge badge-flag">{d.date}</span>
               <form action={removeDeadline}>
                 <input type="hidden" name="id" value={d.id} />
-                <ConfirmSubmitButton className="text-xs link-danger" confirmMessage={`Delete deadline "${d.title}"? This cannot be undone.`}>
+                <ConfirmSubmitButton className="text-xs link-danger" confirmMessage={`Delete deadline "${d.title}"? This cannot be undone.`} toastMessage="Deadline deleted">
                   Delete
                 </ConfirmSubmitButton>
               </form>
