@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import type { ReactNode } from 'react'
+import { getSessionMember } from '@/lib/auth'
 import { getGrants, getProjects } from '@/lib/queries'
 import { createGrant, deleteGrant, updateGrantStatus } from '@/lib/actions'
 import { GRANT_STATUS_LABELS } from '@/lib/types'
@@ -34,8 +35,9 @@ function renderNotes(notes: string): ReactNode {
 }
 
 export default async function GrantsPage() {
-  const [grants, projects] = await Promise.all([getGrants(), getProjects()])
+  const [grants, projects, member] = await Promise.all([getGrants(), getProjects(), getSessionMember()])
   const projectById = new Map(projects.map((p) => [p.id, p.name]))
+  const isAdmin = member?.is_admin ?? false
 
   const active = grants.filter((g) => ACTIVE_STATUSES.has(g.status))
   const identified = grants.filter((g) => g.status === 'identified')
@@ -88,26 +90,32 @@ export default async function GrantsPage() {
           )}
         </div>
         <div className="flex items-center gap-3 shrink-0">
-          <form action={setStatus} className="flex items-center gap-1.5">
-            <input type="hidden" name="id" value={g.id} />
-            <select
-              name="status"
-              defaultValue={g.status}
-              className="field-input"
-              style={{ padding: '0.35rem 0.5rem', fontSize: '0.8125rem' }}
-            >
-              {Object.entries(GRANT_STATUS_LABELS).map(([v, l]) => (
-                <option key={v} value={v}>{l}</option>
-              ))}
-            </select>
-            <button type="submit" className="text-xs link-accent">Update</button>
-          </form>
-          <form action={removeGrant}>
-            <input type="hidden" name="id" value={g.id} />
-            <ConfirmSubmitButton className="text-xs link-danger" confirmMessage={`Delete "${g.name}" from the grants tracker? This cannot be undone.`}>
-              Delete
-            </ConfirmSubmitButton>
-          </form>
+          {isAdmin ? (
+            <>
+              <form action={setStatus} className="flex items-center gap-1.5">
+                <input type="hidden" name="id" value={g.id} />
+                <select
+                  name="status"
+                  defaultValue={g.status}
+                  className="field-input"
+                  style={{ padding: '0.35rem 0.5rem', fontSize: '0.8125rem' }}
+                >
+                  {Object.entries(GRANT_STATUS_LABELS).map(([v, l]) => (
+                    <option key={v} value={v}>{l}</option>
+                  ))}
+                </select>
+                <button type="submit" className="text-xs link-accent">Update</button>
+              </form>
+              <form action={removeGrant}>
+                <input type="hidden" name="id" value={g.id} />
+                <ConfirmSubmitButton className="text-xs link-danger" confirmMessage={`Delete "${g.name}" from the grants tracker? This cannot be undone.`}>
+                  Delete
+                </ConfirmSubmitButton>
+              </form>
+            </>
+          ) : (
+            <span className="badge">{GRANT_STATUS_LABELS[g.status]}</span>
+          )}
         </div>
       </li>
     )

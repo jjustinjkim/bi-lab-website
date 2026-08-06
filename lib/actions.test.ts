@@ -29,6 +29,13 @@ vi.mock('next/navigation', () => ({
   }),
 }))
 
+// revalidatePath requires a request-scoped static generation store that
+// only exists inside a real Next.js render/action -- outside of one (as
+// here) it throws, so it's stubbed like the other next/* APIs above.
+vi.mock('next/cache', () => ({
+  revalidatePath: vi.fn(),
+}))
+
 // A single shared store per test (reset in beforeEach below), not a fresh
 // Map on every cookies() call -- a real request has exactly one cookie jar
 // for its lifetime, and callers like logout() call cookies() themselves
@@ -492,9 +499,23 @@ describe('grants', () => {
     expect(fakeDb.table('grants')[0].name).toBe('X')
   })
 
+  it('updateGrantStatus requires requireAdmin (rejects when the caller is not an admin)', async () => {
+    requireAdminImpl = async () => { throw new Error('Unauthorized') }
+    fakeDb.seed('grants', [{ id: 'g1', name: 'X', status: 'identified' }])
+    await expect(updateGrantStatus('g1', 'submitted')).rejects.toThrow('Unauthorized')
+    expect(fakeDb.table('grants')[0].status).toBe('identified')
+  })
+
   it('deleteGrant removes the row', async () => {
     fakeDb.seed('grants', [{ id: 'g1', name: 'X' }])
     await deleteGrant('g1')
     expect(fakeDb.table('grants')).toHaveLength(0)
+  })
+
+  it('deleteGrant requires requireAdmin (rejects when the caller is not an admin)', async () => {
+    requireAdminImpl = async () => { throw new Error('Unauthorized') }
+    fakeDb.seed('grants', [{ id: 'g1', name: 'X' }])
+    await expect(deleteGrant('g1')).rejects.toThrow('Unauthorized')
+    expect(fakeDb.table('grants')).toHaveLength(1)
   })
 })

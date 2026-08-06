@@ -3,6 +3,7 @@
 import bcrypt from 'bcryptjs'
 import { cookies } from 'next/headers'
 import { redirect } from 'next/navigation'
+import { revalidatePath } from 'next/cache'
 import { createAdminClient } from './supabase'
 import { requireMember, requireAdmin } from './auth'
 import { escapeLikePattern } from './escape'
@@ -92,6 +93,7 @@ export async function createLabMember(formData: FormData): Promise<{ error?: str
     .from('lab_members')
     .insert({ email, name, title, is_admin: isAdmin, can_view_all_projects: canViewAllProjects, password_hash: passwordHash })
   if (error) return { error: error.message }
+  revalidatePath('/portal/members')
   return {}
 }
 
@@ -102,6 +104,7 @@ export async function deleteLabMember(id: string): Promise<{ error?: string }> {
   const db = createAdminClient()
   const { error } = await db.from('lab_members').delete().eq('id', id)
   if (error) return { error: error.message }
+  revalidatePath('/portal/members')
   return {}
 }
 
@@ -110,6 +113,7 @@ export async function setCanViewAllProjects(id: string, canViewAll: boolean): Pr
   const db = createAdminClient()
   const { error } = await db.from('lab_members').update({ can_view_all_projects: canViewAll }).eq('id', id)
   if (error) return { error: error.message }
+  revalidatePath('/portal/members')
   return {}
 }
 
@@ -129,6 +133,7 @@ export async function adminResetMemberPassword(id: string, newPassword: string):
   if (error) return { error: error.message }
 
   await db.from('member_sessions').delete().eq('member_id', id)
+  revalidatePath('/portal/members')
   return {}
 }
 
@@ -155,6 +160,7 @@ export async function changeOwnPassword(currentPassword: string, newPassword: st
   let sessionQuery = db.from('member_sessions').delete().eq('member_id', member.id)
   if (currentToken) sessionQuery = sessionQuery.neq('token', currentToken)
   await sessionQuery
+  revalidatePath('/portal/account')
   return {}
 }
 
@@ -202,6 +208,8 @@ export async function createProject(formData: FormData): Promise<{ error?: strin
     ...trackerFields(formData),
   })
   if (error) return { error: error.message }
+  revalidatePath('/portal/projects')
+  revalidatePath('/portal')
   return {}
 }
 
@@ -223,6 +231,25 @@ export async function updateProject(id: string, formData: FormData): Promise<{ e
     })
     .eq('id', id)
   if (error) return { error: error.message }
+  revalidatePath('/portal/projects')
+  revalidatePath(`/portal/projects/${id}`)
+  revalidatePath('/portal')
+  return {}
+}
+
+// Quick status-only patch (e.g. the Projects list's one-click Archive
+// button) that doesn't touch any other field -- unlike updateProject,
+// which overwrites the full tracker-field set from a form submission, so
+// it can't be reused for a single-field change without blanking everything
+// else out.
+export async function updateProjectStatus(id: string, status: string): Promise<{ error?: string }> {
+  await requireMember()
+  const db = createAdminClient()
+  const { error } = await db.from('projects').update({ status }).eq('id', id)
+  if (error) return { error: error.message }
+  revalidatePath('/portal/projects')
+  revalidatePath(`/portal/projects/${id}`)
+  revalidatePath('/portal')
   return {}
 }
 
@@ -231,6 +258,8 @@ export async function deleteProject(id: string): Promise<{ error?: string }> {
   const db = createAdminClient()
   const { error } = await db.from('projects').delete().eq('id', id)
   if (error) return { error: error.message }
+  revalidatePath('/portal/projects')
+  revalidatePath('/portal')
   return {}
 }
 
@@ -263,6 +292,7 @@ export async function setProjectMembers(projectId: string, formData: FormData): 
       .insert(memberIds.map((memberId) => ({ project_id: projectId, member_id: memberId })))
     if (insertError) return { error: insertError.message }
   }
+  revalidatePath(`/portal/projects/${projectId}`)
   return {}
 }
 
@@ -288,6 +318,8 @@ export async function createTask(formData: FormData): Promise<{ error?: string }
     due_date: dueDate,
   })
   if (error) return { error: error.message }
+  revalidatePath('/portal/tasks')
+  revalidatePath('/portal')
   return {}
 }
 
@@ -296,6 +328,8 @@ export async function updateTaskStatus(id: string, status: string): Promise<{ er
   const db = createAdminClient()
   const { error } = await db.from('tasks').update({ status }).eq('id', id)
   if (error) return { error: error.message }
+  revalidatePath('/portal/tasks')
+  revalidatePath('/portal')
   return {}
 }
 
@@ -304,6 +338,8 @@ export async function deleteTask(id: string): Promise<{ error?: string }> {
   const db = createAdminClient()
   const { error } = await db.from('tasks').delete().eq('id', id)
   if (error) return { error: error.message }
+  revalidatePath('/portal/tasks')
+  revalidatePath('/portal')
   return {}
 }
 
@@ -325,6 +361,8 @@ export async function createDeadline(formData: FormData): Promise<{ error?: stri
     notes: (formData.get('notes') as string) || null,
   })
   if (error) return { error: error.message }
+  revalidatePath('/portal/deadlines')
+  revalidatePath('/portal')
   return {}
 }
 
@@ -333,6 +371,8 @@ export async function deleteDeadline(id: string): Promise<{ error?: string }> {
   const db = createAdminClient()
   const { error } = await db.from('deadlines').delete().eq('id', id)
   if (error) return { error: error.message }
+  revalidatePath('/portal/deadlines')
+  revalidatePath('/portal')
   return {}
 }
 
@@ -357,6 +397,7 @@ export async function createDataset(formData: FormData): Promise<{ error?: strin
     project_id: (formData.get('project_id') as string) || null,
   })
   if (error) return { error: error.message }
+  revalidatePath('/portal/datasets')
   return {}
 }
 
@@ -365,6 +406,7 @@ export async function deleteDataset(id: string): Promise<{ error?: string }> {
   const db = createAdminClient()
   const { error } = await db.from('datasets').delete().eq('id', id)
   if (error) return { error: error.message }
+  revalidatePath('/portal/datasets')
   return {}
 }
 
@@ -388,21 +430,28 @@ export async function createGrant(formData: FormData): Promise<{ error?: string 
     notes: (formData.get('notes') as string) || null,
   })
   if (error) return { error: error.message }
+  revalidatePath('/portal/grants')
   return {}
 }
 
+// Admin-only: unlike createGrant (any member can add an opportunity to the
+// tracker), changing status or removing an entry is restricted so the
+// tracker's state doesn't drift from casual updates by whoever's looking at
+// it.
 export async function updateGrantStatus(id: string, status: string): Promise<{ error?: string }> {
-  await requireMember()
+  await requireAdmin()
   const db = createAdminClient()
   const { error } = await db.from('grants').update({ status }).eq('id', id)
   if (error) return { error: error.message }
+  revalidatePath('/portal/grants')
   return {}
 }
 
 export async function deleteGrant(id: string): Promise<{ error?: string }> {
-  await requireMember()
+  await requireAdmin()
   const db = createAdminClient()
   const { error } = await db.from('grants').delete().eq('id', id)
   if (error) return { error: error.message }
+  revalidatePath('/portal/grants')
   return {}
 }
