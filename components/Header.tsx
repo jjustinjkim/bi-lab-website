@@ -46,6 +46,7 @@ export default function Header() {
   const pathname = usePathname();
   const [researchOpen, setResearchOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isDark, setIsDark] = useState(false);
   const navTextColor = "var(--ink)";
 
   useEffect(() => {
@@ -55,6 +56,20 @@ export default function Header() {
     // eslint-disable-next-line react-hooks/set-state-in-effect
     setMenuOpen(false);
   }, [pathname]);
+
+  useEffect(() => {
+    // ThemeToggle owns the theme state and stamps data-theme on <html>; it
+    // doesn't expose that state via context, so the logo (which needs a
+    // light/dark-specific asset for contrast against var(--paper)) watches
+    // the attribute directly rather than duplicating ThemeToggle's storage
+    // logic.
+    const root = document.documentElement;
+    const sync = () => setIsDark(root.getAttribute("data-theme") === "dark");
+    sync();
+    const observer = new MutationObserver(sync);
+    observer.observe(root, { attributes: true, attributeFilter: ["data-theme"] });
+    return () => observer.disconnect();
+  }, []);
 
   // z-40: must stack above the portal's own sticky sub-nav (PortalNav,
   // z-30), or this header's Research/Tools dropdowns render clipped behind
@@ -75,7 +90,13 @@ export default function Header() {
       <div className="relative w-full" style={{ borderBottom: "1px solid var(--hairline)" }}>
         <div className="max-w-6xl mx-auto px-4 sm:px-6 py-4 flex items-center gap-x-10">
           <Link href="/" className="flex items-center">
-            <Image src="/brand/bwh-logo-header.png" alt="Bi Lab" width={280} height={32} priority />
+            <Image
+              src={isDark ? "/brand/mgb-logo-header-dark.png" : "/brand/mgb-logo-header.png"}
+              alt="Bi Lab"
+              width={280}
+              height={48}
+              priority
+            />
           </Link>
 
           <nav className="hidden xl:flex flex-wrap items-center gap-x-5 gap-y-2 ml-auto">
