@@ -345,6 +345,7 @@ describe('projects', () => {
 
 describe('setProjectMembers', () => {
   it('tags the given members to a project, replacing any previous tags', async () => {
+    fakeDb.seed('projects', [{ id: 'p1', owner_id: 'member-1' }])
     fakeDb.seed('project_members', [{ project_id: 'p1', member_id: 'old-member' }])
     const fd = new FormData()
     fd.append('member_ids', 'member-a')
@@ -358,6 +359,7 @@ describe('setProjectMembers', () => {
   })
 
   it('clears all tags when no members are selected', async () => {
+    fakeDb.seed('projects', [{ id: 'p1', owner_id: 'member-1' }])
     fakeDb.seed('project_members', [{ project_id: 'p1', member_id: 'member-a' }])
     const result = await setProjectMembers('p1', new FormData())
     expect(result.error).toBeUndefined()
@@ -365,9 +367,19 @@ describe('setProjectMembers', () => {
   })
 
   it('does not touch tags belonging to a different project', async () => {
+    fakeDb.seed('projects', [{ id: 'p1', owner_id: 'member-1' }])
     fakeDb.seed('project_members', [{ project_id: 'other', member_id: 'member-a' }])
     await setProjectMembers('p1', new FormData())
     expect(fakeDb.table('project_members')).toHaveLength(1)
+  })
+
+  it('rejects tagging a project the caller cannot see (not owner, not tagged, no full-visibility)', async () => {
+    fakeDb.seed('projects', [{ id: 'p1', owner_id: 'someone-else' }])
+    const fd = new FormData()
+    fd.append('member_ids', 'member-a')
+    const result = await setProjectMembers('p1', fd)
+    expect(result.error).toBe('Project not found.')
+    expect(fakeDb.table('project_members')).toHaveLength(0)
   })
 })
 

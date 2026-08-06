@@ -6,6 +6,7 @@ import { redirect } from 'next/navigation'
 import { createAdminClient } from './supabase'
 import { requireMember, requireAdmin } from './auth'
 import { escapeLikePattern } from './escape'
+import { getProject } from './queries'
 
 const SESSION_COOKIE = 'bilab_portal_session'
 const COOKIE_OPTS = { httpOnly: true, secure: process.env.NODE_ENV === 'production', path: '/', maxAge: 60 * 60 * 24 * 60 }
@@ -238,6 +239,17 @@ export async function deleteProject(id: string): Promise<{ error?: string }> {
 // to reason about and avoids partial-failure states.
 export async function setProjectMembers(projectId: string, formData: FormData): Promise<{ error?: string }> {
   await requireMember()
+
+  // requireMember() only proves the caller is logged in as *someone* -- it
+  // doesn't prove they can see *this* project. Without this, any logged-in
+  // member could tag/untag access on a project they have no visibility into
+  // at all (owner/tagged/can_view_all_projects), by calling this action
+  // directly with an arbitrary id, bypassing the UI where the detail page
+  // itself already 404s for them via this same getProject() visibility
+  // filter. Reuses that existing filter rather than duplicating it.
+  const project = await getProject(projectId)
+  if (!project) return { error: 'Project not found.' }
+
   const db = createAdminClient()
 
   const memberIds = formData.getAll('member_ids') as string[]
