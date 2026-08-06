@@ -1032,7 +1032,7 @@ export const CONTACT = {
   address: ["60 Fenwood Road", "Boston, MA 02115"],
   phone: "617.525.8319",
   fax: "617.713.3050",
-  email: "wbi@bwh.harvard.edu",
+  email: "wbi@mgb.harvard.edu",
   supportUrl: "http://www.Bwhgiving.org/research",
   buildingImage: "/brand/contact-building.jpg",
   mapEmbedUrl:
