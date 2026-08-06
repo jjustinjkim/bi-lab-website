@@ -1,7 +1,21 @@
 import { ImageResponse } from "next/og";
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
 
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
+
+// The real BWH columned-building mark (the same file used as this site's
+// actual favicon/apple-icon), not a redrawn approximation -- the link
+// preview iMessage/SMS/Slack/etc. show when this site's URL is shared
+// previously used an unrelated hand-drawn SVG squiggle with no connection
+// to the brand mark used everywhere else on the site (header, footer,
+// browser tab). Embedded as a data URI since next/og's ImageResponse can't
+// reference /public paths directly.
+const iconDataUri = (() => {
+  const buf = readFileSync(join(process.cwd(), "app", "icon.png"));
+  return `data:image/png;base64,${buf.toString("base64")}`;
+})();
 
 export default function OpengraphImage() {
   return new ImageResponse(
@@ -19,18 +33,9 @@ export default function OpengraphImage() {
           fontFamily: "sans-serif",
         }}
       >
-        <div style={{ display: "flex", alignItems: "center", gap: 16, marginBottom: 36 }}>
-          <svg width="52" height="52" viewBox="0 0 32 32">
-            <rect width="32" height="32" rx="6" fill="#ffffff" />
-            <path
-              d="M10 7 L22 7 M10 25 L22 25 M11 7 L21 25 M21 7 L11 25 M13 12 L19 12 M12.3 16 L19.7 16 M13 20 L19 20"
-              stroke="#14293e"
-              strokeWidth="1.3"
-              strokeLinecap="round"
-              fill="none"
-            />
-          </svg>
-          <div style={{ fontSize: 30, fontWeight: 600, letterSpacing: "0.06em", textTransform: "uppercase", color: "#8fb0d6" }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 18, marginBottom: 36 }}>
+          <img src={iconDataUri} width={56} height={56} alt="" />
+          <div style={{ fontSize: 30, fontWeight: 600, letterSpacing: "0.06em", textTransform: "uppercase", color: "#4dc4cc" }}>
             Bi Lab
           </div>
         </div>
