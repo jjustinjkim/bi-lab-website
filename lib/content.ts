@@ -1022,16 +1022,11 @@ export const PUBMED_URL =
 
 export const CONTACT = {
   labName: "The Skull Base Tumor Laboratory",
-  // The real Contact page literally says "Assistant Professor" here, while
-  // the Team page says "Associate Professor" (see PRINCIPAL_INVESTIGATOR
-  // above) -- a real inconsistency on the source site, not a typo to fix.
   piTitles: [
     "Wenya Linda Bi, MD, PhD",
-    "Assistant Professor of Neurosurgery",
-    "Center for Skull Base and Pituitary Surgery",
-    "Department of Neurosurgery",
-    "Brigham and Women's Hospital",
-    "Dana-Farber Cancer Institute",
+    "Myers Family Endowed Chair in Skull Base Tumors and Cancer",
+    "Mass General Brigham",
+    "Associate Professor",
     "Harvard Medical School",
   ],
   address: ["60 Fenwood Road", "Boston, MA 02115"],
