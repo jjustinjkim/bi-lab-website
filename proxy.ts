@@ -15,9 +15,24 @@ export function proxy(request: NextRequest) {
     return NextResponse.next()
   }
 
+  // The inventory (Meningioma Dataset Registry) moved behind the portal
+  // login. app/inventory/layout.tsx does the real per-request auth check
+  // (isMemberSession()) for the pages themselves, same division of labor as
+  // /portal above -- but /pilot-data/*.json (the gene-expression viewer's
+  // raw data, served as plain static files under public/) has no page/layout
+  // to run that check in at all, so it's gated here directly instead, or a
+  // logged-out visitor could still fetch the underlying data straight from
+  // its URL even with every /inventory page correctly redirecting to login.
+  if (pathname.startsWith('/inventory') || pathname.startsWith('/pilot-data')) {
+    if (!memberToken) {
+      return NextResponse.redirect(new URL('/portal/login', request.url))
+    }
+    return NextResponse.next()
+  }
+
   return NextResponse.next()
 }
 
 export const config = {
-  matcher: ['/portal/:path*'],
+  matcher: ['/portal/:path*', '/inventory/:path*', '/pilot-data/:path*'],
 }

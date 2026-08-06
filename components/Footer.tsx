@@ -7,7 +7,6 @@ const BROWSE = [
   { href: "/", label: "Home" },
   { href: "/team", label: "Team" },
   { href: "/publications", label: "Publications" },
-  { href: "/inventory", label: "Dataset Registry" },
   { href: "/contact", label: "Contact" },
 ];
 

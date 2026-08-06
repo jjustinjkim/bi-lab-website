@@ -5,7 +5,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: "*",
       allow: "/",
-      disallow: ["/portal", "/search"],
+      disallow: ["/portal", "/search", "/inventory", "/pilot-data"],
     },
     sitemap: "https://wlbilab.org/sitemap.xml",
   };
