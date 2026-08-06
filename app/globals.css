@@ -26,6 +26,7 @@
   --accent-2-ink: #74591f;
   --footer-bg: #161616;
   --footer-ink: #b3b3b3;
+  --portal-nav-bg: #4d80bf;
 
   --background: var(--paper);
   --foreground: var(--ink);
@@ -57,6 +58,10 @@
   --accent-2-ink: #74591f;
   --footer-bg: #161616;
   --footer-ink: #b3b3b3;
+  /* Fixed (not theme-dependent): the portal nav is a solid branded bar
+     with white text, not page chrome, so it deliberately doesn't follow
+     the light/dark swap the way --accent-ink (a text color) does. */
+  --portal-nav-bg: #4d80bf;
 
   --background: var(--paper);
   --foreground: var(--ink);
@@ -74,6 +79,7 @@
   --accent-ink: #8fb0d6;
   --accent-2: #d3ac5f;
   --accent-2-ink: #e0bd77;
+  --portal-nav-bg: #4d80bf;
   --footer-bg: #0a0e17;
   --footer-ink: #94a3b8;
 

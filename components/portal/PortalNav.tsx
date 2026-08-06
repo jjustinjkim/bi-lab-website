@@ -86,7 +86,7 @@ export default function PortalNav({ isAdmin }: { isAdmin: boolean }) {
   }
 
   return (
-    <nav style={{ background: 'var(--accent-ink)' }} className="sticky top-0 z-30">
+    <nav style={{ background: 'var(--portal-nav-bg)' }} className="sticky top-0 z-30">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="flex items-center h-14 gap-2">
           <Link href="/portal" className="text-sm font-semibold text-white whitespace-nowrap">
