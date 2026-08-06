@@ -110,6 +110,12 @@ export default function PortalNav({ isAdmin }: { isAdmin: boolean }) {
       await logout()
     } catch (err) {
       if (isStaleServerActionError(err)) {
+        // A real hard navigation on purpose, not router.push() -- the
+        // problem this is recovering from is a stale JS bundle still
+        // referencing a Server Action ID the new deploy doesn't recognize
+        // (see lib/callAction.ts), and a client-side route change would
+        // keep running that same stale bundle instead of fetching fresh.
+        // eslint-disable-next-line @next/next/no-location-assign-relative-destination
         window.location.href = '/portal/login'
         return
       }
