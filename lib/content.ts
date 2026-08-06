@@ -1038,7 +1038,7 @@ export const CONTACT = {
   address: ["60 Fenwood Road", "Boston, MA 02115"],
   phone: "617.525.8319",
   fax: "617.713.3050",
-  email: "wbi@mgb.harvard.edu",
+  email: "wbi@mgb.org",
   // The old /research path here 404s -- verified live: bwhgiving.org (any
   // path) redirects to give.brighamandwomens.org, which has no dedicated
   // neurosurgery/brain-tumor fund page, just this general giving homepage.

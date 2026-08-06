@@ -38,7 +38,7 @@ Edit `.env.local` with your actual values. Never commit `.env.local` to git.
 Lab members are normally added through the app itself (Portal → Members), but that page requires being logged in as an admin already, so the first account has to be created directly against the database:
 
 ```bash
-npm run create-admin -- --email wbi@mgb.harvard.edu --name "Wenya Linda Bi" --password "a-strong-password" --title "Principal Investigator"
+npm run create-admin -- --email wbi@mgb.org --name "Wenya Linda Bi" --password "a-strong-password" --title "Principal Investigator"
 ```
 
 Every member after this one should be added from **Portal → Members** in the app, not by re-running this script.
