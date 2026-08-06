@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { CONTACT } from "@/lib/content";
 
 export const metadata: Metadata = {
@@ -28,12 +29,10 @@ export default function SupportPage() {
           immunogenomics, imaging, intraoperative neuromonitoring, and outcomes.
         </p>
         <p style={{ color: "var(--ink-muted)" }}>
-          Gifts to the lab are made through Brigham and Women&rsquo;s Hospital&rsquo;s giving program. Use the
-          link above, or contact the lab directly to discuss supporting a specific area of research.
+          Gifts to the lab are made through Mass General Brigham&rsquo;s giving program. Use the link above, or
+          see the <Link href="/contact" className="link-accent">Contact page</Link> to reach the lab directly
+          about supporting a specific area of research.
         </p>
-        <a href={`mailto:${CONTACT.email}`} className="link-accent inline-block" style={{ fontSize: "1.0625rem" }}>
-          {CONTACT.email}
-        </a>
       </div>
     </div>
   );

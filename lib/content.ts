@@ -95,7 +95,6 @@ export const PRINCIPAL_INVESTIGATOR = {
   titles: [
     "Associate Professor of Neurosurgery",
     "Department of Neurosurgery",
-    "Brigham and Women's Hospital",
     "Mass General Brigham",
     "Harvard Medical School",
   ],
