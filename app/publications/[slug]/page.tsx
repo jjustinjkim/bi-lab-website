@@ -29,7 +29,10 @@ export default async function FeaturedPublicationPage({
   const pub = FEATURED_PUBLICATIONS.find((p) => p.slug === slug);
   if (!pub) notFound();
 
-  const date = new Date(pub.date);
+  // + 'T00:00:00' so this parses as local midnight, not UTC midnight --
+  // new Date("2025-07-25") alone renders a day early in any timezone
+  // behind UTC once toLocaleDateString formats it back in local time.
+  const date = new Date(pub.date + "T00:00:00");
   const formattedDate = date.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" });
 
   return (
