@@ -46,7 +46,7 @@ CREATE TABLE IF NOT EXISTS projects (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   name TEXT NOT NULL,
   description TEXT,
-  status TEXT NOT NULL DEFAULT 'planning' CHECK (status IN ('planning', 'active', 'blocked', 'done')),
+  status TEXT NOT NULL DEFAULT 'planning' CHECK (status IN ('planning', 'active', 'blocked', 'done', 'archived')),
   owner_id UUID REFERENCES lab_members(id) ON DELETE SET NULL,
   notes TEXT,
   created_at TIMESTAMPTZ DEFAULT NOW(),
@@ -87,6 +87,16 @@ ALTER TABLE projects ADD COLUMN IF NOT EXISTS checkpoint TEXT;
 ALTER TABLE projects ADD COLUMN IF NOT EXISTS journal TEXT;
 ALTER TABLE projects ADD COLUMN IF NOT EXISTS pub_year INTEGER;
 ALTER TABLE projects ADD COLUMN IF NOT EXISTS pubmed_url TEXT;
+
+-- 'archived' added after 'done' already existed: distinct from done (which
+-- means published/PubMedable, see the journal/pub_year fields above) --
+-- archived is for projects that are no longer active but were never
+-- necessarily heading toward publication. The inline CREATE TABLE above
+-- covers a fresh database; this ALTER re-points the CHECK constraint for a
+-- database where the table already exists (Postgres auto-names an unnamed
+-- column CHECK "<table>_<column>_check").
+ALTER TABLE projects DROP CONSTRAINT IF EXISTS projects_status_check;
+ALTER TABLE projects ADD CONSTRAINT projects_status_check CHECK (status IN ('planning', 'active', 'blocked', 'done', 'archived'));
 
 CREATE TABLE IF NOT EXISTS tasks (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),

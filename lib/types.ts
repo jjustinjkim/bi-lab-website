@@ -8,7 +8,7 @@ export interface LabMember {
   created_at: string;
 }
 
-export type ProjectStatus = "planning" | "active" | "blocked" | "done";
+export type ProjectStatus = "planning" | "active" | "blocked" | "done" | "archived";
 
 // Matches the "Gr" column in the lab's own tracker spreadsheet. "P" appears
 // in older (pre-2015) rows but was never in its own legend there either.

@@ -21,6 +21,7 @@ const STATUS_LABEL: Record<string, string> = {
   active: 'Active',
   blocked: 'Blocked',
   done: 'Done',
+  archived: 'Archived',
 }
 
 const GROUP_OPTIONS = Object.entries(PROJECT_GROUP_LABELS) as [ProjectGroupType, string][]

@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { getProjects } from '@/lib/queries'
-import { createProject } from '@/lib/actions'
+import { createProject, updateProjectStatus } from '@/lib/actions'
 import { PROJECT_GROUP_LABELS, PROJECT_GROUP_COLORS, type Project, type ProjectGroupType } from '@/lib/types'
 
 export const dynamic = 'force-dynamic'
@@ -86,16 +86,30 @@ export default async function ProjectsPage() {
   const projects = await getProjects()
 
   const active = projects
-    .filter((p) => p.status !== 'done')
+    .filter((p) => p.status !== 'done' && p.status !== 'archived')
     .sort((a, b) => (b.work_percent ?? -1) - (a.work_percent ?? -1))
 
   const completed = projects
     .filter((p) => p.status === 'done')
     .sort((a, b) => (b.pub_year ?? 0) - (a.pub_year ?? 0))
 
+  const archived = projects
+    .filter((p) => p.status === 'archived')
+    .sort((a, b) => a.name.localeCompare(b.name))
+
   async function addProject(formData: FormData) {
     'use server'
     await createProject(formData)
+  }
+
+  async function archiveProject(formData: FormData) {
+    'use server'
+    await updateProjectStatus(formData.get('id') as string, 'archived')
+  }
+
+  async function unarchiveProject(formData: FormData) {
+    'use server'
+    await updateProjectStatus(formData.get('id') as string, 'active')
   }
 
   return (
@@ -194,18 +208,37 @@ export default async function ProjectsPage() {
 
       <section>
         <h2 className="text-caption uppercase tracking-wide font-semibold mb-3">Active</h2>
-        <ProjectTable projects={active} variant="active" />
+        <ProjectTable projects={active} variant="active" archiveProject={archiveProject} />
       </section>
 
       <section>
         <h2 className="text-caption uppercase tracking-wide font-semibold mb-3">Completed / PubMedable</h2>
         <ProjectTable projects={completed} variant="completed" />
       </section>
+
+      <details>
+        <summary className="text-caption uppercase tracking-wide font-semibold cursor-pointer mb-3" style={{ display: 'inline-block' }}>
+          Archived ({archived.length})
+        </summary>
+        <div className="mt-3">
+          <ProjectTable projects={archived} variant="archived" unarchiveProject={unarchiveProject} />
+        </div>
+      </details>
     </div>
   )
 }
 
-function ProjectTable({ projects, variant }: { projects: Project[]; variant: 'active' | 'completed' }) {
+function ProjectTable({
+  projects,
+  variant,
+  archiveProject,
+  unarchiveProject,
+}: {
+  projects: Project[]
+  variant: 'active' | 'completed' | 'archived'
+  archiveProject?: (formData: FormData) => Promise<void>
+  unarchiveProject?: (formData: FormData) => Promise<void>
+}) {
   if (projects.length === 0) {
     return <p className="text-sm" style={{ color: 'var(--ink-faint)' }}>No {variant} projects yet.</p>
   }
@@ -218,7 +251,12 @@ function ProjectTable({ projects, variant }: { projects: Project[]; variant: 'ac
             <th className="text-left px-3 py-2.5" style={HEADER_CELL_STYLE}>Project</th>
             <th className="text-left px-3 py-2.5" style={HEADER_CELL_STYLE}>Faculty</th>
             <th className="text-left px-3 py-2.5" style={HEADER_CELL_STYLE}>Personnel</th>
-            {variant === 'active' ? (
+            {variant === 'completed' ? (
+              <>
+                <th className="text-left px-3 py-2.5" style={HEADER_CELL_STYLE}>Journal / Book</th>
+                <th className="text-left px-3 py-2.5" style={HEADER_CELL_STYLE}>Year</th>
+              </>
+            ) : (
               <>
                 <th className="text-left px-3 py-2.5" style={HEADER_CELL_STYLE}>Work %</th>
                 <th className="text-left px-3 py-2.5" style={HEADER_CELL_STYLE}>Pub status</th>
@@ -226,11 +264,9 @@ function ProjectTable({ projects, variant }: { projects: Project[]; variant: 'ac
                 <th className="text-left px-3 py-2.5" style={HEADER_CELL_STYLE}>Deadline</th>
                 <th className="text-left px-3 py-2.5" style={HEADER_CELL_STYLE}>Checkpoint</th>
               </>
-            ) : (
-              <>
-                <th className="text-left px-3 py-2.5" style={HEADER_CELL_STYLE}>Journal / Book</th>
-                <th className="text-left px-3 py-2.5" style={HEADER_CELL_STYLE}>Year</th>
-              </>
+            )}
+            {(variant === 'active' || variant === 'archived') && (
+              <th className="text-left px-3 py-2.5" style={HEADER_CELL_STYLE}></th>
             )}
           </tr>
         </thead>
@@ -245,7 +281,20 @@ function ProjectTable({ projects, variant }: { projects: Project[]; variant: 'ac
               </td>
               <td className="px-3 py-2.5" style={{ color: 'var(--ink-muted)' }}>{p.faculty ?? 'n/a'}</td>
               <td className="px-3 py-2.5" style={{ color: 'var(--ink-muted)' }}>{p.personnel ?? 'n/a'}</td>
-              {variant === 'active' ? (
+              {variant === 'completed' ? (
+                <>
+                  <td className="px-3 py-2.5" style={{ color: 'var(--ink-muted)' }}>
+                    {p.pubmed_url ? (
+                      <a href={p.pubmed_url} target="_blank" rel="noopener noreferrer" className="link-accent">
+                        {p.journal ?? 'PubMed'}
+                      </a>
+                    ) : (
+                      p.journal ?? 'n/a'
+                    )}
+                  </td>
+                  <td className="px-3 py-2.5" style={{ color: 'var(--ink-muted)' }}>{p.pub_year ?? 'n/a'}</td>
+                </>
+              ) : (
                 <>
                   <td className="px-3 py-2.5">
                     {p.work_percent != null ? (
@@ -264,19 +313,22 @@ function ProjectTable({ projects, variant }: { projects: Project[]; variant: 'ac
                   <td className="px-3 py-2.5" style={{ color: 'var(--ink-muted)' }}>{formatDeadline(p.deadline_date) ?? 'n/a'}</td>
                   <td className="px-3 py-2.5" style={{ color: 'var(--ink-muted)' }}>{p.checkpoint ?? 'n/a'}</td>
                 </>
-              ) : (
-                <>
-                  <td className="px-3 py-2.5" style={{ color: 'var(--ink-muted)' }}>
-                    {p.pubmed_url ? (
-                      <a href={p.pubmed_url} target="_blank" rel="noopener noreferrer" className="link-accent">
-                        {p.journal ?? 'PubMed'}
-                      </a>
-                    ) : (
-                      p.journal ?? 'n/a'
-                    )}
-                  </td>
-                  <td className="px-3 py-2.5" style={{ color: 'var(--ink-muted)' }}>{p.pub_year ?? 'n/a'}</td>
-                </>
+              )}
+              {variant === 'active' && archiveProject && (
+                <td className="px-3 py-2.5">
+                  <form action={archiveProject}>
+                    <input type="hidden" name="id" value={p.id} />
+                    <button type="submit" className="text-xs link-accent whitespace-nowrap">Archive</button>
+                  </form>
+                </td>
+              )}
+              {variant === 'archived' && unarchiveProject && (
+                <td className="px-3 py-2.5">
+                  <form action={unarchiveProject}>
+                    <input type="hidden" name="id" value={p.id} />
+                    <button type="submit" className="text-xs link-accent whitespace-nowrap">Unarchive</button>
+                  </form>
+                </td>
               )}
             </tr>
           ))}

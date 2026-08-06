@@ -53,7 +53,7 @@ vi.mock('next/headers', () => ({
 const {
   loginMember, logout, createLabMember, deleteLabMember, setCanViewAllProjects,
   adminResetMemberPassword, changeOwnPassword,
-  createProject, updateProject, deleteProject, setProjectMembers,
+  createProject, updateProject, updateProjectStatus, deleteProject, setProjectMembers,
   createTask, updateTaskStatus, deleteTask,
   createDeadline, deleteDeadline,
   createDataset, deleteDataset,
@@ -301,6 +301,12 @@ describe('projects', () => {
     fakeDb.seed('projects', [{ id: 'p1', name: 'X' }])
     await deleteProject('p1')
     expect(fakeDb.table('projects')).toHaveLength(0)
+  })
+
+  it('updateProjectStatus changes only the status field, leaving other fields untouched', async () => {
+    fakeDb.seed('projects', [{ id: 'p1', name: 'X', status: 'active', faculty: 'Bi', work_percent: 80 }])
+    await updateProjectStatus('p1', 'archived')
+    expect(fakeDb.table('projects')[0]).toMatchObject({ name: 'X', status: 'archived', faculty: 'Bi', work_percent: 80 })
   })
 
   it('createProject persists the lab tracker fields (group, faculty, personnel, work %, etc.)', async () => {
