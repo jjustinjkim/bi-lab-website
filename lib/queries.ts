@@ -1,6 +1,6 @@
 import { createAdminClient } from './supabase'
 import { requireMember } from './auth'
-import type { Project, LabTask, Deadline, Dataset, LabMember, Grant } from './types'
+import type { Project, LabMember, Grant } from './types'
 
 type Db = ReturnType<typeof createAdminClient>
 
@@ -52,51 +52,9 @@ export async function getProjectMemberIds(projectId: string): Promise<string[]> 
   return (data ?? []).map((r) => r.member_id)
 }
 
-export async function getTasks(): Promise<LabTask[]> {
-  await requireMember()
-  const db = createAdminClient()
-  const { data } = await db.from('tasks').select('*').order('created_at', { ascending: false })
-  return data ?? []
-}
-
-export async function getTasksForProject(projectId: string): Promise<LabTask[]> {
-  await requireMember()
-  const db = createAdminClient()
-  const { data } = await db.from('tasks').select('*').eq('project_id', projectId).order('created_at', { ascending: false })
-  return data ?? []
-}
-
-export async function getDeadlines(): Promise<Deadline[]> {
-  await requireMember()
-  const db = createAdminClient()
-  const { data } = await db.from('deadlines').select('*').order('date', { ascending: true })
-  return data ?? []
-}
-
-export async function getDeadlinesForProject(projectId: string): Promise<Deadline[]> {
-  await requireMember()
-  const db = createAdminClient()
-  const { data } = await db.from('deadlines').select('*').eq('project_id', projectId).order('date', { ascending: true })
-  return data ?? []
-}
-
-export async function getDatasets(): Promise<Dataset[]> {
-  await requireMember()
-  const db = createAdminClient()
-  const { data } = await db.from('datasets').select('*').order('created_at', { ascending: false })
-  return data ?? []
-}
-
-export async function getDatasetsForProject(projectId: string): Promise<Dataset[]> {
-  await requireMember()
-  const db = createAdminClient()
-  const { data } = await db.from('datasets').select('*').eq('project_id', projectId).order('created_at', { ascending: false })
-  return data ?? []
-}
-
-// Unfiltered by project visibility, same as tasks/deadlines/datasets above --
-// grant opportunities are lab-wide knowledge every member should see, not
-// scoped by who owns/is tagged on a project.
+// Unfiltered by project visibility -- grant opportunities are lab-wide
+// knowledge every member should see, not scoped by who owns/is tagged on a
+// project.
 export async function getGrants(): Promise<Grant[]> {
   await requireMember()
   const db = createAdminClient()
@@ -105,8 +63,6 @@ export async function getGrants(): Promise<Grant[]> {
 }
 
 export interface DashboardData {
-  upcomingDeadlines: Deadline[];
-  myOpenTasks: LabTask[];
   activeProjects: Project[];
 }
 
@@ -114,22 +70,13 @@ export async function getDashboardData(): Promise<DashboardData> {
   const member = await requireMember()
   const db = createAdminClient()
 
-  const in30Days = new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toISOString().slice(0, 10)
-  const today = new Date().toISOString().slice(0, 10)
-
   const filter = await projectVisibilityFilter(db, member)
   let activeProjectsQuery = db.from('projects').select('*').eq('status', 'active')
   if (filter) activeProjectsQuery = activeProjectsQuery.or(filter)
 
-  const [{ data: upcomingDeadlines }, { data: myOpenTasks }, { data: activeProjects }] = await Promise.all([
-    db.from('deadlines').select('*').gte('date', today).lte('date', in30Days).order('date', { ascending: true }),
-    db.from('tasks').select('*').eq('assignee_id', member.id).neq('status', 'done').order('due_date', { ascending: true }),
-    activeProjectsQuery.order('updated_at', { ascending: false }),
-  ])
+  const { data: activeProjects } = await activeProjectsQuery.order('updated_at', { ascending: false })
 
   return {
-    upcomingDeadlines: upcomingDeadlines ?? [],
-    myOpenTasks: myOpenTasks ?? [],
     activeProjects: activeProjects ?? [],
   }
 }

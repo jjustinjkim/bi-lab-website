@@ -60,42 +60,6 @@ export interface Project {
   pubmed_url: string | null;
 }
 
-export type TaskStatus = "todo" | "in_progress" | "done";
-
-export interface LabTask {
-  id: string;
-  title: string;
-  description: string | null;
-  project_id: string | null;
-  assignee_id: string | null;
-  status: TaskStatus;
-  due_date: string | null;
-  created_at: string;
-}
-
-export type DeadlineType = "grant" | "abstract" | "conference" | "irb" | "other";
-
-export interface Deadline {
-  id: string;
-  title: string;
-  type: DeadlineType;
-  date: string;
-  project_id: string | null;
-  notes: string | null;
-  created_at: string;
-}
-
-export interface Dataset {
-  id: string;
-  name: string;
-  description: string | null;
-  location: string | null;
-  sample_count: number | null;
-  processing_status: string | null;
-  project_id: string | null;
-  created_at: string;
-}
-
 export type GrantStatus = "identified" | "researching" | "applying" | "submitted" | "awarded" | "declined";
 
 export const GRANT_STATUS_LABELS: Record<GrantStatus, string> = {

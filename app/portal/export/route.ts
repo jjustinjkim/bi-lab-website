@@ -13,14 +13,12 @@ export async function GET() {
   await requireAdmin()
   const db = createAdminClient()
 
-  const [members, projects, tasks, deadlines, datasets, projectMembers] = await Promise.all([
+  const [members, projects, grants, projectMembers] = await Promise.all([
     // Never password_hash, even though it's already bcrypt-hashed -- no
     // reason for a downloadable file to carry it at all.
     db.from('lab_members').select('id, email, name, title, is_admin, can_view_all_projects, created_at'),
     db.from('projects').select('*'),
-    db.from('tasks').select('*'),
-    db.from('deadlines').select('*'),
-    db.from('datasets').select('*'),
+    db.from('grants').select('*'),
     db.from('project_members').select('*'),
   ])
 
@@ -28,9 +26,7 @@ export async function GET() {
     exported_at: new Date().toISOString(),
     lab_members: members.data ?? [],
     projects: projects.data ?? [],
-    tasks: tasks.data ?? [],
-    deadlines: deadlines.data ?? [],
-    datasets: datasets.data ?? [],
+    grants: grants.data ?? [],
     project_members: projectMembers.data ?? [],
   }
 

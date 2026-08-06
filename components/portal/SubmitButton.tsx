@@ -13,7 +13,7 @@ import { dispatchToast } from './Toaster'
 //
 // Fires on completion, not confirmed success -- the inline "use server"
 // action wrappers used throughout the portal (e.g. `async function
-// addTask(formData) { 'use server'; await createTask(formData) }`) already
+// addGrant(formData) { 'use server'; await createGrant(formData) }`) already
 // discard whatever { error } the real action returns, so there's no
 // success/failure signal available here to key off of either. Same
 // known limitation, not a new one introduced by this component.

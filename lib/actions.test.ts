@@ -54,9 +54,6 @@ const {
   loginMember, logout, createLabMember, deleteLabMember, setCanViewAllProjects,
   adminResetMemberPassword, changeOwnPassword,
   createProject, updateProject, updateProjectStatus, deleteProject, setProjectMembers,
-  createTask, updateTaskStatus, deleteTask,
-  createDeadline, deleteDeadline,
-  createDataset, deleteDataset,
   createGrant, updateGrantStatus, deleteGrant,
 } = await import('./actions')
 
@@ -394,73 +391,6 @@ describe('setProjectMembers', () => {
     const result = await setProjectMembers('p1', fd)
     expect(result.error).toBe('Project not found.')
     expect(fakeDb.table('project_members')).toHaveLength(0)
-  })
-})
-
-describe('tasks', () => {
-  it('createTask requires a title', async () => {
-    const result = await createTask(form({ title: '' }))
-    expect(result.error).toBe('Title is required.')
-  })
-
-  it('createTask defaults status to todo and allows no project/assignee', async () => {
-    await createTask(form({ title: 'Draft the abstract' }))
-    const [row] = fakeDb.table('tasks')
-    expect(row.status).toBe('todo')
-    expect(row.project_id).toBeNull()
-    expect(row.assignee_id).toBeNull()
-  })
-
-  it('updateTaskStatus changes only the status field', async () => {
-    fakeDb.seed('tasks', [{ id: 't1', title: 'X', status: 'todo' }])
-    await updateTaskStatus('t1', 'done')
-    expect(fakeDb.table('tasks')[0].status).toBe('done')
-    expect(fakeDb.table('tasks')[0].title).toBe('X')
-  })
-
-  it('deleteTask removes the row', async () => {
-    fakeDb.seed('tasks', [{ id: 't1', title: 'X' }])
-    await deleteTask('t1')
-    expect(fakeDb.table('tasks')).toHaveLength(0)
-  })
-})
-
-describe('deadlines', () => {
-  it('requires both a title and a date', async () => {
-    expect((await createDeadline(form({ title: '', date: '2026-09-01' }))).error).toBe('Title and date are required.')
-    expect((await createDeadline(form({ title: 'Grant due', date: '' }))).error).toBe('Title and date are required.')
-  })
-
-  it('creates a deadline with a default type of other', async () => {
-    await createDeadline(form({ title: 'IRB renewal', date: '2026-09-01' }))
-    expect(fakeDb.table('deadlines')[0].type).toBe('other')
-  })
-
-  it('deleteDeadline removes the row', async () => {
-    fakeDb.seed('deadlines', [{ id: 'd1', title: 'X', date: '2026-09-01' }])
-    await deleteDeadline('d1')
-    expect(fakeDb.table('deadlines')).toHaveLength(0)
-  })
-})
-
-describe('datasets', () => {
-  it('requires a name', async () => {
-    const result = await createDataset(form({ name: '' }))
-    expect(result.error).toBe('Name is required.')
-  })
-
-  it('parses a numeric sample_count and stores null when blank or invalid', async () => {
-    await createDataset(form({ name: 'Cohort A', sample_count: '127' }))
-    expect(fakeDb.table('datasets')[0].sample_count).toBe(127)
-
-    await createDataset(form({ name: 'Cohort B' }))
-    expect(fakeDb.table('datasets')[1].sample_count).toBeNull()
-  })
-
-  it('deleteDataset removes the row', async () => {
-    fakeDb.seed('datasets', [{ id: 'ds1', name: 'X' }])
-    await deleteDataset('ds1')
-    expect(fakeDb.table('datasets')).toHaveLength(0)
   })
 })
 

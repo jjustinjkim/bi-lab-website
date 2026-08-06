@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from 'react'
 export const TOAST_EVENT = 'portal:toast'
 
 // Dispatch this from anywhere on a portal page to show a transient
-// confirmation, e.g. dispatchToast('Task added').
+// confirmation, e.g. dispatchToast('Grant added').
 export function dispatchToast(message: string) {
   window.dispatchEvent(new CustomEvent(TOAST_EVENT, { detail: message }))
 }

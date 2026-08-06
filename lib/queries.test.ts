@@ -22,9 +22,6 @@ vi.mock('./auth', () => ({
 
 const {
   getLabMembers, getProjects, getProject,
-  getTasks, getTasksForProject,
-  getDeadlines, getDeadlinesForProject,
-  getDatasets, getDatasetsForProject,
   getDashboardData,
   getGrants,
 } = await import('./queries')
@@ -114,61 +111,8 @@ describe('project visibility filtering', () => {
   })
 })
 
-describe('tasks / deadlines / datasets scoped to a project', () => {
-  it('getTasksForProject only returns tasks for that project', async () => {
-    fakeDb.seed('tasks', [
-      { id: 't1', title: 'A', project_id: 'p1', created_at: '2026-01-01T00:00:00.000Z' },
-      { id: 't2', title: 'B', project_id: 'p2', created_at: '2026-01-02T00:00:00.000Z' },
-    ])
-    const result = await getTasksForProject('p1')
-    expect(result.map(t => t.id)).toEqual(['t1'])
-  })
-
-  it('getDeadlinesForProject orders by date ascending', async () => {
-    fakeDb.seed('deadlines', [
-      { id: 'd1', title: 'Later', project_id: 'p1', date: '2026-12-01' },
-      { id: 'd2', title: 'Sooner', project_id: 'p1', date: '2026-09-01' },
-    ])
-    const result = await getDeadlinesForProject('p1')
-    expect(result.map(d => d.id)).toEqual(['d2', 'd1'])
-  })
-
-  it('getDatasetsForProject only returns datasets for that project', async () => {
-    fakeDb.seed('datasets', [
-      { id: 'ds1', name: 'A', project_id: 'p1', created_at: '2026-01-01T00:00:00.000Z' },
-      { id: 'ds2', name: 'B', project_id: null, created_at: '2026-01-02T00:00:00.000Z' },
-    ])
-    const result = await getDatasetsForProject('p1')
-    expect(result.map(d => d.id)).toEqual(['ds1'])
-  })
-})
-
-describe('getDeadlines / getTasks / getDatasets (unscoped)', () => {
-  it('getDeadlines orders all deadlines by date ascending regardless of project', async () => {
-    fakeDb.seed('deadlines', [
-      { id: 'd1', title: 'B', date: '2026-10-01' },
-      { id: 'd2', title: 'A', date: '2026-08-01' },
-    ])
-    expect((await getDeadlines()).map(d => d.id)).toEqual(['d2', 'd1'])
-  })
-
-  it('getTasks orders by created_at descending', async () => {
-    fakeDb.seed('tasks', [
-      { id: 't1', title: 'Older', created_at: '2026-01-01T00:00:00.000Z' },
-      { id: 't2', title: 'Newer', created_at: '2026-02-01T00:00:00.000Z' },
-    ])
-    expect((await getTasks()).map(t => t.id)).toEqual(['t2', 't1'])
-  })
-
-  it('getDatasets orders by created_at descending', async () => {
-    fakeDb.seed('datasets', [
-      { id: 'ds1', name: 'Older', created_at: '2026-01-01T00:00:00.000Z' },
-      { id: 'ds2', name: 'Newer', created_at: '2026-02-01T00:00:00.000Z' },
-    ])
-    expect((await getDatasets()).map(d => d.id)).toEqual(['ds2', 'ds1'])
-  })
-
-  it('getGrants orders by deadline_date ascending, with no-deadline grants last', async () => {
+describe('getGrants', () => {
+  it('orders by deadline_date ascending, with no-deadline grants last', async () => {
     fakeDb.seed('grants', [
       { id: 'g1', name: 'Later deadline', deadline_date: '2026-12-01' },
       { id: 'g2', name: 'Sooner deadline', deadline_date: '2026-09-01' },
@@ -188,27 +132,6 @@ describe('getDashboardData', () => {
 
   afterEach(() => {
     vi.useRealTimers()
-  })
-
-  it('includes deadlines within the next 30 days but not before today or beyond 30 days', async () => {
-    fakeDb.seed('deadlines', [
-      { id: 'past', title: 'Past', date: '2026-08-01' },
-      { id: 'soon', title: 'Soon', date: '2026-08-10' },
-      { id: 'today', title: 'Today', date: '2026-08-04' },
-      { id: 'far', title: 'Far', date: '2026-12-01' },
-    ])
-    const { upcomingDeadlines } = await getDashboardData()
-    expect(upcomingDeadlines.map(d => d.id).sort()).toEqual(['soon', 'today'])
-  })
-
-  it('includes only the current member\'s open (non-done) tasks', async () => {
-    fakeDb.seed('tasks', [
-      { id: 't1', title: 'Mine, open', assignee_id: 'member-1', status: 'todo' },
-      { id: 't2', title: 'Mine, done', assignee_id: 'member-1', status: 'done' },
-      { id: 't3', title: 'Someone else\'s', assignee_id: 'member-2', status: 'todo' },
-    ])
-    const { myOpenTasks } = await getDashboardData()
-    expect(myOpenTasks.map(t => t.id)).toEqual(['t1'])
   })
 
   it('includes only active projects', async () => {

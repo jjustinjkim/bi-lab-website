@@ -3,9 +3,6 @@ import { notFound, redirect } from 'next/navigation'
 import Link from 'next/link'
 import {
   getProject,
-  getTasksForProject,
-  getDeadlinesForProject,
-  getDatasetsForProject,
   getLabMembers,
   getProjectMemberIds,
 } from '@/lib/queries'
@@ -36,10 +33,7 @@ export default async function ProjectDetailPage({
   const project = await getProject(id)
   if (!project) notFound()
 
-  const [tasks, deadlines, datasets, allMembers, taggedMemberIds] = await Promise.all([
-    getTasksForProject(id),
-    getDeadlinesForProject(id),
-    getDatasetsForProject(id),
+  const [allMembers, taggedMemberIds] = await Promise.all([
     getLabMembers(),
     getProjectMemberIds(id),
   ])
@@ -180,10 +174,7 @@ export default async function ProjectDetailPage({
         <form action={removeProject} className="mt-4 pt-4" style={{ borderTop: '1px solid var(--hairline)' }}>
           <ConfirmSubmitButton
             className="text-sm link-danger"
-            confirmMessage={
-              `Delete project "${project.name}"? This also deletes its ${tasks.length} task(s) and ${deadlines.length} deadline(s). ` +
-              `${datasets.length} dataset(s) will be kept but unlinked. This cannot be undone.`
-            }
+            confirmMessage={`Delete project "${project.name}"? This cannot be undone.`}
           >
             Delete project
           </ConfirmSubmitButton>
@@ -217,57 +208,6 @@ export default async function ProjectDetailPage({
           <SubmitButton className="btn btn-secondary" toastMessage="Access updated">Save access</SubmitButton>
         </form>
       </div>
-
-      <section>
-        <h2 className="text-caption uppercase tracking-wide font-semibold mb-3">Tasks</h2>
-        {tasks.length === 0 ? (
-          <p className="text-sm" style={{ color: 'var(--ink-faint)' }}>No tasks linked to this project.</p>
-        ) : (
-          <ul className="space-y-2">
-            {tasks.map((t) => (
-              <li key={t.id} className="text-sm flex items-center justify-between panel px-4 py-2.5">
-                <span>{t.title}</span>
-                <span className="badge">{t.status}</span>
-              </li>
-            ))}
-          </ul>
-        )}
-        <Link href="/portal/tasks" className="text-xs link-accent mt-2 inline-block">Manage tasks &rarr;</Link>
-      </section>
-
-      <section>
-        <h2 className="text-caption uppercase tracking-wide font-semibold mb-3">Deadlines</h2>
-        {deadlines.length === 0 ? (
-          <p className="text-sm" style={{ color: 'var(--ink-faint)' }}>No deadlines linked to this project.</p>
-        ) : (
-          <ul className="space-y-2">
-            {deadlines.map((d) => (
-              <li key={d.id} className="text-sm flex items-center justify-between panel px-4 py-2.5">
-                <span>{d.title}</span>
-                <span className="badge badge-flag">{d.date}</span>
-              </li>
-            ))}
-          </ul>
-        )}
-        <Link href="/portal/deadlines" className="text-xs link-accent mt-2 inline-block">Manage deadlines &rarr;</Link>
-      </section>
-
-      <section>
-        <h2 className="text-caption uppercase tracking-wide font-semibold mb-3">Datasets</h2>
-        {datasets.length === 0 ? (
-          <p className="text-sm" style={{ color: 'var(--ink-faint)' }}>No datasets linked to this project.</p>
-        ) : (
-          <ul className="space-y-2">
-            {datasets.map((d) => (
-              <li key={d.id} className="text-sm flex items-center justify-between panel px-4 py-2.5">
-                <span>{d.name}</span>
-                {d.sample_count != null && <span className="badge">{d.sample_count} samples</span>}
-              </li>
-            ))}
-          </ul>
-        )}
-        <Link href="/portal/datasets" className="text-xs link-accent mt-2 inline-block">Manage datasets &rarr;</Link>
-      </section>
     </div>
   )
 }
