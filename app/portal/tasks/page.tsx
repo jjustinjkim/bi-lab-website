@@ -73,7 +73,7 @@ export default async function TasksPage() {
       <ul className="space-y-2">
         {tasks.map((t) => (
           <li key={t.id} className="panel p-4 flex flex-wrap items-center gap-3 justify-between">
-            <div>
+            <div className="min-w-0 flex-1">
               <div className="text-sm font-medium">{t.title}</div>
               <div className="text-xs mt-0.5" style={{ color: 'var(--ink-muted)' }}>
                 {t.project_id ? projectById.get(t.project_id) ?? 'Unknown project' : 'No project'}
@@ -82,7 +82,7 @@ export default async function TasksPage() {
                 {t.due_date ? ` · Due ${t.due_date}` : ''}
               </div>
             </div>
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-3 shrink-0">
               <form action={setStatus} className="flex items-center gap-1.5">
                 <input type="hidden" name="id" value={t.id} />
                 <select

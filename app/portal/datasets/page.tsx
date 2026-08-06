@@ -65,7 +65,7 @@ export default async function DatasetsPage() {
       <ul className="space-y-2">
         {datasets.map((d) => (
           <li key={d.id} className="panel p-4 flex flex-wrap items-center gap-3 justify-between">
-            <div>
+            <div className="min-w-0 flex-1">
               <div className="text-sm font-medium">{d.name}</div>
               <div className="text-xs mt-0.5" style={{ color: 'var(--ink-muted)' }}>
                 {d.location ?? 'No location noted'}
@@ -73,7 +73,7 @@ export default async function DatasetsPage() {
                 {d.processing_status ? ` · ${d.processing_status}` : ''}
               </div>
             </div>
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-3 shrink-0">
               {d.sample_count != null && <span className="badge">{d.sample_count} samples</span>}
               <form action={removeDataset}>
                 <input type="hidden" name="id" value={d.id} />

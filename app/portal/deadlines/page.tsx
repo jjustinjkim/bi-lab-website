@@ -71,14 +71,14 @@ export default async function DeadlinesPage() {
       <ul className="space-y-2">
         {deadlines.map((d) => (
           <li key={d.id} className="panel p-4 flex flex-wrap items-center gap-3 justify-between">
-            <div>
+            <div className="min-w-0 flex-1">
               <div className="text-sm font-medium">{d.title}</div>
               <div className="text-xs mt-0.5" style={{ color: 'var(--ink-muted)' }}>
                 {TYPE_LABEL[d.type]}
                 {d.project_id ? ` · ${projectById.get(d.project_id) ?? 'Unknown project'}` : ''}
               </div>
             </div>
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-3 shrink-0">
               <span className="badge badge-flag">{d.date}</span>
               <form action={removeDeadline}>
                 <input type="hidden" name="id" value={d.id} />

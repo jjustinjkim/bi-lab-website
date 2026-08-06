@@ -83,7 +83,7 @@ export default async function GrantsPage() {
       <ul className="space-y-2">
         {grants.map((g) => (
           <li key={g.id} className="panel p-4 flex flex-wrap items-center gap-3 justify-between">
-            <div>
+            <div className="min-w-0 flex-1">
               <div className="text-sm font-medium">
                 {g.url ? (
                   <a href={g.url} target="_blank" rel="noopener noreferrer" className="link-accent">{g.name}</a>
@@ -101,7 +101,7 @@ export default async function GrantsPage() {
                 <div className="text-xs mt-1" style={{ color: 'var(--ink-faint)' }}>{g.notes}</div>
               )}
             </div>
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-3 shrink-0">
               <form action={setStatus} className="flex items-center gap-1.5">
                 <input type="hidden" name="id" value={g.id} />
                 <select
