@@ -2,11 +2,12 @@ import type { Metadata } from 'next'
 import type { ReactNode } from 'react'
 import { getSessionMember } from '@/lib/auth'
 import { getGrants, getProjects } from '@/lib/queries'
-import { createGrant, deleteGrant, updateGrantStatus } from '@/lib/actions'
+import { deleteGrant, updateGrantStatus } from '@/lib/actions'
 import { GRANT_STATUS_LABELS } from '@/lib/types'
 import type { Grant } from '@/lib/types'
 import ConfirmSubmitButton from '@/components/ConfirmSubmitButton'
 import SubmitButton from '@/components/portal/SubmitButton'
+import AddGrantForm from './AddGrantForm'
 
 export const dynamic = 'force-dynamic'
 export const metadata: Metadata = { title: 'Grants', robots: { index: false, follow: false } }
@@ -43,11 +44,6 @@ export default async function GrantsPage() {
   const active = grants.filter((g) => ACTIVE_STATUSES.has(g.status))
   const identified = grants.filter((g) => g.status === 'identified')
   const closed = grants.filter((g) => CLOSED_STATUSES.has(g.status))
-
-  async function addGrant(formData: FormData) {
-    'use server'
-    await createGrant(formData)
-  }
 
   async function removeGrant(formData: FormData) {
     'use server'
@@ -130,56 +126,7 @@ export default async function GrantsPage() {
         <summary className="text-subtitle cursor-pointer" style={{ fontSize: '0.9375rem' }}>
           Add grant opportunity
         </summary>
-        <form action={addGrant} className="grid sm:grid-cols-2 gap-4 mt-4">
-          <div className="sm:col-span-2">
-            <label className="field-label" htmlFor="name">Name</label>
-            <input id="name" name="name" required className="field-input" placeholder="e.g. NBTS Meningioma Research Fund" />
-          </div>
-          <div>
-            <label className="field-label" htmlFor="funder">Funder</label>
-            <input id="funder" name="funder" className="field-input" placeholder="e.g. National Brain Tumor Society" />
-          </div>
-          <div>
-            <label className="field-label" htmlFor="amount">Amount</label>
-            <input id="amount" name="amount" className="field-input" placeholder="e.g. up to $50,000" />
-          </div>
-          <div>
-            <label className="field-label" htmlFor="status">Status</label>
-            <select id="status" name="status" className="field-input" defaultValue="identified">
-              {Object.entries(GRANT_STATUS_LABELS).map(([v, l]) => (
-                <option key={v} value={v}>{l}</option>
-              ))}
-            </select>
-          </div>
-          <div>
-            <label className="field-label" htmlFor="deadline_date">Deadline</label>
-            <input id="deadline_date" name="deadline_date" type="date" className="field-input" />
-          </div>
-          <div>
-            <label className="field-label" htmlFor="url">Link</label>
-            <input id="url" name="url" type="url" className="field-input" placeholder="https://..." />
-          </div>
-          <div>
-            <label className="field-label" htmlFor="project_id">Project</label>
-            <select id="project_id" name="project_id" className="field-input" defaultValue="">
-              <option value="">None</option>
-              {projects.map((p) => <option key={p.id} value={p.id}>{p.name}</option>)}
-            </select>
-          </div>
-          <div className="sm:col-span-2">
-            <label className="field-label" htmlFor="notes">Notes</label>
-            <textarea
-              id="notes"
-              name="notes"
-              rows={2}
-              className="field-input"
-              placeholder="[Fit] Why it's on the list... [Eligibility] Caveats on who can apply... [Action] Next step..."
-            />
-          </div>
-          <div className="sm:col-span-2">
-            <SubmitButton className="btn btn-primary" toastMessage="Grant added">Add grant</SubmitButton>
-          </div>
-        </form>
+        <AddGrantForm projects={projects} />
       </details>
 
       <div className="space-y-3">

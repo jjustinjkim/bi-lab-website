@@ -2,10 +2,11 @@ import type { Metadata } from 'next'
 import { redirect } from 'next/navigation'
 import { requireAdmin } from '@/lib/auth'
 import { getLabMembers } from '@/lib/queries'
-import { createLabMember, deleteLabMember, setCanViewAllProjects } from '@/lib/actions'
+import { deleteLabMember, setCanViewAllProjects } from '@/lib/actions'
 import ConfirmSubmitButton from '@/components/ConfirmSubmitButton'
 import ResetPasswordControl from '@/components/portal/ResetPasswordControl'
 import SubmitButton from '@/components/portal/SubmitButton'
+import AddMemberForm from './AddMemberForm'
 
 export const dynamic = 'force-dynamic'
 export const metadata: Metadata = { title: 'Members', robots: { index: false, follow: false } }
@@ -20,11 +21,6 @@ export default async function MembersPage() {
   if (!isAdmin) redirect('/portal')
 
   const members = await getLabMembers()
-
-  async function addMember(formData: FormData) {
-    'use server'
-    await createLabMember(formData)
-  }
 
   async function removeMember(formData: FormData) {
     'use server'
@@ -52,35 +48,7 @@ export default async function MembersPage() {
         <summary className="text-subtitle cursor-pointer" style={{ fontSize: '0.9375rem' }}>
           Add a lab member
         </summary>
-        <form action={addMember} className="grid sm:grid-cols-2 gap-4 mt-4">
-          <div>
-            <label className="field-label" htmlFor="name">Name</label>
-            <input id="name" name="name" required className="field-input" />
-          </div>
-          <div>
-            <label className="field-label" htmlFor="email">Email</label>
-            <input id="email" name="email" type="email" required className="field-input" />
-          </div>
-          <div>
-            <label className="field-label" htmlFor="title">Title</label>
-            <input id="title" name="title" className="field-input" />
-          </div>
-          <div>
-            <label className="field-label" htmlFor="password">Temporary password</label>
-            <input id="password" name="password" type="password" required minLength={8} className="field-input" />
-          </div>
-          <label className="flex items-center gap-2 text-sm sm:col-span-2">
-            <input type="checkbox" name="is_admin" />
-            Grant admin access (can add/remove lab members)
-          </label>
-          <label className="flex items-center gap-2 text-sm sm:col-span-2">
-            <input type="checkbox" name="can_view_all_projects" />
-            Full project visibility (sees every project, not just the ones they&rsquo;re tagged on)
-          </label>
-          <div className="sm:col-span-2">
-            <SubmitButton className="btn btn-primary" toastMessage="Member added">Add member</SubmitButton>
-          </div>
-        </form>
+        <AddMemberForm />
       </details>
 
       <div className="panel p-5">

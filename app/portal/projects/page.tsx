@@ -1,14 +1,13 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { getProjects } from '@/lib/queries'
-import { createProject, updateProjectStatus } from '@/lib/actions'
+import { updateProjectStatus } from '@/lib/actions'
 import { PROJECT_GROUP_LABELS, PROJECT_GROUP_COLORS, type Project, type ProjectGroupType } from '@/lib/types'
 import SubmitButton from '@/components/portal/SubmitButton'
+import AddProjectForm from './AddProjectForm'
 
 export const dynamic = 'force-dynamic'
 export const metadata: Metadata = { title: 'Projects', robots: { index: false, follow: false } }
-
-const GROUP_OPTIONS = Object.entries(PROJECT_GROUP_LABELS) as [ProjectGroupType, string][]
 
 // Deliberately not the .field-label class here: it sets display:block,
 // which on a <th> overrides the table-cell display the row layout depends
@@ -105,11 +104,6 @@ export default async function ProjectsPage() {
     .filter((p) => p.status === 'archived')
     .sort((a, b) => a.name.localeCompare(b.name))
 
-  async function addProject(formData: FormData) {
-    'use server'
-    await createProject(formData)
-  }
-
   async function archiveProject(formData: FormData) {
     'use server'
     await updateProjectStatus(formData.get('id') as string, 'archived')
@@ -133,83 +127,7 @@ export default async function ProjectsPage() {
         <summary className="text-subtitle cursor-pointer" style={{ fontSize: '0.9375rem' }}>
           Add project
         </summary>
-        <form action={addProject} className="space-y-4 mt-4">
-          <div>
-            <label className="field-label" htmlFor="name">Project</label>
-            <input id="name" name="name" required className="field-input" />
-          </div>
-          <div className="grid sm:grid-cols-3 gap-4">
-            <div>
-              <label className="field-label" htmlFor="group_type">Gr</label>
-              <select id="group_type" name="group_type" className="field-input" defaultValue="">
-                <option value="">None</option>
-                {GROUP_OPTIONS.map(([v, l]) => (
-                  <option key={v} value={v}>{v} - {l}</option>
-                ))}
-              </select>
-            </div>
-            <div>
-              <label className="field-label" htmlFor="status">Status</label>
-              <select id="status" name="status" className="field-input" defaultValue="planning">
-                <option value="planning">Planning</option>
-                <option value="active">Active</option>
-                <option value="blocked">Blocked</option>
-                <option value="done">Done</option>
-              </select>
-            </div>
-            <div>
-              <label className="field-label" htmlFor="work_percent">Work status (% done)</label>
-              <input id="work_percent" name="work_percent" type="number" min={0} max={100} className="field-input" />
-            </div>
-          </div>
-          <div className="grid sm:grid-cols-2 gap-4">
-            <div>
-              <label className="field-label" htmlFor="faculty">Faculty</label>
-              <input id="faculty" name="faculty" className="field-input" placeholder="e.g. Bi / Aizer" />
-            </div>
-            <div>
-              <label className="field-label" htmlFor="personnel">Personnel</label>
-              <input id="personnel" name="personnel" className="field-input" placeholder="e.g. Varun, Ruchit" />
-            </div>
-          </div>
-          <div className="grid sm:grid-cols-3 gap-4">
-            <div>
-              <label className="field-label" htmlFor="pub_status">Pub status</label>
-              <input id="pub_status" name="pub_status" className="field-input" placeholder="e.g. manuscript, revision" />
-            </div>
-            <div>
-              <label className="field-label" htmlFor="meeting">Mtg</label>
-              <input id="meeting" name="meeting" className="field-input" placeholder="e.g. AANS" />
-            </div>
-            <div>
-              <label className="field-label" htmlFor="deadline_date">Deadline</label>
-              <input id="deadline_date" name="deadline_date" type="date" className="field-input" />
-            </div>
-          </div>
-          <div>
-            <label className="field-label" htmlFor="checkpoint">Checkpoint</label>
-            <input id="checkpoint" name="checkpoint" className="field-input" placeholder="Next step / reminder" />
-          </div>
-          <div className="grid sm:grid-cols-2 gap-4">
-            <div>
-              <label className="field-label" htmlFor="journal">Journal / Book</label>
-              <input id="journal" name="journal" className="field-input" placeholder="Filled in once published" />
-            </div>
-            <div>
-              <label className="field-label" htmlFor="pub_year">Year</label>
-              <input id="pub_year" name="pub_year" type="number" className="field-input" />
-            </div>
-          </div>
-          <div>
-            <label className="field-label" htmlFor="pubmed_url">PubMed link</label>
-            <input id="pubmed_url" name="pubmed_url" type="url" placeholder="https://pubmed.ncbi.nlm.nih.gov/XXXXXXXX/" className="field-input" />
-          </div>
-          <div>
-            <label className="field-label" htmlFor="description">Description</label>
-            <textarea id="description" name="description" rows={2} className="field-input" />
-          </div>
-          <SubmitButton className="btn btn-primary" toastMessage="Project created">Create project</SubmitButton>
-        </form>
+        <AddProjectForm />
       </details>
 
       <GroupLegend />
