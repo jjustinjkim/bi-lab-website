@@ -17,7 +17,19 @@ export async function generateMetadata({
   const { slug } = await params;
   const pub = FEATURED_PUBLICATIONS.find((p) => p.slug === slug);
   if (!pub) return {};
-  return { title: pub.title, description: pub.excerpt };
+  const { title, excerpt: description } = pub;
+  return {
+    title,
+    description,
+    alternates: { canonical: `/publications/${slug}` },
+    // Falls back to the root layout's generic Bi Lab card without this --
+    // the journal page image is a far more useful preview for a shared
+    // publication link.
+    ...(pub.image && {
+      openGraph: { title, description, type: "article", publishedTime: pub.date, images: [pub.image] },
+      twitter: { card: "summary_large_image", title, description, images: [pub.image] },
+    }),
+  };
 }
 
 export default async function FeaturedPublicationPage({

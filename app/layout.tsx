@@ -4,7 +4,7 @@ import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { organizationJsonLd, jsonLdScriptProps } from "@/lib/jsonld";
+import { organizationJsonLd, websiteJsonLd, jsonLdScriptProps } from "@/lib/jsonld";
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
@@ -51,6 +51,7 @@ export default function RootLayout({
           }}
         />
         <script type="application/ld+json" {...jsonLdScriptProps(organizationJsonLd())} />
+        <script type="application/ld+json" {...jsonLdScriptProps(websiteJsonLd())} />
       </head>
       <body>
         <a href="#main-content" className="skip-link">

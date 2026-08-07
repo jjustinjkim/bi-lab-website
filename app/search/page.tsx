@@ -22,8 +22,10 @@ export async function generateMetadata({ searchParams }: { searchParams: SearchP
     title: q ? `Search: ${q}` : "Search",
     // Query-dependent results pages are thin/duplicate content from a
     // search engine's perspective -- keep them out of the index, same as
-    // the real site's own search results.
+    // the real site's own search results. The canonical points every
+    // ?q= variant back at the bare page for the same reason.
     robots: { index: false, follow: true },
+    alternates: { canonical: "/search" },
   };
 }
 

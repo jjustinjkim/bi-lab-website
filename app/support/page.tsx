@@ -5,6 +5,7 @@ import { CONTACT } from "@/lib/content";
 export const metadata: Metadata = {
   title: "Support",
   description: "Support the Bi Lab's research into the translational biology of skull base and brain tumors.",
+  alternates: { canonical: "/support" },
 };
 
 export default function SupportPage() {

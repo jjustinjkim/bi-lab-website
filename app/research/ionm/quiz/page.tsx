@@ -13,6 +13,7 @@ export const dynamic = "force-static";
 export const metadata: Metadata = {
   title: "Quiz",
   description: "Self-check quiz for the Bi Lab's intraoperative neuromonitoring (IONM) training module.",
+  alternates: { canonical: "/research/ionm/quiz" },
 };
 
 export default async function IonmQuizPage() {

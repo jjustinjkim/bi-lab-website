@@ -1,5 +1,13 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import { RESEARCH_AREAS } from "@/lib/content";
+
+// Title/description are inherited from the root layout's defaults (they
+// already describe the home page); this only adds the canonical, which
+// Next.js merges in rather than overriding the rest.
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
 
 const textShadow = "0 1px 3px rgba(0,0,0,0.95), 0 2px 18px rgba(0,0,0,0.85), 0 0 3px rgba(0,0,0,0.9)";
 

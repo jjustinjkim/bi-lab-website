@@ -4,6 +4,7 @@ import { CONTACT } from "@/lib/content";
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description: "How wlbilab.org handles data: what's collected, what third-party embeds are used, and how to get in touch about it.",
+  alternates: { canonical: "/privacy" },
 };
 
 export default function PrivacyPolicyPage() {

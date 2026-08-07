@@ -23,7 +23,20 @@ export async function generateMetadata({
   const { slug } = await params;
   const member = findMember(slug);
   if (!member) return {};
-  return { title: member.name, description: member.bio?.[0] ?? member.role };
+  const title = member.name;
+  const description = member.bio?.[0] ?? member.role;
+  return {
+    title,
+    description,
+    alternates: { canonical: `/team/${slug}` },
+    // Falls back to the root layout's site-wide OG image (a generic Bi Lab
+    // card) without this -- a member's own headshot is a much more useful
+    // preview when their profile link gets shared.
+    ...(member.image && {
+      openGraph: { title, description, type: "profile", images: [member.image] },
+      twitter: { card: "summary", title, description, images: [member.image] },
+    }),
+  };
 }
 
 export default async function TeamMemberPage({

@@ -6,6 +6,7 @@ import { PRINCIPAL_INVESTIGATOR, CURRENT_MEMBERS, ALUMNI, type TeamMember } from
 export const metadata: Metadata = {
   title: "Team",
   description: "Meet the Bi Lab: principal investigator Wenya Linda Bi, current personnel, and lab alumni.",
+  alternates: { canonical: "/team" },
 };
 
 function initials(name: string): string {

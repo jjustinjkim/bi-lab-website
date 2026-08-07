@@ -21,14 +21,33 @@ export function organizationJsonLd() {
     telephone: CONTACT.phone,
     email: `mailto:${CONTACT.email}`,
     parentOrganization: {
-      "@type": "Hospital",
-      name: "Brigham and Women's Hospital",
+      "@type": "MedicalOrganization",
+      name: "Mass General Brigham",
     },
     founder: {
       "@type": "Person",
       name: PRINCIPAL_INVESTIGATOR.name,
       jobTitle: PRINCIPAL_INVESTIGATOR.titles[0],
       url: `${BASE_URL}/team`,
+    },
+  };
+}
+
+// Enables Google's "sitelinks search box" against this site's real /search
+// page (?q=... is the exact param it already reads -- see app/search/page.tsx).
+export function websiteJsonLd() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "Bi Lab",
+    url: BASE_URL,
+    potentialAction: {
+      "@type": "SearchAction",
+      target: {
+        "@type": "EntryPoint",
+        urlTemplate: `${BASE_URL}/search?q={search_term_string}`,
+      },
+      "query-input": "required name=search_term_string",
     },
   };
 }

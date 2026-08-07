@@ -7,6 +7,7 @@ import AuthorList from "@/components/AuthorList";
 export const metadata: Metadata = {
   title: "Publications",
   description: "Featured studies and the full publication archive from the Bi Lab, 2014 to present.",
+  alternates: { canonical: "/publications" },
 };
 
 export default function PublicationsPage() {

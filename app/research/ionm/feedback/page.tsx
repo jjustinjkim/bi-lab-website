@@ -13,6 +13,7 @@ export const dynamic = "force-static";
 export const metadata: Metadata = {
   title: "Feedback",
   description: "Share feedback on the Bi Lab's intraoperative neuromonitoring (IONM) training module.",
+  alternates: { canonical: "/research/ionm/feedback" },
 };
 
 export default async function IonmFeedbackPage() {

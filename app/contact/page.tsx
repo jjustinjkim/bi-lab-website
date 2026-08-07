@@ -7,6 +7,7 @@ import EmbedFrame from "@/components/EmbedFrame";
 export const metadata: Metadata = {
   title: "Contact",
   description: "Contact the Bi Lab: address, phone, fax, email, and how to support our research.",
+  alternates: { canonical: "/contact" },
 };
 
 function HomeIcon() {

@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "Research",
   description:
     "The Bi Lab's research spans immunogenomics, imaging, intraoperative neuromonitoring, and outcomes across meningiomas, pituitary tumors, schwannomas, and brain metastases.",
+  alternates: { canonical: "/research" },
 };
 
 export default function ResearchPage() {

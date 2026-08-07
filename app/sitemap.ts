@@ -8,6 +8,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     .filter((m) => m.slug)
     .map((m) => `/team/${m.slug}`);
 
+  // Real per-publication dates where there's an actual one (its published
+  // date is a genuine last-modified signal) -- everything else falls back
+  // to build time, same as before.
+  const pubLastModified = new Map(FEATURED_PUBLICATIONS.map((pub) => [`/publications/${pub.slug}`, pub.date]));
+
   // /inventory is behind the portal login now -- excluded here to match
   // robots.ts's disallow, since a public sitemap advertising gated content
   // for crawling would defeat the point of gating it.
@@ -26,7 +31,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
   return routes.map((route) => ({
     url: `${BASE_URL}${route}`,
-    lastModified: new Date(),
+    lastModified: pubLastModified.has(route) ? new Date(pubLastModified.get(route)!) : new Date(),
     changeFrequency: route === "" ? "weekly" : "monthly",
     priority: route === "" ? 1 : 0.7,
   }));

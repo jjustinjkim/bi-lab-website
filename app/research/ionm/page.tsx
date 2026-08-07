@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "Intraoperative Neuromonitoring Training Module",
   description:
     "An interactive training module on intraoperative neuromonitoring (IONM): modalities, electrode types, safety precautions, and cranial nerve monitoring, from the Bi Lab.",
+  alternates: { canonical: "/research/ionm" },
 };
 
 const TOC = [

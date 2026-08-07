@@ -5,6 +5,7 @@ import EmbedFrame from "@/components/EmbedFrame";
 export const metadata: Metadata = {
   title: "Glioma Outcome Risk Calculators",
   description: "Survival risk calculators for glioblastoma and IDH1/2-mutant astrocytoma, based on the Bi Lab's nomogram research.",
+  alternates: { canonical: "/research/glioma-outcomes" },
 };
 
 export default function GliomaOutcomesPage() {
