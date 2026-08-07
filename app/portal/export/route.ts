@@ -10,7 +10,18 @@ import { createAdminClient } from '@/lib/supabase'
 // real names/emails that shouldn't end up in git history without a
 // deliberate decision about repo visibility first.
 export async function GET() {
-  await requireAdmin()
+  try {
+    await requireAdmin()
+  } catch {
+    // requireAdmin() throws a plain Error -- fine in a page/Server Component,
+    // where the pattern (see app/portal/members/page.tsx) is to catch it and
+    // redirect() within the render tree. A route handler isn't part of that
+    // tree, so the same throw would otherwise surface as a raw, unhandled
+    // 500 instead of a clean 403 (only reachable via direct URL -- the
+    // Download backup link itself only renders on the already admin-gated
+    // Members page).
+    return NextResponse.json({ error: 'Forbidden' }, { status: 403 })
+  }
   const db = createAdminClient()
 
   const [members, projects, grants, projectMembers] = await Promise.all([

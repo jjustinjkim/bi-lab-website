@@ -160,6 +160,12 @@ textarea:focus-visible,
   font-weight: 600;
   letter-spacing: -0.015em;
   text-wrap: balance;
+  /* A long single word (e.g. "Neuromonitoring") at this size doesn't fit
+     a narrow phone's content width and text-wrap:balance can't help --
+     it only chooses where to break BETWEEN words. Without this, the word
+     overflows past the viewport edge instead of breaking, found on
+     /research/ionm at 320px width. */
+  overflow-wrap: break-word;
 }
 .text-title {
   font-family: var(--font-sans);
@@ -168,6 +174,7 @@ textarea:focus-visible,
   line-height: 1.25;
   letter-spacing: -0.008em;
   text-wrap: balance;
+  overflow-wrap: break-word;
 }
 .text-subtitle {
   font-size: 1.0625rem;
