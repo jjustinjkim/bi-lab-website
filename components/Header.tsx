@@ -44,6 +44,7 @@ function MenuIcon({ open, color }: { open: boolean; color: string }) {
 
 export default function Header() {
   const pathname = usePathname();
+  const isPortalActive = pathname.startsWith("/portal");
   const [researchOpen, setResearchOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [isDark, setIsDark] = useState(false);
@@ -150,7 +151,12 @@ export default function Header() {
                 </Link>
               );
             })}
-            <Link href="/portal" className="site-nav-link" style={{ color: "var(--accent)", fontSize: "0.875rem" }}>
+            <Link
+              href="/portal"
+              className="site-nav-link"
+              data-active={isPortalActive || undefined}
+              style={{ fontSize: "0.875rem", color: isPortalActive ? "var(--accent)" : navTextColor }}
+            >
               Lab Portal
             </Link>
             <Link href="/search" aria-label="Search" className="flex items-center">
@@ -200,7 +206,12 @@ export default function Header() {
                   </div>
                 );
               })}
-              <Link href="/portal" className="site-nav-link py-2.5" style={{ color: "var(--accent)", fontSize: "0.875rem" }}>
+              <Link
+                href="/portal"
+                className="site-nav-link py-2.5"
+                data-active={isPortalActive || undefined}
+                style={{ fontSize: "0.875rem", color: isPortalActive ? "var(--accent)" : navTextColor }}
+              >
                 Lab Portal
               </Link>
               <Link href="/search" className="site-nav-link py-2.5" style={{ fontSize: "0.875rem" }}>
