@@ -14,10 +14,20 @@ export const metadata: Metadata = { title: 'Grants', robots: { index: false, fol
 const ACTIVE_STATUSES = new Set(['researching', 'applying', 'submitted'])
 const CLOSED_STATUSES = new Set(['awarded', 'declined'])
 const URGENT_WINDOW_DAYS = 60
+const SOON_WINDOW_DAYS = 14
 
 function daysUntil(dateStr: string): number {
   const target = new Date(`${dateStr}T00:00:00`).getTime()
   return Math.ceil((target - Date.now()) / 86_400_000)
+}
+
+// Nearest deadline first; grants with no deadline sort to the end and keep
+// their relative order.
+function byDeadline(a: Grant, b: Grant): number {
+  if (a.deadline_date && b.deadline_date) return a.deadline_date.localeCompare(b.deadline_date)
+  if (a.deadline_date) return -1
+  if (b.deadline_date) return 1
+  return 0
 }
 
 export default async function GrantsPage() {
@@ -25,9 +35,13 @@ export default async function GrantsPage() {
   const projectById = new Map(projects.map((p) => [p.id, p.name]))
   const isAdmin = member?.is_admin ?? false
 
-  const active = grants.filter((g) => ACTIVE_STATUSES.has(g.status))
-  const identified = grants.filter((g) => g.status === 'identified')
-  const closed = grants.filter((g) => CLOSED_STATUSES.has(g.status))
+  const active = grants.filter((g) => ACTIVE_STATUSES.has(g.status)).sort(byDeadline)
+  const identified = grants.filter((g) => g.status === 'identified').sort(byDeadline)
+  const closed = grants.filter((g) => CLOSED_STATUSES.has(g.status)).sort(byDeadline)
+
+  const upcoming = grants
+    .filter((g) => !CLOSED_STATUSES.has(g.status) && g.deadline_date != null && daysUntil(g.deadline_date) >= 0 && daysUntil(g.deadline_date) <= URGENT_WINDOW_DAYS)
+    .sort(byDeadline)
 
   async function removeGrant(formData: FormData) {
     'use server'
@@ -40,10 +54,11 @@ export default async function GrantsPage() {
   }
 
   function GrantItem(g: Grant) {
-    const urgent = g.status === 'identified' && g.deadline_date != null && (() => {
-      const d = daysUntil(g.deadline_date as string)
-      return d >= 0 && d <= URGENT_WINDOW_DAYS
-    })()
+    const closed = CLOSED_STATUSES.has(g.status)
+    const daysLeft = !closed && g.deadline_date != null ? daysUntil(g.deadline_date) : null
+    const dueSoon = daysLeft != null && daysLeft >= 0 && daysLeft <= URGENT_WINDOW_DAYS
+    const dueVerySoon = daysLeft != null && daysLeft >= 0 && daysLeft <= SOON_WINDOW_DAYS
+    const overdue = daysLeft != null && daysLeft < 0
 
     return (
       <li key={g.id} className="panel p-4 flex flex-wrap items-center gap-3 justify-between">
@@ -54,9 +69,10 @@ export default async function GrantsPage() {
             ) : (
               g.name
             )}
-            {urgent && (
-              <span className="badge badge-flag">
-                Deadline in {daysUntil(g.deadline_date as string)}d, not started
+            {overdue && <span className="badge badge-flag">Deadline passed</span>}
+            {dueSoon && (
+              <span className={`badge ${dueVerySoon ? 'badge-flag' : 'badge-accent'}`}>
+                Deadline in {daysLeft}d
               </span>
             )}
           </div>
@@ -112,6 +128,20 @@ export default async function GrantsPage() {
         </summary>
         <AddGrantForm projects={projects} />
       </details>
+
+      <div className="space-y-3">
+        <h2 className="text-subtitle" style={{ fontSize: '0.9375rem' }}>
+          Upcoming deadlines, within {URGENT_WINDOW_DAYS} days ({upcoming.length})
+        </h2>
+        <ul className="space-y-2">
+          {upcoming.map(GrantItem)}
+          {upcoming.length === 0 && (
+            <p className="text-sm" style={{ color: 'var(--ink-faint)' }}>
+              None. Deadlines show here once added to a grant, closest first.
+            </p>
+          )}
+        </ul>
+      </div>
 
       <div className="space-y-3">
         <h2 className="text-subtitle" style={{ fontSize: '0.9375rem' }}>Active pipeline ({active.length})</h2>
