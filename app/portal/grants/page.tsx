@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import type { ReactNode } from 'react'
 import { getSessionMember } from '@/lib/auth'
 import { getGrants, getProjects } from '@/lib/queries'
 import { deleteGrant, updateGrantStatus } from '@/lib/actions'
@@ -19,21 +18,6 @@ const URGENT_WINDOW_DAYS = 60
 function daysUntil(dateStr: string): number {
   const target = new Date(`${dateStr}T00:00:00`).getTime()
   return Math.ceil((target - Date.now()) / 86_400_000)
-}
-
-// Notes mix a few different kinds of information (eligibility caveats,
-// research status, strategic fit). A light `[Tag]` prefix convention keeps
-// that scannable without a schema change -- this just renders any bracketed
-// tag in bold so the convention actually pays off once people use it.
-function renderNotes(notes: string): ReactNode {
-  const parts = notes.split(/(\[[^\]]+\])/g)
-  return parts.map((part, i) =>
-    /^\[[^\]]+\]$/.test(part) ? (
-      <span key={i} className="font-semibold" style={{ color: 'var(--ink-muted)' }}>{part}</span>
-    ) : (
-      <span key={i}>{part}</span>
-    )
-  )
 }
 
 export default async function GrantsPage() {
@@ -83,7 +67,7 @@ export default async function GrantsPage() {
             {g.project_id ? ` · ${projectById.get(g.project_id) ?? 'Unknown project'}` : ''}
           </div>
           {g.notes && (
-            <div className="text-xs mt-1" style={{ color: 'var(--ink-faint)' }}>{renderNotes(g.notes)}</div>
+            <div className="text-xs mt-1" style={{ color: 'var(--ink-faint)' }}>{g.notes}</div>
           )}
         </div>
         <div className="flex items-center gap-3 shrink-0">

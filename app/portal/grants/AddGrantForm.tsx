@@ -76,7 +76,7 @@ export default function AddGrantForm({ projects }: { projects: Project[] }) {
           name="notes"
           rows={2}
           className="field-input"
-          placeholder="[Fit] Why it's on the list... [Eligibility] Caveats on who can apply... [Action] Next step..."
+          placeholder="Why it's on the list, eligibility caveats, next steps..."
         />
       </div>
       {error && (
