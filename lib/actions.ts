@@ -321,13 +321,14 @@ export async function createGrant(formData: FormData): Promise<{ error?: string 
 }
 
 // Admin-only: unlike createGrant (any member can add an opportunity to the
-// tracker), changing status or removing an entry is restricted so the
-// tracker's state doesn't drift from casual updates by whoever's looking at
-// it.
-export async function updateGrantStatus(id: string, status: string): Promise<{ error?: string }> {
+// tracker), changing status/deadline or removing an entry is restricted so
+// the tracker's state doesn't drift from casual updates by whoever's
+// looking at it. Status and deadline are updated together since they share
+// one row of the per-grant form; deadlineDate of '' clears the field.
+export async function updateGrantTracking(id: string, status: string, deadlineDate: string): Promise<{ error?: string }> {
   await requireAdmin()
   const db = createAdminClient()
-  const { error } = await db.from('grants').update({ status }).eq('id', id)
+  const { error } = await db.from('grants').update({ status, deadline_date: deadlineDate || null }).eq('id', id)
   if (error) return { error: error.message }
   revalidatePath('/portal/grants')
   return {}

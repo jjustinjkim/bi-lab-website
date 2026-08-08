@@ -1,19 +1,19 @@
 import type { Metadata } from 'next'
 import { getSessionMember } from '@/lib/auth'
 import { getGrants, getProjects } from '@/lib/queries'
-import { deleteGrant, updateGrantStatus } from '@/lib/actions'
+import { deleteGrant } from '@/lib/actions'
 import { GRANT_STATUS_LABELS } from '@/lib/types'
 import type { Grant } from '@/lib/types'
 import ConfirmSubmitButton from '@/components/ConfirmSubmitButton'
-import SubmitButton from '@/components/portal/SubmitButton'
 import AddGrantForm from './AddGrantForm'
+import GrantTrackingForm from './GrantTrackingForm'
 
 export const dynamic = 'force-dynamic'
 export const metadata: Metadata = { title: 'Grants', robots: { index: false, follow: false } }
 
 const ACTIVE_STATUSES = new Set(['researching', 'applying', 'submitted'])
 const CLOSED_STATUSES = new Set(['awarded', 'declined'])
-const URGENT_WINDOW_DAYS = 60
+const URGENT_WINDOW_DAYS = 90
 const SOON_WINDOW_DAYS = 14
 
 function daysUntil(dateStr: string): number {
@@ -46,11 +46,6 @@ export default async function GrantsPage() {
   async function removeGrant(formData: FormData) {
     'use server'
     await deleteGrant(formData.get('id') as string)
-  }
-
-  async function setStatus(formData: FormData) {
-    'use server'
-    await updateGrantStatus(formData.get('id') as string, formData.get('status') as string)
   }
 
   function GrantItem(g: Grant) {
@@ -88,28 +83,15 @@ export default async function GrantsPage() {
         </div>
         <div className="flex items-center gap-3 shrink-0">
           {isAdmin ? (
-            <>
-              <form action={setStatus} className="flex items-center gap-1.5">
-                <input type="hidden" name="id" value={g.id} />
-                <select
-                  name="status"
-                  defaultValue={g.status}
-                  className="field-input"
-                  style={{ padding: '0.35rem 0.5rem', fontSize: '0.8125rem' }}
-                >
-                  {Object.entries(GRANT_STATUS_LABELS).map(([v, l]) => (
-                    <option key={v} value={v}>{l}</option>
-                  ))}
-                </select>
-                <SubmitButton className="text-xs link-accent" toastMessage="Status updated">Update</SubmitButton>
-              </form>
+            <div className="flex items-start gap-3">
+              <GrantTrackingForm grant={g} />
               <form action={removeGrant}>
                 <input type="hidden" name="id" value={g.id} />
                 <ConfirmSubmitButton className="text-xs link-danger" confirmMessage={`Delete "${g.name}" from the grants tracker? This cannot be undone.`} toastMessage="Grant deleted">
                   Delete
                 </ConfirmSubmitButton>
               </form>
-            </>
+            </div>
           ) : (
             <span className="badge">{GRANT_STATUS_LABELS[g.status]}</span>
           )}

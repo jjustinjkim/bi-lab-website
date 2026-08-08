@@ -54,7 +54,7 @@ const {
   loginMember, logout, createLabMember, deleteLabMember, setCanViewAllProjects,
   adminResetMemberPassword, changeOwnPassword,
   createProject, updateProject, updateProjectStatus, deleteProject, setProjectMembers,
-  createGrant, updateGrantStatus, deleteGrant,
+  createGrant, updateGrantTracking, deleteGrant,
 } = await import('./actions')
 
 function form(fields: Record<string, string>): FormData {
@@ -428,17 +428,24 @@ describe('grants', () => {
     })
   })
 
-  it('updateGrantStatus changes only the status field', async () => {
-    fakeDb.seed('grants', [{ id: 'g1', name: 'X', status: 'identified' }])
-    await updateGrantStatus('g1', 'submitted')
+  it('updateGrantTracking changes status and deadline, leaves other fields alone', async () => {
+    fakeDb.seed('grants', [{ id: 'g1', name: 'X', status: 'identified', deadline_date: null }])
+    await updateGrantTracking('g1', 'submitted', '2026-12-01')
     expect(fakeDb.table('grants')[0].status).toBe('submitted')
+    expect(fakeDb.table('grants')[0].deadline_date).toBe('2026-12-01')
     expect(fakeDb.table('grants')[0].name).toBe('X')
   })
 
-  it('updateGrantStatus requires requireAdmin (rejects when the caller is not an admin)', async () => {
+  it('updateGrantTracking clears the deadline when given an empty string', async () => {
+    fakeDb.seed('grants', [{ id: 'g1', name: 'X', status: 'identified', deadline_date: '2026-01-01' }])
+    await updateGrantTracking('g1', 'identified', '')
+    expect(fakeDb.table('grants')[0].deadline_date).toBeNull()
+  })
+
+  it('updateGrantTracking requires requireAdmin (rejects when the caller is not an admin)', async () => {
     requireAdminImpl = async () => { throw new Error('Unauthorized') }
     fakeDb.seed('grants', [{ id: 'g1', name: 'X', status: 'identified' }])
-    await expect(updateGrantStatus('g1', 'submitted')).rejects.toThrow('Unauthorized')
+    await expect(updateGrantTracking('g1', 'submitted', '')).rejects.toThrow('Unauthorized')
     expect(fakeDb.table('grants')[0].status).toBe('identified')
   })
 
