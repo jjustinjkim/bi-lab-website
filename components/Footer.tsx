@@ -6,15 +6,13 @@ import { CONTACT, RESEARCH_AREAS } from "@/lib/content";
 const BROWSE = [
   { href: "/", label: "Home" },
   { href: "/team", label: "Team" },
-  { href: "/publications", label: "Publications" },
+  { href: "/publications", label: "Select publications" },
   { href: "/support", label: "Support" },
   { href: "/contact", label: "Contact" },
 ];
 
 const PARTNERS = [
   { href: "https://www.massgeneralbrigham.org", src: "/brand/mgb-logo.png", alt: "Mass General Brigham", w: 200, h: 34 },
-  { href: "https://www.dana-farber.org/center-for-neuro-oncology/", src: "/brand/dfci-logo.png", alt: "Dana-Farber Cancer Institute", w: 130, h: 33 },
-  { href: "http://www.childrenshospital.org/centers-and-services/departments/neurosurgery", src: "/brand/bch-logo.png", alt: "Boston Children's Hospital", w: 150, h: 30 },
   { href: "https://hms.harvard.edu/research", src: "/brand/hms-logo.png", alt: "Harvard Medical School", w: 180, h: 47 },
 ];
 

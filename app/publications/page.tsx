@@ -5,7 +5,7 @@ import { FEATURED_PUBLICATIONS, PUBLICATIONS_BY_YEAR, PUBMED_URL } from "@/lib/c
 import AuthorList from "@/components/AuthorList";
 
 export const metadata: Metadata = {
-  title: "Publications",
+  title: "Select publications",
   description: "Featured studies and the full publication archive from the Bi Lab, 2014 to present.",
   alternates: { canonical: "/publications" },
 };
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 export default function PublicationsPage() {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 py-14 space-y-14">
-      <h1 className="text-display">Publications</h1>
+      <h1 className="text-display">Select publications</h1>
 
       <section>
         <div className="grid sm:grid-cols-3 gap-5">
