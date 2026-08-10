@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import EmbedFrame from "@/components/EmbedFrame";
 
 export const metadata: Metadata = {
   title: "Glioma Outcome Risk Calculators",
@@ -41,53 +40,23 @@ export default function GliomaOutcomesPage() {
 
       <section>
         <h2 className="section-heading mb-6">Glioblastoma Survival Risk Calculator</h2>
-        {/* The calculator widget itself checks the embedding domain against
-            an allowlist controlled by the lab's Calconic account, which only
-            authorizes skullbase.bwh.harvard.edu -- embedding the widget
-            snippet directly here gets silently rejected. Framing their real
-            page sidesteps that: the request originates from their own
-            domain inside the frame, and the visitor's address bar never
-            leaves this site. */}
-        <EmbedFrame
-          src="https://skullbase.bwh.harvard.edu/glioblastoma-survival-risk-calculator/"
-          title="Glioblastoma Survival Risk Calculator"
-          className="w-full rounded"
-          style={{ height: "1400px" }}
-        />
-        <p className="text-xs mt-2" style={{ color: "var(--ink-muted)" }}>
-          Having trouble viewing this?{" "}
-          <a
-            href="https://skullbase.bwh.harvard.edu/glioblastoma-survival-risk-calculator/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="link-accent"
-          >
-            Open it directly
-          </a>
-          .
-        </p>
+        {/* The calculator itself (a hosted Calconic widget, not part of
+            this site) is temporarily down: its backend is failing to
+            return the calculator's configuration, so the widget renders
+            blank on its own page too. Not a domain or embedding issue.
+            Swap this back for the widget once that's resolved. */}
+        <div className="panel p-6 text-sm" style={{ color: "var(--ink-muted)" }}>
+          This calculator is temporarily unavailable while we resolve an issue with the underlying
+          service. See the supporting publication below for the study methodology in the meantime.
+        </div>
       </section>
 
       <section>
         <h2 className="section-heading mb-6">IDH1/2-Mutant Astrocytoma Survival Risk Calculator</h2>
-        <EmbedFrame
-          src="https://skullbase.bwh.harvard.edu/astrocytoma-survival-risk-calculator/"
-          title="IDH1/2-Mutant Astrocytoma Survival Risk Calculator"
-          className="w-full rounded"
-          style={{ height: "1400px" }}
-        />
-        <p className="text-xs mt-2" style={{ color: "var(--ink-muted)" }}>
-          Having trouble viewing this?{" "}
-          <a
-            href="https://skullbase.bwh.harvard.edu/astrocytoma-survival-risk-calculator/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="link-accent"
-          >
-            Open it directly
-          </a>
-          .
-        </p>
+        <div className="panel p-6 text-sm" style={{ color: "var(--ink-muted)" }}>
+          This calculator is temporarily unavailable while we resolve an issue with the underlying
+          service. See the supporting publication below for the study methodology in the meantime.
+        </div>
       </section>
 
       <div>
