@@ -26,8 +26,8 @@ export default function SupportPage() {
         <p className="text-lg" style={{ color: "var(--ink-muted)" }}>
           The Bi Lab studies the translational biology of skull base and brain tumors, with the aim of
           improving clinical management and patient outcomes. Philanthropic support helps fund the lab&rsquo;s
-          research into meningiomas, pituitary tumors, schwannomas, and brain metastases, including work in
-          immunogenomics, imaging, intraoperative neuromonitoring, and outcomes.
+          research into skull base and brain tumors, including meningiomas, pituitary tumors, gliomas, brain
+          mets, and epidermoid cysts.
         </p>
         <p style={{ color: "var(--ink-muted)" }}>
           Gifts to the lab are made through Mass General Brigham&rsquo;s giving program. Use the link above, or
