@@ -26,7 +26,7 @@ export default function AddBigIdeaForm() {
       setError(result.error)
     } else {
       formRef.current?.reset()
-      dispatchToast('Big idea added')
+      dispatchToast('Idea added')
       if (result.id) {
         router.push(`/portal/jjk/ideas/${result.id}`)
       } else {
@@ -58,7 +58,7 @@ export default function AddBigIdeaForm() {
           </div>
         )}
         <button type="submit" disabled={loading} className="btn btn-primary">
-          {loading ? 'Adding…' : 'Add big idea'}
+          {loading ? 'Adding…' : 'Add idea'}
         </button>
       </div>
     </form>

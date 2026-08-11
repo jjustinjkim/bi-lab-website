@@ -30,14 +30,14 @@ export default async function JjkHomePage() {
       <div>
         <h1 className="text-title">JJK</h1>
         <p className="text-sm mt-1" style={{ color: 'var(--ink-muted)' }}>
-          Big ideas, execution, and expansion for your own research pipeline.
+          Ideas, execution, and expansion for your own research pipeline.
         </p>
       </div>
 
       <div className="grid sm:grid-cols-4 gap-4">
         <div className="panel p-4">
           <div className="text-2xl font-semibold">{activeIdeas.length}</div>
-          <div className="text-xs mt-1" style={{ color: 'var(--ink-muted)' }}>Active big ideas</div>
+          <div className="text-xs mt-1" style={{ color: 'var(--ink-muted)' }}>Active ideas</div>
         </div>
         <div className="panel p-4">
           <div className="text-2xl font-semibold">{readyIdeas.length}</div>

@@ -42,7 +42,7 @@ export default async function BigIdeaDetailPage({ params }: { params: Promise<{ 
 
   return (
     <div className="space-y-8 max-w-2xl">
-      <Link href="/portal/jjk/ideas" className="link-accent text-sm">&larr; All big ideas</Link>
+      <Link href="/portal/jjk/ideas" className="link-accent text-sm">&larr; All ideas</Link>
 
       <div className="flex items-start justify-between gap-4 flex-wrap">
         <div>

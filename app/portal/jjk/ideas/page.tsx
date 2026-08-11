@@ -26,7 +26,7 @@ export default async function IdeasPage() {
 
       <details className="panel p-5" open={active.length === 0}>
         <summary className="text-subtitle cursor-pointer" style={{ fontSize: '0.9375rem' }}>
-          Add a big idea
+          Add an idea
         </summary>
         <AddBigIdeaForm />
       </details>
