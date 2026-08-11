@@ -30,7 +30,7 @@ export default function HomePage() {
         className="relative text-white font-bold text-center px-4 w-full max-w-full"
         style={{ fontSize: "clamp(2.25rem, 7vw, 5.5rem)", letterSpacing: "-0.01em", textShadow, overflowWrap: "break-word" }}
       >
-        Mass General Brigham
+        Bi Lab
       </h1>
 
       <div

@@ -40,7 +40,7 @@ export default function OpengraphImage() {
           </div>
         </div>
         <div style={{ fontSize: 64, fontWeight: 700, lineHeight: 1.1, maxWidth: 980 }}>
-          Mass General Brigham
+          Bi Lab
         </div>
         <div style={{ fontSize: 28, marginTop: 28, color: "#c7d6e8", maxWidth: 900 }}>
           Translational biology of skull base and brain tumors, aimed at improving clinical outcomes.
