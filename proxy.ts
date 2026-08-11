@@ -7,11 +7,13 @@ export function proxy(request: NextRequest) {
 
   // The JJK research progress portal is a separate, Justin-only section
   // with its own password/session (bilab_jjk_session, see lib/jjkAuth.ts) --
-  // independent of the lab-member login below. Must be checked first: it's
-  // a sub-path of /portal, so without this branch the generic /portal check
-  // right after would redirect to /portal/login and force the lab-member
-  // cookie instead.
-  if (pathname.startsWith('/portal/jjk') && pathname !== '/portal/jjk/login') {
+  // independent of the lab-member login below. Must be checked (and return)
+  // before the generic /portal check right after: without an unconditional
+  // return here, /portal/jjk/login itself would fall through into that
+  // branch, which only exempts the literal '/portal/login' path, and get
+  // redirected there instead of being allowed to render.
+  if (pathname.startsWith('/portal/jjk')) {
+    if (pathname === '/portal/jjk/login') return NextResponse.next()
     const jjkToken = request.cookies.get('bilab_jjk_session')?.value
     if (!jjkToken) {
       return NextResponse.redirect(new URL('/portal/jjk/login', request.url))
