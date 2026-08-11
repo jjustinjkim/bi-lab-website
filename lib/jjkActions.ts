@@ -9,7 +9,7 @@ import type { JjkPillar, JjkProjectStage, JjkPresentationStatus } from './jjkTyp
 const BIG_IDEA_STEP_FIELDS = ['spark', 'why_it_matters', 'feasibility_notes', 'specific_aim', 'next_step', 'next_step_target_date'] as const
 export type BigIdeaStepField = (typeof BIG_IDEA_STEP_FIELDS)[number]
 
-// ── Big Ideas ────────────────────────────────────────────────────────────
+// ── Ideas ─────────────────────────────────────────────────────────────────
 
 export async function createBigIdea(pillar: JjkPillar, title: string): Promise<{ error?: string; id?: string }> {
   await requireJjkAccess()

@@ -8,7 +8,7 @@ import { dispatchToast } from '@/components/portal/Toaster'
 import { JJK_PILLAR_LABELS, JJK_PROJECT_STAGE_LABELS } from '@/lib/jjkTypes'
 
 // For logging an existing manuscript/project directly -- not everything
-// starts life as a Big Idea worked through the wizard.
+// starts life as an Idea worked through the wizard.
 export default function AddJjkProjectForm() {
   const router = useRouter()
   const formRef = useRef<HTMLFormElement>(null)

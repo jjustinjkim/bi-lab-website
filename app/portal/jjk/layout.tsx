@@ -4,7 +4,7 @@ import JjkNav from './JjkNav'
 
 // No separate Toaster here -- this section rides on the same lab-member
 // login as the rest of /portal, so app/portal/layout.tsx's Toaster already
-// wraps this. JjkNav is this section's own sub-nav (Home/Big Ideas/
+// wraps this. JjkNav is this section's own sub-nav (Home/Ideas/
 // Projects/Presentations), separate from the shared PortalNav one level up,
 // which only carries a single link into here. Access check: bounce anyone
 // who isn't Justin or Dr. Bi back to the main portal.
