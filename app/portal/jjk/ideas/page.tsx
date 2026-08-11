@@ -5,7 +5,7 @@ import { JJK_PILLAR_LABELS, ideaClarityCount, type JjkBigIdea } from '@/lib/jjkT
 import AddBigIdeaForm from './AddBigIdeaForm'
 
 export const dynamic = 'force-dynamic'
-export const metadata: Metadata = { title: 'Big Ideas', robots: { index: false, follow: false } }
+export const metadata: Metadata = { title: 'Ideas', robots: { index: false, follow: false } }
 
 function ClarityBadge({ idea }: { idea: JjkBigIdea }) {
   const n = ideaClarityCount(idea)
@@ -22,7 +22,7 @@ export default async function IdeasPage() {
 
   return (
     <div className="space-y-8">
-      <h1 className="text-title">Big Ideas</h1>
+      <h1 className="text-title">Ideas</h1>
 
       <details className="panel p-5" open={active.length === 0}>
         <summary className="text-subtitle cursor-pointer" style={{ fontSize: '0.9375rem' }}>

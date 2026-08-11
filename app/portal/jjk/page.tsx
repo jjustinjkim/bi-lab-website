@@ -5,7 +5,7 @@ import { JJK_PROJECT_STAGE_LABELS, ideaClarityCount, type JjkProjectStage } from
 import { daysUntil, byDeadline, URGENT_WINDOW_DAYS } from '@/lib/jjkDates'
 
 export const dynamic = 'force-dynamic'
-export const metadata: Metadata = { title: 'JJK Research Progress', robots: { index: false, follow: false } }
+export const metadata: Metadata = { title: 'JJK', robots: { index: false, follow: false } }
 
 const STAGE_ORDER: JjkProjectStage[] = ['planning', 'drafting', 'under_review', 'revision', 'published']
 const CLOSED_PRESENTATION_STATUSES = new Set(['declined', 'presented'])
@@ -28,7 +28,7 @@ export default async function JjkHomePage() {
   return (
     <div className="space-y-10">
       <div>
-        <h1 className="text-title">JJK Research Progress</h1>
+        <h1 className="text-title">JJK</h1>
         <p className="text-sm mt-1" style={{ color: 'var(--ink-muted)' }}>
           Big ideas, execution, and expansion for your own research pipeline.
         </p>

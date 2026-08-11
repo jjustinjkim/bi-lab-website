@@ -19,7 +19,7 @@ const ADMIN_NAV_LINKS = [{ href: '/portal/members', label: 'Members', exact: tru
 // Not admin-gated -- there are admins (e.g. lab operations staff) who
 // shouldn't see this. Visibility is passed in directly (see showJjk below),
 // computed from lib/jjkAccess.ts's email allowlist in app/portal/layout.tsx.
-const JJK_NAV_LINKS = [{ href: '/portal/jjk', label: 'JJK Research Progress', exact: false }]
+const JJK_NAV_LINKS = [{ href: '/portal/jjk', label: 'JJK', exact: false }]
 
 function ChevronIcon() {
   return (

@@ -76,7 +76,7 @@ export async function promoteBigIdea(ideaId: string, projectName: string): Promi
       pillar: idea.pillar,
       name: projectName.trim() || idea.title,
       stage: 'planning',
-      notes: idea.next_step ? `Promoted from Big Ideas. Next step: ${idea.next_step}` : 'Promoted from Big Ideas.',
+      notes: idea.next_step ? `Promoted from Ideas. Next step: ${idea.next_step}` : 'Promoted from Ideas.',
     })
     .select('id')
     .single()
