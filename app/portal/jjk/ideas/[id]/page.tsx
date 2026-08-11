@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { notFound, redirect } from 'next/navigation'
 import Link from 'next/link'
-import { getBigIdea } from '@/lib/jjkQueries'
+import { getBigIdea, getJjkProject } from '@/lib/jjkQueries'
 import { setBigIdeaStatus, deleteBigIdea } from '@/lib/jjkActions'
 import { JJK_PILLAR_LABELS, ideaClarityCount } from '@/lib/jjkTypes'
 import ConfirmSubmitButton from '@/components/ConfirmSubmitButton'
@@ -16,6 +16,11 @@ export default async function BigIdeaDetailPage({ params }: { params: Promise<{ 
   const { id } = await params
   const idea = await getBigIdea(id)
   if (!idea) notFound()
+
+  // Deleting a promoted idea doesn't touch its project (jjk_projects.source_idea_id
+  // is ON DELETE SET NULL) -- only shown so the confirm dialog can name what
+  // it's detaching from, not because deletion is blocked by it.
+  const promotedProject = idea.promoted_project_id ? await getJjkProject(idea.promoted_project_id) : null
 
   async function archiveIdea() {
     'use server'
@@ -70,13 +75,18 @@ export default async function BigIdeaDetailPage({ params }: { params: Promise<{ 
         </div>
       )}
 
-      {idea.status !== 'promoted' && (
-        <form action={removeIdea} className="pt-4" style={{ borderTop: '1px solid var(--hairline)' }}>
-          <ConfirmSubmitButton className="text-sm link-danger" confirmMessage={`Delete "${idea.title}"? This cannot be undone.`}>
-            Delete idea
-          </ConfirmSubmitButton>
-        </form>
-      )}
+      <form action={removeIdea} className="pt-4" style={{ borderTop: '1px solid var(--hairline)' }}>
+        <ConfirmSubmitButton
+          className="text-sm link-danger"
+          confirmMessage={
+            promotedProject
+              ? `Delete "${idea.title}"? Its project "${promotedProject.name}" will NOT be deleted, just detached from this idea. This cannot be undone.`
+              : `Delete "${idea.title}"? This cannot be undone.`
+          }
+        >
+          Delete idea
+        </ConfirmSubmitButton>
+      </form>
     </div>
   )
 }
