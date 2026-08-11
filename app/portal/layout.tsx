@@ -1,4 +1,5 @@
 import { getSessionMember } from '@/lib/auth'
+import { isJjkAllowedEmail } from '@/lib/jjkAccess'
 import PortalNav from '@/components/portal/PortalNav'
 import Toaster from '@/components/portal/Toaster'
 
@@ -14,7 +15,7 @@ export default async function PortalLayout({ children }: { children: React.React
 
   return (
     <div className="min-h-screen">
-      <PortalNav isAdmin={member.is_admin} />
+      <PortalNav isAdmin={member.is_admin} showJjk={isJjkAllowedEmail(member.email)} />
       <main className="max-w-6xl mx-auto px-4 sm:px-6 py-8">{children}</main>
       <Toaster />
     </div>

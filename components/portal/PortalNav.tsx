@@ -16,6 +16,11 @@ const BASE_NAV_LINKS = [
 
 const ADMIN_NAV_LINKS = [{ href: '/portal/members', label: 'Members', exact: true }]
 
+// Not admin-gated -- there are admins (e.g. lab operations staff) who
+// shouldn't see this. Visibility is passed in directly (see showJjk below),
+// computed from lib/jjkAccess.ts's email allowlist in app/portal/layout.tsx.
+const JJK_NAV_LINKS = [{ href: '/portal/jjk', label: 'JJK Research Progress', exact: false }]
+
 function ChevronIcon() {
   return (
     <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden="true" className="inline-block ml-1">
@@ -32,9 +37,9 @@ function MenuIcon({ open }: { open: boolean }) {
   )
 }
 
-export default function PortalNav({ isAdmin }: { isAdmin: boolean }) {
+export default function PortalNav({ isAdmin, showJjk }: { isAdmin: boolean; showJjk: boolean }) {
   const pathname = usePathname()
-  const navLinks = isAdmin ? [...BASE_NAV_LINKS, ...ADMIN_NAV_LINKS] : BASE_NAV_LINKS
+  const navLinks = [...BASE_NAV_LINKS, ...(isAdmin ? ADMIN_NAV_LINKS : []), ...(showJjk ? JJK_NAV_LINKS : [])]
   const [toolsOpen, setToolsOpen] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
   const toolsRef = useRef<HTMLDivElement>(null)

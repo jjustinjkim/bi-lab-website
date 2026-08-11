@@ -5,25 +5,12 @@ export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl
   const memberToken = request.cookies.get('bilab_portal_session')?.value
 
-  // The JJK research progress portal is a separate, Justin-only section
-  // with its own password/session (bilab_jjk_session, see lib/jjkAuth.ts) --
-  // independent of the lab-member login below. Must be checked (and return)
-  // before the generic /portal check right after: without an unconditional
-  // return here, /portal/jjk/login itself would fall through into that
-  // branch, which only exempts the literal '/portal/login' path, and get
-  // redirected there instead of being allowed to render.
-  if (pathname.startsWith('/portal/jjk')) {
-    if (pathname === '/portal/jjk/login') return NextResponse.next()
-    const jjkToken = request.cookies.get('bilab_jjk_session')?.value
-    if (!jjkToken) {
-      return NextResponse.redirect(new URL('/portal/jjk/login', request.url))
-    }
-    return NextResponse.next()
-  }
-
   // Lightweight presence check only -- the actual token is validated against
   // member_sessions server-side by getSessionMember()/requireMember() on
-  // every page and server action that touches the database.
+  // every page and server action that touches the database. This also
+  // covers /portal/jjk/* -- that section rides on the same lab-member
+  // login now (see lib/jjkAccess.ts for the further email-allowlist check
+  // it layers on top, done at the page/layout level, not here).
   if (pathname.startsWith('/portal') && pathname !== '/portal/login') {
     if (!memberToken) {
       return NextResponse.redirect(new URL('/portal/login', request.url))

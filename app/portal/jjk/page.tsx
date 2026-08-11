@@ -1,7 +1,5 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { redirect } from 'next/navigation'
-import { getJjkSession } from '@/lib/jjkAuth'
 import { getBigIdeas, getJjkProjects, getPresentationOpportunities } from '@/lib/jjkQueries'
 import { JJK_PROJECT_STAGE_LABELS, ideaClarityCount, type JjkProjectStage } from '@/lib/jjkTypes'
 import { daysUntil, byDeadline, URGENT_WINDOW_DAYS } from '@/lib/jjkDates'
@@ -13,8 +11,6 @@ const STAGE_ORDER: JjkProjectStage[] = ['planning', 'drafting', 'under_review', 
 const CLOSED_PRESENTATION_STATUSES = new Set(['declined', 'presented'])
 
 export default async function JjkHomePage() {
-  if (!(await getJjkSession())) redirect('/portal/jjk/login')
-
   const [ideas, projects, presentations] = await Promise.all([getBigIdeas(), getJjkProjects(), getPresentationOpportunities()])
 
   const activeIdeas = ideas.filter((i) => i.status === 'active')

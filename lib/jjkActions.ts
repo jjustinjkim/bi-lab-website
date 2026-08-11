@@ -2,7 +2,7 @@
 
 import { revalidatePath } from 'next/cache'
 import { createAdminClient } from './supabase'
-import { requireJjk } from './jjkAuth'
+import { requireJjkAccess } from './jjkAccess'
 import { getJjkProject } from './jjkQueries'
 import type { JjkPillar, JjkProjectStage, JjkPresentationStatus } from './jjkTypes'
 
@@ -12,7 +12,7 @@ export type BigIdeaStepField = (typeof BIG_IDEA_STEP_FIELDS)[number]
 // ── Big Ideas ────────────────────────────────────────────────────────────
 
 export async function createBigIdea(pillar: JjkPillar, title: string): Promise<{ error?: string; id?: string }> {
-  await requireJjk()
+  await requireJjkAccess()
   const trimmed = title.trim()
   if (!trimmed) return { error: 'Title is required.' }
 
@@ -28,7 +28,7 @@ export async function createBigIdea(pillar: JjkPillar, title: string): Promise<{
 // saved independently so leaving the wizard mid-way never loses partial
 // progress on the other fields.
 export async function updateBigIdeaStep(ideaId: string, field: BigIdeaStepField, value: string): Promise<{ error?: string }> {
-  await requireJjk()
+  await requireJjkAccess()
   if (!BIG_IDEA_STEP_FIELDS.includes(field)) return { error: 'Unknown field.' }
 
   const db = createAdminClient()
@@ -40,7 +40,7 @@ export async function updateBigIdeaStep(ideaId: string, field: BigIdeaStepField,
 }
 
 export async function setBigIdeaStatus(id: string, status: 'active' | 'archived'): Promise<{ error?: string }> {
-  await requireJjk()
+  await requireJjkAccess()
   const db = createAdminClient()
   const { error } = await db.from('jjk_big_ideas').update({ status }).eq('id', id)
   if (error) return { error: error.message }
@@ -50,7 +50,7 @@ export async function setBigIdeaStatus(id: string, status: 'active' | 'archived'
 }
 
 export async function deleteBigIdea(id: string): Promise<{ error?: string }> {
-  await requireJjk()
+  await requireJjkAccess()
   const db = createAdminClient()
   const { error } = await db.from('jjk_big_ideas').delete().eq('id', id)
   if (error) return { error: error.message }
@@ -62,7 +62,7 @@ export async function deleteBigIdea(id: string): Promise<{ error?: string }> {
 // unchanged; stage always starts at 'planning' regardless of how far the
 // idea's own wizard steps got.
 export async function promoteBigIdea(ideaId: string, projectName: string): Promise<{ error?: string; projectId?: string }> {
-  await requireJjk()
+  await requireJjkAccess()
   const db = createAdminClient()
 
   const { data: idea, error: fetchError } = await db.from('jjk_big_ideas').select('*').eq('id', ideaId).single()
@@ -97,7 +97,7 @@ export async function promoteBigIdea(ideaId: string, projectName: string): Promi
 // ── Projects (execution layer) ──────────────────────────────────────────
 
 export async function createJjkProject(formData: FormData): Promise<{ error?: string }> {
-  await requireJjk()
+  await requireJjkAccess()
   const db = createAdminClient()
 
   const name = (formData.get('name') as string)?.trim()
@@ -120,7 +120,7 @@ export async function createJjkProject(formData: FormData): Promise<{ error?: st
 }
 
 export async function updateJjkProjectMeta(id: string, formData: FormData): Promise<{ error?: string }> {
-  await requireJjk()
+  await requireJjkAccess()
   const db = createAdminClient()
 
   const name = (formData.get('name') as string)?.trim()
@@ -143,7 +143,7 @@ export async function updateJjkProjectMeta(id: string, formData: FormData): Prom
 }
 
 export async function updateJjkProjectStage(id: string, stage: JjkProjectStage): Promise<{ error?: string }> {
-  await requireJjk()
+  await requireJjkAccess()
   const db = createAdminClient()
   const { error } = await db.from('jjk_projects').update({ stage }).eq('id', id)
   if (error) return { error: error.message }
@@ -154,7 +154,7 @@ export async function updateJjkProjectStage(id: string, stage: JjkProjectStage):
 }
 
 export async function deleteJjkProject(id: string): Promise<{ error?: string }> {
-  await requireJjk()
+  await requireJjkAccess()
   const db = createAdminClient()
   const { error } = await db.from('jjk_projects').delete().eq('id', id)
   if (error) return { error: error.message }
@@ -164,7 +164,7 @@ export async function deleteJjkProject(id: string): Promise<{ error?: string }> 
 }
 
 export async function addJjkProjectUpdate(projectId: string, body: string): Promise<{ error?: string }> {
-  await requireJjk()
+  await requireJjkAccess()
   const trimmed = body.trim()
   if (!trimmed) return { error: 'Update text is required.' }
 
@@ -183,7 +183,7 @@ export async function addJjkProjectUpdate(projectId: string, body: string): Prom
 // ── Presentation opportunities (expansion layer) ────────────────────────
 
 export async function createPresentationOpportunity(formData: FormData): Promise<{ error?: string }> {
-  await requireJjk()
+  await requireJjkAccess()
   const db = createAdminClient()
 
   const title = (formData.get('title') as string)?.trim()
@@ -211,7 +211,7 @@ export async function updatePresentationTracking(
   deadlineDate: string,
   eventDate: string
 ): Promise<{ error?: string }> {
-  await requireJjk()
+  await requireJjkAccess()
   const db = createAdminClient()
   const { error } = await db
     .from('jjk_presentation_opportunities')
@@ -224,7 +224,7 @@ export async function updatePresentationTracking(
 }
 
 export async function deletePresentationOpportunity(id: string): Promise<{ error?: string }> {
-  await requireJjk()
+  await requireJjkAccess()
   const db = createAdminClient()
   const { error } = await db.from('jjk_presentation_opportunities').delete().eq('id', id)
   if (error) return { error: error.message }

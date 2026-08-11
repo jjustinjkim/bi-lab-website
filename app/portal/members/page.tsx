@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
-import Link from 'next/link'
 import { redirect } from 'next/navigation'
-import { requireAdmin, getSessionMember } from '@/lib/auth'
+import { requireAdmin } from '@/lib/auth'
 import { getLabMembers } from '@/lib/queries'
 import { deleteLabMember, setCanViewAllProjects } from '@/lib/actions'
 import ConfirmSubmitButton from '@/components/ConfirmSubmitButton'
@@ -21,7 +20,7 @@ export default async function MembersPage() {
   }
   if (!isAdmin) redirect('/portal')
 
-  const [members, currentMember] = await Promise.all([getLabMembers(), getSessionMember()])
+  const members = await getLabMembers()
 
   async function removeMember(formData: FormData) {
     'use server'
@@ -59,16 +58,7 @@ export default async function MembersPage() {
             <li key={m.id} className="py-3 flex items-center justify-between gap-4 flex-wrap">
               <div>
                 <div className="text-sm font-medium">
-                  {/* The name itself links to /portal/jjk, but only on your
-                      own row -- not for an admin viewing someone else's.
-                      Personal shortcut, not a lab-wide feature, so it stays
-                      private even on a page other admins can otherwise see
-                      in full. */}
-                  {m.id === currentMember?.id ? (
-                    <Link href="/portal/jjk" className="link-accent">{m.name}</Link>
-                  ) : (
-                    m.name
-                  )}{' '}
+                  {m.name}{' '}
                   {m.is_admin && <span className="badge badge-accent ml-1">Admin</span>}{' '}
                   {m.can_view_all_projects && <span className="badge ml-1">All projects</span>}
                 </div>
