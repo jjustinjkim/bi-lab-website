@@ -3,6 +3,7 @@
 import { useRef, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { callAction } from '@/lib/callAction'
+import { dispatchToast } from '@/components/portal/Toaster'
 
 // Shared by "Add a category" (columns) and "Add a theme" (rows) -- both
 // axes are plain name -> {error?} server actions, passed in as a prop
@@ -11,10 +12,12 @@ export default function AddAxisForm({
   action,
   placeholder,
   buttonLabel,
+  toastMessage,
 }: {
   action: (name: string) => Promise<{ error?: string }>
   placeholder: string
   buttonLabel: string
+  toastMessage: string
 }) {
   const router = useRouter()
   const inputRef = useRef<HTMLInputElement>(null)
@@ -32,6 +35,7 @@ export default function AddAxisForm({
       setError(result.error)
     } else {
       if (inputRef.current) inputRef.current.value = ''
+      dispatchToast(toastMessage)
       router.refresh()
     }
   }

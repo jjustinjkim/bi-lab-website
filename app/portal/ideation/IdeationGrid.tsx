@@ -63,20 +63,45 @@ export default function IdeationGrid({
     .filter((i) => showArchived || i.status !== 'archived')
 
   if (columns.length === 0 || rows.length === 0) {
+    const missing = columns.length === 0 && rows.length === 0
+      ? 'a category and a theme'
+      : columns.length === 0
+        ? 'a category'
+        : 'a theme'
     return (
       <div className="space-y-6">
         <div className="panel p-6 text-sm" style={{ color: 'var(--ink-muted)' }}>
-          The board needs at least one category and one theme before ideas can be added. Categories
-          are the columns, themes are the rows, add one of each to get started.
+          The board needs at least one category and one theme before ideas can be added. Still
+          missing {missing} below.
         </div>
         <div className="grid sm:grid-cols-2 gap-6">
-          <div>
-            <div className="field-label mb-2">Add a category (column)</div>
-            <AddAxisForm action={createProjectIdeaColumn} placeholder="e.g. Meningioma" buttonLabel="Add category" />
+          <div className="space-y-3">
+            <div className="field-label">Add a category (column)</div>
+            <AddAxisForm action={createProjectIdeaColumn} placeholder="e.g. Meningioma" buttonLabel="Add category" toastMessage="Category added" />
+            {columns.length > 0 && (
+              <ul className="flex flex-wrap gap-2">
+                {columns.map((c) => (
+                  <li key={c.id} className="badge flex items-center gap-2">
+                    {c.name}
+                    <AxisDeleteButton action={deleteProjectIdeaColumn} id={c.id} label={c.name} />
+                  </li>
+                ))}
+              </ul>
+            )}
           </div>
-          <div>
-            <div className="field-label mb-2">Add a theme (row)</div>
-            <AddAxisForm action={createProjectIdeaRow} placeholder="e.g. Genomic Profiling" buttonLabel="Add theme" />
+          <div className="space-y-3">
+            <div className="field-label">Add a theme (row)</div>
+            <AddAxisForm action={createProjectIdeaRow} placeholder="e.g. Genomic Profiling" buttonLabel="Add theme" toastMessage="Theme added" />
+            {rows.length > 0 && (
+              <ul className="flex flex-wrap gap-2">
+                {rows.map((r) => (
+                  <li key={r.id} className="badge flex items-center gap-2">
+                    {r.name}
+                    <AxisDeleteButton action={deleteProjectIdeaRow} id={r.id} label={r.name} />
+                  </li>
+                ))}
+              </ul>
+            )}
           </div>
         </div>
       </div>
@@ -90,57 +115,60 @@ export default function IdeationGrid({
         Show archived ideas
       </label>
 
-      <div className="overflow-x-auto">
-        <div style={{ minWidth: `${140 + columns.length * 260}px` }}>
-          {/* Column headers */}
-          <div className="flex gap-3 mb-3" style={{ paddingLeft: '140px' }}>
-            {columns.map((c) => (
-              <div key={c.id} className="flex items-center justify-between gap-2" style={{ width: '244px' }}>
-                <span className="text-caption uppercase tracking-wide font-semibold">{c.name}</span>
-                <AxisDeleteButton action={deleteProjectIdeaColumn} id={c.id} label={c.name} />
-              </div>
-            ))}
-          </div>
+      <div>
+        {/* Fluid grid, not a fixed-width scroller -- columns share out
+            whatever width the page actually has (minmax(0, 1fr) each) so
+            they get bigger with fewer categories instead of needing a
+            horizontal scrollbar with more. Row labels use the same
+            gridTemplateColumns as each theme's band so everything lines up. */}
+        <div className="grid gap-3 mb-3" style={{ gridTemplateColumns: `160px repeat(${columns.length}, minmax(0, 1fr))` }}>
+          <div />
+          {columns.map((c) => (
+            <div key={c.id} className="flex items-center justify-between gap-2 min-w-0">
+              <span className="text-caption uppercase tracking-wide font-semibold">{c.name}</span>
+              <AxisDeleteButton action={deleteProjectIdeaColumn} id={c.id} label={c.name} />
+            </div>
+          ))}
+        </div>
 
-          {/* One horizontal band per theme (row) */}
-          <div className="space-y-6">
-            {rows.map((r) => (
-              <div key={r.id} className="flex gap-3">
-                <div className="shrink-0 flex flex-col justify-between" style={{ width: '128px' }}>
-                  <div className="text-sm font-semibold">{r.name}</div>
-                  <AxisDeleteButton action={deleteProjectIdeaRow} id={r.id} label={r.name} />
-                </div>
-                {columns.map((c) => (
-                  <div key={c.id} className="panel p-3 space-y-2" style={{ width: '244px' }}>
-                    <AddIdeaCellForm columnId={c.id} rowId={r.id} />
-                    {cellIdeas(r.id, c.id).map((idea) => (
-                      <IdeaChip
-                        key={idea.id}
-                        idea={idea}
-                        voteCount={voteCountByIdea.get(idea.id) ?? 0}
-                        hasVoted={votedIdeaIds.has(idea.id)}
-                        isDuplicate={duplicateIds.has(idea.id)}
-                        members={members}
-                        rows={rows}
-                        isAdmin={isAdmin}
-                      />
-                    ))}
-                  </div>
-                ))}
+        {/* One band per theme (row) */}
+        <div className="space-y-6">
+          {rows.map((r) => (
+            <div key={r.id} className="grid gap-3" style={{ gridTemplateColumns: `160px repeat(${columns.length}, minmax(0, 1fr))` }}>
+              <div className="flex flex-col justify-between min-w-0">
+                <div className="text-sm font-semibold">{r.name}</div>
+                <AxisDeleteButton action={deleteProjectIdeaRow} id={r.id} label={r.name} />
               </div>
-            ))}
-          </div>
+              {columns.map((c) => (
+                <div key={c.id} className="panel p-3 space-y-2 min-w-0">
+                  <AddIdeaCellForm columnId={c.id} rowId={r.id} />
+                  {cellIdeas(r.id, c.id).map((idea) => (
+                    <IdeaChip
+                      key={idea.id}
+                      idea={idea}
+                      voteCount={voteCountByIdea.get(idea.id) ?? 0}
+                      hasVoted={votedIdeaIds.has(idea.id)}
+                      isDuplicate={duplicateIds.has(idea.id)}
+                      members={members}
+                      rows={rows}
+                      isAdmin={isAdmin}
+                    />
+                  ))}
+                </div>
+              ))}
+            </div>
+          ))}
         </div>
       </div>
 
       <div className="grid sm:grid-cols-2 gap-6">
         <div>
           <div className="field-label mb-2">Add a category (column)</div>
-          <AddAxisForm action={createProjectIdeaColumn} placeholder="e.g. Glioma" buttonLabel="Add category" />
+          <AddAxisForm action={createProjectIdeaColumn} placeholder="e.g. Glioma" buttonLabel="Add category" toastMessage="Category added" />
         </div>
         <div>
           <div className="field-label mb-2">Add a theme (row)</div>
-          <AddAxisForm action={createProjectIdeaRow} placeholder="e.g. Outcomes Analysis" buttonLabel="Add theme" />
+          <AddAxisForm action={createProjectIdeaRow} placeholder="e.g. Outcomes Analysis" buttonLabel="Add theme" toastMessage="Theme added" />
         </div>
       </div>
 
