@@ -1,6 +1,6 @@
 import { createAdminClient } from './supabase'
 import { requireMember } from './auth'
-import type { Project, LabMember, Grant } from './types'
+import type { Project, LabMember, Grant, ProjectIdea, ProjectIdeaVote } from './types'
 
 type Db = ReturnType<typeof createAdminClient>
 
@@ -59,6 +59,23 @@ export async function getGrants(): Promise<Grant[]> {
   await requireMember()
   const db = createAdminClient()
   const { data } = await db.from('grants').select('*').order('deadline_date', { ascending: true, nullsFirst: false })
+  return data ?? []
+}
+
+// Not scoped by project visibility, same reasoning as getGrants(): a
+// brainstormed idea is lab-wide knowledge until it's promoted into an
+// actual project, not private to whoever created it.
+export async function getProjectIdeas(): Promise<ProjectIdea[]> {
+  await requireMember()
+  const db = createAdminClient()
+  const { data } = await db.from('project_ideas').select('*').order('created_at', { ascending: false })
+  return data ?? []
+}
+
+export async function getProjectIdeaVotes(): Promise<ProjectIdeaVote[]> {
+  await requireMember()
+  const db = createAdminClient()
+  const { data } = await db.from('project_idea_votes').select('*')
   return data ?? []
 }
 

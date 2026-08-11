@@ -172,6 +172,37 @@ CREATE TABLE IF NOT EXISTS project_members (
 CREATE INDEX IF NOT EXISTS idx_project_members_member ON project_members(member_id);
 CREATE INDEX IF NOT EXISTS idx_project_members_project ON project_members(project_id);
 
+-- ── Ideation board ───────────────────────────────────────────────────────
+-- Lightweight brainstorm-to-project pipeline: an idea starts here, any
+-- member can dot-vote/archive it, and a surviving idea gets "promoted" into
+-- a real row in `projects` (with an assigned lead, unlike createProject's
+-- normal path where the creator is always the owner). category is
+-- deliberately free text, not a fixed enum/columns-as-categories board --
+-- no agreed-on category set yet, revisit once real usage shows a pattern.
+CREATE TABLE IF NOT EXISTS project_ideas (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  title TEXT NOT NULL,
+  description TEXT,
+  category TEXT,
+  status TEXT NOT NULL DEFAULT 'active' CHECK (status IN ('active', 'archived', 'promoted')),
+  created_by UUID REFERENCES lab_members(id) ON DELETE SET NULL,
+  promoted_project_id UUID REFERENCES projects(id) ON DELETE SET NULL,
+  promoted_at TIMESTAMPTZ,
+  created_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+-- Dot-voting: one vote per member per idea, toggled on/off (not a count you
+-- can increment repeatedly), same shape as project_members above.
+CREATE TABLE IF NOT EXISTS project_idea_votes (
+  idea_id UUID NOT NULL REFERENCES project_ideas(id) ON DELETE CASCADE,
+  member_id UUID NOT NULL REFERENCES lab_members(id) ON DELETE CASCADE,
+  created_at TIMESTAMPTZ DEFAULT NOW(),
+  PRIMARY KEY (idea_id, member_id)
+);
+
+CREATE INDEX IF NOT EXISTS idx_project_ideas_status ON project_ideas(status);
+CREATE INDEX IF NOT EXISTS idx_project_idea_votes_idea ON project_idea_votes(idea_id);
+
 -- Disable Row Level Security (portal is gated app-side; all access via
 -- the service-role key from server-side code that has already checked
 -- requireMember()/requireAdmin()).
@@ -184,8 +215,10 @@ ALTER TABLE deadlines DISABLE ROW LEVEL SECURITY;
 ALTER TABLE datasets DISABLE ROW LEVEL SECURITY;
 ALTER TABLE project_members DISABLE ROW LEVEL SECURITY;
 ALTER TABLE grants DISABLE ROW LEVEL SECURITY;
+ALTER TABLE project_ideas DISABLE ROW LEVEL SECURITY;
+ALTER TABLE project_idea_votes DISABLE ROW LEVEL SECURITY;
 
 -- The public anon key is never meant to touch these tables at all -- the
 -- app only ever reads/writes via the service-role key, server-side.
-REVOKE ALL ON lab_members, member_sessions, member_login_attempts, projects, tasks, deadlines, datasets, project_members, grants
+REVOKE ALL ON lab_members, member_sessions, member_login_attempts, projects, tasks, deadlines, datasets, project_members, grants, project_ideas, project_idea_votes
 FROM anon, authenticated;

@@ -83,3 +83,23 @@ export interface Grant {
   notes: string | null;
   created_at: string;
 }
+
+export type ProjectIdeaStatus = "active" | "archived" | "promoted";
+
+export interface ProjectIdea {
+  id: string;
+  title: string;
+  description: string | null;
+  category: string | null;
+  status: ProjectIdeaStatus;
+  created_by: string | null;
+  promoted_project_id: string | null;
+  promoted_at: string | null;
+  created_at: string;
+}
+
+export interface ProjectIdeaVote {
+  idea_id: string;
+  member_id: string;
+  created_at: string;
+}

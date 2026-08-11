@@ -55,6 +55,7 @@ const {
   adminResetMemberPassword, changeOwnPassword,
   createProject, updateProject, updateProjectStatus, deleteProject, setProjectMembers,
   createGrant, updateGrantTracking, deleteGrant,
+  createProjectIdea, toggleProjectIdeaVote, setProjectIdeaStatus, promoteProjectIdea, deleteProjectIdea,
 } = await import('./actions')
 
 function form(fields: Record<string, string>): FormData {
@@ -460,5 +461,86 @@ describe('grants', () => {
     fakeDb.seed('grants', [{ id: 'g1', name: 'X' }])
     await expect(deleteGrant('g1')).rejects.toThrow('Unauthorized')
     expect(fakeDb.table('grants')).toHaveLength(1)
+  })
+})
+
+describe('project ideas', () => {
+  it('createProjectIdea inserts with the current member as creator', async () => {
+    const result = await createProjectIdea(form({ title: 'Spatial transcriptomics pilot', description: 'A hypothesis', category: 'Imaging' }))
+    expect(result.error).toBeUndefined()
+    expect(fakeDb.table('project_ideas')).toHaveLength(1)
+    const idea = fakeDb.table('project_ideas')[0]
+    expect(idea.title).toBe('Spatial transcriptomics pilot')
+    expect(idea.created_by).toBe(CURRENT_MEMBER.id)
+    expect(idea.status).toBe('active')
+  })
+
+  it('createProjectIdea requires a title', async () => {
+    const result = await createProjectIdea(form({ title: '   ' }))
+    expect(result.error).toBe('Title is required.')
+    expect(fakeDb.table('project_ideas')).toHaveLength(0)
+  })
+
+  it('toggleProjectIdeaVote adds a vote when none exists, then removes it on a second call', async () => {
+    fakeDb.seed('project_ideas', [{ id: 'idea-1', title: 'X', status: 'active' }])
+    const first = await toggleProjectIdeaVote('idea-1')
+    expect(first).toEqual({ voted: true })
+    expect(fakeDb.table('project_idea_votes')).toHaveLength(1)
+
+    const second = await toggleProjectIdeaVote('idea-1')
+    expect(second).toEqual({ voted: false })
+    expect(fakeDb.table('project_idea_votes')).toHaveLength(0)
+  })
+
+  it('setProjectIdeaStatus toggles between active and archived', async () => {
+    fakeDb.seed('project_ideas', [{ id: 'idea-1', title: 'X', status: 'active' }])
+    await setProjectIdeaStatus('idea-1', 'archived')
+    expect(fakeDb.table('project_ideas')[0].status).toBe('archived')
+    await setProjectIdeaStatus('idea-1', 'active')
+    expect(fakeDb.table('project_ideas')[0].status).toBe('active')
+  })
+
+  it('promoteProjectIdea creates a project owned by the chosen lead, not the promoter, and marks the idea promoted', async () => {
+    fakeDb.seed('project_ideas', [{ id: 'idea-1', title: 'Spatial transcriptomics pilot', description: 'A hypothesis', category: 'Imaging', status: 'active' }])
+    const result = await promoteProjectIdea('idea-1', form({ project_lead_id: 'lead-99' }))
+    expect(result.error).toBeUndefined()
+
+    const projects = fakeDb.table('projects')
+    expect(projects).toHaveLength(1)
+    expect(projects[0].name).toBe('Spatial transcriptomics pilot')
+    expect(projects[0].owner_id).toBe('lead-99')
+    expect(projects[0].status).toBe('planning')
+
+    const idea = fakeDb.table('project_ideas')[0]
+    expect(idea.status).toBe('promoted')
+    expect(idea.promoted_project_id).toBe(projects[0].id)
+    expect(idea.promoted_at).toBeTruthy()
+  })
+
+  it('promoteProjectIdea requires a project lead', async () => {
+    fakeDb.seed('project_ideas', [{ id: 'idea-1', title: 'X', status: 'active' }])
+    const result = await promoteProjectIdea('idea-1', form({}))
+    expect(result.error).toBe('A project lead is required.')
+    expect(fakeDb.table('projects')).toHaveLength(0)
+  })
+
+  it('promoteProjectIdea refuses to promote an already-promoted idea again', async () => {
+    fakeDb.seed('project_ideas', [{ id: 'idea-1', title: 'X', status: 'promoted', promoted_project_id: 'p-existing' }])
+    const result = await promoteProjectIdea('idea-1', form({ project_lead_id: 'lead-99' }))
+    expect(result.error).toBe('This idea was already promoted.')
+    expect(fakeDb.table('projects')).toHaveLength(0)
+  })
+
+  it('deleteProjectIdea removes the row', async () => {
+    fakeDb.seed('project_ideas', [{ id: 'idea-1', title: 'X', status: 'active' }])
+    await deleteProjectIdea('idea-1')
+    expect(fakeDb.table('project_ideas')).toHaveLength(0)
+  })
+
+  it('deleteProjectIdea requires requireAdmin (rejects when the caller is not an admin)', async () => {
+    requireAdminImpl = async () => { throw new Error('Unauthorized') }
+    fakeDb.seed('project_ideas', [{ id: 'idea-1', title: 'X', status: 'active' }])
+    await expect(deleteProjectIdea('idea-1')).rejects.toThrow('Unauthorized')
+    expect(fakeDb.table('project_ideas')).toHaveLength(1)
   })
 })

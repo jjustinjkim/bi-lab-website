@@ -342,3 +342,113 @@ export async function deleteGrant(id: string): Promise<{ error?: string }> {
   revalidatePath('/portal/grants')
   return {}
 }
+
+// ── Ideation board ────────────────────────────────────────────────────────
+
+export async function createProjectIdea(formData: FormData): Promise<{ error?: string }> {
+  const member = await requireMember()
+  const db = createAdminClient()
+
+  const title = (formData.get('title') as string)?.trim()
+  if (!title) return { error: 'Title is required.' }
+
+  const { error } = await db.from('project_ideas').insert({
+    title,
+    description: (formData.get('description') as string) || null,
+    category: (formData.get('category') as string) || null,
+    status: 'active',
+    created_by: member.id,
+  })
+  if (error) return { error: error.message }
+  revalidatePath('/portal/ideation')
+  return {}
+}
+
+// Toggle, not increment -- dot-voting is one vote per member per idea, on
+// or off, not a counter anyone can inflate by clicking repeatedly.
+export async function toggleProjectIdeaVote(ideaId: string): Promise<{ error?: string; voted?: boolean }> {
+  const member = await requireMember()
+  const db = createAdminClient()
+
+  const { data: existing } = await db
+    .from('project_idea_votes')
+    .select('idea_id')
+    .eq('idea_id', ideaId)
+    .eq('member_id', member.id)
+    .maybeSingle()
+
+  if (existing) {
+    const { error } = await db.from('project_idea_votes').delete().eq('idea_id', ideaId).eq('member_id', member.id)
+    if (error) return { error: error.message }
+    revalidatePath('/portal/ideation')
+    return { voted: false }
+  }
+
+  const { error } = await db.from('project_idea_votes').insert({ idea_id: ideaId, member_id: member.id })
+  if (error) return { error: error.message }
+  revalidatePath('/portal/ideation')
+  return { voted: true }
+}
+
+// Only active/archived -- 'promoted' is a side effect of promoteProjectIdea
+// below, not something to set directly (it wouldn't create the project row).
+export async function setProjectIdeaStatus(id: string, status: 'active' | 'archived'): Promise<{ error?: string }> {
+  await requireMember()
+  const db = createAdminClient()
+  const { error } = await db.from('project_ideas').update({ status }).eq('id', id)
+  if (error) return { error: error.message }
+  revalidatePath('/portal/ideation')
+  return {}
+}
+
+// Unlike createProject (where the creator is always the owner), a promoted
+// idea gets an explicitly chosen project lead -- the whole point of
+// promoting is often to hand it to someone other than whoever brainstormed
+// it or whoever happens to be clicking the button.
+export async function promoteProjectIdea(ideaId: string, formData: FormData): Promise<{ error?: string }> {
+  await requireMember()
+  const db = createAdminClient()
+
+  const leadId = (formData.get('project_lead_id') as string)?.trim()
+  if (!leadId) return { error: 'A project lead is required.' }
+
+  const { data: idea, error: fetchError } = await db.from('project_ideas').select('*').eq('id', ideaId).single()
+  if (fetchError || !idea) return { error: 'Idea not found.' }
+  if (idea.status === 'promoted') return { error: 'This idea was already promoted.' }
+
+  const { data: project, error: insertError } = await db
+    .from('projects')
+    .insert({
+      name: (formData.get('name') as string)?.trim() || idea.title,
+      description: (formData.get('description') as string) || idea.description,
+      status: 'planning',
+      owner_id: leadId,
+      notes: `Promoted from the ideation board.${idea.category ? ` Category: ${idea.category}.` : ''}`,
+    })
+    .select('id')
+    .single()
+  if (insertError || !project) return { error: insertError?.message ?? 'Failed to create project.' }
+
+  const { error: updateError } = await db
+    .from('project_ideas')
+    .update({ status: 'promoted', promoted_project_id: project.id, promoted_at: new Date().toISOString() })
+    .eq('id', ideaId)
+  if (updateError) return { error: updateError.message }
+
+  revalidatePath('/portal/ideation')
+  revalidatePath('/portal/projects')
+  revalidatePath('/portal')
+  return {}
+}
+
+// Admin-only, same reasoning as deleteGrant -- archiving is available to any
+// member (setProjectIdeaStatus above), but permanently removing an idea
+// (e.g. spam, an exact accidental double-submit) is restricted.
+export async function deleteProjectIdea(id: string): Promise<{ error?: string }> {
+  await requireAdmin()
+  const db = createAdminClient()
+  const { error } = await db.from('project_ideas').delete().eq('id', id)
+  if (error) return { error: error.message }
+  revalidatePath('/portal/ideation')
+  return {}
+}

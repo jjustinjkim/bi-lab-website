@@ -170,7 +170,12 @@ class FakeQueryBuilder implements PromiseLike<{ data: unknown; error: null; coun
     return this
   }
   limit(n: number) { this.limitN = n; return this }
+  // Real Supabase's .single() errors on zero rows, .maybeSingle() returns
+  // null without erroring -- this fake's .single() already implements the
+  // latter's behavior (see execute() below), so maybeSingle is just an
+  // explicit alias rather than a second implementation to keep in sync.
   single() { this.singleFlag = true; return this }
+  maybeSingle() { this.singleFlag = true; return this }
 
   private embed(row: Row): Row {
     if (!this.selectSpec) return row
