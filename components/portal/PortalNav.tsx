@@ -9,8 +9,8 @@ import { TOOLS } from '@/lib/content'
 
 const BASE_NAV_LINKS = [
   { href: '/portal', label: 'Dashboard', exact: true },
-  { href: '/portal/projects', label: 'Projects' },
   { href: '/portal/ideation', label: 'Ideation', exact: true },
+  { href: '/portal/projects', label: 'Projects' },
   { href: '/portal/grants', label: 'Grants', exact: true },
 ]
 
