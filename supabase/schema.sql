@@ -222,6 +222,120 @@ CREATE INDEX IF NOT EXISTS idx_project_ideas_column ON project_ideas(column_id);
 CREATE INDEX IF NOT EXISTS idx_project_ideas_row ON project_ideas(row_id);
 CREATE INDEX IF NOT EXISTS idx_project_idea_votes_idea ON project_idea_votes(idea_id);
 
+-- ── JJK research progress portal ────────────────────────────────────────
+-- A separate, single-user section of the portal (Justin's own research
+-- pipeline: manuscripts, grants, collaborations, presentations), gated by
+-- its own standalone password independent of lab_members/member_sessions
+-- above -- see lib/jjkAuth.ts. Pillars/stages are fixed CHECK enums rather
+-- than editable tables (unlike project_idea_columns/rows above) since this
+-- is single-user and the taxonomy was agreed on up front, not something
+-- that needs in-app editing by multiple people.
+
+CREATE TABLE IF NOT EXISTS jjk_sessions (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  token TEXT UNIQUE NOT NULL DEFAULT encode(gen_random_bytes(32), 'hex'),
+  created_at TIMESTAMPTZ DEFAULT NOW(),
+  expires_at TIMESTAMPTZ DEFAULT NOW() + INTERVAL '60 days'
+);
+
+CREATE TABLE IF NOT EXISTS jjk_login_attempts (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  ip TEXT NOT NULL,
+  created_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+CREATE INDEX IF NOT EXISTS idx_jjk_sessions_token ON jjk_sessions(token);
+CREATE INDEX IF NOT EXISTS idx_jjk_login_attempts_ip_created ON jjk_login_attempts(ip, created_at);
+
+CREATE TABLE IF NOT EXISTS jjk_projects (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  source_idea_id UUID,
+  pillar TEXT NOT NULL CHECK (pillar IN ('manuscript', 'grant', 'collaboration', 'presentation', 'tool')),
+  name TEXT NOT NULL,
+  stage TEXT NOT NULL DEFAULT 'planning' CHECK (stage IN ('planning', 'drafting', 'under_review', 'revision', 'published')),
+  collaborators TEXT,
+  target_date DATE,
+  notes TEXT,
+  created_at TIMESTAMPTZ DEFAULT NOW(),
+  updated_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+DROP TRIGGER IF EXISTS jjk_projects_updated_at ON jjk_projects;
+CREATE TRIGGER jjk_projects_updated_at
+  BEFORE UPDATE ON jjk_projects
+  FOR EACH ROW EXECUTE FUNCTION update_updated_at();
+
+-- The "Big Idea" clarification wizard: each of the 5 free-text fields is a
+-- separate step, filled in independently (see updateBigIdeaStep in
+-- lib/jjkActions.ts) -- the count of non-empty fields is how the UI shows
+-- "N/5 clarified," not a separate stored status.
+CREATE TABLE IF NOT EXISTS jjk_big_ideas (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  pillar TEXT NOT NULL CHECK (pillar IN ('manuscript', 'grant', 'collaboration', 'presentation', 'tool')),
+  title TEXT NOT NULL,
+  spark TEXT,
+  why_it_matters TEXT,
+  feasibility_notes TEXT,
+  specific_aim TEXT,
+  next_step TEXT,
+  next_step_target_date DATE,
+  status TEXT NOT NULL DEFAULT 'active' CHECK (status IN ('active', 'promoted', 'archived')),
+  promoted_project_id UUID REFERENCES jjk_projects(id) ON DELETE SET NULL,
+  promoted_at TIMESTAMPTZ,
+  created_at TIMESTAMPTZ DEFAULT NOW(),
+  updated_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+DROP TRIGGER IF EXISTS jjk_big_ideas_updated_at ON jjk_big_ideas;
+CREATE TRIGGER jjk_big_ideas_updated_at
+  BEFORE UPDATE ON jjk_big_ideas
+  FOR EACH ROW EXECUTE FUNCTION update_updated_at();
+
+ALTER TABLE jjk_projects ADD CONSTRAINT jjk_projects_source_idea_id_fkey
+  FOREIGN KEY (source_idea_id) REFERENCES jjk_big_ideas(id) ON DELETE SET NULL;
+
+-- Lightweight append-only progress log per project -- no versioning/realtime
+-- needed for a single-user tool (see jjk_projects above).
+CREATE TABLE IF NOT EXISTS jjk_project_updates (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  project_id UUID NOT NULL REFERENCES jjk_projects(id) ON DELETE CASCADE,
+  body TEXT NOT NULL,
+  created_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+CREATE INDEX IF NOT EXISTS idx_jjk_project_updates_project ON jjk_project_updates(project_id, created_at DESC);
+
+CREATE TABLE IF NOT EXISTS jjk_presentation_opportunities (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  title TEXT NOT NULL,
+  venue TEXT,
+  type TEXT NOT NULL DEFAULT 'other' CHECK (type IN ('conference', 'grand_rounds', 'invited_talk', 'symposium', 'other')),
+  deadline_date DATE,
+  event_date DATE,
+  status TEXT NOT NULL DEFAULT 'identified' CHECK (status IN ('identified', 'preparing', 'submitted', 'accepted', 'declined', 'presented')),
+  project_id UUID REFERENCES jjk_projects(id) ON DELETE SET NULL,
+  notes TEXT,
+  created_at TIMESTAMPTZ DEFAULT NOW(),
+  updated_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+DROP TRIGGER IF EXISTS jjk_presentation_opportunities_updated_at ON jjk_presentation_opportunities;
+CREATE TRIGGER jjk_presentation_opportunities_updated_at
+  BEFORE UPDATE ON jjk_presentation_opportunities
+  FOR EACH ROW EXECUTE FUNCTION update_updated_at();
+
+CREATE INDEX IF NOT EXISTS idx_jjk_presentations_deadline ON jjk_presentation_opportunities(deadline_date);
+
+ALTER TABLE jjk_sessions DISABLE ROW LEVEL SECURITY;
+ALTER TABLE jjk_login_attempts DISABLE ROW LEVEL SECURITY;
+ALTER TABLE jjk_big_ideas DISABLE ROW LEVEL SECURITY;
+ALTER TABLE jjk_projects DISABLE ROW LEVEL SECURITY;
+ALTER TABLE jjk_project_updates DISABLE ROW LEVEL SECURITY;
+ALTER TABLE jjk_presentation_opportunities DISABLE ROW LEVEL SECURITY;
+
+REVOKE ALL ON jjk_sessions, jjk_login_attempts, jjk_big_ideas, jjk_projects, jjk_project_updates, jjk_presentation_opportunities
+FROM anon, authenticated;
+
 -- Disable Row Level Security (portal is gated app-side; all access via
 -- the service-role key from server-side code that has already checked
 -- requireMember()/requireAdmin()).

@@ -278,11 +278,11 @@ export class FakeDb {
   }
 
   materialize(tableName: string, row: Row): Row {
-    const auto: Row = tableName === 'member_sessions'
+    const auto: Row = tableName === 'member_sessions' || tableName === 'jjk_sessions'
       ? { token: randomUUID(), expires_at: new Date(Date.now() + 1000 * 60 * 60 * 24 * 60).toISOString() }
       : {}
     const base: Row = { id: randomUUID(), created_at: this.now() }
-    if (tableName === 'projects') base.updated_at = this.now()
+    if (tableName === 'projects' || tableName === 'jjk_projects' || tableName === 'jjk_big_ideas' || tableName === 'jjk_presentation_opportunities') base.updated_at = this.now()
     return { ...base, ...auto, ...row }
   }
 

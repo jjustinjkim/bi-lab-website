@@ -12,14 +12,17 @@ import { join, relative } from 'node:path'
 // silent production hole.
 const ROOT = join(__dirname, '..')
 const SCAN_DIRS = ['app', 'lib']
-const AUTH_CALLS = ['isMemberSession(', 'requireMember(', 'requireAdmin(', 'getSessionMember(']
+const AUTH_CALLS = ['isMemberSession(', 'requireMember(', 'requireAdmin(', 'getSessionMember(', 'requireJjk(', 'getJjkSession(']
 
 // Files allowed to construct the admin client without their own auth check,
 // because they are not independent DB-access entry points:
 //   - lib/supabase.ts only *defines* createAdminClient(); it never calls it.
 //   - lib/auth.ts itself performs the session lookup that every auth check
 //     is built on -- it is the auth check, not a caller of it.
-const ALLOWLIST = new Set(['lib/supabase.ts', 'lib/auth.ts'])
+//   - lib/jjkAuth.ts is the same thing for the separate JJK portal gate
+//     (see proxy.ts / lib/jjkAuth.ts) -- it performs the jjk_sessions
+//     lookup that requireJjk()/getJjkSession() are built on.
+const ALLOWLIST = new Set(['lib/supabase.ts', 'lib/auth.ts', 'lib/jjkAuth.ts'])
 
 function walk(dir: string): string[] {
   const files: string[] = []
