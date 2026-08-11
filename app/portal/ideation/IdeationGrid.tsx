@@ -72,11 +72,11 @@ export default function IdeationGrid({
         <div className="grid sm:grid-cols-2 gap-6">
           <div>
             <div className="field-label mb-2">Add a category (column)</div>
-            <AddAxisForm action={createProjectIdeaColumn} placeholder="e.g. Immunogenomics" buttonLabel="Add category" />
+            <AddAxisForm action={createProjectIdeaColumn} placeholder="e.g. Meningioma" buttonLabel="Add category" />
           </div>
           <div>
             <div className="field-label mb-2">Add a theme (row)</div>
-            <AddAxisForm action={createProjectIdeaRow} placeholder="e.g. Meningioma" buttonLabel="Add theme" />
+            <AddAxisForm action={createProjectIdeaRow} placeholder="e.g. Genomic Profiling" buttonLabel="Add theme" />
           </div>
         </div>
       </div>
@@ -136,11 +136,11 @@ export default function IdeationGrid({
       <div className="grid sm:grid-cols-2 gap-6">
         <div>
           <div className="field-label mb-2">Add a category (column)</div>
-          <AddAxisForm action={createProjectIdeaColumn} placeholder="e.g. Outcomes" buttonLabel="Add category" />
+          <AddAxisForm action={createProjectIdeaColumn} placeholder="e.g. Glioma" buttonLabel="Add category" />
         </div>
         <div>
           <div className="field-label mb-2">Add a theme (row)</div>
-          <AddAxisForm action={createProjectIdeaRow} placeholder="e.g. Pituitary" buttonLabel="Add theme" />
+          <AddAxisForm action={createProjectIdeaRow} placeholder="e.g. Outcomes Analysis" buttonLabel="Add theme" />
         </div>
       </div>
 
