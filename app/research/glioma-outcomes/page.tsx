@@ -20,7 +20,7 @@ export default function GliomaOutcomesPage() {
       <div className="panel p-6">
         <h2 className="text-caption uppercase tracking-wide font-semibold mb-2">Disclaimer</h2>
         <p className="text-sm" style={{ color: "var(--ink-muted)" }}>
-          Researchers part of the Skull Base Tumor Laboratory have integrated features from a study
+          Researchers part of the Bi Lab at Mass General Brigham have integrated features from a study
           examining glioma subtypes to create nomograms for clinical outcomes. The prediction tools
           below are based on a cohort of glioblastoma and IDH1/2-mutant astrocytoma patients with
           both clinical and molecular data. After inputting the relevant features, these tools will

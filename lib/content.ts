@@ -1026,7 +1026,7 @@ export const PUBMED_URL =
   "https://pubmed.ncbi.nlm.nih.gov/?term=Bi+WL%5BAuthor%5D+AND+%28Brigham%5BAffiliation%5D+OR+Harvard%5BAffiliation%5D%29&sort=pubdate&size=200";
 
 export const CONTACT = {
-  labName: "The Skull Base Tumor Laboratory",
+  labName: "Mass General Brigham",
   piTitles: [
     "Wenya Linda Bi, MD, PhD",
     "Myers Family Endowed Chair in Skull Base Tumors and Cancer",

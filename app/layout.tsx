@@ -11,7 +11,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const title = "Bi Lab | Skull Base Tumor Laboratory";
+const title = "Bi Lab | Mass General Brigham";
 const description =
   "The Bi Lab studies the translational biology of skull base and brain tumors, with the aim of improving clinical outcomes for patients.";
 
