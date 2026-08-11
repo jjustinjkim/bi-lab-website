@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { redirect } from 'next/navigation'
-import { requireAdmin } from '@/lib/auth'
+import { requireAdmin, getSessionMember } from '@/lib/auth'
 import { getLabMembers } from '@/lib/queries'
 import { deleteLabMember, setCanViewAllProjects } from '@/lib/actions'
 import ConfirmSubmitButton from '@/components/ConfirmSubmitButton'
@@ -20,7 +21,7 @@ export default async function MembersPage() {
   }
   if (!isAdmin) redirect('/portal')
 
-  const members = await getLabMembers()
+  const [members, currentMember] = await Promise.all([getLabMembers(), getSessionMember()])
 
   async function removeMember(formData: FormData) {
     'use server'
@@ -63,6 +64,13 @@ export default async function MembersPage() {
                   {m.can_view_all_projects && <span className="badge ml-1">All projects</span>}
                 </div>
                 <div className="text-xs" style={{ color: 'var(--ink-muted)' }}>{m.email}{m.title ? ` · ${m.title}` : ''}</div>
+                {/* Only rendered on your own row, not for an admin viewing
+                    someone else's -- this is a personal shortcut, not a
+                    lab-wide feature, so it stays private even on a
+                    page other admins can otherwise see in full. */}
+                {m.id === currentMember?.id && (
+                  <Link href="/portal/jjk" className="link-accent text-xs">JJK Research Progress &rarr;</Link>
+                )}
               </div>
               <div className="flex items-center gap-4 flex-wrap">
                 <form action={toggleViewAll}>
