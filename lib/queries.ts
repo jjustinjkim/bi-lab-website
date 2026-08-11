@@ -1,6 +1,6 @@
 import { createAdminClient } from './supabase'
 import { requireMember } from './auth'
-import type { Project, LabMember, Grant, ProjectIdea, ProjectIdeaVote } from './types'
+import type { Project, LabMember, Grant, ProjectIdea, ProjectIdeaVote, ProjectIdeaColumn, ProjectIdeaRow } from './types'
 
 type Db = ReturnType<typeof createAdminClient>
 
@@ -76,6 +76,20 @@ export async function getProjectIdeaVotes(): Promise<ProjectIdeaVote[]> {
   await requireMember()
   const db = createAdminClient()
   const { data } = await db.from('project_idea_votes').select('*')
+  return data ?? []
+}
+
+export async function getProjectIdeaColumns(): Promise<ProjectIdeaColumn[]> {
+  await requireMember()
+  const db = createAdminClient()
+  const { data } = await db.from('project_idea_columns').select('*').order('position').order('created_at')
+  return data ?? []
+}
+
+export async function getProjectIdeaRows(): Promise<ProjectIdeaRow[]> {
+  await requireMember()
+  const db = createAdminClient()
+  const { data } = await db.from('project_idea_rows').select('*').order('position').order('created_at')
   return data ?? []
 }
 

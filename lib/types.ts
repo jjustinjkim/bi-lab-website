@@ -86,11 +86,28 @@ export interface Grant {
 
 export type ProjectIdeaStatus = "active" | "archived" | "promoted";
 
+// The board's two axes -- both freeform, member-managed lists (see
+// supabase/schema.sql for why neither is a fixed enum).
+export interface ProjectIdeaColumn {
+  id: string;
+  name: string;
+  position: number;
+  created_at: string;
+}
+
+export interface ProjectIdeaRow {
+  id: string;
+  name: string;
+  position: number;
+  created_at: string;
+}
+
 export interface ProjectIdea {
   id: string;
   title: string;
   description: string | null;
-  category: string | null;
+  column_id: string | null;
+  row_id: string | null;
   status: ProjectIdeaStatus;
   created_by: string | null;
   promoted_project_id: string | null;

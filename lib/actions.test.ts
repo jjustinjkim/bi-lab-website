@@ -56,6 +56,7 @@ const {
   createProject, updateProject, updateProjectStatus, deleteProject, setProjectMembers,
   createGrant, updateGrantTracking, deleteGrant,
   createProjectIdea, toggleProjectIdeaVote, setProjectIdeaStatus, promoteProjectIdea, deleteProjectIdea,
+  createProjectIdeaColumn, deleteProjectIdeaColumn, createProjectIdeaRow, deleteProjectIdeaRow, moveProjectIdeaRow,
 } = await import('./actions')
 
 function form(fields: Record<string, string>): FormData {
@@ -465,20 +466,66 @@ describe('grants', () => {
 })
 
 describe('project ideas', () => {
-  it('createProjectIdea inserts with the current member as creator', async () => {
-    const result = await createProjectIdea(form({ title: 'Spatial transcriptomics pilot', description: 'A hypothesis', category: 'Imaging' }))
+  it('createProjectIdea inserts into the given cell with the current member as creator', async () => {
+    const result = await createProjectIdea(form({ title: 'Spatial transcriptomics pilot', description: 'A hypothesis', column_id: 'col-1', row_id: 'row-1' }))
     expect(result.error).toBeUndefined()
     expect(fakeDb.table('project_ideas')).toHaveLength(1)
     const idea = fakeDb.table('project_ideas')[0]
     expect(idea.title).toBe('Spatial transcriptomics pilot')
+    expect(idea.column_id).toBe('col-1')
+    expect(idea.row_id).toBe('row-1')
     expect(idea.created_by).toBe(CURRENT_MEMBER.id)
     expect(idea.status).toBe('active')
   })
 
   it('createProjectIdea requires a title', async () => {
-    const result = await createProjectIdea(form({ title: '   ' }))
+    const result = await createProjectIdea(form({ title: '   ', column_id: 'col-1', row_id: 'row-1' }))
     expect(result.error).toBe('Title is required.')
     expect(fakeDb.table('project_ideas')).toHaveLength(0)
+  })
+
+  it('createProjectIdeaColumn inserts a new column', async () => {
+    const result = await createProjectIdeaColumn('Imaging')
+    expect(result.error).toBeUndefined()
+    expect(fakeDb.table('project_idea_columns')).toHaveLength(1)
+    expect(fakeDb.table('project_idea_columns')[0].name).toBe('Imaging')
+  })
+
+  it('createProjectIdeaColumn requires a name', async () => {
+    const result = await createProjectIdeaColumn('   ')
+    expect(result.error).toBe('Name is required.')
+    expect(fakeDb.table('project_idea_columns')).toHaveLength(0)
+  })
+
+  it('deleteProjectIdeaColumn removes the column but leaves ideas in it (just unlinked)', async () => {
+    fakeDb.seed('project_idea_columns', [{ id: 'col-1', name: 'Imaging' }])
+    fakeDb.seed('project_ideas', [{ id: 'idea-1', title: 'X', status: 'active', column_id: 'col-1', row_id: 'row-1' }])
+    await deleteProjectIdeaColumn('col-1')
+    expect(fakeDb.table('project_idea_columns')).toHaveLength(0)
+    // The fake DB doesn't simulate ON DELETE SET NULL (that's a real-Postgres
+    // FK behavior), so this only confirms the idea row itself survives the
+    // column's deletion, not the nulling-out, which is covered by the real
+    // schema's ON DELETE SET NULL clause instead.
+    expect(fakeDb.table('project_ideas')).toHaveLength(1)
+  })
+
+  it('createProjectIdeaRow inserts a new row', async () => {
+    const result = await createProjectIdeaRow('Meningioma')
+    expect(result.error).toBeUndefined()
+    expect(fakeDb.table('project_idea_rows')).toHaveLength(1)
+    expect(fakeDb.table('project_idea_rows')[0].name).toBe('Meningioma')
+  })
+
+  it('deleteProjectIdeaRow removes the row', async () => {
+    fakeDb.seed('project_idea_rows', [{ id: 'row-1', name: 'Meningioma' }])
+    await deleteProjectIdeaRow('row-1')
+    expect(fakeDb.table('project_idea_rows')).toHaveLength(0)
+  })
+
+  it('moveProjectIdeaRow reassigns an idea to a different row', async () => {
+    fakeDb.seed('project_ideas', [{ id: 'idea-1', title: 'X', status: 'active', column_id: 'col-1', row_id: 'row-1' }])
+    await moveProjectIdeaRow('idea-1', 'row-2')
+    expect(fakeDb.table('project_ideas')[0].row_id).toBe('row-2')
   })
 
   it('toggleProjectIdeaVote adds a vote when none exists, then removes it on a second call', async () => {

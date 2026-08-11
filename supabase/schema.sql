@@ -176,14 +176,31 @@ CREATE INDEX IF NOT EXISTS idx_project_members_project ON project_members(projec
 -- Lightweight brainstorm-to-project pipeline: an idea starts here, any
 -- member can dot-vote/archive it, and a surviving idea gets "promoted" into
 -- a real row in `projects` (with an assigned lead, unlike createProject's
--- normal path where the creator is always the owner). category is
--- deliberately free text, not a fixed enum/columns-as-categories board --
--- no agreed-on category set yet, revisit once real usage shows a pattern.
+-- normal path where the creator is always the owner).
+--
+-- True 2-axis matrix (matching the sns-pd-academy board this was modeled
+-- on): columns and rows are both freeform, member-managed lists (neither
+-- axis has an agreed-on fixed set for this lab yet), not hardcoded enums.
+CREATE TABLE IF NOT EXISTS project_idea_columns (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  name TEXT NOT NULL,
+  position INTEGER NOT NULL DEFAULT 0,
+  created_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+CREATE TABLE IF NOT EXISTS project_idea_rows (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  name TEXT NOT NULL,
+  position INTEGER NOT NULL DEFAULT 0,
+  created_at TIMESTAMPTZ DEFAULT NOW()
+);
+
 CREATE TABLE IF NOT EXISTS project_ideas (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   title TEXT NOT NULL,
   description TEXT,
-  category TEXT,
+  column_id UUID REFERENCES project_idea_columns(id) ON DELETE SET NULL,
+  row_id UUID REFERENCES project_idea_rows(id) ON DELETE SET NULL,
   status TEXT NOT NULL DEFAULT 'active' CHECK (status IN ('active', 'archived', 'promoted')),
   created_by UUID REFERENCES lab_members(id) ON DELETE SET NULL,
   promoted_project_id UUID REFERENCES projects(id) ON DELETE SET NULL,
@@ -201,6 +218,8 @@ CREATE TABLE IF NOT EXISTS project_idea_votes (
 );
 
 CREATE INDEX IF NOT EXISTS idx_project_ideas_status ON project_ideas(status);
+CREATE INDEX IF NOT EXISTS idx_project_ideas_column ON project_ideas(column_id);
+CREATE INDEX IF NOT EXISTS idx_project_ideas_row ON project_ideas(row_id);
 CREATE INDEX IF NOT EXISTS idx_project_idea_votes_idea ON project_idea_votes(idea_id);
 
 -- Disable Row Level Security (portal is gated app-side; all access via
@@ -217,8 +236,10 @@ ALTER TABLE project_members DISABLE ROW LEVEL SECURITY;
 ALTER TABLE grants DISABLE ROW LEVEL SECURITY;
 ALTER TABLE project_ideas DISABLE ROW LEVEL SECURITY;
 ALTER TABLE project_idea_votes DISABLE ROW LEVEL SECURITY;
+ALTER TABLE project_idea_columns DISABLE ROW LEVEL SECURITY;
+ALTER TABLE project_idea_rows DISABLE ROW LEVEL SECURITY;
 
 -- The public anon key is never meant to touch these tables at all -- the
 -- app only ever reads/writes via the service-role key, server-side.
-REVOKE ALL ON lab_members, member_sessions, member_login_attempts, projects, tasks, deadlines, datasets, project_members, grants, project_ideas, project_idea_votes
+REVOKE ALL ON lab_members, member_sessions, member_login_attempts, projects, tasks, deadlines, datasets, project_members, grants, project_ideas, project_idea_votes, project_idea_columns, project_idea_rows
 FROM anon, authenticated;

@@ -345,6 +345,9 @@ export async function deleteGrant(id: string): Promise<{ error?: string }> {
 
 // ── Ideation board ────────────────────────────────────────────────────────
 
+// Added from inside a specific matrix cell, so column_id/row_id are which
+// cell the "Add an idea..." input the member typed into belongs to, not
+// something chosen from a separate dropdown.
 export async function createProjectIdea(formData: FormData): Promise<{ error?: string }> {
   const member = await requireMember()
   const db = createAdminClient()
@@ -355,10 +358,71 @@ export async function createProjectIdea(formData: FormData): Promise<{ error?: s
   const { error } = await db.from('project_ideas').insert({
     title,
     description: (formData.get('description') as string) || null,
-    category: (formData.get('category') as string) || null,
+    column_id: (formData.get('column_id') as string) || null,
+    row_id: (formData.get('row_id') as string) || null,
     status: 'active',
     created_by: member.id,
   })
+  if (error) return { error: error.message }
+  revalidatePath('/portal/ideation')
+  return {}
+}
+
+// The board's two axes -- both freeform lists any member can manage (see
+// supabase/schema.sql for why neither is a fixed enum). Symmetric pair of
+// create/delete actions each, column and row.
+
+export async function createProjectIdeaColumn(name: string): Promise<{ error?: string }> {
+  await requireMember()
+  const db = createAdminClient()
+  const trimmed = name.trim()
+  if (!trimmed) return { error: 'Name is required.' }
+  const { error } = await db.from('project_idea_columns').insert({ name: trimmed })
+  if (error) return { error: error.message }
+  revalidatePath('/portal/ideation')
+  return {}
+}
+
+// Deleting a column doesn't delete the ideas in it (ON DELETE SET NULL in
+// the schema) -- they fall into the board's "Uncategorized" bucket instead
+// of disappearing, since the idea itself is still real brainstormed content.
+export async function deleteProjectIdeaColumn(id: string): Promise<{ error?: string }> {
+  await requireMember()
+  const db = createAdminClient()
+  const { error } = await db.from('project_idea_columns').delete().eq('id', id)
+  if (error) return { error: error.message }
+  revalidatePath('/portal/ideation')
+  return {}
+}
+
+export async function createProjectIdeaRow(name: string): Promise<{ error?: string }> {
+  await requireMember()
+  const db = createAdminClient()
+  const trimmed = name.trim()
+  if (!trimmed) return { error: 'Name is required.' }
+  const { error } = await db.from('project_idea_rows').insert({ name: trimmed })
+  if (error) return { error: error.message }
+  revalidatePath('/portal/ideation')
+  return {}
+}
+
+export async function deleteProjectIdeaRow(id: string): Promise<{ error?: string }> {
+  await requireMember()
+  const db = createAdminClient()
+  const { error } = await db.from('project_idea_rows').delete().eq('id', id)
+  if (error) return { error: error.message }
+  revalidatePath('/portal/ideation')
+  return {}
+}
+
+// Reassigns an idea to a different row (theme) via the small dropdown on
+// each idea card -- column is fixed once an idea is added (which cell's
+// input it was typed into), only the row is reassignable after the fact,
+// matching the reference board this was modeled on.
+export async function moveProjectIdeaRow(ideaId: string, rowId: string): Promise<{ error?: string }> {
+  await requireMember()
+  const db = createAdminClient()
+  const { error } = await db.from('project_ideas').update({ row_id: rowId || null }).eq('id', ideaId)
   if (error) return { error: error.message }
   revalidatePath('/portal/ideation')
   return {}
@@ -423,7 +487,7 @@ export async function promoteProjectIdea(ideaId: string, formData: FormData): Pr
       description: (formData.get('description') as string) || idea.description,
       status: 'planning',
       owner_id: leadId,
-      notes: `Promoted from the ideation board.${idea.category ? ` Category: ${idea.category}.` : ''}`,
+      notes: 'Promoted from the ideation board.',
     })
     .select('id')
     .single()
