@@ -32,14 +32,7 @@ export default async function JjkProjectDetailPage({ params }: { params: Promise
 
       <div className="panel p-5 space-y-4">
         <div className="flex items-center justify-between gap-4 flex-wrap">
-          <div>
-            <h1 className="text-title">{project.name}</h1>
-            {project.main_project_id && (
-              <Link href={`/portal/projects/${project.main_project_id}`} className="text-xs link-accent">
-                View in lab tracker &#8599;
-              </Link>
-            )}
-          </div>
+          <h1 className="text-title">{project.name}</h1>
           <JjkProjectStageForm project={project} />
         </div>
         <JjkProjectEditForm project={project} />

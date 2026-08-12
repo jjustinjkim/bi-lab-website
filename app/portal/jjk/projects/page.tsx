@@ -42,14 +42,7 @@ function ProjectTable({ projects }: { projects: JjkProject[] }) {
           {projects.map((p) => (
             <tr key={p.id} style={{ borderBottom: '1px solid var(--hairline)' }}>
               <td className="px-3 py-2.5">
-                <div className="flex items-center gap-2 flex-wrap">
-                  <Link href={`/portal/jjk/projects/${p.id}`} className="link-accent font-medium">{p.name}</Link>
-                  {p.main_project_id && (
-                    <Link href={`/portal/projects/${p.main_project_id}`} className="text-xs link-accent" style={{ color: 'var(--ink-faint)' }}>
-                      Lab tracker &#8599;
-                    </Link>
-                  )}
-                </div>
+                <Link href={`/portal/jjk/projects/${p.id}`} className="link-accent font-medium">{p.name}</Link>
               </td>
               <td className="px-3 py-2.5" style={{ color: 'var(--ink-muted)' }}>{JJK_PILLAR_LABELS[p.pillar]}</td>
               <td className="px-3 py-2.5" style={{ color: 'var(--ink-muted)' }}>{p.collaborators ?? 'n/a'}</td>
