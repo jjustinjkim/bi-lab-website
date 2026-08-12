@@ -61,6 +61,14 @@ export default function AddJjkProjectForm() {
         <label className="field-label" htmlFor="target_date">Target date</label>
         <input id="target_date" name="target_date" type="date" className="field-input" />
       </div>
+      <div>
+        <label className="field-label" htmlFor="progress_percent">Estimated progress</label>
+        <input id="progress_percent" name="progress_percent" type="number" min={0} max={100} step={5} className="field-input" placeholder="0-100" />
+      </div>
+      <div>
+        <label className="field-label" htmlFor="checkpoint">Checkpoint</label>
+        <input id="checkpoint" name="checkpoint" className="field-input" placeholder="Who / what's the barrier right now" />
+      </div>
       <div className="sm:col-span-2">
         <label className="field-label" htmlFor="notes">Notes</label>
         <textarea id="notes" name="notes" rows={2} className="field-input" placeholder="Where it stands, next step..." />

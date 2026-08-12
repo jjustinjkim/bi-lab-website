@@ -34,17 +34,28 @@ function ProjectTable({ projects }: { projects: JjkProject[] }) {
             <th className="text-left px-3 py-2.5" style={HEADER_CELL_STYLE}>Pillar</th>
             <th className="text-left px-3 py-2.5" style={HEADER_CELL_STYLE}>Collaborators</th>
             <th className="text-left px-3 py-2.5" style={HEADER_CELL_STYLE}>Target date</th>
+            <th className="text-left px-3 py-2.5" style={HEADER_CELL_STYLE}>Progress</th>
+            <th className="text-left px-3 py-2.5" style={HEADER_CELL_STYLE}>Checkpoint</th>
           </tr>
         </thead>
         <tbody>
           {projects.map((p) => (
             <tr key={p.id} style={{ borderBottom: '1px solid var(--hairline)' }}>
               <td className="px-3 py-2.5">
-                <Link href={`/portal/jjk/projects/${p.id}`} className="link-accent font-medium">{p.name}</Link>
+                <div className="flex items-center gap-2 flex-wrap">
+                  <Link href={`/portal/jjk/projects/${p.id}`} className="link-accent font-medium">{p.name}</Link>
+                  {p.main_project_id && (
+                    <Link href={`/portal/projects/${p.main_project_id}`} className="text-xs link-accent" style={{ color: 'var(--ink-faint)' }}>
+                      Lab tracker &#8599;
+                    </Link>
+                  )}
+                </div>
               </td>
               <td className="px-3 py-2.5" style={{ color: 'var(--ink-muted)' }}>{JJK_PILLAR_LABELS[p.pillar]}</td>
               <td className="px-3 py-2.5" style={{ color: 'var(--ink-muted)' }}>{p.collaborators ?? 'n/a'}</td>
               <td className="px-3 py-2.5" style={{ color: 'var(--ink-muted)' }}>{formatDate(p.target_date) ?? 'n/a'}</td>
+              <td className="px-3 py-2.5" style={{ color: 'var(--ink-muted)' }}>{p.progress_percent != null ? `${p.progress_percent}%` : 'n/a'}</td>
+              <td className="px-3 py-2.5" style={{ color: 'var(--ink-muted)' }}>{p.checkpoint ?? 'n/a'}</td>
             </tr>
           ))}
         </tbody>

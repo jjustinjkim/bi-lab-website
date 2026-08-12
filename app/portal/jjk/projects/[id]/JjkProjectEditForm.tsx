@@ -51,6 +51,32 @@ export default function JjkProjectEditForm({ project }: { project: JjkProject })
         <label className="field-label" htmlFor="collaborators">Collaborators</label>
         <input id="collaborators" name="collaborators" defaultValue={project.collaborators ?? ''} className="field-input" />
       </div>
+      <div className="grid sm:grid-cols-2 gap-4">
+        <div>
+          <label className="field-label" htmlFor="progress_percent">Estimated progress</label>
+          <input
+            id="progress_percent"
+            name="progress_percent"
+            type="number"
+            min={0}
+            max={100}
+            step={5}
+            defaultValue={project.progress_percent ?? ''}
+            className="field-input"
+            placeholder="0-100"
+          />
+        </div>
+        <div>
+          <label className="field-label" htmlFor="checkpoint">Checkpoint</label>
+          <input
+            id="checkpoint"
+            name="checkpoint"
+            defaultValue={project.checkpoint ?? ''}
+            className="field-input"
+            placeholder="Who / what's the barrier right now"
+          />
+        </div>
+      </div>
       <div>
         <label className="field-label" htmlFor="notes">Notes</label>
         <textarea id="notes" name="notes" rows={3} defaultValue={project.notes ?? ''} className="field-input" />

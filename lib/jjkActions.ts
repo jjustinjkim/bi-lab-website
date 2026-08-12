@@ -96,6 +96,16 @@ export async function promoteBigIdea(ideaId: string, projectName: string): Promi
 
 // ── Projects (execution layer) ──────────────────────────────────────────
 
+function intOrNull(formData: FormData, key: string, min?: number, max?: number): number | null {
+  const raw = formData.get(key) as string
+  if (!raw) return null
+  const n = parseInt(raw, 10)
+  if (Number.isNaN(n)) return null
+  if (min != null && n < min) return min
+  if (max != null && n > max) return max
+  return n
+}
+
 export async function createJjkProject(formData: FormData): Promise<{ error?: string }> {
   await requireJjkAccess()
   const db = createAdminClient()
@@ -112,6 +122,8 @@ export async function createJjkProject(formData: FormData): Promise<{ error?: st
     collaborators: (formData.get('collaborators') as string) || null,
     target_date: (formData.get('target_date') as string) || null,
     notes: (formData.get('notes') as string) || null,
+    progress_percent: intOrNull(formData, 'progress_percent', 0, 100),
+    checkpoint: (formData.get('checkpoint') as string) || null,
   })
   if (error) return { error: error.message }
   revalidatePath('/portal/jjk/projects')
@@ -134,6 +146,8 @@ export async function updateJjkProjectMeta(id: string, formData: FormData): Prom
       collaborators: (formData.get('collaborators') as string) || null,
       target_date: (formData.get('target_date') as string) || null,
       notes: (formData.get('notes') as string) || null,
+      progress_percent: intOrNull(formData, 'progress_percent', 0, 100),
+      checkpoint: (formData.get('checkpoint') as string) || null,
     })
     .eq('id', id)
   if (error) return { error: error.message }

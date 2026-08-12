@@ -260,6 +260,17 @@ CREATE TABLE IF NOT EXISTS jjk_projects (
   updated_at TIMESTAMPTZ DEFAULT NOW()
 );
 
+-- Estimated completion, independent of stage (stage is discrete/coarse,
+-- this is a finer-grained self-estimate). checkpoint mirrors the main lab
+-- Projects tracker's own field of the same name/purpose (see `projects`
+-- table above): who or what is currently the barrier to moving forward.
+-- main_project_id links a JJK project to its twin on the shared lab
+-- Projects page when one exists (e.g. a manuscript real enough that it's
+-- also tracked lab-wide) -- optional, most JJK projects have no twin.
+ALTER TABLE jjk_projects ADD COLUMN IF NOT EXISTS progress_percent INTEGER CHECK (progress_percent BETWEEN 0 AND 100);
+ALTER TABLE jjk_projects ADD COLUMN IF NOT EXISTS checkpoint TEXT;
+ALTER TABLE jjk_projects ADD COLUMN IF NOT EXISTS main_project_id UUID REFERENCES projects(id) ON DELETE SET NULL;
+
 DROP TRIGGER IF EXISTS jjk_projects_updated_at ON jjk_projects;
 CREATE TRIGGER jjk_projects_updated_at
   BEFORE UPDATE ON jjk_projects

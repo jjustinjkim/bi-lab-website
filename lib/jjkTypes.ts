@@ -60,6 +60,9 @@ export interface JjkProject {
   collaborators: string | null
   target_date: string | null
   notes: string | null
+  progress_percent: number | null
+  checkpoint: string | null
+  main_project_id: string | null
   created_at: string
   updated_at: string
 }
