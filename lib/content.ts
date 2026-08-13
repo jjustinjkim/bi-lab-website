@@ -36,7 +36,7 @@ export const RESEARCH_AREAS: ResearchArea[] = [
     anchor: "IMM",
     name: "Immunogenomics",
     description:
-      "We apply genomic and cancer biology approaches to define the molecular taxonomy and tumor microenvironment of skull base tumors. In particular, we seek to understand tumor cell evolution and their acquisition of resistance to innate immune mechanisms as well as administered treatments. Collectively, we hope to define molecular markers with diagnostic and prognostic potential to track brain tumors across time and to develop improved therapeutic options.",
+      "We apply genomic and cancer biology approaches to define the molecular taxonomy and tumor microenvironment of meningiomas, pituitary tumors, gliomas, and other skull base and brain tumors. In particular, we seek to understand tumor cell evolution and their acquisition of resistance to innate immune mechanisms as well as administered treatments. Collectively, we hope to define molecular markers with diagnostic and prognostic potential to track brain tumors across time and to develop improved therapeutic options.",
     image: "/research/immunogenomics.png",
     imageSide: "left",
   },
@@ -44,7 +44,7 @@ export const RESEARCH_AREAS: ResearchArea[] = [
     anchor: "IM",
     name: "Imaging",
     description:
-      "Safe skull base surgery is predicated on detailed knowledge of the relevant anatomy. We aim to apply advanced imaging modalities to assess critical structures that may be encountered during the operative approach to improve preservation of neurovascular function.",
+      "Safe surgery for meningiomas, pituitary tumors, and other skull base tumors is predicated on detailed knowledge of the relevant anatomy. We aim to apply advanced imaging modalities to assess critical structures that may be encountered during the operative approach to improve preservation of neurovascular function.",
     image: "/research/imaging.jpg",
     imageSide: "right",
   },
@@ -52,7 +52,7 @@ export const RESEARCH_AREAS: ResearchArea[] = [
     anchor: "IN",
     name: "Intraoperative Neuromonitoring",
     description:
-      "Intraoperative neuromonitoring (IONM) is a powerful adjunct to improve the safety of high-risk neurosurgical procedures. We present an interactive training module to help make concepts and techniques more broadly accessible to all practitioners.",
+      "Intraoperative neuromonitoring (IONM) is a powerful adjunct to improve the safety of high-risk neurosurgical procedures for meningiomas, pituitary tumors, and other skull base and brain tumors. We present an interactive training module to help make concepts and techniques more broadly accessible to all practitioners.",
     image: "/research/ionm.png",
     imageSide: "left",
     extraLink: { label: "IONM Training Module", href: "/research/ionm" },
@@ -61,7 +61,7 @@ export const RESEARCH_AREAS: ResearchArea[] = [
     anchor: "OUT",
     name: "Outcomes",
     description:
-      "Ongoing studies focus on the impact of operative technique, perioperative routine, and adjuvant therapy regimens on outcomes of meningiomas, pituitary tumors, schwannomas, brain metastases, and tumors in challenging anatomical locations, in retrospective and prospective fashion.",
+      "Ongoing studies focus on the impact of operative technique, perioperative routine, and adjuvant therapy regimens on outcomes of meningiomas, pituitary tumors, gliomas, schwannomas, brain metastases, and epidermoid cysts, in retrospective and prospective fashion.",
     image: "/research/outcomes.jpg",
     imageSide: "right",
     extraLink: { label: "Glioma Outcome Risk Calculators", href: "/research/glioma-outcomes" },
@@ -115,12 +115,12 @@ export const CURRENT_MEMBERS: TeamMember[] = [
     slug: "matthew-toczylowski-bs-cnim",
   },
   { name: "Gabrielle Luiselli, MD", role: "Neurosurgery Resident", image: "/team/gabrielle-luiselli.jpg" },
-  { name: "Ruchit Patel, BS", role: "Neurosurgery Resident", image: "/team/ruchit-patel.jpeg" },
-  { name: "Junpeng Ma, MD, PhD", role: "Lab Member", image: "/team/junpeng-ma.png" },
-  { name: "Erickson Torio, MD", role: "Lab Member", image: "/team/erickson-torio.png" },
   { name: "MD Candidate", role: "MD Candidate", image: "/team/md-candidate.jpg" },
   { name: "Andrew Dunbar, BS", role: "MD Candidate", image: "/team/andrew-dunbar.jpg" },
   { name: "Zach Moynihan, BS", role: "Research Assistant", image: "/team/zach-moynihan.png" },
+  { name: "Justin Kim", role: "Medical Student" },
+  { name: "Sydney Wiredu", role: "Medical Student" },
+  { name: "Sreeya Vuppala", role: "Medical Student" },
 ];
 
 export const ALUMNI: TeamMember[] = [
@@ -214,6 +214,9 @@ export const ALUMNI: TeamMember[] = [
     slug: "lilin-tong-md-candidate",
   },
   { name: "Hia Ghosh, BS", role: "Research Assistant", image: "/team/hia-ghosh.jpg" },
+  { name: "Ruchit Patel, BS", role: "Neurosurgery Resident", image: "/team/ruchit-patel.jpeg" },
+  { name: "Junpeng Ma, MD, PhD", role: "Lab Member", image: "/team/junpeng-ma.png" },
+  { name: "Erickson Torio, MD", role: "Lab Member", image: "/team/erickson-torio.png" },
 ];
 
 export interface FeaturedPublication {
