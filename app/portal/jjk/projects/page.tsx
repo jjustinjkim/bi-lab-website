@@ -1,13 +1,19 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { getJjkProjects } from '@/lib/jjkQueries'
-import { JJK_PILLAR_LABELS, JJK_PROJECT_STAGE_LABELS, type JjkProject, type JjkProjectStage } from '@/lib/jjkTypes'
+import { getJjkProjects, getAllJjkProgressSnapshots } from '@/lib/jjkQueries'
+import { computeVelocity, checkpointStaleness, type StalenessLevel } from '@/lib/jjkMomentum'
+import { JJK_PILLAR_LABELS, JJK_PROJECT_STAGE_LABELS, type JjkProject, type JjkProjectStage, type JjkProgressSnapshot } from '@/lib/jjkTypes'
 import AddJjkProjectForm from './AddJjkProjectForm'
 
 export const dynamic = 'force-dynamic'
 export const metadata: Metadata = { title: 'Projects', robots: { index: false, follow: false } }
 
 const STAGE_ORDER: JjkProjectStage[] = ['planning', 'drafting', 'under_review', 'revision', 'published']
+const VELOCITY_WINDOW_DAYS = 7
+// Soft, not enforced -- exceeding it just surfaces a banner, doesn't block
+// adding another project. The point is making the pileup visible, not
+// stopping you outright (see the design discussion this was built from).
+const DRAFTING_WIP_LIMIT = 3
 
 function formatDate(date: string | null) {
   if (!date) return null
@@ -21,19 +27,50 @@ const HEADER_CELL_STYLE: React.CSSProperties = {
   whiteSpace: 'nowrap',
 }
 
-function ProgressBar({ percent }: { percent: number | null }) {
-  if (percent == null) return <span style={{ color: 'var(--ink-muted)' }}>n/a</span>
+const STALENESS_COLOR: Record<StalenessLevel, string> = {
+  fresh: 'var(--ink-muted)',
+  aging: 'var(--accent-2-ink)',
+  stale: 'var(--accent-2-ink)',
+}
+
+function ProgressCell({ project, snapshots }: { project: JjkProject; snapshots: JjkProgressSnapshot[] }) {
+  if (project.progress_percent == null) {
+    return <span style={{ color: 'var(--ink-muted)' }}>n/a</span>
+  }
+  const velocity = computeVelocity(snapshots, VELOCITY_WINDOW_DAYS)
   return (
-    <div className="flex items-center gap-2">
-      <div className="rounded-full overflow-hidden shrink-0" style={{ width: '72px', height: '6px', background: 'var(--hairline-strong)' }}>
-        <div className="h-full rounded-full" style={{ width: `${percent}%`, background: 'var(--accent)' }} />
+    <div className="space-y-1">
+      <div className="flex items-center gap-2">
+        <div className="rounded-full overflow-hidden shrink-0" style={{ width: '72px', height: '6px', background: 'var(--hairline-strong)' }}>
+          <div className="h-full rounded-full" style={{ width: `${project.progress_percent}%`, background: 'var(--accent)' }} />
+        </div>
+        <span className="text-xs" style={{ color: 'var(--ink-muted)' }}>{project.progress_percent}%</span>
       </div>
-      <span className="text-xs" style={{ color: 'var(--ink-muted)' }}>{percent}%</span>
+      {velocity && (
+        <div className="text-xs" style={{ color: velocity.delta > 0 ? 'var(--accent-ink)' : velocity.delta < 0 ? 'var(--accent-2-ink)' : 'var(--ink-faint)' }}>
+          {velocity.delta > 0 ? '+' : ''}{velocity.delta}% ({velocity.days}d)
+        </div>
+      )}
     </div>
   )
 }
 
-function ProjectTable({ projects }: { projects: JjkProject[] }) {
+function CheckpointCell({ project }: { project: JjkProject }) {
+  if (!project.checkpoint) return <span style={{ color: 'var(--ink-muted)' }}>n/a</span>
+  const staleness = checkpointStaleness(project.checkpoint_updated_at)
+  return (
+    <div>
+      <div>{project.checkpoint}</div>
+      {staleness && staleness.level !== 'fresh' && (
+        <div className="text-xs mt-0.5" style={{ color: STALENESS_COLOR[staleness.level] }}>
+          Stuck {staleness.days}d
+        </div>
+      )}
+    </div>
+  )
+}
+
+function ProjectTable({ projects, snapshotsByProject }: { projects: JjkProject[]; snapshotsByProject: Map<string, JjkProgressSnapshot[]> }) {
   if (projects.length === 0) {
     return <p className="text-sm" style={{ color: 'var(--ink-faint)' }}>None.</p>
   }
@@ -59,8 +96,8 @@ function ProjectTable({ projects }: { projects: JjkProject[] }) {
               <td className="px-3 py-2.5" style={{ color: 'var(--ink-muted)' }}>{JJK_PILLAR_LABELS[p.pillar]}</td>
               <td className="px-3 py-2.5" style={{ color: 'var(--ink-muted)' }}>{p.collaborators ?? 'n/a'}</td>
               <td className="px-3 py-2.5" style={{ color: 'var(--ink-muted)' }}>{formatDate(p.target_date) ?? 'n/a'}</td>
-              <td className="px-3 py-2.5"><ProgressBar percent={p.progress_percent} /></td>
-              <td className="px-3 py-2.5" style={{ color: 'var(--ink-muted)' }}>{p.checkpoint ?? 'n/a'}</td>
+              <td className="px-3 py-2.5"><ProgressCell project={p} snapshots={snapshotsByProject.get(p.id) ?? []} /></td>
+              <td className="px-3 py-2.5"><CheckpointCell project={p} /></td>
             </tr>
           ))}
         </tbody>
@@ -70,7 +107,16 @@ function ProjectTable({ projects }: { projects: JjkProject[] }) {
 }
 
 export default async function JjkProjectsPage() {
-  const projects = await getJjkProjects()
+  const [projects, snapshots] = await Promise.all([getJjkProjects(), getAllJjkProgressSnapshots()])
+
+  const snapshotsByProject = new Map<string, JjkProgressSnapshot[]>()
+  for (const s of snapshots) {
+    const list = snapshotsByProject.get(s.project_id) ?? []
+    list.push(s)
+    snapshotsByProject.set(s.project_id, list)
+  }
+
+  const draftingCount = projects.filter((p) => p.stage === 'drafting').length
 
   return (
     <div className="space-y-8">
@@ -78,6 +124,13 @@ export default async function JjkProjectsPage() {
         <h1 className="text-title">Projects</h1>
         <span className="text-sm" style={{ color: 'var(--ink-muted)' }}>{projects.length} total</span>
       </div>
+
+      {draftingCount > DRAFTING_WIP_LIMIT && (
+        <div className="panel p-4 text-sm" style={{ borderColor: 'var(--accent-2)', color: 'var(--accent-2-ink)' }}>
+          {draftingCount} projects in Drafting at once, more than the soft limit of {DRAFTING_WIP_LIMIT}. Not a
+          block, just a nudge: finishing one usually beats starting another.
+        </div>
+      )}
 
       <details className="panel p-5">
         <summary className="text-subtitle cursor-pointer" style={{ fontSize: '0.9375rem' }}>
@@ -94,7 +147,7 @@ export default async function JjkProjectsPage() {
               {JJK_PROJECT_STAGE_LABELS[stage]} ({inStage.length})
             </summary>
             <div className="mt-3">
-              <ProjectTable projects={inStage} />
+              <ProjectTable projects={inStage} snapshotsByProject={snapshotsByProject} />
             </div>
           </details>
         )

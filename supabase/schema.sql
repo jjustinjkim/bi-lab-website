@@ -271,10 +271,43 @@ ALTER TABLE jjk_projects ADD COLUMN IF NOT EXISTS progress_percent INTEGER CHECK
 ALTER TABLE jjk_projects ADD COLUMN IF NOT EXISTS checkpoint TEXT;
 ALTER TABLE jjk_projects ADD COLUMN IF NOT EXISTS main_project_id UUID REFERENCES projects(id) ON DELETE SET NULL;
 
+-- Bumped only when checkpoint's actual text changes (not on every edit,
+-- see the trigger below) -- lets the UI show "stuck N days" against the
+-- real barrier, not just "last touched," which changes on any unrelated
+-- edit and would understate how long the same blocker has sat there.
+ALTER TABLE jjk_projects ADD COLUMN IF NOT EXISTS checkpoint_updated_at TIMESTAMPTZ;
+
 DROP TRIGGER IF EXISTS jjk_projects_updated_at ON jjk_projects;
 CREATE TRIGGER jjk_projects_updated_at
   BEFORE UPDATE ON jjk_projects
   FOR EACH ROW EXECUTE FUNCTION update_updated_at();
+
+CREATE OR REPLACE FUNCTION jjk_projects_touch_checkpoint()
+RETURNS TRIGGER AS $$
+BEGIN
+  IF NEW.checkpoint IS DISTINCT FROM OLD.checkpoint THEN
+    NEW.checkpoint_updated_at = NOW();
+  END IF;
+  RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+DROP TRIGGER IF EXISTS jjk_projects_touch_checkpoint ON jjk_projects;
+CREATE TRIGGER jjk_projects_touch_checkpoint
+  BEFORE UPDATE ON jjk_projects
+  FOR EACH ROW EXECUTE FUNCTION jjk_projects_touch_checkpoint();
+
+-- One row per progress_percent change (see recordJjkProgressSnapshot in
+-- lib/jjkActions.ts) -- history for computing velocity ("+15% in 7 days"),
+-- not just the current single value jjk_projects.progress_percent holds.
+CREATE TABLE IF NOT EXISTS jjk_project_progress_log (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  project_id UUID NOT NULL REFERENCES jjk_projects(id) ON DELETE CASCADE,
+  progress_percent INTEGER NOT NULL CHECK (progress_percent BETWEEN 0 AND 100),
+  recorded_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+CREATE INDEX IF NOT EXISTS idx_jjk_progress_log_project ON jjk_project_progress_log(project_id, recorded_at DESC);
 
 -- The "Big Idea" clarification wizard: each of the 5 free-text fields is a
 -- separate step, filled in independently (see updateBigIdeaStep in
@@ -343,8 +376,9 @@ ALTER TABLE jjk_big_ideas DISABLE ROW LEVEL SECURITY;
 ALTER TABLE jjk_projects DISABLE ROW LEVEL SECURITY;
 ALTER TABLE jjk_project_updates DISABLE ROW LEVEL SECURITY;
 ALTER TABLE jjk_presentation_opportunities DISABLE ROW LEVEL SECURITY;
+ALTER TABLE jjk_project_progress_log DISABLE ROW LEVEL SECURITY;
 
-REVOKE ALL ON jjk_sessions, jjk_login_attempts, jjk_big_ideas, jjk_projects, jjk_project_updates, jjk_presentation_opportunities
+REVOKE ALL ON jjk_sessions, jjk_login_attempts, jjk_big_ideas, jjk_projects, jjk_project_updates, jjk_presentation_opportunities, jjk_project_progress_log
 FROM anon, authenticated;
 
 -- Disable Row Level Security (portal is gated app-side; all access via

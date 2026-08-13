@@ -62,6 +62,7 @@ export interface JjkProject {
   notes: string | null
   progress_percent: number | null
   checkpoint: string | null
+  checkpoint_updated_at: string | null
   main_project_id: string | null
   created_at: string
   updated_at: string
@@ -72,6 +73,13 @@ export interface JjkProjectUpdate {
   project_id: string
   body: string
   created_at: string
+}
+
+export interface JjkProgressSnapshot {
+  id: string
+  project_id: string
+  progress_percent: number
+  recorded_at: string
 }
 
 export type JjkPresentationType = 'conference' | 'grand_rounds' | 'invited_talk' | 'symposium' | 'other'

@@ -106,6 +106,13 @@ function intOrNull(formData: FormData, key: string, min?: number, max?: number):
   return n
 }
 
+// Only inserted when the value is actually set (not on every save) --
+// jjk_project_progress_log is history for velocity, not an audit log of
+// every edit that happened not to touch progress.
+async function recordProgressSnapshot(db: ReturnType<typeof createAdminClient>, projectId: string, progressPercent: number) {
+  await db.from('jjk_project_progress_log').insert({ project_id: projectId, progress_percent: progressPercent })
+}
+
 export async function createJjkProject(formData: FormData): Promise<{ error?: string }> {
   await requireJjkAccess()
   const db = createAdminClient()
@@ -114,18 +121,24 @@ export async function createJjkProject(formData: FormData): Promise<{ error?: st
   if (!name) return { error: 'Name is required.' }
   const pillar = formData.get('pillar') as string
   if (!pillar) return { error: 'Pillar is required.' }
+  const progressPercent = intOrNull(formData, 'progress_percent', 0, 100)
 
-  const { error } = await db.from('jjk_projects').insert({
-    name,
-    pillar,
-    stage: (formData.get('stage') as string) || 'planning',
-    collaborators: (formData.get('collaborators') as string) || null,
-    target_date: (formData.get('target_date') as string) || null,
-    notes: (formData.get('notes') as string) || null,
-    progress_percent: intOrNull(formData, 'progress_percent', 0, 100),
-    checkpoint: (formData.get('checkpoint') as string) || null,
-  })
+  const { data: project, error } = await db
+    .from('jjk_projects')
+    .insert({
+      name,
+      pillar,
+      stage: (formData.get('stage') as string) || 'planning',
+      collaborators: (formData.get('collaborators') as string) || null,
+      target_date: (formData.get('target_date') as string) || null,
+      notes: (formData.get('notes') as string) || null,
+      progress_percent: progressPercent,
+      checkpoint: (formData.get('checkpoint') as string) || null,
+    })
+    .select('id')
+    .single()
   if (error) return { error: error.message }
+  if (progressPercent != null && project) await recordProgressSnapshot(db, project.id, progressPercent)
   revalidatePath('/portal/jjk/projects')
   revalidatePath('/portal/jjk')
   return {}
@@ -137,6 +150,9 @@ export async function updateJjkProjectMeta(id: string, formData: FormData): Prom
 
   const name = (formData.get('name') as string)?.trim()
   if (!name) return { error: 'Name is required.' }
+  const progressPercent = intOrNull(formData, 'progress_percent', 0, 100)
+
+  const { data: before } = await db.from('jjk_projects').select('progress_percent').eq('id', id).maybeSingle()
 
   const { error } = await db
     .from('jjk_projects')
@@ -146,13 +162,17 @@ export async function updateJjkProjectMeta(id: string, formData: FormData): Prom
       collaborators: (formData.get('collaborators') as string) || null,
       target_date: (formData.get('target_date') as string) || null,
       notes: (formData.get('notes') as string) || null,
-      progress_percent: intOrNull(formData, 'progress_percent', 0, 100),
+      progress_percent: progressPercent,
       checkpoint: (formData.get('checkpoint') as string) || null,
     })
     .eq('id', id)
   if (error) return { error: error.message }
+  if (progressPercent != null && progressPercent !== before?.progress_percent) {
+    await recordProgressSnapshot(db, id, progressPercent)
+  }
   revalidatePath(`/portal/jjk/projects/${id}`)
   revalidatePath('/portal/jjk/projects')
+  revalidatePath('/portal/jjk')
   return {}
 }
 
