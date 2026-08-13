@@ -21,6 +21,18 @@ const HEADER_CELL_STYLE: React.CSSProperties = {
   whiteSpace: 'nowrap',
 }
 
+function ProgressBar({ percent }: { percent: number | null }) {
+  if (percent == null) return <span style={{ color: 'var(--ink-muted)' }}>n/a</span>
+  return (
+    <div className="flex items-center gap-2">
+      <div className="rounded-full overflow-hidden shrink-0" style={{ width: '72px', height: '6px', background: 'var(--hairline-strong)' }}>
+        <div className="h-full rounded-full" style={{ width: `${percent}%`, background: 'var(--accent)' }} />
+      </div>
+      <span className="text-xs" style={{ color: 'var(--ink-muted)' }}>{percent}%</span>
+    </div>
+  )
+}
+
 function ProjectTable({ projects }: { projects: JjkProject[] }) {
   if (projects.length === 0) {
     return <p className="text-sm" style={{ color: 'var(--ink-faint)' }}>None.</p>
@@ -47,7 +59,7 @@ function ProjectTable({ projects }: { projects: JjkProject[] }) {
               <td className="px-3 py-2.5" style={{ color: 'var(--ink-muted)' }}>{JJK_PILLAR_LABELS[p.pillar]}</td>
               <td className="px-3 py-2.5" style={{ color: 'var(--ink-muted)' }}>{p.collaborators ?? 'n/a'}</td>
               <td className="px-3 py-2.5" style={{ color: 'var(--ink-muted)' }}>{formatDate(p.target_date) ?? 'n/a'}</td>
-              <td className="px-3 py-2.5" style={{ color: 'var(--ink-muted)' }}>{p.progress_percent != null ? `${p.progress_percent}%` : 'n/a'}</td>
+              <td className="px-3 py-2.5"><ProgressBar percent={p.progress_percent} /></td>
               <td className="px-3 py-2.5" style={{ color: 'var(--ink-muted)' }}>{p.checkpoint ?? 'n/a'}</td>
             </tr>
           ))}
