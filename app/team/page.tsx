@@ -70,7 +70,7 @@ export default function TeamPage() {
             width={220}
             height={220}
             className="rounded-full"
-            style={{ border: "1px solid var(--hairline)" }}
+            style={{ border: "1px solid var(--hairline)", objectFit: "cover", aspectRatio: "1 / 1" }}
           />
           <div>
             <h3 className="text-title">{PRINCIPAL_INVESTIGATOR.name}</h3>

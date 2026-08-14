@@ -64,7 +64,7 @@ export default async function TeamMemberPage({
             width={200}
             height={200}
             className="rounded-full"
-            style={{ border: "1px solid var(--hairline)" }}
+            style={{ border: "1px solid var(--hairline)", objectFit: "cover", aspectRatio: "1 / 1" }}
           />
         )}
         <div>
