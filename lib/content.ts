@@ -88,10 +88,7 @@ export const RESEARCH_AREAS: ResearchArea[] = [
       { title: "Contemporary prognostic signatures and refined risk stratification of gliomas: an analysis of 4,400 tumors", journal: "Neuro-Oncology", pmid: "39164213" },
       { title: "Canonical amplifications and CDKN2A/B loss refine IDH1/2-mutant astrocytoma prognosis", journal: "Neuro-Oncology", pmid: "39584448" },
     ],
-    extraLinks: [
-      { label: "Glioma Outcome Risk Calculators", href: "/research/glioma-outcomes" },
-      { label: "IONM Training Module", href: "/research/ionm" },
-    ],
+    extraLinks: [{ label: "IONM Training Module", href: "/research/ionm" }],
     image: "/research/immunogenomics.png",
     imageSide: "right",
   },

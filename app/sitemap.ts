@@ -19,7 +19,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const routes = [
     "",
     "/research",
-    "/research/glioma-outcomes",
     "/research/ionm",
     "/team",
     ...teamSlugs,

@@ -16,13 +16,9 @@ function TeamCredit({ team }: { team: ResearchTeamCredit[] }) {
       Research team:{" "}
       {team.map((member, i) => (
         <span key={member.name}>
-          {member.slug ? (
-            <Link href={`/team/${member.slug}`} className="link-accent not-italic">
-              {member.name}
-            </Link>
-          ) : (
-            member.name
-          )}
+          <Link href={member.slug ? `/team/${member.slug}` : "/team"} className="link-accent not-italic">
+            {member.name}
+          </Link>
           {i < team.length - 1 ? ", " : ""}
         </span>
       ))}
