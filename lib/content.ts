@@ -132,13 +132,21 @@ export const COLLABORATORS: TeamMember[] = [
   },
   {
     name: "Angelique Paulk, PhD",
-    role: "MGH Center for Neurotechnology and Neurorecovery",
+    role: "Assistant Professor of Neurology, Harvard Medical School",
+    image: "/team/angelique-paulk.jpg",
     externalUrl: "https://www.cntr.mgh.harvard.edu/our-team/angelique-paulk,-phd",
   },
   {
-    name: "Amar Dhand, MD, PhD",
-    role: "Dhand Lab, Brigham and Women's Hospital (Social Networks and Neurology)",
+    name: "Amar Dhand, MD, DPhil",
+    role: "Associate Professor of Neurology, Brigham and Women's Hospital",
+    image: "/team/amar-dhand.jpg",
     externalUrl: "https://www.dhandlab.com",
+  },
+  {
+    name: "Rameen Beroukhim, MD, PhD",
+    role: "Associate Professor of Medicine, Dana-Farber Cancer Institute",
+    image: "/team/rameen-beroukhim.jpg",
+    externalUrl: "https://beroukhimlab.org",
   },
 ];
 
@@ -234,7 +242,7 @@ export const ALUMNI: TeamMember[] = [
   },
   { name: "Hia Ghosh, BS", role: "Research Assistant", image: "/team/hia-ghosh.jpg" },
   { name: "Ruchit Patel, BS", role: "Neurosurgery Resident", image: "/team/ruchit-patel.jpeg" },
-  { name: "Junpeng Ma, MD, PhD", role: "Lab Member", image: "/team/junpeng-ma.png" },
+  { name: "Junpeng Ma, MD, PhD", role: "", image: "/team/junpeng-ma.png" },
   { name: "Erickson Torio, MD", role: "Lab Member", image: "/team/erickson-torio.png" },
 ];
 
