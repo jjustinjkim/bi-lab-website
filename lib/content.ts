@@ -64,7 +64,12 @@ export const RESEARCH_AREAS: ResearchArea[] = [
       "We also asked whether Ki-67, the standard marker doctors use to gauge how fast a tumor is growing, was measuring what everyone assumed. Using single-cell technology across more than 120,000 individual cells, Xiaopeng Guo and colleagues found that Ki-67 is produced not only by tumor cells but also by immune cells within the tumor, especially in lower-grade disease, and that this balance shifts with tumor grade, prior radiation, and patient age. That means the same Ki-67 result can mean different things from one tumor to the next.",
       "Most recently, work led with Zach Moynihan showed that a meningioma's immune environment is not fixed: it evolves as the tumor's biology changes, including after treatment. Andrew Dunbar, a medical student in the lab, is now helping extend this work, combining genomic and immune fingerprinting to understand how treatment can reshape a tumor's biology, with the goal of identifying which tumors are truly high-risk and which patients might safely need less treatment.",
     ],
-    team: [{ name: "Ruchit Patel" }, { name: "Xiaopeng Guo", slug: "xiaopeng-guo-md" }, { name: "Zach Moynihan" }, { name: "Andrew Dunbar" }],
+    team: [
+      { name: "Ruchit Patel", slug: "ruchit-patel-bs" },
+      { name: "Xiaopeng Guo", slug: "xiaopeng-guo-md" },
+      { name: "Zach Moynihan", slug: "zach-moynihan-bs" },
+      { name: "Andrew Dunbar", slug: "andrew-dunbar-bs" },
+    ],
     publications: [
       { title: "Distribution of copy number alterations and impact of chromosome arm call thresholds for meningioma", journal: "Nature Communications", pmid: "40603304" },
       { title: "Ki-67 in meningioma: distribution and implications", journal: "Journal of Neurosurgery", pmid: "40712166" },
@@ -83,7 +88,7 @@ export const RESEARCH_AREAS: ResearchArea[] = [
       "A related study looked specifically at IDH-mutant astrocytomas, a common glioma subtype, to see whether genetics could sharpen risk beyond grade alone. Analyzing nearly 1,000 patients, the team found that loss of a gene called CDKN2A/B, along with certain chromosomal amplifications, identified patients at substantially higher risk regardless of how the tumor appeared under the microscope: patients with an intact CDKN2A/B gene and no amplifications lived, on average, more than 17 years after diagnosis, compared with under 3 years for those with CDKN2A/B loss in a grade 4 tumor. These findings are helping refine how we counsel patients and plan treatment.",
       "As these molecular tools evolve, so does surgery itself. The lab's intraoperative neuromonitoring (IONM) program tracks the function of critical nerve and brain pathways in real time during glioma resection, helping the surgical team remove as much tumor as safely possible.",
     ],
-    team: [{ name: "Hia Ghosh" }, { name: "Ruchit Patel" }],
+    team: [{ name: "Hia Ghosh", slug: "hia-ghosh-bs" }, { name: "Ruchit Patel", slug: "ruchit-patel-bs" }],
     publications: [
       { title: "Contemporary prognostic signatures and refined risk stratification of gliomas: an analysis of 4,400 tumors", journal: "Neuro-Oncology", pmid: "39164213" },
       { title: "Canonical amplifications and CDKN2A/B loss refine IDH1/2-mutant astrocytoma prognosis", journal: "Neuro-Oncology", pmid: "39584448" },
@@ -101,7 +106,7 @@ export const RESEARCH_AREAS: ResearchArea[] = [
       "Most pituitary tumors are benign, but a subset behave aggressively and resist standard treatment. Over the past decade, the lab has mapped the genomic drivers of these tumors, from early work identifying recurrent oncogenic mutations and copy-number changes in pituitary adenomas, to more recent profiling of how immune cells interact with pituitary tumor cells and express immune checkpoint molecules.",
       "Building on that foundation, the team is now characterizing the pituitary tumor microenvironment in greater detail: the non-tumor cells, blood vessels, and signaling molecules that surround and interact with tumor cells, to understand what allows some pituitary tumors to grow aggressively or resist treatment, and to identify new therapeutic targets. This work is ongoing and not yet published.",
     ],
-    team: [{ name: "Zach Moynihan" }, { name: "Sydney Wiredu" }],
+    team: [{ name: "Zach Moynihan", slug: "zach-moynihan-bs" }, { name: "Sydney Wiredu", slug: "sydney-wiredu" }],
     image: "/research/outcome-pituitary.jpg",
     imageSide: "left",
   },
@@ -115,7 +120,12 @@ export const RESEARCH_AREAS: ResearchArea[] = [
       "Andrew Dunbar, Lilin Tong, and Justin Kim are extending this line of work, applying network analysis to understand how the structure of a patient's care network shapes brain metastasis outcomes, with the goal of identifying points in the system where better connectivity could improve care.",
       "Zsombor Gal is also leading a related study on salvage surgery: a second operation considered when a brain metastasis regrows after initial treatment. Analyzing 207 patients who underwent salvage surgery for 234 recurrent brain metastases, the lab's largest study of its kind, he found that a complete resection, achieved in about two-thirds of cases, substantially lowered rates of tumor regrowth, need for further treatment, and death, and improved patients' odds of symptom relief and coming off steroids. A patient's overall health going into surgery mattered just as much, across nearly every outcome measured.",
     ],
-    team: [{ name: "Andrew Dunbar" }, { name: "Lilin Tong", slug: "lilin-tong-md-candidate" }, { name: "Justin Kim" }, { name: "Zsombor Gal" }],
+    team: [
+      { name: "Andrew Dunbar", slug: "andrew-dunbar-bs" },
+      { name: "Lilin Tong", slug: "lilin-tong-md-candidate" },
+      { name: "Justin Kim", slug: "justin-kim" },
+      { name: "Zsombor Gal" },
+    ],
     publications: [
       { title: "Role of hospital connectedness in brain metastasis outcomes", journal: "JAMA Network Open", pmid: "39312234" },
       { title: "Interhospital transfer dynamics for patients with intracranial hemorrhage in Massachusetts", journal: "Frontiers in Neurology", pmid: "39144707" },
@@ -132,7 +142,7 @@ export const RESEARCH_AREAS: ResearchArea[] = [
       "Epidermoid cysts are rare, slow-growing tumors thought to arise from skin cells trapped during early development. Most are benign, but in very rare cases they can become locally aggressive or transform into cancer, and almost nothing is known about what drives that process.",
       "Gabrielle Luiselli and Ellie Shahbo are developing an animal model of epidermoid cyst formation alongside molecular profiling of patient tumor samples, aiming to identify the genetic changes that drive cyst growth and, in rare cases, malignant transformation. This work is currently being prepared for publication.",
     ],
-    team: [{ name: "Gabrielle Luiselli" }, { name: "Ellie Shahbo" }],
+    team: [{ name: "Gabrielle Luiselli", slug: "gabrielle-luiselli-md" }, { name: "Ellie Shahbo", slug: "ellie-shahbo" }],
     image: "/research/ionm.png",
     imageSide: "left",
   },
@@ -175,13 +185,14 @@ export const PRINCIPAL_INVESTIGATOR = {
 };
 
 export const CURRENT_MEMBERS: TeamMember[] = [
-  { name: "Gabrielle Luiselli, MD", role: "Neurosurgery Resident", image: "/team/gabrielle-luiselli.jpg" },
+  { name: "Gabrielle Luiselli, MD", role: "Neurosurgery Resident", image: "/team/gabrielle-luiselli.jpg", slug: "gabrielle-luiselli-md" },
   { name: "MD Candidate", role: "MD Candidate", image: "/team/md-candidate.jpg" },
-  { name: "Andrew Dunbar, BS", role: "MD Candidate", image: "/team/andrew-dunbar.jpg" },
-  { name: "Zach Moynihan, BS", role: "Research Assistant", image: "/team/zach-moynihan.png" },
-  { name: "Justin Kim", role: "Medical Student", image: "/team/justin-kim.jpg" },
-  { name: "Sydney Wiredu", role: "Medical Student" },
-  { name: "Sreeya Vuppala", role: "Medical Student", image: "/team/sreeya-vuppala.jpg" },
+  { name: "Andrew Dunbar, BS", role: "MD Candidate", image: "/team/andrew-dunbar.jpg", slug: "andrew-dunbar-bs" },
+  { name: "Zach Moynihan, BS", role: "Research Assistant", image: "/team/zach-moynihan.png", slug: "zach-moynihan-bs" },
+  { name: "Justin Kim", role: "MD Candidate", image: "/team/justin-kim.jpg", slug: "justin-kim" },
+  { name: "Sydney Wiredu", role: "MD Candidate", slug: "sydney-wiredu" },
+  { name: "Sreeya Vuppala", role: "MD Candidate", image: "/team/sreeya-vuppala.jpg", slug: "sreeya-vuppala" },
+  { name: "Ellie Shahbo", role: "MD Candidate", image: "/team/ellie-shahbo.jpg", slug: "ellie-shahbo" },
 ];
 
 // Outside collaborators: not lab personnel, but active research partners
@@ -221,7 +232,7 @@ export const COLLABORATORS: TeamMember[] = [
 ];
 
 export const ALUMNI: TeamMember[] = [
-  { name: "Sally Al Abdulmohsen", role: "Student", image: "/team/sally-al-abdulmohsen.jpg" },
+  { name: "Sally Al Abdulmohsen", role: "Student", image: "/team/sally-al-abdulmohsen.jpg", slug: "sally-al-abdulmohsen" },
   {
     name: "Noah Greenwald",
     role: "Student",
@@ -240,7 +251,7 @@ export const ALUMNI: TeamMember[] = [
       "Xiaopeng Guo is a neurosurgery resident at Peking Union Medical College Hospital, Beijing, China, with an interest in skull base tumors, especially pituitary adenomas and meningiomas. He spent 6 months in the Bi Lab at the Brigham and Women's Hospital as a joint PhD student with Peking Union Medical College, where he investigated the immune landscape of human meningiomas and the natural history of recurrent meningiomas.",
     ],
   },
-  { name: "Saksham Gupta, MD", role: "Neurosurgery Resident", image: "/team/saksham-gupta.png" },
+  { name: "Saksham Gupta, MD", role: "Neurosurgery Resident", image: "/team/saksham-gupta.png", slug: "saksham-gupta-md" },
   {
     name: "Adwaid Prakash",
     role: "Student",
@@ -271,7 +282,7 @@ export const ALUMNI: TeamMember[] = [
     ],
     degrees: ["Yale University, B.S. Physics and the Humanities, 2017"],
   },
-  { name: "Kyle Wu, MD", role: "Post-doctoral Fellow / Neurosurgery Resident", image: "/team/kyle-wu.jpg" },
+  { name: "Kyle Wu, MD", role: "Post-doctoral Fellow / Neurosurgery Resident", image: "/team/kyle-wu.jpg", slug: "kyle-wu-md" },
   {
     name: "Shun Yao, MD, PhD",
     role: "Research Fellow",
@@ -292,8 +303,8 @@ export const ALUMNI: TeamMember[] = [
     ],
     degrees: ["Harvard Medical School/HST, Expected May 2023", "Stanford University, B.S. Biology with Distinction and with Honors, June 2017"],
   },
-  { name: "Greg Cello, BS", role: "Master's Candidate & Research Coordinator", image: "/team/greg-cello.jpeg" },
-  { name: "Pinky Langat, PhD", role: "MD Candidate", image: "/team/pinky-langat.jpg" },
+  { name: "Greg Cello, BS", role: "Master's Candidate & Research Coordinator", image: "/team/greg-cello.jpeg", slug: "greg-cello-bs" },
+  { name: "Pinky Langat, PhD", role: "MD Candidate", image: "/team/pinky-langat.jpg", slug: "pinky-langat-phd" },
   {
     name: "Joseph Driver, MD",
     role: "Post-doctoral Fellow / Neurosurgery Resident",
@@ -303,17 +314,17 @@ export const ALUMNI: TeamMember[] = [
       "Joe is a resident in the Brigham and Women's Neurosurgery residency program. He obtained his undergraduate degree in biochemistry at Gonzaga University, and later his MD at Loyola University Chicago. He spent his two-year post doctorate research in the Bi lab where he characterized transcriptional and immune landscapes of skull base tumors, using novel techniques including single cell RNA sequencing, mass cytometry by time of flight, and multiplex ion beam imaging.",
     ],
   },
-  { name: "Xian Marie Boles, BFA", role: "MFA Candidate", image: "/team/xian-marie-boles.png" },
+  { name: "Xian Marie Boles, BFA", role: "MFA Candidate", image: "/team/xian-marie-boles.png", slug: "xian-marie-boles-bfa" },
   {
     name: "Lilin Tong, MD",
     role: "Medical Intern",
     image: "/team/lilin-tong.jpg",
     slug: "lilin-tong-md-candidate",
   },
-  { name: "Hia Ghosh, BS", role: "Research Assistant", image: "/team/hia-ghosh.jpg" },
-  { name: "Ruchit Patel, BS", role: "Neurosurgery Resident", image: "/team/ruchit-patel.jpeg" },
-  { name: "Junpeng Ma, MD, PhD", role: "", image: "/team/junpeng-ma.png" },
-  { name: "Erickson Torio, MD", role: "Lab Member", image: "/team/erickson-torio.png" },
+  { name: "Hia Ghosh, BS", role: "Research Assistant", image: "/team/hia-ghosh.jpg", slug: "hia-ghosh-bs" },
+  { name: "Ruchit Patel, BS", role: "Neurosurgery Resident", image: "/team/ruchit-patel.jpeg", slug: "ruchit-patel-bs" },
+  { name: "Junpeng Ma, MD, PhD", role: "", image: "/team/junpeng-ma.png", slug: "junpeng-ma-md-phd" },
+  { name: "Erickson Torio, MD", role: "Lab Member", image: "/team/erickson-torio.png", slug: "erickson-torio-md" },
 ];
 
 export interface FeaturedPublication {
