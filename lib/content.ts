@@ -1,14 +1,38 @@
 // Public-site copy and photos, sourced directly from the lab's existing
 // BWH-hosted site (skullbase.bwh.harvard.edu) as of 2026-08-04.
 
+export interface ResearchPublicationLink {
+  title: string;
+  journal: string;
+  pmid: string;
+}
+
+export interface ResearchTeamCredit {
+  name: string;
+  slug?: string;
+}
+
+// Each entry is a specific, active (or recently completed) project, at the
+// intersection of one disease state and one or more of the lab's research
+// directions (the same 4 categories the site used to organize this page by
+// on their own: Immunogenomics, Imaging, Intraoperative Neuromonitoring,
+// Outcomes). Sourced from "Bi Lab Research Update for Patients" (internal
+// patient-facing update, 2026-08), adapted to the site's voice. Anchor ids
+// and left/right image placement drive the nav submenu and alternating
+// layout, same as the old methodology-first version of this page.
 export interface ResearchArea {
   anchor: string;
   name: string;
+  // Short one-line summary, used by search results and the homepage's
+  // circular nav (not shown on the /research page itself, which uses body).
   description: string;
+  directions: string[];
+  body: string[];
+  team?: ResearchTeamCredit[];
+  publications?: ResearchPublicationLink[];
   image: string;
   imageSide: "left" | "right";
-  extraLink?: { label: string; href: string };
-  extraImages?: { src: string; label: string }[];
+  extraLinks?: { label: string; href: string }[];
 }
 
 export interface ToolItem {
@@ -28,51 +52,100 @@ export const TOOLS: ToolItem[] = [
   },
 ];
 
-// Order, anchor ids, and left/right image placement match the real site's
-// nav submenu, #IM/#IMM/#IN/#OUT in-page anchors, and alternating layout
-// exactly (IMM=left, IM=right, IN=left, OUT=right).
 export const RESEARCH_AREAS: ResearchArea[] = [
   {
-    anchor: "IMM",
-    name: "Immunogenomics",
-    description:
-      "We apply genomic and cancer biology approaches to define the molecular taxonomy and tumor microenvironment of meningiomas, pituitary tumors, gliomas, and other skull base and brain tumors. In particular, we seek to understand tumor cell evolution and their acquisition of resistance to innate immune mechanisms as well as administered treatments. Collectively, we hope to define molecular markers with diagnostic and prognostic potential to track brain tumors across time and to develop improved therapeutic options.",
-    image: "/research/immunogenomics.png",
+    anchor: "meningioma",
+    name: "Meningioma",
+    description: "Building a molecular fingerprint for meningioma so risk is defined by a tumor's biology, not just its appearance under the microscope.",
+    directions: ["Immunogenomics"],
+    body: [
+      "Meningiomas are the most common primary brain tumor, and most are slow-growing and curable with surgery. But the standard grading system, based on how a tumor looks under the microscope, doesn't always predict how an individual tumor will behave. We are working to build a more precise molecular fingerprint for each meningioma, so that a patient's risk is defined by their tumor's biology, not just its appearance.",
+      "In a study of more than 1,000 meningiomas published in Nature Communications, Ruchit Patel and colleagues mapped how tumors gain or lose pieces of chromosomes, and showed that small differences in how these changes are measured can shift a tumor between a low- and high-risk category for as many as 1 in 5 patients. This work is helping refine the thresholds pathologists use to grade tumors.",
+      "We also asked whether Ki-67, the standard marker doctors use to gauge how fast a tumor is growing, was measuring what everyone assumed. Using single-cell technology across more than 120,000 individual cells, Xiaopeng Guo and colleagues found that Ki-67 is produced not only by tumor cells but also by immune cells within the tumor, especially in lower-grade disease, and that this balance shifts with tumor grade, prior radiation, and patient age. That means the same Ki-67 result can mean different things from one tumor to the next.",
+      "Most recently, work led with Zach Moynihan showed that a meningioma's immune environment is not fixed: it evolves as the tumor's biology changes, including after treatment. Andrew Dunbar, a medical student in the lab, is now helping extend this work, combining genomic and immune fingerprinting to understand how treatment can reshape a tumor's biology, with the goal of identifying which tumors are truly high-risk and which patients might safely need less treatment.",
+    ],
+    team: [{ name: "Ruchit Patel" }, { name: "Xiaopeng Guo", slug: "xiaopeng-guo-md" }, { name: "Zach Moynihan" }, { name: "Andrew Dunbar" }],
+    publications: [
+      { title: "Distribution of copy number alterations and impact of chromosome arm call thresholds for meningioma", journal: "Nature Communications", pmid: "40603304" },
+      { title: "Ki-67 in meningioma: distribution and implications", journal: "Journal of Neurosurgery", pmid: "40712166" },
+      { title: "Meningioma microenvironment harbors a rich immune landscape that evolves with biological state", journal: "Neuro-Oncology", pmid: "41630100" },
+    ],
+    image: "/research/outcome-meningioma.jpg",
     imageSide: "left",
   },
   {
-    anchor: "IM",
-    name: "Imaging",
-    description:
-      "Safe surgery for meningiomas, pituitary tumors, and other skull base tumors is predicated on detailed knowledge of the relevant anatomy. We aim to apply advanced imaging modalities to assess critical structures that may be encountered during the operative approach to improve preservation of neurovascular function.",
-    image: "/research/imaging.jpg",
+    anchor: "glioma",
+    name: "Glioma",
+    description: "Sharpening glioma risk prediction with genomics and real-world outcomes, backed by intraoperative neuromonitoring during surgery.",
+    directions: ["Immunogenomics", "Outcomes", "Intraoperative Neuromonitoring"],
+    body: [
+      "Gliomas are the most common cancerous brain tumor in adults, and how a glioma is classified and treated now depends on genetics as well as how it looks under the microscope. To make sure these updated classifications reflect real-world outcomes, Hia Ghosh and Ruchit Patel led an analysis of 4,400 glioma patients, published in Neuro-Oncology. They found that survival for most glioma subtypes is meaningfully better today than older reference studies suggested, and built updated, clinically applicable tools that combine a tumor's molecular profile with a patient's clinical picture and treatment to give a more accurate, individualized prognosis.",
+      "A related study looked specifically at IDH-mutant astrocytomas, a common glioma subtype, to see whether genetics could sharpen risk beyond grade alone. Analyzing nearly 1,000 patients, the team found that loss of a gene called CDKN2A/B, along with certain chromosomal amplifications, identified patients at substantially higher risk regardless of how the tumor appeared under the microscope: patients with an intact CDKN2A/B gene and no amplifications lived, on average, more than 17 years after diagnosis, compared with under 3 years for those with CDKN2A/B loss in a grade 4 tumor. These findings are helping refine how we counsel patients and plan treatment.",
+      "As these molecular tools evolve, so does surgery itself. The lab's intraoperative neuromonitoring (IONM) program tracks the function of critical nerve and brain pathways in real time during glioma resection, helping the surgical team remove as much tumor as safely possible.",
+    ],
+    team: [{ name: "Hia Ghosh" }, { name: "Ruchit Patel" }],
+    publications: [
+      { title: "Contemporary prognostic signatures and refined risk stratification of gliomas: an analysis of 4,400 tumors", journal: "Neuro-Oncology", pmid: "39164213" },
+      { title: "Canonical amplifications and CDKN2A/B loss refine IDH1/2-mutant astrocytoma prognosis", journal: "Neuro-Oncology", pmid: "39584448" },
+    ],
+    extraLinks: [
+      { label: "Glioma Outcome Risk Calculators", href: "/research/glioma-outcomes" },
+      { label: "IONM Training Module", href: "/research/ionm" },
+    ],
+    image: "/research/immunogenomics.png",
     imageSide: "right",
   },
   {
-    anchor: "IN",
-    name: "Intraoperative Neuromonitoring",
-    description:
-      "Intraoperative neuromonitoring (IONM) is a powerful adjunct to improve the safety of high-risk neurosurgical procedures for meningiomas, pituitary tumors, and other skull base and brain tumors. We present an interactive training module to help make concepts and techniques more broadly accessible to all practitioners.",
+    anchor: "pituitary",
+    name: "Pituitary Tumors",
+    description: "Mapping the pituitary tumor microenvironment to understand what allows some tumors to grow aggressively or resist treatment.",
+    directions: ["Immunogenomics"],
+    body: [
+      "Most pituitary tumors are benign, but a subset behave aggressively and resist standard treatment. Over the past decade, the lab has mapped the genomic drivers of these tumors, from early work identifying recurrent oncogenic mutations and copy-number changes in pituitary adenomas, to more recent profiling of how immune cells interact with pituitary tumor cells and express immune checkpoint molecules.",
+      "Building on that foundation, the team is now characterizing the pituitary tumor microenvironment in greater detail: the non-tumor cells, blood vessels, and signaling molecules that surround and interact with tumor cells, to understand what allows some pituitary tumors to grow aggressively or resist treatment, and to identify new therapeutic targets. This work is ongoing and not yet published.",
+    ],
+    team: [{ name: "Zach Moynihan" }, { name: "Sydney Wiredu" }],
+    image: "/research/outcome-pituitary.jpg",
+    imageSide: "left",
+  },
+  {
+    anchor: "brain-metastases",
+    name: "Brain Metastases",
+    description: "Using care-network analysis and the lab's largest salvage surgery study to date to understand what drives brain metastasis outcomes.",
+    directions: ["Outcomes"],
+    body: [
+      "Where a patient with brain metastases is treated, and how well-connected that hospital is within the broader network of cancer care, can meaningfully affect outcomes. In a study published in JAMA Network Open, Lilin Tong and colleagues used physician-referral network analysis to show that hospital “connectedness” is associated with outcomes for patients with brain metastases. Related work from the lab has mapped how patients are transferred between hospitals for brain metastases and other acute neurosurgical conditions across Massachusetts.",
+      "Andrew Dunbar, Lilin Tong, and Justin Kim are extending this line of work, applying network analysis to understand how the structure of a patient's care network shapes brain metastasis outcomes, with the goal of identifying points in the system where better connectivity could improve care.",
+      "Zsombor Gal is also leading a related study on salvage surgery: a second operation considered when a brain metastasis regrows after initial treatment. Analyzing 207 patients who underwent salvage surgery for 234 recurrent brain metastases, the lab's largest study of its kind, he found that a complete resection, achieved in about two-thirds of cases, substantially lowered rates of tumor regrowth, need for further treatment, and death, and improved patients' odds of symptom relief and coming off steroids. A patient's overall health going into surgery mattered just as much, across nearly every outcome measured.",
+    ],
+    team: [{ name: "Andrew Dunbar" }, { name: "Lilin Tong", slug: "lilin-tong-md-candidate" }, { name: "Justin Kim" }, { name: "Zsombor Gal" }],
+    publications: [
+      { title: "Role of hospital connectedness in brain metastasis outcomes", journal: "JAMA Network Open", pmid: "39312234" },
+      { title: "Interhospital transfer dynamics for patients with intracranial hemorrhage in Massachusetts", journal: "Frontiers in Neurology", pmid: "39144707" },
+    ],
+    image: "/research/outcome-brain-met.jpg",
+    imageSide: "right",
+  },
+  {
+    anchor: "epidermoid-cysts",
+    name: "Epidermoid Cysts",
+    description: "Developing an animal model and molecular profiling to understand what drives epidermoid cyst growth and, rarely, malignant transformation.",
+    directions: ["Immunogenomics"],
+    body: [
+      "Epidermoid cysts are rare, slow-growing tumors thought to arise from skin cells trapped during early development. Most are benign, but in very rare cases they can become locally aggressive or transform into cancer, and almost nothing is known about what drives that process.",
+      "Gabrielle Luiselli and Ellie Shahbo are developing an animal model of epidermoid cyst formation alongside molecular profiling of patient tumor samples, aiming to identify the genetic changes that drive cyst growth and, in rare cases, malignant transformation. This work is currently being prepared for publication.",
+    ],
+    team: [{ name: "Gabrielle Luiselli" }, { name: "Ellie Shahbo" }],
     image: "/research/ionm.png",
     imageSide: "left",
-    extraLink: { label: "IONM Training Module", href: "/research/ionm" },
-  },
-  {
-    anchor: "OUT",
-    name: "Outcomes",
-    description:
-      "Ongoing studies focus on the impact of operative technique, perioperative routine, and adjuvant therapy regimens on outcomes of meningiomas, pituitary tumors, gliomas, schwannomas, brain metastases, and epidermoid cysts, in retrospective and prospective fashion.",
-    image: "/research/outcomes.jpg",
-    imageSide: "right",
-    extraLink: { label: "Glioma Outcome Risk Calculators", href: "/research/glioma-outcomes" },
-    extraImages: [
-      { src: "/research/outcome-meningioma.jpg", label: "Meningioma" },
-      { src: "/research/outcome-pituitary.jpg", label: "Pituitary Tumors" },
-      { src: "/research/outcome-schwannoma.jpg", label: "Schwannoma" },
-      { src: "/research/outcome-brain-met.jpg", label: "Brain Metastases" },
-    ],
   },
 ];
+
+// A cross-cutting capability, not tied to one disease-specific project the
+// way the areas above are -- kept as a short closing note rather than a
+// full section with its own image and team credit.
+export const RESEARCH_IMAGING_NOTE =
+  "Across all of these tumor types, safe surgery is predicated on detailed knowledge of the relevant anatomy. We apply advanced imaging modalities to assess critical structures that may be encountered during the operative approach, to improve preservation of neurovascular function.";
 
 export interface TeamMember {
   name: string;
