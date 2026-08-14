@@ -186,13 +186,12 @@ export const PRINCIPAL_INVESTIGATOR = {
 
 export const CURRENT_MEMBERS: TeamMember[] = [
   { name: "Gabrielle Luiselli, MD", role: "Neurosurgery Resident", image: "/team/gabrielle-luiselli.jpg", slug: "gabrielle-luiselli-md" },
-  { name: "MD Candidate", role: "MD Candidate", image: "/team/md-candidate.jpg" },
+  { name: "Ellie Shahbo", role: "MD Candidate", image: "/team/ellie-shahbo.jpg", slug: "ellie-shahbo" },
   { name: "Andrew Dunbar, BS", role: "MD Candidate", image: "/team/andrew-dunbar.jpg", slug: "andrew-dunbar-bs" },
   { name: "Zach Moynihan, BS", role: "Research Assistant", image: "/team/zach-moynihan.png", slug: "zach-moynihan-bs" },
   { name: "Justin Kim", role: "MD Candidate", image: "/team/justin-kim.jpg", slug: "justin-kim" },
   { name: "Sydney Wiredu", role: "MD Candidate", slug: "sydney-wiredu" },
   { name: "Sreeya Vuppala", role: "MD Candidate", image: "/team/sreeya-vuppala.jpg", slug: "sreeya-vuppala" },
-  { name: "Ellie Shahbo", role: "MD Candidate", image: "/team/ellie-shahbo.jpg", slug: "ellie-shahbo" },
 ];
 
 // Outside collaborators: not lab personnel, but active research partners
