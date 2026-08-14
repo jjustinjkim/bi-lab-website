@@ -44,7 +44,7 @@ export default function HomePage() {
       </div>
 
       <div
-        className="relative mt-6 w-full grid grid-cols-2 sm:grid-cols-4"
+        className="relative mt-6 w-full grid grid-cols-2 sm:grid-cols-5"
         style={{ border: "1px solid rgba(255,255,255,0.7)", background: "rgba(0,0,0,0.35)", padding: "clamp(1.5rem, 4vw, 3.5rem) clamp(1rem, 3vw, 2rem)" }}
       >
         {RESEARCH_AREAS.map((area) => (
