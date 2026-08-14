@@ -2,10 +2,10 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import { CURRENT_MEMBERS, ALUMNI, type TeamMember } from "@/lib/content";
+import { CURRENT_MEMBERS, COLLABORATORS, ALUMNI, type TeamMember } from "@/lib/content";
 import { personJsonLd, jsonLdScriptProps } from "@/lib/jsonld";
 
-const ALL_MEMBERS: TeamMember[] = [...CURRENT_MEMBERS, ...ALUMNI];
+const ALL_MEMBERS: TeamMember[] = [...CURRENT_MEMBERS, ...COLLABORATORS, ...ALUMNI];
 
 function findMember(slug: string): TeamMember | undefined {
   return ALL_MEMBERS.find((m) => m.slug === slug);

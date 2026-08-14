@@ -4,6 +4,7 @@ import {
   RESEARCH_AREAS,
   PRINCIPAL_INVESTIGATOR,
   CURRENT_MEMBERS,
+  COLLABORATORS,
   ALUMNI,
   FEATURED_PUBLICATIONS,
   PUBLICATIONS_BY_YEAR,
@@ -40,7 +41,7 @@ export default async function SearchPage({
   const researchResults = query ? RESEARCH_AREAS.filter((a) => matches(query, a.name, a.description)) : [];
 
   const teamResults = query
-    ? [PRINCIPAL_INVESTIGATOR, ...CURRENT_MEMBERS, ...ALUMNI].filter((m) =>
+    ? [PRINCIPAL_INVESTIGATOR, ...CURRENT_MEMBERS, ...COLLABORATORS, ...ALUMNI].filter((m) =>
         matches(query, m.name, "titles" in m ? m.titles.join(" ") : "role" in m ? m.role : "")
       )
     : [];

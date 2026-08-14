@@ -84,6 +84,9 @@ export interface TeamMember {
   slug?: string;
   bio?: string[];
   degrees?: string[];
+  // For collaborators: an outside lab/institution link instead of an
+  // internal bio page. Mutually exclusive with slug in practice.
+  externalUrl?: string;
 }
 
 // This is deliberately a shorter list than CONTACT.piTitles below -- the
@@ -102,6 +105,19 @@ export const PRINCIPAL_INVESTIGATOR = {
 };
 
 export const CURRENT_MEMBERS: TeamMember[] = [
+  { name: "Gabrielle Luiselli, MD", role: "Neurosurgery Resident", image: "/team/gabrielle-luiselli.jpg" },
+  { name: "MD Candidate", role: "MD Candidate", image: "/team/md-candidate.jpg" },
+  { name: "Andrew Dunbar, BS", role: "MD Candidate", image: "/team/andrew-dunbar.jpg" },
+  { name: "Zach Moynihan, BS", role: "Research Assistant", image: "/team/zach-moynihan.png" },
+  { name: "Justin Kim", role: "Medical Student", image: "/team/justin-kim.jpg" },
+  { name: "Sydney Wiredu", role: "Medical Student" },
+  { name: "Sreeya Vuppala", role: "Medical Student" },
+];
+
+// Outside collaborators: not lab personnel, but active research partners
+// whose own lab/institution page is the right link target (no internal
+// bio page for them).
+export const COLLABORATORS: TeamMember[] = [
   {
     name: "Mitali Bose, MS, CNIM",
     role: "Senior Surgical Neurophysiologist",
@@ -114,13 +130,16 @@ export const CURRENT_MEMBERS: TeamMember[] = [
     image: "/team/matthew-toczylowski.jpg",
     slug: "matthew-toczylowski-bs-cnim",
   },
-  { name: "Gabrielle Luiselli, MD", role: "Neurosurgery Resident", image: "/team/gabrielle-luiselli.jpg" },
-  { name: "MD Candidate", role: "MD Candidate", image: "/team/md-candidate.jpg" },
-  { name: "Andrew Dunbar, BS", role: "MD Candidate", image: "/team/andrew-dunbar.jpg" },
-  { name: "Zach Moynihan, BS", role: "Research Assistant", image: "/team/zach-moynihan.png" },
-  { name: "Justin Kim", role: "Medical Student" },
-  { name: "Sydney Wiredu", role: "Medical Student" },
-  { name: "Sreeya Vuppala", role: "Medical Student" },
+  {
+    name: "Angelique Paulk, PhD",
+    role: "MGH Center for Neurotechnology and Neurorecovery",
+    externalUrl: "https://www.cntr.mgh.harvard.edu/our-team/angelique-paulk,-phd",
+  },
+  {
+    name: "Amar Dhand, MD, PhD",
+    role: "Dhand Lab, Brigham and Women's Hospital (Social Networks and Neurology)",
+    externalUrl: "https://www.dhandlab.com",
+  },
 ];
 
 export const ALUMNI: TeamMember[] = [

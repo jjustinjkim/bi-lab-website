@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { PRINCIPAL_INVESTIGATOR, CURRENT_MEMBERS, ALUMNI, type TeamMember } from "@/lib/content";
+import { PRINCIPAL_INVESTIGATOR, CURRENT_MEMBERS, COLLABORATORS, ALUMNI, type TeamMember } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Team",
@@ -39,13 +39,21 @@ function PhotoTile({ member }: { member: TeamMember }) {
     </div>
   );
 
-  return member.slug ? (
-    <Link href={`/team/${member.slug}`} aria-label={member.name}>
-      {content}
-    </Link>
-  ) : (
-    content
-  );
+  if (member.slug) {
+    return (
+      <Link href={`/team/${member.slug}`} aria-label={member.name}>
+        {content}
+      </Link>
+    );
+  }
+  if (member.externalUrl) {
+    return (
+      <a href={member.externalUrl} target="_blank" rel="noopener noreferrer" aria-label={member.name}>
+        {content}
+      </a>
+    );
+  }
+  return content;
 }
 
 export default function TeamPage() {
@@ -79,6 +87,15 @@ export default function TeamPage() {
         <h2 className="section-heading mb-6">Personnel</h2>
         <div className="grid grid-cols-3 sm:grid-cols-5 gap-1">
           {CURRENT_MEMBERS.map((m) => (
+            <PhotoTile key={m.name} member={m} />
+          ))}
+        </div>
+      </section>
+
+      <section>
+        <h2 className="section-heading mb-6">Collaborators</h2>
+        <div className="grid grid-cols-3 sm:grid-cols-5 gap-1">
+          {COLLABORATORS.map((m) => (
             <PhotoTile key={m.name} member={m} />
           ))}
         </div>

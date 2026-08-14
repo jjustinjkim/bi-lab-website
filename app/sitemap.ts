@@ -1,10 +1,10 @@
 import type { MetadataRoute } from "next";
-import { FEATURED_PUBLICATIONS, CURRENT_MEMBERS, ALUMNI } from "@/lib/content";
+import { FEATURED_PUBLICATIONS, CURRENT_MEMBERS, COLLABORATORS, ALUMNI } from "@/lib/content";
 
 const BASE_URL = "https://wlbilab.org";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const teamSlugs = [...CURRENT_MEMBERS, ...ALUMNI]
+  const teamSlugs = [...CURRENT_MEMBERS, ...COLLABORATORS, ...ALUMNI]
     .filter((m) => m.slug)
     .map((m) => `/team/${m.slug}`);
 
