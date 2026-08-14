@@ -94,7 +94,11 @@ export const RESEARCH_AREAS: ResearchArea[] = [
       { title: "Canonical amplifications and CDKN2A/B loss refine IDH1/2-mutant astrocytoma prognosis", journal: "Neuro-Oncology", pmid: "39584448" },
     ],
     extraLinks: [{ label: "IONM Training Module", href: "/research/ionm" }],
-    image: "/research/immunogenomics.png",
+    // Contrast-enhanced coronal MRI of a glioblastoma, cropped from
+    // "Glioblastoma - MR coronal with contrast.jpg" (Christaras A, Wikimedia
+    // Commons, https://commons.wikimedia.org/wiki/File:Glioblastoma_-_MR_coronal_with_contrast.jpg),
+    // licensed CC BY-SA 3.0.
+    image: "/research/outcome-glioma.jpg",
     imageSide: "right",
   },
   {
@@ -143,7 +147,12 @@ export const RESEARCH_AREAS: ResearchArea[] = [
       "Gabrielle Luiselli and Ellie Shahbo are developing an animal model of epidermoid cyst formation alongside molecular profiling of patient tumor samples, aiming to identify the genetic changes that drive cyst growth and, in rare cases, malignant transformation. This work is currently being prepared for publication.",
     ],
     team: [{ name: "Gabrielle Luiselli", slug: "gabrielle-luiselli-md" }, { name: "Ellie Shahbo", slug: "ellie-shahbo" }],
-    image: "/research/ionm.png",
+    // Axial T2 MRI of an epidermoid cyst at the cerebellopontine angle,
+    // cropped from "Epidermoid cyst cerebellopontine angle.jpg" (Jimenez
+    // Caballero PE et al., via Wikimedia Commons,
+    // https://commons.wikimedia.org/wiki/File:Epidermoid_cyst_cerebellopontine_angle.jpg),
+    // licensed CC BY 4.0.
+    image: "/research/outcome-epidermoid-cyst.jpg",
     imageSide: "left",
   },
 ];

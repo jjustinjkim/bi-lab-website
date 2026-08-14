@@ -27,6 +27,8 @@ export default function robots(): MetadataRoute.Robots {
           "/research/outcome-meningioma.jpg",
           "/research/outcome-pituitary.jpg",
           "/research/outcome-schwannoma.jpg",
+          "/research/outcome-glioma.jpg",
+          "/research/outcome-epidermoid-cyst.jpg",
         ],
       },
     ],
