@@ -64,14 +64,12 @@ export default function TeamPage() {
       <section id="pi">
         <h2 className="section-heading mb-6">Principal Investigator</h2>
         <div className="flex flex-col sm:flex-row gap-8 items-start">
-          <Image
-            src={PRINCIPAL_INVESTIGATOR.image}
-            alt={PRINCIPAL_INVESTIGATOR.name}
-            width={220}
-            height={220}
-            className="rounded-full"
-            style={{ border: "1px solid var(--hairline)", objectFit: "cover", aspectRatio: "1 / 1" }}
-          />
+          <div
+            className="rounded-full overflow-hidden relative flex-shrink-0"
+            style={{ width: "220px", height: "220px", border: "1px solid var(--hairline)" }}
+          >
+            <Image src={PRINCIPAL_INVESTIGATOR.image} alt={PRINCIPAL_INVESTIGATOR.name} fill sizes="220px" className="object-cover" />
+          </div>
           <div>
             <h3 className="text-title">{PRINCIPAL_INVESTIGATOR.name}</h3>
             <ul className="mt-3 space-y-1" style={{ color: "var(--ink-muted)" }}>

@@ -58,14 +58,12 @@ export default async function TeamMemberPage({
 
       <div className="flex flex-col sm:flex-row gap-8 items-start">
         {member.image && (
-          <Image
-            src={member.image}
-            alt={member.name}
-            width={200}
-            height={200}
-            className="rounded-full"
-            style={{ border: "1px solid var(--hairline)", objectFit: "cover", aspectRatio: "1 / 1" }}
-          />
+          <div
+            className="rounded-full overflow-hidden relative flex-shrink-0"
+            style={{ width: "200px", height: "200px", border: "1px solid var(--hairline)" }}
+          >
+            <Image src={member.image} alt={member.name} fill sizes="200px" className="object-cover" />
+          </div>
         )}
         <div>
           <h1 className="text-title">{member.name}</h1>
