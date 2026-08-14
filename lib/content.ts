@@ -111,7 +111,7 @@ export const CURRENT_MEMBERS: TeamMember[] = [
   { name: "Zach Moynihan, BS", role: "Research Assistant", image: "/team/zach-moynihan.png" },
   { name: "Justin Kim", role: "Medical Student", image: "/team/justin-kim.jpg" },
   { name: "Sydney Wiredu", role: "Medical Student" },
-  { name: "Sreeya Vuppala", role: "Medical Student" },
+  { name: "Sreeya Vuppala", role: "Medical Student", image: "/team/sreeya-vuppala.jpg" },
 ];
 
 // Outside collaborators: not lab personnel, but active research partners
