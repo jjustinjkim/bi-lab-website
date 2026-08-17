@@ -199,7 +199,7 @@ export const CURRENT_MEMBERS: TeamMember[] = [
   { name: "Andrew Dunbar, BS", role: "MD Candidate", image: "/team/andrew-dunbar.jpg", slug: "andrew-dunbar-bs" },
   { name: "Zach Moynihan, BS", role: "Research Assistant", image: "/team/zach-moynihan.png", slug: "zach-moynihan-bs" },
   { name: "Justin Kim, BA", role: "MD Candidate", image: "/team/justin-kim.jpg", slug: "justin-kim-ba" },
-  { name: "Sydney Wiredu, BS", role: "MD Candidate", slug: "sydney-wiredu-bs" },
+  { name: "Sydney Wiredu, BS", role: "MD Candidate", image: "/team/sydney-wiredu.jpg", slug: "sydney-wiredu-bs" },
   { name: "Sreeya Vuppala, BS", role: "MD Candidate", image: "/team/sreeya-vuppala.jpg", slug: "sreeya-vuppala-bs" },
 ];
 
