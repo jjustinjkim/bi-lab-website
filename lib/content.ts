@@ -110,7 +110,7 @@ export const RESEARCH_AREAS: ResearchArea[] = [
       "Most pituitary tumors are benign, but a subset behave aggressively and resist standard treatment. Over the past decade, the lab has mapped the genomic drivers of these tumors, from early work identifying recurrent oncogenic mutations and copy-number changes in pituitary adenomas, to more recent profiling of how immune cells interact with pituitary tumor cells and express immune checkpoint molecules.",
       "Building on that foundation, the team is now characterizing the pituitary tumor microenvironment in greater detail: the non-tumor cells, blood vessels, and signaling molecules that surround and interact with tumor cells, to understand what allows some pituitary tumors to grow aggressively or resist treatment, and to identify new therapeutic targets. This work is ongoing and not yet published.",
     ],
-    team: [{ name: "Zach Moynihan", slug: "zach-moynihan-bs" }, { name: "Sydney Wiredu", slug: "sydney-wiredu" }],
+    team: [{ name: "Zach Moynihan", slug: "zach-moynihan-bs" }, { name: "Sydney Wiredu", slug: "sydney-wiredu-bs" }],
     image: "/research/outcome-pituitary.jpg",
     imageSide: "left",
   },
@@ -127,7 +127,7 @@ export const RESEARCH_AREAS: ResearchArea[] = [
     team: [
       { name: "Andrew Dunbar", slug: "andrew-dunbar-bs" },
       { name: "Lilin Tong", slug: "lilin-tong-md-candidate" },
-      { name: "Justin Kim", slug: "justin-kim" },
+      { name: "Justin Kim", slug: "justin-kim-ba" },
       { name: "Zsombor Gal" },
     ],
     publications: [
@@ -146,7 +146,7 @@ export const RESEARCH_AREAS: ResearchArea[] = [
       "Epidermoid cysts are rare, slow-growing tumors thought to arise from skin cells trapped during early development. Most are benign, but in very rare cases they can become locally aggressive or transform into cancer, and almost nothing is known about what drives that process.",
       "Gabrielle Luiselli and Ellie Shahbo are developing an animal model of epidermoid cyst formation alongside molecular profiling of patient tumor samples, aiming to identify the genetic changes that drive cyst growth and, in rare cases, malignant transformation. This work is currently being prepared for publication.",
     ],
-    team: [{ name: "Gabrielle Luiselli", slug: "gabrielle-luiselli-md" }, { name: "Ellie Shahbo", slug: "ellie-shahbo" }],
+    team: [{ name: "Gabrielle Luiselli", slug: "gabrielle-luiselli-md" }, { name: "Ellie Shahbo", slug: "ellie-shahbo-bs" }],
     // Axial T2 MRI of an epidermoid cyst at the cerebellopontine angle,
     // cropped from "Epidermoid cyst cerebellopontine angle.jpg" (Jimenez
     // Caballero PE et al., via Wikimedia Commons,
@@ -195,12 +195,12 @@ export const PRINCIPAL_INVESTIGATOR = {
 
 export const CURRENT_MEMBERS: TeamMember[] = [
   { name: "Gabrielle Luiselli, MD", role: "Neurosurgery Resident", image: "/team/gabrielle-luiselli.jpg", slug: "gabrielle-luiselli-md" },
-  { name: "Ellie Shahbo", role: "MD Candidate", image: "/team/ellie-shahbo.jpg", slug: "ellie-shahbo" },
+  { name: "Ellie Shahbo, BS", role: "MD Candidate", image: "/team/ellie-shahbo.jpg", slug: "ellie-shahbo-bs" },
   { name: "Andrew Dunbar, BS", role: "MD Candidate", image: "/team/andrew-dunbar.jpg", slug: "andrew-dunbar-bs" },
   { name: "Zach Moynihan, BS", role: "Research Assistant", image: "/team/zach-moynihan.png", slug: "zach-moynihan-bs" },
-  { name: "Justin Kim", role: "MD Candidate", image: "/team/justin-kim.jpg", slug: "justin-kim" },
-  { name: "Sydney Wiredu", role: "MD Candidate", slug: "sydney-wiredu" },
-  { name: "Sreeya Vuppala", role: "MD Candidate", image: "/team/sreeya-vuppala.jpg", slug: "sreeya-vuppala" },
+  { name: "Justin Kim, BA", role: "MD Candidate", image: "/team/justin-kim.jpg", slug: "justin-kim-ba" },
+  { name: "Sydney Wiredu, BS", role: "MD Candidate", slug: "sydney-wiredu-bs" },
+  { name: "Sreeya Vuppala, BS", role: "MD Candidate", image: "/team/sreeya-vuppala.jpg", slug: "sreeya-vuppala-bs" },
 ];
 
 // Outside collaborators: not lab personnel, but active research partners
