@@ -19,10 +19,9 @@ function TeamCredit({ team }: { team: ResearchTeamCredit[] }) {
           <Link href={member.slug ? `/team/${member.slug}` : "/team"} className="link-accent not-italic">
             {member.name}
           </Link>
-          {i < team.length - 1 ? ", " : ""}
+          {i < team.length - 1 ? ", " : "."}
         </span>
       ))}
-      , with Dr. Bi.
     </p>
   );
 }
