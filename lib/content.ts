@@ -194,7 +194,18 @@ export const PRINCIPAL_INVESTIGATOR = {
 };
 
 export const CURRENT_MEMBERS: TeamMember[] = [
-  { name: "Gabrielle Luiselli, MD", role: "Neurosurgery Resident", image: "/team/gabrielle-luiselli.jpg", slug: "gabrielle-luiselli-md" },
+  {
+    name: "Gabrielle Luiselli, MD",
+    role: "PGY-5 Neurosurgery Resident / Research Fellow",
+    image: "/team/gabrielle-luiselli.jpg",
+    slug: "gabrielle-luiselli-md",
+    bio: [
+      "Gabrielle Luiselli, MD, is a PGY-5 neurosurgery resident at MGB and a research fellow in the Bi Lab. She received her BS in Biopsychology from Tufts University and her MD from UMass Chan Medical School.",
+      "Her clinical and research interests lie at the intersection of skull base surgery, surgical data science, and computational neuro-oncology. Her current work focuses on meningioma genomics, the application of computer vision and artificial intelligence to operative video, and the development of AI-based tools to support neurosurgical care in global health settings.",
+      "Outside of the hospital, she enjoys running, experimenting in the kitchen, and exploring new cities.",
+    ],
+    degrees: ["Tufts University, B.S. Biopsychology", "UMass Chan Medical School, M.D."],
+  },
   { name: "Ellie Shahbo, BS", role: "MD Candidate", image: "/team/ellie-shahbo.jpg", slug: "ellie-shahbo-bs" },
   { name: "Andrew Dunbar, BS", role: "MD Candidate", image: "/team/andrew-dunbar.jpg", slug: "andrew-dunbar-bs" },
   { name: "Zach Moynihan, BS", role: "Research Assistant", image: "/team/zach-moynihan.png", slug: "zach-moynihan-bs" },
