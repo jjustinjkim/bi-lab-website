@@ -209,7 +209,17 @@ export const CURRENT_MEMBERS: TeamMember[] = [
   { name: "Ellie Shahbo, BS", role: "MD Candidate", image: "/team/ellie-shahbo.jpg", slug: "ellie-shahbo-bs" },
   { name: "Andrew Dunbar, BS", role: "MD Candidate", image: "/team/andrew-dunbar.jpg", slug: "andrew-dunbar-bs" },
   { name: "Zach Moynihan, BS", role: "Research Assistant", image: "/team/zach-moynihan.png", slug: "zach-moynihan-bs" },
-  { name: "Justin Kim, BA", role: "MD Candidate", image: "/team/justin-kim.jpg", slug: "justin-kim-ba" },
+  {
+    name: "Justin Kim, BA",
+    role: "MD Candidate",
+    image: "/team/justin-kim.jpg",
+    slug: "justin-kim-ba",
+    bio: [
+      "Justin Kim is a medical student at Harvard Medical School and a researcher in the Bi Lab.",
+      "His research interests center on meningioma biology and the use of computational methods to connect multi-omic tumor data with clinical behavior and patient outcomes.",
+      "Outside of the lab, he enjoys playing soccer and exploring Korean culture.",
+    ],
+  },
   { name: "Sydney Wiredu, BS", role: "MD Candidate", image: "/team/sydney-wiredu.jpg", slug: "sydney-wiredu-bs" },
   { name: "Sreeya Vuppala, BS", role: "MD Candidate", image: "/team/sreeya-vuppala.jpg", slug: "sreeya-vuppala-bs" },
 ];
