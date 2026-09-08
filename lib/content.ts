@@ -204,7 +204,6 @@ export const CURRENT_MEMBERS: TeamMember[] = [
       "Her clinical and research interests lie at the intersection of skull base surgery, surgical data science, and computational neuro-oncology. Her current work focuses on meningioma genomics, the application of computer vision and artificial intelligence to operative video, and the development of AI-based tools to support neurosurgical care in global health settings.",
       "Outside of the hospital, she enjoys running, experimenting in the kitchen, and exploring new cities.",
     ],
-    degrees: ["Tufts University, B.S. Biopsychology", "UMass Chan Medical School, M.D."],
   },
   { name: "Ellie Shahbo, BS", role: "MD Candidate", image: "/team/ellie-shahbo.jpg", slug: "ellie-shahbo-bs" },
   { name: "Andrew Dunbar, BS", role: "MD Candidate", image: "/team/andrew-dunbar.jpg", slug: "andrew-dunbar-bs" },
@@ -215,9 +214,7 @@ export const CURRENT_MEMBERS: TeamMember[] = [
     image: "/team/justin-kim.jpg",
     slug: "justin-kim-ba",
     bio: [
-      "Justin Kim is a medical student at Harvard Medical School and a researcher in the Bi Lab.",
-      "His research interests center on meningioma biology and the use of computational methods to connect multi-omic tumor data with clinical behavior and patient outcomes.",
-      "Outside of the lab, he enjoys playing soccer and exploring Korean culture.",
+      "Justin Kim is a medical student at Harvard Medical School and a researcher in the Bi Lab. His research interests center on meningioma biology and the use of computational methods to connect multi-omic tumor data with clinical behavior and patient outcomes. Outside of the lab, he enjoys playing soccer and exploring Korean culture.",
     ],
   },
   { name: "Sydney Wiredu, BS", role: "MD Candidate", image: "/team/sydney-wiredu.jpg", slug: "sydney-wiredu-bs" },
