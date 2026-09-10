@@ -207,7 +207,15 @@ export const CURRENT_MEMBERS: TeamMember[] = [
   },
   { name: "Ellie Shahbo, BS", role: "MD Candidate", image: "/team/ellie-shahbo.jpg", slug: "ellie-shahbo-bs" },
   { name: "Andrew Dunbar, BS", role: "MD Candidate", image: "/team/andrew-dunbar.jpg", slug: "andrew-dunbar-bs" },
-  { name: "Zach Moynihan, BS", role: "Research Assistant", image: "/team/zach-moynihan.png", slug: "zach-moynihan-bs" },
+  {
+    name: "Zach Moynihan, BS",
+    role: "Lab Manager & Research Assistant",
+    image: "/team/zach-moynihan.png",
+    slug: "zach-moynihan-bs",
+    bio: [
+      "Zach graduated from Yale College in 2025 with a degree in Neuroscience and certificates in French and Education Studies. There, he studied hormonal therapies for meningiomas with Dr. Murat Gunel and the genetics of primary hereditary microcephaly with Dr. Tanyeri Barak. After graduating, Zach joined the Bi Lab to pursue his interest in cancer neuroscience and explore ways to more accurately predict how a tumor will behave after surgery. In the lab, Zach studies the interactions between meningioma cells and the tumor microenvironment, with the goal of understanding how aggressive meningiomas invade the brain. Zach has also investigated the prognostic significance of rare genomic states such as polyploidy and copy-neutral loss of heterozygosity, placing these elements into context with clinical features including extent of resection and radiation history. In his free time, Zach enjoys running and biking around Boston and learning (albeit slowly) how to cook.",
+    ],
+  },
   {
     name: "Justin Kim, BA",
     role: "MD Candidate",
